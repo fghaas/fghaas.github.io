@@ -1,0 +1,190 @@
+@font-face {
+  font-family: 'UnifrakturCook';
+  font-style: normal;
+  font-weight: 700;
+  src: url(fonts/UnifrakturCook-Bold.ttf) format("truetype");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+017F, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+body {
+  font-size: 20px;
+}
+
+body blockquote {
+  font-size: inherit !important;
+}
+
+body .footnote {
+  font-size: 90% !important;
+}
+
+body ul.social a.sc-twitter, body ul.social a.sc-mastodon, body ul.social a.sc-github, body ul.social a.sc-linkedin {
+  background-color: transparent;
+}
+
+body ul.social a:hover {
+  transform: none;
+}
+
+body article {
+  max-width: none;
+}
+
+body main a {
+  border-bottom-width: 1px;
+  border-bottom-style: dotted;
+}
+
+body main a:hover, body main a:active {
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+}
+
+body main a.btn:hover, body main a.btn:active {
+  font-weight: bold;
+}
+
+body main .tag-cloud a:hover, body main .tag-cloud a:active {
+  font-weight: bold;
+}
+
+body main .fraktur {
+  font-family: 'UnifrakturCook';
+  font-weight: 700;
+}
+
+body.light-theme main :not(pre) > code {
+  color: black;
+}
+
+body.light-theme main a {
+  color: black;
+  border-bottom-color: grey;
+}
+
+body.light-theme main a:hover, body.light-theme main a:active {
+  color: black;
+}
+
+body.light-theme main a.btn {
+  color: white;
+  background-color: grey;
+}
+
+body.light-theme main a.btn:hover, body.light-theme main a.btn:active {
+  color: white;
+  background-color: grey;
+}
+
+body.light-theme main .tag-cloud a {
+  color: white;
+  background-color: grey;
+}
+
+body.light-theme main .tag-cloud a:hover, body.light-theme main .tag-cloud a:active {
+  color: white;
+  background-color: grey;
+}
+
+body.dark-theme main :not(pre) > code {
+  color: white;
+}
+
+body.dark-theme main a {
+  color: #fdfd96;
+  border-bottom-color: #fdfd96;
+  border-bottom-width: 1px;
+  border-bottom-style: dotted;
+}
+
+body.dark-theme main a:hover, body.dark-theme main a:active {
+  color: #fdfd96;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+}
+
+body.dark-theme main a.btn {
+  color: black;
+  background-color: lightgrey;
+}
+
+body.dark-theme main a.btn:hover, body.dark-theme main a.btn:active {
+  color: black;
+  background-color: lightgrey;
+  font-weight: bold;
+}
+
+body.dark-theme main .tag-cloud a {
+  color: black;
+  background-color: lightgrey;
+}
+
+body.dark-theme main .tag-cloud a:hover, body.dark-theme main .tag-cloud a:active {
+  color: black;
+  background-color: lightgrey;
+  font-weight: bold;
+}
+
+@media (prefers-color-scheme: light) {
+  body:not(.dark-theme) main :not(pre) > code {
+    color: black;
+  }
+  body:not(.dark-theme) main a {
+    color: black;
+    border-bottom-color: grey;
+  }
+  body:not(.dark-theme) main a:hover, body:not(.dark-theme) main a:active {
+    color: black;
+  }
+  body:not(.dark-theme) main a.btn {
+    color: white;
+    background-color: grey;
+  }
+  body:not(.dark-theme) main a.btn:hover, body:not(.dark-theme) main a.btn:active {
+    color: white;
+    background-color: grey;
+  }
+  body:not(.dark-theme) main .tag-cloud a {
+    color: white;
+    background-color: grey;
+  }
+  body:not(.dark-theme) main .tag-cloud a:hover, body:not(.dark-theme) main .tag-cloud a:active {
+    color: white;
+    background-color: grey;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body:not(.light-theme) main :not(pre) > code {
+    color: white;
+  }
+  body:not(.light-theme) main a {
+    color: #fdfd96;
+    border-bottom-color: #fdfd96;
+    border-bottom-width: 1px;
+    border-bottom-style: dotted;
+  }
+  body:not(.light-theme) main a:hover, body:not(.light-theme) main a:active {
+    color: #fdfd96;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+  }
+  body:not(.light-theme) main a.btn {
+    color: black;
+    background-color: lightgrey;
+  }
+  body:not(.light-theme) main a.btn:hover, body:not(.light-theme) main a.btn:active {
+    color: black;
+    background-color: lightgrey;
+    font-weight: bold;
+  }
+  body:not(.light-theme) main .tag-cloud a {
+    color: black;
+    background-color: lightgrey;
+  }
+  body:not(.light-theme) main .tag-cloud a:hover, body:not(.light-theme) main .tag-cloud a:active {
+    color: black;
+    background-color: lightgrey;
+    font-weight: bold;
+  }
+}

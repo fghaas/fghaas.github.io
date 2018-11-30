@@ -1,0 +1,7 @@
+[submodule "plugins"]
+	path = plugins
+	url = https://github.com/getpelican/pelican-plugins
+[submodule "themes/Flex"]
+	path = themes/Flex
+	url = https://github.com/fghaas/pelican-flex-theme.git
+	branch = master
