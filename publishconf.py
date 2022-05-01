@@ -12,7 +12,6 @@ from pelicanconf import *
 
 SITEURL = 'https://xahteiwi.eu'
 SITELOGO = SITEURL + '/' + AVATAR
-RELATIVE_URLS = False
 
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
 TAG_FEED_ATOM = 'feeds/tag/{slug}.atom.xml'
