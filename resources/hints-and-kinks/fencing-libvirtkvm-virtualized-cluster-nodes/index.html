@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../../theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/solid.css">
+
+    <link rel="stylesheet" type="text/css" href="../../../css/override.css">
+
+    <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+    <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+  
+
+
+ 
+
+<meta name="author" content="Florian Haas" />
+<meta name="description" content="Often, people deploy the Pacemaker stack in virtual environments for purposes of testing and evaluation. In such environments, it&#39;s easy to test Pacemaker&#39;s fencing capabilities by tying in with the hypervisor. This quick howto illustrates how to configure fencing for two virtual cluster nodes hosted on a libvirt/KVM hypervisor …" />
+<meta name="keywords" content="Pacemaker">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="Fencing in Libvirt/KVM virtualized cluster nodes"/>
+  <meta property="og:description" content="Often, people deploy the Pacemaker stack in virtual environments for purposes of testing and evaluation. In such environments, it&#39;s easy to test Pacemaker&#39;s fencing capabilities by tying in with the hypervisor. This quick howto illustrates how to configure fencing for two virtual cluster nodes hosted on a libvirt/KVM hypervisor …"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../../resources/hints-and-kinks/fencing-libvirtkvm-virtualized-cluster-nodes/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2012-02-29 13:56:42+01:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../../author/florian-haas.html">
+  <meta property="article:section" content="hints-and-kinks"/>
+  <meta property="article:tag" content="Pacemaker"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; Fencing in Libvirt/KVM virtualized cluster nodes</title>
+
+</head>
+<body >
+  <aside>
+    <div>
+      <a href="../../../">
+        <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="../../../"></a>
+      </h1>
+
+
+
+
+      <ul class="social">
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/xahteiwi" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="me" class="sc-mastodon" href="https://mastodon.social/@xahteiwi" target="_blank">
+              <i class="fab fa-mastodon"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/fghaas" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-github" href="https://github.com/fghaas" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="../../../">Home</a>
+
+      <a href="/category/hints-and-kinks.html">Tech</a>
+      <a href="/category/presentations.html">Talks</a>
+      <a href="/category/blog.html">Thoughts</a>
+      <a href="">​</a>
+      <a href="/about/">About</a>
+      <a href="/comments/">Comments</a>
+      <a href="/legal/">Legal</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="">​</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="">​</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="fencing-libvirtkvm-virtualized-cluster-nodes">Fencing in Libvirt/KVM virtualized cluster nodes</h1>
+    <p>
+      Posted on Wed 29 February 2012 in <a href="../../../category/hints-and-kinks.html">hints-and-kinks</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>Often, people deploy the Pacemaker stack in virtual environments for
+purposes of testing and evaluation. In such environments, it's easy to
+test Pacemaker's fencing capabilities by tying in with the hypervisor.</p>
+<p>This quick howto illustrates how to configure fencing for two virtual
+cluster nodes hosted on a libvirt/KVM hypervisor host.</p>
+<h2>libvirt configuration (hypervisor)</h2>
+<p>In order to do libvirt fencing, your hypervisor should have its
+libvirtd daemon listen on a network socket. libvirtd is capable of
+doing this, both on an encrypted TLS socket, and on a regular,
+unencrypted TCP port. Needless to say, for production use you should
+only use TLS, but for testing and evaluation – and for that purpose
+only – TCP is fine.</p>
+<p>In order for your hypervisor to listen on an unauthenticated,
+insecure, unencrypted network socket (did we mention that's unsuitable
+for production?), add the following lines to your libvirtd
+configuration file:</p>
+<div class="highlight"><pre><span></span><code><span class="na">listen_tls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0</span><span class="w"></span>
+<span class="na">listen_tcp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span><span class="w"></span>
+<span class="na">tcp_port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"16509"</span><span class="w"></span>
+<span class="na">auth_tcp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"none"</span><span class="w"></span>
+</code></pre></div>
+<p>You can also set the <code>listen_addr</code> parameter, for example to have
+libvirtd listen only on the network that your virtual machines run
+in. If you don't set listen_addr, libvirtd will simply listen on the
+wildcard address.</p>
+<p>You'll also have to add the <code>-l</code> or <code>--listen</code> flag to your libvirtd
+invocation. On Debian/Ubuntu platforms, you can do so by editing the
+<code>/etc/default/libvirt-bin</code> configuration file.</p>
+<p>Once you've done that, you can use <code>netstat -ltp</code> to check whether
+libvirtd is in fact listening on its configured port, 16509/tcp. Also,
+make sure that you don't have a firewall blocking that port.</p>
+<h2>libvirt configuration (virtual machines)</h2>
+<p>Inside your virtual machines, you'll also have to install the libvirt
+client binaries – the fencing mechanism uses the virsh utility under
+the covers. Some platforms provide a <code>libvirt-client</code> package for that
+purpose; for other's, you'll simply have to install the full <code>libvirt</code>
+package.</p>
+<p>Once that is set up, you should be able to run this command from
+inside your virtual machines:</p>
+<div class="highlight"><pre><span></span><code>virsh --connect<span class="o">=</span>qemu+tcp://&lt;IP of your hypervisor&gt;/system <span class="se">\</span>
+  list --all
+</code></pre></div>
+<p>... and that command should list all the domains running on that host,
+including the one you're connecting from.</p>
+<h2>Pacemaker configuration</h2>
+<p>In one of your virtual machines, you can now set up your fencing
+configuration.</p>
+<p>This example assumes that you have two nodes named alice and bob, that
+their corresponding virtual machine domain names are also alice and
+bob, and that they can reach their hypervisor by TCP at 192.168.0.1:</p>
+<div class="highlight"><pre><span></span><code>primitive p_fence_alice stonith:external/libvirt \
+  params hostlist="alice" \
+   hypervisor_uri="qemu+tcp://192.168.0.1/system" \
+  op monitor interval="60"
+primitive p_fence_bob stonith:external/libvirt \
+  params hostlist="bob" \
+    hypervisor_uri="qemu+tcp://192.168.0.1/system" \
+  op monitor interval="60"
+location l_fence_alice p_fence_alice -inf: alice
+location l_fence_bob p_fence_bob -inf: bob
+property stonith-enabled=true
+</code></pre></div>
+<p>Now you can test fencing to the best of your abilities.</p>
+<hr/>
+<p>This article originally appeared on the <code>hastexo.com</code> website (now defunct).</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../tag/pacemaker.html">Pacemaker</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+
+</body>
+</html>

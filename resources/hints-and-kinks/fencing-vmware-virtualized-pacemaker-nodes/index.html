@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../../theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/solid.css">
+
+    <link rel="stylesheet" type="text/css" href="../../../css/override.css">
+
+    <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+    <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+  
+
+
+ 
+
+<meta name="author" content="Florian Haas" />
+<meta name="description" content="For users of VMware virtualization, it&#39;s becoming increasingly common to deploy Pacemaker clusters within the virtual infrastructure. Doing this requires that you set up fencing via ESX Server or, more commonly, vCenter. Here&#39;s how to do that. The cluster-glue package contains node Pacemaker&#39;s fencing (STONITH) plugins, one of which is …" />
+<meta name="keywords" content="Pacemaker">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="Fencing in VMware virtualized Pacemaker nodes"/>
+  <meta property="og:description" content="For users of VMware virtualization, it&#39;s becoming increasingly common to deploy Pacemaker clusters within the virtual infrastructure. Doing this requires that you set up fencing via ESX Server or, more commonly, vCenter. Here&#39;s how to do that. The cluster-glue package contains node Pacemaker&#39;s fencing (STONITH) plugins, one of which is …"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../../resources/hints-and-kinks/fencing-vmware-virtualized-pacemaker-nodes/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2012-05-18 09:43:28+01:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../../author/florian-haas.html">
+  <meta property="article:section" content="hints-and-kinks"/>
+  <meta property="article:tag" content="Pacemaker"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; Fencing in VMware virtualized Pacemaker nodes</title>
+
+</head>
+<body >
+  <aside>
+    <div>
+      <a href="../../../">
+        <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="../../../"></a>
+      </h1>
+
+
+
+
+      <ul class="social">
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/xahteiwi" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="me" class="sc-mastodon" href="https://mastodon.social/@xahteiwi" target="_blank">
+              <i class="fab fa-mastodon"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/fghaas" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-github" href="https://github.com/fghaas" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="../../../">Home</a>
+
+      <a href="/category/hints-and-kinks.html">Tech</a>
+      <a href="/category/presentations.html">Talks</a>
+      <a href="/category/blog.html">Thoughts</a>
+      <a href="">​</a>
+      <a href="/about/">About</a>
+      <a href="/comments/">Comments</a>
+      <a href="/legal/">Legal</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="">​</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="">​</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="fencing-vmware-virtualized-pacemaker-nodes">Fencing in VMware virtualized Pacemaker nodes</h1>
+    <p>
+      Posted on Fri 18 May 2012 in <a href="../../../category/hints-and-kinks.html">hints-and-kinks</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>For users of VMware virtualization, it's becoming increasingly common
+to deploy Pacemaker clusters within the virtual infrastructure. Doing
+this requires that you set up fencing via ESX Server or, more
+commonly, vCenter. Here's how to do that.</p>
+<p>The <code>cluster-glue</code> package contains node Pacemaker's fencing (STONITH)
+plugins, one of which is the <code>external/vcenter</code> plugin. It enables
+Pacemaker to interface with an ESX Server host or vCenter server. When
+a Pacemaker node needs to be fenced, the fencing node contacts the
+vCenter host and instructs it to knock out the offending node.</p>
+<p>For this to work, your configuration needs to satisfy a couple of prerequisites:</p>
+<ul>
+<li>
+<p>Your setup needs a reasonably recent cluster-glue package (the one
+  that ships in Debian squeeze-backports and Ubuntu precise is fine).</p>
+</li>
+<li>
+<p>You need to install the <a href="http://www.vmware.com/support/developer/vc-sdk/">vSphere Web Services
+  SDK</a> on your
+  nodes. This itself has a number of Perl prerequisites. On
+  Debian/Ubuntu systems, you should be able to install them with:</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code>aptitude install libarchive-zip-perl libcrypt-ssleay-perl \
+  libclass-methodmaker-perl libuuid-perl \
+  libsoap-lite-perl libxml-libxml-perl
+</code></pre></div>
+<p>Now, create a set of vCenter credentials with the <code>credstore_admin.pl</code>
+utility that comes bundled with the SDK:</p>
+<div class="highlight"><pre><span></span><code>/usr/lib/vmware-vcli/apps/general/credstore_admin.pl \
+  -s &lt;vCenter server IP or hostname&gt; \
+  -u &lt;vCenter username&gt; \
+  -p &lt;vCenter password&gt;
+</code></pre></div>
+<p>This creates a credentials file in
+<code>.vmware/credstore/vicredentials.xml</code> relative to your home
+directory. Copy this file into a location where Pacemaker can find it,
+say <code>/etc/vicredentials.xml</code>, and make sure it gets 0600
+permissions. Also, remember to copy it to all your cluster nodes. Once
+your credentials are properly set up, you can test the STONITH agent's
+functionality by invoking it directly, like so:</p>
+<div class="highlight"><pre><span></span><code>  <span class="nv">VI_SERVER</span><span class="o">=</span>&lt;vCenter server IP or hostname&gt; <span class="se">\</span>
+  <span class="nv">VI_CREDSTORE</span><span class="o">=</span>/etc/vicredentials.xml <span class="se">\</span>
+  <span class="nv">HOSTLIST</span><span class="o">=</span><span class="s2">"&lt;pacemaker hostname&gt;=&lt;vCenter virtual machine name&gt;"</span> <span class="se">\</span>
+  <span class="nv">RESETPOWERON</span><span class="o">=</span><span class="m">0</span> <span class="se">\</span>
+  /usr/lib/stonith/plugins/external/vcenter gethosts
+</code></pre></div>
+<p><pacemaker hostname=""> is the name of one of your cluster nodes as per
+uname -n, and <vcenter machine="" name="" virtual=""> is the corresponding
+machine name in your vCenter inventory. If everything is working fine,
+the gethosts command should return the Pacemaker hostname again.</vcenter></pacemaker></p>
+<p>Now, on to adding this to the Pacemaker configuration. The example
+below is for two hosts named alice and bob, which in the inventory
+happen to be listed by their FQDN in the example.com domain:</p>
+<div class="highlight"><pre><span></span><code>primitive p_fence_alice stonith:external/vcenter \
+  params VI_SERVER="vcenter.example.com" \
+    VI_CREDSTORE="/etc/vicredentials.xml" \
+    HOSTLIST="alice=alice.example.com" \
+    RESETPOWERON="0" \
+    pcmk_host_check="static-list" \
+    pcmk_host_list="alice" \
+  op monitor interval="60"
+primitive p_fence_bob stonith:external/vcenter \
+  params VI_SERVER="vcenter.example.com" \
+    VI_CREDSTORE="/etc/vicredentials.xml" \
+    HOSTLIST="bob=bob.example.com" \
+    RESETPOWERON="0" \
+    pcmk_host_check="static-list" \
+    pcmk_host_list="bob" \
+  op monitor interval="60"
+location l_fence_alice p_fence_alice -inf: alice
+location l_fence_bob p_fence_bob -inf: bob
+property stonith-enabled="true"
+</code></pre></div>
+<p>At this point you should be able to test fencing with <code>stonith_admin
+-F</code> or <code>crm node fence</code>. Or simulate a node problem with <code>killall -9
+corosync</code>.</p>
+<p>Special thanks for this goes to Nhan Ngo Dinh both for writing the
+plugin in the first place, and for providing an excellent and
+straightforward README file for it.</p>
+<hr/>
+<p>This article originally appeared on the <code>hastexo.com</code> website (now defunct).</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../tag/pacemaker.html">Pacemaker</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+
+</body>
+</html>

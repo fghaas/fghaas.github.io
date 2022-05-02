@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Django</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/django.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2020-05-06T00:00:00+00:00</updated><entry><title>Celery to Chew On</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/chewy-celery/" rel="alternate"></link><published>2020-05-06T00:00:00+00:00</published><updated>2020-05-06T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2020-05-06:/resources/hints-and-kinks/chewy-celery/</id><summary type="html">&lt;p&gt;Asynchronous Celery tasks that manipulate a MySQL/Galera database from a Django application can produce very interesting behavior when HAProxy is involved.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Asynchronous Celery tasks that manipulate a MySQL/Galera database from
+a Django application can produce very interesting behavior when
+HAProxy is involved.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;h1&gt;Some basics&lt;/h1&gt;
+&lt;p&gt;When you’re running a &lt;a href="https://www.djangoproject.com/"&gt;Django&lt;/a&gt;
+application, the following things are all pretty commonplace:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You use &lt;a href="https://en.wikipedia.org/wiki/MySQL"&gt;MySQL&lt;/a&gt; or
+  &lt;a href="https://en.wikipedia.org/wiki/MariaDB"&gt;MariaDB&lt;/a&gt; as your &lt;a href="https://docs.djangoproject.com/en/3.0/ref/databases/#mariadb-notes"&gt;Django
+  database
+  backend&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;You don’t run a single standalone MySQL/MariaDB instance, but a
+  &lt;a href="https://galeracluster.com/"&gt;Galera&lt;/a&gt; cluster.&lt;/li&gt;
+&lt;li&gt;You run asynchronous tasks in &lt;a href="https://docs.celeryproject.org/en/stable/"&gt;Celery&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This way, if you have a complex operation in your application, you
+don’t necessarily have to handle it in your latency-critical request
+codepath. Instead, you can have something like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;celery&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Task&lt;/span&gt;
+
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;ComplexOperation&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Task&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="sd"&gt;"""Task that does very complex things"""&lt;/span&gt;
+
+   &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+      &lt;span class="c1"&gt;# ... lots of interesting things&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;... and then from your view (or management command, or whatever), you
+can invoke this like so:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;.tasks&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;ComplexOperation&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;some_path&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+   &lt;span class="sd"&gt;"""/some_path URL that receives a request for an asynchronous ComplexOperation"""&lt;/span&gt;
+   &lt;span class="c1"&gt;# ...&lt;/span&gt;
+
+   &lt;span class="c1"&gt;# Asynchronously process ComplexOperation&lt;/span&gt;
+   &lt;span class="n"&gt;ComplexOperation&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;delay&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pk&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;GET&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'id'&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+
+   &lt;span class="c1"&gt;# ...&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;What this means is that the code defined in &lt;code&gt;ComplexOperation&lt;/code&gt;’s
+&lt;code&gt;run()&lt;/code&gt; method can run asynchronously, while the HTTP request to
+&lt;code&gt;/some_path&lt;/code&gt; can immediately return a response. You can then fetch the
+asynchronous task’s result in a later request, and present it to the
+user.&lt;/p&gt;
+&lt;p&gt;(Note that there are other ways to &lt;a href="https://docs.celeryproject.org/en/stable/userguide/calling.html"&gt;invoke Celery
+tasks&lt;/a&gt;;
+getting into those in detail is not the point of this article.)&lt;/p&gt;
+&lt;h1&gt;MySQL/Galera via HAProxy&lt;/h1&gt;
+&lt;p&gt;Now, let’s inject another item into the setup. Suppose your
+application doesn’t talk to your Galera cluster directly, but via
+&lt;a href="https://www.haproxy.org/"&gt;HAProxy&lt;/a&gt;. That’s not exactly unheard of; in
+fact it’s &lt;a href="https://galeracluster.com/library/documentation/ha-proxy.html"&gt;an officially documented HA
+option&lt;/a&gt;
+for Galera.&lt;/p&gt;
+&lt;p&gt;If you run a Django application against an HAProxyfied Galera cluster,
+and you have rather long-running Celery tasks, you may see occurrences
+of &lt;code&gt;OperationalError&lt;/code&gt; exceptions that map to MySQL error 2013, &lt;code&gt;Lost
+connection to MySQL server during query&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Error 2013 means that the connection between the client and the server
+dropped in the middle of executing a query. This is different from
+error 2006, &lt;code&gt;MySQL server has gone away&lt;/code&gt;, which means that the server
+has gracefully torn down the connection. 2013 is really an
+out-of-nowhere connection drop, which normally only occurs if your
+network has gone very wonky.&lt;/p&gt;
+&lt;p&gt;With HAProxy however, &lt;em&gt;that&lt;/em&gt; service may be your culprit. An HAProxy
+service sets four different &lt;strong&gt;timeout&lt;/strong&gt; values:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;timeout connect&lt;/code&gt;: the time in which a backend server must accept a
+  TCP connection, default 5s.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;timeout check&lt;/code&gt;: the time in which a backend server must respond to
+  a recurring health check, default 5s.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;timeout server&lt;/code&gt;: how long the server is allowed to take before it
+  answers a request, default 50s.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;timeout client&lt;/code&gt;: how long the client is allowed to take before it
+  sends the next request, default 50s.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Distilling the timeout problem&lt;/h1&gt;
+&lt;p&gt;If you have access to &lt;code&gt;manage.py shell&lt;/code&gt; for your Django application,
+here’s a really easy way for you to trigger an adverse effect of this
+default configuration. All you have to do is create an object from a
+model, so that it fetches data from the database, then wait a bit,
+then try to re-fetch. Like so:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;./&lt;/span&gt;&lt;span class="n"&gt;manage&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt; &lt;span class="n"&gt;shell&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;InteractiveConsole&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;sleep&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.contrib.auth&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;get_user_model&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;User&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;get_user_model&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;me&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;User&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'florian'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;me&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;refresh_from_db&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;55&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;me&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;refresh_from_db&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;Traceback&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;most&lt;/span&gt; &lt;span class="n"&gt;recent&lt;/span&gt; &lt;span class="n"&gt;call&lt;/span&gt; &lt;span class="n"&gt;last&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;OperationalError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2013&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'Lost connection to MySQL server during query'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;So what happens here?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I open a session to the database with the &lt;code&gt;User.objects.get()&lt;/code&gt; call
+  that populates the &lt;code&gt;me&lt;/code&gt; object.&lt;/li&gt;
+&lt;li&gt;Then I wait 40 seconds. That’s comfortably short of the 50-second
+  HAproxy timeout.&lt;/li&gt;
+&lt;li&gt;Now when I run &lt;code&gt;me.refresh_from_db()&lt;/code&gt;, the session is still alive
+  and the call completes without error. The timeout clock resets at
+  this stage, and I could keep going like this ad infinitum, as long
+  as I &lt;code&gt;sleep()&lt;/code&gt; (or keep busy) for less than 50 seconds.&lt;/li&gt;
+&lt;li&gt;However, I next wait &lt;em&gt;55&lt;/em&gt; seconds, causing HAProxy to terminate the
+  connection.&lt;/li&gt;
+&lt;li&gt;And then, &lt;code&gt;refresh_from_db()&lt;/code&gt; breaks immediately with the 2013
+  error.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Note that if I run &lt;code&gt;refresh_from_db()&lt;/code&gt; — or any other operation that
+touches the database – &lt;strong&gt;again&lt;/strong&gt;, I get a different error (2016,
+expected at this point), but I don’t get my database connection back:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; me.refresh_from_db()
+Traceback (most recent call last):
+[...]
+OperationalError: (2006, 'MySQL server has gone away')
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;What I have to do instead is &lt;em&gt;close&lt;/em&gt; my &lt;code&gt;connection&lt;/code&gt; first:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.db&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;connection&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;connection&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;... and then, when I run anything else that requires a database query,
+Django will happily reconnect for me.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; me.refresh_from_db()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1&gt;HAProxy timeouts getting in the way of your Celery tasks&lt;/h1&gt;
+&lt;p&gt;Now how does this relate to a real-world application? Suppose you have
+a long-running Celery task with database updates or queries at the
+beginning and end of something complicated, like so:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;celery&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Task&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;model&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Thing&lt;/span&gt;
+
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;ComplexOperation&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Task&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="sd"&gt;"""Task that does very complex things"""&lt;/span&gt;
+
+   &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+     &lt;span class="n"&gt;thing&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Thing&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pk&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'pk'&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+     &lt;span class="n"&gt;do_something_really_long_and_complicated&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+     &lt;span class="n"&gt;thing&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;save&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In this case, &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;we retrieve data from the database into memory, populating our
+  &lt;code&gt;thing&lt;/code&gt; object,&lt;/li&gt;
+&lt;li&gt;then we do something very complex with it — suppose this can
+  take on the order of minutes, in the extreme,&lt;/li&gt;
+&lt;li&gt;and finally, we take the modified data for our in-memory object, and
+  persist it back to the database.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So far, so simple. However, now assume that while you’re executing the
+&lt;code&gt;do_something_really_long_and_complicated()&lt;/code&gt; method, something bad
+happens to your database. Say you restarted one of your MySQL or
+MariaDB processes, or one of your nodes died altogether. Your database
+&lt;em&gt;cluster&lt;/em&gt; is still alive, but your &lt;em&gt;session&lt;/em&gt;, which was very much
+alive during the call that populated &lt;code&gt;thing&lt;/code&gt;, is dead by the time you
+want to make the &lt;code&gt;thing.save()&lt;/code&gt; call.&lt;/p&gt;
+&lt;p&gt;Depending on what actually happened, you’d see one of the following
+two &lt;code&gt;OperationalError&lt;/code&gt; instances:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Either an immediate &lt;code&gt;2006, MySQL server has gone away&lt;/code&gt; — this is is
+  what you’d see if the MySQL server was shut down or
+  restarted. That’s a graceful session teardown, and it’s &lt;strong&gt;not&lt;/strong&gt; what
+  I want to focus on in this article.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Or, and this is what I want to discuss further here, &lt;code&gt;2013, Lost
+  connection to MySQL server during query&lt;/code&gt;. You normally &lt;em&gt;don’t&lt;/em&gt; get
+  this as a result of something breaking at the other &lt;em&gt;end&lt;/em&gt; of the
+  connection, but rather in between. In our case, that would be
+  HAProxy. Let’s look at our code snippet with a few extra comments:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;celery&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Task&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;model&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Thing&lt;/span&gt;
+
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;ComplexOperation&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Task&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="sd"&gt;"""Task that does very complex things"""&lt;/span&gt;
+
+   &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+     &lt;span class="n"&gt;thing&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Thing&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pk&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'pk'&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+     &lt;span class="c1"&gt;# Right here (after the query is complete) is where HAproxy starts its&lt;/span&gt;
+     &lt;span class="c1"&gt;# timeout clock&lt;/span&gt;
+
+     &lt;span class="c1"&gt;# Suppose this takes 60 seconds (10 seconds longer than the default &lt;/span&gt;
+     &lt;span class="c1"&gt;# HAProxy timeout)&lt;/span&gt;
+
+     &lt;span class="n"&gt;do_something_really_long_and_complicated&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+     &lt;span class="c1"&gt;# Then by the time we get here, HAProxy has torn down the connection,&lt;/span&gt;
+     &lt;span class="c1"&gt;# and we get a 2013 error.&lt;/span&gt;
+     &lt;span class="n"&gt;thing&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;save&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;So now that we’ve identified the problem, how do we solve it? Well
+that depends greatly on the following questions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Are you the developer, meaning you can fix this in code, but you
+  can’t change much in the infrastructure?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Or are you a systems person, who can control all aspects of the
+  infrastructure, but you don’t have leverage over the code?&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you have control over neither code nor infrastructure, you’re out
+of luck. If you call all the shots about both, you get to pick and
+choose. But here are your options.&lt;/p&gt;
+&lt;h1&gt;Fixing this in code&lt;/h1&gt;
+&lt;p&gt;If it’s your codebase, and you want to make it robust so it runs in
+any MySQL/Galera environment behind HAProxy, no matter its
+configuration, you have a couple of ways to do it.&lt;/p&gt;
+&lt;h2&gt;Keep connections shorter&lt;/h2&gt;
+&lt;p&gt;One way to do it is do keep your database connections alive for such a
+short time that you practically never hit the HAProxy
+timeouts. Thankfully, Django auto-reconnects to your database any time
+it needs to do something, so the only thing you need to worry about
+here is &lt;em&gt;closing&lt;/em&gt; connections — &lt;em&gt;reopening&lt;/em&gt; them is automatic. For
+example:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.db&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;connection&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;model&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Thing&lt;/span&gt;
+
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;ComplexOperation&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Task&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="sd"&gt;"""Task that does very complex things"""&lt;/span&gt;
+
+   &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+     &lt;span class="n"&gt;thing&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Thing&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pk&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'pk'&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+     &lt;span class="c1"&gt;# Close connection immediately&lt;/span&gt;
+     &lt;span class="n"&gt;connection&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+     &lt;span class="c1"&gt;# Suppose this takes 60 seconds.&lt;/span&gt;
+     &lt;span class="n"&gt;do_something_really_long_and_complicated&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+     &lt;span class="c1"&gt;# Here, we just get a new connection.&lt;/span&gt;
+     &lt;span class="n"&gt;thing&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;save&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Catch OperationalErrors&lt;/h2&gt;
+&lt;p&gt;The other option is to just wing it, and catch the errors. Here’s a
+deliberately overtrivialized example:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.db&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;connection&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.db.utils&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;OperationalError&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;model&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Thing&lt;/span&gt;
+
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;ComplexOperation&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Task&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="sd"&gt;"""Task that does very complex things"""&lt;/span&gt;
+
+   &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+     &lt;span class="n"&gt;thing&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Thing&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pk&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'pk'&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+     &lt;span class="c1"&gt;# Right here (after the query is complete) is where HAproxy starts its&lt;/span&gt;
+     &lt;span class="c1"&gt;# timeout clock&lt;/span&gt;
+
+     &lt;span class="c1"&gt;# Suppose this takes 60 seconds.&lt;/span&gt;
+     &lt;span class="n"&gt;do_something_really_long_and_complicated&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+     &lt;span class="c1"&gt;# Then by the time we get here, HAProxy has torn down the connection,&lt;/span&gt;
+     &lt;span class="c1"&gt;# and we get a 2013 error, which we’ll want to catch.&lt;/span&gt;
+     &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+       &lt;span class="n"&gt;thing&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;save&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+     &lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="n"&gt;OperationalError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+       &lt;span class="c1"&gt;# It’s now necessary to disconnect (and reconnect automatically),&lt;/span&gt;
+       &lt;span class="c1"&gt;# because if we don’t then all we do is turn a 2013 into a 2006.&lt;/span&gt;
+       &lt;span class="n"&gt;connection&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+       &lt;span class="n"&gt;thing&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;save&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now of course, you’d never &lt;em&gt;actually&lt;/em&gt; implement it this way, because
+the one-time retry is far too trivial, so you probably want to retry
+up to &lt;em&gt;n&lt;/em&gt; times, but with exponential backoff or some such — in
+detail, this becomes complicated really quickly. &lt;/p&gt;
+&lt;p&gt;You probably also want some logging to catch this. &lt;/p&gt;
+&lt;p&gt;In short, you probably don’t want to hand-craft this, but instead rely
+on something like the &lt;code&gt;retry()&lt;/code&gt; decorator from
+&lt;a href="https://tenacity.readthedocs.io/en/latest/"&gt;tenacity&lt;/a&gt;, which can
+conveniently provide all those things, plus the reconnect, without
+cluttering your code too much.&lt;/p&gt;
+&lt;h1&gt;Fixing this in infrastructure&lt;/h1&gt;
+&lt;p&gt;You may be unable to control this sort of thing in your code — because, for
+example, it’s a codebase you’re not allowed to touch, or you’re less
+than comfortable with the idea of scouring or profiling your code for
+long-running codepaths between database queries, and sprinkling
+&lt;code&gt;connection.close()&lt;/code&gt; statements around.&lt;/p&gt;
+&lt;p&gt;In that case, you can fix your HAProxy configuration instead. Again,
+the variables you’ll want to set are&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;timeout server&lt;/code&gt; and &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;timeout client&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You’ll probably want to set them to an identical value, which should
+be the maximum length of your database-manipulating Celery task, and
+then ample room to spare.&lt;/p&gt;
+&lt;p&gt;The maximum reasonable value that you can set here is that of your
+backend server’s &lt;code&gt;wait_timeout&lt;/code&gt; configuration variable, &lt;a href="https://mariadb.com/kb/en/server-system-variables/#wait_timeout"&gt;which
+defaults to 8
+hours&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;Careful though, while MySQL interprets timeout settings in &lt;em&gt;seconds&lt;/em&gt;
+by default, HAProxy &lt;a href="https://cbonte.github.io/haproxy-dconv/1.7/configuration.html#2.4"&gt;defaults to
+&lt;em&gt;milliseconds.&lt;/em&gt;&lt;/a&gt;
+You’d thus need to translate the &lt;code&gt;28800&lt;/code&gt; default value for MySQL’s
+&lt;code&gt;wait_timeout&lt;/code&gt; into a &lt;code&gt;timeout server|client&lt;/code&gt; value of 28000000 for
+HAProxy, or else you set the HAProxy timeout to a value of &lt;code&gt;28800s&lt;/code&gt;
+(or &lt;code&gt;8h&lt;/code&gt;, if you prefer).&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;Background research contribution credit for this post goes to my &lt;a href="https://www.citynetwork.eu/"&gt;City
+Network&lt;/a&gt; colleagues &lt;a href="https://twitter.com/elenalindq"&gt;Elena
+Lindqvist&lt;/a&gt; and &lt;a href="https://twitter.com/pdale_se"&gt;Phillip
+Dale&lt;/a&gt;, plus &lt;a href="https://twitter.com/zerobanana"&gt;Zane
+Bitter&lt;/a&gt; for the tenacity suggestion.&lt;/p&gt;
+&lt;p&gt;Also, thanks to &lt;a href="https://twitter.com/muratkochane"&gt;Murat Koç&lt;/a&gt; for
+suggesting to clarify the supported time formats in HAProxy.&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Django"></category><category term="MySQL"></category><category term="HAProxy"></category><category term="Celery"></category><category term="Python"></category></entry><entry><title>Learn Complex Skills, From Anywhere: Combining Django, Ansible and OpenStack to teach any tech skill</title><link href="https://xahteiwi.eu/resources/presentations/learn-complex-skills-from-anywhere-combining-django-ansible-and-openstack-to-teach-any-tech-skill/" rel="alternate"></link><published>2019-01-23T00:00:00+00:00</published><updated>2019-01-23T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-01-23:/resources/presentations/learn-complex-skills-from-anywhere-combining-django-ansible-and-openstack-to-teach-any-tech-skill/</id><content type="html">&lt;p&gt;My presentation from linux.conf.au 2019.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Video: &lt;a href="https://youtu.be/B1ic5o9geqw"&gt;YouTube&lt;/a&gt;, &lt;a href="http://mirror.linux.org.au/pub/linux.conf.au/2019/c3/Wednesday/Learn_Complex_Skills_From_Anywhere_Combining_Django_Ansible_and_OpenStack_to_teach_any_tech_skill.mp4"&gt;Linux Australia
+  (MP4)&lt;/a&gt;,
+  &lt;a href="http://mirror.linux.org.au/pub/linux.conf.au/2019/c3/Wednesday/Learn_Complex_Skills_From_Anywhere_Combining_Django_Ansible_and_OpenStack_to_teach_any_tech_skill.webm"&gt;Linux Australia (WebM)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Slides (with full speaker notes): &lt;a href="https://fghaas.github.io/lca2019/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
+zoom out for an overview, or just advance by hitting the spacebar.&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="Open edX"></category><category term="OpenStack"></category><category term="Django"></category><category term="Ansible"></category><category term="linux.conf.au"></category></entry></feed>

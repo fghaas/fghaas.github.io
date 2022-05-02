@@ -1,0 +1,695 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Zuul</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/zuul.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-01-29T00:00:00+00:00</updated><entry><title>The Review Review</title><link href="https://xahteiwi.eu/./blog/2022/01/29/review-review/" rel="alternate"></link><published>2022-01-29T00:00:00+00:00</published><updated>2022-01-29T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-01-29:/./blog/2022/01/29/review-review/</id><summary type="html">&lt;p&gt;Musings on source code management, code review, testing, deployment, and collaboration culture.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I wanted to share a few thoughts on something I consider a rather
+important topic in our industry: code review and CI/CD tools, and how
+they relate.&lt;/p&gt;
+&lt;p&gt;This means that I'm talking about&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;source code management:&lt;/strong&gt; where we store our code, and how we
+  manage access to it;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;code review:&lt;/strong&gt; how we coordinate changes to our code;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;testing and gating:&lt;/strong&gt; how we make sure that those changes don’t
+  break anything;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;deployment:&lt;/strong&gt; how we push changes and updates out to the consumers
+  of our code.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In case it’s not obvious, that means I’m talking about a large
+fraction of the software engineering cycle. Not all of it; the part
+involving “fooling around” (&lt;a href="https://xahteiwi.eu/blog/2021/11/21/creativity/"&gt;creative play&lt;/a&gt;)
+is perhaps excluded — but substantially everything where people can be
+said to be “developing” in a software engineering organization is
+encompassed in these things.&lt;/p&gt;
+&lt;p&gt;And there’s a few things that follow from that:&lt;/p&gt;
+&lt;p&gt;First, whatever tools we use in order to accomplish these four things,
+they simultaneously influence and &lt;em&gt;are&lt;/em&gt; influenced by our
+collaboration culture.&lt;/p&gt;
+&lt;p&gt;It's ludicrous to presume that tools and culture are independent of
+each other, or to categorically declare that tools must be made to fit
+processes, not the other way around. That’s not how people
+work. Culture and tools always have an influence on each other.&lt;/p&gt;
+&lt;p&gt;Second, the scope of these things is continually expanding as the
+field evolves. To illustrate, a few years ago a CI/CD platform could
+get away with supporting automated unit tests and kicking off an
+Ansible playbook to deploy things to VMs. Today, what we expect out of
+a continuous deployment pipeline includes support for&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a package registry (for Python packages or Node.js modules, to give
+  just two examples),&lt;/li&gt;
+&lt;li&gt;a container image registry (for Docker/Podman/OCI containers),&lt;/li&gt;
+&lt;li&gt;a secret store,&lt;/li&gt;
+&lt;li&gt;the ability to deploy to a Kubernetes cluster.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And that’s just a few examples. I might be forgetting others.&lt;/p&gt;
+&lt;p&gt;Third, this is a classic example of where we must apply &lt;em&gt;&lt;a href="https://youtu.be/EbLh7rZ3rhU"&gt;systems
+thinking&lt;/a&gt;:&lt;/em&gt; since substantially
+everything the organization does is connected to the toolchain, we
+&lt;strong&gt;cannot make changes to one part of the system without considering
+the consequences for the system as a whole.&lt;/strong&gt; That is not to say that
+we cannot make incremental changes, just that we can’t pretend that
+anything in the system stands alone.&lt;/p&gt;
+&lt;p&gt;To illustrate what I mean, consider the example of an automotive
+engineer implementing a design change for an engine. If the design
+change makes the engine so much more efficient that it means a range
+extension by 10% then that’s excellent. But if in the process the
+designer has made it impossible to connect the engine to its battery
+(or the fuel line, if we’re talking about obsolescent technology),
+then installing the new engine doesn’t just not improve anything — it
+renders the vehicle immobile.&lt;/p&gt;
+&lt;h2&gt;Responsibility&lt;/h2&gt;
+&lt;!-- Note --&gt;
+&lt;p&gt;Now, what does that mean about responsibility? Who is ultimately in
+charge of the system consisting of source code management and review
+tools, and your CI/CD pipeline? The answer is hopefully a no-brainer:
+since everything I talk about &lt;em&gt;including&lt;/em&gt; your organizational culture
+encompasses substantially all of your engineering organization, the
+responsibility rests with whoever is in charge of your engineering
+organization (in most companies, that’s often the CTO). And if you’re
+a software technology company so your &lt;em&gt;entire&lt;/em&gt; enterprise is
+substantially a software engineering organization, it’s your CEO’s or
+MD’s responsibility.&lt;/p&gt;
+&lt;p&gt;Of course, that person may delegate some of the &lt;em&gt;tasks&lt;/em&gt; and details of
+running your source code management and code review and CI/CD
+platform, but &lt;em&gt;responsibility&lt;/em&gt; stays with them.&lt;/p&gt;
+&lt;p&gt;And that responsibility requires both an understanding &lt;a href="https://xahteiwi.eu/blog/2019/04/21/non-technical/"&gt;of the
+technology itself&lt;/a&gt;, &lt;em&gt;and&lt;/em&gt; an understanding
+of how it interacts with your engineering culture. A &lt;em&gt;profound&lt;/em&gt;
+understanding. &lt;/p&gt;
+&lt;p&gt;And I’d go so far as to say if you head up a software engineering
+organization and you &lt;em&gt;don’t&lt;/em&gt; have a profound understanding of this
+toolchain and its mutual influence on your culture, you should find
+another job.&lt;/p&gt;
+&lt;p&gt;And if you work &lt;em&gt;in&lt;/em&gt; a software engineering organization and the
+person in charge lacks precisely that profound understanding, you
+should &lt;em&gt;also&lt;/em&gt; find another job, because you deserve better.&lt;/p&gt;
+&lt;p&gt;So having said all that, we can start talking about tools.&lt;/p&gt;
+&lt;p&gt;And I’m going to talk about three of them, all of which I use in some
+professional capacity on an at-least-weekly basis.&lt;/p&gt;
+&lt;!-- .slide: data-timing="20" --&gt;
+&lt;h1&gt;GitHub&lt;/h1&gt;
+&lt;p&gt;The first one is the toolchain that — I think — a majority of open
+source developers will be most familiar with: GitHub, whose
+collaboration model is based on the &lt;em&gt;Pull Request&lt;/em&gt; (PR).&lt;/p&gt;
+&lt;p&gt;Now the GitHub PR model was strongly influenced by the distributed
+development model of the Linux kernel. The kernel project is what Git
+was originally written for, so naturally it is also where the original
+convention for pull requests emerged.&lt;/p&gt;
+&lt;p&gt;In kernel development, during a kernel merge window, subsystem
+maintainers fix up a publicly accessible Git tree for Linus to pull
+from. They then send a message that follows a conventional format to
+the &lt;code&gt;linux-kernel&lt;/code&gt; mailing list (the LKML) outlining the purpose of
+the changes they want merged. This email contains a summary of the
+changes, and then an enumeration of each commit to be merged. (There’s
+a &lt;code&gt;git&lt;/code&gt; subcommand, &lt;code&gt;git request-pull&lt;/code&gt;, to format such a message.)&lt;/p&gt;
+&lt;p&gt;The review then proceeds in an email exchange on LKML. Once Linus is
+happy with the change, he pulls from the subsystem maintainer’s branch
+and informs them that their changes have merged.&lt;/p&gt;
+&lt;p&gt;Individual subsystem maintainers replicate this model, perhaps with
+small modifications, for contributions to the subsystems they are
+responsible for.&lt;/p&gt;
+&lt;h2&gt;GitHub Pull Requests (PRs)&lt;/h2&gt;
+&lt;p&gt;GitHub replicates some features of the kernel’s model:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The collaboration model is generally, “fork and pull”. Individuals
+  maintain their own forks of an upstream codebase, and then send pull
+  requests when they are ready to review. (However, the review process
+  then uses a web interface, rather than a mailing list — in
+  principle, a GitHub reviewer can do a complete review within the
+  GitHub web interface and source code browser and would never even
+  need to check out the repository locally.)&lt;/li&gt;
+&lt;li&gt;Each PR generally consists of &lt;em&gt;multiple&lt;/em&gt; commits, which however are
+  expected to closely relate and serve a common purpose.&lt;/li&gt;
+&lt;li&gt;That common purpose is enumerated in a summary at the top of the
+  pull request. GitHub calls this the PR description.&lt;/li&gt;
+&lt;li&gt;Submitters can mark a PR as a draft, with which they indicate that
+  the PR is not ready to be merged yet. When drafts &lt;a href="https://github.blog/2019-02-14-introducing-draft-pull-requests/"&gt;became
+  available&lt;/a&gt;
+  in 2019, they replaced an emerging convention in which PR
+  descriptions would be prefixed by &lt;code&gt;WIP&lt;/code&gt; &lt;em&gt;(work in progress)&lt;/em&gt; or
+  &lt;code&gt;DNM&lt;/code&gt; &lt;em&gt;(do not merge)&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;GitHub PRs can be &lt;em&gt;approved,&lt;/em&gt; &lt;em&gt;rejected&lt;/em&gt; or &lt;em&gt;commented on&lt;/em&gt; by
+maintainers or other contributors, and an approval can be made a
+mandatory requirement for merging, but by default GitHub will let
+anyone merge the PR who has write permissions to the repository that
+the PR targets. This includes the possibility for a maintainer to
+merge the contributor’s remote branch to their own local checkout, and
+then pushing the merged branch to he target repo of the PR. Such an
+event will automatically close the PR and mark it as merged.&lt;/p&gt;
+&lt;h2&gt;GitHub Actions&lt;/h2&gt;
+&lt;p&gt;GitHub has, for a long time, allowed maintainers to require that PRs
+pass automated testing. However, until rather recently, it relied on
+them to run (or interface with) a separate testing infrastructure
+outside of GitHub to do that. Typical examples for this included
+CircleCI, or Travis, or Jenkins. It was only &lt;a href="https://github.blog/2019-08-08-github-actions-now-supports-ci-cd/"&gt;in
+2019&lt;/a&gt;
+that GitHub announced automated testing via GitHub Actions.&lt;/p&gt;
+&lt;p&gt;At the time of writing however, GitHub Actions workflows are in
+widespread use for CI/CD, &lt;em&gt;but&lt;/em&gt; it is still quite common for
+GitHub-hosted projects to allow maintainers to circumvent CI/CD tests
+and merge directly. When this happens, it often creates a rather
+unpleasant situation in which CI/CD testing is only run for
+contributions by “outsiders” or “newbies”, whereas maintainers get to
+break things with impunity. This means that issues are often not
+detected until a casual contributor sends a PR, at which point the
+test breaks and leave the contributor confused (and sometimes lead to
+the change not even being considered because, well, “it makes the
+tests break.”)&lt;/p&gt;
+&lt;p&gt;Another thing that comes bundled with GitHub (and GitHub workflow
+actions) is the ability to maintain your own package registry &lt;a href="https://docs.github.com/en/packages/managing-github-packages-using-github-actions-workflows/publishing-and-installing-a-package-with-github-actions"&gt;and
+push artifacts to it from your
+workflow&lt;/a&gt;. Interestingly,
+at the time of writing, GitHub’s definition of “packages” includes
+container images, Ruby gems, and npm modules &lt;a href="https://docs.github.com/en/packages/working-with-a-github-packages-registry"&gt;among
+others&lt;/a&gt;,
+but presently does not include Python modules — although you do, of
+course, have the option to &lt;a href="https://github.com/marketplace/actions/pypi-publish"&gt;push your packages to PyPI from your
+workflow&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;GitLab&lt;/h1&gt;
+&lt;p&gt;The equivalent to the GitHub &lt;em&gt;pull request (PR)&lt;/em&gt; is the GitLab &lt;em&gt;merge
+request (MR)&lt;/em&gt;. In principle, a GitLab MR is quite similar to a GitHub
+PR, albeit with a few noticeable differences:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The “fork and pull” model is less prevalent on GitLab. Instead, it
+  is far more common for collaborators to work on one project, and
+  then create topic branches within that project for each set of
+  changes.&lt;/li&gt;
+&lt;li&gt;Since the project repo is shared, this facilitates collaboration on
+  a single changeset by multiple people: if two or more people wish to
+  collaborate on a change, they simply push additional squash or fixup
+  commits on the topic branch. They can &lt;em&gt;also&lt;/em&gt; agree to force-push
+  amended commits to the topic branch, in which the GitLab web
+  interface will helpfully point out differences between individual
+  &lt;em&gt;versions&lt;/em&gt; of a commit (something that GitHub presently cannot do in
+  a PR).&lt;/li&gt;
+&lt;li&gt;As in a GitHub PR, a GitLab MR is generally expected to include one
+  or more commits.&lt;/li&gt;
+&lt;li&gt;Also as in a GitHub PR, an MR is expected to contain a summary that
+  outlines its purpose.&lt;/li&gt;
+&lt;li&gt;GitLab MRs have a Draft status just like GitHub PRs do, and they
+  were introduced about the same time in both products, but GitLab had
+  a preceding feature called work-in-progress MRs (WIP MRs). GitLab
+  has the handy feature that MRs are &lt;em&gt;automatically&lt;/em&gt; marked as drafts
+  once any commit with &lt;code&gt;squash:&lt;/code&gt; or &lt;code&gt;fixup:&lt;/code&gt; in the commit message
+  ends up in the topic branch — GitLab rightfully infers that the
+  branch still needs a squash rebase prior to merge.&lt;/li&gt;
+&lt;li&gt;GitLab MRs can be reviewed in full using the web interface alone:
+  the review interface and the source code browser are closely
+  integrated, just like in GitHub.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;GitLab CI&lt;/h2&gt;
+&lt;p&gt;CI/CD has been an intrinsic part of the GitLab review
+experience for years, since GitLab includes full CI integration via
+the &lt;code&gt;.gitlab-ci.yml&lt;/code&gt; configuration file.&lt;/p&gt;
+&lt;p&gt;Since GitLab CI has been around for quite a while, and it has a
+multitude of ways to be used, it “feels” more intrinsic to the review
+process than GitHub Actions do, which to me still leave an impression
+of being bolted on. In addition, GitLab CI comes with multiple options
+of using the CI &lt;em&gt;runner:&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You can use &lt;em&gt;shared runners,&lt;/em&gt; which GitLab operates for you. These
+  are Docker containers that GitLab spins up on your behalf in the
+  cloud, and which you share with other GitLab subscription customers.&lt;/li&gt;
+&lt;li&gt;You can also host your own runners. You can do that in Docker
+  containers, in Kubernetes clusters, in virtual machines, and even on
+  bare metal. The runners need no incoming network connectivity; they
+  simply connect to a service on your GitLab host and then poll
+  whether jobs wait for them.&lt;/li&gt;
+&lt;li&gt;You can also specify runners that are exclusive to a project, or to
+  a group or subgroup of projects.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;GitLab also comes with a &lt;a href="https://docs.gitlab.com/ee/user/packages/package_registry/"&gt;package
+registry&lt;/a&gt;,
+to which you can push packages from CI pipelines. This differs from
+GitHub in such a way that it &lt;a href="https://docs.gitlab.com/ee/user/packages/package_registry/#supported-package-managers"&gt;includes more package different
+formats&lt;/a&gt;,
+including a private PyPI workalike for Python packages. In addition,
+there’s also a separate &lt;a href="https://docs.gitlab.com/ee/user/packages/container_registry/"&gt;container
+registry&lt;/a&gt;
+for container images.&lt;/p&gt;
+&lt;h1&gt;Gerrit/Zuul&lt;/h1&gt;
+&lt;p&gt;Now, it feels a bit awkward to call this one “Gerrit/Zuul” when I’ve
+called the others just “GitHub” and “GitLab” respectively, and tacitly
+included the corresponding CI integrations (GitHub Actions and GitLab
+CI, respectively) in them. There are a couple of reasons for that:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Zuul is a CI/CD framework that is, in principle, not tied to Gerrit,
+  whereas GitHub Actions only apply to GitHub, and GitLab CI only to
+  GitLab. Gerrit/Zuul is a particular combination that was largely
+  popularized by the OpenStack community, which is why a lot of people
+  who are or were part of that community intuitively associate Gerrit
+  with Zuul and vice versa.
+  &lt;!-- It should be noted that Zuul was not the original CI/CD framework in
+  the OpenStack community. It was *developed* (and adopted) by that
+  community when it found that it was outgrowing the boundaries of its
+  original CI/CD platform (Jenkins). --&gt;
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Likewise, Gerrit is not tied to a specific CI/CD framework. It’s
+  perfectly feasible to run code reviews in Gerrit and use a different
+  CI/CD pipeline (or even none at all).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And Gerrit/Zuul does differ quite notably from GitHub and GitLab,
+whose features often map quite closely to each other, and I’d like to
+highlight some of those differences.&lt;/p&gt;
+&lt;h2&gt;Gerrit reviews&lt;/h2&gt;
+&lt;p&gt;The Gerrit review process differs in a few crucial points from the one
+we know from GitHub and GitLab:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;You don’t ask someone to pull from a branch or a fork or
+  yours. Instead, you run &lt;code&gt;git review&lt;/code&gt; and Gerrit will &lt;em&gt;make a branch
+  for you.&lt;/em&gt; Everything else flows from there.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Unlike a GitHub PR and GitLab MR, which both typically contain a
+  series of commits to be taken as a whole, a Gerrit &lt;em&gt;change&lt;/em&gt; is
+  really just that: one change. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Which, of course, also means that we don’t need a separate summary
+  for the change: the summary is the commit message.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;It’s still possible to submit a series of commits in the course of a
+  Gerrit review. However, Gerrit simply sees those as a series of
+  changes that all depend on one another.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Dependencies between changes can also be expressed explicitly, by
+  including appropriate keywords in commit messages. Crucially, these
+  dependencies &lt;em&gt;can cross project boundaries.&lt;/em&gt; That is to say, a
+  change in one Git repository can depend on a change in &lt;em&gt;another&lt;/em&gt; Git
+  repository, so long as they both use the same Gerrit instance for
+  review.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;And we also have the equivalent of a Draft PR/MR; in Gerrit that’s
+  called a work-in-progress change.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Because of this, when used in combination with CI such as Zuul, a
+Gerrit-reviewed project generally expects CI tests to pass &lt;em&gt;on every
+commit,&lt;/em&gt; without exceptions. This is in contrast to many GitHub or
+GitLab managed projects, which typically only expect the head commit
+of the topic branch associated with a PR/MR to pass CI.&lt;/p&gt;
+&lt;p&gt;In Gerrit/Zuul managed projects, it’s also Zuul that merges the
+commit. This is also in contrast to projects that live in GitHub or
+GitLab: in those, the pipeline run results are generally advisory in
+nature, and a successful pipeline run must still be confirmed by a
+human clicking a &lt;em&gt;Merge&lt;/em&gt; button (or running a &lt;code&gt;git merge&lt;/code&gt; command
+locally, and then pushing to the repository). In addition, even a
+failing CI run can generally be overridden by a “core committer” who
+has the ability to merge the PR/MR anyway.&lt;/p&gt;
+&lt;p&gt;A Gerrit/Zuul project typically has no such shortcuts, meaning the
+&lt;em&gt;only&lt;/em&gt; way to get changes into the repo is to pass both peer review,
+and the CI pipeline. In my experience, this tends to create a climate
+of leadership by example, which has a beneficial effect on both
+experienced developers (“seniors” in a corporate setting) and
+newcomers (“juniors”).&lt;/p&gt;
+&lt;h3&gt;Speculative merging&lt;/h3&gt;
+&lt;p&gt;There is one other property that Gerrit/Zuul has that sets it apart
+from other review/CI toolchains: &lt;em&gt;speculative merging.&lt;/em&gt; This involves
+the &lt;a href="https://zuul-ci.org/docs/zuul/3.10.2/user/gating.html#testing-in-parallel"&gt;parallel execution of CI jobs for interdependent
+changes&lt;/a&gt;. With
+speculative merging, even complex, long-running CI/CD pipelines don’t
+hold up the development process — and this massively enhances project
+scalability.&lt;/p&gt;
+&lt;h3&gt;No direct repo browser integration&lt;/h3&gt;
+&lt;p&gt;Notably, in Gerrit/Zuul there is no close integration with repository
+browsing. Gerrit does include the
+&lt;a href="https://gerrit.googlesource.com/gitiles/"&gt;Gitiles&lt;/a&gt; plugin for the
+purpose, but its user experience is rudimentary at best. A popular
+alternative is to deploy Gerrit with &lt;a href="https://gitea.io/en-us/"&gt;Gitea&lt;/a&gt;,
+but again, that’s not built-in and your trusted Gerrit/Zuul admin has
+to set it up for you. In addition, while source code browsing in
+GitHub and GitLab is tightly integrated with project permissions, and
+that is also true for Gitiles, there is a certain amount of
+administrative duplication to make your Gerrit repository and project
+permissions apply to Gitea.&lt;/p&gt;
+&lt;h3&gt;No built-in package registries&lt;/h3&gt;
+&lt;p&gt;There’s another difference in the Gerrit/Zuul stack when compared to
+GitHub and GitLab, and that is its absence of built-in package
+registries. Zuul has ready-to-use &lt;em&gt;jobs&lt;/em&gt; for &lt;a href="https://zuul-ci.org/docs/zuul-jobs/docker-image.html"&gt;pushing to a container
+registry&lt;/a&gt;, or to
+&lt;a href="https://zuul-ci.org/docs/zuul-jobs/python-jobs.html#job-python-upload-pypi"&gt;PyPI&lt;/a&gt;,
+but you do have to either push to upstream public registries, or build
+your own. Zuul does not come bundled with multitenant private
+registries the way GitHub and GitLab do.&lt;/p&gt;
+&lt;h3&gt;Administrative complexity&lt;/h3&gt;
+&lt;p&gt;In view of the above, there's another thing that you might want to
+consider, which in my humble opinion is an important reason why the
+Gerrit/Zuul combination has less uptake than it deserves on its
+technical merits. And this may sound overly dramatic, but: people like
+to be in charge of their own actions, and software developers are
+people. And here’s an issue with Zuul: there are quite a few things a
+developer can do on their own in GitHub Actions or GitLab CI that
+they’d need to ask an admin’s help for in Zuul.&lt;/p&gt;
+&lt;p&gt;Creating a relatively standard workflow of building a private
+container image, pushing it to your own registry, and then rolling out
+that image to a Kubernetes deployment, is something you can do in
+GitHub or GitLab as a project owner. With Zuul, you’ll need an admin
+at least to set up and manage your container registry. Rerunning a
+pipeline, a simple click of a button or API call in GitHub or GitLab,
+is something you trigger via a Gerrit keyword (typically &lt;code&gt;recheck&lt;/code&gt;)
+for Zuul — but only on the pipelines where &lt;a href="https://zuul-ci.org/docs/zuul/3.11.0/admin/drivers/gerrit.html#reference-pipelines-configuration"&gt;your admin has defined
+that
+trigger&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;So, which one’s best?&lt;/h1&gt;
+&lt;p&gt;So you want to know which one of these &lt;em&gt;you&lt;/em&gt; should choose (or
+advocate for)? That’s surprisingly difficult to answer, and greatly
+depends on your priorities. And I’ll give you this from four angles.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;When it comes to &lt;em&gt;scalability&lt;/em&gt; — the ability to adapt to massive
+  organizational sizes, and/or rapid project growth, or an obscenely
+  large number or projects within an organization — the Gerrit/Zuul
+  combination wins hands down &lt;strong&gt;if&lt;/strong&gt; you have a competent, responsive,
+  and dedicated crew to manage it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;When it’s about &lt;em&gt;getting started quickly&lt;/em&gt; — helping a project get
+  off the ground with a good, usable, easily manageable review and
+  fully integrated CI/CD structure — you can’t beat GitLab.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In terms of &lt;em&gt;beneficial effect on your development culture,&lt;/em&gt;
+  Gerrit/Zuul again probably scores best. If you have a team that’s
+  great at reviews and commit and CI and doesn’t cut corners, or you
+  want to build a team like that, Gerrit/Zuul can really help.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;And when it’s about &lt;em&gt;giving developers the lowest barrier to entry&lt;/em&gt;
+  — meaning using tools that they’re most likely already familiar with
+  — GitHub is your platform of choice.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content><category term="blog"></category><category term="Work"></category><category term="CI"></category><category term="Gerrit"></category><category term="GitLab"></category><category term="GitHub"></category><category term="Zuul"></category></entry><entry><title>Universal tox tests (from just about any CI)</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/universal-tox-tests-from-just-about-any-ci/" rel="alternate"></link><published>2021-10-17T00:00:00+00:00</published><updated>2021-10-17T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-17:/resources/hints-and-kinks/universal-tox-tests-from-just-about-any-ci/</id><summary type="html">&lt;p&gt;I like tox. A lot. I use it all the time. This is a quick summary on how to use it in such a way that it becomes a central anchor point that you can use from all your CI systems.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I like &lt;code&gt;tox&lt;/code&gt;. A lot. I use it all the time. This is a quick summary on
+how to use it in such a way that it becomes a central anchor point that
+you can use from all your CI systems.&lt;/p&gt;
+&lt;h2&gt;What’s tox for?&lt;/h2&gt;
+&lt;p&gt;Normally &lt;code&gt;tox&lt;/code&gt; is used to run tests for Python projects, and it’s very
+well suited for that. You can use it with Python libraries, Django
+projects, scripts you use for system automation, whatever. But you can
+use it just the same for code that isn’t a Python application or
+library itself, but a Python application just happens to come in handy
+for testing that code.&lt;/p&gt;
+&lt;p&gt;In this example, I’ll describe a super simple use case: using a
+barebones &lt;code&gt;tox&lt;/code&gt; configuration that lints YAML configurations. Suppose
+you’ve got a Git repo that’s full of YAML files. And you want to make
+sure, for example, that all your
+&lt;a href="https://yamllint.readthedocs.io/en/stable/rules.html#module-yamllint.rules.truthy"&gt;truthy&lt;/a&gt;
+values are &lt;code&gt;true&lt;/code&gt; or &lt;code&gt;false&lt;/code&gt; and never &lt;code&gt;yes&lt;/code&gt;, &lt;code&gt;no&lt;/code&gt;, &lt;code&gt;on&lt;/code&gt; or &lt;code&gt;off&lt;/code&gt;. Or
+that your
+&lt;a href="https://yamllint.readthedocs.io/en/stable/rules.html#module-yamllint.rules.indentation"&gt;indentation&lt;/a&gt;
+is always consistent.&lt;/p&gt;
+&lt;h2&gt;&lt;code&gt;tox.ini&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;There first thing you’ll do is create &lt;code&gt;tox.ini&lt;/code&gt;, the central tox
+configuration file, in the top level directory of your
+repository. Here’s a tiny example:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[tox]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;envlist&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;py{3,36,39}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;skipsdist&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;True&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="k"&gt;[testenv]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;deps&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;yamllint&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;commands&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;yamllint {toxinidir}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;That’s it. What this’ll do, when invoked as simply &lt;code&gt;tox&lt;/code&gt;, is&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;create a Python 3 venv,&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pip&lt;/code&gt;-install the latest version of
+  &lt;a href="https://yamllint.readthedocs.io/en/stable/"&gt;&lt;code&gt;yamllint&lt;/code&gt;&lt;/a&gt;,&lt;/li&gt;
+&lt;li&gt;invoke the &lt;code&gt;yamllint&lt;/code&gt; command, which will recursively check for all
+  &lt;code&gt;.yml&lt;/code&gt;, &lt;code&gt;.yaml&lt;/code&gt;, and &lt;code&gt;.yamllint&lt;/code&gt; files in the directory where the
+  &lt;code&gt;tox.ini&lt;/code&gt; file itself lives.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;What's helpful here is that &lt;code&gt;tox&lt;/code&gt; does a little bit of magic with the
+testenv names. tox
+&lt;a href="https://tox.wiki/en/latest/example/basic.html#a-simple-tox-ini-default-environments"&gt;knows&lt;/a&gt;
+that if you call a testenv &lt;code&gt;py36&lt;/code&gt;, you want to test with Python 3.6
+(more precisely, &lt;a href="https://en.wikipedia.org/wiki/CPython"&gt;CPython&lt;/a&gt;
+3.6). &lt;code&gt;py39&lt;/code&gt;, that's Python 3.9. Just &lt;code&gt;py3&lt;/code&gt; means whatever Python
+version maps to the &lt;code&gt;python3&lt;/code&gt; binary on your system.&lt;sup id="fnref:python-versions"&gt;&lt;a class="footnote-ref" href="#fn:python-versions"&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;/p&gt;
+&lt;h2&gt;Running &lt;code&gt;tox&lt;/code&gt; on every commit&lt;/h2&gt;
+&lt;p&gt;Now the first thing you might want to do is run &lt;code&gt;tox&lt;/code&gt; on every commit,
+and encourage your collaborators to do the same. You can easily do
+that by dropping this tiny shell script&lt;sup id="fnref:shell-script"&gt;&lt;a class="footnote-ref" href="#fn:shell-script"&gt;2&lt;/a&gt;&lt;/sup&gt; into your repo
+as a file named &lt;code&gt;pre-commit&lt;/code&gt; in the &lt;code&gt;.githooks&lt;/code&gt; directory:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/bin/sh&lt;/span&gt;
+
+&lt;span class="nb"&gt;exec&lt;/span&gt; tox -e py3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Add that file to your repository as &lt;code&gt;.githooks/pre-commit&lt;/code&gt;, and make
+it executable. Also, add a little note to your README explaining that,
+to enable the pre-commit hook, all your collaborators can simply run&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git config core.hooksPath .githooks
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Easy, right? And once you’ve run that command, every &lt;code&gt;git commit&lt;/code&gt; will
+kick off a &lt;code&gt;tox&lt;/code&gt; run and you’ll never commit borked YAML again.&lt;sup id="fnref:py3"&gt;&lt;a class="footnote-ref" href="#fn:py3"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;Now of course, using those hooks is entirely optional, and can be
+overridden with &lt;code&gt;--no-verify&lt;/code&gt;. So, for those slackers that can’t be
+bothered to use them, you also want to check centrally. Here’s where
+your CI comes in.&lt;/p&gt;
+&lt;h2&gt;Running &lt;code&gt;tox&lt;/code&gt; on every GitHub PR&lt;/h2&gt;
+&lt;p&gt;If you collaborate via GitHub, you can run &lt;code&gt;tox&lt;/code&gt; on every PR, with a
+simple &lt;a href="https://docs.github.com/en/actions"&gt;GitHub Actions&lt;/a&gt;
+workflow. To use it, you’ll need a small addition to your &lt;code&gt;tox.ini&lt;/code&gt;
+file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[tox]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;envlist: py{3,36,39}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;skipsdist&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;True&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="k"&gt;[gh-actions]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;python&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="na"&gt;3.6: py36&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="na"&gt;3.9: py39&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="k"&gt;[testenv]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;deps&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;yamllint&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;commands&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;yamllint {toxinidir}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And then, you add a workflow to &lt;code&gt;.github/workflows&lt;/code&gt;, say
+&lt;code&gt;.github/workflows/tox.yml&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nn"&gt;---&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Test with tox&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="s"&gt;'on'&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;push&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;pull_request&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nt"&gt;jobs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;build&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;runs-on&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;ubuntu-latest&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;strategy&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;matrix&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;python-version&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;3.6&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;3.9&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;steps&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Checkout&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;uses&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;actions/checkout@v2&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;with&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="nt"&gt;submodules&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;true&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Set up Python ${{ matrix.python-version }}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;uses&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;actions/setup-python@v2&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;with&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="nt"&gt;python-version&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;${{ matrix.python-version }}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Install dependencies&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;run&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p p-Indicator"&gt;|&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="no"&gt;pip install tox tox-gh-actions&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Test with tox&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;run&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;tox&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;So that sets up your workflow so that it tests with two different
+Python versions that you care about, and then runs a test with each of
+them.&lt;/p&gt;
+&lt;p&gt;It does this via a combination of the information contained in the
+&lt;code&gt;[gh-actions]&lt;/code&gt; section of &lt;code&gt;tox.ini&lt;/code&gt;, and the &lt;code&gt;matrix&lt;/code&gt; strategy defined
+in the workflow. The &lt;code&gt;tox-gh-action&lt;/code&gt; plugin then pulls that
+information together and sets up testenvs as needed.&lt;/p&gt;
+&lt;p&gt;And it runs these checks every time you push to a branch (topic branch
+or default branch), and also on every pull request.&lt;/p&gt;
+&lt;h2&gt;Running &lt;code&gt;tox&lt;/code&gt; from GitLab CI&lt;/h2&gt;
+&lt;p&gt;So you’re either using only GitLab and not GitHub, or you’re mirroring
+a GitHub repo to a self-hosted GitLab and want to run your pipelines
+there as well? Easy. Here’s the exact same functionality for your
+&lt;code&gt;.gitlab-ci.yml&lt;/code&gt; file:&lt;sup id="fnref:docker-runners"&gt;&lt;a class="footnote-ref" href="#fn:docker-runners"&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nn"&gt;---&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nt"&gt;py36&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;python:3.6&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;stage&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;build&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;pip install tox&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;tox -e py36&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="nt"&gt;py39&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;python:3.9&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;stage&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;build&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;pip install tox&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;tox -e py39&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In &lt;a href="https://docs.gitlab.com/ee/ci/"&gt;GitLab CI&lt;/a&gt; I know of no elegant
+&lt;code&gt;matrix&lt;/code&gt; syntax to map the image version to the testenv. But on the
+other hand there's a bunch of things that "just happen" in a GitLab CI
+pipeline, which you specifically need to define in a GitHub Actions
+workflow definition. So overall your &lt;code&gt;.gitlab-ci.yml&lt;/code&gt; ends up shorter
+than your GitHub Actions &lt;code&gt;tox.yml&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;Running &lt;code&gt;tox&lt;/code&gt; from Zuul&lt;/h2&gt;
+&lt;p&gt;If you’re running a &lt;code&gt;tox&lt;/code&gt; testenv from &lt;a href="https://zuul-ci.org/"&gt;Zuul&lt;/a&gt;,
+you would use the built-in tox jobs in your pipeline, as referenced in
+&lt;code&gt;.zuul.yaml&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nn"&gt;---&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;project&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;check&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;jobs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;tox-py36&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;tox-py39&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;gate&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;jobs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;tox-py36&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;tox-py39&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Here, the &lt;code&gt;tox-py36&lt;/code&gt; and &lt;code&gt;tox-py39&lt;/code&gt; environments are both derivatives
+of the base
+&lt;a href="https://zuul-ci.org/docs/zuul-jobs/python-jobs.html#job-tox"&gt;tox&lt;/a&gt;
+job, which will run with cPython versions 3.6 and 3.9, and by default
+invoke testenvs called &lt;code&gt;py36&lt;/code&gt; and &lt;code&gt;py39&lt;/code&gt;, respectively.&lt;/p&gt;
+&lt;h2&gt;And now?&lt;/h2&gt;
+&lt;p&gt;Now that all of your Python testing standardizes on tox, you can go to
+town. Add more tests, add more testenvs, more Python versions,
+whatever.&lt;/p&gt;
+&lt;p&gt;You might need to make minimal changes, like add one line for each new
+Python version you want to support, to all your CI definitions. But if
+your project moves from GitHub to GitLab or from GitLab to
+Gerrit/Zuul, or your entire company goes on a great big CI migration,
+then you'll have one less thing to worry about, because your tests
+already run anywhere.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;By the way:&lt;/strong&gt; when you set up your &lt;code&gt;tox.ini&lt;/code&gt; and your CI
+configuration files as shown in this article, then &lt;code&gt;yamllint&lt;/code&gt; &lt;em&gt;will&lt;/em&gt;
+of course also lint your YAML CI configuration files
+themselves. Which comes in handy; I found 4 yamllint warnings and
+one error while testing the examples I’ve given here.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="footnote"&gt;
+&lt;hr/&gt;
+&lt;ol&gt;
+&lt;li id="fn:python-versions"&gt;
+&lt;p&gt;Testing with multiple Python versions may seem
+less than useful when you’re dealing with just one upstream
+package, &lt;code&gt;yamllint&lt;/code&gt;. I use that here as an oversimplified
+example. As soon as you add your own Python scripts or modules to
+the &lt;code&gt;tox&lt;/code&gt; checks, you may very well be interested in multiple
+python versions. &lt;a class="footnote-backref" href="#fnref:python-versions" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:shell-script"&gt;
+&lt;p&gt;If you're being a purist, you could also invoke the
+tox runner from a Python script. I prefer the shell &lt;code&gt;exec&lt;/code&gt;
+one-liner. &lt;a class="footnote-backref" href="#fnref:shell-script" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:py3"&gt;
+&lt;p&gt;In this case, for testing locally, we're not going to care
+about a specific installed Python version. We'll just make sure
+that the commit doesn't obviously break anything. In my humble
+opinion it's OK to catch version-specific issues in CI, but we
+shouldn't feed the CI code that's outright broken. &lt;a class="footnote-backref" href="#fnref:py3" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:docker-runners"&gt;
+&lt;p&gt;This example assumes that you’re either using
+shared GitLab runners using Docker, or a self-hosted runner on
+Kubernetes. &lt;a class="footnote-backref" href="#fnref:docker-runners" title="Jump back to footnote 4 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content><category term="hints-and-kinks"></category><category term="CI"></category><category term="Python"></category><category term="GitLab"></category><category term="GitHub"></category><category term="Zuul"></category></entry><entry><title>The Review Review</title><link href="https://xahteiwi.eu/./talk-submissions/review-review/" rel="alternate"></link><published>2021-10-07T00:00:00+00:00</published><updated>2021-10-07T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-07:/./talk-submissions/review-review/</id><summary type="html">&lt;p&gt;A talk I submitted to DevOpsDays Tel Aviv 2021 and DevConf.CZ 2022&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a talk I submitted&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt; to
+&lt;a href="https://www.devconf.info/cz/"&gt;DevConf.CZ&lt;/a&gt; 2022, which used a
+non-anonymized CfP process via &lt;a href="https://cfp.devconf.info"&gt;Red Hat’s CfP
+website&lt;/a&gt;. For that conference, it was
+selected as the lead talk in the Modern Software Development track.  I
+had previously submitted this talk to DevOpsDays Tel Aviv 2021, which
+used a non-anonymized CfP process via
+&lt;a href="https://www.papercall.io/"&gt;PaperCall&lt;/a&gt;. That submission was rejected.&lt;/p&gt;
+&lt;h2&gt;Title&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;The Review Review: comparing code review, testing, staging and
+deployment across development collaboration platforms&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;Elevator Pitch&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You have 300 characters to sell your talk. This is known as the
+"elevator pitch". Make it as exciting and enticing as possible.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;GitHub, GitLab, Gerrit — what should I choose? What’s the best review
+process, the best CI/CD integration, the best deployment facility?
+Which should I select for my startup, or consider migrating to? Which
+supports good collaboration practices, which bad ones? This talk gives
+the run-down.&lt;/p&gt;
+&lt;h2&gt;Talk Format&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;What format is this talk best suited for?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Talk (~25-40 minutes)&lt;/p&gt;
+&lt;h2&gt;Audience Level&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Who is the best target audience for this talk?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Intermediate&lt;/p&gt;
+&lt;h2&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The description will be seen by reviewers during the CFP process and
+may eventually be seen by the attendees of the event. You should
+make the description of your talk as compelling and exciting as
+possible. Remember, you're selling both the organizers of the events
+to select your talk, as well as trying to convince attendees your
+talk is the one they should see.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In DevOps, the process of collaborative review, testing, staging, and
+deployment to production constitutes a core element of the work we
+do. And we generally strive to make this process as effective,
+efficient, smooth, and transparent as possible. Achieving that partly
+comes from the work culture we shape and inhabit, partly from our
+selection of tools — and of course, work culture and work tools
+permanently and closely influence each other. This goes for both the
+tools that drive review, and the tools that drive CI/CD:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;the &lt;strong&gt;GitHub Pull Request&lt;/strong&gt; process in combination with &lt;strong&gt;GitHub
+  Actions&lt;/strong&gt;;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;the &lt;strong&gt;GitLab Merge Request&lt;/strong&gt; process in combination with &lt;strong&gt;GitLab
+  CI&lt;/strong&gt;;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;the &lt;strong&gt;Gerrit Review&lt;/strong&gt; process in combination with &lt;strong&gt;Zuul&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;None of these is perfect, all of them have their advantages and
+disadvantages under particular circumstances. Some are meant to be
+used principally as a service, some are fine to self-host. Some are
+adamant about enforcing specific deployment practices, some follow a
+more relaxed approach.&lt;/p&gt;
+&lt;p&gt;This talk is a summary of the current state of affairs with all these
+tools, and contains recommendations on what to use under which
+circumstances.&lt;/p&gt;
+&lt;h2&gt;Notes&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Notes will only be seen by reviewers during the CFP process. This is
+where you should explain things such as technical requirements, why
+you're the best person to speak on this subject, etc...&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;My team and I have worked with all tools mentioned in a professional
+capacity, and I believe I've got a very good understanding of the
+relative merits of the systems presented. This does not include a
+hard-and-fast recommendation for one particular tool or platform.&lt;/p&gt;
+&lt;p&gt;This is a talk that's suitable for both in-person and on-line events.&lt;/p&gt;
+&lt;h2&gt;Tags&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Tag your talk to make it easier for event organizers to be able to
+find. Examples are "ruby, javascript, rails".&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;GitHub, GitLab, Gerrit, Zuul, CI/CD, Development, DevOps&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr/&gt;
+&lt;ol&gt;
+&lt;li id="fn:1"&gt;
+&lt;p&gt;If you’re curious why this is here, please read
+&lt;a href="https://xahteiwi.eu/blog/2019/04/23/talk-submissions/"&gt;this&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content><category term="talk-submissions"></category><category term="Conference"></category><category term="GitLab"></category><category term="GitHub"></category><category term="Zuul"></category></entry></feed>

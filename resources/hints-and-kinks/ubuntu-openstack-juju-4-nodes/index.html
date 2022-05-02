@@ -1,0 +1,346 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../../theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/solid.css">
+
+    <link rel="stylesheet" type="text/css" href="../../../css/override.css">
+
+    <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+    <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+  
+
+
+ 
+
+<meta name="author" content="Florian Haas" />
+<meta name="description" content="Juju is Ubuntu&#39;s supported and preferred means of deployment automation for an OpenStack cloud. While in Juju, a deployment unit (a Juju charm) generally expects to fully own the filesystem it is being deployed on, Juju allows you to co-deploy charms on the same physical machines, by way of using …" />
+<meta name="keywords" content="OpenStack, Juju">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="A minimal Ubuntu OpenStack Juju configuration in just four nodes"/>
+  <meta property="og:description" content="Juju is Ubuntu&#39;s supported and preferred means of deployment automation for an OpenStack cloud. While in Juju, a deployment unit (a Juju charm) generally expects to fully own the filesystem it is being deployed on, Juju allows you to co-deploy charms on the same physical machines, by way of using …"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../../resources/hints-and-kinks/ubuntu-openstack-juju-4-nodes/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2015-12-23 00:00:00+00:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../../author/florian-haas.html">
+  <meta property="article:section" content="hints-and-kinks"/>
+  <meta property="article:tag" content="OpenStack"/>
+  <meta property="article:tag" content="Juju"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; A minimal Ubuntu OpenStack Juju configuration in just four nodes</title>
+
+</head>
+<body >
+  <aside>
+    <div>
+      <a href="../../../">
+        <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="../../../"></a>
+      </h1>
+
+
+
+
+      <ul class="social">
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/xahteiwi" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="me" class="sc-mastodon" href="https://mastodon.social/@xahteiwi" target="_blank">
+              <i class="fab fa-mastodon"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/fghaas" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-github" href="https://github.com/fghaas" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="../../../">Home</a>
+
+      <a href="/category/hints-and-kinks.html">Tech</a>
+      <a href="/category/presentations.html">Talks</a>
+      <a href="/category/blog.html">Thoughts</a>
+      <a href="">​</a>
+      <a href="/about/">About</a>
+      <a href="/comments/">Comments</a>
+      <a href="/legal/">Legal</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="">​</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="">​</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="ubuntu-openstack-juju-4-nodes">A minimal Ubuntu OpenStack Juju configuration in just four nodes</h1>
+    <p>
+      Posted on Wed 23 December 2015 in <a href="../../../category/hints-and-kinks.html">hints-and-kinks</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>Juju is Ubuntu's supported and preferred means of deployment
+automation for an OpenStack cloud. While in Juju, a deployment unit (a
+<em>Juju charm</em>) generally expects to fully own the filesystem it is
+being deployed on, Juju allows you to co-deploy charms on the same
+physical machines, by way of using LXC containers.</p>
+<p>Now in general, Juju should allow you to deploy complex service
+<em>bundles</em> in one swoop, however this works best when deploying to the
+bare metal (i.e. without containers). Still, it is perfectly possible
+to automate Juju deployment of an entire OpenStack cloud in just 4
+physical nodes:</p>
+<ul>
+<li>A controller node (running your OpenStack APIs and your dashboard);</li>
+<li>a compute node (running VMs under libvirt/KVM management);</li>
+<li>a network gateway node (providing L3 network connectivity);</li>
+<li>a storage node (providing Cinder volumes via iSCSI and LVM).</li>
+</ul>
+<p>The assumption for the setup below is that you already have a Juju
+infrastructure in place. You may have set this up with MAAS, or you
+may have just bootstrapped a deployment node and then created a Juju
+<code>manual</code> environment and added your 4 nodes via SSH.</p>
+<p>Note that the environment described here should not be used for
+production purposes. However, the same approach is also applicable to
+a 3-node controller HA cluster, 2-node Neutron gateway cluster with
+support for HA routers, and as many converged Ceph/<code>nova-compute</code>
+nodes as you want.</p>
+<h2>Juju configuration</h2>
+<p>Consider the following Juju configuration YAML example, which you
+might put into your home directory as <code>juju-config.yaml</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">keystone</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">openstack-origin</span><span class="p">:</span><span class="w"> </span><span class="s">'cloud:trusty-liberty'</span><span class="w"></span>
+<span class="w">  </span><span class="nt">admin-password</span><span class="p">:</span><span class="w"> </span><span class="s">'my</span><span class="nv"> </span><span class="s">very</span><span class="nv"> </span><span class="s">secret</span><span class="nv"> </span><span class="s">password'</span><span class="w"></span>
+<span class="nt">nova-cloud-controller</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">openstack-origin</span><span class="p">:</span><span class="w"> </span><span class="s">'cloud:trusty-liberty'</span><span class="w"></span>
+<span class="w">  </span><span class="nt">network-manager</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Neutron</span><span class="w"></span>
+<span class="nt">neutron-gateway</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">openstack-origin</span><span class="p">:</span><span class="w"> </span><span class="s">'cloud:trusty-liberty'</span><span class="w"></span>
+<span class="w">  </span><span class="nt">ext-port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eth2</span><span class="w"></span>
+<span class="w">  </span><span class="nt">bridge-mappings</span><span class="p">:</span><span class="w"> </span><span class="s">'external:br-ex'</span><span class="w"></span>
+<span class="w">  </span><span class="nt">os-data-network</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.133.0/24</span><span class="w"></span>
+<span class="w">  </span><span class="nt">instance-mtu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1400</span><span class="w"></span>
+<span class="nt">neutron-api</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">openstack-origin</span><span class="p">:</span><span class="w"> </span><span class="s">'cloud:trusty-liberty'</span><span class="w"></span>
+<span class="w">  </span><span class="nt">network-device-mtu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1400</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Always make sure you enable security groups</span><span class="w"></span>
+<span class="w">  </span><span class="nt">neutron-security-groups</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">  </span><span class="nt">overlay-network-type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vxlan</span><span class="w"></span>
+<span class="nt">rabbitmq-server</span><span class="p">:</span><span class="w"></span>
+<span class="c1"># Cinder is deployed in two parts: one for the API and scheduler</span><span class="w"></span>
+<span class="c1"># (which can live in a container), one for the volume service (which</span><span class="w"></span>
+<span class="c1"># cannot, at least not for the LVM/iSCSI backend)</span><span class="w"></span>
+<span class="nt">cinder-api</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">openstack-origin</span><span class="p">:</span><span class="w"> </span><span class="s">'cloud:trusty-liberty'</span><span class="w"></span>
+<span class="w">  </span><span class="nt">enabled-services</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api,scheduler</span><span class="w"></span>
+<span class="nt">cinder-volume</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">openstack-origin</span><span class="p">:</span><span class="w"> </span><span class="s">'cloud:trusty-liberty'</span><span class="w"></span>
+<span class="w">  </span><span class="nt">enabled-services</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">volume</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Adjust this to match the block device on your volume host</span><span class="w"></span>
+<span class="w">  </span><span class="nt">block-device</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vdb</span><span class="w"></span>
+<span class="nt">glance</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">openstack-origin</span><span class="p">:</span><span class="w"> </span><span class="s">'cloud:trusty-liberty'</span><span class="w"></span>
+<span class="nt">heat</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">openstack-origin</span><span class="p">:</span><span class="w"> </span><span class="s">'cloud:trusty-liberty'</span><span class="w"></span>
+<span class="nt">mysql</span><span class="p">:</span><span class="w"></span>
+<span class="nt">openstack-dashboard</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">openstack-origin</span><span class="p">:</span><span class="w"> </span><span class="s">'cloud:trusty-liberty'</span><span class="w"></span>
+<span class="w">  </span><span class="nt">webroot</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/</span><span class="w"></span>
+<span class="nt">nova-compute</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">openstack-origin</span><span class="p">:</span><span class="w"> </span><span class="s">'cloud:trusty-liberty'</span><span class="w"></span>
+<span class="w">  </span><span class="nt">manage-neutron-plugin-legacy-mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Change to qemu if in a nested cloud environment</span><span class="w"></span>
+<span class="w">  </span><span class="nt">virt-type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kvm</span><span class="w"></span>
+<span class="nt">neutron-openvswitch</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">os-data-network</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.133.0/24</span><span class="w"></span>
+</code></pre></div>
+<h2>Deployment</h2>
+<p>Then, you can run the following shell script to deploy your control
+services to LXC containers on machine 1, <code>nova-compute</code> (and its
+subordinate charm, <code>neutron-openvswitch</code>) to machine 2,
+<code>neutron-gateway</code> to machine 3, and <code>cinder-volume</code> to machine 4.</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash -ex</span>
+
+<span class="nv">CONFIG</span><span class="o">=</span>~/juju-config.yaml
+
+juju deploy --config<span class="o">=</span><span class="nv">$CONFIG</span> mysql --to lxc:1
+juju deploy --config<span class="o">=</span><span class="nv">$CONFIG</span> rabbitmq-server --to lxc:1
+
+sleep 120s
+
+juju deploy --config<span class="o">=</span><span class="nv">$CONFIG</span> keystone --to lxc:1
+juju add-relation keystone:shared-db mysql:shared-db
+
+juju deploy --config<span class="o">=</span><span class="nv">$CONFIG</span> glance --to lxc:1
+juju add-relation glance:identity-service keystone:identity-service
+juju add-relation glance:shared-db mysql:shared-db
+
+juju deploy --config<span class="o">=</span><span class="nv">$CONFIG</span> neutron-api --to lxc:1
+juju add-relation neutron-api:amqp rabbitmq-server:amqp
+juju add-relation neutron-api:identity-service keystone:identity-service
+juju add-relation neutron-api:shared-db mysql:shared-db
+
+juju deploy --config<span class="o">=</span><span class="nv">$CONFIG</span> neutron-gateway --to <span class="m">3</span>
+juju add-relation neutron-gateway:amqp rabbitmq-server:amqp
+juju add-relation neutron-gateway:neutron-plugin-api neutron-api:neutron-plugin-api
+juju add-relation neutron-gateway:shared-db mysql:shared-db
+
+juju deploy --config<span class="o">=</span><span class="nv">$CONFIG</span> nova-cloud-controller --to lxc:1
+juju add-relation nova-cloud-controller:amqp rabbitmq-server:amqp
+juju add-relation nova-cloud-controller:identity-service keystone:identity-service
+juju add-relation nova-cloud-controller:image-service glance:image-service
+juju add-relation nova-cloud-controller:neutron-api neutron-api:neutron-api
+juju add-relation nova-cloud-controller:shared-db mysql:shared-db
+
+juju deploy --config<span class="o">=</span><span class="nv">$CONFIG</span> nova-compute --to <span class="m">2</span>
+juju add-relation nova-compute:amqp rabbitmq-server:amqp
+juju add-relation nova-compute:cloud-compute nova-cloud-controller:cloud-compute
+juju add-relation nova-compute:image-service glance:image-service
+juju add-relation nova-compute:shared-db mysql:shared-db
+
+juju deploy --config<span class="o">=</span><span class="nv">$CONFIG</span> neutron-openvswitch
+juju add-relation neutron-openvswitch:amqp rabbitmq-server:amqp
+juju add-relation neutron-openvswitch:neutron-plugin-api neutron-api:neutron-plugin-api
+juju add-relation neutron-openvswitch:neutron-plugin nova-compute:neutron-plugin 
+juju deploy --config<span class="o">=</span><span class="nv">$CONFIG</span> cinder cinder-api --to lxc:1
+juju add-relation cinder-api:amqp rabbitmq-server:amqp
+juju add-relation cinder-api:cinder-volume-service nova-cloud-controller:cinder-volume-service
+juju add-relation cinder-api:identity-service keystone:identity-service
+juju add-relation cinder-api:image-service glance:image-service
+juju add-relation cinder-api:shared-db mysql:shared-db
+
+juju deploy --config<span class="o">=</span><span class="nv">$CONFIG</span> cinder cinder-volume --to <span class="m">4</span>
+juju add-relation cinder-volume:amqp rabbitmq-server:amqp
+juju add-relation cinder-volume:shared-db mysql:shared-db
+juju add-relation cinder-volume:image-service glance:image-service
+
+juju deploy --config<span class="o">=</span><span class="nv">$CONFIG</span> openstack-dashboard --to <span class="m">1</span>
+juju add-relation openstack-dashboard:identity-service keystone:identity-service
+
+juju deploy --config<span class="o">=</span><span class="nv">$CONFIG</span> heat --to lxc:1
+juju add-relation heat:amqp rabbitmq-server:amqp
+juju add-relation heat:identity-service keystone:identity-service
+juju add-relation heat:shared-db mysql:shared-db
+</code></pre></div>
+<p>And you're done! The whole process should give you an OpenStack cloud
+in about 20-30 minutes.</p>
+<p>By the way, an exceedingly useful command to watch the installation progress of your Juju environment is:</p>
+<div class="highlight"><pre><span></span><code>watch "juju stat --format=tabular"
+</code></pre></div>
+<hr/>
+<p>This article originally appeared on the <code>hastexo.com</code> website (now defunct).</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../tag/openstack.html">OpenStack</a>
+      <a href="../../../tag/juju.html">Juju</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+
+</body>
+</html>

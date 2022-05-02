@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Accessibility</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/accessibility.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2021-12-05T00:00:00+00:00</updated><entry><title>Voice messages</title><link href="https://xahteiwi.eu/blog/2021/12/05/voice-messages/" rel="alternate"></link><published>2021-12-05T00:00:00+00:00</published><updated>2021-12-05T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-12-05:/blog/2021/12/05/voice-messages/</id><summary type="html">&lt;p&gt;Apparently, some people think you should replace professional textual communications with voice messaging. Here’s why I think that that’s a bad idea.&lt;/p&gt;</summary><content type="html">&lt;p&gt;As of late, I've noticed that when people share one of my articles on
+asynchronous communications on Twitter (particularly any from the
+&lt;a href="https://xahteiwi.eu/blog/2021/09/30/getting-out-of-meeting-hell/"&gt;Getting out of Meeting
+Hell&lt;/a&gt; series, or the one on
+&lt;a href="https://xahteiwi.eu/blog/2021/10/27/this-meeting-should-have-been-an-email/"&gt;meetings that should have been an
+email&lt;/a&gt;), there's
+a reply from a brand account that likes to plug/advertise their
+service. That service recommends that synchronous meetings be replaced
+by “asynchronous meetings” based on voice messages.&lt;/p&gt;
+&lt;p&gt;I’d like to point out that I consider that an utterly terrible idea.&lt;/p&gt;
+&lt;p&gt;Let me explain why.&lt;/p&gt;
+&lt;h2&gt;Voice is slow&lt;/h2&gt;
+&lt;p&gt;First, voice messages suffer from the exact same drawback that
+meetings do: they are incredibly slow. Most of us speak at a rate of
+&lt;a href="https://en.wikipedia.org/wiki/Speech_tempo"&gt;approximately 4 syllables per
+second&lt;/a&gt;.&lt;sup id="fnref:speech-tempo"&gt;&lt;a class="footnote-ref" href="#fn:speech-tempo"&gt;1&lt;/a&gt;&lt;/sup&gt; In
+English, that translates to about 120-140 words per minute. That means
+that as a listener, you &lt;em&gt;absorb&lt;/em&gt; the content of a voice message at the
+same rate. You &lt;em&gt;might&lt;/em&gt; make that a little more efficient by increasing
+playback speed, but that’s only feasible to about a 25% speed
+increase, which lands you around 150 words per minute.&lt;/p&gt;
+&lt;p&gt;In contrast, unless you are dyslexic (I’ll get to that in a bit) you
+can &lt;em&gt;read&lt;/em&gt; at 240 words per minute.&lt;/p&gt;
+&lt;p&gt;In other words, conveying a certain amount of information by voice
+takes nearly twice as long as doing the same in writing. And that’s if
+your verbal expression is &lt;em&gt;perfect,&lt;/em&gt; which it never is — any voice
+message will come with its fair share of filler words (“uh”, “um”,
+“y’know”) and incomplete sentences. &lt;/p&gt;
+&lt;p&gt;Add to that the occasional slurred word or phrase, or idioms
+unfamiliar to the recipient of the message. If you come across
+something that’s unclear while reading, it takes you fractions of a
+second to re-read a sentence, and maybe a few seconds to re-read from
+the beginning of a paragraph. But in the listening case, it may take
+you upward of a minute to go back and re-listen to a passage you
+missed or didn’t understand. (Anyone who both reads books and listens
+to audiobooks will relate to this.)&lt;/p&gt;
+&lt;h2&gt;Voice is more difficult to follow and retrieve&lt;/h2&gt;
+&lt;p&gt;Secondly, voice messages are usually much more difficult to understand
+for a recipient listening in their second or third language,
+particularly if the other person is a native speaker using an accent
+that is unfamiliar to them — say, a French person listening to heavily
+Scots-accented English or a pronounced Australian twang. Written
+messages might still have their ambiguities — as an example, the word
+“doubt” meaning “question”, a common substitution in Indian English,
+frequently confuses non-Indian English speakers — but those are &lt;em&gt;far&lt;/em&gt;
+fewer and easier to resolve for a reader.&lt;/p&gt;
+&lt;p&gt;Furthermore, until speech recognition is perfect and automatic
+transcription is thus exquisitely faithful, your voice messages aren’t
+searchable. You could say that they’re practically
+half-off-the-record. Good luck trying to come back to an important bit
+of information that someone conveyed via a voice message that you have
+only a vague recollection of. Or, worse, trying to establish the
+&lt;em&gt;context&lt;/em&gt; in which a decision was made, and having to piece it
+together from multiple voice messages.&lt;/p&gt;
+&lt;h2&gt;Voice doesn’t convey as much nuance as you think&lt;/h2&gt;
+&lt;p&gt;Thirdly, the notion that you ought to be using voice messages to add
+“nuance” when you can’t convey such nuance in your writing strikes me
+as patently ludicrous.&lt;/p&gt;
+&lt;p&gt;When you need to convey emotion or feeling or nuance to a greater
+extent than you would be able to in writing, that is &lt;em&gt;absolutely&lt;/em&gt; a
+situation in which you should meet with a person face-to-face,
+one-on-one, and where that doesn’t permit itself, get on a video
+call. At that point, when a written message won’t cut it, a voice
+message absolutely won’t.&lt;/p&gt;
+&lt;h2&gt;One good use?&lt;/h2&gt;
+&lt;p&gt;Now, there may be one useful use of voice messages that I can think
+of: they may work for people with dyslexia, for whom consuming a lot
+of writing &lt;a href="https://a11yrules.com/podcast/kevin-mar-molinero-talks-about-dyscalculia-and-copy-pasting/"&gt;may cause cognitive
+overload&lt;/a&gt;. In
+that case, voice messages might be a workable alternative. If so, then
+that would make the option to communicate via voice message a very
+valid accessibility consideration. That said, I’ve talked to people
+who are dyslexic and who said that voice messages are not an adequate
+substitute for interactive verbal communication to them — but that’s
+of course highly anecdotal, and shouldn’t dismiss the idea outright.&lt;/p&gt;
+&lt;p&gt;However: even if voice messages are a good thing for people with
+dyslexia, though, I &lt;em&gt;think&lt;/em&gt; that as screen readers continuously
+improve, generating speech from text may a be preferable
+option. That’s because it retains the searchability advantage for
+everyone, and the efficiency advantage for non-dyslexics, while also
+accomodating people with dyslexia. But, I want to re-emphasize that
+that’s just a hunch, and I may well be completely wrong. If you’re
+dyslexic and have thoughts on this, I’d love to hear from you! Please
+find me on &lt;a href="https://twitter.com/xahteiwi"&gt;Twitter&lt;/a&gt; or
+&lt;a href="https://mastodon.social/@xahteiwi"&gt;Mastodon&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr/&gt;
+&lt;ol&gt;
+&lt;li id="fn:speech-tempo"&gt;
+&lt;p&gt;Fun useless fact: the rate of 4 syllables per second
+is practically universal across spoken languages. How many &lt;em&gt;words&lt;/em&gt;
+a native speaker of a particular language speaks in a minute
+depends largely on the average number of syllables per word in
+that language. &lt;a class="footnote-backref" href="#fnref:speech-tempo" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category><category term="Accessibility"></category></entry></feed>

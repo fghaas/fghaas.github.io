@@ -1,0 +1,304 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../theme/font-awesome/css/solid.css">
+
+    <link rel="stylesheet" type="text/css" href="../../css/override.css">
+
+    <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+    <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+  
+
+
+ 
+
+<meta name="author" content="Florian Haas" />
+<meta name="description" content="A talk I submitted to DevOpsDays Tel Aviv, 2021" />
+<meta name="keywords" content="Conference">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="On Contravictions"/>
+  <meta property="og:description" content="A talk I submitted to DevOpsDays Tel Aviv, 2021"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../talk-submissions/devopsdaystlv-2021-contravictions/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2021-10-07 00:00:00+00:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../author/florian-haas.html">
+  <meta property="article:section" content="talk-submissions"/>
+  <meta property="article:tag" content="Conference"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; On Contravictions</title>
+
+</head>
+<body >
+  <aside>
+    <div>
+      <a href="../../">
+        <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="../../"></a>
+      </h1>
+
+
+
+
+      <ul class="social">
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/xahteiwi" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="me" class="sc-mastodon" href="https://mastodon.social/@xahteiwi" target="_blank">
+              <i class="fab fa-mastodon"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/fghaas" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-github" href="https://github.com/fghaas" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="../../">Home</a>
+
+      <a href="/category/hints-and-kinks.html">Tech</a>
+      <a href="/category/presentations.html">Talks</a>
+      <a href="/category/blog.html">Thoughts</a>
+      <a href="">​</a>
+      <a href="/about/">About</a>
+      <a href="/comments/">Comments</a>
+      <a href="/legal/">Legal</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="">​</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="">​</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="devopsdaystlv-2021-contravictions">On Contravictions</h1>
+    <p>
+      Posted on Thu 07 October 2021 in <a href="../../category/talk-submissions.html">talk-submissions</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>This is a talk I submitted<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> to DevOpsDays Tel Aviv 2021, which used
+a non-anonymized CfP process via
+<a href="https://www.papercall.io/">PaperCall</a>. This submission was rejected.</p>
+<h2>Title</h2>
+<p><em>On Contravictions</em></p>
+<h2>Elevator Pitch</h2>
+<blockquote>
+<p>You have 300 characters to sell your talk. This is known as the
+"elevator pitch". Make it as exciting and enticing as possible.</p>
+</blockquote>
+<p>A contraviction is when a person firmly believes that two objectively
+mutually exclusive standpoints are simultaneously true. Being
+contravinced makes you extremely vulnerable to manipulation. Here’s
+how to spot a contraviction, and what to do about them.</p>
+<h2>Talk Format</h2>
+<blockquote>
+<p>What format is this talk best suited for?</p>
+</blockquote>
+<p>Talk (~25-40 minutes)</p>
+<h2>Audience Level</h2>
+<blockquote>
+<p>Who is the best target audience for this talk?</p>
+</blockquote>
+<p>All</p>
+<h2>Description</h2>
+<blockquote>
+<p>The description will be seen by reviewers during the CFP process and
+may eventually be seen by the attendees of the event. You should
+make the description of your talk as compelling and exciting as
+possible. Remember, you're selling both the organizers of the events
+to select your talk, as well as trying to convince attendees your
+talk is the one they should see.</p>
+</blockquote>
+<p>"Contraviction" is a term I use for when a person is firmly convinced
+of two sides of an obvious contradiction. This may sound like it would
+be an unusual and rare occasion, and yet, once you start looking, they
+are all over the place. A few examples:</p>
+<ul>
+<li>
+<p>At the core of <strong>Nazi ideology</strong> in Germany in the 1920s and 30s was
+  the notion that Jews are engaged in a <em>successful</em> global conspiracy
+  to subjugate all nations including the German nation, and that Jews
+  were also, <em>simultaneously,</em> socially, intellectually, economically,
+  and morally inferior to Germans.</p>
+</li>
+<li>
+<p>At the core of <strong>religious extremism</strong> is the belief that God is
+  all-forgiving and merciful, and also that as long as a portion of
+  humanity ("infidels") displeases God, <em>all</em> of humanity must suffer
+  God's wrath. We see this in contemporary Islamic extremism, but
+  Catholicism in the 16th century did no better in the conquest of
+  Latin America, nor did Western Christianity do much differently
+  during the medieval crusades.</p>
+</li>
+<li>
+<p>At the core of <strong>Trumpism</strong> is the notion that the United States of
+  America is the greatest nation on Earth and that there is no better
+  nation nor will there ever be, but also that America has been ruined
+  by "the liberals" and has slipped into inferiority, so that it is
+  necessary to "make America great again."</p>
+</li>
+</ul>
+<p>In all these examples, both statements can logically be false, or one
+of them <em>could</em> theoretically be true — but if one is true, the other
+one <em>must</em> be false. And yet, people (<em>millions</em> of people!) hold or
+held both of these statements to be true, simultaneously.</p>
+<p>But being contravinced puts people in a very vulnerable position: if
+someone gets you to believe both sides of a contradiction, they can
+<em>logically</em> argue <em>anything</em> to follow from either one side, or the
+opposite. Which means they can convince you of anything. And that
+never ends well.</p>
+<p>This talk defines contravictions, highlights examples (even devopsy
+ones!) and provides suggestions on how to uncover and dismantle
+them. Because contravictions have the potential to poison and destroy
+discourse, and that’s a cultural issue we all need to deal with —
+among friends, family, and coworkers.</p>
+<h2>Notes</h2>
+<blockquote>
+<p>Notes will only be seen by reviewers during the CFP process. This is
+where you should explain things such as technical requirements, why
+you're the best person to speak on this subject, etc...</p>
+</blockquote>
+<p>Given the fact that the nature of this topic is sensitive and
+emotional — yes I, an Austrian, will be talking about Nazi ideology,
+in Israel, consider me terrified — I'll need to submit this on the
+condition that I'd only want to deliver this talk <em>in person.</em> If that
+does not permit itself on account of the Covid-19 situation or of
+travel restrictions, and I would have to rely on a streamed talk and
+have no way of reading the room or scanning the audience for body
+language feedback (some more details on this topic
+<a href="../../blog/2021/08/24/online-conferences-audience-feedback/">here</a>),
+then I'd rather not give the talk at all, rather than stream it.</p>
+<p>If this disqualifies the talk (or if you just consider it too
+controversial to begin with), no hard feelings at all.</p>
+<h2>Tags</h2>
+<blockquote>
+<p>Tag your talk to make it easier for event organizers to be able to
+find. Examples are "ruby, javascript, rails".</p>
+</blockquote>
+<p>Culture, Communications</p>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>If you’re curious why this is here, please read
+<a href="../../blog/2019/04/23/talk-submissions/">this</a>. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../../tag/conference.html">Conference</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+
+</body>
+</html>

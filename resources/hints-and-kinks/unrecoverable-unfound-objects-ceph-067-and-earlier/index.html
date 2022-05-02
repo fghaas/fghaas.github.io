@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../../theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/solid.css">
+
+    <link rel="stylesheet" type="text/css" href="../../../css/override.css">
+
+    <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+    <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+  
+
+
+ 
+
+<meta name="author" content="Florian Haas" />
+<meta name="description" content="As Ceph author Sage Weil points out frequently, distributed storage solutions for all their goodness have a &#34;dirty little secret&#34;: No matter just how redundant and reliable they are by design, a bug in the storage software itself can be a real issue. And occasionally, the bug doesn&#39;t have to …" />
+<meta name="keywords" content="Ceph">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="Unrecoverable unfound objects in Ceph 0.67 and earlier"/>
+  <meta property="og:description" content="As Ceph author Sage Weil points out frequently, distributed storage solutions for all their goodness have a &#34;dirty little secret&#34;: No matter just how redundant and reliable they are by design, a bug in the storage software itself can be a real issue. And occasionally, the bug doesn&#39;t have to …"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../../resources/hints-and-kinks/unrecoverable-unfound-objects-ceph-067-and-earlier/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2014-01-28 18:52:02+01:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../../author/florian-haas.html">
+  <meta property="article:section" content="hints-and-kinks"/>
+  <meta property="article:tag" content="Ceph"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; Unrecoverable unfound objects in Ceph 0.67 and earlier</title>
+
+</head>
+<body >
+  <aside>
+    <div>
+      <a href="../../../">
+        <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="../../../"></a>
+      </h1>
+
+
+
+
+      <ul class="social">
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/xahteiwi" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="me" class="sc-mastodon" href="https://mastodon.social/@xahteiwi" target="_blank">
+              <i class="fab fa-mastodon"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/fghaas" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-github" href="https://github.com/fghaas" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="../../../">Home</a>
+
+      <a href="/category/hints-and-kinks.html">Tech</a>
+      <a href="/category/presentations.html">Talks</a>
+      <a href="/category/blog.html">Thoughts</a>
+      <a href="">​</a>
+      <a href="/about/">About</a>
+      <a href="/comments/">Comments</a>
+      <a href="/legal/">Legal</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="">​</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="">​</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="unrecoverable-unfound-objects-ceph-067-and-earlier">Unrecoverable unfound objects in Ceph 0.67 and earlier</h1>
+    <p>
+      Posted on Tue 28 January 2014 in <a href="../../../category/hints-and-kinks.html">hints-and-kinks</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>As <a href="http://ceph.com/">Ceph</a> author <a href="https://twitter.com/Liewegas">Sage
+Weil</a> points out frequently, distributed
+storage solutions for all their goodness <a href="http://youtu.be/JfRqpdgoiRQ?t=36m20s">have a "dirty little
+secret"</a>: No matter just how
+redundant and reliable they are by design, a bug in the storage
+software itself can be a real issue.</p>
+<p>And occasionally, the bug doesn't have to be in the storage software
+itself.</p>
+<p>Every self-respecting Linux file system supports <a href="http://en.wikipedia.org/wiki/Extended_file_attributes">extended file
+attributes
+("xattrs")</a>,
+and XFS (commonly used with Ceph OSDs) is no exception. When OSDs
+store RADOS objects in the OSD filestore, they make heavy use of
+key-value pairs. To do so, they can employ two approaches:</p>
+<ul>
+<li>storing key-value pairs in filesystem xattrs directly (inline
+  xattrs);</li>
+<li>storing them in a separate key-value store known as an object map or
+  omap (based on <a href="https://github.com/google/leveldb">Google LevelDB</a>.</li>
+</ul>
+<p>RADOS generally expects that the maximum xattr size on a file is
+practically unlimited, so if your filestore is on a filesystem where
+that is <em>not</em> the case (such as ext4), you would generally use omaps.</p>
+<p>Enabling the use of omaps is easy enough. This goes in your ceph.conf:</p>
+<div class="highlight"><pre><span></span><code><span class="k">[osd]</span><span class="w"></span>
+<span class="na">filestore xattr use omap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span><span class="w"></span>
+</code></pre></div>
+<p>Ceph releases since 0.66 will
+<a href="https://github.com/ceph/ceph/commit/6d90dad45e089447562e9a01fd9ca0f7a2aaf2b1">enable this automatically</a>
+if the filestore is determined to be running on ext4. But for the XFS
+and BTRFS filesystem, the general recommendation (and default
+behavior) remained to just use inline xattrs. This is also true for
+the stable Ceph "Dumpling" release (0.67).</p>
+<p>Since Ceph 0.70, the configuration option
+<a href="https://github.com/ceph/ceph/commit/dc0dfb9e01d593afdd430ca776cf4da2c2240a20">has been dropped</a>
+and Ceph since always behaves as if <code>filestore xattr use omap</code> was set
+to <code>true</code>. Now there is a reason for that, and it is a bit trickier
+than you might expect.</p>
+<p>When manipulating extended attributes, applications (including
+ceph-osd) make use of the
+<a href="http://man7.org/linux/man-pages/man2/fgetxattr.2.html"><code>getxattr()</code>, <code>setxattr()</code>, and <code>listxattr()</code> syscalls</a>. Expectedly,
+these syscalls retrieve, set, and enumerate extended attributes set on
+a file.</p>
+<p>Now it is actually possible to set so many keys, or so large values,
+that while <code>getxattr()</code> and <code>setxattr()</code> executed on a specific file
+continue to work just fine, <code>listxattr()</code> returns with <code>-E2BIG</code>. Now
+it turns out that</p>
+<ul>
+<li>
+<p>radosgw can actually set attribute lists that large, and</p>
+</li>
+<li>
+<p>ceph-osd will fail if it cannot determine the file attributes for a
+  file under its control.</p>
+</li>
+</ul>
+<p>When this happens, the object shows as <code>unfound</code> in <code>ceph health
+detail</code>, and sadly, the documented operation to recover unfound
+objects fails. The affected Placement Group (PG) also remains stuck,
+again being reported as such in ceph health detail.</p>
+<p>If you actually have run into this problem, you should really call
+Inktank for support. (You can also give us a call, of course, and
+we'll be happy to help you confirm the problem. But we will refer you
+to Inktank for the actual fix -- we don't fiddle and mess around with
+RADOS object internals, and neither should you.)</p>
+<h2>How to avoid this in the first place?</h2>
+<p>If you're on Ceph 0.70 or later, congratulations. You should be safe,
+as omaps are enabled and anything that would overflow your xattrs
+instead gets stored in an omap.</p>
+<p>If you're on any earlier version, including the currently
+stable 0.67.x "Dumpling" series, enable filestore xattr use omap. Do
+it now, regardless of what filesystem your OSDs run on. Then restart
+your OSDs one by one; your existing xattrs won't get lost.</p>
+<hr/>
+<p>This article originally appeared on the <code>hastexo.com</code> website (now defunct).</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../tag/ceph.html">Ceph</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - libvirt</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/libvirt.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2019-08-21T00:00:00+00:00</updated><entry><title>Using ftrace to trace function calls from qemu-guest-agent</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/ftrace-qemu-ga/" rel="alternate"></link><published>2019-08-21T00:00:00+00:00</published><updated>2019-08-21T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-08-21:/resources/hints-and-kinks/ftrace-qemu-ga/</id><summary type="html">&lt;p&gt;When you are using functionality that is buried deep in the Linux
+kernel, &lt;a href="https://en.wikipedia.org/wiki/Ftrace"&gt;&lt;code&gt;ftrace&lt;/code&gt;&lt;/a&gt; can be
+extremely useful. Here are some suggestions on how to use it, using
+the example of tracing function calls from &lt;code&gt;qemu-guest-agent&lt;/code&gt;.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;h2&gt;What’s this about?&lt;/h2&gt;
+&lt;p&gt;Recently I used, for the first time,
+&lt;strong&gt;&lt;a href="https://libvirt.org/"&gt;libvirt&lt;/a&gt;’s functionality …&lt;/strong&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;When you are using functionality that is buried deep in the Linux
+kernel, &lt;a href="https://en.wikipedia.org/wiki/Ftrace"&gt;&lt;code&gt;ftrace&lt;/code&gt;&lt;/a&gt; can be
+extremely useful. Here are some suggestions on how to use it, using
+the example of tracing function calls from &lt;code&gt;qemu-guest-agent&lt;/code&gt;.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;h2&gt;What’s this about?&lt;/h2&gt;
+&lt;p&gt;Recently I used, for the first time,
+&lt;strong&gt;&lt;a href="https://libvirt.org/"&gt;libvirt&lt;/a&gt;’s functionality to indicate to a
+virtual guest that it is about to have a point-in-time copy of its
+disks — a &lt;em&gt;snapshot&lt;/em&gt; — taken.&lt;/strong&gt; In doing so, it can tell the virtual
+machine (VM) to freeze I/O on all its mounted filesystems. &lt;/p&gt;
+&lt;p&gt;The rationale behind this is, I hope, obvious: you want the VM to
+momentarily stop I/O to its virtual disks, so that you can take a
+snapshot when no I/O is in-flight, and the snapshot image can thus be
+expected to be internally consistent. The snapshot itself will only
+take a second or so, and the minor interruption is a small price to
+pay for the added consistency guarantee you get.&lt;/p&gt;
+&lt;p&gt;You might be wondering how this works and it is, indeed, a bit
+involved.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;First, you’ll need a &lt;strong&gt;virtual serial console&lt;/strong&gt; that allows the
+  hypervisor (in the host) to communicate with the guest. This will be
+  defined &lt;a href="https://wiki.libvirt.org/page/Qemu_guest_agent#Setting_QEMU_GA_up"&gt;in your libvirt domain
+  XML&lt;/a&gt;,
+  and in &lt;a href="https://docs.openstack.org/nova/latest/"&gt;OpenStack Nova&lt;/a&gt;,
+  this automatically pops up if you are booting your instance off an
+  image &lt;a href="https://docs.openstack.org/nova/rocky/admin/configuration/hypervisor-kvm.html#guest-agent-support"&gt;which has the &lt;code&gt;hw_qemu_guest_agent=yes&lt;/code&gt; property
+  set&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Then, you’ll need a &lt;strong&gt;daemon&lt;/strong&gt; within the guest that listens for
+  commands received over the serial port. This daemon is called
+  &lt;code&gt;qemu-guest-agent&lt;/code&gt;, or &lt;code&gt;qemu-ga&lt;/code&gt; for short. All you’ll need for it
+  to run is to install the package of that name, which you can do in
+  various ways (&lt;code&gt;apt-get install qemu-guest-agent&lt;/code&gt; being the simplest,
+  on Ubuntu guests).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;One of the many commands that said daemon supports is
+  &lt;a href="https://git.qemu.org/?p=qemu.git;a=blob;f=qga/commands-posix.c;h=dfc05f5b8ab958ef43aca36258e151ee2525ebf5;hb=33f18cf7dca7741d3647d514040904ce83edd73d#l2746"&gt;&lt;code&gt;guest-fsfreeze-freeze&lt;/code&gt;&lt;/a&gt;. When
+  it receives that command over the virtual serial link, the daemon
+  will &lt;a href="https://git.qemu.org/?p=qemu.git;a=blob;f=qga/commands-posix.c;h=dfc05f5b8ab958ef43aca36258e151ee2525ebf5;hb=33f18cf7dca7741d3647d514040904ce83edd73d#l1295"&gt;loop over your mounted
+  filesystems&lt;/a&gt;,
+  and issue the &lt;a href="https://elixir.bootlin.com/linux/v5.2/source/fs/ioctl.c#L668"&gt;&lt;strong&gt;&lt;code&gt;FIFREEZE&lt;/code&gt;
+  ioctl&lt;/strong&gt;&lt;/a&gt;
+  on all of them. This happens in reverse order, meaning your root
+  (&lt;code&gt;/&lt;/code&gt;) filesystem is frozen last.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;That ioctl then calls the &lt;a href="https://elixir.bootlin.com/linux/v5.2/source/fs/super.c#L1694"&gt;&lt;strong&gt;&lt;code&gt;freeze_super()&lt;/code&gt; kernel
+  function&lt;/strong&gt;&lt;/a&gt;,
+  which flushes each filesystem’s superblock, blocks (“freezes”) all
+  new I/O to the filesystem, and syncs (flushes) all I/O that is
+  currently in flight on that filesystem.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The combined net effect of all of the above is that you get a virtual
+machine that is temporarily read-only, with pending I/O piling up,
+until you are done taking your snapshot. When that happens, there are
+a few more actions that happen:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The hypervisor sends the &lt;code&gt;guest-fsfreeze-thaw&lt;/code&gt; command over the
+  virtual serial link.  Now, the daemon will &lt;a href="https://git.qemu.org/?p=qemu.git;a=blob;f=qga/commands-posix.c;h=dfc05f5b8ab958ef43aca36258e151ee2525ebf5;hb=33f18cf7dca7741d3647d514040904ce83edd73d#l1374"&gt;loop over all your
+  mounted filesystems
+  again&lt;/a&gt;,
+  and issue the &lt;a href="https://elixir.bootlin.com/linux/v5.2/source/fs/ioctl.c#L672"&gt;&lt;strong&gt;&lt;code&gt;FITHAW&lt;/code&gt;
+  ioctl&lt;/strong&gt;&lt;/a&gt;
+  on them. This time, it is taking the mounts in forward order,
+  thawing the root filesystem first.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;That ioctl then calls the &lt;a href="https://elixir.bootlin.com/linux/v5.2/source/fs/super.c#L1798"&gt;&lt;strong&gt;&lt;code&gt;thaw_super()&lt;/code&gt; kernel
+  function&lt;/strong&gt;&lt;/a&gt;,
+  which unblocks (“thaws”) all new I/O to the filesystem, and allows
+  the VM to continue normal operations.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now there’s a bit of an issue with that. All of the aforementioned
+kernel functions only write &lt;code&gt;printk&lt;/code&gt;’s &lt;a href="https://elixir.bootlin.com/linux/v5.2/source/fs/super.c#L1737"&gt;on
+error&lt;/a&gt;,
+but they don’t tell you when they succeed. So you can try a snapshot,
+then type &lt;code&gt;dmesg&lt;/code&gt; in the guest, and you’ll have no way of telling
+whether the whole freeze/thaw dance succeeded, or was never even
+attempted.&lt;/p&gt;
+&lt;p&gt;But fear not, there’s a way that you can trace exactly what the kernel
+is doing!&lt;/p&gt;
+&lt;h2&gt;tracefs, and configuring &lt;code&gt;ftrace&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;If your guest runs any modern kernel, then chances are that it will,
+by default, mount a virtual &lt;strong&gt;tracefs filesystem&lt;/strong&gt; to the
+&lt;code&gt;/sys/kernel/debug/tracing&lt;/code&gt; mount point (although as of kernel 4.1,
+this is nominally an alias, with &lt;code&gt;/sys/kernel/tracing&lt;/code&gt; being the
+canonical mount point). Regardless of its path, tracefs exposes &lt;a href="https://www.kernel.org/doc/Documentation/trace/ftrace.txt"&gt;the
+kernel’s &lt;code&gt;ftrace&lt;/code&gt;
+functionality&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;So the first thing you’ll tell ftrace, in your guest VM, is the
+process for which you’ll want to do function tracing. In our case,
+that’s your guest’s &lt;code&gt;qemu-ga&lt;/code&gt;. So, you can do:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pidof qemu-ga &amp;gt; /sys/kernel/debug/tracing/set_ftrace_pid
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then, you’ll want to instruct &lt;code&gt;ftrace&lt;/code&gt; to trace kernel function calls:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"function"&lt;/span&gt; &amp;gt; /sys/kernel/debug/tracing/current_tracer
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And, you’ll want to make sure that we don’t trace only function calls
+from &lt;code&gt;qemu-ga&lt;/code&gt; itself, but also from its child processes:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"function-fork"&lt;/span&gt; &amp;gt; /sys/kernel/debug/tracing/trace_options
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Let’s see what’s happening!&lt;/h2&gt;
+&lt;p&gt;Now you have a guest that’s properly instrumented for tracing kernel
+function calls that originate with &lt;code&gt;qemu-ga&lt;/code&gt;. So now, go ahead and
+take a snapshot. On OpenStack Nova, you’d do that with:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;openstack server image create --name &amp;lt;image-name&amp;gt; &amp;lt;instance-name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then, shell back into your guest, and interrogate your trace for
+&lt;code&gt;ioctl&lt;/code&gt; calls:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;grep -E &lt;span class="s1"&gt;'(freeze|thaw)_super.*ioctl'&lt;/span&gt; /sys/kernel/debug/tracing/trace
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And voilà:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;         &lt;span class="n"&gt;qemu&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ga&lt;/span&gt;&lt;span class="m"&gt;-14574&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;001&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="n"&gt;....&lt;/span&gt;   &lt;span class="m"&gt;264.059109&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;freeze_super&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt;&lt;span class="n"&gt;do_vfs_ioctl&lt;/span&gt;
+         &lt;span class="n"&gt;qemu&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ga&lt;/span&gt;&lt;span class="m"&gt;-14574&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;001&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="n"&gt;....&lt;/span&gt;   &lt;span class="m"&gt;265.837955&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;thaw_super&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt;&lt;span class="n"&gt;do_vfs_ioctl&lt;/span&gt;
+         &lt;span class="n"&gt;qemu&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ga&lt;/span&gt;&lt;span class="m"&gt;-14574&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;001&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="n"&gt;....&lt;/span&gt;   &lt;span class="m"&gt;265.855048&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;thaw_super&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt;&lt;span class="n"&gt;do_vfs_ioctl&lt;/span&gt;
+         &lt;span class="n"&gt;qemu&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ga&lt;/span&gt;&lt;span class="m"&gt;-14574&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;001&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="n"&gt;....&lt;/span&gt;   &lt;span class="m"&gt;265.855084&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;thaw_super&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt;&lt;span class="n"&gt;do_vfs_ioctl&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;So that’s the &lt;code&gt;FIFREEZE&lt;/code&gt; ioctl that maps to &lt;code&gt;freeze_super()&lt;/code&gt;, and the
+&lt;code&gt;FITHAW&lt;/code&gt; ioctl that maps to &lt;code&gt;thaw_super()&lt;/code&gt;. And that’s how you know that
+your guest is freezing and thawing I/O as you expect it to!&lt;/p&gt;
+&lt;h2&gt;Where to go from here&lt;/h2&gt;
+&lt;p&gt;Feel free to dig further into your &lt;code&gt;trace&lt;/code&gt; file (&lt;code&gt;cat&lt;/code&gt; or &lt;code&gt;less&lt;/code&gt; will
+help), and play with other &lt;code&gt;ftrace&lt;/code&gt; options. There’s a massive amount
+of things you can do with it, as &lt;a href="https://www.kernel.org/doc/Documentation/trace/ftrace.txt"&gt;the
+documentation&lt;/a&gt;
+explains. You’ll probably also find &lt;a href="https://jvns.ca/blog/2017/03/19/getting-started-with-ftrace/"&gt;this blog
+post&lt;/a&gt;
+from &lt;a href="https://twitter.com/b0rk"&gt;Julia Evans&lt;/a&gt; useful for exploring
+&lt;code&gt;ftrace&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Also, thank &lt;a href="https://twitter.com/srostedt"&gt;Steven Rostedt&lt;/a&gt; when you
+see him! He is the primary author of the ftrace framework.&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="libvirt"></category><category term="Linux"></category><category term="ftrace"></category><category term="Qemu"></category></entry><entry><title>Migrating virtual machines from block-based storage to RADOS/Ceph</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/migrating-virtual-machines-block-based-storage-radosceph/" rel="alternate"></link><published>2012-10-22T15:31:23+01:00</published><updated>2012-10-22T15:31:23+01:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-10-22:/resources/hints-and-kinks/migrating-virtual-machines-block-based-storage-radosceph/</id><summary type="html">&lt;p&gt;Ceph allows you to replace existing SAN storage (or SAN drop-in
+substitutes) with a flexible storage solution with real scale-out
+capabilities. Here is how you migrate existing virtual machines
+managed by libvirt from block-based storage to a Ceph based storage
+solution.&lt;/p&gt;
+&lt;h2&gt;Prerequisites&lt;/h2&gt;
+&lt;p&gt;What you'll need in order to successfully manage …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ceph allows you to replace existing SAN storage (or SAN drop-in
+substitutes) with a flexible storage solution with real scale-out
+capabilities. Here is how you migrate existing virtual machines
+managed by libvirt from block-based storage to a Ceph based storage
+solution.&lt;/p&gt;
+&lt;h2&gt;Prerequisites&lt;/h2&gt;
+&lt;p&gt;What you'll need in order to successfully manage the migration from
+block-based storage to a working Ceph cluster is this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A working Ceph cluster. You probably guessed this one. More
+  specifically, you should have&lt;/li&gt;
+&lt;li&gt;access to the client.admin key of your RADOS
+    installation. Usually, the key will be stored in /etc/ceph/keyring
+    on nodes running RADOS.&lt;/li&gt;
+&lt;li&gt;a RADOS pool in which you can create RBD images. You can either
+    use the standard rbd pool or create your own pool. We'll use the
+    libvirt pool throughout the following example.&lt;/li&gt;
+&lt;li&gt;a set of credentials for a client to connect to the cluster and
+    create and use RBD devices. If you use a libvirt version &amp;lt; 0.9.7,
+    you will have to use the default client.admin credentials for this
+    purpose. If you run libvirt 0.9.7 or later, you should use a
+    separate set of credentials (i.e. create a user called
+    e.g. client.rbd and use that one). That user should have at least
+    the allow r permission on your mons, and allow rw on your osds
+    (the latter you can restrict to the rbd pool used if you wish).&lt;/li&gt;
+&lt;li&gt;qemu in version 0.14 or higher&lt;/li&gt;
+&lt;li&gt;libvirt in version 0.8.7 or higher (0.9.7 or higher if you want to
+  use a separate user for this)&lt;/li&gt;
+&lt;li&gt;Ceph 0.48 ("argonaut") or higher&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Getting Started&lt;/h2&gt;
+&lt;p&gt;When migrating a VM from block-based storage to a Ceph cluster, you
+unfortunately can't avoid a period of downtime (after all, you won't
+be able to reliably copy a filesystem from place A to B while it's
+still changing on the go). So the first thing to do is shut down a
+currently running virtual machine, like we will do with the
+ubuntu-amd64-alice VM in this example:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;virsh shutdown ubuntu-amd64-alice
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then you need to create an RBD image within that pool. Suppose you
+would like to create one that is 100GB in size (recall, all RBD images
+are thin-provisioned, so it won't actually use 100GB in the Ceph
+cluster right from the start).&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;qemu-img create -f rbd rbd:libvirt/ubuntu-amd64-alice 100G
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This means you are connecting to the Ceph mon servers (defined in the
+default configuration file, /etc/ceph/ceph.conf) using the
+client.admin identity, whose authentication key should be stored in
+/etc/ceph/keyring. The nominal image size is 102400MB, it's part of
+the libvirt pool and its name is a hardly creative ubuntu-amd64-alice.&lt;/p&gt;
+&lt;p&gt;You can run this command from any node inside or outside your Ceph
+cluster, as long as the configuration file and authentication
+credentials are stored in the appropriate location. The next step,
+however, is one that you must complete on the node where you can
+currently access your block-based storage. This could either be the
+machine that you have your VM's device currently connected to via
+iSCSI or - if you are using a SAN drop-in replacement based on DRBD -
+the machine that currently has the VM's DRBD resource in Primary mode.&lt;/p&gt;
+&lt;p&gt;If you are unsure what your VM's block device is, take a look at the
+VM's configuration with&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;virsh dumpxml ubuntu-amd64-alice
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;to find out the actual device name (look out for paragraphs including
+a &lt;disk&gt; statement). In our case, the actual device is
+/dev/drbd/by-res/vm-ubuntu-amd64-alice. Now let's go ahead and do the
+actual conversion. Please note: For the following command to work, you
+need a properly populated /etc/ceph directory because that is where
+qemu-img gets its information from. This is the command that initiates
+the conversion:&lt;/disk&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;qemu-img convert -f raw -O rbd \
+  /dev/drbd/by-res/vm-ubuntu-amd64-alice \
+  rbd:libvirt/ubuntu-amd64-alice
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Once the qemu-img command has completed, the actual conversion of your
+data is already done. That was easy, wasn't it? The final step is to
+change your libvirt VM configuration file to reflect the changes.&lt;/p&gt;
+&lt;h2&gt;Adapting the VM's libvirt configuration (libvirt &amp;lt; 0.9.7)&lt;/h2&gt;
+&lt;p&gt;If we want our VM to run on top of a Ceph object store, we need to
+tell libvirt how to start the VM appropriately. Luckily, current
+versions of libvirt support Ceph-based RBD backing devices out of the
+box. Please note: All following steps assume that you have your
+/etc/ceph set up properly. This means that a working ceph.conf and a
+keyring file containing the authentication key for client.admin is
+present.&lt;/p&gt;
+&lt;p&gt;Open up your VM's configuration for editing with&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;virsh edit ubuntu-amd64-alice
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;and scroll down to the VM's disk definition. In our example, that part of the configuration looks like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;&amp;lt;disk&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;'block'&lt;/span&gt; &lt;span class="na"&gt;device=&lt;/span&gt;&lt;span class="s"&gt;'disk'&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;driver&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;'qemu'&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;'raw'&lt;/span&gt; &lt;span class="na"&gt;cache=&lt;/span&gt;&lt;span class="s"&gt;'none'&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;source&lt;/span&gt; &lt;span class="na"&gt;dev=&lt;/span&gt;&lt;span class="s"&gt;'/dev/drbd/by-res/vm-ubuntu-amd64-alice'&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;target&lt;/span&gt; &lt;span class="na"&gt;dev=&lt;/span&gt;&lt;span class="s"&gt;'vda'&lt;/span&gt; &lt;span class="na"&gt;bus=&lt;/span&gt;&lt;span class="s"&gt;'virtio'&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;address&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;'pci'&lt;/span&gt; &lt;span class="na"&gt;domain=&lt;/span&gt;&lt;span class="s"&gt;'0x0000'&lt;/span&gt; &lt;span class="na"&gt;bus=&lt;/span&gt;&lt;span class="s"&gt;'0x00'&lt;/span&gt; &lt;span class="na"&gt;slot=&lt;/span&gt;&lt;span class="s"&gt;'0x05'&lt;/span&gt; &lt;span class="na"&gt;function=&lt;/span&gt;&lt;span class="s"&gt;'0x0'&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/disk&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Replace it with an entry using our RBD image:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;&amp;lt;disk&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;'network'&lt;/span&gt; &lt;span class="na"&gt;device=&lt;/span&gt;&lt;span class="s"&gt;'disk'&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;driver&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;'qemu'&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;'raw'&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;source&lt;/span&gt; &lt;span class="na"&gt;protocol=&lt;/span&gt;&lt;span class="s"&gt;'rbd'&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;'libvirt/ubuntu-amd64-alice'&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;host&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;'192.168.133.111'&lt;/span&gt; &lt;span class="na"&gt;port=&lt;/span&gt;&lt;span class="s"&gt;'6789'&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;host&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;'192.168.133.112'&lt;/span&gt; &lt;span class="na"&gt;port=&lt;/span&gt;&lt;span class="s"&gt;'6789'&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;host&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;'192.168.133.113'&lt;/span&gt; &lt;span class="na"&gt;port=&lt;/span&gt;&lt;span class="s"&gt;'6789'&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;/source&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;target&lt;/span&gt; &lt;span class="na"&gt;dev=&lt;/span&gt;&lt;span class="s"&gt;'vda'&lt;/span&gt; &lt;span class="na"&gt;bus=&lt;/span&gt;&lt;span class="s"&gt;'virtio'&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;address&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;'pci'&lt;/span&gt; &lt;span class="na"&gt;domain=&lt;/span&gt;&lt;span class="s"&gt;'0x0000'&lt;/span&gt; &lt;span class="na"&gt;bus=&lt;/span&gt;&lt;span class="s"&gt;'0x00'&lt;/span&gt; &lt;span class="na"&gt;slot=&lt;/span&gt;&lt;span class="s"&gt;'0x05'&lt;/span&gt; &lt;span class="na"&gt;function=&lt;/span&gt;&lt;span class="s"&gt;'0x0'&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/disk&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Be sure to replace the three IPs in the above example with the actual
+IPs of your MON servers.&lt;/p&gt;
+&lt;p&gt;Finally, start your virtual machine:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;virsh start ubuntu-amd64-alice
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Adapting the VM's libvirt configuration (libvirt &amp;gt;= 0.9.7)&lt;/h2&gt;
+&lt;p&gt;Starting with libvirt 0.9.7, you can use a user other than
+client.admin to access RBD images via libvirt. We recommend to do
+this. Creating such a setup works very similar to the one without a
+separate user; the main difference is that it requires you to define a
+secret in libvirt for the VM. First of all, figure out what user you
+will be using from within libvirt and where that user's authentication
+key is stored. For this example, we will assume that the user is
+called client.rbd and that this user's key is stored in
+/etc/ceph/keyring.client.rbd. Now, create a new UUID by calling&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;uuidgen
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;on the command line. The UUID for our example will be
+5cddc503-9c29-4aa8-943a-c097f87677cf.  Then, open
+/etc/libvirt/secrets/ubuntu-amd64-alice.xml and define a secret block
+in there:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;&amp;lt;secret&lt;/span&gt; &lt;span class="na"&gt;ephemeral=&lt;/span&gt;&lt;span class="s"&gt;"no"&lt;/span&gt; &lt;span class="na"&gt;private=&lt;/span&gt;&lt;span class="s"&gt;"no"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;uuid&amp;gt;&lt;/span&gt;5cddc503-9c29-4aa8-943a-c097f87677cf&lt;span class="nt"&gt;&amp;lt;/uuid&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;usage&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;"ceph"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;name&amp;gt;&lt;/span&gt;client.rbd secret&lt;span class="nt"&gt;&amp;lt;/name&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/usage&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/secret&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Be sure to replace the example's UUID with your own, self-generated
+value. Make libvirt add this secret to its internal keyring:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;virsh secret-define \
+  /etc/libvirt/secrets/ubuntu-amd64-alice.xml
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now find out your user's secret key. Do&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ceph auth get-or-create client.rbd
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;and take note of the key. In our example,
+AQB0Q4ZQYDB2MBAAYzWmHvpg7t1MzV1E0jkBww== is the key that will allow us
+access as client.rbd. Then define the actual password for our secret
+definition:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;virsh secret-set-value \
+  5cddc503-9c29-4aa8-943a-c097f87677cf \
+  AQB0Q4ZQYDB2MBAAYzWmHvpg7t1MzV1E0jkBww==
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Again, be sure to use your self-generated UUID instead of the one in
+this example. Also replace the example key with your real
+key. Finally, go ahead and adapt your VM settings. Open your VM
+configuration with&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;virsh edit ubuntu-amd64-alice
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;and scroll down to the VM's disk definition. In our example, that part of the configuration looks like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;&amp;lt;disk&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;'block'&lt;/span&gt; &lt;span class="na"&gt;device=&lt;/span&gt;&lt;span class="s"&gt;'disk'&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;driver&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;'qemu'&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;'raw'&lt;/span&gt; &lt;span class="na"&gt;cache=&lt;/span&gt;&lt;span class="s"&gt;'none'&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;source&lt;/span&gt; &lt;span class="na"&gt;dev=&lt;/span&gt;&lt;span class="s"&gt;'/dev/drbd/by-res/vm-ubuntu-amd64-alice'&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;target&lt;/span&gt; &lt;span class="na"&gt;dev=&lt;/span&gt;&lt;span class="s"&gt;'vda'&lt;/span&gt; &lt;span class="na"&gt;bus=&lt;/span&gt;&lt;span class="s"&gt;'virtio'&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;address&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;'pci'&lt;/span&gt; &lt;span class="na"&gt;domain=&lt;/span&gt;&lt;span class="s"&gt;'0x0000'&lt;/span&gt; &lt;span class="na"&gt;bus=&lt;/span&gt;&lt;span class="s"&gt;'0x00'&lt;/span&gt; &lt;span class="na"&gt;slot=&lt;/span&gt;&lt;span class="s"&gt;'0x05'&lt;/span&gt; &lt;span class="na"&gt;function=&lt;/span&gt;&lt;span class="s"&gt;'0x0'&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/disk&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Replace it with an entry using our RBD image:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;&amp;lt;disk&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;'network'&lt;/span&gt; &lt;span class="na"&gt;device=&lt;/span&gt;&lt;span class="s"&gt;'disk'&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;driver&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;'qemu'&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;'raw'&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;auth&lt;/span&gt; &lt;span class="na"&gt;username=&lt;/span&gt;&lt;span class="s"&gt;'rbd'&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;secret&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;'ceph'&lt;/span&gt; &lt;span class="na"&gt;usage=&lt;/span&gt;&lt;span class="s"&gt;'client.rbd secret'&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;/auth&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;source&lt;/span&gt; &lt;span class="na"&gt;protocol=&lt;/span&gt;&lt;span class="s"&gt;'rbd'&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;'libvirt/ubuntu-amd64-alice'&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;host&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;'192.168.133.111'&lt;/span&gt; &lt;span class="na"&gt;port=&lt;/span&gt;&lt;span class="s"&gt;'6789'&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;host&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;'192.168.133.112'&lt;/span&gt; &lt;span class="na"&gt;port=&lt;/span&gt;&lt;span class="s"&gt;'6789'&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;host&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;'192.168.133.113'&lt;/span&gt; &lt;span class="na"&gt;port=&lt;/span&gt;&lt;span class="s"&gt;'6789'&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;/source&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;target&lt;/span&gt; &lt;span class="na"&gt;dev=&lt;/span&gt;&lt;span class="s"&gt;'vda'&lt;/span&gt; &lt;span class="na"&gt;bus=&lt;/span&gt;&lt;span class="s"&gt;'virtio'&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;address&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;'pci'&lt;/span&gt; &lt;span class="na"&gt;domain=&lt;/span&gt;&lt;span class="s"&gt;'0x0000'&lt;/span&gt; &lt;span class="na"&gt;bus=&lt;/span&gt;&lt;span class="s"&gt;'0x00'&lt;/span&gt; &lt;span class="na"&gt;slot=&lt;/span&gt;&lt;span class="s"&gt;'0x05'&lt;/span&gt; &lt;span class="na"&gt;function=&lt;/span&gt;&lt;span class="s"&gt;'0x0'&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/disk&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Be sure to replace the three IPs in the above example with the actual
+IPs of your MON servers.&lt;/p&gt;
+&lt;p&gt;Finally, start your virtual machine:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;virsh start ubuntu-amd64-alice
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;That's it. Your VM should now boot up and use its RBD image from Ceph
+instead of its original block-based storage backing device.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Ceph"></category><category term="libvirt"></category></entry><entry><title>Roll Your Own Cloud</title><link href="https://xahteiwi.eu/resources/presentations/roll-your-own-cloud/" rel="alternate"></link><published>2012-03-19T08:27:00+00:00</published><updated>2012-03-19T08:27:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-03-19:/resources/presentations/roll-your-own-cloud/</id><summary type="html">&lt;p&gt;Tim Serong and I explore the capabilities of KVM, iSCSI, DRBD and Pacemaker to
+create a fully open-source enterprise cloud.&lt;/p&gt;
+&lt;p&gt;Shot at linux.conf.au 2011 in Brisbane, this is me babbling, and Tim
+live-cartooning to the delight of the audience.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Video: &lt;a href="https://youtu.be/NyHJ8Uf03qg"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo …&lt;/code&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;Tim Serong and I explore the capabilities of KVM, iSCSI, DRBD and Pacemaker to
+create a fully open-source enterprise cloud.&lt;/p&gt;
+&lt;p&gt;Shot at linux.conf.au 2011 in Brisbane, this is me babbling, and Tim
+live-cartooning to the delight of the audience.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Video: &lt;a href="https://youtu.be/NyHJ8Uf03qg"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="DRBD"></category><category term="KVM"></category><category term="libvirt"></category><category term="Pacemaker"></category></entry></feed>

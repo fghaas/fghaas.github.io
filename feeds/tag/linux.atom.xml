@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Linux</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/linux.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2019-08-21T00:00:00+00:00</updated><entry><title>Using ftrace to trace function calls from qemu-guest-agent</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/ftrace-qemu-ga/" rel="alternate"></link><published>2019-08-21T00:00:00+00:00</published><updated>2019-08-21T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-08-21:/resources/hints-and-kinks/ftrace-qemu-ga/</id><summary type="html">&lt;p&gt;When you are using functionality that is buried deep in the Linux
+kernel, &lt;a href="https://en.wikipedia.org/wiki/Ftrace"&gt;&lt;code&gt;ftrace&lt;/code&gt;&lt;/a&gt; can be
+extremely useful. Here are some suggestions on how to use it, using
+the example of tracing function calls from &lt;code&gt;qemu-guest-agent&lt;/code&gt;.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;h2&gt;What’s this about?&lt;/h2&gt;
+&lt;p&gt;Recently I used, for the first time,
+&lt;strong&gt;&lt;a href="https://libvirt.org/"&gt;libvirt&lt;/a&gt;’s functionality …&lt;/strong&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;When you are using functionality that is buried deep in the Linux
+kernel, &lt;a href="https://en.wikipedia.org/wiki/Ftrace"&gt;&lt;code&gt;ftrace&lt;/code&gt;&lt;/a&gt; can be
+extremely useful. Here are some suggestions on how to use it, using
+the example of tracing function calls from &lt;code&gt;qemu-guest-agent&lt;/code&gt;.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;h2&gt;What’s this about?&lt;/h2&gt;
+&lt;p&gt;Recently I used, for the first time,
+&lt;strong&gt;&lt;a href="https://libvirt.org/"&gt;libvirt&lt;/a&gt;’s functionality to indicate to a
+virtual guest that it is about to have a point-in-time copy of its
+disks — a &lt;em&gt;snapshot&lt;/em&gt; — taken.&lt;/strong&gt; In doing so, it can tell the virtual
+machine (VM) to freeze I/O on all its mounted filesystems. &lt;/p&gt;
+&lt;p&gt;The rationale behind this is, I hope, obvious: you want the VM to
+momentarily stop I/O to its virtual disks, so that you can take a
+snapshot when no I/O is in-flight, and the snapshot image can thus be
+expected to be internally consistent. The snapshot itself will only
+take a second or so, and the minor interruption is a small price to
+pay for the added consistency guarantee you get.&lt;/p&gt;
+&lt;p&gt;You might be wondering how this works and it is, indeed, a bit
+involved.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;First, you’ll need a &lt;strong&gt;virtual serial console&lt;/strong&gt; that allows the
+  hypervisor (in the host) to communicate with the guest. This will be
+  defined &lt;a href="https://wiki.libvirt.org/page/Qemu_guest_agent#Setting_QEMU_GA_up"&gt;in your libvirt domain
+  XML&lt;/a&gt;,
+  and in &lt;a href="https://docs.openstack.org/nova/latest/"&gt;OpenStack Nova&lt;/a&gt;,
+  this automatically pops up if you are booting your instance off an
+  image &lt;a href="https://docs.openstack.org/nova/rocky/admin/configuration/hypervisor-kvm.html#guest-agent-support"&gt;which has the &lt;code&gt;hw_qemu_guest_agent=yes&lt;/code&gt; property
+  set&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Then, you’ll need a &lt;strong&gt;daemon&lt;/strong&gt; within the guest that listens for
+  commands received over the serial port. This daemon is called
+  &lt;code&gt;qemu-guest-agent&lt;/code&gt;, or &lt;code&gt;qemu-ga&lt;/code&gt; for short. All you’ll need for it
+  to run is to install the package of that name, which you can do in
+  various ways (&lt;code&gt;apt-get install qemu-guest-agent&lt;/code&gt; being the simplest,
+  on Ubuntu guests).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;One of the many commands that said daemon supports is
+  &lt;a href="https://git.qemu.org/?p=qemu.git;a=blob;f=qga/commands-posix.c;h=dfc05f5b8ab958ef43aca36258e151ee2525ebf5;hb=33f18cf7dca7741d3647d514040904ce83edd73d#l2746"&gt;&lt;code&gt;guest-fsfreeze-freeze&lt;/code&gt;&lt;/a&gt;. When
+  it receives that command over the virtual serial link, the daemon
+  will &lt;a href="https://git.qemu.org/?p=qemu.git;a=blob;f=qga/commands-posix.c;h=dfc05f5b8ab958ef43aca36258e151ee2525ebf5;hb=33f18cf7dca7741d3647d514040904ce83edd73d#l1295"&gt;loop over your mounted
+  filesystems&lt;/a&gt;,
+  and issue the &lt;a href="https://elixir.bootlin.com/linux/v5.2/source/fs/ioctl.c#L668"&gt;&lt;strong&gt;&lt;code&gt;FIFREEZE&lt;/code&gt;
+  ioctl&lt;/strong&gt;&lt;/a&gt;
+  on all of them. This happens in reverse order, meaning your root
+  (&lt;code&gt;/&lt;/code&gt;) filesystem is frozen last.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;That ioctl then calls the &lt;a href="https://elixir.bootlin.com/linux/v5.2/source/fs/super.c#L1694"&gt;&lt;strong&gt;&lt;code&gt;freeze_super()&lt;/code&gt; kernel
+  function&lt;/strong&gt;&lt;/a&gt;,
+  which flushes each filesystem’s superblock, blocks (“freezes”) all
+  new I/O to the filesystem, and syncs (flushes) all I/O that is
+  currently in flight on that filesystem.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The combined net effect of all of the above is that you get a virtual
+machine that is temporarily read-only, with pending I/O piling up,
+until you are done taking your snapshot. When that happens, there are
+a few more actions that happen:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The hypervisor sends the &lt;code&gt;guest-fsfreeze-thaw&lt;/code&gt; command over the
+  virtual serial link.  Now, the daemon will &lt;a href="https://git.qemu.org/?p=qemu.git;a=blob;f=qga/commands-posix.c;h=dfc05f5b8ab958ef43aca36258e151ee2525ebf5;hb=33f18cf7dca7741d3647d514040904ce83edd73d#l1374"&gt;loop over all your
+  mounted filesystems
+  again&lt;/a&gt;,
+  and issue the &lt;a href="https://elixir.bootlin.com/linux/v5.2/source/fs/ioctl.c#L672"&gt;&lt;strong&gt;&lt;code&gt;FITHAW&lt;/code&gt;
+  ioctl&lt;/strong&gt;&lt;/a&gt;
+  on them. This time, it is taking the mounts in forward order,
+  thawing the root filesystem first.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;That ioctl then calls the &lt;a href="https://elixir.bootlin.com/linux/v5.2/source/fs/super.c#L1798"&gt;&lt;strong&gt;&lt;code&gt;thaw_super()&lt;/code&gt; kernel
+  function&lt;/strong&gt;&lt;/a&gt;,
+  which unblocks (“thaws”) all new I/O to the filesystem, and allows
+  the VM to continue normal operations.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now there’s a bit of an issue with that. All of the aforementioned
+kernel functions only write &lt;code&gt;printk&lt;/code&gt;’s &lt;a href="https://elixir.bootlin.com/linux/v5.2/source/fs/super.c#L1737"&gt;on
+error&lt;/a&gt;,
+but they don’t tell you when they succeed. So you can try a snapshot,
+then type &lt;code&gt;dmesg&lt;/code&gt; in the guest, and you’ll have no way of telling
+whether the whole freeze/thaw dance succeeded, or was never even
+attempted.&lt;/p&gt;
+&lt;p&gt;But fear not, there’s a way that you can trace exactly what the kernel
+is doing!&lt;/p&gt;
+&lt;h2&gt;tracefs, and configuring &lt;code&gt;ftrace&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;If your guest runs any modern kernel, then chances are that it will,
+by default, mount a virtual &lt;strong&gt;tracefs filesystem&lt;/strong&gt; to the
+&lt;code&gt;/sys/kernel/debug/tracing&lt;/code&gt; mount point (although as of kernel 4.1,
+this is nominally an alias, with &lt;code&gt;/sys/kernel/tracing&lt;/code&gt; being the
+canonical mount point). Regardless of its path, tracefs exposes &lt;a href="https://www.kernel.org/doc/Documentation/trace/ftrace.txt"&gt;the
+kernel’s &lt;code&gt;ftrace&lt;/code&gt;
+functionality&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;So the first thing you’ll tell ftrace, in your guest VM, is the
+process for which you’ll want to do function tracing. In our case,
+that’s your guest’s &lt;code&gt;qemu-ga&lt;/code&gt;. So, you can do:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pidof qemu-ga &amp;gt; /sys/kernel/debug/tracing/set_ftrace_pid
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then, you’ll want to instruct &lt;code&gt;ftrace&lt;/code&gt; to trace kernel function calls:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"function"&lt;/span&gt; &amp;gt; /sys/kernel/debug/tracing/current_tracer
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And, you’ll want to make sure that we don’t trace only function calls
+from &lt;code&gt;qemu-ga&lt;/code&gt; itself, but also from its child processes:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"function-fork"&lt;/span&gt; &amp;gt; /sys/kernel/debug/tracing/trace_options
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Let’s see what’s happening!&lt;/h2&gt;
+&lt;p&gt;Now you have a guest that’s properly instrumented for tracing kernel
+function calls that originate with &lt;code&gt;qemu-ga&lt;/code&gt;. So now, go ahead and
+take a snapshot. On OpenStack Nova, you’d do that with:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;openstack server image create --name &amp;lt;image-name&amp;gt; &amp;lt;instance-name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then, shell back into your guest, and interrogate your trace for
+&lt;code&gt;ioctl&lt;/code&gt; calls:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;grep -E &lt;span class="s1"&gt;'(freeze|thaw)_super.*ioctl'&lt;/span&gt; /sys/kernel/debug/tracing/trace
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And voilà:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;         &lt;span class="n"&gt;qemu&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ga&lt;/span&gt;&lt;span class="m"&gt;-14574&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;001&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="n"&gt;....&lt;/span&gt;   &lt;span class="m"&gt;264.059109&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;freeze_super&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt;&lt;span class="n"&gt;do_vfs_ioctl&lt;/span&gt;
+         &lt;span class="n"&gt;qemu&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ga&lt;/span&gt;&lt;span class="m"&gt;-14574&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;001&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="n"&gt;....&lt;/span&gt;   &lt;span class="m"&gt;265.837955&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;thaw_super&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt;&lt;span class="n"&gt;do_vfs_ioctl&lt;/span&gt;
+         &lt;span class="n"&gt;qemu&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ga&lt;/span&gt;&lt;span class="m"&gt;-14574&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;001&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="n"&gt;....&lt;/span&gt;   &lt;span class="m"&gt;265.855048&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;thaw_super&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt;&lt;span class="n"&gt;do_vfs_ioctl&lt;/span&gt;
+         &lt;span class="n"&gt;qemu&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ga&lt;/span&gt;&lt;span class="m"&gt;-14574&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;001&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="n"&gt;....&lt;/span&gt;   &lt;span class="m"&gt;265.855084&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;thaw_super&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt;&lt;span class="n"&gt;do_vfs_ioctl&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;So that’s the &lt;code&gt;FIFREEZE&lt;/code&gt; ioctl that maps to &lt;code&gt;freeze_super()&lt;/code&gt;, and the
+&lt;code&gt;FITHAW&lt;/code&gt; ioctl that maps to &lt;code&gt;thaw_super()&lt;/code&gt;. And that’s how you know that
+your guest is freezing and thawing I/O as you expect it to!&lt;/p&gt;
+&lt;h2&gt;Where to go from here&lt;/h2&gt;
+&lt;p&gt;Feel free to dig further into your &lt;code&gt;trace&lt;/code&gt; file (&lt;code&gt;cat&lt;/code&gt; or &lt;code&gt;less&lt;/code&gt; will
+help), and play with other &lt;code&gt;ftrace&lt;/code&gt; options. There’s a massive amount
+of things you can do with it, as &lt;a href="https://www.kernel.org/doc/Documentation/trace/ftrace.txt"&gt;the
+documentation&lt;/a&gt;
+explains. You’ll probably also find &lt;a href="https://jvns.ca/blog/2017/03/19/getting-started-with-ftrace/"&gt;this blog
+post&lt;/a&gt;
+from &lt;a href="https://twitter.com/b0rk"&gt;Julia Evans&lt;/a&gt; useful for exploring
+&lt;code&gt;ftrace&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Also, thank &lt;a href="https://twitter.com/srostedt"&gt;Steven Rostedt&lt;/a&gt; when you
+see him! He is the primary author of the ftrace framework.&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="libvirt"></category><category term="Linux"></category><category term="ftrace"></category><category term="Qemu"></category></entry></feed>

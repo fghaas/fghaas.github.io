@@ -1,0 +1,415 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../../theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/solid.css">
+
+    <link rel="stylesheet" type="text/css" href="../../../css/override.css">
+
+    <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+    <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+  
+
+
+ 
+
+<meta name="author" content="Florian Haas" />
+<meta name="description" content="This is a rather nasty bug in Ceph OSD, affecting 0.67 &#34;Dumpling&#34; and earlier releases. It is fixed in versions later than 0.70, and a simple workaround is available, but when it hits, this issue can be pretty painful. Please read this post to the end. This is …" />
+<meta name="keywords" content="Ceph">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="Fun with extended attributes in Ceph Dumpling"/>
+  <meta property="og:description" content="This is a rather nasty bug in Ceph OSD, affecting 0.67 &#34;Dumpling&#34; and earlier releases. It is fixed in versions later than 0.70, and a simple workaround is available, but when it hits, this issue can be pretty painful. Please read this post to the end. This is …"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../../resources/hints-and-kinks/fun-extended-attributes-ceph-dumpling/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2014-02-24 16:50:17+01:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../../author/florian-haas.html">
+  <meta property="article:section" content="hints-and-kinks"/>
+  <meta property="article:tag" content="Ceph"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; Fun with extended attributes in Ceph Dumpling</title>
+
+</head>
+<body >
+  <aside>
+    <div>
+      <a href="../../../">
+        <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="../../../"></a>
+      </h1>
+
+
+
+
+      <ul class="social">
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/xahteiwi" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="me" class="sc-mastodon" href="https://mastodon.social/@xahteiwi" target="_blank">
+              <i class="fab fa-mastodon"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/fghaas" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-github" href="https://github.com/fghaas" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="../../../">Home</a>
+
+      <a href="/category/hints-and-kinks.html">Tech</a>
+      <a href="/category/presentations.html">Talks</a>
+      <a href="/category/blog.html">Thoughts</a>
+      <a href="">​</a>
+      <a href="/about/">About</a>
+      <a href="/comments/">Comments</a>
+      <a href="/legal/">Legal</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="">​</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="">​</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="fun-extended-attributes-ceph-dumpling">Fun with extended attributes in Ceph Dumpling</h1>
+    <p>
+      Posted on Mon 24 February 2014 in <a href="../../../category/hints-and-kinks.html">hints-and-kinks</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>This is a rather nasty bug in Ceph OSD, affecting 0.67 "Dumpling" and
+earlier releases. It is fixed in versions later than 0.70, and a
+simple workaround is available, but when it hits, this issue can be
+pretty painful.</p>
+<p><strong>Please read this post to the end.</strong> This is by no means a punch
+being thrown at Ceph, in fact it rather clearly illustrates a very
+sane choice that the Ceph developers have made. If you run Ceph
+Emperor or later, you are not affected by this issue, but it will be
+an interesting read in data integrity in distributed systems anyway.</p>
+<h2>Too much of a good thing: large extended attributes</h2>
+<p>Here is how to reproduce the problem in a very simple bit of Python
+code, against Ceph Dumpling.</p>
+<p><strong>Do not run this on a production system. Don't. Ever.</strong></p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/python</span>
+
+<span class="c1"># import rados</span>
+<span class="k">with</span> <span class="n">rados</span><span class="o">.</span><span class="n">Rados</span><span class="p">(</span><span class="n">conffile</span><span class="o">=</span><span class="s1">'/etc/ceph/ceph.conf'</span><span class="p">)</span> <span class="k">as</span> <span class="n">cluster</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">cluster</span><span class="o">.</span><span class="n">open_ioctx</span><span class="p">(</span><span class="s1">'test'</span><span class="p">)</span> <span class="k">as</span> <span class="n">ioctx</span><span class="p">:</span>
+        <span class="n">o</span> <span class="o">=</span> <span class="n">rados</span><span class="o">.</span><span class="n">Object</span><span class="p">(</span><span class="n">ioctx</span><span class="p">,</span> <span class="s1">'onebyte'</span><span class="p">)</span>
+        <span class="c1"># Write one byte as the object content</span>
+        <span class="n">o</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'a'</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'Wrote object'</span><span class="p">)</span>
+        <span class="c1"># Write an attribute of 8M</span>
+        <span class="n">o</span><span class="o">.</span><span class="n">set_xattr</span><span class="p">(</span><span class="s1">'val'</span><span class="p">,</span> <span class="s1">'a'</span> <span class="o">*</span> <span class="mi">8</span> <span class="o">*</span> <span class="mi">1024</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'Set large attribute'</span><span class="p">)</span>
+        <span class="c1"># Retrieving an attribute by name should succeed</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">o</span><span class="o">.</span><span class="n">get_xattr</span><span class="p">(</span><span class="s1">'val'</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'Retrieved large attribute'</span><span class="p">)</span>
+        <span class="c1"># Walking the attribute list should fail</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">alist</span> <span class="o">=</span> <span class="p">[</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">o</span><span class="o">.</span><span class="n">get_xattrs</span><span class="p">()</span> <span class="p">]</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">'Retrieved whole attribute list'</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">rados</span><span class="o">.</span><span class="n">Error</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">'Failed to retrieve attribute list. '</span>
+                  <span class="s1">'Congratulations, you probably just '</span>
+                  <span class="s1">'corrupted one of your PGs.'</span><span class="p">)</span>
+        <span class="k">raise</span>
+</code></pre></div>
+<p>Removing the disabling comment character is left as an exercise for
+the daring reader, just in case your cut &amp; paste trigger finger is
+itchy. <strong>Do not run this against a production system.</strong></p>
+<p>So what are we doing here? We're creating a single RADOS object named
+<code>onebyte</code> in a pool called <code>test</code>. It is, as the name implies, only
+one byte long (it contains just the letter a), but it has a very long
+attribute named <code>val</code>, which is 8 Megabytes' worth of <code>a</code>'s.</p>
+<p>(In case you're wondering: yes, there are applications that set very
+large attributes on RADOS objects. radosgw is one of them.)</p>
+<p>Since you've been able to set the attribute, you can also retrieve it,
+which is why the call to <code>get_xattr('val')</code> succeeds just fine. But if
+you fetch the entire attribute <em>list</em> (with <code>get_xattrs</code>), then you
+run into an <code>E2BIG</code> error.</p>
+<p>You can confirm that on the Linux command line, using the <code>rados</code>
+utility, just the same. First, getting the object and getting an xattr
+by name:</p>
+<div class="highlight"><pre><span></span><code>$ sudo rados -p <span class="nb">test</span> get onebyte -
+a
+
+$ sudo rados -p <span class="nb">test</span> getxattr onebyte val - <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>  <span class="p">|</span> head -c <span class="m">50</span>
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+</code></pre></div>
+<p>Obviously, you're welcome to omit the head redirection if you prefer
+to flood your screen. But for proving we can still retrieve the
+attribute value, 50 characters is quite sufficient.</p>
+<p>Let's try <em>listing</em> the attributes, though:</p>
+<div class="highlight"><pre><span></span><code>$ sudo rados -p <span class="nb">test</span> listxattr onebyte 
+error getting xattr <span class="nb">set</span> test/onebyte: Argument list too long
+</code></pre></div>
+<p>Oops. <code>Argument list too long</code> is bash's way of translating the
+<code>E2BIG</code> error for you, because that's what it usually means. In this
+case, though, it's actually what we get from the rados utility, and
+that gets it from the OSD it's talking to, and that gets it from the
+filesystem.</p>
+<h2>Digging deeper</h2>
+<p>Now let's take a look where this object is stored.</p>
+<div class="highlight"><pre><span></span><code>$ sudo ceph osd map <span class="nb">test</span> onebyte
+$ osdmap e191 pool <span class="s1">'test'</span> <span class="o">(</span><span class="m">3</span><span class="o">)</span> object <span class="s1">'onebyte'</span> -&gt; pg <span class="m">3</span>.ed47d009 <span class="o">(</span><span class="m">3</span>.1<span class="o">)</span> -&gt; up <span class="o">[</span><span class="m">0</span>,2<span class="o">]</span> acting <span class="o">[</span><span class="m">0</span>,2<span class="o">]</span>
+So it<span class="s1">'s PG 3.1, currently mapped to OSDs 0 (primary) and 2 (replica). We happen to be on the very host where OSD 0 is running, so let'</span>s take a closer look:
+
+$ sudo getfattr -d /var/lib/ceph/osd/ceph-0/current/3.1_head/onebyte__head_ED47D009__3 
+/var/lib/ceph/osd/ceph-0/current/3.1_head/onebyte__head_ED47D009__3: Argument list too long
+</code></pre></div>
+<p>Same thing, E2BIG. Sure, if we can't enumerate the attributes
+ourselves, the OSD can't either. But it's still fairly benign, because
+we can still retrieve the object, right?</p>
+<h2>Adding daemon failure</h2>
+<p>Well, not so much. Let's see what happens if one of our OSDs gets
+restarted. This is a perfectly benign operation that Ceph is expected
+to (and does) handle very gracefully.</p>
+<div class="highlight"><pre><span></span><code>$ sudo restart ceph-osd <span class="nv">id</span><span class="o">=</span><span class="m">0</span>
+ceph-osd <span class="o">(</span>ceph/0<span class="o">)</span> start/running, process <span class="m">7922</span>
+$ sudo rados -p <span class="nb">test</span> get onebyte -
+a
+</code></pre></div>
+<p>The object is still there. What if, incidentally, the other OSD also
+happens to go down some time later, and stays down?</p>
+<div class="highlight"><pre><span></span><code>$ sudo stop ceph-osd <span class="nv">id</span><span class="o">=</span><span class="m">2</span>
+ceph-osd <span class="o">(</span>ceph/2<span class="o">)</span> stop/waiting
+$ sudo ceph osd out <span class="m">2</span>
+marked out osd.2.
+</code></pre></div>
+<p>Remember, <em>"at scale, something always fails"</em>. Ceph is built for
+exactly that, and its algorithms deal with this type of failure in
+stride. So at this point, we would expect Ceph to remap the PGs that
+were previously on OSD 2 to OSD 1, and synchronize with OSD 0. And a
+few minutes later, all hell breaks loose:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">sudo</span><span class="w"> </span><span class="nt">ceph</span><span class="w"> </span><span class="nt">-s</span><span class="w"></span>
+<span class="w">  </span><span class="nt">cluster</span><span class="w"> </span><span class="nt">bd70ea39-58fc-4117-ade1-03a4d429cb49</span><span class="w"></span>
+<span class="w">   </span><span class="nt">health</span><span class="w"> </span><span class="nt">HEALTH_WARN</span><span class="w"> </span><span class="nt">200</span><span class="w"> </span><span class="nt">pgs</span><span class="w"> </span><span class="nt">degraded</span><span class="o">;</span><span class="w"> </span><span class="nt">1</span><span class="w"> </span><span class="nt">pgs</span><span class="w"> </span><span class="nt">recovering</span><span class="o">;</span><span class="w"> </span><span class="nt">200</span><span class="w"> </span><span class="nt">pgs</span><span class="w"> </span><span class="nt">stuck</span><span class="w"> </span><span class="nt">unclean</span><span class="o">;</span><span class="w"> </span><span class="nt">recovery</span><span class="w"> </span><span class="nt">2</span><span class="o">/</span><span class="nt">2</span><span class="w"> </span><span class="nt">degraded</span><span class="w"> </span><span class="o">(</span><span class="nt">100</span><span class="p">.</span><span class="nc">000</span><span class="o">%);</span><span class="w"> </span><span class="nt">1</span><span class="o">/</span><span class="nt">1</span><span class="w"> </span><span class="nt">unfound</span><span class="w"> </span><span class="o">(</span><span class="nt">100</span><span class="p">.</span><span class="nc">000</span><span class="o">%)</span><span class="w"></span>
+<span class="w">   </span><span class="nt">monmap</span><span class="w"> </span><span class="nt">e4</span><span class="o">:</span><span class="w"> </span><span class="nt">3</span><span class="w"> </span><span class="nt">mons</span><span class="w"> </span><span class="nt">at</span><span class="w"> </span><span class="p">{</span><span class="err">ubuntu-ceph1=192.168.122.201:6789/0,ubuntu-ceph2=192.168.122.202:6789/0,ubuntu-ceph3=192.168.122.203:6789/0</span><span class="p">}</span><span class="o">,</span><span class="w"> </span><span class="nt">election</span><span class="w"> </span><span class="nt">epoch</span><span class="w"> </span><span class="nt">180</span><span class="o">,</span><span class="w"> </span><span class="nt">quorum</span><span class="w"> </span><span class="nt">0</span><span class="o">,</span><span class="nt">1</span><span class="o">,</span><span class="nt">2</span><span class="w"> </span><span class="nt">ubuntu-ceph1</span><span class="o">,</span><span class="nt">ubuntu-ceph2</span><span class="o">,</span><span class="nt">ubuntu-ceph3</span><span class="w"></span>
+<span class="w">   </span><span class="nt">osdmap</span><span class="w"> </span><span class="nt">e237</span><span class="o">:</span><span class="w"> </span><span class="nt">3</span><span class="w"> </span><span class="nt">osds</span><span class="o">:</span><span class="w"> </span><span class="nt">1</span><span class="w"> </span><span class="nt">up</span><span class="o">,</span><span class="w"> </span><span class="nt">1</span><span class="w"> </span><span class="nt">in</span><span class="w"></span>
+<span class="w">    </span><span class="nt">pgmap</span><span class="w"> </span><span class="nt">v1335</span><span class="o">:</span><span class="w"> </span><span class="nt">200</span><span class="w"> </span><span class="nt">pgs</span><span class="o">:</span><span class="w"> </span><span class="nt">1</span><span class="w"> </span><span class="nt">active</span><span class="o">+</span><span class="nt">recovering</span><span class="o">+</span><span class="nt">degraded</span><span class="o">,</span><span class="w"> </span><span class="nt">199</span><span class="w"> </span><span class="nt">active</span><span class="o">+</span><span class="nt">degraded</span><span class="o">;</span><span class="w"> </span><span class="nt">1</span><span class="w"> </span><span class="nt">bytes</span><span class="w"> </span><span class="nt">data</span><span class="o">,</span><span class="w"> </span><span class="nt">38684</span><span class="w"> </span><span class="nt">KB</span><span class="w"> </span><span class="nt">used</span><span class="o">,</span><span class="w"> </span><span class="nt">5071</span><span class="w"> </span><span class="nt">MB</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nt">5108</span><span class="w"> </span><span class="nt">MB</span><span class="w"> </span><span class="nt">avail</span><span class="o">;</span><span class="w"> </span><span class="nt">2</span><span class="o">/</span><span class="nt">2</span><span class="w"> </span><span class="nt">degraded</span><span class="w"> </span><span class="o">(</span><span class="nt">100</span><span class="p">.</span><span class="nc">000</span><span class="o">%);</span><span class="w"> </span><span class="nt">1</span><span class="o">/</span><span class="nt">1</span><span class="w"> </span><span class="nt">unfound</span><span class="w"> </span><span class="o">(</span><span class="nt">100</span><span class="p">.</span><span class="nc">000</span><span class="o">%)</span><span class="w"></span>
+<span class="w">   </span><span class="nt">mdsmap</span><span class="w"> </span><span class="nt">e1</span><span class="o">:</span><span class="w"> </span><span class="nt">0</span><span class="o">/</span><span class="nt">0</span><span class="o">/</span><span class="nt">1</span><span class="w"> </span><span class="nt">up</span><span class="w"></span>
+</code></pre></div>
+<h2>Fighting a fire</h2>
+<p>Wow. We shut down only one OSD (OSD 2), the other one (OSD 0) was
+merely restarted, but it has crashed in the interim. Its mon osd down
+out interval has also expired, so it has been marked out as well. All
+of our PGs are stuck degraded, one has an unfound object (that's the
+one whose xattrs can no longer be enumerated). Yikes.</p>
+<p>We scramble to bring our just-shutdown OSD back in.</p>
+<div class="highlight"><pre><span></span><code>$ sudo start ceph-osd <span class="nv">id</span><span class="o">=</span><span class="m">2</span>
+ceph-osd <span class="o">(</span>ceph/2<span class="o">)</span> start/running, process <span class="m">7426</span>
+$ sudo ceph osd <span class="k">in</span> <span class="m">2</span>
+marked <span class="k">in</span> osd.2.
+</code></pre></div>
+<p>Does this make things better?</p>
+<div class="highlight"><pre><span></span><code><span class="err">$</span><span class="w"> </span><span class="n">sudo</span><span class="w"> </span><span class="n">ceph</span><span class="w"> </span><span class="o">-</span><span class="n">w</span><span class="w"></span>
+<span class="w"> </span><span class="n">cluster</span><span class="w"> </span><span class="n">bd70ea39</span><span class="o">-</span><span class="mi">58</span><span class="n">fc</span><span class="o">-</span><span class="mi">4117</span><span class="o">-</span><span class="n">ade1</span><span class="o">-</span><span class="mi">03</span><span class="n">a4d429cb49</span><span class="w"></span>
+<span class="w"> </span><span class="n">health</span><span class="w"> </span><span class="n">HEALTH_WARN</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="n">pgs</span><span class="w"> </span><span class="n">degraded</span><span class="p">;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">pgs</span><span class="w"> </span><span class="n">recovering</span><span class="p">;</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="n">pgs</span><span class="w"> </span><span class="n">stuck</span><span class="w"> </span><span class="n">unclean</span><span class="p">;</span><span class="w"> </span><span class="n">recovery</span><span class="w"> </span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="w"> </span><span class="n">degraded</span><span class="w"> </span><span class="p">(</span><span class="mf">100.000</span><span class="o">%</span><span class="p">)</span><span class="w"></span>
+<span class="w"> </span><span class="n">monmap</span><span class="w"> </span><span class="nl">e4</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="n">mons</span><span class="w"> </span><span class="k">at</span><span class="w"> </span><span class="err">{</span><span class="n">ubuntu</span><span class="o">-</span><span class="n">ceph1</span><span class="o">=</span><span class="mf">192.168.122.201</span><span class="err">:</span><span class="mi">6789</span><span class="o">/</span><span class="mi">0</span><span class="p">,</span><span class="n">ubuntu</span><span class="o">-</span><span class="n">ceph2</span><span class="o">=</span><span class="mf">192.168.122.202</span><span class="err">:</span><span class="mi">6789</span><span class="o">/</span><span class="mi">0</span><span class="p">,</span><span class="n">ubuntu</span><span class="o">-</span><span class="n">ceph3</span><span class="o">=</span><span class="mf">192.168.122.203</span><span class="err">:</span><span class="mi">6789</span><span class="o">/</span><span class="mi">0</span><span class="err">}</span><span class="p">,</span><span class="w"> </span><span class="n">election</span><span class="w"> </span><span class="n">epoch</span><span class="w"> </span><span class="mi">180</span><span class="p">,</span><span class="w"> </span><span class="n">quorum</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="w"> </span><span class="n">ubuntu</span><span class="o">-</span><span class="n">ceph1</span><span class="p">,</span><span class="n">ubuntu</span><span class="o">-</span><span class="n">ceph2</span><span class="p">,</span><span class="n">ubuntu</span><span class="o">-</span><span class="n">ceph3</span><span class="w"></span>
+<span class="w"> </span><span class="n">osdmap</span><span class="w"> </span><span class="nl">e243</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="nl">osds</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">up</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="ow">in</span><span class="w"></span>
+<span class="w">  </span><span class="n">pgmap</span><span class="w"> </span><span class="nl">v1343</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="nl">pgs</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">active</span><span class="o">+</span><span class="n">recovering</span><span class="o">+</span><span class="n">degraded</span><span class="p">,</span><span class="w"> </span><span class="mi">199</span><span class="w"> </span><span class="n">active</span><span class="o">+</span><span class="n">degraded</span><span class="p">;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">bytes</span><span class="w"> </span><span class="k">data</span><span class="p">,</span><span class="w"> </span><span class="mi">38812</span><span class="w"> </span><span class="n">KB</span><span class="w"> </span><span class="n">used</span><span class="p">,</span><span class="w"> </span><span class="mi">5071</span><span class="w"> </span><span class="n">MB</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">5108</span><span class="w"> </span><span class="n">MB</span><span class="w"> </span><span class="n">avail</span><span class="p">;</span><span class="w"> </span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="w"> </span><span class="n">degraded</span><span class="w"> </span><span class="p">(</span><span class="mf">100.000</span><span class="o">%</span><span class="p">)</span><span class="w"></span>
+<span class="w"> </span><span class="n">mdsmap</span><span class="w"> </span><span class="nl">e1</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">1</span><span class="w"> </span><span class="n">up</span><span class="w"></span>
+
+<span class="mi">2014</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">11</span><span class="w"> </span><span class="mi">19</span><span class="err">:</span><span class="mi">09</span><span class="err">:</span><span class="mf">56.868771</span><span class="w"> </span><span class="n">mon</span><span class="mf">.0</span><span class="w"> </span><span class="o">[</span><span class="n">INF</span><span class="o">]</span><span class="w"> </span><span class="n">osdmap</span><span class="w"> </span><span class="nl">e242</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="nl">osds</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">up</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="ow">in</span><span class="w"></span>
+<span class="mi">2014</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">11</span><span class="w"> </span><span class="mi">19</span><span class="err">:</span><span class="mi">09</span><span class="err">:</span><span class="mf">56.895559</span><span class="w"> </span><span class="n">mon</span><span class="mf">.0</span><span class="w"> </span><span class="o">[</span><span class="n">INF</span><span class="o">]</span><span class="w"> </span><span class="n">pgmap</span><span class="w"> </span><span class="nl">v1342</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="nl">pgs</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">active</span><span class="o">+</span><span class="n">recovering</span><span class="o">+</span><span class="n">degraded</span><span class="p">,</span><span class="w"> </span><span class="mi">199</span><span class="w"> </span><span class="n">active</span><span class="o">+</span><span class="n">degraded</span><span class="p">;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">bytes</span><span class="w"> </span><span class="k">data</span><span class="p">,</span><span class="w"> </span><span class="mi">38812</span><span class="w"> </span><span class="n">KB</span><span class="w"> </span><span class="n">used</span><span class="p">,</span><span class="w"> </span><span class="mi">5071</span><span class="w"> </span><span class="n">MB</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">5108</span><span class="w"> </span><span class="n">MB</span><span class="w"> </span><span class="n">avail</span><span class="p">;</span><span class="w"> </span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="w"> </span><span class="n">degraded</span><span class="w"> </span><span class="p">(</span><span class="mf">100.000</span><span class="o">%</span><span class="p">)</span><span class="w"></span>
+<span class="mi">2014</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">11</span><span class="w"> </span><span class="mi">19</span><span class="err">:</span><span class="mi">09</span><span class="err">:</span><span class="mf">57.901188</span><span class="w"> </span><span class="n">mon</span><span class="mf">.0</span><span class="w"> </span><span class="o">[</span><span class="n">INF</span><span class="o">]</span><span class="w"> </span><span class="n">osdmap</span><span class="w"> </span><span class="nl">e243</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="nl">osds</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">up</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="ow">in</span><span class="w"></span>
+<span class="mi">2014</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">11</span><span class="w"> </span><span class="mi">19</span><span class="err">:</span><span class="mi">09</span><span class="err">:</span><span class="mf">57.918612</span><span class="w"> </span><span class="n">mon</span><span class="mf">.0</span><span class="w"> </span><span class="o">[</span><span class="n">INF</span><span class="o">]</span><span class="w"> </span><span class="n">pgmap</span><span class="w"> </span><span class="nl">v1343</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="nl">pgs</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">active</span><span class="o">+</span><span class="n">recovering</span><span class="o">+</span><span class="n">degraded</span><span class="p">,</span><span class="w"> </span><span class="mi">199</span><span class="w"> </span><span class="n">active</span><span class="o">+</span><span class="n">degraded</span><span class="p">;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">bytes</span><span class="w"> </span><span class="k">data</span><span class="p">,</span><span class="w"> </span><span class="mi">38812</span><span class="w"> </span><span class="n">KB</span><span class="w"> </span><span class="n">used</span><span class="p">,</span><span class="w"> </span><span class="mi">5071</span><span class="w"> </span><span class="n">MB</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">5108</span><span class="w"> </span><span class="n">MB</span><span class="w"> </span><span class="n">avail</span><span class="p">;</span><span class="w"> </span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="w"> </span><span class="n">degraded</span><span class="w"> </span><span class="p">(</span><span class="mf">100.000</span><span class="o">%</span><span class="p">)</span><span class="w"></span>
+<span class="mi">2014</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">11</span><span class="w"> </span><span class="mi">19</span><span class="err">:</span><span class="mi">09</span><span class="err">:</span><span class="mf">59.920149</span><span class="w"> </span><span class="n">mon</span><span class="mf">.0</span><span class="w"> </span><span class="o">[</span><span class="n">INF</span><span class="o">]</span><span class="w"> </span><span class="n">osdmap</span><span class="w"> </span><span class="nl">e244</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="nl">osds</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">up</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="ow">in</span><span class="w"></span>
+<span class="mi">2014</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">11</span><span class="w"> </span><span class="mi">19</span><span class="err">:</span><span class="mi">09</span><span class="err">:</span><span class="mf">59.931825</span><span class="w"> </span><span class="n">mon</span><span class="mf">.0</span><span class="w"> </span><span class="o">[</span><span class="n">INF</span><span class="o">]</span><span class="w"> </span><span class="n">pgmap</span><span class="w"> </span><span class="nl">v1344</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="nl">pgs</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">active</span><span class="o">+</span><span class="n">recovering</span><span class="o">+</span><span class="n">degraded</span><span class="p">,</span><span class="w"> </span><span class="mi">199</span><span class="w"> </span><span class="n">active</span><span class="o">+</span><span class="n">degraded</span><span class="p">;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">bytes</span><span class="w"> </span><span class="k">data</span><span class="p">,</span><span class="w"> </span><span class="mi">38812</span><span class="w"> </span><span class="n">KB</span><span class="w"> </span><span class="n">used</span><span class="p">,</span><span class="w"> </span><span class="mi">5071</span><span class="w"> </span><span class="n">MB</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">5108</span><span class="w"> </span><span class="n">MB</span><span class="w"> </span><span class="n">avail</span><span class="p">;</span><span class="w"> </span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="w"> </span><span class="n">degraded</span><span class="w"> </span><span class="p">(</span><span class="mf">100.000</span><span class="o">%</span><span class="p">)</span><span class="w"></span>
+<span class="mi">2014</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">11</span><span class="w"> </span><span class="mi">19</span><span class="err">:</span><span class="mi">10</span><span class="err">:</span><span class="mf">00.940319</span><span class="w"> </span><span class="n">mon</span><span class="mf">.0</span><span class="w"> </span><span class="o">[</span><span class="n">INF</span><span class="o">]</span><span class="w"> </span><span class="n">osd</span><span class="mf">.2</span><span class="w"> </span><span class="mf">192.168.122.203</span><span class="err">:</span><span class="mi">6800</span><span class="o">/</span><span class="mi">8362</span><span class="w"> </span><span class="n">boot</span><span class="w"></span>
+<span class="mi">2014</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">11</span><span class="w"> </span><span class="mi">19</span><span class="err">:</span><span class="mi">10</span><span class="err">:</span><span class="mf">00.940987</span><span class="w"> </span><span class="n">mon</span><span class="mf">.0</span><span class="w"> </span><span class="o">[</span><span class="n">INF</span><span class="o">]</span><span class="w"> </span><span class="n">osdmap</span><span class="w"> </span><span class="nl">e245</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="nl">osds</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">up</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="ow">in</span><span class="w"></span>
+<span class="mi">2014</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">11</span><span class="w"> </span><span class="mi">19</span><span class="err">:</span><span class="mi">10</span><span class="err">:</span><span class="mf">00.954275</span><span class="w"> </span><span class="n">mon</span><span class="mf">.0</span><span class="w"> </span><span class="o">[</span><span class="n">INF</span><span class="o">]</span><span class="w"> </span><span class="n">pgmap</span><span class="w"> </span><span class="nl">v1345</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="nl">pgs</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">active</span><span class="o">+</span><span class="n">recovering</span><span class="o">+</span><span class="n">degraded</span><span class="p">,</span><span class="w"> </span><span class="mi">199</span><span class="w"> </span><span class="n">active</span><span class="o">+</span><span class="n">degraded</span><span class="p">;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">bytes</span><span class="w"> </span><span class="k">data</span><span class="p">,</span><span class="w"> </span><span class="mi">38812</span><span class="w"> </span><span class="n">KB</span><span class="w"> </span><span class="n">used</span><span class="p">,</span><span class="w"> </span><span class="mi">5071</span><span class="w"> </span><span class="n">MB</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">5108</span><span class="w"> </span><span class="n">MB</span><span class="w"> </span><span class="n">avail</span><span class="p">;</span><span class="w"> </span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="w"> </span><span class="n">degraded</span><span class="w"> </span><span class="p">(</span><span class="mf">100.000</span><span class="o">%</span><span class="p">)</span><span class="w"></span>
+<span class="mi">2014</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">11</span><span class="w"> </span><span class="mi">19</span><span class="err">:</span><span class="mi">10</span><span class="err">:</span><span class="mf">01.960942</span><span class="w"> </span><span class="n">mon</span><span class="mf">.0</span><span class="w"> </span><span class="o">[</span><span class="n">INF</span><span class="o">]</span><span class="w"> </span><span class="n">osdmap</span><span class="w"> </span><span class="nl">e246</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="nl">osds</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">up</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="ow">in</span><span class="w"></span>
+<span class="mi">2014</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">11</span><span class="w"> </span><span class="mi">19</span><span class="err">:</span><span class="mi">10</span><span class="err">:</span><span class="mf">01.975509</span><span class="w"> </span><span class="n">mon</span><span class="mf">.0</span><span class="w"> </span><span class="o">[</span><span class="n">INF</span><span class="o">]</span><span class="w"> </span><span class="n">pgmap</span><span class="w"> </span><span class="nl">v1346</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="nl">pgs</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">active</span><span class="o">+</span><span class="n">recovering</span><span class="o">+</span><span class="n">degraded</span><span class="p">,</span><span class="w"> </span><span class="mi">199</span><span class="w"> </span><span class="n">active</span><span class="o">+</span><span class="n">degraded</span><span class="p">;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">bytes</span><span class="w"> </span><span class="k">data</span><span class="p">,</span><span class="w"> </span><span class="mi">38812</span><span class="w"> </span><span class="n">KB</span><span class="w"> </span><span class="n">used</span><span class="p">,</span><span class="w"> </span><span class="mi">5071</span><span class="w"> </span><span class="n">MB</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">5108</span><span class="w"> </span><span class="n">MB</span><span class="w"> </span><span class="n">avail</span><span class="p">;</span><span class="w"> </span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="w"> </span><span class="n">degraded</span><span class="w"> </span><span class="p">(</span><span class="mf">100.000</span><span class="o">%</span><span class="p">)</span><span class="w"></span>
+<span class="mi">2014</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">11</span><span class="w"> </span><span class="mi">19</span><span class="err">:</span><span class="mi">10</span><span class="err">:</span><span class="mf">03.982202</span><span class="w"> </span><span class="n">mon</span><span class="mf">.0</span><span class="w"> </span><span class="o">[</span><span class="n">INF</span><span class="o">]</span><span class="w"> </span><span class="n">osdmap</span><span class="w"> </span><span class="nl">e247</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="nl">osds</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">up</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="ow">in</span><span class="w"></span>
+<span class="mi">2014</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">11</span><span class="w"> </span><span class="mi">19</span><span class="err">:</span><span class="mi">10</span><span class="err">:</span><span class="mf">03.994963</span><span class="w"> </span><span class="n">mon</span><span class="mf">.0</span><span class="w"> </span><span class="o">[</span><span class="n">INF</span><span class="o">]</span><span class="w"> </span><span class="n">pgmap</span><span class="w"> </span><span class="nl">v1347</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="nl">pgs</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">active</span><span class="o">+</span><span class="n">recovering</span><span class="o">+</span><span class="n">degraded</span><span class="p">,</span><span class="w"> </span><span class="mi">199</span><span class="w"> </span><span class="n">active</span><span class="o">+</span><span class="n">degraded</span><span class="p">;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">bytes</span><span class="w"> </span><span class="k">data</span><span class="p">,</span><span class="w"> </span><span class="mi">38812</span><span class="w"> </span><span class="n">KB</span><span class="w"> </span><span class="n">used</span><span class="p">,</span><span class="w"> </span><span class="mi">5071</span><span class="w"> </span><span class="n">MB</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">5108</span><span class="w"> </span><span class="n">MB</span><span class="w"> </span><span class="n">avail</span><span class="p">;</span><span class="w"> </span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="w"> </span><span class="n">degraded</span><span class="w"> </span><span class="p">(</span><span class="mf">100.000</span><span class="o">%</span><span class="p">)</span><span class="w"></span>
+<span class="mi">2014</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">11</span><span class="w"> </span><span class="mi">19</span><span class="err">:</span><span class="mi">10</span><span class="err">:</span><span class="mf">05.005162</span><span class="w"> </span><span class="n">mon</span><span class="mf">.0</span><span class="w"> </span><span class="o">[</span><span class="n">INF</span><span class="o">]</span><span class="w"> </span><span class="n">osd</span><span class="mf">.2</span><span class="w"> </span><span class="mf">192.168.122.203</span><span class="err">:</span><span class="mi">6800</span><span class="o">/</span><span class="mi">8483</span><span class="w"> </span><span class="n">boot</span><span class="w"></span>
+<span class="mi">2014</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">11</span><span class="w"> </span><span class="mi">19</span><span class="err">:</span><span class="mi">10</span><span class="err">:</span><span class="mf">05.005386</span><span class="w"> </span><span class="n">mon</span><span class="mf">.0</span><span class="w"> </span><span class="o">[</span><span class="n">INF</span><span class="o">]</span><span class="w"> </span><span class="n">osdmap</span><span class="w"> </span><span class="nl">e248</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="nl">osds</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">up</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="ow">in</span><span class="w"></span>
+</code></pre></div>
+<p>Hardly. OSDs flapping right and left. Ouch ouch ouch.</p>
+<h2>Desperation: not your friend</h2>
+<p>OK, let's try to do something really terrible and get rid of that file manually.</p>
+<div class="highlight"><pre><span></span><code>$ sudo ceph osd map <span class="nb">test</span> onebyte
+osdmap e254 pool <span class="s1">'test'</span> <span class="o">(</span><span class="m">3</span><span class="o">)</span> object <span class="s1">'onebyte'</span> -&gt; pg <span class="m">3</span>.ed47d009 <span class="o">(</span><span class="m">3</span>.1<span class="o">)</span> -&gt; up <span class="o">[</span><span class="m">1</span><span class="o">]</span> acting <span class="o">[</span><span class="m">1</span><span class="o">]</span>
+</code></pre></div>
+<p>So it's mapped to OSD 1 now, which is expected. Let's take a look and see if we can find and remove it.</p>
+<div class="highlight"><pre><span></span><code><span class="n">ceph</span><span class="err">@</span><span class="n">ubuntu</span><span class="o">-</span><span class="n">ceph2</span><span class="p">:</span><span class="o">~$</span><span class="w"> </span><span class="n">ls</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">ceph</span><span class="o">/</span><span class="n">osd</span><span class="o">/</span><span class="n">ceph</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">current</span><span class="o">/</span><span class="mf">3.1</span><span class="n">_head</span><span class="o">/</span><span class="w"></span>
+<span class="n">ceph</span><span class="err">@</span><span class="n">ubuntu</span><span class="o">-</span><span class="n">ceph2</span><span class="p">:</span><span class="o">~$</span><span class="w"></span>
+</code></pre></div>
+<p>An empty directory. Well of course, they could never actually peer, so
+the data never got synchronized. So there's pretty much one thing
+left.</p>
+<div class="highlight"><pre><span></span><code><span class="n">ceph</span><span class="err">@</span><span class="n">ubuntu</span><span class="o">-</span><span class="n">ceph3</span><span class="p">:</span><span class="o">~$</span><span class="w"> </span><span class="n">sudo</span><span class="w"> </span><span class="n">stop</span><span class="w"> </span><span class="n">ceph</span><span class="o">-</span><span class="n">osd</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">2</span><span class="w"></span>
+<span class="n">stop</span><span class="p">:</span><span class="w"> </span><span class="n">Unknown</span><span class="w"> </span><span class="n">instance</span><span class="p">:</span><span class="w"> </span><span class="n">ceph</span><span class="o">/</span><span class="mi">2</span><span class="w"></span>
+<span class="n">ceph</span><span class="err">@</span><span class="n">ubuntu</span><span class="o">-</span><span class="n">ceph3</span><span class="p">:</span><span class="o">~$</span><span class="w"> </span><span class="n">sudo</span><span class="w"> </span><span class="n">rm</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">ceph</span><span class="o">/</span><span class="n">osd</span><span class="o">/</span><span class="n">ceph</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="n">current</span><span class="o">/</span><span class="mf">3.1</span><span class="n">_head</span><span class="o">/</span><span class="n">onebyte__head_ED47D009__3</span><span class="w"></span>
+<span class="n">ceph</span><span class="err">@</span><span class="n">ubuntu</span><span class="o">-</span><span class="n">ceph3</span><span class="p">:</span><span class="o">~$</span><span class="w"> </span><span class="n">sudo</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="n">ceph</span><span class="o">-</span><span class="n">osd</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">2</span><span class="w"></span>
+<span class="n">ceph</span><span class="o">-</span><span class="n">osd</span><span class="w"> </span><span class="p">(</span><span class="n">ceph</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="n">start</span><span class="o">/</span><span class="n">running</span><span class="p">,</span><span class="w"> </span><span class="n">process</span><span class="w"> </span><span class="mi">9069</span><span class="w"></span>
+
+<span class="n">ceph</span><span class="err">@</span><span class="n">ubuntu</span><span class="o">-</span><span class="n">ceph1</span><span class="p">:</span><span class="o">~$</span><span class="w"> </span><span class="n">sudo</span><span class="w"> </span><span class="n">stop</span><span class="w"> </span><span class="n">ceph</span><span class="o">-</span><span class="n">osd</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">0</span><span class="w"></span>
+<span class="n">stop</span><span class="p">:</span><span class="w"> </span><span class="n">Unknown</span><span class="w"> </span><span class="n">instance</span><span class="p">:</span><span class="w"> </span><span class="n">ceph</span><span class="o">/</span><span class="mi">0</span><span class="w"></span>
+<span class="n">ceph</span><span class="err">@</span><span class="n">ubuntu</span><span class="o">-</span><span class="n">ceph1</span><span class="p">:</span><span class="o">~$</span><span class="w"> </span><span class="n">sudo</span><span class="w"> </span><span class="n">rm</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">ceph</span><span class="o">/</span><span class="n">osd</span><span class="o">/</span><span class="n">ceph</span><span class="o">-</span><span class="mi">0</span><span class="o">/</span><span class="n">current</span><span class="o">/</span><span class="mf">3.1</span><span class="n">_head</span><span class="o">/</span><span class="n">onebyte__head_ED47D009__3</span><span class="w"> </span>
+<span class="n">ceph</span><span class="err">@</span><span class="n">ubuntu</span><span class="o">-</span><span class="n">ceph1</span><span class="p">:</span><span class="o">~$</span><span class="w"> </span><span class="n">sudo</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="n">ceph</span><span class="o">-</span><span class="n">osd</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">0</span><span class="w"></span>
+<span class="n">ceph</span><span class="o">-</span><span class="n">osd</span><span class="w"> </span><span class="p">(</span><span class="n">ceph</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">start</span><span class="o">/</span><span class="n">running</span><span class="p">,</span><span class="w"> </span><span class="n">process</span><span class="w"> </span><span class="mi">9485</span><span class="w"></span>
+</code></pre></div>
+<p>There. Shut down the OSDs, nuked the files, brought the OSDs back up.</p>
+<h2>A Fire Contained</h2>
+<p>And after a few more seconds, finally:</p>
+<div class="highlight"><pre><span></span><code>$ sudo ceph -s
+  cluster bd70ea39-58fc-4117-ade1-03a4d429cb49
+   health HEALTH_OK
+   monmap e4: <span class="m">3</span> mons at <span class="o">{</span>ubuntu-ceph1<span class="o">=</span><span class="m">192</span>.168.122.201:6789/0,ubuntu-ceph2<span class="o">=</span><span class="m">192</span>.168.122.202:6789/0,ubuntu-ceph3<span class="o">=</span><span class="m">192</span>.168.122.203:6789/0<span class="o">}</span>, election epoch <span class="m">180</span>, quorum <span class="m">0</span>,1,2 ubuntu-ceph1,ubuntu-ceph2,ubuntu-ceph3
+   osdmap e259: <span class="m">3</span> osds: <span class="m">3</span> up, <span class="m">3</span> <span class="k">in</span>
+    pgmap v1367: <span class="m">200</span> pgs: <span class="m">200</span> active+clean<span class="p">;</span> <span class="m">1</span> bytes data, <span class="m">122</span> MB used, <span class="m">15204</span> MB / <span class="m">15326</span> MB avail
+   mdsmap e1: <span class="m">0</span>/0/1 up
+</code></pre></div>
+<p>Whew.</p>
+<div class="highlight"><pre><span></span><code>$ sudo rados -p <span class="nb">test</span> get onebyte -
+error getting test/onebyte: No such file or directory
+</code></pre></div>
+<p>Now obviously the offending object is gone, which is ugly and we could
+have manually recreated that file and set some magic user.ceph
+attributes enabling us to keep the object, but in this case we just
+didn't care and wanted our cluster back up and running as soon as
+possible.</p>
+<h2>Prevention</h2>
+<p>So we have a brutal cure for this problem that is roughly akin to
+performing brain surgery with a fork and spoon. What could we have
+done better?</p>
+<p>LevelDB to the rescue. Ceph optionally (and in later versions, by
+default) stores attributes that would overflow the filesystem xattr
+store in a separate database called an omap, using Google's embedded
+LevelDB database. And in Dumpling, this feature is disabled by default
+-- with an exception for ext3/4, which have interesting attribute
+limitations themselves.</p>
+<p>This is the all-important option that needs to go in your ceph.conf:</p>
+<div class="highlight"><pre><span></span><code><span class="na">filestore xattr use omap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span><span class="w"></span>
+</code></pre></div>
+<p>You can enable this on a running cluster and this will retain and
+preserve any xattrs previously set on RADOS objects. Attributes mapped
+to file xattrs will simply be moved to the omap database (note however
+that the opposite is not true, but you'll never want to disable this
+option anymore, anyway).</p>
+<p>As of
+<a href="https://github.com/ceph/ceph/commit/dc0dfb9e01d593afdd430ca776cf4da2c2240a20">this Ceph commit</a>
+(which went into Ceph 0.70), the option is no longer available and is
+always treated as if set to true, so those versions are not affected
+by the issue described in this post.</p>
+<hr/>
+<p>This article originally appeared on the <code>hastexo.com</code> website (now defunct).</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../tag/ceph.html">Ceph</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+
+</body>
+</html>

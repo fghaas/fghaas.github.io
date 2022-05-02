@@ -1,0 +1,323 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../../theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/solid.css">
+
+    <link rel="stylesheet" type="text/css" href="../../../css/override.css">
+
+    <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+    <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+  
+
+
+ 
+
+<meta name="author" content="Florian Haas" />
+<meta name="description" content="Here’s a nice way to initialize a CLI argument parser in Python, with arbitrary levels of subcommands." />
+<meta name="keywords" content="Python">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="Building a nested CLI parser from a dictionary"/>
+  <meta property="og:description" content="Here’s a nice way to initialize a CLI argument parser in Python, with arbitrary levels of subcommands."/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../../resources/hints-and-kinks/python-argparse-from-dictionary/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2019-03-09 00:00:00+00:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../../author/florian-haas.html">
+  <meta property="article:section" content="hints-and-kinks"/>
+  <meta property="article:tag" content="Python"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; Building a nested CLI parser from a dictionary</title>
+
+</head>
+<body >
+  <aside>
+    <div>
+      <a href="../../../">
+        <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="../../../"></a>
+      </h1>
+
+
+
+
+      <ul class="social">
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/xahteiwi" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="me" class="sc-mastodon" href="https://mastodon.social/@xahteiwi" target="_blank">
+              <i class="fab fa-mastodon"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/fghaas" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-github" href="https://github.com/fghaas" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="../../../">Home</a>
+
+      <a href="/category/hints-and-kinks.html">Tech</a>
+      <a href="/category/presentations.html">Talks</a>
+      <a href="/category/blog.html">Thoughts</a>
+      <a href="">​</a>
+      <a href="/about/">About</a>
+      <a href="/comments/">Comments</a>
+      <a href="/legal/">Legal</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="">​</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="">​</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="python-argparse-from-dictionary">Building a nested CLI parser from a dictionary</h1>
+    <p>
+      Posted on Sat 09 March 2019 in <a href="../../../category/hints-and-kinks.html">hints-and-kinks</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>If you’ve ever built a command-line interface in Python, you are
+surely familiar with the <code>argparse</code> module, which is part of the Python
+standard library. It contains the <code>ArgumentParser</code> class, instances
+of which are typically invoked from the CLI’s <code>main()</code> method.</p>
+<p>The canonical way of doing this is explained in considerable detail in
+<a href="https://docs.python.org/3/library/argparse.html">the standard library
+documentation</a>. However,
+the standard way is quite repetitive, and you end up invoking
+<code>parser.add_argument()</code> <em>a lot,</em> as you populate your parent parser
+and subparsers with options.</p>
+<p>Here’s a more concise way:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># If you must run this on Python 2. You really shouldn't!</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+
+<span class="kn">from</span> <span class="nn">argparse</span> <span class="kn">import</span> <span class="n">ArgumentParser</span>
+
+<span class="kn">import</span> <span class="nn">yaml</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="c1"># Using YAML here only for illustrative purposes, as it's a bit</span>
+<span class="c1"># easier to read. You probably just want to use a dictionary outright.</span>
+<span class="c1">#</span>
+<span class="c1"># More at the bottom of this article.</span>
+<span class="c1"># Yes, go read the bottom of this article.</span>
+<span class="c1">#</span>
+<span class="c1"># Want to just blindly copy and paste this snippet? Fine, this is for you.</span>
+<span class="k">assert</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">PARSER_CONFIG_YAML</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">options:</span>
+<span class="s2">  - 'flags': ['-V', '--version']</span>
+<span class="s2">    action: version</span>
+<span class="s2">    help: 'show version'</span>
+<span class="s2">    version: '0.01'</span>
+<span class="s2">subcommands:</span>
+<span class="s2">- foo:</span>
+<span class="s2">    options:</span>
+<span class="s2">      - 'flags': ['-c', '--config']</span>
+<span class="s2">        'help': 'YAML configuration file'</span>
+<span class="s2">        dest: config</span>
+<span class="s2">- bar:</span>
+<span class="s2">    options:</span>
+<span class="s2">      - 'flags': ['-o', '--output']</span>
+<span class="s2">        'help': 'output file'</span>
+<span class="s2">        dest: output</span>
+<span class="s2">- baz:</span>
+<span class="s2">    subcommands:</span>
+<span class="s2">      - 'spam-eggs':</span>
+<span class="s2">          options:</span>
+<span class="s2">            - 'flags': ['-i', '--input']</span>
+<span class="s2">              'help': 'input file'</span>
+<span class="s2">              dest: input</span>
+<span class="s2">"""</span>
+
+<span class="k">class</span> <span class="nc">CLI</span><span class="p">():</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="k">def</span> <span class="nf">walk_config</span><span class="p">(</span><span class="n">dictionary</span><span class="p">,</span> <span class="n">parser</span><span class="p">):</span>
+            <span class="sd">"""Walk a dictionary and populate an ArgumentParser."""</span>
+
+            <span class="k">if</span> <span class="s1">'options'</span> <span class="ow">in</span> <span class="n">dictionary</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">opt</span> <span class="ow">in</span> <span class="n">dictionary</span><span class="p">[</span><span class="s1">'options'</span><span class="p">]:</span>
+                    <span class="n">args</span> <span class="o">=</span> <span class="n">opt</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">'flags'</span><span class="p">)</span>
+                    <span class="n">kwargs</span> <span class="o">=</span> <span class="n">opt</span>
+                    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="s1">'subcommands'</span> <span class="ow">in</span> <span class="n">dictionary</span><span class="p">:</span>
+                <span class="n">subs</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_subparsers</span><span class="p">(</span><span class="n">dest</span><span class="o">=</span><span class="s1">'action'</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">subcommand</span> <span class="ow">in</span> <span class="n">dictionary</span><span class="p">[</span><span class="s1">'subcommands'</span><span class="p">]:</span>
+                    <span class="k">for</span> <span class="n">cmd</span><span class="p">,</span> <span class="n">opts</span> <span class="ow">in</span> <span class="n">subcommand</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                        <span class="n">sub</span> <span class="o">=</span> <span class="n">subs</span><span class="o">.</span><span class="n">add_parser</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+                        <span class="n">walk_config</span><span class="p">(</span><span class="n">opts</span><span class="p">,</span> <span class="n">sub</span><span class="p">)</span>
+
+        <span class="n">config</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">PARSER_CONFIG_YAML</span><span class="p">)</span>
+
+        <span class="n">parser</span> <span class="o">=</span> <span class="n">ArgumentParser</span><span class="p">()</span>
+        <span class="n">walk_config</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">parser</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">parser</span> <span class="o">=</span> <span class="n">parser</span>
+
+    <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"This is the foo subcommand, "</span>
+              <span class="s2">"invoked with '-c </span><span class="si">%s</span><span class="s2">'."</span> <span class="o">%</span> <span class="n">config</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">bar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"This is the bar subcommand, "</span>
+              <span class="s2">"invoked with '-o </span><span class="si">%s</span><span class="s2">'."</span> <span class="o">%</span> <span class="n">output</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">baz</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"This is the baz subcommand"</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">spam_eggs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"This is the baz spam-eggs subcommand, "</span>
+              <span class="s2">"invoked with '-i </span><span class="si">%s</span><span class="s2">'."</span> <span class="o">%</span> <span class="nb">input</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">argv</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">):</span>
+        <span class="n">opts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+        <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">opts</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">'action'</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'-'</span><span class="p">,</span> <span class="s1">'_'</span><span class="p">))(</span><span class="o">**</span><span class="n">opts</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+    <span class="n">CLI</span><span class="p">()</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+<p>And now, if you want to add a new option, you add it to the
+top-level or the subcommand’s <code>options</code> list, and add it to your
+subcommand method.</p>
+<p>And if you want to add a new subcommand, you just add that at the
+level you like, and add a method that is named like your subcommand
+— with any hyphens in the subcommand being replaced with underscores in
+the method name.</p>
+<hr/>
+<h2>Notes</h2>
+<p>When using PyYAML, do not use versions affected by
+<a href="https://nvd.nist.gov/vuln/detail/CVE-2017-18342">CVE-2017-18342</a>. Really,
+you shouldn’t be using YAML at all for this purpose; you should just
+use a straight-up dictionary. If you want something just <em>a little</em>
+more readable, you might also consider JSON (for which there is <a href="https://docs.python.org/3/library/json.html">a
+parser</a> in the standard
+library), or perhaps <a href="https://pypi.org/project/toml/">TOML</a>.</p>
+<p>Also, yes there are smarter ways to define your program’s version;
+more on that perhaps in a later post.</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../tag/python.html">Python</a>
+    </p>
+  </div>
+
+
+
+
+  <div class="related-posts">
+    <h4>Part 1 of "Nifty Python tricks"</h4>
+       <h5>Next articles</h5>
+       <ul>
+           <li><a href="../../../resources/hints-and-kinks/python-cli-logging-options/">Configuring CLI output verbosity with logging and argparse</a></li>
+       </ul>
+  </div>
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+
+</body>
+</html>

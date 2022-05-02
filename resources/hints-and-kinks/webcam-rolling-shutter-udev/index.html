@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../../theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/solid.css">
+
+    <link rel="stylesheet" type="text/css" href="../../../css/override.css">
+
+    <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+    <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+  
+
+
+ 
+
+<meta name="author" content="Florian Haas" />
+<meta name="description" content="If you are spending a non-trivial amount of time in video calls every week (something that, at the time of writing, is true for a lot of people due to the COVID-19 pandemic), and also having to use mains-powered artificial lighting in your office (true at the time of writing …" />
+<meta name="keywords" content="udev">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="Fixing powerline flicker on your webcam feed with a udev rule"/>
+  <meta property="og:description" content="If you are spending a non-trivial amount of time in video calls every week (something that, at the time of writing, is true for a lot of people due to the COVID-19 pandemic), and also having to use mains-powered artificial lighting in your office (true at the time of writing …"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../../resources/hints-and-kinks/webcam-rolling-shutter-udev/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2021-01-17 00:00:00+00:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../../author/florian-haas.html">
+  <meta property="article:section" content="hints-and-kinks"/>
+  <meta property="article:tag" content="udev"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; Fixing powerline flicker on your webcam feed with a udev rule</title>
+
+</head>
+<body >
+  <aside>
+    <div>
+      <a href="../../../">
+        <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="../../../"></a>
+      </h1>
+
+
+
+
+      <ul class="social">
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/xahteiwi" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="me" class="sc-mastodon" href="https://mastodon.social/@xahteiwi" target="_blank">
+              <i class="fab fa-mastodon"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/fghaas" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-github" href="https://github.com/fghaas" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="../../../">Home</a>
+
+      <a href="/category/hints-and-kinks.html">Tech</a>
+      <a href="/category/presentations.html">Talks</a>
+      <a href="/category/blog.html">Thoughts</a>
+      <a href="">​</a>
+      <a href="/about/">About</a>
+      <a href="/comments/">Comments</a>
+      <a href="/legal/">Legal</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="">​</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="">​</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="webcam-rolling-shutter-udev">Fixing powerline flicker on your webcam feed with a udev rule</h1>
+    <p>
+      Posted on Sun 17 January 2021 in <a href="../../../category/hints-and-kinks.html">hints-and-kinks</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>If you are</p>
+<ul>
+<li>
+<p>spending a non-trivial amount of time in video calls every week
+  (something that, at the time of writing, is true for <strong>a lot</strong> of
+  people due to the COVID-19 pandemic), and also</p>
+</li>
+<li>
+<p>having to use mains-powered artificial lighting in your office (true
+  at the time of writing for significant portions of the Northern
+  Hemisphere, as it’s winter there),</p>
+</li>
+</ul>
+<p>then you may be dealing with an unpleasant effect where your web cam
+feed produces a permanent <a href="https://dsp.stackexchange.com/questions/19853/horizontal-banding-flickering-due-to-electronic-rolling-shutters">horizontal
+flicker</a>
+that is due to the electronic rolling shutter interacting with the
+(otherwise imperceptible) 50 or 60Hz AC powerline frequency.</p>
+<p>The good news is that most webcams come with a facility to eliminate
+that effect, and on a Linux desktop it’s not difficult to permanently
+do so.</p>
+<h2><code>v4l2-ctl</code></h2>
+<p>The utility you want to use for this purpose is <code>v4l2-ctl</code>, which on
+Ubuntu ships with <a href="https://packages.ubuntu.com/v4l-utils">the <code>v4l-utils</code>
+package</a>. <code>v4l2-ctl</code> allows you
+to read and set a bunch of parameters for your webcam. Here’s the set
+of parameters available for my <a href="https://www.razer.com/gb-en/streaming-cameras/razer-kiyo/RZ19-02320100-R3U1">Razer
+Kiyo</a>,
+a piece of kit that I highly recommend:</p>
+<div class="highlight"><pre><span></span><code>$ v4l2-ctl --list-ctrls --device<span class="o">=</span>/dev/video0
+                     brightness 0x00980900 <span class="o">(</span>int<span class="o">)</span>    : <span class="nv">min</span><span class="o">=</span><span class="m">0</span> <span class="nv">max</span><span class="o">=</span><span class="m">255</span> <span class="nv">step</span><span class="o">=</span><span class="m">1</span> <span class="nv">default</span><span class="o">=</span><span class="m">128</span> <span class="nv">value</span><span class="o">=</span><span class="m">128</span>
+                       contrast 0x00980901 <span class="o">(</span>int<span class="o">)</span>    : <span class="nv">min</span><span class="o">=</span><span class="m">0</span> <span class="nv">max</span><span class="o">=</span><span class="m">255</span> <span class="nv">step</span><span class="o">=</span><span class="m">1</span> <span class="nv">default</span><span class="o">=</span><span class="m">128</span> <span class="nv">value</span><span class="o">=</span><span class="m">128</span>
+                     saturation 0x00980902 <span class="o">(</span>int<span class="o">)</span>    : <span class="nv">min</span><span class="o">=</span><span class="m">0</span> <span class="nv">max</span><span class="o">=</span><span class="m">255</span> <span class="nv">step</span><span class="o">=</span><span class="m">1</span> <span class="nv">default</span><span class="o">=</span><span class="m">128</span> <span class="nv">value</span><span class="o">=</span><span class="m">128</span>
+ white_balance_temperature_auto 0x0098090c <span class="o">(</span>bool<span class="o">)</span>   : <span class="nv">default</span><span class="o">=</span><span class="m">1</span> <span class="nv">value</span><span class="o">=</span><span class="m">1</span>
+                           gain 0x00980913 <span class="o">(</span>int<span class="o">)</span>    : <span class="nv">min</span><span class="o">=</span><span class="m">0</span> <span class="nv">max</span><span class="o">=</span><span class="m">255</span> <span class="nv">step</span><span class="o">=</span><span class="m">1</span> <span class="nv">default</span><span class="o">=</span><span class="m">0</span> <span class="nv">value</span><span class="o">=</span><span class="m">0</span>
+           power_line_frequency 0x00980918 <span class="o">(</span>menu<span class="o">)</span>   : <span class="nv">min</span><span class="o">=</span><span class="m">0</span> <span class="nv">max</span><span class="o">=</span><span class="m">2</span> <span class="nv">default</span><span class="o">=</span><span class="m">2</span> <span class="nv">value</span><span class="o">=</span><span class="m">2</span>
+      white_balance_temperature 0x0098091a <span class="o">(</span>int<span class="o">)</span>    : <span class="nv">min</span><span class="o">=</span><span class="m">2000</span> <span class="nv">max</span><span class="o">=</span><span class="m">7500</span> <span class="nv">step</span><span class="o">=</span><span class="m">10</span> <span class="nv">default</span><span class="o">=</span><span class="m">4000</span> <span class="nv">value</span><span class="o">=</span><span class="m">4000</span> <span class="nv">flags</span><span class="o">=</span>inactive
+                      sharpness 0x0098091b <span class="o">(</span>int<span class="o">)</span>    : <span class="nv">min</span><span class="o">=</span><span class="m">0</span> <span class="nv">max</span><span class="o">=</span><span class="m">255</span> <span class="nv">step</span><span class="o">=</span><span class="m">1</span> <span class="nv">default</span><span class="o">=</span><span class="m">128</span> <span class="nv">value</span><span class="o">=</span><span class="m">128</span>
+         backlight_compensation 0x0098091c <span class="o">(</span>int<span class="o">)</span>    : <span class="nv">min</span><span class="o">=</span><span class="m">0</span> <span class="nv">max</span><span class="o">=</span><span class="m">1</span> <span class="nv">step</span><span class="o">=</span><span class="m">1</span> <span class="nv">default</span><span class="o">=</span><span class="m">0</span> <span class="nv">value</span><span class="o">=</span><span class="m">0</span>
+                  exposure_auto 0x009a0901 <span class="o">(</span>menu<span class="o">)</span>   : <span class="nv">min</span><span class="o">=</span><span class="m">0</span> <span class="nv">max</span><span class="o">=</span><span class="m">3</span> <span class="nv">default</span><span class="o">=</span><span class="m">3</span> <span class="nv">value</span><span class="o">=</span><span class="m">1</span>
+              exposure_absolute 0x009a0902 <span class="o">(</span>int<span class="o">)</span>    : <span class="nv">min</span><span class="o">=</span><span class="m">3</span> <span class="nv">max</span><span class="o">=</span><span class="m">2047</span> <span class="nv">step</span><span class="o">=</span><span class="m">1</span> <span class="nv">default</span><span class="o">=</span><span class="m">127</span> <span class="nv">value</span><span class="o">=</span><span class="m">127</span>
+         exposure_auto_priority 0x009a0903 <span class="o">(</span>bool<span class="o">)</span>   : <span class="nv">default</span><span class="o">=</span><span class="m">0</span> <span class="nv">value</span><span class="o">=</span><span class="m">1</span>
+                   pan_absolute 0x009a0908 <span class="o">(</span>int<span class="o">)</span>    : <span class="nv">min</span><span class="o">=</span>-36000 <span class="nv">max</span><span class="o">=</span><span class="m">36000</span> <span class="nv">step</span><span class="o">=</span><span class="m">3600</span> <span class="nv">default</span><span class="o">=</span><span class="m">0</span> <span class="nv">value</span><span class="o">=</span><span class="m">0</span>
+                  tilt_absolute 0x009a0909 <span class="o">(</span>int<span class="o">)</span>    : <span class="nv">min</span><span class="o">=</span>-36000 <span class="nv">max</span><span class="o">=</span><span class="m">36000</span> <span class="nv">step</span><span class="o">=</span><span class="m">3600</span> <span class="nv">default</span><span class="o">=</span><span class="m">0</span> <span class="nv">value</span><span class="o">=</span><span class="m">0</span>
+                 focus_absolute 0x009a090a <span class="o">(</span>int<span class="o">)</span>    : <span class="nv">min</span><span class="o">=</span><span class="m">0</span> <span class="nv">max</span><span class="o">=</span><span class="m">255</span> <span class="nv">step</span><span class="o">=</span><span class="m">1</span> <span class="nv">default</span><span class="o">=</span><span class="m">0</span> <span class="nv">value</span><span class="o">=</span><span class="m">0</span> <span class="nv">flags</span><span class="o">=</span>inactive
+                     focus_auto 0x009a090c <span class="o">(</span>bool<span class="o">)</span>   : <span class="nv">default</span><span class="o">=</span><span class="m">1</span> <span class="nv">value</span><span class="o">=</span><span class="m">1</span>
+                  zoom_absolute 0x009a090d <span class="o">(</span>int<span class="o">)</span>    : <span class="nv">min</span><span class="o">=</span><span class="m">100</span> <span class="nv">max</span><span class="o">=</span><span class="m">140</span> <span class="nv">step</span><span class="o">=</span><span class="m">10</span> <span class="nv">default</span><span class="o">=</span><span class="m">100</span> <span class="nv">value</span><span class="o">=</span><span class="m">100</span>
+</code></pre></div>
+<p>The value you’re looking for is <code>power_line_frequency</code>. Its default is
+<code>2</code> (compensating for a 60Hz powerline frequency), which means the
+camera should work out of the box and without any powerline flicker in
+the Americas and parts of Asia. I am in Europe though, where the mains
+frequency is 50Hz, so I need to set this to <code>1</code>:</p>
+<div class="highlight"><pre><span></span><code>v4l2-ctl --device /dev/video0 --set-ctrl<span class="o">=</span><span class="nv">power_line_frequency</span><span class="o">=</span><span class="m">1</span>
+</code></pre></div>
+<p>However, it’s rather tedious to run that command every time I want to use the
+webcam.</p>
+<h2>udev</h2>
+<p>Thankfully, this process can be automated with a simple udev rule:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">ACTION</span><span class="o">==</span><span class="s2">"add"</span>, <span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">"video4linux"</span>, <span class="nv">DRIVERS</span><span class="o">==</span><span class="s2">"uvcvideo"</span>, <span class="nv">RUN</span><span class="o">+=</span><span class="s2">"/usr/bin/v4l2-ctl --set-ctrl=power_line_frequency=1"</span>
+</code></pre></div>
+<p>This way, any camera handled by the <code>uvcvideo</code> driver (meaning,
+practically any contemporary webcam) will have its power line
+frequency setting configured to the 50Hz value, eliminating the
+banding effect from the rolling shutter.</p>
+<p>Chuck that line into a file in <code>/etc/udev/rules.d</code>, run <code>sudo udevadm
+trigger</code>, and you should be good to go.</p>
+<h2>Acknowledgments and further reading</h2>
+<p>I got the udev rule suggestion from user
+<a href="https://unix.stackexchange.com/users/258991/telcom">telcoM</a>’s answer
+on <a href="https://unix.stackexchange.com/questions/581867/how-can-i-change-my-webcams-power-line-frequency-setting">this StackExchange
+post</a>. The
+discussion thread on that post has a few additional suggestions,
+including some not using udev.</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../tag/udev.html">udev</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+
+</body>
+</html>

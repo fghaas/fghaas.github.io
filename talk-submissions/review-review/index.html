@@ -1,0 +1,302 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../theme/font-awesome/css/solid.css">
+
+    <link rel="stylesheet" type="text/css" href="../../css/override.css">
+
+    <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+    <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+  
+
+
+ 
+
+<meta name="author" content="Florian Haas" />
+<meta name="description" content="A talk I submitted to DevOpsDays Tel Aviv 2021 and DevConf.CZ 2022" />
+<meta name="keywords" content="Conference, GitLab, GitHub, Zuul">
+
+<link rel="alternate" href="../.././talk-submissions/review-review/" hreflang="en" />
+<link rel="alternate" href="../.././blog/2022/01/29/review-review/" hreflang="en" />
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="The Review Review"/>
+  <meta property="og:description" content="A talk I submitted to DevOpsDays Tel Aviv 2021 and DevConf.CZ 2022"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../.././talk-submissions/review-review/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2021-10-07 00:00:00+00:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../author/florian-haas.html">
+  <meta property="article:section" content="talk-submissions"/>
+  <meta property="article:tag" content="Conference"/>
+  <meta property="article:tag" content="GitLab"/>
+  <meta property="article:tag" content="GitHub"/>
+  <meta property="article:tag" content="Zuul"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; The Review Review</title>
+
+</head>
+<body >
+  <aside>
+    <div>
+      <a href="../../">
+        <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="../../"></a>
+      </h1>
+
+
+
+
+      <ul class="social">
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/xahteiwi" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="me" class="sc-mastodon" href="https://mastodon.social/@xahteiwi" target="_blank">
+              <i class="fab fa-mastodon"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/fghaas" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-github" href="https://github.com/fghaas" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="../../">Home</a>
+
+      <a href="/category/hints-and-kinks.html">Tech</a>
+      <a href="/category/presentations.html">Talks</a>
+      <a href="/category/blog.html">Thoughts</a>
+      <a href="">​</a>
+      <a href="/about/">About</a>
+      <a href="/comments/">Comments</a>
+      <a href="/legal/">Legal</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="">​</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="">​</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+    </nav>
+
+<article class="single">
+  <header>
+          <div class="translations">
+    <a class="active" href="../.././talk-submissions/review-review/">en</a>
+        <a href="../.././blog/2022/01/29/review-review/">en</a>
+    </div>
+
+    <h1 id="review-review">The Review Review</h1>
+    <p>
+      Posted on Thu 07 October 2021 in <a href="../../category/talk-submissions.html">talk-submissions</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>This is a talk I submitted<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> to
+<a href="https://www.devconf.info/cz/">DevConf.CZ</a> 2022, which used a
+non-anonymized CfP process via <a href="https://cfp.devconf.info">Red Hat’s CfP
+website</a>. For that conference, it was
+selected as the lead talk in the Modern Software Development track.  I
+had previously submitted this talk to DevOpsDays Tel Aviv 2021, which
+used a non-anonymized CfP process via
+<a href="https://www.papercall.io/">PaperCall</a>. That submission was rejected.</p>
+<h2>Title</h2>
+<p><em>The Review Review: comparing code review, testing, staging and
+deployment across development collaboration platforms</em></p>
+<h2>Elevator Pitch</h2>
+<blockquote>
+<p>You have 300 characters to sell your talk. This is known as the
+"elevator pitch". Make it as exciting and enticing as possible.</p>
+</blockquote>
+<p>GitHub, GitLab, Gerrit — what should I choose? What’s the best review
+process, the best CI/CD integration, the best deployment facility?
+Which should I select for my startup, or consider migrating to? Which
+supports good collaboration practices, which bad ones? This talk gives
+the run-down.</p>
+<h2>Talk Format</h2>
+<blockquote>
+<p>What format is this talk best suited for?</p>
+</blockquote>
+<p>Talk (~25-40 minutes)</p>
+<h2>Audience Level</h2>
+<blockquote>
+<p>Who is the best target audience for this talk?</p>
+</blockquote>
+<p>Intermediate</p>
+<h2>Description</h2>
+<blockquote>
+<p>The description will be seen by reviewers during the CFP process and
+may eventually be seen by the attendees of the event. You should
+make the description of your talk as compelling and exciting as
+possible. Remember, you're selling both the organizers of the events
+to select your talk, as well as trying to convince attendees your
+talk is the one they should see.</p>
+</blockquote>
+<p>In DevOps, the process of collaborative review, testing, staging, and
+deployment to production constitutes a core element of the work we
+do. And we generally strive to make this process as effective,
+efficient, smooth, and transparent as possible. Achieving that partly
+comes from the work culture we shape and inhabit, partly from our
+selection of tools — and of course, work culture and work tools
+permanently and closely influence each other. This goes for both the
+tools that drive review, and the tools that drive CI/CD:</p>
+<ul>
+<li>
+<p>the <strong>GitHub Pull Request</strong> process in combination with <strong>GitHub
+  Actions</strong>;</p>
+</li>
+<li>
+<p>the <strong>GitLab Merge Request</strong> process in combination with <strong>GitLab
+  CI</strong>;</p>
+</li>
+<li>
+<p>the <strong>Gerrit Review</strong> process in combination with <strong>Zuul</strong>.</p>
+</li>
+</ul>
+<p>None of these is perfect, all of them have their advantages and
+disadvantages under particular circumstances. Some are meant to be
+used principally as a service, some are fine to self-host. Some are
+adamant about enforcing specific deployment practices, some follow a
+more relaxed approach.</p>
+<p>This talk is a summary of the current state of affairs with all these
+tools, and contains recommendations on what to use under which
+circumstances.</p>
+<h2>Notes</h2>
+<blockquote>
+<p>Notes will only be seen by reviewers during the CFP process. This is
+where you should explain things such as technical requirements, why
+you're the best person to speak on this subject, etc...</p>
+</blockquote>
+<p>My team and I have worked with all tools mentioned in a professional
+capacity, and I believe I've got a very good understanding of the
+relative merits of the systems presented. This does not include a
+hard-and-fast recommendation for one particular tool or platform.</p>
+<p>This is a talk that's suitable for both in-person and on-line events.</p>
+<h2>Tags</h2>
+<blockquote>
+<p>Tag your talk to make it easier for event organizers to be able to
+find. Examples are "ruby, javascript, rails".</p>
+</blockquote>
+<p>GitHub, GitLab, Gerrit, Zuul, CI/CD, Development, DevOps</p>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>If you’re curious why this is here, please read
+<a href="../../blog/2019/04/23/talk-submissions/">this</a>. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../../tag/conference.html">Conference</a>
+      <a href="../../tag/gitlab.html">GitLab</a>
+      <a href="../../tag/github.html">GitHub</a>
+      <a href="../../tag/zuul.html">Zuul</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+
+</body>
+</html>

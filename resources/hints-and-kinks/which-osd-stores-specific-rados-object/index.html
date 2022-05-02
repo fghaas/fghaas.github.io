@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../../theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/solid.css">
+
+    <link rel="stylesheet" type="text/css" href="../../../css/override.css">
+
+    <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+    <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+  
+
+
+ 
+
+<meta name="author" content="Florian Haas" />
+<meta name="description" content="Ever wanted to know just which of your OSDs a RADOS object is currently stored in? Here&#39;s how. Suppose you&#39;ve got an RBD device, named test. Then you can use the rbd info command to display which name prefix is used by the RADOS objects that make up the RBD …" />
+<meta name="keywords" content="Ceph">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="Finding out which OSDs currently store a specific RADOS object"/>
+  <meta property="og:description" content="Ever wanted to know just which of your OSDs a RADOS object is currently stored in? Here&#39;s how. Suppose you&#39;ve got an RBD device, named test. Then you can use the rbd info command to display which name prefix is used by the RADOS objects that make up the RBD …"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../../resources/hints-and-kinks/which-osd-stores-specific-rados-object/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2012-03-09 22:55:06+01:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../../author/florian-haas.html">
+  <meta property="article:section" content="hints-and-kinks"/>
+  <meta property="article:tag" content="Ceph"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; Finding out which OSDs currently store a specific RADOS object</title>
+
+</head>
+<body >
+  <aside>
+    <div>
+      <a href="../../../">
+        <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="../../../"></a>
+      </h1>
+
+
+
+
+      <ul class="social">
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/xahteiwi" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="me" class="sc-mastodon" href="https://mastodon.social/@xahteiwi" target="_blank">
+              <i class="fab fa-mastodon"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/fghaas" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-github" href="https://github.com/fghaas" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="../../../">Home</a>
+
+      <a href="/category/hints-and-kinks.html">Tech</a>
+      <a href="/category/presentations.html">Talks</a>
+      <a href="/category/blog.html">Thoughts</a>
+      <a href="">​</a>
+      <a href="/about/">About</a>
+      <a href="/comments/">Comments</a>
+      <a href="/legal/">Legal</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="">​</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="">​</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="which-osd-stores-specific-rados-object">Finding out which OSDs currently store a specific RADOS object</h1>
+    <p>
+      Posted on Fri 09 March 2012 in <a href="../../../category/hints-and-kinks.html">hints-and-kinks</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>Ever wanted to know just which of your OSDs a RADOS object is
+currently stored in? Here's how.</p>
+<p>Suppose you've got an RBD device, named <code>test</code>. Then you can use the
+<code>rbd info</code> command to display which name prefix is used by the RADOS
+objects that make up the RBD:</p>
+<div class="highlight"><pre><span></span><code>ceph04:~ # rbd info test
+rbd image 'test':
+    size 1024 MB in 256 objects
+    order 22 (4096 KB objects)
+    block_name_prefix: rb.0.0
+    parent:  (pool -1)
+</code></pre></div>
+<p>In this example, the prefix we're looking for is <code>rb.0.0</code>.</p>
+<p>What's the RBD currently made of?</p>
+<div class="highlight"><pre><span></span><code>ceph04:~ # rados -p rbd ls | grep "^rb.0.0."
+rb.0.0.000000000000
+rb.0.0.000000000020
+rb.0.0.000000000021
+rb.0.0.000000000040
+rb.0.0.000000000042
+rb.0.0.000000000060
+rb.0.0.000000000063
+rb.0.0.000000000080
+rb.0.0.000000000081
+rb.0.0.000000000082
+rb.0.0.000000000083
+rb.0.0.000000000084
+rb.0.0.000000000085
+rb.0.0.000000000086
+rb.0.0.000000000087
+rb.0.0.000000000088
+rb.0.0.0000000000a0
+rb.0.0.0000000000a5
+rb.0.0.0000000000c0
+rb.0.0.0000000000c6
+rb.0.0.0000000000e0
+rb.0.0.0000000000e7
+rb.0.0.0000000000ff
+</code></pre></div>
+<p>Now suppose you're interested in where <code>rb.0.0.0000000000a5</code> is.</p>
+<p>You first grab an OSD map:</p>
+<div class="highlight"><pre><span></span><code><span class="n">ceph04</span><span class="p">:</span><span class="o">~</span><span class="w"> </span><span class="c1"># ceph osd getmap -o /tmp/osdmap</span><span class="w"></span>
+<span class="mi">2012</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">09</span><span class="w"> </span><span class="mi">21</span><span class="p">:</span><span class="mi">31</span><span class="p">:</span><span class="mf">47.055376</span><span class="w"> </span><span class="n">mon</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="p">[</span><span class="n">osd</span><span class="p">,</span><span class="n">getmap</span><span class="p">]</span><span class="w"></span>
+<span class="mi">2012</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">09</span><span class="w"> </span><span class="mi">21</span><span class="p">:</span><span class="mi">31</span><span class="p">:</span><span class="mf">47.056624</span><span class="w"> </span><span class="n">mon</span><span class="o">.</span><span class="mi">1</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s1">'got osdmap epoch 187'</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
+<span class="n">wrote</span><span class="w"> </span><span class="mi">2273</span><span class="w"> </span><span class="n">byte</span><span class="w"> </span><span class="n">payload</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">osdmap</span><span class="w"></span>
+</code></pre></div>
+<p>And now you can use <code>osdmaptool</code> to test an object name against the
+mapfile:</p>
+<div class="highlight"><pre><span></span><code><span class="n">ceph04</span><span class="p">:</span><span class="o">~</span><span class="w"> </span><span class="c1"># osdmaptool --test-map-object rb.0.0.0000000000a5 /tmp/osdmap </span><span class="w"></span>
+<span class="n">osdmaptool</span><span class="p">:</span><span class="w"> </span><span class="n">osdmap</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="s1">'/tmp/osdmap'</span><span class="w"></span>
+<span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="s1">'rb.0.0.0000000000a5'</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="mf">0.7</span><span class="n">ea1</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="w"></span>
+</code></pre></div>
+<p>... meaning the object lives in Placement Group <code>0.7ea1</code>, of which
+replicas currently exist in OSDs 2 and 0.</p>
+<p>Why do you want to know this? Normally, really, you don't. All the
+replication and distribution happens under the covers without your
+intervention. But you can use this rather neatly if you want to watch
+your data being redistributed as you take out OSDs temporarily, and
+put them back in.</p>
+<hr/>
+<p>This article originally appeared on the <code>hastexo.com</code> website (now defunct).</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../tag/ceph.html">Ceph</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+
+</body>
+</html>

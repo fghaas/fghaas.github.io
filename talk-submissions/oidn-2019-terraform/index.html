@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../theme/font-awesome/css/solid.css">
+
+    <link rel="stylesheet" type="text/css" href="../../css/override.css">
+
+    <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+    <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+  
+
+
+ 
+
+<meta name="author" content="Florian Haas" />
+<meta name="description" content="A workshop I submitted to Open Infra Days Nordics 2019." />
+<meta name="keywords" content="Conference, Terraform, OpenStack, Kubernetes">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="One For All: Using Terraform to manage OpenStack and Kubernetes resources"/>
+  <meta property="og:description" content="A workshop I submitted to Open Infra Days Nordics 2019."/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../talk-submissions/oidn-2019-terraform/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2019-05-07 00:00:00+00:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../author/florian-haas.html">
+  <meta property="article:section" content="talk-submissions"/>
+  <meta property="article:tag" content="Conference"/>
+  <meta property="article:tag" content="Terraform"/>
+  <meta property="article:tag" content="OpenStack"/>
+  <meta property="article:tag" content="Kubernetes"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; One For All: Using Terraform to manage OpenStack and Kubernetes resources</title>
+
+</head>
+<body >
+  <aside>
+    <div>
+      <a href="../../">
+        <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="../../"></a>
+      </h1>
+
+
+
+
+      <ul class="social">
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/xahteiwi" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="me" class="sc-mastodon" href="https://mastodon.social/@xahteiwi" target="_blank">
+              <i class="fab fa-mastodon"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/fghaas" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-github" href="https://github.com/fghaas" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="../../">Home</a>
+
+      <a href="/category/hints-and-kinks.html">Tech</a>
+      <a href="/category/presentations.html">Talks</a>
+      <a href="/category/blog.html">Thoughts</a>
+      <a href="">​</a>
+      <a href="/about/">About</a>
+      <a href="/comments/">Comments</a>
+      <a href="/legal/">Legal</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="">​</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="">​</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="oidn-2019-terraform">One For All: Using Terraform to manage OpenStack and Kubernetes resources</h1>
+    <p>
+      Posted on Tue 07 May 2019 in <a href="../../category/talk-submissions.html">talk-submissions</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>This is a workshop I proposed<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> for <a href="https://openinfranordics.com/">OpenInfra Days
+Nordics</a>, via a non-anonymized CfP
+process using <a href="https://www.papercall.io/">PaperCall</a>.</p>
+<h2>Title</h2>
+<p><em>One For All: Using Terraform to manage OpenStack and Kubernetes
+resources</em></p>
+<h2>Elevator Pitch</h2>
+<blockquote>
+<p>You have 300 characters to sell your talk. This is known as the
+"elevator pitch". Make it as exciting and enticing as possible.</p>
+</blockquote>
+<p>A hands-on introduction to Terraform in an OpenStack and Kubernetes
+context. Get the basics (of Terraform), then spin up a Kubernetes
+cluster in an OpenStack public cloud (with Terraform), and manage
+resources on it (with Terraform).</p>
+<h2>Talk Format</h2>
+<p>Workshop (&gt;60 minutes)</p>
+<h2>Audience Level</h2>
+<p>Intermediate</p>
+<h2>Description</h2>
+<blockquote>
+<p>This field supports Markdown. The description will be seen by
+reviewers during the CFP process and may eventually be seen by the
+attendees of the event.</p>
+<p>You should make the description of your talk as compelling and
+exciting as possible. Remember, you're selling both the organizers
+of the events to select your talk, as well as trying to convince
+attendees your talk is the one they should see.</p>
+</blockquote>
+<p>If you are interested in deployment automation for arbitrarily complex
+containerized microservice applications, this is for you!</p>
+<p>In this workshop, you will</p>
+<ul>
+<li>get to know the basics of <a href="https://www.terraform.io/">Terraform</a> and
+  <a href="https://www.terraform.io/docs/configuration/">Terraform
+  configurations</a>,</li>
+<li>spin up a Kubernetes cluster with Terraform, using the <a href="https://www.terraform.io/docs/providers/openstack/">OpenStack
+  provider</a> and
+  interfacing with <a href="https://docs.openstack.org/magnum/latest/user/">OpenStack
+  Magnum</a> in a public
+  cloud,</li>
+<li>start managing Kubernetes resources from Terraform, using the
+  <a href="https://www.terraform.io/docs/providers/kubernetes/">Kubernetes
+  provider</a>.</li>
+</ul>
+<p>You'll walk away with a solid understanding of Terraform's
+capabilities, enabling you to make an informed decision of whether
+Terraform is a suitable deployment automation facility for your
+organization's needs.</p>
+<p>Prior Terraform knowledge is not required.</p>
+<h2>Notes</h2>
+<blockquote>
+<p>This field supports Markdown. Notes will only be seen by reviewers
+during the CFP process. This is where you should explain things such
+as technical requirements, why you're the best person to speak on
+this subject, etc...</p>
+</blockquote>
+<p>There are no technical requirements other than internet connectivity,
+and a web browser (preferably on a laptop, though a reasonably-sized
+tablet with a modern browser should work as well).</p>
+<h2>Tags</h2>
+<blockquote>
+<p>Tag your talk to make it easier for event organizers to be able to
+find. Examples are "ruby, javascript, rails".</p>
+</blockquote>
+<p>Terraform, OpenStack, Kubernetes, Magnum</p>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>If you’re curious why this is here, please read
+<a href="../../blog/2019/04/23/talk-submissions/">this</a>. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../../tag/conference.html">Conference</a>
+      <a href="../../tag/terraform.html">Terraform</a>
+      <a href="../../tag/openstack.html">OpenStack</a>
+      <a href="../../tag/kubernetes.html">Kubernetes</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+
+</body>
+</html>

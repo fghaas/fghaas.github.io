@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>xahteiwi.eu - Ansible</title><link>https://xahteiwi.eu/</link><description></description><lastBuildDate>Wed, 23 Jan 2019 00:00:00 +0000</lastBuildDate><item><title>Learn Complex Skills, From Anywhere: Combining Django, Ansible and OpenStack to teach any tech skill</title><link>https://xahteiwi.eu/resources/presentations/learn-complex-skills-from-anywhere-combining-django-ansible-and-openstack-to-teach-any-tech-skill/</link><description>&lt;p&gt;My presentation from linux.conf.au 2019.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Video: &lt;a href="https://youtu.be/B1ic5o9geqw"&gt;YouTube&lt;/a&gt;, &lt;a href="http://mirror.linux.org.au/pub/linux.conf.au/2019/c3/Wednesday/Learn_Complex_Skills_From_Anywhere_Combining_Django_Ansible_and_OpenStack_to_teach_any_tech_skill.mp4"&gt;Linux Australia
+  (MP4)&lt;/a&gt;,
+  &lt;a href="http://mirror.linux.org.au/pub/linux.conf.au/2019/c3/Wednesday/Learn_Complex_Skills_From_Anywhere_Combining_Django_Ansible_and_OpenStack_to_teach_any_tech_skill.webm"&gt;Linux Australia (WebM)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Slides (with full speaker notes): &lt;a href="https://fghaas.github.io/lca2019/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
+zoom out for an overview, or just advance by hitting the spacebar.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Florian Haas</dc:creator><pubDate>Wed, 23 Jan 2019 00:00:00 +0000</pubDate><guid isPermaLink="false">tag:xahteiwi.eu,2019-01-23:/resources/presentations/learn-complex-skills-from-anywhere-combining-django-ansible-and-openstack-to-teach-any-tech-skill/</guid><category>presentations</category><category>Conference</category><category>Open edX</category><category>OpenStack</category><category>Django</category><category>Ansible</category><category>linux.conf.au</category></item><item><title>Heat and its Alternatives: Application Deployment in OpenStack</title><link>https://xahteiwi.eu/resources/presentations/heat-and-its-alternatives-application-deployment-in-openstack/</link><description>&lt;p&gt;From the 2016 OpenStack Summit in Barcelona. A comparison of tools for
+virtual systems orchestration in OpenStack.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Heat&lt;/li&gt;
+&lt;li&gt;Juju&lt;/li&gt;
+&lt;li&gt;Ansible&lt;/li&gt;
+&lt;li&gt;Cloudify&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;About 45 minutes.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Video: &lt;a href="https://youtu.be/wtXVd09qHoo"&gt;YouTube&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Slides: &lt;a href="https://fghaas.github.io/openstacksummit2016-barcelona/"&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
+zoom out for an overview, or just advance by hitting …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Florian Haas</dc:creator><pubDate>Thu, 27 Oct 2016 00:00:00 +0000</pubDate><guid isPermaLink="false">tag:xahteiwi.eu,2016-10-27:/resources/presentations/heat-and-its-alternatives-application-deployment-in-openstack/</guid><category>presentations</category><category>OpenStack</category><category>Heat</category><category>Ansible</category><category>Juju</category><category>Cloudify</category></item><item><title>Containers: Just Because Everyone Else is Doing Them Wrong, Doesn't Mean You Have To</title><link>https://xahteiwi.eu/blog/2016/02/21/containers-just-because-everyone-else/</link><description>&lt;p&gt;The recent CVE-2015-7547 vulnerability in glibc exposed a common antipattern in container management. Here's what you can do to avoid it, and instead adopt a container management pattern that will preserve your sanity and enable you to react to critical issues in minutes.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">florian</dc:creator><pubDate>Sun, 21 Feb 2016 00:00:00 +0000</pubDate><guid isPermaLink="false">tag:xahteiwi.eu,2016-02-21:/blog/2016/02/21/containers-just-because-everyone-else/</guid><category>blog</category><category>LXC</category><category>Containers</category><category>Ubuntu</category><category>Ansible</category></item></channel></rss>

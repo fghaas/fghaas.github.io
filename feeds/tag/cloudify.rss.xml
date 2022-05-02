@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>xahteiwi.eu - Cloudify</title><link>https://xahteiwi.eu/</link><description></description><lastBuildDate>Thu, 27 Oct 2016 00:00:00 +0000</lastBuildDate><item><title>Heat and its Alternatives: Application Deployment in OpenStack</title><link>https://xahteiwi.eu/resources/presentations/heat-and-its-alternatives-application-deployment-in-openstack/</link><description>&lt;p&gt;From the 2016 OpenStack Summit in Barcelona. A comparison of tools for
+virtual systems orchestration in OpenStack.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Heat&lt;/li&gt;
+&lt;li&gt;Juju&lt;/li&gt;
+&lt;li&gt;Ansible&lt;/li&gt;
+&lt;li&gt;Cloudify&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;About 45 minutes.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Video: &lt;a href="https://youtu.be/wtXVd09qHoo"&gt;YouTube&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Slides: &lt;a href="https://fghaas.github.io/openstacksummit2016-barcelona/"&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
+zoom out for an overview, or just advance by hitting …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Florian Haas</dc:creator><pubDate>Thu, 27 Oct 2016 00:00:00 +0000</pubDate><guid isPermaLink="false">tag:xahteiwi.eu,2016-10-27:/resources/presentations/heat-and-its-alternatives-application-deployment-in-openstack/</guid><category>presentations</category><category>OpenStack</category><category>Heat</category><category>Ansible</category><category>Juju</category><category>Cloudify</category></item></channel></rss>

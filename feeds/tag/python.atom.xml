@@ -1,0 +1,964 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Python</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/python.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2021-10-17T00:00:00+00:00</updated><entry><title>Universal tox tests (from just about any CI)</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/universal-tox-tests-from-just-about-any-ci/" rel="alternate"></link><published>2021-10-17T00:00:00+00:00</published><updated>2021-10-17T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-17:/resources/hints-and-kinks/universal-tox-tests-from-just-about-any-ci/</id><summary type="html">&lt;p&gt;I like tox. A lot. I use it all the time. This is a quick summary on how to use it in such a way that it becomes a central anchor point that you can use from all your CI systems.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I like &lt;code&gt;tox&lt;/code&gt;. A lot. I use it all the time. This is a quick summary on
+how to use it in such a way that it becomes a central anchor point that
+you can use from all your CI systems.&lt;/p&gt;
+&lt;h2&gt;What’s tox for?&lt;/h2&gt;
+&lt;p&gt;Normally &lt;code&gt;tox&lt;/code&gt; is used to run tests for Python projects, and it’s very
+well suited for that. You can use it with Python libraries, Django
+projects, scripts you use for system automation, whatever. But you can
+use it just the same for code that isn’t a Python application or
+library itself, but a Python application just happens to come in handy
+for testing that code.&lt;/p&gt;
+&lt;p&gt;In this example, I’ll describe a super simple use case: using a
+barebones &lt;code&gt;tox&lt;/code&gt; configuration that lints YAML configurations. Suppose
+you’ve got a Git repo that’s full of YAML files. And you want to make
+sure, for example, that all your
+&lt;a href="https://yamllint.readthedocs.io/en/stable/rules.html#module-yamllint.rules.truthy"&gt;truthy&lt;/a&gt;
+values are &lt;code&gt;true&lt;/code&gt; or &lt;code&gt;false&lt;/code&gt; and never &lt;code&gt;yes&lt;/code&gt;, &lt;code&gt;no&lt;/code&gt;, &lt;code&gt;on&lt;/code&gt; or &lt;code&gt;off&lt;/code&gt;. Or
+that your
+&lt;a href="https://yamllint.readthedocs.io/en/stable/rules.html#module-yamllint.rules.indentation"&gt;indentation&lt;/a&gt;
+is always consistent.&lt;/p&gt;
+&lt;h2&gt;&lt;code&gt;tox.ini&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;There first thing you’ll do is create &lt;code&gt;tox.ini&lt;/code&gt;, the central tox
+configuration file, in the top level directory of your
+repository. Here’s a tiny example:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[tox]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;envlist&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;py{3,36,39}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;skipsdist&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;True&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="k"&gt;[testenv]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;deps&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;yamllint&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;commands&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;yamllint {toxinidir}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;That’s it. What this’ll do, when invoked as simply &lt;code&gt;tox&lt;/code&gt;, is&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;create a Python 3 venv,&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pip&lt;/code&gt;-install the latest version of
+  &lt;a href="https://yamllint.readthedocs.io/en/stable/"&gt;&lt;code&gt;yamllint&lt;/code&gt;&lt;/a&gt;,&lt;/li&gt;
+&lt;li&gt;invoke the &lt;code&gt;yamllint&lt;/code&gt; command, which will recursively check for all
+  &lt;code&gt;.yml&lt;/code&gt;, &lt;code&gt;.yaml&lt;/code&gt;, and &lt;code&gt;.yamllint&lt;/code&gt; files in the directory where the
+  &lt;code&gt;tox.ini&lt;/code&gt; file itself lives.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;What's helpful here is that &lt;code&gt;tox&lt;/code&gt; does a little bit of magic with the
+testenv names. tox
+&lt;a href="https://tox.wiki/en/latest/example/basic.html#a-simple-tox-ini-default-environments"&gt;knows&lt;/a&gt;
+that if you call a testenv &lt;code&gt;py36&lt;/code&gt;, you want to test with Python 3.6
+(more precisely, &lt;a href="https://en.wikipedia.org/wiki/CPython"&gt;CPython&lt;/a&gt;
+3.6). &lt;code&gt;py39&lt;/code&gt;, that's Python 3.9. Just &lt;code&gt;py3&lt;/code&gt; means whatever Python
+version maps to the &lt;code&gt;python3&lt;/code&gt; binary on your system.&lt;sup id="fnref:python-versions"&gt;&lt;a class="footnote-ref" href="#fn:python-versions"&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;/p&gt;
+&lt;h2&gt;Running &lt;code&gt;tox&lt;/code&gt; on every commit&lt;/h2&gt;
+&lt;p&gt;Now the first thing you might want to do is run &lt;code&gt;tox&lt;/code&gt; on every commit,
+and encourage your collaborators to do the same. You can easily do
+that by dropping this tiny shell script&lt;sup id="fnref:shell-script"&gt;&lt;a class="footnote-ref" href="#fn:shell-script"&gt;2&lt;/a&gt;&lt;/sup&gt; into your repo
+as a file named &lt;code&gt;pre-commit&lt;/code&gt; in the &lt;code&gt;.githooks&lt;/code&gt; directory:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/bin/sh&lt;/span&gt;
+
+&lt;span class="nb"&gt;exec&lt;/span&gt; tox -e py3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Add that file to your repository as &lt;code&gt;.githooks/pre-commit&lt;/code&gt;, and make
+it executable. Also, add a little note to your README explaining that,
+to enable the pre-commit hook, all your collaborators can simply run&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git config core.hooksPath .githooks
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Easy, right? And once you’ve run that command, every &lt;code&gt;git commit&lt;/code&gt; will
+kick off a &lt;code&gt;tox&lt;/code&gt; run and you’ll never commit borked YAML again.&lt;sup id="fnref:py3"&gt;&lt;a class="footnote-ref" href="#fn:py3"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;Now of course, using those hooks is entirely optional, and can be
+overridden with &lt;code&gt;--no-verify&lt;/code&gt;. So, for those slackers that can’t be
+bothered to use them, you also want to check centrally. Here’s where
+your CI comes in.&lt;/p&gt;
+&lt;h2&gt;Running &lt;code&gt;tox&lt;/code&gt; on every GitHub PR&lt;/h2&gt;
+&lt;p&gt;If you collaborate via GitHub, you can run &lt;code&gt;tox&lt;/code&gt; on every PR, with a
+simple &lt;a href="https://docs.github.com/en/actions"&gt;GitHub Actions&lt;/a&gt;
+workflow. To use it, you’ll need a small addition to your &lt;code&gt;tox.ini&lt;/code&gt;
+file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[tox]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;envlist: py{3,36,39}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;skipsdist&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;True&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="k"&gt;[gh-actions]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;python&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="na"&gt;3.6: py36&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="na"&gt;3.9: py39&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="k"&gt;[testenv]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;deps&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;yamllint&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;commands&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;yamllint {toxinidir}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And then, you add a workflow to &lt;code&gt;.github/workflows&lt;/code&gt;, say
+&lt;code&gt;.github/workflows/tox.yml&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nn"&gt;---&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Test with tox&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="s"&gt;'on'&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;push&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;pull_request&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nt"&gt;jobs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;build&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;runs-on&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;ubuntu-latest&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;strategy&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;matrix&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;python-version&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;3.6&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;3.9&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;steps&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Checkout&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;uses&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;actions/checkout@v2&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;with&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="nt"&gt;submodules&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;true&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Set up Python ${{ matrix.python-version }}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;uses&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;actions/setup-python@v2&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;with&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="nt"&gt;python-version&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;${{ matrix.python-version }}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Install dependencies&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;run&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p p-Indicator"&gt;|&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="no"&gt;pip install tox tox-gh-actions&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Test with tox&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;run&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;tox&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;So that sets up your workflow so that it tests with two different
+Python versions that you care about, and then runs a test with each of
+them.&lt;/p&gt;
+&lt;p&gt;It does this via a combination of the information contained in the
+&lt;code&gt;[gh-actions]&lt;/code&gt; section of &lt;code&gt;tox.ini&lt;/code&gt;, and the &lt;code&gt;matrix&lt;/code&gt; strategy defined
+in the workflow. The &lt;code&gt;tox-gh-action&lt;/code&gt; plugin then pulls that
+information together and sets up testenvs as needed.&lt;/p&gt;
+&lt;p&gt;And it runs these checks every time you push to a branch (topic branch
+or default branch), and also on every pull request.&lt;/p&gt;
+&lt;h2&gt;Running &lt;code&gt;tox&lt;/code&gt; from GitLab CI&lt;/h2&gt;
+&lt;p&gt;So you’re either using only GitLab and not GitHub, or you’re mirroring
+a GitHub repo to a self-hosted GitLab and want to run your pipelines
+there as well? Easy. Here’s the exact same functionality for your
+&lt;code&gt;.gitlab-ci.yml&lt;/code&gt; file:&lt;sup id="fnref:docker-runners"&gt;&lt;a class="footnote-ref" href="#fn:docker-runners"&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nn"&gt;---&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nt"&gt;py36&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;python:3.6&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;stage&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;build&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;pip install tox&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;tox -e py36&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="nt"&gt;py39&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;python:3.9&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;stage&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;build&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;pip install tox&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;tox -e py39&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In &lt;a href="https://docs.gitlab.com/ee/ci/"&gt;GitLab CI&lt;/a&gt; I know of no elegant
+&lt;code&gt;matrix&lt;/code&gt; syntax to map the image version to the testenv. But on the
+other hand there's a bunch of things that "just happen" in a GitLab CI
+pipeline, which you specifically need to define in a GitHub Actions
+workflow definition. So overall your &lt;code&gt;.gitlab-ci.yml&lt;/code&gt; ends up shorter
+than your GitHub Actions &lt;code&gt;tox.yml&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;Running &lt;code&gt;tox&lt;/code&gt; from Zuul&lt;/h2&gt;
+&lt;p&gt;If you’re running a &lt;code&gt;tox&lt;/code&gt; testenv from &lt;a href="https://zuul-ci.org/"&gt;Zuul&lt;/a&gt;,
+you would use the built-in tox jobs in your pipeline, as referenced in
+&lt;code&gt;.zuul.yaml&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nn"&gt;---&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;project&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;check&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;jobs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;tox-py36&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;tox-py39&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;gate&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;jobs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;tox-py36&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;tox-py39&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Here, the &lt;code&gt;tox-py36&lt;/code&gt; and &lt;code&gt;tox-py39&lt;/code&gt; environments are both derivatives
+of the base
+&lt;a href="https://zuul-ci.org/docs/zuul-jobs/python-jobs.html#job-tox"&gt;tox&lt;/a&gt;
+job, which will run with cPython versions 3.6 and 3.9, and by default
+invoke testenvs called &lt;code&gt;py36&lt;/code&gt; and &lt;code&gt;py39&lt;/code&gt;, respectively.&lt;/p&gt;
+&lt;h2&gt;And now?&lt;/h2&gt;
+&lt;p&gt;Now that all of your Python testing standardizes on tox, you can go to
+town. Add more tests, add more testenvs, more Python versions,
+whatever.&lt;/p&gt;
+&lt;p&gt;You might need to make minimal changes, like add one line for each new
+Python version you want to support, to all your CI definitions. But if
+your project moves from GitHub to GitLab or from GitLab to
+Gerrit/Zuul, or your entire company goes on a great big CI migration,
+then you'll have one less thing to worry about, because your tests
+already run anywhere.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;By the way:&lt;/strong&gt; when you set up your &lt;code&gt;tox.ini&lt;/code&gt; and your CI
+configuration files as shown in this article, then &lt;code&gt;yamllint&lt;/code&gt; &lt;em&gt;will&lt;/em&gt;
+of course also lint your YAML CI configuration files
+themselves. Which comes in handy; I found 4 yamllint warnings and
+one error while testing the examples I’ve given here.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="footnote"&gt;
+&lt;hr/&gt;
+&lt;ol&gt;
+&lt;li id="fn:python-versions"&gt;
+&lt;p&gt;Testing with multiple Python versions may seem
+less than useful when you’re dealing with just one upstream
+package, &lt;code&gt;yamllint&lt;/code&gt;. I use that here as an oversimplified
+example. As soon as you add your own Python scripts or modules to
+the &lt;code&gt;tox&lt;/code&gt; checks, you may very well be interested in multiple
+python versions. &lt;a class="footnote-backref" href="#fnref:python-versions" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:shell-script"&gt;
+&lt;p&gt;If you're being a purist, you could also invoke the
+tox runner from a Python script. I prefer the shell &lt;code&gt;exec&lt;/code&gt;
+one-liner. &lt;a class="footnote-backref" href="#fnref:shell-script" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:py3"&gt;
+&lt;p&gt;In this case, for testing locally, we're not going to care
+about a specific installed Python version. We'll just make sure
+that the commit doesn't obviously break anything. In my humble
+opinion it's OK to catch version-specific issues in CI, but we
+shouldn't feed the CI code that's outright broken. &lt;a class="footnote-backref" href="#fnref:py3" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:docker-runners"&gt;
+&lt;p&gt;This example assumes that you’re either using
+shared GitLab runners using Docker, or a self-hosted runner on
+Kubernetes. &lt;a class="footnote-backref" href="#fnref:docker-runners" title="Jump back to footnote 4 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content><category term="hints-and-kinks"></category><category term="CI"></category><category term="Python"></category><category term="GitLab"></category><category term="GitHub"></category><category term="Zuul"></category></entry><entry><title>What I now know about HAproxied Django database connections, and wish I'd known sooner</title><link href="https://xahteiwi.eu/resources/presentations/what-i-now-know-about-haproxied-django-database-connections-and-wish-id-known-sooner/" rel="alternate"></link><published>2020-09-08T00:00:00+00:00</published><updated>2020-09-08T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2020-09-08:/resources/presentations/what-i-now-know-about-haproxied-django-database-connections-and-wish-id-known-sooner/</id><summary type="html">&lt;p&gt;My talk from PyConline AU 2020.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I’ve been wanting to speak at PyCon.au for a long time now, and
+finally did for the 2020 &lt;em&gt;PyConline AU&lt;/em&gt; edition.&lt;/p&gt;
+&lt;p&gt;This was a truly wonderful conference, in which the organisers and
+attendees collectively bent over backwards and put in a massive effort
+to run an event that was just as wonderful as an in-person event would
+have been.&lt;/p&gt;
+&lt;p&gt;This is a purely technical talk, and covers some very interesting
+aspects of dealing with Galera high availability clusters for MySQL
+and MariaDB database servers, connecting though them from Django via
+an HAProxy load balancer, and then dealing with interesting side
+effects of that combination.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Talk video: &lt;a href="https://youtu.be/2qDh7tl-wpg"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And, as always, you can also review my slides, with all my speaker notes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Rendered slides: &lt;a href="https://fghaas.github.io/pyconau2020"&gt;GitHub
+  Pages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Slide sources (CC-BY-SA): &lt;a href="https://github.com/fghaas/pyconau2020"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="Python"></category></entry><entry><title>Celery to Chew On</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/chewy-celery/" rel="alternate"></link><published>2020-05-06T00:00:00+00:00</published><updated>2020-05-06T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2020-05-06:/resources/hints-and-kinks/chewy-celery/</id><summary type="html">&lt;p&gt;Asynchronous Celery tasks that manipulate a MySQL/Galera database from a Django application can produce very interesting behavior when HAProxy is involved.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Asynchronous Celery tasks that manipulate a MySQL/Galera database from
+a Django application can produce very interesting behavior when
+HAProxy is involved.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;h1&gt;Some basics&lt;/h1&gt;
+&lt;p&gt;When you’re running a &lt;a href="https://www.djangoproject.com/"&gt;Django&lt;/a&gt;
+application, the following things are all pretty commonplace:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You use &lt;a href="https://en.wikipedia.org/wiki/MySQL"&gt;MySQL&lt;/a&gt; or
+  &lt;a href="https://en.wikipedia.org/wiki/MariaDB"&gt;MariaDB&lt;/a&gt; as your &lt;a href="https://docs.djangoproject.com/en/3.0/ref/databases/#mariadb-notes"&gt;Django
+  database
+  backend&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;You don’t run a single standalone MySQL/MariaDB instance, but a
+  &lt;a href="https://galeracluster.com/"&gt;Galera&lt;/a&gt; cluster.&lt;/li&gt;
+&lt;li&gt;You run asynchronous tasks in &lt;a href="https://docs.celeryproject.org/en/stable/"&gt;Celery&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This way, if you have a complex operation in your application, you
+don’t necessarily have to handle it in your latency-critical request
+codepath. Instead, you can have something like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;celery&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Task&lt;/span&gt;
+
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;ComplexOperation&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Task&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="sd"&gt;"""Task that does very complex things"""&lt;/span&gt;
+
+   &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+      &lt;span class="c1"&gt;# ... lots of interesting things&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;... and then from your view (or management command, or whatever), you
+can invoke this like so:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;.tasks&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;ComplexOperation&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;some_path&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+   &lt;span class="sd"&gt;"""/some_path URL that receives a request for an asynchronous ComplexOperation"""&lt;/span&gt;
+   &lt;span class="c1"&gt;# ...&lt;/span&gt;
+
+   &lt;span class="c1"&gt;# Asynchronously process ComplexOperation&lt;/span&gt;
+   &lt;span class="n"&gt;ComplexOperation&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;delay&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pk&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;GET&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'id'&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+
+   &lt;span class="c1"&gt;# ...&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;What this means is that the code defined in &lt;code&gt;ComplexOperation&lt;/code&gt;’s
+&lt;code&gt;run()&lt;/code&gt; method can run asynchronously, while the HTTP request to
+&lt;code&gt;/some_path&lt;/code&gt; can immediately return a response. You can then fetch the
+asynchronous task’s result in a later request, and present it to the
+user.&lt;/p&gt;
+&lt;p&gt;(Note that there are other ways to &lt;a href="https://docs.celeryproject.org/en/stable/userguide/calling.html"&gt;invoke Celery
+tasks&lt;/a&gt;;
+getting into those in detail is not the point of this article.)&lt;/p&gt;
+&lt;h1&gt;MySQL/Galera via HAProxy&lt;/h1&gt;
+&lt;p&gt;Now, let’s inject another item into the setup. Suppose your
+application doesn’t talk to your Galera cluster directly, but via
+&lt;a href="https://www.haproxy.org/"&gt;HAProxy&lt;/a&gt;. That’s not exactly unheard of; in
+fact it’s &lt;a href="https://galeracluster.com/library/documentation/ha-proxy.html"&gt;an officially documented HA
+option&lt;/a&gt;
+for Galera.&lt;/p&gt;
+&lt;p&gt;If you run a Django application against an HAProxyfied Galera cluster,
+and you have rather long-running Celery tasks, you may see occurrences
+of &lt;code&gt;OperationalError&lt;/code&gt; exceptions that map to MySQL error 2013, &lt;code&gt;Lost
+connection to MySQL server during query&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Error 2013 means that the connection between the client and the server
+dropped in the middle of executing a query. This is different from
+error 2006, &lt;code&gt;MySQL server has gone away&lt;/code&gt;, which means that the server
+has gracefully torn down the connection. 2013 is really an
+out-of-nowhere connection drop, which normally only occurs if your
+network has gone very wonky.&lt;/p&gt;
+&lt;p&gt;With HAProxy however, &lt;em&gt;that&lt;/em&gt; service may be your culprit. An HAProxy
+service sets four different &lt;strong&gt;timeout&lt;/strong&gt; values:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;timeout connect&lt;/code&gt;: the time in which a backend server must accept a
+  TCP connection, default 5s.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;timeout check&lt;/code&gt;: the time in which a backend server must respond to
+  a recurring health check, default 5s.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;timeout server&lt;/code&gt;: how long the server is allowed to take before it
+  answers a request, default 50s.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;timeout client&lt;/code&gt;: how long the client is allowed to take before it
+  sends the next request, default 50s.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Distilling the timeout problem&lt;/h1&gt;
+&lt;p&gt;If you have access to &lt;code&gt;manage.py shell&lt;/code&gt; for your Django application,
+here’s a really easy way for you to trigger an adverse effect of this
+default configuration. All you have to do is create an object from a
+model, so that it fetches data from the database, then wait a bit,
+then try to re-fetch. Like so:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;./&lt;/span&gt;&lt;span class="n"&gt;manage&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt; &lt;span class="n"&gt;shell&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;InteractiveConsole&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;sleep&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.contrib.auth&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;get_user_model&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;User&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;get_user_model&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;me&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;User&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'florian'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;me&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;refresh_from_db&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;55&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;me&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;refresh_from_db&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;Traceback&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;most&lt;/span&gt; &lt;span class="n"&gt;recent&lt;/span&gt; &lt;span class="n"&gt;call&lt;/span&gt; &lt;span class="n"&gt;last&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;OperationalError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2013&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'Lost connection to MySQL server during query'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;So what happens here?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I open a session to the database with the &lt;code&gt;User.objects.get()&lt;/code&gt; call
+  that populates the &lt;code&gt;me&lt;/code&gt; object.&lt;/li&gt;
+&lt;li&gt;Then I wait 40 seconds. That’s comfortably short of the 50-second
+  HAproxy timeout.&lt;/li&gt;
+&lt;li&gt;Now when I run &lt;code&gt;me.refresh_from_db()&lt;/code&gt;, the session is still alive
+  and the call completes without error. The timeout clock resets at
+  this stage, and I could keep going like this ad infinitum, as long
+  as I &lt;code&gt;sleep()&lt;/code&gt; (or keep busy) for less than 50 seconds.&lt;/li&gt;
+&lt;li&gt;However, I next wait &lt;em&gt;55&lt;/em&gt; seconds, causing HAProxy to terminate the
+  connection.&lt;/li&gt;
+&lt;li&gt;And then, &lt;code&gt;refresh_from_db()&lt;/code&gt; breaks immediately with the 2013
+  error.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Note that if I run &lt;code&gt;refresh_from_db()&lt;/code&gt; — or any other operation that
+touches the database – &lt;strong&gt;again&lt;/strong&gt;, I get a different error (2016,
+expected at this point), but I don’t get my database connection back:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; me.refresh_from_db()
+Traceback (most recent call last):
+[...]
+OperationalError: (2006, 'MySQL server has gone away')
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;What I have to do instead is &lt;em&gt;close&lt;/em&gt; my &lt;code&gt;connection&lt;/code&gt; first:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.db&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;connection&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;connection&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;... and then, when I run anything else that requires a database query,
+Django will happily reconnect for me.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; me.refresh_from_db()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1&gt;HAProxy timeouts getting in the way of your Celery tasks&lt;/h1&gt;
+&lt;p&gt;Now how does this relate to a real-world application? Suppose you have
+a long-running Celery task with database updates or queries at the
+beginning and end of something complicated, like so:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;celery&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Task&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;model&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Thing&lt;/span&gt;
+
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;ComplexOperation&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Task&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="sd"&gt;"""Task that does very complex things"""&lt;/span&gt;
+
+   &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+     &lt;span class="n"&gt;thing&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Thing&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pk&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'pk'&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+     &lt;span class="n"&gt;do_something_really_long_and_complicated&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+     &lt;span class="n"&gt;thing&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;save&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In this case, &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;we retrieve data from the database into memory, populating our
+  &lt;code&gt;thing&lt;/code&gt; object,&lt;/li&gt;
+&lt;li&gt;then we do something very complex with it — suppose this can
+  take on the order of minutes, in the extreme,&lt;/li&gt;
+&lt;li&gt;and finally, we take the modified data for our in-memory object, and
+  persist it back to the database.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So far, so simple. However, now assume that while you’re executing the
+&lt;code&gt;do_something_really_long_and_complicated()&lt;/code&gt; method, something bad
+happens to your database. Say you restarted one of your MySQL or
+MariaDB processes, or one of your nodes died altogether. Your database
+&lt;em&gt;cluster&lt;/em&gt; is still alive, but your &lt;em&gt;session&lt;/em&gt;, which was very much
+alive during the call that populated &lt;code&gt;thing&lt;/code&gt;, is dead by the time you
+want to make the &lt;code&gt;thing.save()&lt;/code&gt; call.&lt;/p&gt;
+&lt;p&gt;Depending on what actually happened, you’d see one of the following
+two &lt;code&gt;OperationalError&lt;/code&gt; instances:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Either an immediate &lt;code&gt;2006, MySQL server has gone away&lt;/code&gt; — this is is
+  what you’d see if the MySQL server was shut down or
+  restarted. That’s a graceful session teardown, and it’s &lt;strong&gt;not&lt;/strong&gt; what
+  I want to focus on in this article.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Or, and this is what I want to discuss further here, &lt;code&gt;2013, Lost
+  connection to MySQL server during query&lt;/code&gt;. You normally &lt;em&gt;don’t&lt;/em&gt; get
+  this as a result of something breaking at the other &lt;em&gt;end&lt;/em&gt; of the
+  connection, but rather in between. In our case, that would be
+  HAProxy. Let’s look at our code snippet with a few extra comments:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;celery&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Task&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;model&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Thing&lt;/span&gt;
+
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;ComplexOperation&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Task&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="sd"&gt;"""Task that does very complex things"""&lt;/span&gt;
+
+   &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+     &lt;span class="n"&gt;thing&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Thing&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pk&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'pk'&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+     &lt;span class="c1"&gt;# Right here (after the query is complete) is where HAproxy starts its&lt;/span&gt;
+     &lt;span class="c1"&gt;# timeout clock&lt;/span&gt;
+
+     &lt;span class="c1"&gt;# Suppose this takes 60 seconds (10 seconds longer than the default &lt;/span&gt;
+     &lt;span class="c1"&gt;# HAProxy timeout)&lt;/span&gt;
+
+     &lt;span class="n"&gt;do_something_really_long_and_complicated&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+     &lt;span class="c1"&gt;# Then by the time we get here, HAProxy has torn down the connection,&lt;/span&gt;
+     &lt;span class="c1"&gt;# and we get a 2013 error.&lt;/span&gt;
+     &lt;span class="n"&gt;thing&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;save&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;So now that we’ve identified the problem, how do we solve it? Well
+that depends greatly on the following questions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Are you the developer, meaning you can fix this in code, but you
+  can’t change much in the infrastructure?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Or are you a systems person, who can control all aspects of the
+  infrastructure, but you don’t have leverage over the code?&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you have control over neither code nor infrastructure, you’re out
+of luck. If you call all the shots about both, you get to pick and
+choose. But here are your options.&lt;/p&gt;
+&lt;h1&gt;Fixing this in code&lt;/h1&gt;
+&lt;p&gt;If it’s your codebase, and you want to make it robust so it runs in
+any MySQL/Galera environment behind HAProxy, no matter its
+configuration, you have a couple of ways to do it.&lt;/p&gt;
+&lt;h2&gt;Keep connections shorter&lt;/h2&gt;
+&lt;p&gt;One way to do it is do keep your database connections alive for such a
+short time that you practically never hit the HAProxy
+timeouts. Thankfully, Django auto-reconnects to your database any time
+it needs to do something, so the only thing you need to worry about
+here is &lt;em&gt;closing&lt;/em&gt; connections — &lt;em&gt;reopening&lt;/em&gt; them is automatic. For
+example:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.db&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;connection&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;model&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Thing&lt;/span&gt;
+
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;ComplexOperation&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Task&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="sd"&gt;"""Task that does very complex things"""&lt;/span&gt;
+
+   &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+     &lt;span class="n"&gt;thing&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Thing&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pk&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'pk'&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+     &lt;span class="c1"&gt;# Close connection immediately&lt;/span&gt;
+     &lt;span class="n"&gt;connection&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+     &lt;span class="c1"&gt;# Suppose this takes 60 seconds.&lt;/span&gt;
+     &lt;span class="n"&gt;do_something_really_long_and_complicated&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+     &lt;span class="c1"&gt;# Here, we just get a new connection.&lt;/span&gt;
+     &lt;span class="n"&gt;thing&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;save&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Catch OperationalErrors&lt;/h2&gt;
+&lt;p&gt;The other option is to just wing it, and catch the errors. Here’s a
+deliberately overtrivialized example:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.db&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;connection&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.db.utils&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;OperationalError&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;model&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Thing&lt;/span&gt;
+
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;ComplexOperation&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Task&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="sd"&gt;"""Task that does very complex things"""&lt;/span&gt;
+
+   &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+     &lt;span class="n"&gt;thing&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Thing&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pk&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'pk'&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+     &lt;span class="c1"&gt;# Right here (after the query is complete) is where HAproxy starts its&lt;/span&gt;
+     &lt;span class="c1"&gt;# timeout clock&lt;/span&gt;
+
+     &lt;span class="c1"&gt;# Suppose this takes 60 seconds.&lt;/span&gt;
+     &lt;span class="n"&gt;do_something_really_long_and_complicated&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+     &lt;span class="c1"&gt;# Then by the time we get here, HAProxy has torn down the connection,&lt;/span&gt;
+     &lt;span class="c1"&gt;# and we get a 2013 error, which we’ll want to catch.&lt;/span&gt;
+     &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+       &lt;span class="n"&gt;thing&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;save&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+     &lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="n"&gt;OperationalError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+       &lt;span class="c1"&gt;# It’s now necessary to disconnect (and reconnect automatically),&lt;/span&gt;
+       &lt;span class="c1"&gt;# because if we don’t then all we do is turn a 2013 into a 2006.&lt;/span&gt;
+       &lt;span class="n"&gt;connection&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+       &lt;span class="n"&gt;thing&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;save&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now of course, you’d never &lt;em&gt;actually&lt;/em&gt; implement it this way, because
+the one-time retry is far too trivial, so you probably want to retry
+up to &lt;em&gt;n&lt;/em&gt; times, but with exponential backoff or some such — in
+detail, this becomes complicated really quickly. &lt;/p&gt;
+&lt;p&gt;You probably also want some logging to catch this. &lt;/p&gt;
+&lt;p&gt;In short, you probably don’t want to hand-craft this, but instead rely
+on something like the &lt;code&gt;retry()&lt;/code&gt; decorator from
+&lt;a href="https://tenacity.readthedocs.io/en/latest/"&gt;tenacity&lt;/a&gt;, which can
+conveniently provide all those things, plus the reconnect, without
+cluttering your code too much.&lt;/p&gt;
+&lt;h1&gt;Fixing this in infrastructure&lt;/h1&gt;
+&lt;p&gt;You may be unable to control this sort of thing in your code — because, for
+example, it’s a codebase you’re not allowed to touch, or you’re less
+than comfortable with the idea of scouring or profiling your code for
+long-running codepaths between database queries, and sprinkling
+&lt;code&gt;connection.close()&lt;/code&gt; statements around.&lt;/p&gt;
+&lt;p&gt;In that case, you can fix your HAProxy configuration instead. Again,
+the variables you’ll want to set are&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;timeout server&lt;/code&gt; and &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;timeout client&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You’ll probably want to set them to an identical value, which should
+be the maximum length of your database-manipulating Celery task, and
+then ample room to spare.&lt;/p&gt;
+&lt;p&gt;The maximum reasonable value that you can set here is that of your
+backend server’s &lt;code&gt;wait_timeout&lt;/code&gt; configuration variable, &lt;a href="https://mariadb.com/kb/en/server-system-variables/#wait_timeout"&gt;which
+defaults to 8
+hours&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;Careful though, while MySQL interprets timeout settings in &lt;em&gt;seconds&lt;/em&gt;
+by default, HAProxy &lt;a href="https://cbonte.github.io/haproxy-dconv/1.7/configuration.html#2.4"&gt;defaults to
+&lt;em&gt;milliseconds.&lt;/em&gt;&lt;/a&gt;
+You’d thus need to translate the &lt;code&gt;28800&lt;/code&gt; default value for MySQL’s
+&lt;code&gt;wait_timeout&lt;/code&gt; into a &lt;code&gt;timeout server|client&lt;/code&gt; value of 28000000 for
+HAProxy, or else you set the HAProxy timeout to a value of &lt;code&gt;28800s&lt;/code&gt;
+(or &lt;code&gt;8h&lt;/code&gt;, if you prefer).&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;Background research contribution credit for this post goes to my &lt;a href="https://www.citynetwork.eu/"&gt;City
+Network&lt;/a&gt; colleagues &lt;a href="https://twitter.com/elenalindq"&gt;Elena
+Lindqvist&lt;/a&gt; and &lt;a href="https://twitter.com/pdale_se"&gt;Phillip
+Dale&lt;/a&gt;, plus &lt;a href="https://twitter.com/zerobanana"&gt;Zane
+Bitter&lt;/a&gt; for the tenacity suggestion.&lt;/p&gt;
+&lt;p&gt;Also, thanks to &lt;a href="https://twitter.com/muratkochane"&gt;Murat Koç&lt;/a&gt; for
+suggesting to clarify the supported time formats in HAProxy.&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Django"></category><category term="MySQL"></category><category term="HAProxy"></category><category term="Celery"></category><category term="Python"></category></entry><entry><title>Configuring CLI output verbosity with logging and argparse</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/python-cli-logging-options/" rel="alternate"></link><published>2019-05-01T00:00:00+00:00</published><updated>2019-05-01T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-05-01:/resources/hints-and-kinks/python-cli-logging-options/</id><summary type="html">&lt;p&gt;Command-line interfaces frequently produce output whose verbosity your users may want to be able to tweak. Here’s a nifty way to do that.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In a Python command-line interface (CLI) utility, you will want to
+inform your users about what your program is doing. Your will also
+want to give your users the ability to tweak how verbose that output
+is. Now there is a de-facto standard convention for doing that, which
+most CLIs — Python or otherwise — tend to adhere to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;By default, show messages only about errors and warning conditions.&lt;/li&gt;
+&lt;li&gt;Define a &lt;code&gt;-v&lt;/code&gt; or &lt;code&gt;--verbose&lt;/code&gt; option that makes your program also
+  show messages that are merely informative in nature.&lt;/li&gt;
+&lt;li&gt;Optionally, allow users to repeat the &lt;code&gt;-v&lt;/code&gt; option, making the
+  program even more verbose (to include, for example, debug output).&lt;/li&gt;
+&lt;li&gt;Conversely, also define a &lt;code&gt;-q&lt;/code&gt; or &lt;code&gt;--quiet&lt;/code&gt; (alternatively
+  &lt;code&gt;-s&lt;/code&gt;/&lt;code&gt;--silent&lt;/code&gt;) option that, when set, makes the program suppress
+  warnings and show only errors — i.e. the stuff that your program
+  shows if it exits with a nonzero exit code.&lt;/li&gt;
+&lt;li&gt;Log output that tells users about what the program is doing, as it
+  goes along, to the standard error (stderr) stream, whereas the
+  output related to the program’s &lt;em&gt;results&lt;/em&gt; goes to standard output
+  (stdout). This gives your users the ability to pipe stdout to a file
+  or another program, and your progress or status messages won’t
+  interfere with that.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And in Python it’s not at all difficult to do that!&lt;/p&gt;
+&lt;h2&gt;&lt;code&gt;argparse&lt;/code&gt; options&lt;/h2&gt;
+&lt;p&gt;First, we’ll want to define a couple of options &lt;a href="https://docs.python.org/3/library/argparse.html"&gt;for our
+&lt;code&gt;argparse.ArgumentParser&lt;/code&gt;
+object&lt;/a&gt;, which in the
+following snippet I’ve named &lt;code&gt;parser&lt;/code&gt;. Define two options, like so:&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;parser&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_argument&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'-v'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'--verbose'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                    &lt;span class="n"&gt;action&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'count'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                    &lt;span class="n"&gt;dest&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'verbosity'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                    &lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                    &lt;span class="n"&gt;help&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"verbose output (repeat for increased verbosity)"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;parser&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_argument&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'-q'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'--quiet'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                    &lt;span class="n"&gt;action&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'store_const'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                    &lt;span class="n"&gt;const&lt;/span&gt;&lt;span class="o"&gt;=-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                    &lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                    &lt;span class="n"&gt;dest&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'verbosity'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                    &lt;span class="n"&gt;help&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"quiet output (show errors only)"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;From this, we get two command-line options:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;-v&lt;/code&gt; or &lt;code&gt;--verbose&lt;/code&gt;, which can be repeated, sets &lt;code&gt;verbosity&lt;/code&gt;, which
+  defaults to 0. &lt;code&gt;action='count'&lt;/code&gt; means that if you invoke your CLI
+  with &lt;code&gt;-v&lt;/code&gt;, &lt;code&gt;verbosity&lt;/code&gt; is 1, &lt;code&gt;-vv&lt;/code&gt; sets &lt;code&gt;verbosity&lt;/code&gt; to 2, etc.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;-q&lt;/code&gt; or &lt;code&gt;--quiet&lt;/code&gt; &lt;em&gt;also&lt;/em&gt; sets &lt;code&gt;verbosity&lt;/code&gt;, but to a constant value,
+  -1, via &lt;code&gt;store_const&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Setting up the &lt;code&gt;logging&lt;/code&gt; subsystem&lt;/h2&gt;
+&lt;p&gt;What we’ll want to do is use &lt;a href="https://docs.python.org/3/library/logging.html"&gt;the &lt;code&gt;logging&lt;/code&gt;
+subsystem&lt;/a&gt; to send our
+status, progress, and error messages to stderr.&lt;/p&gt;
+&lt;p&gt;First, you can translate &lt;code&gt;verbosity&lt;/code&gt; into a logging level understood
+by the &lt;code&gt;logging&lt;/code&gt; module. Here’s a little convenience method that
+achieves that:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;setup_logging&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;verbosity&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;base_loglevel&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;30&lt;/span&gt;
+    &lt;span class="n"&gt;verbosity&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;min&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;verbosity&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;loglevel&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;base_loglevel&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;verbosity&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;logging&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;basicConfig&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;level&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;loglevel&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                        &lt;span class="nb"&gt;format&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="si"&gt;%(message)s&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now what does this do? Python log levels go from 10 (&lt;code&gt;logging.DEBUG&lt;/code&gt;)
+to 50 (&lt;code&gt;logging.CRITICAL&lt;/code&gt;) in intervals of 10; our &lt;code&gt;verbosity&lt;/code&gt;
+argument goes from -1 (&lt;code&gt;-q&lt;/code&gt;) to 2 (&lt;code&gt;-vv&lt;/code&gt;).&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2"&gt;2&lt;/a&gt;&lt;/sup&gt; We never want to
+suppress error and critical messages, and default to 30
+(&lt;code&gt;logging.WARNING&lt;/code&gt;). So we multiply &lt;code&gt;verbosity&lt;/code&gt; by 10, and subtract
+that from our base loglevel of 30.&lt;/p&gt;
+&lt;p&gt;With &lt;code&gt;-v&lt;/code&gt;, that sets our effective log level to 20 (&lt;code&gt;logging.INFO&lt;/code&gt;);
+with &lt;code&gt;-vv&lt;/code&gt;, to 10 (&lt;code&gt;logging.DEBUG&lt;/code&gt;). And with &lt;code&gt;-q&lt;/code&gt;
+(i.e. &lt;code&gt;verbosity==-1&lt;/code&gt;), our log level becomes 40 (&lt;code&gt;logging.ERROR&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;Now we can use &lt;code&gt;logging.basicConfig()&lt;/code&gt; to configure the logging
+subsystem to send unadorned log messages with the desired loglevel or
+above, to stderr: &lt;code&gt;basicConfig()&lt;/code&gt;, &lt;a href="https://docs.python.org/3/library/logging.html#logging.basicConfig"&gt;by
+default&lt;/a&gt;,
+sets up a &lt;code&gt;StreamHandler&lt;/code&gt; whose output stream is &lt;code&gt;sys.stderr&lt;/code&gt;, so it
+already does what we want here. And setting &lt;code&gt;format='%(message)s'&lt;/code&gt;
+strips the &lt;code&gt;LEVEL:logger:&lt;/code&gt; prefix that &lt;code&gt;basicConfig()&lt;/code&gt; would otherwise
+include in the log line (and which is helpful for log files, but not
+so much for CLI output).&lt;/p&gt;
+&lt;p&gt;From then on, every time your program should write an informational
+message to stderr, you just use &lt;code&gt;logging.info()&lt;/code&gt;, for a debug message,
+&lt;code&gt;logging.debug()&lt;/code&gt;, and so on.&lt;/p&gt;
+&lt;h2&gt;Adding an environment variable&lt;/h2&gt;
+&lt;p&gt;In some circumstances you might &lt;em&gt;always&lt;/em&gt; want debug output, and
+invoking your CLI with &lt;code&gt;-vv&lt;/code&gt; all the time might not be practical. (CI
+systems are an example — you generally want your build logs as verbose
+as possible.) You can make your users’ lives easier by optionally
+fixing up your logging subsystem with an environment variable, like so:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;setup_logging&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;verbosity&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;base_loglevel&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getenv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'LOGLEVEL'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; 
+    &lt;span class="n"&gt;verbosity&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;min&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;verbosity&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;loglevel&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;base_loglevel&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;verbosity&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;logging&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;basicConfig&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;level&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;loglevel&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                        &lt;span class="nb"&gt;format&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="si"&gt;%(message)s&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This way, if you invoke your CLI with &lt;code&gt;LOGLEVEL=10&lt;/code&gt; in its
+environment, it will always use debug output. &lt;/p&gt;
+&lt;p&gt;Perhaps you’d like to make this even easier, allowing your users to
+also set &lt;code&gt;LOGLEVEL&lt;/code&gt; to &lt;code&gt;debug&lt;/code&gt;, &lt;code&gt;INFO&lt;/code&gt;, &lt;code&gt;erRoR&lt;/code&gt; and whatever
+else. That you could do like this:&lt;sup id="fnref:3"&gt;&lt;a class="footnote-ref" href="#fn:3"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;setup_logging&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;verbosity&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;base_loglevel&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;gettattr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;logging&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
+                             &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getenv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'LOGLEVEL'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'WARNING'&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;upper&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt; 
+    &lt;span class="n"&gt;verbosity&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;min&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;verbosity&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;loglevel&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;base_loglevel&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;verbosity&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;logging&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;basicConfig&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;level&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;loglevel&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                        &lt;span class="nb"&gt;format&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="si"&gt;%(message)s&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Parting thought&lt;/h2&gt;
+&lt;p&gt;One of the many ways in which using &lt;code&gt;logging&lt;/code&gt; comes in handy in a CLI
+is in a catch-all exception handler:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="vm"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;'__main__'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="ne"&gt;Exception&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;logging&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;error&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+        &lt;span class="n"&gt;logging&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;debug&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;''&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;exc_info&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;errno&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="ne"&gt;AttributeError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This way, unhandled exceptions will show merely the exception message
+by default, but if and only if debug logging is enabled, your users
+will also see a stack trace.&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr/&gt;
+&lt;ol&gt;
+&lt;li id="fn:1"&gt;
+&lt;p&gt;This is used
+&lt;a href="https://github.com/hastexo/olx-utils/blob/v0.3.0/olxutils/cli.py#L53"&gt;here&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:2"&gt;
+&lt;p&gt;There is, to the best of my knowledge, no way to limit the
+number of repeats for an argument with &lt;code&gt;action='count'&lt;/code&gt;. Hence the
+construct with the &lt;code&gt;min()&lt;/code&gt; built-in function. &lt;a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:3"&gt;
+&lt;p&gt;A variation of this is used
+&lt;a href="https://github.com/hastexo/olx-utils/blob/v0.3.0/olxutils/cli.py#L284"&gt;here&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content><category term="hints-and-kinks"></category><category term="Python"></category></entry><entry><title>Using coverage with multiple parallel GitLab CI jobs</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/coverage-gitlab-ci/" rel="alternate"></link><published>2019-03-10T00:00:00+00:00</published><updated>2019-03-10T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-03-10:/resources/hints-and-kinks/coverage-gitlab-ci/</id><summary type="html">&lt;p&gt;If you ever write unit tests in Python, you are probably familiar with Ned Batchelder’s &lt;code&gt;coverage&lt;/code&gt; tool. This article explains how you can use &lt;code&gt;coverage&lt;/code&gt; in combination with &lt;code&gt;tox&lt;/code&gt; and a GitLab CI pipeline, for coverage reports in your Python code.&lt;/p&gt;</summary><content type="html">&lt;p&gt;If you ever write unit tests in Python, you are probably familiar with
+&lt;a href="https://twitter.com/nedbat"&gt;Ned Batchelder&lt;/a&gt;’s &lt;a href="https://coverage.readthedocs.io"&gt;&lt;code&gt;coverage&lt;/code&gt;
+tool&lt;/a&gt;. This article explains how you
+can use &lt;code&gt;coverage&lt;/code&gt; in combination with &lt;code&gt;tox&lt;/code&gt; and a GitLab CI pipeline,
+for coverage reports in your Python code.&lt;/p&gt;
+&lt;h2&gt;Running &lt;code&gt;coverage&lt;/code&gt; from &lt;code&gt;tox&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Consider the following rather run-of-the mill &lt;code&gt;tox&lt;/code&gt; configuration
+(nothing very spectacular here):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[tox]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;envlist&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;py{27,35,36,37},flake8&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="k"&gt;[coverage:run]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;parallel&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;True&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;include&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="na"&gt;bin/*&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="na"&gt;my_package/*.py&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="na"&gt;tests/*.py&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="k"&gt;[testenv]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;commands&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="na"&gt;coverage run -m unittest discover tests {posargs}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;deps&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="na"&gt;-rrequirements/setup.txt&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="na"&gt;-rrequirements/test.txt&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="k"&gt;[testenv:flake8]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;deps&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;-rrequirements/flake8.txt&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;commands&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;flake8 {posargs}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In this configuration, &lt;code&gt;coverage run&lt;/code&gt; &lt;a href="https://coverage.readthedocs.io/en/latest/cmd.html#execution"&gt;(which, remember, replaces
+&lt;code&gt;python&lt;/code&gt;)&lt;/a&gt;
+invokes &lt;a href="https://docs.python.org/3/library/unittest.html#test-discovery"&gt;test
+auto-discovery&lt;/a&gt;
+from the &lt;code&gt;unittest&lt;/code&gt; module. It looks for unit tests in the &lt;code&gt;tests&lt;/code&gt;
+subdirectory, runs them, and keeps track of which lines were hit and
+missed by your unit tests.&lt;/p&gt;
+&lt;p&gt;The only slightly unusual bit is &lt;code&gt;parallel = True&lt;/code&gt; in the
+&lt;code&gt;[coverage:run]&lt;/code&gt; section. This instructs &lt;code&gt;coverage&lt;/code&gt; to write its
+results not into one file, &lt;code&gt;.coverage&lt;/code&gt;, but into multiple, named
+&lt;code&gt;.coverage.&amp;lt;hostname&amp;gt;.&amp;lt;pid&amp;gt;.&amp;lt;randomnumber&amp;gt;&lt;/code&gt; — meaning you get separate
+results files for each &lt;code&gt;coverage&lt;/code&gt; run.&lt;/p&gt;
+&lt;p&gt;Subsequently, you can combine your coverage data with &lt;code&gt;coverage
+combine&lt;/code&gt;, and then do whatever you like with the combined data
+(&lt;code&gt;coverage report&lt;/code&gt;, &lt;code&gt;coverage html&lt;/code&gt;, etc.).&lt;/p&gt;
+&lt;h2&gt;GitLab CI&lt;/h2&gt;
+&lt;p&gt;Now there’s a bit of a difficulty with GitLab CI, which is that your
+individual &lt;code&gt;tox&lt;/code&gt; &lt;code&gt;testenv&lt;/code&gt;s will all run in completely different
+container instances. That means that you’ll run your &lt;code&gt;py27&lt;/code&gt; tests in
+one container, &lt;code&gt;py35&lt;/code&gt; in another, and so forth. But you can use GitLab
+CI &lt;a href="https://docs.gitlab.com/ee/user/project/pipelines/job_artifacts.html"&gt;job
+artifacts&lt;/a&gt;
+to pass your coverage data between one stage and another.&lt;/p&gt;
+&lt;p&gt;Here’s your &lt;code&gt;build&lt;/code&gt; stage, which stores your &lt;code&gt;coverage&lt;/code&gt; data in
+short-lived artifacts:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;python&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="nt"&gt;py27&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'python:2.7'&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;stage&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;build&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;pip install tox&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;tox -e py27,flake8&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;artifacts&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;paths&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;.coverage*&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;expire_in&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;5 minutes&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="nt"&gt;py35&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'python:3.5'&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;stage&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;build&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;pip install tox&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;tox -e py35,flake8&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;artifacts&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;paths&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;.coverage*&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;expire_in&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;5 minutes&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="nt"&gt;py36&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'python:3.6'&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;stage&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;build&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;pip install tox&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;tox -e py36,flake8&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;artifacts&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;paths&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;.coverage*&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;expire_in&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;5 minutes&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="nt"&gt;py37&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'python:3.7'&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;stage&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;build&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;pip install tox&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;tox -e py37,flake8&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;artifacts&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;paths&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;.coverage*&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;expire_in&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;5 minutes&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And here’s the &lt;code&gt;test&lt;/code&gt; stage, with a single job that&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;combines your coverage data,&lt;/li&gt;
+&lt;li&gt;runs &lt;code&gt;coverage report&lt;/code&gt; and parses the output — this is what goes into
+  the &lt;em&gt;coverage&lt;/em&gt; column of your GitLab job report,&lt;/li&gt;
+&lt;li&gt;runs &lt;code&gt;coverage html&lt;/code&gt; and stores the resulting &lt;code&gt;htmlcov&lt;/code&gt; directory
+  into an artifact that you can download from GitLab for a week.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;coverage&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;stage&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;test&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;pip install coverage&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;python -m coverage combine&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;python -m coverage html&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;python -m coverage report&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;coverage&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'/TOTAL.*\s+(\d+%)$/'&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;artifacts&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;paths&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;htmlcov&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;expire_in&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;1 week&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="hints-and-kinks"></category><category term="Python"></category><category term="CI"></category><category term="GitLab"></category></entry><entry><title>Building a nested CLI parser from a dictionary</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/python-argparse-from-dictionary/" rel="alternate"></link><published>2019-03-09T00:00:00+00:00</published><updated>2019-03-09T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-03-09:/resources/hints-and-kinks/python-argparse-from-dictionary/</id><summary type="html">&lt;p&gt;Here’s a nice way to initialize a CLI argument parser in Python, with arbitrary levels of subcommands.&lt;/p&gt;</summary><content type="html">&lt;p&gt;If you’ve ever built a command-line interface in Python, you are
+surely familiar with the &lt;code&gt;argparse&lt;/code&gt; module, which is part of the Python
+standard library. It contains the &lt;code&gt;ArgumentParser&lt;/code&gt; class, instances
+of which are typically invoked from the CLI’s &lt;code&gt;main()&lt;/code&gt; method.&lt;/p&gt;
+&lt;p&gt;The canonical way of doing this is explained in considerable detail in
+&lt;a href="https://docs.python.org/3/library/argparse.html"&gt;the standard library
+documentation&lt;/a&gt;. However,
+the standard way is quite repetitive, and you end up invoking
+&lt;code&gt;parser.add_argument()&lt;/code&gt; &lt;em&gt;a lot,&lt;/em&gt; as you populate your parent parser
+and subparsers with options.&lt;/p&gt;
+&lt;p&gt;Here’s a more concise way:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# If you must run this on Python 2. You really shouldn't!&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;__future__&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;print_function&lt;/span&gt;
+
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;argparse&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;ArgumentParser&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;yaml&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Using YAML here only for illustrative purposes, as it's a bit&lt;/span&gt;
+&lt;span class="c1"&gt;# easier to read. You probably just want to use a dictionary outright.&lt;/span&gt;
+&lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;span class="c1"&gt;# More at the bottom of this article.&lt;/span&gt;
+&lt;span class="c1"&gt;# Yes, go read the bottom of this article.&lt;/span&gt;
+&lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;span class="c1"&gt;# Want to just blindly copy and paste this snippet? Fine, this is for you.&lt;/span&gt;
+&lt;span class="k"&gt;assert&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;PARSER_CONFIG_YAML&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"""&lt;/span&gt;
+&lt;span class="s2"&gt;options:&lt;/span&gt;
+&lt;span class="s2"&gt;  - 'flags': ['-V', '--version']&lt;/span&gt;
+&lt;span class="s2"&gt;    action: version&lt;/span&gt;
+&lt;span class="s2"&gt;    help: 'show version'&lt;/span&gt;
+&lt;span class="s2"&gt;    version: '0.01'&lt;/span&gt;
+&lt;span class="s2"&gt;subcommands:&lt;/span&gt;
+&lt;span class="s2"&gt;- foo:&lt;/span&gt;
+&lt;span class="s2"&gt;    options:&lt;/span&gt;
+&lt;span class="s2"&gt;      - 'flags': ['-c', '--config']&lt;/span&gt;
+&lt;span class="s2"&gt;        'help': 'YAML configuration file'&lt;/span&gt;
+&lt;span class="s2"&gt;        dest: config&lt;/span&gt;
+&lt;span class="s2"&gt;- bar:&lt;/span&gt;
+&lt;span class="s2"&gt;    options:&lt;/span&gt;
+&lt;span class="s2"&gt;      - 'flags': ['-o', '--output']&lt;/span&gt;
+&lt;span class="s2"&gt;        'help': 'output file'&lt;/span&gt;
+&lt;span class="s2"&gt;        dest: output&lt;/span&gt;
+&lt;span class="s2"&gt;- baz:&lt;/span&gt;
+&lt;span class="s2"&gt;    subcommands:&lt;/span&gt;
+&lt;span class="s2"&gt;      - 'spam-eggs':&lt;/span&gt;
+&lt;span class="s2"&gt;          options:&lt;/span&gt;
+&lt;span class="s2"&gt;            - 'flags': ['-i', '--input']&lt;/span&gt;
+&lt;span class="s2"&gt;              'help': 'input file'&lt;/span&gt;
+&lt;span class="s2"&gt;              dest: input&lt;/span&gt;
+&lt;span class="s2"&gt;"""&lt;/span&gt;
+
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;CLI&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+
+        &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;walk_config&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dictionary&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;parser&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+            &lt;span class="sd"&gt;"""Walk a dictionary and populate an ArgumentParser."""&lt;/span&gt;
+
+            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="s1"&gt;'options'&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;dictionary&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+                &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;opt&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;dictionary&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'options'&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt;
+                    &lt;span class="n"&gt;args&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;opt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pop&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'flags'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+                    &lt;span class="n"&gt;kwargs&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;opt&lt;/span&gt;
+                    &lt;span class="n"&gt;parser&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_argument&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="s1"&gt;'subcommands'&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;dictionary&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+                &lt;span class="n"&gt;subs&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;parser&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_subparsers&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dest&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'action'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+                &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;subcommand&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;dictionary&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'subcommands'&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt;
+                    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;cmd&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;opts&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;subcommand&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;items&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+                        &lt;span class="n"&gt;sub&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;subs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_parser&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cmd&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+                        &lt;span class="n"&gt;walk_config&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;opts&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sub&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+        &lt;span class="n"&gt;config&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;yaml&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;safe_load&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;PARSER_CONFIG_YAML&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+        &lt;span class="n"&gt;parser&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ArgumentParser&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+        &lt;span class="n"&gt;walk_config&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;parser&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;parser&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;parser&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"This is the foo subcommand, "&lt;/span&gt;
+              &lt;span class="s2"&gt;"invoked with '-c &lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s2"&gt;'."&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;bar&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"This is the bar subcommand, "&lt;/span&gt;
+              &lt;span class="s2"&gt;"invoked with '-o &lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s2"&gt;'."&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;baz&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"This is the baz subcommand"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;spam_eggs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;input&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"This is the baz spam-eggs subcommand, "&lt;/span&gt;
+              &lt;span class="s2"&gt;"invoked with '-i &lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s2"&gt;'."&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="nb"&gt;input&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;argv&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;argv&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="n"&gt;opts&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;parser&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;parse_args&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;argv&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:])&lt;/span&gt;
+        &lt;span class="nb"&gt;getattr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;opts&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pop&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'action'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'-'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'_'&lt;/span&gt;&lt;span class="p"&gt;))(&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;opts&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="vm"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;'__main__'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;CLI&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And now, if you want to add a new option, you add it to the
+top-level or the subcommand’s &lt;code&gt;options&lt;/code&gt; list, and add it to your
+subcommand method.&lt;/p&gt;
+&lt;p&gt;And if you want to add a new subcommand, you just add that at the
+level you like, and add a method that is named like your subcommand
+— with any hyphens in the subcommand being replaced with underscores in
+the method name.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2&gt;Notes&lt;/h2&gt;
+&lt;p&gt;When using PyYAML, do not use versions affected by
+&lt;a href="https://nvd.nist.gov/vuln/detail/CVE-2017-18342"&gt;CVE-2017-18342&lt;/a&gt;. Really,
+you shouldn’t be using YAML at all for this purpose; you should just
+use a straight-up dictionary. If you want something just &lt;em&gt;a little&lt;/em&gt;
+more readable, you might also consider JSON (for which there is &lt;a href="https://docs.python.org/3/library/json.html"&gt;a
+parser&lt;/a&gt; in the standard
+library), or perhaps &lt;a href="https://pypi.org/project/toml/"&gt;TOML&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Also, yes there are smarter ways to define your program’s version;
+more on that perhaps in a later post.&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Python"></category></entry><entry><title>A Python one-liner for pretty-printing radosgw utilization</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/radosgw-utilization-one-liner/" rel="alternate"></link><published>2015-12-17T00:00:00+00:00</published><updated>2015-12-17T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2015-12-17:/resources/hints-and-kinks/radosgw-utilization-one-liner/</id><summary type="html">&lt;p&gt;In case you need a quick overview of how many radosgw objects live in your Ceph cluster, here‘s how you do that in one (slightly involved) line of Python.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In case you need a quick overview of how many radosgw objects live in
+your Ceph cluster, your first step is normally this command:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;radosgw-admin bucket stats
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;When used &lt;em&gt;without&lt;/em&gt; the &lt;code&gt;--bucket=&amp;lt;name&amp;gt;&lt;/code&gt; argument, this command lists
+a bunch of statistics for &lt;em&gt;all&lt;/em&gt; your radosgw buckets, in a somewhat
+convoluted JSON format. If you only want a simple list of all your
+buckets and the number of objects they contain, you can use the
+following bit of Python list comprehension magic:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;radosgw-admin bucket stats &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+  python -c &lt;span class="s1"&gt;'import json; import sys; print "\n".join(["%s: %s" % (str(x["bucket"]), ", ".join(["%s: %s" % (k, v["num_objects"]) for k,v in x["usage"].iteritems()])) for x in json.load(sys.stdin) if isinstance(x,dict)])'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And while the above is all on one line so you can easily copy and
+paste, here are the Python bits in a slightly more legible format:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;json&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;
+
+&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;json&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;load&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdin&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="nb"&gt;print&lt;/span&gt; &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s2"&gt;: &lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"bucket"&lt;/span&gt;&lt;span class="p"&gt;]),&lt;/span&gt;
+                             &lt;span class="s2"&gt;", "&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s2"&gt;: &lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                                                    &lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"num_objects"&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+                                        &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;v&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"usage"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;iteritems&lt;/span&gt;&lt;span class="p"&gt;()]))&lt;/span&gt;
+                 &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;
+                 &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;isinstance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;dict&lt;/span&gt;&lt;span class="p"&gt;)])&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Of course, you'll need to substitute &lt;code&gt;print()&lt;/code&gt; for &lt;code&gt;print&lt;/code&gt; if your
+system runs only Python 3.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Ceph"></category><category term="Python"></category></entry></feed>

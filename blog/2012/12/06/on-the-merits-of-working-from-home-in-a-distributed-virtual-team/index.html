@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../../../../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../../../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../../../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../../../../theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/solid.css">
+
+    <link rel="stylesheet" type="text/css" href="../../../../../css/override.css">
+
+    <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+    <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+  
+
+
+ 
+
+<meta name="author" content="florian" />
+<meta name="description" content="During lunch at the EMEA OpenStack day in London this week, I had a brief but excellent conversation with fellow OpenStacker Adam Spiers from SUSE. Our chat turned to the merits of working from home, and he encouraged me to write up a blog post about some of the ideas …" />
+<meta name="keywords" content="Philosophy">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="On the merits of working from home, in a distributed virtual team"/>
+  <meta property="og:description" content="During lunch at the EMEA OpenStack day in London this week, I had a brief but excellent conversation with fellow OpenStacker Adam Spiers from SUSE. Our chat turned to the merits of working from home, and he encouraged me to write up a blog post about some of the ideas …"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../../../../blog/2012/12/06/on-the-merits-of-working-from-home-in-a-distributed-virtual-team/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2012-12-06 17:38:00+00:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../../../../author/florian.html">
+  <meta property="article:section" content="blog"/>
+  <meta property="article:tag" content="Philosophy"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; On the merits of working from home, in a distributed virtual team</title>
+
+</head>
+<body >
+  <aside>
+    <div>
+      <a href="../../../../../">
+        <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="../../../../../"></a>
+      </h1>
+
+
+
+
+      <ul class="social">
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/xahteiwi" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="me" class="sc-mastodon" href="https://mastodon.social/@xahteiwi" target="_blank">
+              <i class="fab fa-mastodon"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/fghaas" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-github" href="https://github.com/fghaas" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="../../../../../">Home</a>
+
+      <a href="/category/hints-and-kinks.html">Tech</a>
+      <a href="/category/presentations.html">Talks</a>
+      <a href="/category/blog.html">Thoughts</a>
+      <a href="">​</a>
+      <a href="/about/">About</a>
+      <a href="/comments/">Comments</a>
+      <a href="/legal/">Legal</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="">​</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="">​</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="on-the-merits-of-working-from-home-in-a-distributed-virtual-team">On the merits of working from home, in a distributed virtual team</h1>
+    <p>
+      Posted on Thu 06 December 2012 in <a href="../../../../../category/blog.html">blog</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>During lunch at the EMEA OpenStack day in London this week, I had a
+brief but excellent conversation with fellow OpenStacker <a href="https://twitter.com/adamspiers">Adam
+Spiers</a> from SUSE. Our chat turned to
+the merits of working from home, and he encouraged me to write up a blog
+post about some of the ideas of mine and of my co-founders' which we
+have since made hastexo policy, however informal or unwritten.</p>
+<p>Note that much of what follows aren't necessarily original ideas of
+ours. Many of my thoughts I owe to some very insightful chats I've had
+over the past few months with the delightful <a href="http://sarahnovotny.com/">Sarah
+Novotny</a>, original co-founder of <a href="http://bluegecko.com/">Blue
+Gecko</a>, seasoned
+<a href="http://www.oscon.com/oscon2012">OSCON</a> conference chair and now CIO at
+<a href="http://meteor-ent.com/">Meteor Entertainment</a>. If you get a chance to
+talk to Sarah at a conference and poll her views on this, I can highly
+recommend you seize that chance.</p>
+<p>It all starts with the observation that the separation of the place you
+live in, and the place you work at, is a fairly recent concept in human
+history. Prior to the <a href="http://en.wikipedia.org/wiki/Industrial_Revolution">Industrial
+Revolution</a>, which
+originated in late 18th century England and steamrolled first Europe and
+then the rest of the world, no such separation was common: the
+blacksmith would live upstairs in his shop, so would the bakerman or the
+butcher. The teacher would dwell, with his family, in the local school.
+The farmer, and the farmhands, would live on that farm. In such a
+setting it follows naturally that the work day spans essentially your
+entire waking time: you would start your day's work as soon as you got
+up, and finished it when you retired for the night. It would be equally
+natural to close the shop and interrupt your work for perhaps an hour at
+a time, in order to consume a meal with your family or run an errand, or
+to hold the <em><a href="http://en.wikipedia.org/wiki/Siesta">siesta</a></em> common in
+the Mediterranean to pass the hottest hours of the day.</p>
+<p>Then with the Industrial Revolution, everything changed. In the name of
+efficiency and progress, we decided that we had to pool workers in one
+place — called a factory, or perhaps a shipyard — because now we needed
+collaboration: one person could no longer fulfill the task alone, so we
+had to get many people to one place to fulfill it together. And as a
+natural continuation of our pre-industrial routine, people would work
+ten to twelve hours a day, six days a week — until we realized that it
+started messing up our lives, inflicting misery on our families and
+social ties. And we invented a new concept called spare time: time we
+could spend by ourselves, or with our families and friends, something we
+didn't have to ask for in the pre-industrial age when our work and life
+would naturally have been integrated. And we gradually got to “advances”
+like first the
+<a href="http://en.wikipedia.org/wiki/Buffalo_switchmen%27s_strike">10-hour</a>
+workday, then the 8-hour workday, then the 40-hour <a href="http://en.wikipedia.org/wiki/Workweek">work
+week</a> when we decided it would be
+better to have a rest of two days a week rather than one.</p>
+<p>Then we invented white-collar, office jobs, and we gradually moved from
+an industry-dominated to a service-dominated economy. And because by
+this time we were all well trained in the rules of industrial life, and
+because it had brought us progress and prosperity, we applied the same
+concepts to offices that we previously had applied to factories and
+shipyards: we would gather everyone in the same place, removed from home
+and families, and we would get everyone to accept fixed “office hours”
+when all hands would have to be present. Of course, we still needed to
+collaborate, it's just that the tasks differed from the ones we faced in
+factories and shipyards.</p>
+<p>Fast forward to the early 21st century, where we are suddenly endowed
+with an abundance of readily available, cheap technology that allows us
+to communicate and collaborate instantly, from almost anywhere. And it
+is at this point that the unnatural split between work and non-work
+life, which we inflicted upon ourselves during the Industrial Revolution
+and which we have managed to rationalize with the brainwash that a
+“clean separation” of “work and private life” is “essential” to
+well-being — that has become a complete anachronism. It is no longer
+vital for the people making up a company to physically be in the same
+place to collaborate, to serve customers, and to be productive and make
+a difference to communities. In fact, I consider it counterproductive.
+We've finally arrived in a position where we can restore the very
+natural way for humans to live and work, namely integrated with our
+families, from home, connected through technology that enables us to
+communicate just as effectively as sitting at the same desk. It also
+enables us to live healthier, better lives.</p>
+<p>I'm fully aware that this style of work is probably not for everyone.
+But if you're thinking it's not for you (and I was one of those, until a
+little over a year ago) it's worth asking yourself <em>why</em> you're thinking
+that. Is it really because you <em>want</em> to work in an office, or because
+everyone has <em>told you</em> for most of your career that you want to work in
+an office?</p>
+<p>Here at hastexo, it took us some time — several months — to figure out
+all-electronic collaboration, but the machinery is working extremely
+well now. The <a href="https://www.google.com/work/apps/business/">Google Apps</a>
+stack has been enormously useful for us in that regard. We practically
+live in <a href="http://www.google.com/+/learnmore/hangouts/">Google Hangouts</a>
+and documents shared on <a href="http://drive.google.com">Google Drive</a>. We jot
+down ideas in Google Docs and sketch architectures in Google Drawings.
+We do our weekly standups that way, and increasingly customer meetings,
+too. We collaboratively draft and edit slide decks for training. And we
+rehearse conference talks via video call. It just works, and it's huge
+fun that way. And it enables us to close our laptops and go read bedtime
+stories to our kids when we're done.</p>
+<hr/>
+<p>This article originally appeared on my blog on the <code>hastexo.com</code> website (now defunct).</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../../../tag/philosophy.html">Philosophy</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../../../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../../../../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+
+</body>
+</html>

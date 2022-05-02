@@ -1,0 +1,339 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../../theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/solid.css">
+
+    <link rel="stylesheet" type="text/css" href="../../../css/override.css">
+
+    <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+    <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+  
+
+
+ 
+
+<meta name="author" content="Florian Haas" />
+<meta name="description" content="When you are using functionality that is buried deep in the Linux kernel, ftrace can be extremely useful. Here are some suggestions on how to use it, using the example of tracing function calls from qemu-guest-agent." />
+<meta name="keywords" content="libvirt, Linux, ftrace, Qemu">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="Using ftrace to trace function calls from qemu-guest-agent"/>
+  <meta property="og:description" content="When you are using functionality that is buried deep in the Linux kernel, ftrace can be extremely useful. Here are some suggestions on how to use it, using the example of tracing function calls from qemu-guest-agent."/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../../resources/hints-and-kinks/ftrace-qemu-ga/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2019-08-21 00:00:00+00:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../../author/florian-haas.html">
+  <meta property="article:section" content="hints-and-kinks"/>
+  <meta property="article:tag" content="libvirt"/>
+  <meta property="article:tag" content="Linux"/>
+  <meta property="article:tag" content="ftrace"/>
+  <meta property="article:tag" content="Qemu"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; Using ftrace to trace function calls from qemu-guest-agent</title>
+
+</head>
+<body >
+  <aside>
+    <div>
+      <a href="../../../">
+        <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="../../../"></a>
+      </h1>
+
+
+
+
+      <ul class="social">
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/xahteiwi" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="me" class="sc-mastodon" href="https://mastodon.social/@xahteiwi" target="_blank">
+              <i class="fab fa-mastodon"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/fghaas" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-github" href="https://github.com/fghaas" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="../../../">Home</a>
+
+      <a href="/category/hints-and-kinks.html">Tech</a>
+      <a href="/category/presentations.html">Talks</a>
+      <a href="/category/blog.html">Thoughts</a>
+      <a href="">​</a>
+      <a href="/about/">About</a>
+      <a href="/comments/">Comments</a>
+      <a href="/legal/">Legal</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="">​</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="">​</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="ftrace-qemu-ga">Using ftrace to trace function calls from qemu-guest-agent</h1>
+    <p>
+      Posted on Wed 21 August 2019 in <a href="../../../category/hints-and-kinks.html">hints-and-kinks</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>When you are using functionality that is buried deep in the Linux
+kernel, <a href="https://en.wikipedia.org/wiki/Ftrace"><code>ftrace</code></a> can be
+extremely useful. Here are some suggestions on how to use it, using
+the example of tracing function calls from <code>qemu-guest-agent</code>.</p>
+
+<h2>What’s this about?</h2>
+<p>Recently I used, for the first time,
+<strong><a href="https://libvirt.org/">libvirt</a>’s functionality to indicate to a
+virtual guest that it is about to have a point-in-time copy of its
+disks — a <em>snapshot</em> — taken.</strong> In doing so, it can tell the virtual
+machine (VM) to freeze I/O on all its mounted filesystems. </p>
+<p>The rationale behind this is, I hope, obvious: you want the VM to
+momentarily stop I/O to its virtual disks, so that you can take a
+snapshot when no I/O is in-flight, and the snapshot image can thus be
+expected to be internally consistent. The snapshot itself will only
+take a second or so, and the minor interruption is a small price to
+pay for the added consistency guarantee you get.</p>
+<p>You might be wondering how this works and it is, indeed, a bit
+involved.</p>
+<ul>
+<li>
+<p>First, you’ll need a <strong>virtual serial console</strong> that allows the
+  hypervisor (in the host) to communicate with the guest. This will be
+  defined <a href="https://wiki.libvirt.org/page/Qemu_guest_agent#Setting_QEMU_GA_up">in your libvirt domain
+  XML</a>,
+  and in <a href="https://docs.openstack.org/nova/latest/">OpenStack Nova</a>,
+  this automatically pops up if you are booting your instance off an
+  image <a href="https://docs.openstack.org/nova/rocky/admin/configuration/hypervisor-kvm.html#guest-agent-support">which has the <code>hw_qemu_guest_agent=yes</code> property
+  set</a>.</p>
+</li>
+<li>
+<p>Then, you’ll need a <strong>daemon</strong> within the guest that listens for
+  commands received over the serial port. This daemon is called
+  <code>qemu-guest-agent</code>, or <code>qemu-ga</code> for short. All you’ll need for it
+  to run is to install the package of that name, which you can do in
+  various ways (<code>apt-get install qemu-guest-agent</code> being the simplest,
+  on Ubuntu guests).</p>
+</li>
+<li>
+<p>One of the many commands that said daemon supports is
+  <a href="https://git.qemu.org/?p=qemu.git;a=blob;f=qga/commands-posix.c;h=dfc05f5b8ab958ef43aca36258e151ee2525ebf5;hb=33f18cf7dca7741d3647d514040904ce83edd73d#l2746"><code>guest-fsfreeze-freeze</code></a>. When
+  it receives that command over the virtual serial link, the daemon
+  will <a href="https://git.qemu.org/?p=qemu.git;a=blob;f=qga/commands-posix.c;h=dfc05f5b8ab958ef43aca36258e151ee2525ebf5;hb=33f18cf7dca7741d3647d514040904ce83edd73d#l1295">loop over your mounted
+  filesystems</a>,
+  and issue the <a href="https://elixir.bootlin.com/linux/v5.2/source/fs/ioctl.c#L668"><strong><code>FIFREEZE</code>
+  ioctl</strong></a>
+  on all of them. This happens in reverse order, meaning your root
+  (<code>/</code>) filesystem is frozen last.</p>
+</li>
+<li>
+<p>That ioctl then calls the <a href="https://elixir.bootlin.com/linux/v5.2/source/fs/super.c#L1694"><strong><code>freeze_super()</code> kernel
+  function</strong></a>,
+  which flushes each filesystem’s superblock, blocks (“freezes”) all
+  new I/O to the filesystem, and syncs (flushes) all I/O that is
+  currently in flight on that filesystem.</p>
+</li>
+</ul>
+<p>The combined net effect of all of the above is that you get a virtual
+machine that is temporarily read-only, with pending I/O piling up,
+until you are done taking your snapshot. When that happens, there are
+a few more actions that happen:</p>
+<ul>
+<li>
+<p>The hypervisor sends the <code>guest-fsfreeze-thaw</code> command over the
+  virtual serial link.  Now, the daemon will <a href="https://git.qemu.org/?p=qemu.git;a=blob;f=qga/commands-posix.c;h=dfc05f5b8ab958ef43aca36258e151ee2525ebf5;hb=33f18cf7dca7741d3647d514040904ce83edd73d#l1374">loop over all your
+  mounted filesystems
+  again</a>,
+  and issue the <a href="https://elixir.bootlin.com/linux/v5.2/source/fs/ioctl.c#L672"><strong><code>FITHAW</code>
+  ioctl</strong></a>
+  on them. This time, it is taking the mounts in forward order,
+  thawing the root filesystem first.</p>
+</li>
+<li>
+<p>That ioctl then calls the <a href="https://elixir.bootlin.com/linux/v5.2/source/fs/super.c#L1798"><strong><code>thaw_super()</code> kernel
+  function</strong></a>,
+  which unblocks (“thaws”) all new I/O to the filesystem, and allows
+  the VM to continue normal operations.</p>
+</li>
+</ul>
+<p>Now there’s a bit of an issue with that. All of the aforementioned
+kernel functions only write <code>printk</code>’s <a href="https://elixir.bootlin.com/linux/v5.2/source/fs/super.c#L1737">on
+error</a>,
+but they don’t tell you when they succeed. So you can try a snapshot,
+then type <code>dmesg</code> in the guest, and you’ll have no way of telling
+whether the whole freeze/thaw dance succeeded, or was never even
+attempted.</p>
+<p>But fear not, there’s a way that you can trace exactly what the kernel
+is doing!</p>
+<h2>tracefs, and configuring <code>ftrace</code></h2>
+<p>If your guest runs any modern kernel, then chances are that it will,
+by default, mount a virtual <strong>tracefs filesystem</strong> to the
+<code>/sys/kernel/debug/tracing</code> mount point (although as of kernel 4.1,
+this is nominally an alias, with <code>/sys/kernel/tracing</code> being the
+canonical mount point). Regardless of its path, tracefs exposes <a href="https://www.kernel.org/doc/Documentation/trace/ftrace.txt">the
+kernel’s <code>ftrace</code>
+functionality</a>.</p>
+<p>So the first thing you’ll tell ftrace, in your guest VM, is the
+process for which you’ll want to do function tracing. In our case,
+that’s your guest’s <code>qemu-ga</code>. So, you can do:</p>
+<div class="highlight"><pre><span></span><code>pidof qemu-ga &gt; /sys/kernel/debug/tracing/set_ftrace_pid
+</code></pre></div>
+<p>Then, you’ll want to instruct <code>ftrace</code> to trace kernel function calls:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s2">"function"</span> &gt; /sys/kernel/debug/tracing/current_tracer
+</code></pre></div>
+<p>And, you’ll want to make sure that we don’t trace only function calls
+from <code>qemu-ga</code> itself, but also from its child processes:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s2">"function-fork"</span> &gt; /sys/kernel/debug/tracing/trace_options
+</code></pre></div>
+<h2>Let’s see what’s happening!</h2>
+<p>Now you have a guest that’s properly instrumented for tracing kernel
+function calls that originate with <code>qemu-ga</code>. So now, go ahead and
+take a snapshot. On OpenStack Nova, you’d do that with:</p>
+<div class="highlight"><pre><span></span><code>openstack server image create --name &lt;image-name&gt; &lt;instance-name&gt;
+</code></pre></div>
+<p>Then, shell back into your guest, and interrogate your trace for
+<code>ioctl</code> calls:</p>
+<div class="highlight"><pre><span></span><code>grep -E <span class="s1">'(freeze|thaw)_super.*ioctl'</span> /sys/kernel/debug/tracing/trace
+</code></pre></div>
+<p>And voilà:</p>
+<div class="highlight"><pre><span></span><code>         <span class="n">qemu</span><span class="o">-</span><span class="n">ga</span><span class="m">-14574</span> <span class="p">[</span><span class="m">001</span><span class="p">]</span> <span class="n">....</span>   <span class="m">264.059109</span><span class="o">:</span> <span class="n">freeze_super</span> <span class="o">&lt;-</span><span class="n">do_vfs_ioctl</span>
+         <span class="n">qemu</span><span class="o">-</span><span class="n">ga</span><span class="m">-14574</span> <span class="p">[</span><span class="m">001</span><span class="p">]</span> <span class="n">....</span>   <span class="m">265.837955</span><span class="o">:</span> <span class="n">thaw_super</span> <span class="o">&lt;-</span><span class="n">do_vfs_ioctl</span>
+         <span class="n">qemu</span><span class="o">-</span><span class="n">ga</span><span class="m">-14574</span> <span class="p">[</span><span class="m">001</span><span class="p">]</span> <span class="n">....</span>   <span class="m">265.855048</span><span class="o">:</span> <span class="n">thaw_super</span> <span class="o">&lt;-</span><span class="n">do_vfs_ioctl</span>
+         <span class="n">qemu</span><span class="o">-</span><span class="n">ga</span><span class="m">-14574</span> <span class="p">[</span><span class="m">001</span><span class="p">]</span> <span class="n">....</span>   <span class="m">265.855084</span><span class="o">:</span> <span class="n">thaw_super</span> <span class="o">&lt;-</span><span class="n">do_vfs_ioctl</span>
+</code></pre></div>
+<p>So that’s the <code>FIFREEZE</code> ioctl that maps to <code>freeze_super()</code>, and the
+<code>FITHAW</code> ioctl that maps to <code>thaw_super()</code>. And that’s how you know that
+your guest is freezing and thawing I/O as you expect it to!</p>
+<h2>Where to go from here</h2>
+<p>Feel free to dig further into your <code>trace</code> file (<code>cat</code> or <code>less</code> will
+help), and play with other <code>ftrace</code> options. There’s a massive amount
+of things you can do with it, as <a href="https://www.kernel.org/doc/Documentation/trace/ftrace.txt">the
+documentation</a>
+explains. You’ll probably also find <a href="https://jvns.ca/blog/2017/03/19/getting-started-with-ftrace/">this blog
+post</a>
+from <a href="https://twitter.com/b0rk">Julia Evans</a> useful for exploring
+<code>ftrace</code>.</p>
+<p>Also, thank <a href="https://twitter.com/srostedt">Steven Rostedt</a> when you
+see him! He is the primary author of the ftrace framework.</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../tag/libvirt.html">libvirt</a>
+      <a href="../../../tag/linux.html">Linux</a>
+      <a href="../../../tag/ftrace.html">ftrace</a>
+      <a href="../../../tag/qemu.html">Qemu</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,399 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../../../../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../../../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../../../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../../../../theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/solid.css">
+
+    <link rel="stylesheet" type="text/css" href="../../../../../css/override.css">
+
+    <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+    <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+  
+
+
+ 
+
+<meta name="author" content="florian" />
+<meta name="description" content="It never fails. Someone manages to break their Pacemaker cluster, and Henrik starts preaching his usual sermon of why Pacemaker is terrible and why you should never-ever use it. And when that someone is GitHub, which we all know, use and love, then that sermon gets a bit of excess attention. Let&#39;s take a quick look at the facts." />
+<meta name="keywords" content="MySQL, Pacemaker">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="Pacemaker and the recent GitHub service interruption"/>
+  <meta property="og:description" content="It never fails. Someone manages to break their Pacemaker cluster, and Henrik starts preaching his usual sermon of why Pacemaker is terrible and why you should never-ever use it. And when that someone is GitHub, which we all know, use and love, then that sermon gets a bit of excess attention. Let&#39;s take a quick look at the facts."/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../../../../blog/2012/09/26/pacemaker-and-the-recent-github-service-interruption/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2012-09-26 11:32:00+00:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../../../../author/florian.html">
+  <meta property="article:section" content="blog"/>
+  <meta property="article:tag" content="MySQL"/>
+  <meta property="article:tag" content="Pacemaker"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; Pacemaker and the recent GitHub service interruption</title>
+
+</head>
+<body >
+  <aside>
+    <div>
+      <a href="../../../../../">
+        <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="../../../../../"></a>
+      </h1>
+
+
+
+
+      <ul class="social">
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/xahteiwi" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="me" class="sc-mastodon" href="https://mastodon.social/@xahteiwi" target="_blank">
+              <i class="fab fa-mastodon"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/fghaas" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-github" href="https://github.com/fghaas" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="../../../../../">Home</a>
+
+      <a href="/category/hints-and-kinks.html">Tech</a>
+      <a href="/category/presentations.html">Talks</a>
+      <a href="/category/blog.html">Thoughts</a>
+      <a href="">​</a>
+      <a href="/about/">About</a>
+      <a href="/comments/">Comments</a>
+      <a href="/legal/">Legal</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="">​</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="">​</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="pacemaker-and-the-recent-github-service-interruption">Pacemaker and the recent GitHub service interruption</h1>
+    <p>
+      Posted on Wed 26 September 2012 in <a href="../../../../../category/blog.html">blog</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>It never fails. Someone manages to break their Pacemaker cluster, and
+<a href="http://openlife.cc/author">Henrik</a> starts preaching <a href="http://openlife.cc/blogs/2012/september/failover-evil">his usual sermon
+of why Pacemaker is
+terrible</a> and why
+you should never-ever use it. And when that someone is
+<a href="https://github.com/">GitHub</a>, which we all know, use and love, then
+that sermon gets a bit of excess attention. Let's take a quick look at
+the facts.</p>
+
+<p>The week of September 10, GitHub suffered a couple of outages which
+caused a total downtime of 1 hour and 46 minutes, as
+<a href="https://github.com/jnewland">Jesse</a> precisely pointed out <a href="https://github.com/blog/1261-github-availability-this-week">in a blog
+post</a>.
+Exhibiting the excellent transparency that GitHub always offers at any
+time its infrastructure is affected by issues (remember <a href="https://github.com/blog/1068-public-key-security-vulnerability-and-mitigation">their
+role-model behavior in an SSH security
+incident</a>
+a few months back), Jesse explains, in a very detailed way, what
+happened on one of their Pacemaker clusters.</p>
+<p>Now, all of what follows is based exclusively on the information in that
+blog post of Jesse's. I have no inside knowledge of the incident, so my
+picture may be incomplete or skewed. But here's my take on it anyway. I
+do encourage you to read Jesse's post full-length, as the rest of this
+post otherwise won't make much sense. I'll just quote certain pieces of
+it and comment on them here.</p>
+<p><em><strong>Please note:</strong> nothing in this post should be construed as a put-down
+of GitHub's excellent staff. They run a fantastic service and do an
+awesome job. It's just that their post-mortem seems to have created some
+misconceptions in the MySQL community about the Pacemaker stack as a
+whole, and those I'd like to help rectify. Also, I'm posting this in the
+hope that it provides useful insight to both the GitHub folks, and to
+anyone else facing similar issues.</em></p>
+<h2>Enable Maintenance Mode when you should</h2>
+<p>From the original post:</p>
+<blockquote>
+<p>Monday's migration caused higher load on the database than our
+operations team has previously seen during these sorts of migrations.
+So high, in fact, that they caused Percona Replication Manager's
+health checks to fail on the master. In response to the failed master
+health check, Percona Replication manager moved the 'active' role and
+the master database to another server in the cluster and stopped MySQL
+on the node it perceived as failed.</p>
+<p></p>
+At the time of this failover, the new database selected for the
+'active' role had a cold InnoDB buffer pool and performed rather
+poorly. The system load generated by the site's query load on a cold
+cache soon caused Percona Replication Manager's health checks to fail
+again, and the 'active' role failed back to the server it was on
+originally.
+<p></p>
+At this point, I decided to disable all health checks by enabling
+Pacemaker's <code>maintenance-mode</code>; an operating mode in which no health
+checks or automatic failover actions are performed. Performance on the
+site slowly recovered as the buffer pool slowly reached normal levels.
+<p></p>
+<p></p>
+</blockquote>
+<p>Now there's actually several issues in there even in this early stage.
+Maintenance mode is generally the right thing to do here, but you enable
+it <em>before</em> making large changes to the configuration, and you disable
+it when done. If you're uncomfortable with the cluster manager taking
+its hands off the entire cluster, and you know what you're doing, you
+could also just disable cluster management and monitoring on a specific
+resource. Both approaches are explained
+<a href="https://www.hastexo.com/resources/hints-and-kinks/maintenance-active-pacemaker-clusters">here</a>.</p>
+<p>Also, as far as "health checks failing" on the master is concerned,
+pretty much the only thing that is likely to cause such a failure in
+this instance is a timeout, and you can adjust those even on a
+per-operation basis in Pacemaker. But even that is unnecessary if you
+enable maintenance mode at the right time.</p>
+<h2>"Maintenance mode" really means maintenance mode</h2>
+<blockquote>
+<p>The following morning, our operations team was notified by a developer
+of incorrect query results returning from the node providing the
+'standby' role. I investigated the situation and determined that when
+the cluster was placed into maintenance-mode the day before, actions
+that should have caused the node elected to serve the 'standby' role
+to change its replication master and start replicating were prevented
+from occurring.</p>
+<p></p>
+<p></p>
+</blockquote>
+<p>Well, of course. In maintenance mode, Pacemaker takes its hands off your
+resources. If you're enabling maintenance mode right in the middle of a
+failover, then that's not exactly a stellar idea. If you do, then it's
+your job to complete those actions manually.</p>
+<blockquote>
+<p>I determined that the best course of action was to
+disable <code>maintenance-mode</code> to allow Pacemaker and the Percona
+Replication Manager to rectify the situation.</p>
+<p></p>
+<p></p>
+</blockquote>
+<p>"Best" might be an exaggeration, if I may say so.</p>
+<h2>A segfault and rejected cluster messages</h2>
+<blockquote>
+<p>Upon attempting to disable <code>maintenance-mode</code>, a Pacemaker segfault
+occurred that resulted in a cluster state partition.</p>
+<p></p>
+<p></p>
+</blockquote>
+<p>OK, that's bad, but what exactly segfaulted? crmd? attrd? pengine? Or
+the master Heartbeat process? But the next piece of information would
+have me believe that the segfault really isn't the root cause of the
+cluster partition:</p>
+<blockquote>
+<p>After this update, two nodes (I'll call them 'a' and 'b') rejected
+most messages from the third node ('c'), while the third node rejected
+most messages from the other two.</p>
+<p></p>
+<p></p>
+</blockquote>
+<p>Now it's a pity that we don't have any version information and logs, but
+this looks very much like the "not in our membership" issue present up
+to Pacemaker 1.1.6. This is a known issue, the fix is to update to a
+more recent version (<a href="https://github.com/ClusterLabs/pacemaker/commit/03f6105592281901cc10550b8ad19af4beb5f72f">here's the
+commit,</a> on
+GitHub of course), and the workaround is to just restart the Pacemaker
+services on the affected node(s) while in maintenance mode.</p>
+<h2>A non-quorate partition running MySQL?</h2>
+<blockquote>
+<p>Despite having configured the cluster to require a majority of
+machines to agree on the state of the cluster before taking action,
+two simultaneous master election decisions were attempted without
+proper coordination. In the first cluster, master election was
+interrupted by messages from the second cluster and MySQL was stopped.</p>
+<p></p>
+<p></p>
+</blockquote>
+<p>Now this is an example of me being tempted to say, "logs or it didn't
+happen." If you've got the default no-quorum-policy of "block", and
+you're getting a non-quorate partition, and you don't have any resources
+with operations <em>explicitly</em> configured to ignore quorum, then "two
+simultaneous master election decisions" can only refer to the Designated
+Coordinator (DC) election, which has no bearing whatsoever on MySQL
+master status. Luckily, Pacemaker allows us to take a meaningful
+snapshot of all cluster logs and status after the fact with crm_report.
+It would be quite interesting to see a tarball from that.</p>
+<blockquote>
+<p>In the second, single-node cluster, node 'c' was elected at 8:19 AM,
+and any subsequent messages from the other two-node cluster were
+discarded. As luck would have it, the 'c' node was the node that our
+operations team previously determined to be out of date. We detected
+this fact and powered off this out-of-date node at 8:26 AM to end the
+partition and prevent further data drift, taking down all production
+database access and thus all access to github.com.</p>
+<p></p>
+<p></p>
+</blockquote>
+<p>That's obviously a bummer, but really, if that partition is non-quorate,
+and Pacemaker hasn't explicitly been configured to ignore that, no
+cluster resources would start there. Needless to say a working fencing
+configuration would have helped oodles, too.</p>
+<h2>Your cluster has no crystal ball, but it does have a command line</h2>
+<p>I'll skip over most of the rest of the GitHub post, because it's an
+explanation of how these backend issues affected GitHub users. I'll just
+hop on down to this piece:</p>
+<blockquote>
+<p>The automated failover of our main production database could be
+described as the root cause of both of these downtime events. In each
+situation in which that occurred, if any member of our operations team
+had been asked if the failover should have been performed, the answer
+would have been a resounding no.</p>
+<p></p>
+<p></p>
+</blockquote>
+<p>Well, you could have told your Pacemaker of that fact beforehand. Enable
+maintenance mode and you're good to go.</p>
+<blockquote>
+<p>There are many situations in which automated failover is an excellent
+strategy for ensuring the availability of a service. After careful
+consideration, we've determined that ensuring the availability of our
+primary production database is not one of these situations. To this
+end, we've made changes to our Pacemaker configuration to ensure
+failover of the 'active' database role will only occur when initiated
+by a member of our operations team.</p>
+<p></p>
+<p></p>
+</blockquote>
+<p>That splash you just heard was the bath water. The scream was the baby
+being tossed out with it.</p>
+<p>Automated failover is a pretty poor strategy <em>in the middle of a large
+configuration change.</em> And Pacemaker gives you a simple and easy
+interface to disable it, by changing a single cluster property. Failure
+to do so may result in problems, and in this case it did.</p>
+<p>When you put a baby seat on the passenger side of your car, you disable
+the air bag to prevent major injury. But if you take that baby seat out
+and an adult passenger rides with you, are you seriously saying you're
+going to manually initiate the air bag in case of a crash? I hope you're
+not.</p>
+<blockquote>
+<p>Finally, our operations team is performing a full audit of our
+Pacemaker and Heartbeat stack focusing on the code path that triggered
+the segfault on Tuesday.</p>
+<p></p>
+<p></p>
+</blockquote>
+<p>That's probably a really good idea. For anyone planning to do the same,
+<a href="https://www.hastexo.com/services/checkup">we can help.</a></p>
+<hr/>
+<p>This article originally appeared on my blog on the <code>hastexo.com</code> website (now defunct).</p>
+<!--break-->
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../../../tag/mysql.html">MySQL</a>
+      <a href="../../../../../tag/pacemaker.html">Pacemaker</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../../../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../../../../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+
+</body>
+</html>

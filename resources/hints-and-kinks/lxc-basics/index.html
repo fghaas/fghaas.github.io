@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../../theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/solid.css">
+
+    <link rel="stylesheet" type="text/css" href="../../../css/override.css">
+
+    <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+    <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+  
+
+
+ 
+
+<meta name="author" content="Florian Haas" />
+<meta name="description" content="LXC is part of my standard Linux desktop toolbox, and I use it daily. I have done tutorials about this before, one of which you can find on YouTube (courtesy of linux.conf.au) and GitHub, but it’s about time I included this in a series of articles. My …" />
+<meta name="keywords" content="LXC">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="Running (Almost) Anything in LXC: The Basics"/>
+  <meta property="og:description" content="LXC is part of my standard Linux desktop toolbox, and I use it daily. I have done tutorials about this before, one of which you can find on YouTube (courtesy of linux.conf.au) and GitHub, but it’s about time I included this in a series of articles. My …"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../../resources/hints-and-kinks/lxc-basics/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2020-12-28 00:00:00+00:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../../author/florian-haas.html">
+  <meta property="article:section" content="hints-and-kinks"/>
+  <meta property="article:tag" content="LXC"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; Running (Almost) Anything in LXC: The Basics</title>
+
+</head>
+<body >
+  <aside>
+    <div>
+      <a href="../../../">
+        <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="../../../"></a>
+      </h1>
+
+
+
+
+      <ul class="social">
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/xahteiwi" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="me" class="sc-mastodon" href="https://mastodon.social/@xahteiwi" target="_blank">
+              <i class="fab fa-mastodon"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/fghaas" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-github" href="https://github.com/fghaas" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="../../../">Home</a>
+
+      <a href="/category/hints-and-kinks.html">Tech</a>
+      <a href="/category/presentations.html">Talks</a>
+      <a href="/category/blog.html">Thoughts</a>
+      <a href="">​</a>
+      <a href="/about/">About</a>
+      <a href="/comments/">Comments</a>
+      <a href="/legal/">Legal</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="">​</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="">​</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="lxc-basics">Running (Almost) Anything in LXC: The Basics</h1>
+    <p>
+      Posted on Mon 28 December 2020 in <a href="../../../category/hints-and-kinks.html">hints-and-kinks</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>LXC is part of my standard Linux desktop toolbox, and I use it
+daily. I have done tutorials about this before, one of which you can
+find <a href="https://youtu.be/3nUbMREnnns">on YouTube</a> (courtesy of
+<a href="https://linux.conf.au/">linux.conf.au</a>) and
+<a href="https://fghaas.github.io/lca2018-lxc/#/1">GitHub</a>, but it’s about
+time I included this in a series of articles.</p>
+<p>My motivations for running LXC containers are manifold, but here are
+some of the most important ones:</p>
+<ul>
+<li>
+<p>I want to keep my main system clean of anything that’s not free and
+  open source software. There is, however, the odd bit of non-free
+  software that I do need to or want to use — Zoom for work, for
+  example, or the excellent Spotify Linux client for pleasure.</p>
+</li>
+<li>
+<p>Even if a piece of Software <em>is</em> open source, it sometimes does not
+  play nicely with the version of my main system that I currently
+  use. A recent example is the somewhat premature inclusion of
+  pre-release versions of Calibre in Debian and Ubuntu, which means
+  that Calibre is currently not playing too nicely on Ubuntu Focal
+  (the current LTS at time of writing), but runs just dandy on Bionic,
+  which I can handily run in an LXC container.</p>
+</li>
+<li>
+<p>Sometimes the opposite is true as well, that is, some application
+  comes in a version that I want to use, except it’s only bundled with
+  a future Ubuntu (or Debian) release that I am not yet prepared to
+  use. Or else, it’s available only on Fedora or openSUSE, which are
+  perfectly fine desktop distributions but just not my preferred ones
+  to use on a daily basis. In that case, LXC containers are
+  exceedingly useful as well, and are much less hassle than building
+  the application in question from source.</p>
+</li>
+</ul>
+<p>Here are my general rules for running LXC containers:</p>
+<ol>
+<li>I run my containers as non-root, under my own user account. (If you
+   are unfamiliar with this, and would like to learn more about how it
+   works and how you need to tweak your system to enable it, please
+   see the excellent LXC <a href="https://linuxcontainers.org/lxc/getting-started/#creating-unprivileged-containers-as-a-user">Getting
+   Started</a>
+   guide.)</li>
+<li>I use UID and GID mapping rules so that all of the container’s user
+   accounts, including the container’s root, are mapped to subgids and
+   subuids of my account — all <strong>except</strong> my own user account and
+   group, with uid and gid 1000.</li>
+<li>I bind-mount the <code>/home</code> directory into the container. Combined
+   with the uid and gid passthrough of my own account, this means that
+   <code>florian</code> in the container can access <code>/home/florian</code> in any
+   container, just like in the host.</li>
+<li>I run all my containers in btrfs subvolumes.</li>
+<li>I maintain a basic container configuration for each Ubuntu release
+   I run, and then I duplicate that configuration for a bunch of
+   containers using snapshot cloning (<code>lxc-copy -s</code>), which in
+   combination with btrfs makes the clones quite space-efficient.</li>
+</ol>
+<p>For example, this is the “container specific configuration” section in
+<code>~/.share/lxc/focal/config</code>, the configuration for my current base
+container running Ubuntu Focal:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Container specific configuration</span><span class="w"></span>
+<span class="na">lxc.include</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/etc/lxc/default.conf</span><span class="w"></span>
+<span class="na">lxc.idmap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">u 0 100000 1000</span><span class="w"></span>
+<span class="na">lxc.idmap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">g 0 100000 1000</span><span class="w"></span>
+<span class="na">lxc.idmap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">u 1000 1000 1</span><span class="w"></span>
+<span class="na">lxc.idmap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">g 1000 1000 1</span><span class="w"></span>
+<span class="na">lxc.idmap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">u 1001 101001 64535</span><span class="w"></span>
+<span class="na">lxc.idmap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">g 1001 101001 64535</span><span class="w"></span>
+<span class="na">lxc.mount.auto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">proc sys cgroup</span><span class="w"></span>
+<span class="na">lxc.rootfs.path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">btrfs:/home/florian/.local/share/lxc/focal/rootfs</span><span class="w"></span>
+<span class="na">lxc.uts.name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">focal</span><span class="w"></span>
+<span class="na">lxc.mount.entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/home home none bind,optional 0 0</span><span class="w"></span>
+</code></pre></div>
+<p>Of this, perhaps the <code>lxc.idmap</code> settings merit a bit of extra
+explanation:</p>
+<ul>
+<li><code>lxc.idmap = u 0 100000 1000</code> means “map the uid 0 (<code>root</code>) in the
+  container to uid 100000 in the host, and continue up until you’ve
+  hit 1,000 mappings”. In other words, map uids 0 to 999 including, to
+  100000 to 100999.</li>
+<li><code>lxc.idmap = u 1000 1000 1</code> means “map the uid 1000 in the container
+  to uid 1000 in the host,” (in my case, my user account named
+  <code>florian</code>) “and follow this pattern for just one mapping”. In other
+  words, make uid 1000 a pass-through.</li>
+<li>Finally, <code>lxc.idmap = u 1001 101001 64535</code> means “starting with uid
+  1001 in the container, map it to uid 101001 in the host and proceed
+  until you’ve hit 64,535 mappings”.</li>
+</ul>
+<p>So in total, that’s LXC-ese for “map all possible uids from 0 to 65535
+in the container to host subuids shifted by 100,000 <em>except</em> 1000,
+which you shouldn’t map to any subuid. And the same is true for gids,
+for the <code>g</code> idmaps. It’s a rather roundabout way of specifying this,
+but it works.</p>
+<p>Now by itself, this already gives me plenty of options for
+command-line applications. But since it’s my main workstation that I
+run this on, I usually want my applications to be wired up to my
+desktop GUI. More on that in the next installment of the series.</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../tag/lxc.html">LXC</a>
+    </p>
+  </div>
+
+
+
+
+  <div class="related-posts">
+    <h4>Part 1 of "Running (Almost) Anything in LXC"</h4>
+       <h5>Next articles</h5>
+       <ul>
+           <li><a href="../../../resources/hints-and-kinks/lxc-x11/">Running (Almost) Anything in LXC: X applications</a></li>
+           <li><a href="../../../resources/hints-and-kinks/lxc-sound/">Running (Almost) Anything in LXC: Sound</a></li>
+           <li><a href="../../../resources/hints-and-kinks/lxc-webcam/">Running (Almost) Anything in LXC: Applications Using Your Webcam</a></li>
+       </ul>
+  </div>
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+
+</body>
+</html>

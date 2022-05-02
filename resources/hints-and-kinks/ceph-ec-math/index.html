@@ -1,0 +1,329 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../../theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/solid.css">
+
+    <link rel="stylesheet" type="text/css" href="../../../css/override.css">
+
+    <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+    <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+  
+
+
+ 
+
+<meta name="author" content="Florian Haas" />
+<meta name="description" content="In a Ceph cluster, the frequent question, “how much space utilization overhead does my EC profile cause,” can be answered with very simple algebra." />
+<meta name="keywords" content="Ceph">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="Ceph Erasure Code Overhead Mathematics"/>
+  <meta property="og:description" content="In a Ceph cluster, the frequent question, “how much space utilization overhead does my EC profile cause,” can be answered with very simple algebra."/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../../resources/hints-and-kinks/ceph-ec-math/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2019-11-30 00:00:00+00:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../../author/florian-haas.html">
+  <meta property="article:section" content="hints-and-kinks"/>
+  <meta property="article:tag" content="Ceph"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; Ceph Erasure Code Overhead Mathematics</title>
+
+</head>
+<body >
+  <aside>
+    <div>
+      <a href="../../../">
+        <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="../../../"></a>
+      </h1>
+
+
+
+
+      <ul class="social">
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/xahteiwi" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="me" class="sc-mastodon" href="https://mastodon.social/@xahteiwi" target="_blank">
+              <i class="fab fa-mastodon"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/fghaas" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-github" href="https://github.com/fghaas" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="../../../">Home</a>
+
+      <a href="/category/hints-and-kinks.html">Tech</a>
+      <a href="/category/presentations.html">Talks</a>
+      <a href="/category/blog.html">Thoughts</a>
+      <a href="">​</a>
+      <a href="/about/">About</a>
+      <a href="/comments/">Comments</a>
+      <a href="/legal/">Legal</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="">​</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="">​</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="ceph-ec-math">Ceph Erasure Code Overhead Mathematics</h1>
+    <p>
+      Posted on Sat 30 November 2019 in <a href="../../../category/hints-and-kinks.html">hints-and-kinks</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>So you’re running a Ceph cluster, and you want to create <a href="https://docs.ceph.com/docs/master/rados/operations/erasure-code/">pools using
+erasure
+codes</a>,
+but you’re not quite sure of exactly how much extra space you’re going
+to save, and whether or not that’s worth the performance penalty?
+Here’s a simple recipe for calculating that space overhead.</p>
+<p>Suppose a RADOS object has a size of <span class="math">\(S\)</span>, and because it’s in an EC
+pool using the
+<a href="https://docs.ceph.com/docs/master/rados/operations/erasure-code-jerasure/"><code>jerasure</code></a>
+or
+<a href="https://docs.ceph.com/docs/master/rados/operations/erasure-code-isa/"><code>isa</code></a>
+plugin,<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> Ceph splits it into <span class="math">\(k\)</span> equally-sized chunks. Then the
+size of any of its <span class="math">\(k\)</span> chunks will be: </p>
+<div class="math">$$S \over k$$</div>
+<p>In addition, we get <span class="math">\(m\)</span> more parity chunks, also of size <span class="math">\(S \over k\)</span>.</p>
+<p>Thus, the total amount of storage taken by an object of size <span class="math">\(S\)</span> is:
+</p>
+<div class="math">$$k \cdot {S \over k} + m \cdot {S \over k}$$</div>
+<p>This of course we can rearrange and reduce to </p>
+<div class="math">$$S + S \cdot {m \over
+k}$$</div>
+<p> or </p>
+<div class="math">$$S \cdot (1 + {m \over k})$$</div>
+<p>In other words, the overhead (that is, the <strong>additional storage</strong>
+taken up by the EC parity data) is </p>
+<div class="math">$$S \cdot {m \over k}$$</div>
+<p> or when
+expressed as a proportion to <span class="math">\(S\)</span>, simply </p>
+<div class="math">$$m \over k$$</div>
+<p>As an example, an EC profile with <span class="math">\(k = 8, m=3\)</span> comes with a storage
+overhead of <span class="math">\(3 \over 8\)</span> or 37.5%.</p>
+<p>One with <span class="math">\(k=5, m=2\)</span> has an overhead of <span class="math">\(2 \over 5\)</span>, or 40%. </p>
+<p>And finally, a <em>replicated</em> (conventional, non-EC) pool with 3
+replicas can be thought of as having a degenerate EC profile with
+<span class="math">\(k=1, m=2\)</span>, resulting in an overhead of <span class="math">\(2 \over 1\)</span>, or 200%.</p>
+<p>On a parting note, you should realize that the space utilization
+overhead is only one factor by which you should weigh erasure code
+profiles against one another. The other is performance. Here, the
+general (deliberately oversimplified) rule is that the more chunks you
+define — in other words, the higher your <span class="math">\(k\)</span> — the higher the
+performance penalty you suffer, particularly on reads.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> This is due to
+the fact that in order to reconstruct the object and serve it to the
+application, your client must collect data from <span class="math">\(k\)</span> different OSDs and
+assemble it locally.<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></p>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>Thanks to <a href="https://twitter.com/larsmb/">Lars Marowsky-Bree</a> for
+<a href="https://twitter.com/larsmb/status/1201425069140000773">reminding me</a> that
+slightly different arithmetics apply to the
+<a href="https://docs.ceph.com/docs/master/rados/operations/erasure-code-lrc/"><code>lrc</code></a>,
+<a href="https://docs.ceph.com/docs/master/rados/operations/erasure-code-shec/"><code>shec</code></a>,
+and
+<a href="https://docs.ceph.com/docs/master/rados/operations/erasure-code-clay/"><code>clay</code></a>
+plugins. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:2">
+<p>Thanks to <a href="https://twitter.com/LenzGrimmer">Lenz Grimmer</a> for
+<a href="https://twitter.com/LenzGrimmer/status/1201418525333700608">pointing
+out</a>
+that the post should make this clear. <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+<li id="fn:3">
+<p>If you want to know more about erasure codes and their history,
+not limited to their use in Ceph, <a href="https://twitter.com/dabukalam">Danny
+Abukalam</a> did an <a href="https://youtu.be/aHATgQL18is">interesting
+talk</a> on the subject at OpenStack
+Days Nordic 2019. <a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../tag/ceph.html">Ceph</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+
+</body>
+</html>

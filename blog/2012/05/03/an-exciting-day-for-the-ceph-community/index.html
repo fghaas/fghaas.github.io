@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../../../../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../../../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../../../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../../../../theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/solid.css">
+
+    <link rel="stylesheet" type="text/css" href="../../../../../css/override.css">
+
+    <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+    <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+  
+
+
+ 
+
+<meta name="author" content="florian" />
+<meta name="description" content="Today, as you&#39;ve probably noticed if you&#39;re following the development of the Ceph stack, something mighty cool has been happening. The ceph.com web site received a major makeover with a slick new design, and the people behind Ceph have announced the launch of a brand new company to drive …" />
+<meta name="keywords" content="Ceph">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="An exciting day for the Ceph community"/>
+  <meta property="og:description" content="Today, as you&#39;ve probably noticed if you&#39;re following the development of the Ceph stack, something mighty cool has been happening. The ceph.com web site received a major makeover with a slick new design, and the people behind Ceph have announced the launch of a brand new company to drive …"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../../../../blog/2012/05/03/an-exciting-day-for-the-ceph-community/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2012-05-03 11:10:00+00:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../../../../author/florian.html">
+  <meta property="article:section" content="blog"/>
+  <meta property="article:tag" content="Ceph"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; An exciting day for the Ceph community</title>
+
+</head>
+<body >
+  <aside>
+    <div>
+      <a href="../../../../../">
+        <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="../../../../../"></a>
+      </h1>
+
+
+
+
+      <ul class="social">
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/xahteiwi" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="me" class="sc-mastodon" href="https://mastodon.social/@xahteiwi" target="_blank">
+              <i class="fab fa-mastodon"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/fghaas" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-github" href="https://github.com/fghaas" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="../../../../../">Home</a>
+
+      <a href="/category/hints-and-kinks.html">Tech</a>
+      <a href="/category/presentations.html">Talks</a>
+      <a href="/category/blog.html">Thoughts</a>
+      <a href="">​</a>
+      <a href="/about/">About</a>
+      <a href="/comments/">Comments</a>
+      <a href="/legal/">Legal</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="">​</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="">​</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="an-exciting-day-for-the-ceph-community">An exciting day for the Ceph community</h1>
+    <p>
+      Posted on Thu 03 May 2012 in <a href="../../../../../category/blog.html">blog</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>Today, as you've probably noticed if you're following the development of
+the <a href="https://www.hastexo.com/knowledge/storage-io/ceph">Ceph</a> stack,
+something mighty cool has been happening. The
+<a href="http://ceph.com/">ceph.com</a> web site received a major makeover with a
+slick new design, and the people behind Ceph have <a href="http://www.marketwired.com/press-release/new-startup-inktank-delivers-the-future-of-storage-with-ceph-1652261.htm">announced the launch
+of a brand new
+company</a>
+to drive the Ceph stack, <a href="http://www.inktank.com">Inktank</a>.</p>
+<p>As I've previously blogged here, Ceph is <a href="https://www.hastexo.com/blogs/florian/2012/03/08/ceph-tickling-my-geek-genes">one of the most interesting
+storage
+technologies</a>
+out on the market today – and this includes both open-source and
+commercial offerings. It's exceptionally well designed, extremely
+scalable, and useful for a frighteningly diverse set of usage scenarios.
+Up to this point, Ceph development has been driven and funded by <a href="http://newdream.net/">New
+Dream Network</a>, a long-standing hosting provider
+operating out of Southern California since 1997 under the
+<a href="http://www.dreamhost.com/">DreamHost</a> brand. Now, it's being launched
+into its own company.</p>
+<p>Inktank is about to offer professional services and training around the
+Ceph stack. I've had the pleasure to meet with Inktank President &amp; COO
+Bryan Bogensberger and others at the OpenStack conference in San
+Francisco. Indeed, meeting with them was one of my motivations for being
+there – besides <a href="https://www.hastexo.com/resources/presentations/reliable-redundant-resilient-high-availability-openstack">high availability in
+OpenStack</a>,
+of course.</p>
+<p>What Inktank enables us to do is to remain involved in the Ceph
+community even more than we previously were. We're already offering Ceph
+instruction as part of our <a href="https://www.hastexo.com/services/training/hastexo-high-availability-expert">High Availability
+Expert</a>
+and <a href="https://www.hastexo.com/services/training/cloud-bootcamp">Cloud Bootcamp for
+OpenStack</a>
+training classes. <a href="https://www.hastexo.com/who/martin">Martin</a> has
+<a href="https://www.hastexo.com/resources/presentations/glusterfs-und-ceph-skalierbares-storage-ohne-wenn-und-aber">presented Ceph at
+CeBIT</a>
+in Germany this year. He has also just published a well-received
+<a href="http://www.admin-magazine.com/HPC/Articles/The-RADOS-Object-Store-and-Ceph-Filesystem">article on Ceph in the U.S. edition of ADMIN
+magazine</a>,
+and I have another one coming up in next month's Issue 218 of <a href="http://www.linuxjournal.com">Linux
+Journal</a>.</p>
+<p>So, we're excited for Inktank and wish them the best – even though we
+sadly can't be at their <a href="https://www.eventbrite.com/e/always-bet-on-ink-tickets-3311680325">launch party in Las Vegas on May
+8</a>.
+We appreciate the invitation, guys – have fun!</p>
+<hr/>
+<p>This article originally appeared on my blog on the <code>hastexo.com</code> website (now defunct).</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../../../tag/ceph.html">Ceph</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../../../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../../../../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+
+</body>
+</html>

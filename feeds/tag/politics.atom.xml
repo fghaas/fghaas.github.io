@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Politics</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/politics.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2020-02-04T00:00:00+00:00</updated><entry><title>Why do they always lie?</title><link href="https://xahteiwi.eu/blog/2020/02/04/why-do-they-always-lie/" rel="alternate"></link><published>2020-02-04T00:00:00+00:00</published><updated>2020-02-04T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2020-02-04:/blog/2020/02/04/why-do-they-always-lie/</id><summary type="html">&lt;p&gt;When politicians (and their supporters) keep lying even though their lies are easily exposed, it’s a strategy.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recently I came across a tweet from my Irish OpenStack community
+friend &lt;a href="https://twitter.com/nearyd"&gt;Dave Neary&lt;/a&gt;, &lt;a href="https://twitter.com/nearyd/status/1224727999951572993"&gt;in which he wondered
+aloud&lt;/a&gt; why a
+picture, which was very obviously (and poorly) doctored, made its way
+onto Twitter. As if, so goes the reasoning, the creator of the picture
+was ass enough to assume that no-one would notice.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;It’s so obvious [...] I just don’t understand why you’d bother.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;More generally, you can summarize this befuddlement by rephrasing the
+question as follows: “why would anyone, in a political campaign even,
+run with a lie that’s so easily called out?”&lt;/p&gt;
+&lt;p&gt;This assumes that lying, deception, is something you’d prefer to go
+undetected. And generally that’s true, human behavior works exactly
+that way: when we lie and deceive — and humans do this all them time
+for many reasons, some of them benign — the deception only works if it
+isn’t caught.&lt;/p&gt;
+&lt;h2&gt;Why do they lie, when it’s so easy to tell?&lt;/h2&gt;
+&lt;p&gt;Then, what makes humans lie and spread falsehoods, even when they’re
+easily detected?&lt;/p&gt;
+&lt;p&gt;I submit that to understand why, you should play a game.&lt;/p&gt;
+&lt;p&gt;The game is called &lt;a href="https://ncase.me/trust/"&gt;The Evolution of Trust&lt;/a&gt;,
+and its creator is &lt;a href="https://twitter.com/ncasenmare"&gt;Nicky Case&lt;/a&gt;. You
+can play it online, it’s available in multiple languages. And it will
+take only about 15 minutes to complete. Go play it. No, really do.&lt;/p&gt;
+&lt;p&gt;Did you play it? No? Well &lt;a href="https://ncase.me/trust/"&gt;it’s here&lt;/a&gt;. Please
+go play it.&lt;/p&gt;
+&lt;p&gt;Done? OK. Let’s carry on.&lt;/p&gt;
+&lt;h2&gt;What does The Evolution of Trust tell us?&lt;/h2&gt;
+&lt;p&gt;The game-theoretical concepts that The Evolution of Trust introduces
+tell you three things about its simple game of cooperation and
+defection (playing by the rules vs. cheating):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;If communications between players are &lt;em&gt;perfect,&lt;/em&gt; then the most
+  successful strategy is tit-for-tat (“copycat”).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If communications are &lt;em&gt;imperfect,&lt;/em&gt; then the most successful strategy
+  is tit-for-two-tats (or “tit for tat with forgiveness,” or
+  “copykitten”) — &lt;em&gt;up to a certain error rate in communications.&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If communications are &lt;em&gt;imperfect beyond that error rate threshold,&lt;/em&gt;
+  then the most successful strategy is to always cheat (“cheater”).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now, &lt;em&gt;real&lt;/em&gt; human communications are always messy, so the perfect
+communications scenario is out the window. We’re always dealing with
+imperfect communications, but we never know how high our error rate
+is.&lt;/p&gt;
+&lt;p&gt;And most of us are brought up with the Golden Rule and a certain
+measure of forgiveness. We tend to be “copykittens.”&lt;/p&gt;
+&lt;p&gt;But now put yourself in the shoes of someone who has decided they’ll
+take the cheater role. They’ll not play by the rules, they’ll only
+ever fend for themselves and their own, everyone else be
+damned. They’ve chosen the asshole route.&lt;/p&gt;
+&lt;p&gt;Their problem is, they can’t win. Game theory literally tells us that
+the forgiveness strategy is superior. &lt;strong&gt;Except if the cheater manages
+to increase the error rate beyond the threshold.&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;If you’ve decided you want to be an asshole, lie. It’s your only chance.&lt;/h2&gt;
+&lt;p&gt;So once you’ve decided that you’ll not play by the rules, your only
+shot at winning is to destroy communications — for everyone.&lt;/p&gt;
+&lt;p&gt;And your best shot at that is to lie. Never tell the truth, contradict
+objective facts, say the stupidest, dumbest, most blatantly false
+things. Small lies, large lies, medium-sized lies. It does not matter
+if your lie is exposed, in fact, your lies &lt;em&gt;must&lt;/em&gt; be exposed for your
+strategy to work.&lt;/p&gt;
+&lt;p&gt;And now you know how to spot someone in politics who has decided to
+break the rules. And why you shouldn’t assume they’re stupid, just
+because they say objectively stupid things.&lt;/p&gt;</content><category term="blog"></category><category term="Politics"></category></entry><entry><title>Why upload filters don’t work (really simple math!)</title><link href="https://xahteiwi.eu/blog/2019/03/25/upload-filter-math/" rel="alternate"></link><published>2019-03-25T20:00:00+00:00</published><updated>2019-03-25T20:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-03-25:/blog/2019/03/25/upload-filter-math/</id><summary type="html">&lt;p&gt;“I can’t figure out how upload filters should work, but I’m not a
+technical person — surely someone who is can sort it out!”&lt;/p&gt;
+&lt;p&gt;That is a misconception. I’ll be happy to explain, requiring — I
+promise! — no technical understanding of what an upload filter is, or
+how it …&lt;/p&gt;</summary><content type="html">&lt;p&gt;“I can’t figure out how upload filters should work, but I’m not a
+technical person — surely someone who is can sort it out!”&lt;/p&gt;
+&lt;p&gt;That is a misconception. I’ll be happy to explain, requiring — I
+promise! — no technical understanding of what an upload filter is, or
+how it works.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;p&gt;The current draft of the EU Directive “on copyright and related
+rights in the Digital Single Market”, available
+&lt;a href="http://www.europarl.europa.eu/doceo/document/A-8-2018-0245-AM-271-271_EN.pdf"&gt;here&lt;/a&gt;,
+(PDF in English), also known as &lt;a href="https://en.wikipedia.org/wiki/Directive_on_Copyright_in_the_Digital_Single_Market"&gt;the &lt;strong&gt;EU Copyright
+Directive&lt;/strong&gt;&lt;/a&gt;,
+requires in its Article 17 (formerly Article 13), clause 4, that the
+service provider undergoes,&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;in accordance with high industry standards of professional
+diligence, best efforts to ensure the unavailability of specific
+works and other subject matter for which the rightholders have
+provided the service providers with the relevant and necessary
+information.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;It is obvious that the only way any platform hosting
+user-generated content would thus have to intercept any such content
+&lt;em&gt;on upload,&lt;/em&gt; failing which it would immediately become potentially liable for a
+copyright violation. This would require a technical facility commonly
+called an &lt;em&gt;upload filter.&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;We don't need to talk about how upload filters &lt;em&gt;work&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;Now, an upload filter is immensely complex and there are tons of
+technical difficulties — the only time this has been attempted on a
+large scale is YouTube’s &lt;a href="https://en.wikipedia.org/wiki/Content_ID_(algorithm)"&gt;Content
+ID&lt;/a&gt;, and it is
+exceedingly unreliable and prone to overblocking. But for the purposes
+of this discussion, it doesn’t matter whether implementing an upload
+filter is difficult to do.&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;Assume for a moment someone has built a magnificent upload
+filter. Something that operates on magic pixie dust that catches &lt;em&gt;all&lt;/em&gt;
+copyright violations.&lt;/p&gt;
+&lt;h2&gt;Interactions&lt;/h2&gt;
+&lt;p&gt;Now, let’s call every instance of someone uploading content to the
+internet an “interaction”. Every tweet, every Facebook post and
+comment, every comment on your favorite news site, every blog post you
+write, every picture that you take and post to a WhatsApp group of 50
+people or more, every YouTube video and comment — let’s call all of
+those “interactions.”&lt;/p&gt;
+&lt;p&gt;And let’s make an outrageously overblown assumption: suppose that on
+the internet today, 1% of such interactions infringe someone’s
+copyright. Again, let me reiterate that this is ludicrously high. The vast
+majority of internet interactions today are either completely trivial
+and thus irrelevant to copyright, or works of your own, or a perfectly
+legal fair-use way of using someone else’s work, such as when you
+quote a passage of a book. But purely for the sake of this discussion,
+let’s say it’s 1%.&lt;/p&gt;
+&lt;p&gt;So then let’s look at 10,000 interactions that completely random
+people make on the internet.&lt;/p&gt;
+&lt;p&gt;Those would then break down like so:&lt;/p&gt;
+&lt;table class="table table-striped"&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Total&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Perfectly legal&lt;/td&gt;
+&lt;td&gt;9,900&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Infringing copyright&lt;/td&gt;
+&lt;td&gt;100&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;Catching copyright violations. Or non-violations.&lt;/h2&gt;
+&lt;p&gt;OK. Now, suppose we built a &lt;em&gt;perfect&lt;/em&gt; upload filter, i.e. one that
+catches &lt;em&gt;all&lt;/em&gt; copyright infringements. Remember, the Directive calls
+for “best effort to ensure the &lt;strong&gt;unavailability&lt;/strong&gt;” (emphasis mine) of
+potentially infringing content. It does not allow providers to balance
+for freedom of expression or the like, so to err on the side of
+caution, they must strive to over- rather than underblock. So a
+perfect filter is one that has &lt;strong&gt;no false negatives&lt;/strong&gt; — meaning if
+content infringes, it is always caught.&lt;/p&gt;
+&lt;p&gt;Now, suppose further that the filter mis-identifies content (meaning,
+flags content as infringing when it is not) with a rate of only
+2%. That means it has &lt;strong&gt;2% false positives.&lt;/strong&gt; That, now, is
+ridiculously low for any automated screening procedure.&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;So that means that out of our 10,000 interactions tracked by our
+“perfect” content filter, the numbers break down like this:&lt;/p&gt;
+&lt;table class="table table-striped"&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Total&lt;/th&gt;
+&lt;th&gt;Flagged as legal&lt;/th&gt;
+&lt;th&gt;Flagged as infringing&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Perfectly legal&lt;/td&gt;
+&lt;td&gt;9,900&lt;/td&gt;
+&lt;td&gt;9,802&lt;/td&gt;
+&lt;td&gt;198&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Infringing copyright&lt;/td&gt;
+&lt;td&gt;100&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;100&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Overall&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;10,000&lt;/td&gt;
+&lt;td&gt;9,802&lt;/td&gt;
+&lt;td&gt;298&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;Congratulations, a coin toss beats your upload filter.&lt;/h2&gt;
+&lt;p&gt;That leads us to the question: if you upload something and it gets
+flagged, how likely is it that it is &lt;em&gt;actually&lt;/em&gt; infringing any
+copyright? Answer: 100 in 298. Roughly one in three. &lt;strong&gt;Yes, that is
+worse than a coin toss.&lt;/strong&gt; And remember, this is assuming an
+implausibly high rate of infringements overall, and a ludicrously low
+false-positive and false-negative rate on your filter.&lt;/p&gt;
+&lt;p&gt;Go ahead and play with the numbers, tweak the false-negatives and
+false-positives, whatever. &lt;strong&gt;As long as what you’re looking for is
+exceedingly rare, automated filters detect it with poor accuracy.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;And if you leave all parameters the same, but consider a probably much
+more realistic infringement rate of 1 in 1000, that is, 0.1%, then
+things look like this: &lt;/p&gt;
+&lt;table class="table table-striped"&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Total&lt;/th&gt;
+&lt;th&gt;Flagged as legal&lt;/th&gt;
+&lt;th&gt;Flagged as infringing&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Perfectly legal&lt;/td&gt;
+&lt;td&gt;9,990&lt;/td&gt;
+&lt;td&gt;9,800&lt;/td&gt;
+&lt;td&gt;200&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Infringing copyright&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Overall&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;10,000&lt;/td&gt;
+&lt;td&gt;9,800&lt;/td&gt;
+&lt;td&gt;300&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Now there’s a one-in-thirty chance that an upload block is
+legitimate. Assuming there is an appeals process, and all false
+positives get appealed, then that means the &lt;strong&gt;human&lt;/strong&gt; going through
+the appeals will have to undo a block &lt;strong&gt;29 times out of 30.&lt;/strong&gt; &lt;/p&gt;
+&lt;h2&gt;A cheap optimization&lt;/h2&gt;
+&lt;p&gt;I’d like to propose an optimization here: any website seeking to
+implement a content filter should consider to just use a &lt;strong&gt;random
+number generator to reject your upload, comment, tweet, or post with a
+certain probability that is demonstrably larger than that of an upload
+filter.&lt;/strong&gt; I’d posit that that would be by far the safest, cheapest way
+to comply with the directive — if it becomes law.&lt;/p&gt;
+&lt;p&gt;Of course, everyone who is now in favor of this directive (including
+its Article 17) will hate that.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2&gt;Footnotes&lt;/h2&gt;
+&lt;div class="footnote"&gt;
+&lt;hr/&gt;
+&lt;ol&gt;
+&lt;li id="fn:1"&gt;
+&lt;p&gt;It’s also easy to dismiss with a “try harder”
+retort, which is completely disingenuous, because it’s akin to
+saying, doc, this patient has terminal pancreatic cancer, but you
+&lt;em&gt;must&lt;/em&gt; cure her. Inoperable? Terminal? No there’s &lt;em&gt;got&lt;/em&gt; to be a
+way. Sometimes there is no way, and it’s OK when an expert tells
+you that. &lt;a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:2"&gt;
+&lt;p&gt;I don’t believe YouTube releases numbers on its ContentID error
+rate, but it’s apparently &lt;a href="https://www.techdirt.com/articles/20181214/17272041233/youtubes-100-million-upload-filter-failures-demonstrate-what-disaster-article-13-will-be-internet.shtml"&gt;pretty
+bad&lt;/a&gt;
+for a system that cost $100M to build. &lt;a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content><category term="blog"></category><category term="Politics"></category></entry><entry><title>Article 17: The time to act is now.</title><link href="https://xahteiwi.eu/blog/2019/03/21/copyright-reform/" rel="alternate"></link><published>2019-03-21T17:38:00+00:00</published><updated>2019-03-21T17:38:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-03-21:/blog/2019/03/21/copyright-reform/</id><summary type="html">&lt;p&gt;Next Tuesday, the European Parliament is due to vote on something that will impact your life. Yes, yours.&lt;/p&gt;</summary><content type="html">&lt;p&gt;On Tuesday, March 26 at half-past noon Central European Time, the
+European Parliament is due to vote on an issue that will definitely
+impact your life, no matter if you live in or outside the EU. No, it
+has nothing to do with Brexit. Brexit has just managed to monopolise
+your attention. The Tuesday vote has much more far-reaching
+consequences.&lt;/p&gt;
+&lt;h2&gt;What’s going on here?&lt;/h2&gt;
+&lt;p&gt;On Tuesday, the EP will vote on a Directive “on copyright and related
+rights in the Digital Single Market”, the draft of which you can look
+up
+&lt;a href="http://www.europarl.europa.eu/doceo/document/A-8-2018-0245-AM-271-271_EN.pdf"&gt;here&lt;/a&gt;
+(PDF in English), also known as &lt;a href="https://en.wikipedia.org/wiki/Directive_on_Copyright_in_the_Digital_Single_Market"&gt;the &lt;strong&gt;EU Copyright
+Directive&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Now this thing attempts to be a 21st-century copyright law, which is
+laudable, but it does absolutely awful things: go take a look at &lt;a href="https://youtu.be/CyUh9wOp_Rw"&gt;this
+video&lt;/a&gt; to get the quick run-down. It’ll
+only take 4 minutes of your time. And as you’ll see from the video,
+&lt;strong&gt;this law will have a devastating global impact&lt;/strong&gt; on society at
+large. (While completely failing to achieve its ostensible goals, mind
+you.)&lt;/p&gt;
+&lt;p&gt;What is apparent from the discussion around this directive is that it
+isn’t being pushed by exceptionally clueful people. One MEP in favor
+of the directive once publicly surmised that he was dealing with a
+concerted campaign from Google, &lt;a href="https://twitter.com/schulzeeuropa/status/1096445520770404352"&gt;because lots of the email in his
+inbox came from &lt;code&gt;gmail.com&lt;/code&gt;
+addresses&lt;/a&gt;. The
+&lt;a href="https://en.wikipedia.org/wiki/Committees_of_the_European_Parliament"&gt;rapporteur&lt;/a&gt;
+on the directive &lt;a href="https://www.vice.com/de/article/vbw8zy/streit-um-uploadfilter-und-artikel13-wie-axel-voss-das-internet-sieht"&gt;hasn’t subscribed to any YouTube channel and thinks
+that there is a Memes section on
+Google&lt;/a&gt;,
+and when properly roasted on Twitter, someone representing
+his party &lt;a href="https://twitter.com/CDU_CSU_EP/status/1108372306101968901"&gt;publicly doubled
+down&lt;/a&gt; on
+his behalf.&lt;/p&gt;
+&lt;p&gt;In the words of Janus Kopfstein:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href="https://motherboard.vice.com/en_us/article/pggamb/dear-congress-it-s-no-longer-ok-to-not-know-how-the-internet-works-5886b6cbc860fd45c9f2dfe3"&gt;It’s no longer OK to not know how the internet
+works.&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Yes, he wrote that in 2011, and addressed at the U.S. Congress, but
+here we are, with our European representatives still needing that
+reminder 8 years on.&lt;/p&gt;
+&lt;p&gt;They even tried the oldest trick in the book: once all of Europe
+started screaming about Article 13, they renumbered. So &lt;strong&gt;what used to
+be Article 13 is now Article 17.&lt;/strong&gt; Don’t get confused; this is just a
+ploy by people who print out emails.&lt;/p&gt;
+&lt;p&gt;Now luckily, the backers of Article 17 are opposed by a good bunch of
+people who are clued in, and have pledged to strike this Directive
+down in the EP on Tuesday. &lt;/p&gt;
+&lt;h2&gt;OK. So what do I do?&lt;/h2&gt;
+&lt;p&gt;You can &lt;a href="https://www.change.org/p/european-parliament-stop-the-censorship-machinery-save-the-internet"&gt;sign a change.org
+petition&lt;/a&gt;. It
+already has 5 million supporters, and there will likely be many
+more. But supporting that petition &lt;strong&gt;is not enough.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;You can check out your own MEPs for their status at &lt;a href="https://pledge2019.eu/"&gt;Pledge
+2019&lt;/a&gt;. And you can lean on them: Pledge 2019
+lets you call the people whose job it is to represent &lt;strong&gt;you&lt;/strong&gt; in the
+EP, and if they haven’t pledged to reject the Directive in its current
+form, &lt;strong&gt;you can let them know&lt;/strong&gt; (in no uncertain terms) &lt;strong&gt;that you
+won’t be voting for them or their party in the upcoming &lt;a href="https://en.wikipedia.org/wiki/2019_European_Parliament_election"&gt;EP
+elections&lt;/a&gt;&lt;/strong&gt;
+in May.&lt;/p&gt;
+&lt;p&gt;Also, there’s &lt;a href="https://saveyourinternet.eu/act/"&gt;Save Your
+Internet&lt;/a&gt;. The primary spin your
+pro-upload filter reps are trying to put on the discussion is that
+the legislation isn’t opposed by an appreciable number of real people,
+and that only astroturfing bots want this law struck down. You can
+&lt;strong&gt;write an email, send a letter&lt;/strong&gt; (yes, a letter, as in, snail mail), or
+&lt;strong&gt;call them.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;And finally, &lt;a href="https://savetheinternet.info/demos"&gt;Save The Internet&lt;/a&gt;
+(yes, everyone’s, not just yours). March 23 is a day of pan-European
+protest against Article 17. &lt;strong&gt;Find a rally and go.&lt;/strong&gt;&lt;/p&gt;</content><category term="blog"></category><category term="Politics"></category></entry></feed>

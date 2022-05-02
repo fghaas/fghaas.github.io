@@ -1,0 +1,374 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../../../../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../../../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../../../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../../../../theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/solid.css">
+
+    <link rel="stylesheet" type="text/css" href="../../../../../css/override.css">
+
+    <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+    <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+  
+
+
+ 
+
+<meta name="author" content="Florian Haas" />
+<meta name="description" content="Turning an organization into one that works in a distributed and asynchronous fashion is far from trivial." />
+<meta name="keywords" content="Work, Communications">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="Please, Make My Company Distributed!"/>
+  <meta property="og:description" content="Turning an organization into one that works in a distributed and asynchronous fashion is far from trivial."/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../../../../blog/2021/10/23/make-my-company-distributed/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2021-10-23 00:00:00+00:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../../../../author/florian-haas.html">
+  <meta property="article:section" content="blog"/>
+  <meta property="article:tag" content="Work"/>
+  <meta property="article:tag" content="Communications"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; Please, Make My Company Distributed!</title>
+
+</head>
+<body >
+  <aside>
+    <div>
+      <a href="../../../../../">
+        <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="../../../../../"></a>
+      </h1>
+
+
+
+
+      <ul class="social">
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/xahteiwi" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="me" class="sc-mastodon" href="https://mastodon.social/@xahteiwi" target="_blank">
+              <i class="fab fa-mastodon"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/fghaas" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-github" href="https://github.com/fghaas" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="../../../../../">Home</a>
+
+      <a href="/category/hints-and-kinks.html">Tech</a>
+      <a href="/category/presentations.html">Talks</a>
+      <a href="/category/blog.html">Thoughts</a>
+      <a href="">​</a>
+      <a href="/about/">About</a>
+      <a href="/comments/">Comments</a>
+      <a href="/legal/">Legal</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="">​</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="">​</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="make-my-company-distributed">Please, Make My Company Distributed!</h1>
+    <p>
+      Posted on Sat 23 October 2021 in <a href="../../../../../category/blog.html">blog</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>After <a href="../../../../../resources/presentations/no-we-wont-have-a-video-call-for-that/">No, We Won’t Have a Video Call for
+That</a>, which
+covered how productive distributed teams operate, and the <a href="../../../../../blog/2021/09/30/getting-out-of-meeting-hell/">Getting out
+of Meeting Hell</a> series,
+which focused on how <em>you</em> as an individual can get to being a member
+of a functional distributed team, let’s zoom out a bit.</p>
+<p>Let’s discuss a slightly larger, organizational picture, just in case
+you ask yourself this question: “<strong>Why isn’t my organization
+distributed and asynchronous?</strong> And, as companies <a href="https://news.ycombinator.com/item?id=28833394">bleed talent right
+and left</a> because
+competent people run for the competition that <em>does</em> get distributed
+work right, why don’t they wake up and <em>become</em> like that?  <strong>Can
+someone please make my company more distributed and asynchronous?”</strong></p>
+<p>For additional context, let me interject the following observations
+from <a href="https://blog.koehntopp.info/">Kris Köhntopp</a>, who posted them
+<a href="https://twitter.com/isotopp/status/1451497494303711234">in German on
+Twitter</a> (I am
+taking the liberty to translate here; emphasis mine):</p>
+<blockquote>
+<p>What’s funny is that [what matters to being successful as a
+distributed company] are all learnable skills — written
+communications, sensible meeting prep and follow-up, correct
+definition of objectives and tasks, etc.</p>
+<p><strong>That’s a craft.</strong></p>
+<p>But it appears that organizations prefer to bleed their teams dry by
+attrition, rather than to learn, or to hire people that can help
+teams to write things down, professionally maintain a wiki, and
+teach and drive communications.</p>
+</blockquote>
+<p>And <a href="https://twitter.com/isotopp/status/1451508098779258889">further
+downthread</a>,
+Kris says (again, my translation and emphasis):</p>
+<blockquote>
+<p>This is all definitely feasible, after all there’s remote-first
+companies of substantial size and they work.</p>
+<p>They must have <strong>built</strong> themselves somehow, they didn’t get to
+where they are by pure chance.</p>
+</blockquote>
+<p>I agree with all of that (obviously), but things are complicated. So
+let’s drill into this a bit.</p>
+<h2>Building is easy. Changing is hard.</h2>
+<p>I’ve founded and bootstrapped a distributed company, and I’ve also
+been involved in making a localized company more distributed. Take my
+word for it: founding was daunting and scary and stressful, but in
+terms of shaping structure and communications — even if you have to
+figure it out as you go, as I did with my cofounders<sup id="fnref:invent"><a class="footnote-ref" href="#fn:invent">1</a></sup> — it’s <em>easy.</em>
+Changing the communication structure of an established company is
+<em>hard.</em> And slow. Even if you have full support from the top.</p>
+<p>So, if you’re in an organization that wasn’t distributed from the
+get-go, do not compare it to one that was.</p>
+<p>Also, do not compare it to one that is two years ahead of yours in
+reshaping itself in a distributed and asynchronous manner. Also, if
+your company went distributed kicking and screaming at the start of
+the pandemic, do not compare it to one where the top leadership made a
+conscious decision to be more “remote friendly” or “remote first” or
+whatever their preferred term is, long before the pandemic hit. These
+organizations are ahead of yours. Their change may be happening just
+as slowly as yours, they just started the race earlier and are a
+couple of laps ahead of you.</p>
+<p>But your company hasn’t even <em>started</em> the change to distributed and
+async work? You spent the last nearly two years in unfettered meeting
+hell?  Your bosses think you’ll now go “back to normal”, because an
+office is the only “normal” they know? <a href="../../../../../blog/2021/10/01/getting-out-of-meeting-hell-employees/">You know what to
+do.</a></p>
+<h2>Hiring people to help: aye, there’s the rub.</h2>
+<p>Now on to the idea of hiring people to help. There’s two ways to look
+at that: hiring people as employed <strong>managers</strong> to work and lead in
+the organization in a distributed and async fashion, or hiring people
+as management <strong>consultants</strong> to guide and advise the company in the
+distributed and async transition.</p>
+<p>(Please note: the idea of hiring only <em>regular employees</em> that drive a
+distributed and async change “from within” — against the resistance or
+inertia of established management — is ludicrous, unethical, and
+unworkable.)</p>
+<h3>Hiring distie managers</h3>
+<p>If you make it a priority to hire managers geared toward distributed and
+asynchronous work, then if they’re worth their salt I can guarantee you
+that one of the first things that they’ll ask in their first interview
+is this:</p>
+<p>“What’s <em>my</em> line manager’s (director’s, VP’s, etc) distributed and
+async work experience? How about my lateral peers’?”</p>
+<p>And if the truthful answer is “they’re new to this,” it’s quite likely
+that your prospective new management colleague will politely end the
+conversation. Their skills are in high demand; they have plenty of
+options to go elsewhere. Why should sign they up for a job that’s
+going to come with a ton of needless friction?</p>
+<p>And of course, that consideration applies in all management positions,
+all the way to the top. So for this to work, in an organization
+currently hellbent on localized-synchronized work (I use
+<em>offissification</em> for that state of affairs), it would need at least
+its entire
+<a href="https://en.wikipedia.org/wiki/Corporate_title#Senior_management">C-suite</a>
+to come around first. And it would then <em>probably</em> need to replace at
+least one-third of its current managers at all levels, to have any
+chance of attracting fresh blood in management.</p>
+<p>You’ll notice that this isn’t exactly easy to do, plus it’ll probably
+take longer than you have the patience to put up with it.</p>
+<h3>Hiring management consultants</h3>
+<p>So that leaves the option of hiring people that are <em>not</em> part of the
+organization but are brought in to advise, ideally on all management
+levels. These people are called management consultants. And you should
+understand that they are commonly <em>loathed</em> by mid-level line
+managers. But let’s leave that aside for now. Let’s assume that you
+want to consider the possibility of a management consultant whose
+communication skills and empathy and talent are so outstanding that
+they are absolutely not hated by anybody.</p>
+<p>Then, please put yourself in that consultant’s shoes. Before they get
+anywhere near you, they would have spent countless hours in — you
+guessed it — <em>meetings</em> with the CEO, with top-level management,
+possibly with department heads, to get <em>buy-in</em>. And then, they embark
+on a multi-month project where they must use the style of work
+currently prevalent in your company, because that’s the only way to
+even approach people. So they spend more time in — are you with me —
+<em>meetings</em> to convince and educate people. Oh, and they probably need
+to bill by the day or by the hour, in some arbitrary increment that
+your bean counters dictate, because otherwise they can’t get
+paid. Async work, on your own time and schedule, much?</p>
+<p>So that means that under most circumstances, such a project will
+either involve a person who’s actually perfectly fine with localized
+and synchronous work, and for this kind of project that’s <em>probably</em>
+not a person you’d want to hire. Or else they’re miserably
+unproductive throughout the project, and that doesn’t exactly bode
+well for their health <em>nor</em> your project. (Which means a person
+understanding this probably will never start such a consultancy in the
+first place.)</p>
+<p>Now, I want to mention that I suppose from the perspective of a
+consultant, there is one way to square this circle: charge exorbitant
+rates. If you can make a killing working two days a month, and you
+actually <em>do</em> work just two days of meeting hell per month and take
+the rest of your time off to recuperate, then that might actually
+work. But then it’s less likely — not impossible, but less likely —
+that your company will retain their services. Because unlike a
+consultant that you bring in to chop heads, monetary gains (that is,
+return on investment for the consultant’s fees) are much more
+difficult to put in numbers when you’re “only” making everyone’s life
+better, and attracting better employees, increasing productivity,
+building better products, attracting more customers, and hence making
+a bigger profit are mere knock-on effects from that.<sup id="fnref:rational"><a class="footnote-ref" href="#fn:rational">2</a></sup></p>
+<h2>So, how do things change, then?</h2>
+<p>It’s my rather firm belief that these things change by evolution, not
+on an organizational scale but on one of market and society. <strong>Many of
+the companies still stuck in the office mindset will not change,</strong> at
+least not dramatically. They will continue to bleed talent, not
+attract much fresh blood, and face fierce competition from companies
+that do better and attract good people. Some will undergo a slow and
+sometimes painful transition and some will succeed at it. Some will
+fail and go under, or become irrelevant.</p>
+<p>But expecting dramatic, sudden change at a large organization is just
+not realistic. And if you’re stuck in one that’s still pretending that
+this’ll all blow over, your best option is probably to make a change
+for yourself, than to try to wait for one in your organization.</p>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:invent">
+<p>This is not to say that we <em>invented</em> anything, just that
+we had to figure out how to make things work for ourselves that
+already worked for others. Distributed
+companies existed well before my cofounders and I started a
+company in 2011. <a href="https://en.wikipedia.org/wiki/MySQL_AB">MySQL
+AB</a> (incidentally, Kris
+Köhntopp’s former employer) established those practices in the
+2000-2005 time frame. There is an excellent <a href="https://youtu.be/2xmEgtRhw7o">November 2011
+talk</a> from ex-MySQL CEO Mårten
+Mickos, in which he runs through the entire history of MySQL as an
+independent company, until its acquisition by Sun in 2008. <a href="https://youtu.be/2xmEgtRhw7o?t=1653">Around
+the 27-minute mark</a>, he
+starts talking about work in a distributed company. <a class="footnote-backref" href="#fnref:invent" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:rational">
+<p>And <em>even if</em> there is a demonstrable expected positive
+<em>monetary</em> effect, meaning in terms of numbers it’s an absolute
+no-brainer, you should consider that top management <em>are people,</em>
+and people don’t always act rationally. <a class="footnote-backref" href="#fnref:rational" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../../../tag/work.html">Work</a>
+      <a href="../../../../../tag/communications.html">Communications</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../../../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../../../../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+
+</body>
+</html>

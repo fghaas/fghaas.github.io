@@ -1,0 +1,283 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../../theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/solid.css">
+
+    <link rel="stylesheet" type="text/css" href="../../../css/override.css">
+
+    <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+    <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+  
+
+
+ 
+
+<meta name="author" content="Florian Haas" />
+<meta name="description" content="If MySQL happens to die in your cluster, Pacemaker will automatically recover the service in place. To test this, select any node on your cluster and send the mysqld process a KILL signal: killall -KILL mysqld Then, monitor your cluster status with crm_mon -rf. After a few seconds, you should …" />
+<meta name="keywords" content="Galera, MySQL, Pacemaker">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="Testing resource recovery"/>
+  <meta property="og:description" content="If MySQL happens to die in your cluster, Pacemaker will automatically recover the service in place. To test this, select any node on your cluster and send the mysqld process a KILL signal: killall -KILL mysqld Then, monitor your cluster status with crm_mon -rf. After a few seconds, you should …"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../../resources/hints-and-kinks/mysqlgalera-pacemaker-testing-resource-recovery/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2012-12-04 10:53:27+01:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../../author/florian-haas.html">
+  <meta property="article:section" content="hints-and-kinks"/>
+  <meta property="article:tag" content="Galera"/>
+  <meta property="article:tag" content="MySQL"/>
+  <meta property="article:tag" content="Pacemaker"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; Testing resource recovery</title>
+
+</head>
+<body >
+  <aside>
+    <div>
+      <a href="../../../">
+        <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="../../../"></a>
+      </h1>
+
+
+
+
+      <ul class="social">
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/xahteiwi" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="me" class="sc-mastodon" href="https://mastodon.social/@xahteiwi" target="_blank">
+              <i class="fab fa-mastodon"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/fghaas" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-github" href="https://github.com/fghaas" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="../../../">Home</a>
+
+      <a href="/category/hints-and-kinks.html">Tech</a>
+      <a href="/category/presentations.html">Talks</a>
+      <a href="/category/blog.html">Thoughts</a>
+      <a href="">​</a>
+      <a href="/about/">About</a>
+      <a href="/comments/">Comments</a>
+      <a href="/legal/">Legal</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="">​</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="">​</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="mysqlgalera-pacemaker-testing-resource-recovery">Testing resource recovery</h1>
+    <p>
+      Posted on Tue 04 December 2012 in <a href="../../../category/hints-and-kinks.html">hints-and-kinks</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>If MySQL happens to die in your cluster, Pacemaker will automatically
+recover the service in place. To test this, select any node on your
+cluster and send the <code>mysqld</code> process a <code>KILL</code> signal:</p>
+<div class="highlight"><pre><span></span><code>killall -KILL mysqld
+</code></pre></div>
+<p>Then, monitor your cluster status with <code>crm_mon -rf</code>. After a few
+seconds, you should see one of your <code>p_mysql</code> clones entering the
+<code>FAILED</code> state:</p>
+<div class="highlight"><pre><span></span><code><span class="o">============</span><span class="w"></span>
+<span class="n">Last</span><span class="w"> </span><span class="n">updated</span><span class="o">:</span><span class="w"> </span><span class="n">Mon</span><span class="w"> </span><span class="n">Dec</span><span class="w">  </span><span class="mi">3</span><span class="w"> </span><span class="mi">19</span><span class="o">:</span><span class="mo">03</span><span class="o">:</span><span class="mi">25</span><span class="w"> </span><span class="mi">2012</span><span class="w"></span>
+<span class="n">Last</span><span class="w"> </span><span class="n">change</span><span class="o">:</span><span class="w"> </span><span class="n">Mon</span><span class="w"> </span><span class="n">Dec</span><span class="w">  </span><span class="mi">3</span><span class="w"> </span><span class="mi">18</span><span class="o">:</span><span class="mi">54</span><span class="o">:</span><span class="mi">44</span><span class="w"> </span><span class="mi">2012</span><span class="w"> </span><span class="n">via</span><span class="w"> </span><span class="n">crmd</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">bob</span><span class="w"></span>
+<span class="nl">Stack</span><span class="p">:</span><span class="w"> </span><span class="n">openais</span><span class="w"></span>
+<span class="n">Current</span><span class="w"> </span><span class="n">DC</span><span class="o">:</span><span class="w"> </span><span class="n">charlie</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">partition</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">quorum</span><span class="w"></span>
+<span class="nl">Version</span><span class="p">:</span><span class="w"> </span><span class="mf">1.1.7</span><span class="o">-</span><span class="n">ee0730e13d124c3d58f00016c3376a1de5323cff</span><span class="w"></span>
+<span class="mi">3</span><span class="w"> </span><span class="n">Nodes</span><span class="w"> </span><span class="n">configured</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="n">expected</span><span class="w"> </span><span class="n">votes</span><span class="w"></span>
+<span class="mi">4</span><span class="w"> </span><span class="n">Resources</span><span class="w"> </span><span class="n">configured</span><span class="p">.</span><span class="w"></span>
+<span class="o">============</span><span class="w"></span>
+
+<span class="nl">Online</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="n">bob</span><span class="w"> </span><span class="n">alice</span><span class="w"> </span><span class="n">charlie</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
+
+<span class="n">Full</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">resources</span><span class="o">:</span><span class="w"></span>
+
+<span class="w"> </span><span class="n">p_ip_mysql_galera</span><span class="w">  </span><span class="p">(</span><span class="n">ocf</span><span class="o">::</span><span class="n">heartbeat</span><span class="o">:</span><span class="n">IPaddr2</span><span class="p">)</span><span class="o">:</span><span class="w">   </span><span class="n">Started</span><span class="w"> </span><span class="n">alice</span><span class="w"></span>
+<span class="w"> </span><span class="n">Clone</span><span class="w"> </span><span class="n">Set</span><span class="o">:</span><span class="w"> </span><span class="n">cl_mysql</span><span class="w"> </span><span class="p">[</span><span class="n">p_mysql</span><span class="p">]</span><span class="w"></span>
+<span class="w">     </span><span class="nl">p_mysql</span><span class="p">:</span><span class="mi">1</span><span class="w">  </span><span class="p">(</span><span class="n">ocf</span><span class="o">::</span><span class="n">heartbeat</span><span class="o">:</span><span class="n">mysql</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="n">Started</span><span class="w"> </span><span class="n">bob</span><span class="w"> </span><span class="n">FAILED</span><span class="w"></span>
+<span class="w">     </span><span class="nl">Started</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="n">alice</span><span class="w"> </span><span class="n">charlie</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
+
+<span class="n">Migration</span><span class="w"> </span><span class="n">summary</span><span class="o">:</span><span class="w"></span>
+<span class="o">*</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="n">alice</span><span class="o">:</span><span class="w"> </span>
+<span class="o">*</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="n">bob</span><span class="o">:</span><span class="w"> </span>
+<span class="o">*</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="n">charlie</span><span class="o">:</span><span class="w"> </span>
+
+<span class="n">Failed</span><span class="w"> </span><span class="n">actions</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="nl">p_mysql</span><span class="p">:</span><span class="mi">1</span><span class="n">_monitor_30000</span><span class="w"> </span><span class="p">(</span><span class="n">node</span><span class="o">=</span><span class="n">bob</span><span class="p">,</span><span class="w"> </span><span class="n">call</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="n">status</span><span class="o">=</span><span class="n">complete</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">running</span><span class="w"></span>
+</code></pre></div>
+<p>Then, after a few seconds, the resource will automatically recover:</p>
+<div class="highlight"><pre><span></span><code><span class="o">============</span><span class="w"></span>
+<span class="k">Last</span><span class="w"> </span><span class="nl">updated</span><span class="p">:</span><span class="w"> </span><span class="n">Mon</span><span class="w"> </span><span class="k">Dec</span><span class="w">  </span><span class="mi">3</span><span class="w"> </span><span class="mi">19</span><span class="err">:</span><span class="mi">03</span><span class="err">:</span><span class="mi">35</span><span class="w"> </span><span class="mi">2012</span><span class="w"></span>
+<span class="k">Last</span><span class="w"> </span><span class="nl">change</span><span class="p">:</span><span class="w"> </span><span class="n">Mon</span><span class="w"> </span><span class="k">Dec</span><span class="w">  </span><span class="mi">3</span><span class="w"> </span><span class="mi">18</span><span class="err">:</span><span class="mi">54</span><span class="err">:</span><span class="mi">44</span><span class="w"> </span><span class="mi">2012</span><span class="w"> </span><span class="n">via</span><span class="w"> </span><span class="n">crmd</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">bob</span><span class="w"></span>
+<span class="nl">Stack</span><span class="p">:</span><span class="w"> </span><span class="n">openais</span><span class="w"></span>
+<span class="k">Current</span><span class="w"> </span><span class="nl">DC</span><span class="p">:</span><span class="w"> </span><span class="n">charlie</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="k">partition</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">quorum</span><span class="w"></span>
+<span class="nl">Version</span><span class="p">:</span><span class="w"> </span><span class="mf">1.1.7</span><span class="o">-</span><span class="n">ee0730e13d124c3d58f00016c3376a1de5323cff</span><span class="w"></span>
+<span class="mi">3</span><span class="w"> </span><span class="n">Nodes</span><span class="w"> </span><span class="n">configured</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="n">expected</span><span class="w"> </span><span class="n">votes</span><span class="w"></span>
+<span class="mi">4</span><span class="w"> </span><span class="n">Resources</span><span class="w"> </span><span class="n">configured</span><span class="p">.</span><span class="w"></span>
+<span class="o">============</span><span class="w"></span>
+
+<span class="nl">Online</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="n"> bob alice charlie </span><span class="o">]</span><span class="w"></span>
+
+<span class="k">Full</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nl">resources</span><span class="p">:</span><span class="w"></span>
+
+<span class="w"> </span><span class="n">p_ip_mysql_galera</span><span class="w">  </span><span class="p">(</span><span class="nl">ocf</span><span class="p">:</span><span class="err">:</span><span class="nl">heartbeat</span><span class="p">:</span><span class="n">IPaddr2</span><span class="p">)</span><span class="err">:</span><span class="w">   </span><span class="n">Started</span><span class="w"> </span><span class="n">alice</span><span class="w"></span>
+<span class="w"> </span><span class="n">Clone</span><span class="w"> </span><span class="k">Set</span><span class="err">:</span><span class="w"> </span><span class="n">cl_mysql</span><span class="w"> </span><span class="o">[</span><span class="n">p_mysql</span><span class="o">]</span><span class="w"></span>
+<span class="w">     </span><span class="nl">Started</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="n"> alice bob charlie </span><span class="o">]</span><span class="w"></span>
+
+<span class="n">Migration</span><span class="w"> </span><span class="nl">summary</span><span class="p">:</span><span class="w"></span>
+<span class="o">*</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="nl">alice</span><span class="p">:</span><span class="w"> </span>
+<span class="o">*</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="nl">bob</span><span class="p">:</span><span class="w"> </span>
+<span class="w">   </span><span class="nl">p_mysql</span><span class="p">:</span><span class="mi">1</span><span class="err">:</span><span class="w"> </span><span class="n">migration</span><span class="o">-</span><span class="n">threshold</span><span class="o">=</span><span class="mi">1000000</span><span class="w"> </span><span class="n">fail</span><span class="o">-</span><span class="nf">count</span><span class="o">=</span><span class="mi">1</span><span class="w"></span>
+<span class="o">*</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="nl">charlie</span><span class="p">:</span><span class="w"> </span>
+
+<span class="n">Failed</span><span class="w"> </span><span class="nl">actions</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nl">p_mysql</span><span class="p">:</span><span class="mi">1</span><span class="n">_monitor_30000</span><span class="w"> </span><span class="p">(</span><span class="n">node</span><span class="o">=</span><span class="n">bob</span><span class="p">,</span><span class="w"> </span><span class="k">call</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="n">status</span><span class="o">=</span><span class="n">complete</span><span class="p">)</span><span class="err">:</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">running</span><span class="w"></span>
+</code></pre></div>
+<p>To subsequently get rid of the entry in the <code>Failed actions</code> list, use
+<code>crm resource cleanup cl_mysql</code>.</p>
+<hr/>
+<p>This article originally appeared on the <code>hastexo.com</code> website (now defunct).</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../tag/galera.html">Galera</a>
+      <a href="../../../tag/mysql.html">MySQL</a>
+      <a href="../../../tag/pacemaker.html">Pacemaker</a>
+    </p>
+  </div>
+
+
+
+
+  <div class="related-posts">
+    <h4>Part 7 of "MySQL/Galera in Pacemaker High Availability Clusters"</h4>
+       <h5>Previous articles</h5>
+       <ul>
+           <li><a href="../../../resources/hints-and-kinks/mysqlgalera-pacemaker-high-availability-clusters/">MySQL/Galera in Pacemaker High Availability Clusters</a></li>
+           <li><a href="../../../resources/hints-and-kinks/mysqlgalera-pacemaker-configuring-corosync/">Configuring Corosync</a></li>
+           <li><a href="../../../resources/hints-and-kinks/mysqlgalera-pacemaker-starting-pacemaker/">Starting Pacemaker</a></li>
+           <li><a href="../../../resources/hints-and-kinks/mysqlgalera-pacemaker-setting-galera-specific-mysql-options/">Setting Galera-specific MySQL options</a></li>
+           <li><a href="../../../resources/hints-and-kinks/mysqlgalera-pacemaker-bootstrapping-galera-cluster/">Bootstrapping the Galera cluster</a></li>
+           <li><a href="../../../resources/hints-and-kinks/mysqlgalera-pacemaker-adding-mysqlgalera-resources-pacemaker/">Adding MySQL/Galera resources to Pacemaker</a></li>
+       </ul>
+       <h5>Next articles</h5>
+       <ul>
+           <li><a href="../../../resources/hints-and-kinks/mysqlgalera-pacemaker-dealing-node-failure/">Dealing with node failure</a></li>
+           <li><a href="../../../resources/hints-and-kinks/mysqlgalera-pacemaker-recovering-full-cluster-shutdown/">Recovering from full cluster shutdown</a></li>
+       </ul>
+  </div>
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+
+</body>
+</html>

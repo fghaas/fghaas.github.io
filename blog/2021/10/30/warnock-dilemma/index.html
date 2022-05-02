@@ -1,0 +1,337 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../../../../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../../../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../../../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../../../../theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/solid.css">
+
+    <link rel="stylesheet" type="text/css" href="../../../../../css/override.css">
+
+    <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+    <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+  
+
+
+ 
+
+<meta name="author" content="Florian Haas" />
+<meta name="description" content="“Warnock’s Dilemma” is a classic feature of distributed, asynchronous, online communications. You can’t avoid it, you can’t work around it, but you can deal with it with two simple changes to your communicative behavior." />
+<meta name="keywords" content="Work, Communications">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="Warnock’s Dilemma, Objections, and Acknowledgements"/>
+  <meta property="og:description" content="“Warnock’s Dilemma” is a classic feature of distributed, asynchronous, online communications. You can’t avoid it, you can’t work around it, but you can deal with it with two simple changes to your communicative behavior."/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../../../../blog/2021/10/30/warnock-dilemma/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2021-10-30 00:00:00+00:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../../../../author/florian-haas.html">
+  <meta property="article:section" content="blog"/>
+  <meta property="article:tag" content="Work"/>
+  <meta property="article:tag" content="Communications"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; Warnock’s Dilemma, Objections, and Acknowledgements</title>
+
+</head>
+<body >
+  <aside>
+    <div>
+      <a href="../../../../../">
+        <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="../../../../../"></a>
+      </h1>
+
+
+
+
+      <ul class="social">
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/xahteiwi" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="me" class="sc-mastodon" href="https://mastodon.social/@xahteiwi" target="_blank">
+              <i class="fab fa-mastodon"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/fghaas" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-github" href="https://github.com/fghaas" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="../../../../../">Home</a>
+
+      <a href="/category/hints-and-kinks.html">Tech</a>
+      <a href="/category/presentations.html">Talks</a>
+      <a href="/category/blog.html">Thoughts</a>
+      <a href="">​</a>
+      <a href="/about/">About</a>
+      <a href="/comments/">Comments</a>
+      <a href="/legal/">Legal</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="">​</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="">​</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="warnock-dilemma">Warnock’s Dilemma, Objections, and Acknowledgements</h1>
+    <p>
+      Posted on Sat 30 October 2021 in <a href="../../../../../category/blog.html">blog</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>People skeptical of distributed, asynchronous, written communications
+sometimes make they understandable objection that it is often
+difficult to interpret the reactions, specifically the <em>absence of</em>
+reactions, to written online communications. </p>
+<p>The reasoning goes like this: if you inform someone of something in a
+face-to-face conversation, there is practically no way for them <em>not</em>
+to provide some sort of feedback. Even if the recipient of a verbal
+message doesn’t say a word, they usually exhibit some unconscious,
+nonverbal reaction, which can carry a whole load of information:</p>
+<ul>
+<li>The person might smile, light up, and become actively engaged,</li>
+<li>they might express surprise (pleasant or unpleasant),</li>
+<li>they may show signs of dismay or annoyance, or even anger,</li>
+<li>they might just stare or wander off, indicating disconnection or
+  indifference,</li>
+<li>or anything in between.</li>
+</ul>
+<p>In online, textual communications, people obviously <em>also</em> exhibit all
+those reactions, sitting at their desk, lounging on their couch,
+walking with their phone — it’s just that the sender of the message
+usually never gets to see them. </p>
+<p>In addition, a face-to-face conversation is a one-to-one communication
+mode that we direct our undivided attention to. In contrast, textual
+online communications are often many-to-many, and we usually get many
+more parallel inputs than we do when we’re speaking to a colleague or
+acquaintance or friend.</p>
+<p>That means that while in a face-to-face conversation we’re <em>always</em>
+answering, or at least showing our reaction to what was said, in online
+textual communications we must <em>pick and choose</em> what to react to, and
+what to just absorb without providing any kind of feedback to the
+message sender.</p>
+<h2>Warnock’s Dilemma</h2>
+<p>In online communities this has been known since at least 2000, when
+Bryan Warnock
+<a href="https://www.nntp.perl.org/group/perl.bootstrap/2000/08/msg1127.html">formulated</a>
+it as “the ostrich theory”, although it eventually <a href="https://www.nntp.perl.org/group/perl.perl6.internals/2001/02/msg2562.html">was
+named</a>
+“Warnock’s Dilemma”<sup id="fnref:pentalemma"><a class="footnote-ref" href="#fn:pentalemma">1</a></sup> by Dave Mitchell. Writing about
+mailing list posts without replies, Bryan wrote:</p>
+<blockquote>
+<p>The problem with no response is that there are five possible
+interpretations:</p>
+<p>1) The post is correct, well-written information that needs no
+follow-up commentary.  There's nothing more to say except "Yeah,
+what he said."</p>
+<p>2) The post is complete and utter nonsense, and no one wants to
+waste the energy or bandwidth to even point this out.</p>
+<p>3) No one read the post, for whatever reason.</p>
+<p>4) No one understood the post, but won't ask for clarification, for
+whatever reason.</p>
+<p>5) No one cares about the post, for whatever reason.</p>
+<p>— Bryan Warnock, “<a href="https://www.nntp.perl.org/group/perl.bootstrap/2000/08/msg1127.html">Re: RFCs: two proposals for
+change</a>”,
+perl.bootstrap mailing list, 2000-08-07</p>
+</blockquote>
+<p>In asynchronous and distributed work communications, we have much the
+same issue. The beautifully crafted <a href="../../../../../blog/2021/10/27/this-meeting-should-have-been-an-email/">five-paragraph
+briefing</a> that
+you sent out this morning may have been considered manna from heaven
+by your recipients (if you’re a manager, your recipients are usually
+your direct reports), and they immediately sprung into action
+energized by your electrifying leadership. Or maybe nobody understood
+a word of the unintelligible drivel you concocted, but out of respect
+or courtesy they are very hesitant to point this out.</p>
+<p>So in my humble opinion, there are two very simple things you can do
+as a manager to address Warnock’s Dilemma in your distributed team:
+making it a habit to specifically encourage objections, and
+establishing a culture of acknowledgements.</p>
+<h2>Encouraging objections</h2>
+<p>The habit I have developed to encourage objections is to not merely
+ask the recipients of a message to raise questions if they have them,
+but to ask them to poke holes in whatever I’ve been writing.</p>
+<p>To that end, I have standing phrases that I use, such as:</p>
+<ul>
+<li>“Do you think that sounds reasonable?”</li>
+<li>“Did I overlook something important?”</li>
+<li>“Can you think of a better way to do this?” (Better than my
+  suggestion, that is.)</li>
+<li>“I’m pretty sure I’m missing something here, can you pitch in?”</li>
+<li>“Am I way out in left field with this?”</li>
+<li>“How nuts of an idea is this?”</li>
+</ul>
+<p>I might use a variation on one or several of these phrases at the end
+of an email, but also in the comments section of a wiki page (or in
+individual inline comments), or even in the reply thread of an issue
+tracker.</p>
+<p>This serves multiple purposes:</p>
+<ol>
+<li>There are many individual areas of knowledge where someone on my
+   team is more of an expert than I am. Obviously, I want those
+   people’s ideas on the table.</li>
+<li>It establishes the notion that nobody’s opinions or suggestions on
+   technical matters are sacrosanct, and we want to do <em>the right
+   thing</em> in any situation, not follow the hippo.<sup id="fnref:hippo"><a class="footnote-ref" href="#fn:hippo">2</a></sup></li>
+<li>It encourages others to ask for feedback in the same manner,
+   whenever they float ideas or suggestions of their own.</li>
+<li>It establishes that there’s nothing wrong with being wrong from
+   time to time.</li>
+</ol>
+<h2>Acknowledgements</h2>
+<p>So now, on to acknowledgements, that is, what to do when you have <em>no</em>
+objections on something.</p>
+<p>Here’s a general rule that I use: <strong>all communications should be
+acknowledged.</strong> Yes, really. Anything my team sends me, I try to reply
+to with at least “ack” or “OK”, but frequently it’s something like
+“great, thanks!” — it costs nothing to be kind.</p>
+<p>Likewise, for everything I send <em>to</em> my team I can count on getting
+the same kind of reply back. There’s something I need to pass on from
+higher up? Or just something I want everyone to know? Out goes an
+email, in come a few “ack” replies over the next few hours. I don’t
+even have to specifically ask anyone for acknowledgement anymore, it
+just happens.<sup id="fnref:guidelines"><a class="footnote-ref" href="#fn:guidelines">3</a></sup></p>
+<p>In this context, we deliberately use <em>written</em> acknowledgements — as
+in, somebody actually <em>types</em> something, even if it’s just the two
+letters “OK”. I find Like buttons or thumbs-up or email “read
+receipts” (anyone remember those?) oddly perfunctory.</p>
+<p>This has a nice side effect, in combination with encouraging
+objections: someone who — while knowing that objections are always
+encouraged — acknowledges an idea, opinion, or plan, <em>actually makes
+it clear that they are on board with it.</em></p>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:pentalemma">
+<p>To his credit, Dave points out in the same
+message that “dilemma” is technically inappropriate as the problem
+described includes five choices, not two. It’s properly a
+<a href="https://en.wiktionary.org/wiki/pentalemma">pentalemma</a>. <a class="footnote-backref" href="#fnref:pentalemma" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:hippo">
+<p>HiPPO: the Highest-Paid Person’s Opinion. Following the
+hippo is when you value ideas and opinions by seniority of their
+originator, not by correctness or factual merit. <a class="footnote-backref" href="#fnref:hippo" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+<li id="fn:guidelines">
+<p>We’ve also codified this in my team’s communications
+guidelines. You don’t have something like that? Write them. <a class="footnote-backref" href="#fnref:guidelines" title="Jump back to footnote 3 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../../../tag/work.html">Work</a>
+      <a href="../../../../../tag/communications.html">Communications</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../../../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../../../../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+
+</body>
+</html>

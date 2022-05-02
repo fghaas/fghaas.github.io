@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../../../../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../../../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../../../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../../../../theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/solid.css">
+
+    <link rel="stylesheet" type="text/css" href="../../../../../css/override.css">
+
+    <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+    <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+  
+
+
+ 
+
+<meta name="author" content="florian" />
+<meta name="description" content="The Open edX &#34;Dogwood&#34; release is out. We&#39;ve been running its code base in production for several weeks, and can share some first-hand experience." />
+<meta name="keywords" content="Open edX, OpenStack">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="Dogfooding Dogwood"/>
+  <meta property="og:description" content="The Open edX &#34;Dogwood&#34; release is out. We&#39;ve been running its code base in production for several weeks, and can share some first-hand experience."/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../../../../blog/2016/02/12/dogfooding-dogwood/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2016-02-12 00:00:00+00:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../../../../author/florian.html">
+  <meta property="article:section" content="blog"/>
+  <meta property="article:tag" content="Open edX"/>
+  <meta property="article:tag" content="OpenStack"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; Dogfooding Dogwood</title>
+
+</head>
+<body >
+  <aside>
+    <div>
+      <a href="../../../../../">
+        <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="../../../../../"></a>
+      </h1>
+
+
+
+
+      <ul class="social">
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/xahteiwi" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="me" class="sc-mastodon" href="https://mastodon.social/@xahteiwi" target="_blank">
+              <i class="fab fa-mastodon"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/fghaas" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-github" href="https://github.com/fghaas" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="../../../../../">Home</a>
+
+      <a href="/category/hints-and-kinks.html">Tech</a>
+      <a href="/category/presentations.html">Talks</a>
+      <a href="/category/blog.html">Thoughts</a>
+      <a href="">​</a>
+      <a href="/about/">About</a>
+      <a href="/comments/">Comments</a>
+      <a href="/legal/">Legal</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="">​</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="">​</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="dogfooding-dogwood">Dogfooding Dogwood</h1>
+    <p>
+      Posted on Fri 12 February 2016 in <a href="../../../../../category/blog.html">blog</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>This week, the <a href="https://open.edx.org">Open edX</a> community
+<a href="https://open.edx.org/blog/newest-open-edx-release-dogwood-now-available">announced</a>
+its latest release,
+<a href="http://edx.readthedocs.org/projects/open-edx-release-notes/en/latest/dogwood.html">Open edX Dogwood</a>. (In
+case you don't follow the Open edX community closely, its releases are
+alphabetically named after trees, so on the heels of the Birch and
+Cypress releases, we now have
+<a href="https://en.wikipedia.org/wiki/Cornus_(genus)">Dogwood</a>, and
+Eucalyptus will be next.)</p>
+<p>Our team got involved in Open edX around the Cypress release
+timeframe, and we shifted our OpenStack integration work to track the
+master branch in December, to ensure we would be ready in time for
+Dogwood. <a href="//academy.hastexo.com">hastexo Academy</a> also tracks master,
+so if you take one of our self-paced online courses, you'll be running
+the latest and greatest from Open edX.</p>
+<hr/>
+<h2>Checking out the new features</h2>
+<p>There are several new features in Open edX Dogwood, some of which we
+tested and ran, with somewhat mixed (but generally positive) results.</p>
+<h3>Platform upgrades</h3>
+<p>Open edX now builds upon Django 1.8 and Python 2.7.10. It's great to
+see some technical debt pay-down by moving beyond the now-unsupported
+Django 1.4. We hope to see this continue by Eucalyptus
+<a href="https://openedx.slack.com/archives/general/p1455215550000885">hopefully moving to the next Ubuntu LTS, 16.04 "Xenial Xerus".</a></p>
+<p>It would also be great to see a move to Python 3, but we're not
+holding our breath on that, for various reasons — including the fact
+that Ansible, which Open edX uses for deployment, <a href="https://lwn.net/Articles/661590/">also still requires
+Python 2.</a></p>
+<h3>Comprehensive theming</h3>
+<p>Comprehensive theming is a new and improved way to apply theming and
+branding to Open edX platforms, which will eventually replace the
+current "Stanford" theming engine (named after an Open edX theme
+developed at Stanford University, which became a popular basis for
+rebranding the Open edX LMS). In mid-January, we shifted
+<a href="https://github.com/hastexo/edx-theme">our own Stanford-style Open edX theme</a>
+to Comprehensive Theming and test-deployed on hastexo Academy, then
+still in pre-launch. We ran into a critical bug
+<a href="https://github.com/edx/edx-platform/pull/11319">that has been fixed for the release,</a>
+and will come back to redeploying our new Comprehensive theme at a
+later date.</p>
+<p>We're also waiting for a
+<a href="https://github.com/edx/configuration/pull/2676">patch to the <code>edx-configuration</code> Ansible repository</a>
+to land, so we can properly deploy our Comprehensive theme to our Open
+edX instance.</p>
+<h3>Otto</h3>
+<p>We also looked extensively at the new Open edX ecommerce framework,
+"Otto", for buying and sellling course seats. Sadly, we found multiple
+issues that prevented us from using it in our infrastructure for the
+time being, and we pushed Otto off for our Eucalyptus respin.</p>
+<p>Otto has no support for tax assessment on course seats; this is a show
+stopper for anyone who wants to sell courses to people in Europe, as
+course seats are Digital Goods under EU VAT regulations and require
+VAT assessment. We were admittedly a little dismayed to find that Otto
+had made some design decisions that made this impossible to fix in the
+way you would normally do this in the
+<a href="http://django-oscar.readthedocs.org/en/latest/">Oscar</a> framework that
+Otto builds on. Fixing Otto in-place would likely have delayed our
+Academy launch by several months, so that was a delay we were
+unwilling to accept. There are other issues with Otto, notably the
+fact that it comes with its own PayPal integration (as if
+<a href="http://django-oscar-paypal.readthedocs.org/en/latest/">django-oscar-paypal</a>
+didn't exist), which made us rather uncomfortable.</p>
+<p>So we instead integrated hastexo Academy with our own, pure-Oscar web
+store that makes use of upstream community supported features much
+more extensively than Otto, and that also enables us to sell other
+products and services besides hastexo Academy course seats.</p>
+<h3>LTI XBlock</h3>
+<p>With the Dogwood release, the LTI XModule has been refactored into the
+<a href="https://github.com/edx/xblock-lti-consumer">LTI Consumer XBlock</a>. While
+we do not currently use this XBlock in production, it comes in very
+handy as a good reference for
+<a href="https://github.com/edx/xblock-lti-consumer/tree/master/lti_consumer/tests/unit">XBlock unit tests</a>,
+which we'll be using to improve the test coverage in our own XBlock.</p>
+<hr/>
+<h2>Open edX integration with OpenStack</h2>
+<p>Our OpenStack integration work for Open edX is continuing at its
+regular, steady pace.</p>
+<h3>Running Open edX Dogwood on OpenStack</h3>
+<p>You're of course still able to deploy Open edX on OpenStack, using the
+Heat templates we've maintained since Cypress.</p>
+<h3>Running the hastexo XBlock on Open edX Dogwood</h3>
+<p>The hastexo XBlock, enabling course authors to define arbitrarily
+complex lab environments for courses with OpenStack Heat, is of course
+fully supported for Open edX Dogwood. That's exactly what you're using
+when speeding through interactive labs on hastexo Academy.</p>
+<hr/>
+<h2>Congrats, and thanks!</h2>
+<p>Congratulations are in order for the entire development community! Our
+team at hastexo would like to extend a big thank-you to everyone who
+made a contribution to this release.</p>
+<hr/>
+<p>This article originally appeared on my blog on the <code>hastexo.com</code> website (now defunct).</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../../../tag/open-edx.html">Open edX</a>
+      <a href="../../../../../tag/openstack.html">OpenStack</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../../../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../../../../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+
+</body>
+</html>

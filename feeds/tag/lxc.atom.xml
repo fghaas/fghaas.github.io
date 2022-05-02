@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - LXC</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/lxc.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2021-01-17T00:00:00+00:00</updated><entry><title>Running (Almost) Anything in LXC: Applications Using Your Webcam</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/lxc-webcam/" rel="alternate"></link><published>2021-01-17T00:00:00+00:00</published><updated>2021-01-17T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-01-17:/resources/hints-and-kinks/lxc-webcam/</id><summary type="html">&lt;p&gt;One of the non-open-source applications I sometimes have to run for
+work purposes, and which out of principle I run in LXC containers, is
+Zoom. Now Zoom is of course an X application, so my previously shared
+&lt;a href="https://xahteiwi.eu/resources/hints-and-kinks/lxc-x11/"&gt;considerations&lt;/a&gt; for those apply. It also needs
+to process input from my microphone …&lt;/p&gt;</summary><content type="html">&lt;p&gt;One of the non-open-source applications I sometimes have to run for
+work purposes, and which out of principle I run in LXC containers, is
+Zoom. Now Zoom is of course an X application, so my previously shared
+&lt;a href="https://xahteiwi.eu/resources/hints-and-kinks/lxc-x11/"&gt;considerations&lt;/a&gt; for those apply. It also needs
+to process input from my microphone, and feed sound into my
+headphones, so &lt;a href="https://xahteiwi.eu/resources/hints-and-kinks/lxc-sound/"&gt;that’ll have to work, too&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;But a thus-configured LXC container is still missing one other bit:
+it’ll have to process the video feed from my webcam. Here’s how to do
+that.&lt;/p&gt;
+&lt;h2&gt;LXC Configuration&lt;/h2&gt;
+&lt;p&gt;In the article on running &lt;a href="https://xahteiwi.eu/resources/hints-and-kinks/lxc-x11/"&gt;X applications in
+LXC&lt;/a&gt;, I give the example of sharing a host
+&lt;em&gt;directory,&lt;/em&gt; (the one that contains the X.org server sockets). For
+sharing a webcam, I need to do the same for a few &lt;em&gt;files&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Now, video capture devices like webcams are represented in Linux by
+&lt;em&gt;character devices&lt;/em&gt; named &lt;code&gt;/dev/video0&lt;/code&gt;, &lt;code&gt;/dev/video1&lt;/code&gt; and so
+forth. Udev manages these and (on Ubuntu platforms) creates them as
+owned by the user &lt;code&gt;root&lt;/code&gt; and the group &lt;code&gt;video&lt;/code&gt; — but it helpfully also
+creates POSIX ACL entries for the user currently logged in on the X
+console.&lt;/p&gt;
+&lt;p&gt;All I thus need to do is &lt;em&gt;mount&lt;/em&gt; these files into the container (yes,
+LXC lets you “mount” individual files), like so:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="na"&gt;lxc.mount.entry&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;/dev/video0 dev/video0 none bind,optional,create=file&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;lxc.mount.entry&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;/dev/video1 dev/video0 none bind,optional,create=file&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;lxc.mount.entry&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;/dev/video2 dev/video2 none bind,optional,create=file&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;lxc.mount.entry&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;/dev/video3 dev/video2 none bind,optional,create=file&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Here, the &lt;code&gt;optional&lt;/code&gt; bit of course means that the container will start
+even in case a particular file does not exist in the host at the time
+the container receives its &lt;code&gt;lxc-start&lt;/code&gt; command.&lt;/p&gt;
+&lt;p&gt;That, in principle, is all there is to it.&lt;/p&gt;
+&lt;h2&gt;Things to consider&lt;/h2&gt;
+&lt;p&gt;Be aware that &lt;a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=088ead25524583e2200aa99111bea2f66a86545a"&gt;since early
+2018&lt;/a&gt;
+(in other words, in kernel 4.16 and later) the Linux kernel’s
+&lt;code&gt;uvcvideo&lt;/code&gt; subsystem will create &lt;strong&gt;two&lt;/strong&gt; &lt;code&gt;/dev/video&lt;/code&gt; devices for your
+webcam. One of them is the actual video capture device; the second one
+is a metadata device node. You can easily tell which is which, with
+&lt;code&gt;v4l2-ctl&lt;/code&gt;: only a video capture device will have a non-empty list of
+supported formats.&lt;/p&gt;
+&lt;p&gt;This is a video capture device:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ v4l2-ctl --list-formats --device /dev/video0
+ioctl: VIDIOC_ENUM_FMT
+    Type: Video Capture
+
+    &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;: &lt;span class="s1"&gt;'MJPG'&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;Motion-JPEG, compressed&lt;span class="o"&gt;)&lt;/span&gt;
+    &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;: &lt;span class="s1"&gt;'YUYV'&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;YUYV &lt;span class="m"&gt;4&lt;/span&gt;:2:2&lt;span class="o"&gt;)&lt;/span&gt;
+    &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;: &lt;span class="s1"&gt;'H264'&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;H.264, compressed&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And this is the metadata device; note that it lists no video codecs:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ v4l2-ctl --list-formats --device /dev/video1
+ioctl: VIDIOC_ENUM_FMT
+    Type: Video Capture
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Normally, device nodes &lt;code&gt;/dev/video0&lt;/code&gt; and &lt;code&gt;/dev/video1&lt;/code&gt; will be
+occupied by a built-in webcam, your USB webcam will use &lt;code&gt;/dev/video2&lt;/code&gt;
+and &lt;code&gt;/dev/video3&lt;/code&gt;, and if you have &lt;em&gt;another&lt;/em&gt; video capture device then
+that will be &lt;code&gt;/dev/video4&lt;/code&gt; and &lt;code&gt;/dev/video5&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Thus, perhaps you want your container to see &lt;em&gt;only&lt;/em&gt; your USB webcam,
+&lt;em&gt;and&lt;/em&gt; you don’t care about the metadata device. In that case, instead
+of the four &lt;code&gt;lxc.mount.entry&lt;/code&gt; lines I gave above, you might use just
+one:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="na"&gt;lxc.mount.entry&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;/dev/video2 dev/video2 none bind,optional,create=file&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Also, the bind mounts occur at the time you &lt;em&gt;start&lt;/em&gt; the container. Thus,
+if you plug in a USB webcam while the container is already running, it
+won’t magically become available to the container. There are two ways
+to address this:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;You start (or restart) your container whenever you need to use a web
+   cam (or other video device) that you have just plugged in, &lt;em&gt;or&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;you remove the &lt;code&gt;optional&lt;/code&gt; keyword from your &lt;code&gt;lxc.mount.entry&lt;/code&gt;
+   line(s), so that the container will refuse to start unless the
+   correct webcam is plugged in.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Note further that for the same reason, if you disconnect your USB
+webcam &lt;em&gt;while your container is running,&lt;/em&gt; you can’t just plug it
+back in and expect it to work. In that case, udev in the host will
+have deleted the device node, so the bind mount in your container is
+now stale, and your containerized applications won’t be able to use
+your capture device anymore. Under those circumstances, you’ll simply
+have to restart your container.&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="LXC"></category></entry><entry><title>Running (Almost) Anything in LXC: Sound</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/lxc-sound/" rel="alternate"></link><published>2021-01-16T00:00:00+00:00</published><updated>2021-01-16T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-01-16:/resources/hints-and-kinks/lxc-sound/</id><summary type="html">&lt;p&gt;Some of the &lt;a href="https://xahteiwi.eu/resources/hints-and-kinks/lxc-x11/"&gt;X applications I run in LXC&lt;/a&gt; make
+sounds. Now, I find alert sounds horribly distracting so I turn them
+off, but for some containerized applications I want to actually play
+sound.&lt;/p&gt;
+&lt;p&gt;Examples include the &lt;a href="https://www.spotify.com/download/linux/"&gt;Spotify Linux
+client&lt;/a&gt; (which I run in its
+own LXC container because it …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Some of the &lt;a href="https://xahteiwi.eu/resources/hints-and-kinks/lxc-x11/"&gt;X applications I run in LXC&lt;/a&gt; make
+sounds. Now, I find alert sounds horribly distracting so I turn them
+off, but for some containerized applications I want to actually play
+sound.&lt;/p&gt;
+&lt;p&gt;Examples include the &lt;a href="https://www.spotify.com/download/linux/"&gt;Spotify Linux
+client&lt;/a&gt; (which I run in its
+own LXC container because it’s not open source), and occasionally
+things like the latest available &lt;a href="https://shotcut.org/"&gt;Shotcut&lt;/a&gt;
+version for video editing.&lt;/p&gt;
+&lt;p&gt;You’ll notice that, on face value, that’s a pretty similar problem
+compared to getting containerized applications to talk to my X
+server. It’s just that rather than applications only being clients to
+my X server, I also want them to be clients to my PulseAudio daemon.&lt;/p&gt;
+&lt;h2&gt;LXC (Non-)Configuration&lt;/h2&gt;
+&lt;p&gt;In the article on running &lt;a href="https://xahteiwi.eu/resources/hints-and-kinks/lxc-x11/"&gt;X applications in
+LXC&lt;/a&gt;, I give the example of sharing a host
+directory, which contains X.org server sockets.&lt;/p&gt;
+&lt;p&gt;In principle, I &lt;em&gt;could&lt;/em&gt; do the same thing with the Unix socket that
+PulseAudio runs. However, there’s a small problem with that: the
+directory I would have to bind-mount into my container is
+&lt;code&gt;/run/1000/pulse&lt;/code&gt;, and you see the difference to bind-mounting
+&lt;code&gt;/tmp/.X11-unix&lt;/code&gt;: &lt;code&gt;/tmp&lt;/code&gt; already exists in my container on system
+startup — but while &lt;code&gt;/run&lt;/code&gt; also does, &lt;code&gt;/run/1000&lt;/code&gt; does not. I have
+experimented with making this work, and I’ll spare you the details but
+it’s not as simple as it initially looks. I eventually gave up on that
+approach, because there is a much simpler way to do this — and it
+doesn’t even require any specific LXC container configuration.&lt;/p&gt;
+&lt;p&gt;The trick is to use the PulseAudio &lt;code&gt;native-protocol-tcp&lt;/code&gt; module. When
+I load it into my running PulseAudio configuration, like so:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pactl load-module module-native-protocol-tcp
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;... then a PulseAudio sound server starts listening on a TCP socket on
+port 4713.&lt;/p&gt;
+&lt;p&gt;I can of course also add this line (minus its &lt;code&gt;pactl&lt;/code&gt; prefix) to my
+PulseAudio configuration file, &lt;code&gt;~/config/pulse/default.pa&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;And then, all I need to do is attach to my container, export the
+&lt;code&gt;PULSE_SERVER&lt;/code&gt; environment variable set to &lt;code&gt;10.0.3.1&lt;/code&gt; (my IPv4 address
+of the host on the &lt;code&gt;lxcbr0&lt;/code&gt; bridge), and launch an application.&lt;/p&gt;
+&lt;p&gt;I can do this all in one go, like so (using the Spotify client as an example):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pactl load-module module-native-protocol-tcp &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+  lxc-start -n focal-spotify &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+  sleep &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+  lxc-attach -n focal-spotify -- &lt;span class="se"&gt;\&lt;/span&gt;
+  sudo -Hu florian env &lt;span class="nv"&gt;PULSE_SERVER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"10.0.3.1"&lt;/span&gt; spotify &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+  lxc-stop -n focal-spotify
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;... and as long as the application links to any PulseAudio client
+libraries, it will correctly parse the set &lt;code&gt;PULSE_SERVER&lt;/code&gt; environment
+variable as an instruction to connect to the given IP address on its
+default port, and send its audio stream there.&lt;/p&gt;
+&lt;p&gt;I am then still able to control my volume, control my mix, and mute
+the output from my host.&lt;/p&gt;
+&lt;p&gt;Of course, you probably want to chuck that long command into a
+&lt;code&gt;.desktop&lt;/code&gt; file, or wrap it in a script or function.&lt;/p&gt;
+&lt;p&gt;By the way, no I don’t really know why I need that 1-second &lt;code&gt;sleep&lt;/code&gt;
+between starting the container and attaching to it, but it works for
+me and breaks without it. I presume there is &lt;em&gt;some&lt;/em&gt; initialization
+going on in the container that needs just a few tenths of a second to
+complete. And I can deal with waiting for my music for one more
+second.&lt;/p&gt;
+&lt;h2&gt;Things to consider&lt;/h2&gt;
+&lt;p&gt;Your Ubuntu desktop will most likely run with
+&lt;a href="https://wiki.ubuntu.com/UncomplicatedFirewall"&gt;&lt;code&gt;ufw&lt;/code&gt;&lt;/a&gt; enabled. If
+your containerized applications are unable to connect to the
+PulseAudio server because your firewall blocks them, you won’t get
+sound. Here’s what I do:&lt;/p&gt;
+&lt;p&gt;First, I create &lt;code&gt;/etc/ufw/applications.d/pulseaudio&lt;/code&gt;, with this
+content:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[pulseaudio]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;PulseAudio Native Protocol TCP&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;description&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;PulseAudio Sound Server &lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;ports&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;4713/tcp&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then, I allow traffic incoming via the LXC bridge to connect to that
+server:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo ufw allow &lt;span class="k"&gt;in&lt;/span&gt; on lxcbr0 to any app pulseaudio
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Also do consider, of course, that once your system is set up in this
+way, not only will your LXC applications be able to play sound through
+your speakers, but they will also be able to pick up input from your
+microphone. So use this wisely, particularly if the application you
+are running does record and process sound.&lt;/p&gt;
+&lt;p&gt;Sometimes you totally &lt;strong&gt;want&lt;/strong&gt; your application to record sound,
+though, and indeed see the video stream from your webcam, too. Zoom
+calls come to mind as one such example. More on this in the next
+installment of this series, where I’ll talk about letting your
+containerized app use host video input.&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="LXC"></category></entry><entry><title>Running (Almost) Anything in LXC: X applications</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/lxc-x11/" rel="alternate"></link><published>2021-01-09T00:00:00+00:00</published><updated>2021-01-09T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-01-09:/resources/hints-and-kinks/lxc-x11/</id><summary type="html">&lt;p&gt;I occasionally want to run X applications in an LXC
+container. Sometimes that’s because they’re not open source and I need
+to run them for work, like Zoom. Sometimes it’s an open source X
+application that doesn’t work splendidly well on the Ubuntu release
+that I …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I occasionally want to run X applications in an LXC
+container. Sometimes that’s because they’re not open source and I need
+to run them for work, like Zoom. Sometimes it’s an open source X
+application that doesn’t work splendidly well on the Ubuntu release
+that I am using.&lt;/p&gt;
+&lt;p&gt;It turns out that this isn’t particularly hard to do — &lt;strong&gt;if you are
+running X.org.&lt;/strong&gt; To the best of my knowledge, what I am describing
+here cannot be expected to work, reliably, on Wayland. To me that’s no
+big loss, because there are several other things that I like to use
+(like &lt;a href="https://github.com/autokey/autokey"&gt;Autokey&lt;/a&gt; and
+&lt;a href="https://www.openstenoproject.org/plover/"&gt;Plover&lt;/a&gt;) that won’t work on
+Wayland, either. So I run GNOME on X by default, anyway.&lt;/p&gt;
+&lt;h2&gt;LXC Configuration&lt;/h2&gt;
+&lt;p&gt;Compared to the &lt;a href="https://xahteiwi.eu/resources/hints-and-kinks/lxc-basics/"&gt;basic LXC configuration that I have described
+before&lt;/a&gt;, there’s only one line that you’ll
+need to add:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="na"&gt;lxc.mount.entry&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;/tmp/.X11-unix tmp/.X11-unix none bind,optional,create=dir,ro&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now let me explain what this does. &lt;code&gt;/tmp/.X11-unix&lt;/code&gt; is where your X
+display sockets will live, and I map it to the same path in the
+container. &lt;/p&gt;
+&lt;p&gt;If I look into this directory while I’m in an X session myself, I
+see one single socket file in there, named &lt;code&gt;X0&lt;/code&gt;, which is owned by my
+user account that owns the session.&lt;/p&gt;
+&lt;p&gt;And since my standard configuration maps my personal user account (and
+&lt;em&gt;only&lt;/em&gt; my personal user account) from the host to the container, that
+means that processes running as &lt;code&gt;florian&lt;/code&gt; in the container will be
+able to use this socket just like processes owned by &lt;code&gt;florian&lt;/code&gt; in the
+host can.&lt;/p&gt;
+&lt;p&gt;Now, what’s with the &lt;code&gt;create=dir&lt;/code&gt; and &lt;code&gt;ro&lt;/code&gt; options?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;create=dir&lt;/code&gt; tells LXC to create the mount point in the container if
+  it does not exist.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ro&lt;/code&gt; bars processes in the container from creating or deleting any
+  files in the directory. You see, my X server always runs in my host
+  OS, I only want applications running in the container to connect to
+  it, as clients. So there’s no need for applications in the container
+  to ever modify this directory. However, you’ll almost certainly be
+  running something on your system that will sweep &lt;code&gt;/tmp&lt;/code&gt; on system
+  startup
+  (&lt;a href="https://www.freedesktop.org/software/systemd/man/systemd-tmpfiles-setup.service.html"&gt;&lt;code&gt;systemd-tmpfiles&lt;/code&gt;&lt;/a&gt;
+  will, for example), and if that happened, you’d lose the socket.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;With all that set up, any application that runs in the container with
+a default &lt;code&gt;$DISPLAY&lt;/code&gt; variable (&lt;code&gt;:0&lt;/code&gt;) in its environment, will connect
+to the socket in &lt;code&gt;/tmp/.X11-unix/X0&lt;/code&gt; which is a direct pass-through of
+the X server socket in the host.&lt;/p&gt;
+&lt;h2&gt;Things to consider&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Since my &lt;a href="https://xahteiwi.eu/resources/hints-and-kinks/lxc-basics/"&gt;default configuration&lt;/a&gt; maps
+  &lt;code&gt;/home&lt;/code&gt; in the host to &lt;code&gt;/home&lt;/code&gt; in the container, any application
+  running in the container will happily apply the same configuration
+  as in the host. So for example, if I start Firefox in the
+  container, my Firefox profiles and configuration are all
+  there. However, so are any application locks that my application
+  creates.&lt;br/&gt;
+  Sticking with the Firefox example, I won’t be able to open a
+  specific profile in the container that is simultaneously open in the
+  host. I can, however, totally use two different profiles
+  side-by-side, or the same profile sequentially in first the host,
+  then the container or the other way round.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;On a highly customized desktop your application may look different
+  in the container than it does in the host. For example, my desktop
+  is configured to use
+  &lt;a href="https://en.wikipedia.org/wiki/Cantarell_(typeface)"&gt;Cantarell&lt;/a&gt; as
+  its sans-serif and &lt;a href="https://sourcefoundry.org/hack/"&gt;Hack&lt;/a&gt; as its
+  monospace font. If I neglect to install the &lt;code&gt;fonts-cantarell&lt;/code&gt; and
+  &lt;code&gt;fonts-hack&lt;/code&gt; Ubuntu packages in my container, containerized X
+  applications will instead fall back to the system default fonts. The
+  same consideration applies for GTK themes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;I have yet to tell you about pushing sound from the container to the
+  host, and about sharing the host’s webcam and microphone with the
+  container. More on that in future installments in this series.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content><category term="hints-and-kinks"></category><category term="LXC"></category></entry><entry><title>Running (Almost) Anything in LXC: The Basics</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/lxc-basics/" rel="alternate"></link><published>2020-12-28T00:00:00+00:00</published><updated>2020-12-28T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2020-12-28:/resources/hints-and-kinks/lxc-basics/</id><summary type="html">&lt;p&gt;LXC is part of my standard Linux desktop toolbox, and I use it
+daily. I have done tutorials about this before, one of which you can
+find &lt;a href="https://youtu.be/3nUbMREnnns"&gt;on YouTube&lt;/a&gt; (courtesy of
+&lt;a href="https://linux.conf.au/"&gt;linux.conf.au&lt;/a&gt;) and
+&lt;a href="https://fghaas.github.io/lca2018-lxc/#/1"&gt;GitHub&lt;/a&gt;, but it’s about
+time I included this in a series of articles.&lt;/p&gt;
+&lt;p&gt;My …&lt;/p&gt;</summary><content type="html">&lt;p&gt;LXC is part of my standard Linux desktop toolbox, and I use it
+daily. I have done tutorials about this before, one of which you can
+find &lt;a href="https://youtu.be/3nUbMREnnns"&gt;on YouTube&lt;/a&gt; (courtesy of
+&lt;a href="https://linux.conf.au/"&gt;linux.conf.au&lt;/a&gt;) and
+&lt;a href="https://fghaas.github.io/lca2018-lxc/#/1"&gt;GitHub&lt;/a&gt;, but it’s about
+time I included this in a series of articles.&lt;/p&gt;
+&lt;p&gt;My motivations for running LXC containers are manifold, but here are
+some of the most important ones:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;I want to keep my main system clean of anything that’s not free and
+  open source software. There is, however, the odd bit of non-free
+  software that I do need to or want to use — Zoom for work, for
+  example, or the excellent Spotify Linux client for pleasure.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Even if a piece of Software &lt;em&gt;is&lt;/em&gt; open source, it sometimes does not
+  play nicely with the version of my main system that I currently
+  use. A recent example is the somewhat premature inclusion of
+  pre-release versions of Calibre in Debian and Ubuntu, which means
+  that Calibre is currently not playing too nicely on Ubuntu Focal
+  (the current LTS at time of writing), but runs just dandy on Bionic,
+  which I can handily run in an LXC container.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Sometimes the opposite is true as well, that is, some application
+  comes in a version that I want to use, except it’s only bundled with
+  a future Ubuntu (or Debian) release that I am not yet prepared to
+  use. Or else, it’s available only on Fedora or openSUSE, which are
+  perfectly fine desktop distributions but just not my preferred ones
+  to use on a daily basis. In that case, LXC containers are
+  exceedingly useful as well, and are much less hassle than building
+  the application in question from source.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Here are my general rules for running LXC containers:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;I run my containers as non-root, under my own user account. (If you
+   are unfamiliar with this, and would like to learn more about how it
+   works and how you need to tweak your system to enable it, please
+   see the excellent LXC &lt;a href="https://linuxcontainers.org/lxc/getting-started/#creating-unprivileged-containers-as-a-user"&gt;Getting
+   Started&lt;/a&gt;
+   guide.)&lt;/li&gt;
+&lt;li&gt;I use UID and GID mapping rules so that all of the container’s user
+   accounts, including the container’s root, are mapped to subgids and
+   subuids of my account — all &lt;strong&gt;except&lt;/strong&gt; my own user account and
+   group, with uid and gid 1000.&lt;/li&gt;
+&lt;li&gt;I bind-mount the &lt;code&gt;/home&lt;/code&gt; directory into the container. Combined
+   with the uid and gid passthrough of my own account, this means that
+   &lt;code&gt;florian&lt;/code&gt; in the container can access &lt;code&gt;/home/florian&lt;/code&gt; in any
+   container, just like in the host.&lt;/li&gt;
+&lt;li&gt;I run all my containers in btrfs subvolumes.&lt;/li&gt;
+&lt;li&gt;I maintain a basic container configuration for each Ubuntu release
+   I run, and then I duplicate that configuration for a bunch of
+   containers using snapshot cloning (&lt;code&gt;lxc-copy -s&lt;/code&gt;), which in
+   combination with btrfs makes the clones quite space-efficient.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;For example, this is the “container specific configuration” section in
+&lt;code&gt;~/.share/lxc/focal/config&lt;/code&gt;, the configuration for my current base
+container running Ubuntu Focal:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Container specific configuration&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;lxc.include&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;/etc/lxc/default.conf&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;lxc.idmap&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;u 0 100000 1000&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;lxc.idmap&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;g 0 100000 1000&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;lxc.idmap&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;u 1000 1000 1&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;lxc.idmap&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;g 1000 1000 1&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;lxc.idmap&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;u 1001 101001 64535&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;lxc.idmap&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;g 1001 101001 64535&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;lxc.mount.auto&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;proc sys cgroup&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;lxc.rootfs.path&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;btrfs:/home/florian/.local/share/lxc/focal/rootfs&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;lxc.uts.name&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;focal&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;lxc.mount.entry&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;/home home none bind,optional 0 0&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Of this, perhaps the &lt;code&gt;lxc.idmap&lt;/code&gt; settings merit a bit of extra
+explanation:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;lxc.idmap = u 0 100000 1000&lt;/code&gt; means “map the uid 0 (&lt;code&gt;root&lt;/code&gt;) in the
+  container to uid 100000 in the host, and continue up until you’ve
+  hit 1,000 mappings”. In other words, map uids 0 to 999 including, to
+  100000 to 100999.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;lxc.idmap = u 1000 1000 1&lt;/code&gt; means “map the uid 1000 in the container
+  to uid 1000 in the host,” (in my case, my user account named
+  &lt;code&gt;florian&lt;/code&gt;) “and follow this pattern for just one mapping”. In other
+  words, make uid 1000 a pass-through.&lt;/li&gt;
+&lt;li&gt;Finally, &lt;code&gt;lxc.idmap = u 1001 101001 64535&lt;/code&gt; means “starting with uid
+  1001 in the container, map it to uid 101001 in the host and proceed
+  until you’ve hit 64,535 mappings”.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So in total, that’s LXC-ese for “map all possible uids from 0 to 65535
+in the container to host subuids shifted by 100,000 &lt;em&gt;except&lt;/em&gt; 1000,
+which you shouldn’t map to any subuid. And the same is true for gids,
+for the &lt;code&gt;g&lt;/code&gt; idmaps. It’s a rather roundabout way of specifying this,
+but it works.&lt;/p&gt;
+&lt;p&gt;Now by itself, this already gives me plenty of options for
+command-line applications. But since it’s my main workstation that I
+run this on, I usually want my applications to be wired up to my
+desktop GUI. More on that in the next installment of the series.&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="LXC"></category></entry><entry><title>CephFS and LXC: Container High Availability and Scalability, Redefined</title><link href="https://xahteiwi.eu/resources/presentations/cephfs-and-lxc-container-high-availability-and-scalability-redefined/" rel="alternate"></link><published>2016-10-06T00:00:00+00:00</published><updated>2016-10-06T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2016-10-06:/resources/presentations/cephfs-and-lxc-container-high-availability-and-scalability-redefined/</id><content type="html">&lt;p&gt;An overview of applying CephFS to LXC containers.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/lceu2016-cephlxc/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
+zoom out for an overview, or just advance by hitting the spacebar.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="Ceph"></category><category term="LXC"></category></entry><entry><title>Containers: Just Because Everyone Else is Doing Them Wrong, Doesn't Mean You Have To</title><link href="https://xahteiwi.eu/blog/2016/02/21/containers-just-because-everyone-else/" rel="alternate"></link><published>2016-02-21T00:00:00+00:00</published><updated>2016-02-21T00:00:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2016-02-21:/blog/2016/02/21/containers-just-because-everyone-else/</id><summary type="html">&lt;p&gt;The recent CVE-2015-7547 vulnerability in glibc exposed a common antipattern in container management. Here's what you can do to avoid it, and instead adopt a container management pattern that will preserve your sanity and enable you to react to critical issues in minutes.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a writeup of &lt;a href="http://sched.co/3xVu"&gt;a presentation&lt;/a&gt; I did at
+LinuxCon Europe in Dublin last year. Since Linux Foundation Events
+&lt;em&gt;still&lt;/em&gt; don't come with video recording for all talks (all they do
+record and publish are keynotes), I can't point you to a YouTube link,
+though you're certainly welcome to
+&lt;a href="https://xahteiwi.eu/resources/presentations/manageable-application-containers/"&gt;peruse my slides&lt;/a&gt;
+from that talk.&lt;/p&gt;
+&lt;h2&gt;The problem&lt;/h2&gt;
+&lt;p&gt;Suppose you're an operator who, in a massively scaled-out and highly
+automated deployment, is responsible for keeping a few hundred or a
+few thousand containers up and running. Your developers put those
+together and then basically throw them over the wall for you to
+manage. It's your job just to keep them alive, available, and secure;
+what's &lt;em&gt;in&lt;/em&gt; them is your developers' domain. Sure, you have Git repos
+you build your containers from, and a Docker registry, so you can
+always check what's in which container. You don't get to call the
+shots, though.&lt;/p&gt;
+&lt;p&gt;Suppose further that all most of your containers run some form of web
+service. And let's assume, just for the sake of this discussion, that
+they're all running Apache, because that's your reference
+platform. Your developers may be writing applications in Python or
+Ruby or (shudder) PHP, but what all your apps have in common is that
+you've settled on Apache as your reference platform. Your developers
+can assume that with Apache, you, the ops person, know the boldface
+cold, and you can give them an extremely stable, well-tuned platform
+to build on.&lt;/p&gt;
+&lt;p&gt;And then Apache is affected by some disturbing security vulnerability
+that you must now fix in record time. Say, something affecting your
+core SSL library or maybe even your C library. Sound familiar? Thought
+so.&lt;/p&gt;
+&lt;h3&gt;The fix in a non-containerized world&lt;/h3&gt;
+&lt;p&gt;OK, so you must now fix OpenSSL or libc on all your systems in record
+time before the anticipated exploit barrage rolls in. In a world
+without containers, you'd rely on your trusted software source
+(normally, your distro vendor) to provide you with a fixed package or
+packages for the affected libraries. You would then roll those out via
+your preferred software management utility, or system automation
+facility, or unattended upgrade scheme.&lt;/p&gt;
+&lt;p&gt;In short, you'd have a tense time until updated packages are
+available, but once they are, things get fixed in a matter of minutes.&lt;/p&gt;
+&lt;h3&gt;But what now?&lt;/h3&gt;
+&lt;p&gt;With the deployment of containers comes, frequently, the notion that
+packaging, package management, or dependency tracking is somehow a
+terrible idea. Instead, you put everything you need into one container
+image, deploy one container per service, and not worry about what a
+&lt;em&gt;different&lt;/em&gt; service running on the same physical hardware might need.&lt;/p&gt;
+&lt;p&gt;At first glance, that simplifies things. Your developer needs MySQL
+configured a certain way, and some other app needs it differently?
+Fine, they can put everything in their own separate containers,
+binaries, libraries and all, problem solved. Storage is dirt cheap,
+containers are efficient and produce little overhead. If they ever
+need to change anything, say go from one MySQL point release to
+another, then they just rebuild the container, you replace the old
+build with the new one, fine.&lt;/p&gt;
+&lt;p&gt;But now it's not your developer who wants to change things, it's &lt;em&gt;you&lt;/em&gt;
+who needs to deploy a critical fix.&lt;sup id="fnref:twitter"&gt;&lt;a class="footnote-ref" href="#fn:twitter"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;so.. using GlibC?&lt;/p&gt;
+&lt;p&gt;How’s re-imaging all of your
+&lt;a href="https://twitter.com/docker"&gt;@Docker&lt;/a&gt; images going?&lt;/p&gt;
+&lt;p&gt;— Josh Long (龙之春)
+(&lt;a href="https://twitter.com/starbuxman"&gt;@starbuxman&lt;/a&gt;) &lt;a href="https://twitter.com/starbuxman/status/700591322177019904"&gt;February 19,
+2016&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;So you set out to rebuild a few hundred containers, or maybe a couple
+of thousand, to get the issue fixed. In a perfect environment, you
+have access to every build chain, know about every version of every
+container in your area of responsibility, can pinpoint exactly which
+are affected by the vulnerability, have an automated toolchain to
+build and deploy them, have perfect documentation so you don't need to
+check back with any of your developers, so it doesn't matter whether
+any one is out sick, on vacation, or has left the company since they
+deployed one of their, now potentially affected, services.&lt;/p&gt;
+&lt;p&gt;And of course, everyone works in such a perfect environment. Right?&lt;/p&gt;
+&lt;p&gt;So now, even &lt;em&gt;after&lt;/em&gt; a fix to your issue is already available, you
+&lt;em&gt;still&lt;/em&gt; need to scramble to get it deployed, and deploying is &lt;em&gt;a lot&lt;/em&gt;
+more complicated than in a world without containers.&lt;/p&gt;
+&lt;h2&gt;Is this an inherent problem with containers?&lt;/h2&gt;
+&lt;p&gt;Of course not. The problem isn't with the fact that you're using
+containers, or with the specific container technology. &lt;strong&gt;The problem
+is that everyone is telling you to use containers a certain way, and
+from an operational perspective that way is wrong.&lt;/strong&gt; And it's not even
+"wrong but still better than all other options", it's just wrong. I
+guess you could call it the Docker Fallacy.&lt;/p&gt;
+&lt;p&gt;That's the bad news. The good news is that there is a way that is
+better, saner, and cleaner, and will make your life as an operator
+&lt;em&gt;much&lt;/em&gt; easier, while not being too hard on your developer friends.&lt;/p&gt;
+&lt;h2&gt;So what's a better way?&lt;/h2&gt;
+&lt;p&gt;You can use containers in a simpler, less flashy, less exciting
+— in short, &lt;em&gt;better&lt;/em&gt; way.&lt;/p&gt;
+&lt;h3&gt;Define a core platform, or platforms&lt;/h3&gt;
+&lt;p&gt;Any organization worth its salt will select a handful of distributions
+to build products and services on. Maybe it's even just one, but let's
+assume you have several, say the latest Ubuntu LTS,&lt;sup id="fnref:ubuntu"&gt;&lt;a class="footnote-ref" href="#fn:ubuntu"&gt;2&lt;/a&gt;&lt;/sup&gt; the
+latest CentOS, and the latest Debian. For each of these, you can
+define an absolute bare-minimal list of packages. I can almost
+guarantee you that none of your developers will care about a single
+item on that list. A C library, a shell, an init system, coreutils,
+NTP... chances are that you'll run up a list of well over 100 core
+system components that &lt;em&gt;you&lt;/em&gt; will be expected to keep secure; your
+developers will take them all for granted.&lt;/p&gt;
+&lt;p&gt;What &lt;em&gt;you&lt;/em&gt; can take for granted, thanks to the tireless work of
+packagers and distro vendors over years and years, is that you will
+get timely security updates for all of those.&lt;/p&gt;
+&lt;h3&gt;Deploy your core platforms as often as you need&lt;/h3&gt;
+&lt;p&gt;Deploy these reference systems across your physical hardware. Deploy
+as many as you need for all the containers you're expected to run on
+each platform. Do so in an automated fashion, so that you never have
+to log into any of these systems by hand.&lt;/p&gt;
+&lt;h3&gt;Use OverlayFS for your containers&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/OverlayFS"&gt;OverlayFS&lt;/a&gt; is a union mount
+filesystem that ships as part of the mainline kernel. With OverlayFS
+you can do a few clever things:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use a read-only base filesystem with a writable overlay to create a
+  read/write union mount.&lt;/li&gt;
+&lt;li&gt;Write to the union mount and only touch the overlay, leaving the
+  base filesystem pristine.&lt;/li&gt;
+&lt;li&gt;Hide selected content in the base filesystem from the union mount,
+  through the use of
+  &lt;a href="https://www.kernel.org/doc/Documentation/filesystems/overlayfs.txt"&gt;opaque directories&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Use one base filesystem with multiple overlays to create any number
+  of separate read/write union mounts.&lt;/li&gt;
+&lt;li&gt;Immediately make updates to the base filesystem known to &lt;em&gt;all&lt;/em&gt; union
+  mounts, by simply remounting them.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This makes OverlayFS extremely powerful when used together with
+LXC. You define a bunch of overlay directories — one for each of
+your containers —, and they can all share one base filesystem:
+your host root filesystem.&lt;sup id="fnref:automount"&gt;&lt;a class="footnote-ref" href="#fn:automount"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;Then, the union mount becomes your LXC container's root. It
+automatically has read access to everything that is available on the
+host, unless specifically hidden, and whatever it writes goes to the
+overlay. When you discard a container, you delete the overlay.&lt;/p&gt;
+&lt;p&gt;Here is a minimal example configuration for a container like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# For additional config options, please look at lxc.container.conf(5)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="c1"&gt;# Common configuration&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;lxc.include&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;/usr/share/lxc/config/ubuntu.common.conf&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="c1"&gt;# Container specific configuration&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;lxc.arch&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;amd64&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="c1"&gt;# Network configuration&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;lxc.network.type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;veth&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;lxc.network.link&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;lxcbr0&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;lxc.network.flags&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;up&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;lxc.network.hwaddr&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;00:16:3e:76:59:10&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="c1"&gt;# Automatic mounts&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;lxc.mount.auto&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;proc sys cgroup&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="na"&gt;lxc.rootfs&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;overlayfs:/var/lib/lxc/host/rootfs:/var/lib/lxc/mytestcontainer/delta0&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;lxc.utsname&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;mytestcontainer&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Note that the LXC userland presently enforces an OverlayFS base
+directory to be in a subtree of &lt;code&gt;/var/lib/lxc&lt;/code&gt;. You can satisfy this
+requirement by bind-mounting &lt;code&gt;/&lt;/code&gt; to &lt;code&gt;/var/lib/lxc/host/rootfs&lt;/code&gt;, as
+shown in the example above.&lt;/p&gt;
+&lt;p&gt;What this creates, among other things, is crystal-clear separation of
+concerns: whatever is in the overlay is for your developers to
+decide. They can pull in packages from PyPI, Ruby Gems, NPMs,
+whatever. What's in the host root is your responsibility.&lt;/p&gt;
+&lt;h3&gt;Automate, automate, automate&lt;/h3&gt;
+&lt;p&gt;It's obvious and self-evident, but it doesn't hurt to reiterate: you
+want to automate &lt;em&gt;all&lt;/em&gt; of this. You're certainly free to select your
+own tools to do it, but Ansible specifically has very good LXC
+container support so it makes this a breeze.&lt;/p&gt;
+&lt;p&gt;Here's a simple Ansible playbook example that creates 100 containers,
+all based off your host root.&lt;sup id="fnref:ansible"&gt;&lt;a class="footnote-ref" href="#fn:ansible"&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;hosts&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;localhost&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;tasks&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Create a local bind mount for the host root filesystem&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;mount&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;/var/lib/lxc/host/rootfs&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;src&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;/&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;opts&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;bind&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;fstype&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;none&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;state&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;mounted&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Create a template container using the host root&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;lxc_container&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;host&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;state&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;stopped&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;directory&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;/var/lib/lxc/host/rootfs&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;config&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;/var/lib/lxc/host/config&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;container_config&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"lxc.mount.auto&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;=&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;proc&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;sys&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;cgroup"&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"lxc.include&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;=&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;/usr/share/lxc/config/ubuntu.common.conf"&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Create 100 OverlayFS based containers&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;lxc_container&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;host&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;backing_store&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;overlayfs&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;clone_snapshot&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;true&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;clone_name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"mytestcontainer{{&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;item&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;}}"&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;state&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;started&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;with_sequence&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;count=100&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now of course, this will also mean that you'll need to get your
+developers to define their container config in Ansible. However, that
+is fundamentally a &lt;em&gt;good&lt;/em&gt; thing, because it means that developers and
+operations people will be reading and writing the same language. Also,
+if your developers can write a Dockerfile, they won't have a hard time
+with Ansible YAML either.&lt;/p&gt;
+&lt;h2&gt;How does this help?&lt;/h2&gt;
+&lt;p&gt;With this approach, think of what you now have to do to make hundreds
+of containers running on the same box get a new libc.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Update your host libc.&lt;/li&gt;
+&lt;li&gt;Restart your containers.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;That's it. That is literally all you have to do to update hundreds of
+containers in one fell swoop. LXC will remount your OverlayFS on
+container restart, and thus all changes to the host will be
+immediately visible in the container's overlay filesystem.&lt;/p&gt;
+&lt;p&gt;On an Ubuntu platform, you could even go so far as automating this in
+conjunction with unattended upgrades:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# /etc/apt/apt.conf.d/50unattended-upgrades&lt;/span&gt;
+&lt;span class="sr"&gt;//&lt;/span&gt; &lt;span class="n"&gt;Automatically&lt;/span&gt; &lt;span class="n"&gt;upgrade&lt;/span&gt; &lt;span class="n"&gt;packages&lt;/span&gt; &lt;span class="n"&gt;from&lt;/span&gt; &lt;span class="n"&gt;these&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;origin:archive&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;pairs&lt;/span&gt;
+&lt;span class="n"&gt;Unattended&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nn"&gt;Upgrade::&lt;/span&gt;&lt;span class="n"&gt;Allowed&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Origins&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="s"&gt;"${distro_id}:${distro_codename}-security"&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# /etc/apt/apt.conf.d/05lxc&lt;/span&gt;
+&lt;span class="nn"&gt;DPkg::&lt;/span&gt;&lt;span class="n"&gt;Post&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Invoke&lt;/span&gt;      &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="s"&gt;"/sbin/service lxc restart"&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="p"&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;So there you have it. Upgrade loads of containers in minutes. No
+rebuild, no redeploy, nothing. Packaging actually does work and has
+merit, regardless of what the hipster crowd is trying to sell you.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr/&gt;
+&lt;ol&gt;
+&lt;li id="fn:twitter"&gt;
+&lt;p&gt;Edit, 2016-02-22: Added Twitter quote from Josh Long. &lt;a class="footnote-backref" href="#fnref:twitter" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:ubuntu"&gt;
+&lt;p&gt;At the time of writing, the latest Ubuntu LTS is 14.04 "Trusty
+Tahr", which is based on a Linux 3.13 kernel. This Ubuntu stock
+kernel ships with a pre-release version of OverlayFS which
+predates the 3.14 mainline merge. I would not recommend using that
+kernel; instead you'll want to run your hosts with a more recent
+kernel from the
+&lt;a href="https://wiki.ubuntu.com/Kernel/LTSEnablementStack"&gt;LTS Enablement Stack&lt;/a&gt;. Again
+at the time of writing, this is a Linux 4.2 kernel that ships with
+the &lt;code&gt;linux-generic-lts-wily&lt;/code&gt; package. &lt;a class="footnote-backref" href="#fnref:ubuntu" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:automount"&gt;
+&lt;p&gt;LXC containers do present per-container specific content for some
+directories by default, notably &lt;code&gt;/proc&lt;/code&gt;, &lt;code&gt;/dev&lt;/code&gt;, and &lt;code&gt;/sys&lt;/code&gt;. Other
+host-filesystem content can be hidden by creating opaque
+directories in the container overlay; this is what you would
+commonly do for directories like &lt;code&gt;/root&lt;/code&gt;, &lt;code&gt;/home&lt;/code&gt;, &lt;code&gt;/tmp&lt;/code&gt; and
+others. &lt;a class="footnote-backref" href="#fnref:automount" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:ansible"&gt;
+&lt;p&gt;Please note that it's not &lt;em&gt;quite&lt;/em&gt; as simple as shown in the
+Ansible example. You will want to provide some additional tweaks,
+such as added mounts or opaque directories. I've tried to keep the
+example brief to illustrate the concept. &lt;a class="footnote-backref" href="#fnref:ansible" title="Jump back to footnote 4 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content><category term="blog"></category><category term="LXC"></category><category term="Containers"></category><category term="Ubuntu"></category><category term="Ansible"></category></entry><entry><title>Manageable Application Containers: Lightning Quick Updates, Scaleable Security, Easy High Availability</title><link href="https://xahteiwi.eu/resources/presentations/manageable-application-containers/" rel="alternate"></link><published>2015-10-07T00:00:00+00:00</published><updated>2015-10-07T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2015-10-07:/resources/presentations/manageable-application-containers/</id><summary type="html">&lt;p&gt;From LinuxCon Europe 2015 in Dublin. An alternative approach to
+managing application containers.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/lceu2015/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
+zoom out for an overview, or just advance by hitting the spacebar.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct …&lt;/p&gt;</summary><content type="html">&lt;p&gt;From LinuxCon Europe 2015 in Dublin. An alternative approach to
+managing application containers.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/lceu2015/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
+zoom out for an overview, or just advance by hitting the spacebar.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="LXC"></category><category term="Containers"></category><category term="Conference"></category></entry></feed>

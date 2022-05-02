@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Cloudify</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/cloudify.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2016-10-27T00:00:00+00:00</updated><entry><title>Heat and its Alternatives: Application Deployment in OpenStack</title><link href="https://xahteiwi.eu/resources/presentations/heat-and-its-alternatives-application-deployment-in-openstack/" rel="alternate"></link><published>2016-10-27T00:00:00+00:00</published><updated>2016-10-27T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2016-10-27:/resources/presentations/heat-and-its-alternatives-application-deployment-in-openstack/</id><summary type="html">&lt;p&gt;From the 2016 OpenStack Summit in Barcelona. A comparison of tools for
+virtual systems orchestration in OpenStack.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Heat&lt;/li&gt;
+&lt;li&gt;Juju&lt;/li&gt;
+&lt;li&gt;Ansible&lt;/li&gt;
+&lt;li&gt;Cloudify&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;About 45 minutes.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Video: &lt;a href="https://youtu.be/wtXVd09qHoo"&gt;YouTube&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Slides: &lt;a href="https://fghaas.github.io/openstacksummit2016-barcelona/"&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
+zoom out for an overview, or just advance by hitting …&lt;/p&gt;</summary><content type="html">&lt;p&gt;From the 2016 OpenStack Summit in Barcelona. A comparison of tools for
+virtual systems orchestration in OpenStack.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Heat&lt;/li&gt;
+&lt;li&gt;Juju&lt;/li&gt;
+&lt;li&gt;Ansible&lt;/li&gt;
+&lt;li&gt;Cloudify&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;About 45 minutes.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Video: &lt;a href="https://youtu.be/wtXVd09qHoo"&gt;YouTube&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Slides: &lt;a href="https://fghaas.github.io/openstacksummit2016-barcelona/"&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
+zoom out for an overview, or just advance by hitting the spacebar.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="OpenStack"></category><category term="Heat"></category><category term="Ansible"></category><category term="Juju"></category><category term="Cloudify"></category></entry></feed>

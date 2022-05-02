@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>xahteiwi.eu - OSDN</title><link>https://xahteiwi.eu/</link><description></description><lastBuildDate>Wed, 10 Oct 2018 00:00:00 +0000</lastBuildDate><item><title>The Little Bag O’Tricks: 10 Things You Might Not Know You Can Do With OpenStack</title><link>https://xahteiwi.eu/resources/presentations/the-little-bag-otricks-10-things-you-might-not-know-you-can-do-with-openstack/</link><description>&lt;p&gt;My presentation from OpenStack Days Nordic 2018 in Stockholm. Actually
+talks about 11, not 10 OpenStack capabilities you might not know
+about.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Video: &lt;a href="https://youtu.be/3hUoVi_AWCU"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/osdn2018/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
+zoom out for an overview, or just advance by hitting the spacebar …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Florian Haas</dc:creator><pubDate>Wed, 10 Oct 2018 00:00:00 +0000</pubDate><guid isPermaLink="false">tag:xahteiwi.eu,2018-10-10:/resources/presentations/the-little-bag-otricks-10-things-you-might-not-know-you-can-do-with-openstack/</guid><category>presentations</category><category>Conference</category><category>OSDN</category><category>OpenStack</category></item></channel></rss>

@@ -1,0 +1,386 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../../theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/solid.css">
+
+    <link rel="stylesheet" type="text/css" href="../../../css/override.css">
+
+    <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+    <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+  
+
+
+ 
+
+<meta name="author" content="Florian Haas" />
+<meta name="description" content="Ceph allows you to replace existing SAN storage (or SAN drop-in substitutes) with a flexible storage solution with real scale-out capabilities. Here is how you migrate existing virtual machines managed by libvirt from block-based storage to a Ceph based storage solution. Prerequisites What you&#39;ll need in order to successfully manage …" />
+<meta name="keywords" content="Ceph, libvirt">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="Migrating virtual machines from block-based storage to RADOS/Ceph"/>
+  <meta property="og:description" content="Ceph allows you to replace existing SAN storage (or SAN drop-in substitutes) with a flexible storage solution with real scale-out capabilities. Here is how you migrate existing virtual machines managed by libvirt from block-based storage to a Ceph based storage solution. Prerequisites What you&#39;ll need in order to successfully manage …"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../../resources/hints-and-kinks/migrating-virtual-machines-block-based-storage-radosceph/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2012-10-22 15:31:23+01:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../../author/florian-haas.html">
+  <meta property="article:section" content="hints-and-kinks"/>
+  <meta property="article:tag" content="Ceph"/>
+  <meta property="article:tag" content="libvirt"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; Migrating virtual machines from block-based storage to RADOS/Ceph</title>
+
+</head>
+<body >
+  <aside>
+    <div>
+      <a href="../../../">
+        <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="../../../"></a>
+      </h1>
+
+
+
+
+      <ul class="social">
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/xahteiwi" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="me" class="sc-mastodon" href="https://mastodon.social/@xahteiwi" target="_blank">
+              <i class="fab fa-mastodon"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/fghaas" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-github" href="https://github.com/fghaas" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="../../../">Home</a>
+
+      <a href="/category/hints-and-kinks.html">Tech</a>
+      <a href="/category/presentations.html">Talks</a>
+      <a href="/category/blog.html">Thoughts</a>
+      <a href="">​</a>
+      <a href="/about/">About</a>
+      <a href="/comments/">Comments</a>
+      <a href="/legal/">Legal</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="">​</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="">​</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="migrating-virtual-machines-block-based-storage-radosceph">Migrating virtual machines from block-based storage to RADOS/Ceph</h1>
+    <p>
+      Posted on Mon 22 October 2012 in <a href="../../../category/hints-and-kinks.html">hints-and-kinks</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>Ceph allows you to replace existing SAN storage (or SAN drop-in
+substitutes) with a flexible storage solution with real scale-out
+capabilities. Here is how you migrate existing virtual machines
+managed by libvirt from block-based storage to a Ceph based storage
+solution.</p>
+<h2>Prerequisites</h2>
+<p>What you'll need in order to successfully manage the migration from
+block-based storage to a working Ceph cluster is this:</p>
+<ul>
+<li>A working Ceph cluster. You probably guessed this one. More
+  specifically, you should have</li>
+<li>access to the client.admin key of your RADOS
+    installation. Usually, the key will be stored in /etc/ceph/keyring
+    on nodes running RADOS.</li>
+<li>a RADOS pool in which you can create RBD images. You can either
+    use the standard rbd pool or create your own pool. We'll use the
+    libvirt pool throughout the following example.</li>
+<li>a set of credentials for a client to connect to the cluster and
+    create and use RBD devices. If you use a libvirt version &lt; 0.9.7,
+    you will have to use the default client.admin credentials for this
+    purpose. If you run libvirt 0.9.7 or later, you should use a
+    separate set of credentials (i.e. create a user called
+    e.g. client.rbd and use that one). That user should have at least
+    the allow r permission on your mons, and allow rw on your osds
+    (the latter you can restrict to the rbd pool used if you wish).</li>
+<li>qemu in version 0.14 or higher</li>
+<li>libvirt in version 0.8.7 or higher (0.9.7 or higher if you want to
+  use a separate user for this)</li>
+<li>Ceph 0.48 ("argonaut") or higher</li>
+</ul>
+<h2>Getting Started</h2>
+<p>When migrating a VM from block-based storage to a Ceph cluster, you
+unfortunately can't avoid a period of downtime (after all, you won't
+be able to reliably copy a filesystem from place A to B while it's
+still changing on the go). So the first thing to do is shut down a
+currently running virtual machine, like we will do with the
+ubuntu-amd64-alice VM in this example:</p>
+<div class="highlight"><pre><span></span><code>virsh shutdown ubuntu-amd64-alice
+</code></pre></div>
+<p>Then you need to create an RBD image within that pool. Suppose you
+would like to create one that is 100GB in size (recall, all RBD images
+are thin-provisioned, so it won't actually use 100GB in the Ceph
+cluster right from the start).</p>
+<div class="highlight"><pre><span></span><code>qemu-img create -f rbd rbd:libvirt/ubuntu-amd64-alice 100G
+</code></pre></div>
+<p>This means you are connecting to the Ceph mon servers (defined in the
+default configuration file, /etc/ceph/ceph.conf) using the
+client.admin identity, whose authentication key should be stored in
+/etc/ceph/keyring. The nominal image size is 102400MB, it's part of
+the libvirt pool and its name is a hardly creative ubuntu-amd64-alice.</p>
+<p>You can run this command from any node inside or outside your Ceph
+cluster, as long as the configuration file and authentication
+credentials are stored in the appropriate location. The next step,
+however, is one that you must complete on the node where you can
+currently access your block-based storage. This could either be the
+machine that you have your VM's device currently connected to via
+iSCSI or - if you are using a SAN drop-in replacement based on DRBD -
+the machine that currently has the VM's DRBD resource in Primary mode.</p>
+<p>If you are unsure what your VM's block device is, take a look at the
+VM's configuration with</p>
+<div class="highlight"><pre><span></span><code>virsh dumpxml ubuntu-amd64-alice
+</code></pre></div>
+<p>to find out the actual device name (look out for paragraphs including
+a <disk> statement). In our case, the actual device is
+/dev/drbd/by-res/vm-ubuntu-amd64-alice. Now let's go ahead and do the
+actual conversion. Please note: For the following command to work, you
+need a properly populated /etc/ceph directory because that is where
+qemu-img gets its information from. This is the command that initiates
+the conversion:</disk></p>
+<div class="highlight"><pre><span></span><code>qemu-img convert -f raw -O rbd \
+  /dev/drbd/by-res/vm-ubuntu-amd64-alice \
+  rbd:libvirt/ubuntu-amd64-alice
+</code></pre></div>
+<p>Once the qemu-img command has completed, the actual conversion of your
+data is already done. That was easy, wasn't it? The final step is to
+change your libvirt VM configuration file to reflect the changes.</p>
+<h2>Adapting the VM's libvirt configuration (libvirt &lt; 0.9.7)</h2>
+<p>If we want our VM to run on top of a Ceph object store, we need to
+tell libvirt how to start the VM appropriately. Luckily, current
+versions of libvirt support Ceph-based RBD backing devices out of the
+box. Please note: All following steps assume that you have your
+/etc/ceph set up properly. This means that a working ceph.conf and a
+keyring file containing the authentication key for client.admin is
+present.</p>
+<p>Open up your VM's configuration for editing with</p>
+<div class="highlight"><pre><span></span><code>virsh edit ubuntu-amd64-alice
+</code></pre></div>
+<p>and scroll down to the VM's disk definition. In our example, that part of the configuration looks like this:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;disk</span> <span class="na">type=</span><span class="s">'block'</span> <span class="na">device=</span><span class="s">'disk'</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;driver</span> <span class="na">name=</span><span class="s">'qemu'</span> <span class="na">type=</span><span class="s">'raw'</span> <span class="na">cache=</span><span class="s">'none'</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;source</span> <span class="na">dev=</span><span class="s">'/dev/drbd/by-res/vm-ubuntu-amd64-alice'</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;target</span> <span class="na">dev=</span><span class="s">'vda'</span> <span class="na">bus=</span><span class="s">'virtio'</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;address</span> <span class="na">type=</span><span class="s">'pci'</span> <span class="na">domain=</span><span class="s">'0x0000'</span> <span class="na">bus=</span><span class="s">'0x00'</span> <span class="na">slot=</span><span class="s">'0x05'</span> <span class="na">function=</span><span class="s">'0x0'</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/disk&gt;</span>
+</code></pre></div>
+<p>Replace it with an entry using our RBD image:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;disk</span> <span class="na">type=</span><span class="s">'network'</span> <span class="na">device=</span><span class="s">'disk'</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;driver</span> <span class="na">name=</span><span class="s">'qemu'</span> <span class="na">type=</span><span class="s">'raw'</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;source</span> <span class="na">protocol=</span><span class="s">'rbd'</span> <span class="na">name=</span><span class="s">'libvirt/ubuntu-amd64-alice'</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;host</span> <span class="na">name=</span><span class="s">'192.168.133.111'</span> <span class="na">port=</span><span class="s">'6789'</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;host</span> <span class="na">name=</span><span class="s">'192.168.133.112'</span> <span class="na">port=</span><span class="s">'6789'</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;host</span> <span class="na">name=</span><span class="s">'192.168.133.113'</span> <span class="na">port=</span><span class="s">'6789'</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/source&gt;</span>
+  <span class="nt">&lt;target</span> <span class="na">dev=</span><span class="s">'vda'</span> <span class="na">bus=</span><span class="s">'virtio'</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;address</span> <span class="na">type=</span><span class="s">'pci'</span> <span class="na">domain=</span><span class="s">'0x0000'</span> <span class="na">bus=</span><span class="s">'0x00'</span> <span class="na">slot=</span><span class="s">'0x05'</span> <span class="na">function=</span><span class="s">'0x0'</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/disk&gt;</span>
+</code></pre></div>
+<p>Be sure to replace the three IPs in the above example with the actual
+IPs of your MON servers.</p>
+<p>Finally, start your virtual machine:</p>
+<div class="highlight"><pre><span></span><code>virsh start ubuntu-amd64-alice
+</code></pre></div>
+<h2>Adapting the VM's libvirt configuration (libvirt &gt;= 0.9.7)</h2>
+<p>Starting with libvirt 0.9.7, you can use a user other than
+client.admin to access RBD images via libvirt. We recommend to do
+this. Creating such a setup works very similar to the one without a
+separate user; the main difference is that it requires you to define a
+secret in libvirt for the VM. First of all, figure out what user you
+will be using from within libvirt and where that user's authentication
+key is stored. For this example, we will assume that the user is
+called client.rbd and that this user's key is stored in
+/etc/ceph/keyring.client.rbd. Now, create a new UUID by calling</p>
+<div class="highlight"><pre><span></span><code>uuidgen
+</code></pre></div>
+<p>on the command line. The UUID for our example will be
+5cddc503-9c29-4aa8-943a-c097f87677cf.  Then, open
+/etc/libvirt/secrets/ubuntu-amd64-alice.xml and define a secret block
+in there:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;secret</span> <span class="na">ephemeral=</span><span class="s">"no"</span> <span class="na">private=</span><span class="s">"no"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;uuid&gt;</span>5cddc503-9c29-4aa8-943a-c097f87677cf<span class="nt">&lt;/uuid&gt;</span>
+<span class="nt">&lt;usage</span> <span class="na">type=</span><span class="s">"ceph"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;name&gt;</span>client.rbd secret<span class="nt">&lt;/name&gt;</span>
+<span class="nt">&lt;/usage&gt;</span>
+<span class="nt">&lt;/secret&gt;</span>
+</code></pre></div>
+<p>Be sure to replace the example's UUID with your own, self-generated
+value. Make libvirt add this secret to its internal keyring:</p>
+<div class="highlight"><pre><span></span><code>virsh secret-define \
+  /etc/libvirt/secrets/ubuntu-amd64-alice.xml
+</code></pre></div>
+<p>Now find out your user's secret key. Do</p>
+<div class="highlight"><pre><span></span><code>ceph auth get-or-create client.rbd
+</code></pre></div>
+<p>and take note of the key. In our example,
+AQB0Q4ZQYDB2MBAAYzWmHvpg7t1MzV1E0jkBww== is the key that will allow us
+access as client.rbd. Then define the actual password for our secret
+definition:</p>
+<div class="highlight"><pre><span></span><code>virsh secret-set-value \
+  5cddc503-9c29-4aa8-943a-c097f87677cf \
+  AQB0Q4ZQYDB2MBAAYzWmHvpg7t1MzV1E0jkBww==
+</code></pre></div>
+<p>Again, be sure to use your self-generated UUID instead of the one in
+this example. Also replace the example key with your real
+key. Finally, go ahead and adapt your VM settings. Open your VM
+configuration with</p>
+<div class="highlight"><pre><span></span><code>virsh edit ubuntu-amd64-alice
+</code></pre></div>
+<p>and scroll down to the VM's disk definition. In our example, that part of the configuration looks like this:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;disk</span> <span class="na">type=</span><span class="s">'block'</span> <span class="na">device=</span><span class="s">'disk'</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;driver</span> <span class="na">name=</span><span class="s">'qemu'</span> <span class="na">type=</span><span class="s">'raw'</span> <span class="na">cache=</span><span class="s">'none'</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;source</span> <span class="na">dev=</span><span class="s">'/dev/drbd/by-res/vm-ubuntu-amd64-alice'</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;target</span> <span class="na">dev=</span><span class="s">'vda'</span> <span class="na">bus=</span><span class="s">'virtio'</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;address</span> <span class="na">type=</span><span class="s">'pci'</span> <span class="na">domain=</span><span class="s">'0x0000'</span> <span class="na">bus=</span><span class="s">'0x00'</span> <span class="na">slot=</span><span class="s">'0x05'</span> <span class="na">function=</span><span class="s">'0x0'</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/disk&gt;</span>
+</code></pre></div>
+<p>Replace it with an entry using our RBD image:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;disk</span> <span class="na">type=</span><span class="s">'network'</span> <span class="na">device=</span><span class="s">'disk'</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;driver</span> <span class="na">name=</span><span class="s">'qemu'</span> <span class="na">type=</span><span class="s">'raw'</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;auth</span> <span class="na">username=</span><span class="s">'rbd'</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;secret</span> <span class="na">type=</span><span class="s">'ceph'</span> <span class="na">usage=</span><span class="s">'client.rbd secret'</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/auth&gt;</span>
+  <span class="nt">&lt;source</span> <span class="na">protocol=</span><span class="s">'rbd'</span> <span class="na">name=</span><span class="s">'libvirt/ubuntu-amd64-alice'</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;host</span> <span class="na">name=</span><span class="s">'192.168.133.111'</span> <span class="na">port=</span><span class="s">'6789'</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;host</span> <span class="na">name=</span><span class="s">'192.168.133.112'</span> <span class="na">port=</span><span class="s">'6789'</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;host</span> <span class="na">name=</span><span class="s">'192.168.133.113'</span> <span class="na">port=</span><span class="s">'6789'</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/source&gt;</span>
+  <span class="nt">&lt;target</span> <span class="na">dev=</span><span class="s">'vda'</span> <span class="na">bus=</span><span class="s">'virtio'</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;address</span> <span class="na">type=</span><span class="s">'pci'</span> <span class="na">domain=</span><span class="s">'0x0000'</span> <span class="na">bus=</span><span class="s">'0x00'</span> <span class="na">slot=</span><span class="s">'0x05'</span> <span class="na">function=</span><span class="s">'0x0'</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/disk&gt;</span>
+</code></pre></div>
+<p>Be sure to replace the three IPs in the above example with the actual
+IPs of your MON servers.</p>
+<p>Finally, start your virtual machine:</p>
+<div class="highlight"><pre><span></span><code>virsh start ubuntu-amd64-alice
+</code></pre></div>
+<p>That's it. Your VM should now boot up and use its RBD image from Ceph
+instead of its original block-based storage backing device.</p>
+<hr/>
+<p>This article originally appeared on the <code>hastexo.com</code> website (now defunct).</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../tag/ceph.html">Ceph</a>
+      <a href="../../../tag/libvirt.html">libvirt</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+
+</body>
+</html>

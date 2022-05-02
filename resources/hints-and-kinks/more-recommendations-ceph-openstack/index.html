@@ -1,0 +1,387 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../../theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/solid.css">
+
+    <link rel="stylesheet" type="text/css" href="../../../css/override.css">
+
+    <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+    <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+  
+
+
+ 
+
+<meta name="author" content="Florian Haas" />
+<meta name="description" content="Our series on best practices for Ceph and OpenStack continues." />
+<meta name="keywords" content="OpenStack, Ceph">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="More recommendations for Ceph and OpenStack"/>
+  <meta property="og:description" content="Our series on best practices for Ceph and OpenStack continues."/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../../resources/hints-and-kinks/more-recommendations-ceph-openstack/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2017-08-03 00:00:00+00:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../../author/florian-haas.html">
+  <meta property="article:section" content="hints-and-kinks"/>
+  <meta property="article:tag" content="OpenStack"/>
+  <meta property="article:tag" content="Ceph"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; More recommendations for Ceph and OpenStack</title>
+
+</head>
+<body >
+  <aside>
+    <div>
+      <a href="../../../">
+        <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="../../../"></a>
+      </h1>
+
+
+
+
+      <ul class="social">
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/xahteiwi" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="me" class="sc-mastodon" href="https://mastodon.social/@xahteiwi" target="_blank">
+              <i class="fab fa-mastodon"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/fghaas" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-github" href="https://github.com/fghaas" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="../../../">Home</a>
+
+      <a href="/category/hints-and-kinks.html">Tech</a>
+      <a href="/category/presentations.html">Talks</a>
+      <a href="/category/blog.html">Thoughts</a>
+      <a href="">​</a>
+      <a href="/about/">About</a>
+      <a href="/comments/">Comments</a>
+      <a href="/legal/">Legal</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="">​</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="">​</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="more-recommendations-ceph-openstack">More recommendations for Ceph and OpenStack</h1>
+    <p>
+      Posted on Thu 03 August 2017 in <a href="../../../category/hints-and-kinks.html">hints-and-kinks</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>A few months ago, we
+<a href="../../../resources/hints-and-kinks/dos-donts-ceph-openstack/">shared our Dos and Don'ts</a>,
+as they relate to Ceph and OpenStack. Since that post has proved quite
+popular, here are a few additional considerations for your Ceph-backed
+OpenStack cluster.</p>
+<h2>Do configure your images for VirtIO-SCSI</h2>
+<p>By default, RBD-backed Nova instances use the <code>virtio-blk</code> driver to
+expose RBD images to the guest -- either as ephemeral drives, or as
+persistent volumes. In this default configuration, VirtIO presents a
+virtual PCI device to the guest that represents the paravirtual I/O
+bus, and devices are named <code>/dev/vda</code>, <code>/dev/vdb</code>, and so
+forth. VirtIO block devices are lightweight and efficient, but they
+come with a drawback: they don't support the <code>discard</code> operation.</p>
+<p>Not being able to use <code>discard</code> means the guest cannot mount a
+filesystem with <code>mount -o discard</code>, and it also cannot clean up freed
+blocks on a filesystem with <code>fstrim</code>. This can be a security concern
+for your users, who might want to be able to really, actually <em>delete</em>
+data from within the guest (after overwriting it, presumably). It can
+also be an operational concern for you as the cluster operator.</p>
+<p>This is because not supporting <code>discard</code> also means that RADOS objects
+owned by the corresponding RBD image and never <em>removed</em> during the
+image's lifetime -- they persist until the whole image is deleted. So
+your cluster may carry the overhead of perhaps tens of thousands of
+RADOS objects that no-one actually cares about.</p>
+<p>Thankfully, there is an alternative VirtIO disk driver that <em>does</em>
+support <code>discard</code>: the paravirtualized VirtIO SCSI controller,
+<code>virtio-scsi</code>.</p>
+<p>Enabling the VirtIO SCSI controller is something you do by setting a
+couple of Glance <strong>image properties,</strong> namely <code>hw_scsi_model</code> and
+<code>hw_disk_bus</code>. You do so by running the following <code>openstack</code> commands
+on your image:</p>
+<div class="highlight"><pre><span></span><code>openstack image <span class="nb">set</span> <span class="se">\</span>
+  --property <span class="nv">hw_scsi_model</span><span class="o">=</span>virtio-scsi <span class="se">\</span>
+  --property <span class="nv">hw_disk_bus</span><span class="o">=</span>scsi <span class="se">\</span>
+  &lt;name or ID of your image&gt;
+</code></pre></div>
+<p>Then, if you boot an instance from this image, you'll see that its
+block device names switch from <code>/dev/vdX</code> to <code>/dev/sdX</code>, and you also
+get everything else you expect from a SCSI stack. For example, there's
+<code>/proc/scsi/scsi</code>, you can extract information about your bus,
+controller, and LUs with <code>lsscsi</code> command, and so on.</p>
+<p>It's important to note that this <em>image</em> property is inherited by the
+<em>instance</em> booted from that image, which also passes it on to all
+<em>volumes</em> that you may subsequently attach to that instance. Thus,
+<code>openstack server add volume</code> will now add <code>/dev/sdb</code>, not <code>/dev/vdb</code>,
+and you will automatically get the benefits of <code>discard</code> on your
+volumes, as well.</p>
+<h2>Do set disk I/O limits on your Nova flavors</h2>
+<p>In a Ceph cluster that acts as backing storage for OpenStack,
+naturally many OpenStack VMs share the bandwidth and IOPS of your
+whole cluster. When that happens, occasionally you may have a VM
+that’s very busy (meaning it produces a lot of I/O), which the Ceph
+cluster will attempt to process to the best of its abilities. In doing
+so, since RBD has no built-in QoS guarantees
+(<a href="http://tracker.ceph.com/projects/ceph/wiki/Add_QoS_capacity_to_librbd">yet</a>),
+it might cause <em>other</em> VMs to suffer from reduced throughput,
+increased latency, or both.</p>
+<p>The trouble with this is that it’s almost impossible for your users to
+calculate and reckon with. They’ll see a VM that sustains, say, 10,000
+IOPS at times, and then drop to 2,000 with no warning or
+explanation. It is much smarter to pre-emptively <em>limit</em> Ceph RBD
+performance from the hypervisor, and luckily, OpenStack Nova
+absolutely allows you to do that. This concept is known as <strong>instance
+resource quotas</strong>, and you set them via flavor properties. For
+example, an you may want to limit a specific flavor to 1,500 IOPS and
+a maximum throughput of 100 MB/s:</p>
+<div class="highlight"><pre><span></span><code>openstack flavor <span class="nb">set</span> <span class="se">\</span>
+  --property quota:disk_total_bytes_sec<span class="o">=</span><span class="k">$((</span><span class="m">100</span>&lt;&lt;<span class="m">20</span><span class="k">))</span>
+  --property quota:disk_total_iops_sec<span class="o">=</span><span class="m">1500</span>
+  m1.medium
+</code></pre></div>
+<p>In the background, these settings are handed through to libvirt and
+ultimately fed into cgroup limitations for Qemu/KVM, when a VM with
+this flavor spins up. So these limits aren’t specific to RBD, but they
+come in particularly handy when dealing with RBD.</p>
+<p>Obviously, since flavors can be public, but can also be limited to
+specific tenants, you can set relatively low instance resource quotas
+in public flavors, and then make flavors with higher resource quotas
+available to select tenants only.</p>
+<h2>Do differentiate Cinder volume types by disk I/O limits</h2>
+<p>In addition to setting I/O limits on flavors for VMs, you can also
+influence the I/O characteristics of volumes. You do so by specifying
+distinct Cinder volume <em>types</em>. Volume types are frequently used to
+enable users to select a specific Cinder backend — say, to stick
+volumes either on a NetApp box or on RBD, but it’s perfectly OK if you
+define multiple volume types using the same backend. You can then set
+characteristics like maximum IOPS or maximum throughput via Cinder QoS
+specifications. A QoS specification akin to the Nova flavor decribed
+above — limiting throughput to 100 MB/s and 1,500 IOPS would be
+created like this:</p>
+<div class="highlight"><pre><span></span><code>openstack volume qos create <span class="se">\</span>
+  --consumer front-end
+  --property <span class="nv">total_bytes_sec</span><span class="o">=</span><span class="k">$((</span><span class="m">100</span>&lt;&lt;<span class="m">20</span><span class="k">))</span> <span class="se">\</span>
+  --property <span class="nv">total_iops_sec</span><span class="o">=</span><span class="m">1500</span> <span class="se">\</span>
+  <span class="s2">"100MB/s-1500iops"</span>
+</code></pre></div>
+<p>You would then create a corresponding volume type, and associate the
+QoS spec with it:</p>
+<div class="highlight"><pre><span></span><code>openstack volume <span class="nb">type</span> create <span class="se">\</span>
+  --public <span class="se">\</span>
+  <span class="s2">"100MB/s-1500iops"</span>
+openstack volume qos associate <span class="se">\</span>
+  <span class="s2">"100MB/s-1500iops"</span> <span class="se">\</span>
+  <span class="s2">"100MB/s-1500iops"</span>
+</code></pre></div>
+<p>Again, as with Nova flavors, you can make volume types public, but you
+can also limit them to specific tenants.</p>
+<h2>Don't forget about suspend files</h2>
+<p>When you <strong>suspend</strong> a Nova/libvirt/KVM instance, what really happens
+is what libvirt calls a <strong>managed save</strong>: the instance's entire memory
+is written to a file, and then KVM process shuts down. This is
+actually quite neat because it means that the VM does not consume any
+CPU cycles nor memory until it restarts, and it will continue right
+where it left off, even if the compute node is rebooted in the
+interim.</p>
+<p>You should understand that these savefiles are not compressed in any
+way: if your instance has 16GB of RAM, that's a 16GB file that
+instance suspension drops into <code>/var/lib/nova/save</code>. This can add up
+pretty quickly: if a single compute node hosts something like 10
+suspended instances, their combined save file size can easily exceed 
+100 GB. Obviously, this can put you in a really bad spot if this fills
+up your <code>/var</code> (or worse, <code>/</code>) filesystem.</p>
+<p>Of course, if you already have a Ceph cluster, you can put it to good
+use here too: just deep-mount a CephFS file system into that
+spot. Here's an Ansible playbook snippet that you may use as
+inspiration:</p>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">hosts</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">compute-nodes</span><span class="w"></span>
+
+<span class="w">  </span><span class="nt">vars</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ceph_mons</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ceph-mon01</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ceph-mon02</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ceph-mon03</span><span class="w"></span>
+<span class="w">    </span><span class="nt">cephfs_client</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cephfs</span><span class="w"></span>
+<span class="w">    </span><span class="nt">cephfs_secret</span><span class="p">:</span><span class="w"> </span><span class="s">"{{</span><span class="nv"> </span><span class="s">vaulted_cephfs_secret</span><span class="nv"> </span><span class="s">}}"</span><span class="w"></span>
+
+<span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w"></span>
+
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">"install</span><span class="nv"> </span><span class="s">ceph-fs-common</span><span class="nv"> </span><span class="s">package"</span><span class="w"></span>
+<span class="w">    </span><span class="nt">apt</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ceph-fs-common</span><span class="w"></span>
+<span class="w">      </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">installed</span><span class="w"></span>
+
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">"create</span><span class="nv"> </span><span class="s">ceph</span><span class="nv"> </span><span class="s">directory"</span><span class="w"></span>
+<span class="w">    </span><span class="nt">file</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/ceph</span><span class="w"></span>
+<span class="w">      </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
+<span class="w">      </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
+<span class="w">      </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">'0755'</span><span class="w"></span>
+<span class="w">      </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">directory</span><span class="w"></span>
+
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">"create</span><span class="nv"> </span><span class="s">cephfs</span><span class="nv"> </span><span class="s">secretfile"</span><span class="w"></span>
+<span class="w">    </span><span class="nt">copy</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/ceph/cephfs.secret</span><span class="w"></span>
+<span class="w">      </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
+<span class="w">      </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
+<span class="w">      </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">'0600'</span><span class="w"></span>
+<span class="w">      </span><span class="nt">content</span><span class="p">:</span><span class="w"> </span><span class="s">'{{</span><span class="nv"> </span><span class="s">cephfs_secret</span><span class="nv"> </span><span class="s">}}'</span><span class="w"></span>
+
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">"mount</span><span class="nv"> </span><span class="s">savefile</span><span class="nv"> </span><span class="s">directory"</span><span class="w"></span>
+<span class="w">    </span><span class="nt">mount</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">fstype</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ceph</span><span class="w"></span>
+<span class="w">      </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/lib/nova/save</span><span class="w"></span>
+<span class="w">      </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="s">"{{</span><span class="nv"> </span><span class="s">ceph_mons</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">join(',')</span><span class="nv"> </span><span class="s">}}:/nova/save/{{</span><span class="nv"> </span><span class="s">ansible_hostname</span><span class="nv"> </span><span class="s">}}"</span><span class="w"></span>
+<span class="w">      </span><span class="nt">opts</span><span class="p">:</span><span class="w"> </span><span class="s">"name={{</span><span class="nv"> </span><span class="s">cephfs_client</span><span class="nv"> </span><span class="s">}},secretfile=/etc/ceph/cephfs.secret"</span><span class="w"></span>
+<span class="w">      </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mounted</span><span class="w"></span>
+
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">"fix</span><span class="nv"> </span><span class="s">savefile</span><span class="nv"> </span><span class="s">directory</span><span class="nv"> </span><span class="s">ownership"</span><span class="w"></span>
+<span class="w">    </span><span class="nt">file</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/lib/nova/save</span><span class="w"></span>
+<span class="w">      </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">libvirt-qemu</span><span class="w"></span>
+<span class="w">      </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kvm</span><span class="w"></span>
+<span class="w">      </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">directory</span><span class="w"></span>
+</code></pre></div>
+<hr/>
+<h2>Got more?</h2>
+<p>Do you have Ceph/OpenStack hints of your own? Leave them in the
+comments below and we’ll include them in the next installment.</p>
+<hr/>
+<p>This article originally appeared on the <code>hastexo.com</code> website (now defunct).</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../tag/openstack.html">OpenStack</a>
+      <a href="../../../tag/ceph.html">Ceph</a>
+    </p>
+  </div>
+
+
+
+
+  <div class="related-posts">
+    <h4>Part 3 of "Best Practices for Ceph and OpenStack"</h4>
+       <h5>Previous articles</h5>
+       <ul>
+           <li><a href="../../../resources/hints-and-kinks/dos-donts-ceph-openstack/">The Dos and Don'ts for Ceph for OpenStack</a></li>
+           <li><a href="../../../resources/hints-and-kinks/importing-rbd-into-glance/">Importing an existing Ceph RBD image into Glance</a></li>
+       </ul>
+  </div>
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - linux.conf.au</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/linuxconfau.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2019-01-23T00:00:00+00:00</updated><entry><title>Learn Complex Skills, From Anywhere: Combining Django, Ansible and OpenStack to teach any tech skill</title><link href="https://xahteiwi.eu/resources/presentations/learn-complex-skills-from-anywhere-combining-django-ansible-and-openstack-to-teach-any-tech-skill/" rel="alternate"></link><published>2019-01-23T00:00:00+00:00</published><updated>2019-01-23T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-01-23:/resources/presentations/learn-complex-skills-from-anywhere-combining-django-ansible-and-openstack-to-teach-any-tech-skill/</id><content type="html">&lt;p&gt;My presentation from linux.conf.au 2019.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Video: &lt;a href="https://youtu.be/B1ic5o9geqw"&gt;YouTube&lt;/a&gt;, &lt;a href="http://mirror.linux.org.au/pub/linux.conf.au/2019/c3/Wednesday/Learn_Complex_Skills_From_Anywhere_Combining_Django_Ansible_and_OpenStack_to_teach_any_tech_skill.mp4"&gt;Linux Australia
+  (MP4)&lt;/a&gt;,
+  &lt;a href="http://mirror.linux.org.au/pub/linux.conf.au/2019/c3/Wednesday/Learn_Complex_Skills_From_Anywhere_Combining_Django_Ansible_and_OpenStack_to_teach_any_tech_skill.webm"&gt;Linux Australia (WebM)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Slides (with full speaker notes): &lt;a href="https://fghaas.github.io/lca2019/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
+zoom out for an overview, or just advance by hitting the spacebar.&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="Open edX"></category><category term="OpenStack"></category><category term="Django"></category><category term="Ansible"></category><category term="linux.conf.au"></category></entry><entry><title>linux.conf.au 2014, or My Annual Journey To Awesome</title><link href="https://xahteiwi.eu/blog/2014/01/20/linuxconfau-2014-or-my-annual-journey-to-awesome/" rel="alternate"></link><published>2014-01-20T11:36:00+00:00</published><updated>2014-01-20T11:36:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2014-01-20:/blog/2014/01/20/linuxconfau-2014-or-my-annual-journey-to-awesome/</id><summary type="html">&lt;p&gt;Earlier this month, I got on a flight to Perth, WA to make my annual
+trek to &lt;strong&gt;linux.conf.au&lt;/strong&gt;, the largest open-source conference in the
+Southern Hemisphere and one of my favorite conferences on the circuit.
+LCA is an excellent, volunteer-run, hugely insightful conference and
+well worth the 26-hour …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Earlier this month, I got on a flight to Perth, WA to make my annual
+trek to &lt;strong&gt;linux.conf.au&lt;/strong&gt;, the largest open-source conference in the
+Southern Hemisphere and one of my favorite conferences on the circuit.
+LCA is an excellent, volunteer-run, hugely insightful conference and
+well worth the 26-hour trip.&lt;/p&gt;
+&lt;p&gt;I arrived in Perth in time to catch part of the Systems Administration
+mini-conference on day 1. In particular, I caught a &lt;a href="https://www.youtube.com/watch?v=jwBdrvEXMk0"&gt;&lt;strong&gt;systemd&lt;/strong&gt;
+talk&lt;/a&gt; by &lt;strong&gt;Rodger
+Donaldson&lt;/strong&gt; which was both informative and entertaining, so I encourage
+you to watch that when you get the chance.&lt;/p&gt;
+&lt;p&gt;Day 2 had the OpenStack miniconf, which was good but a bit too focused
+on OpenStack governance and organizational issues in its first half. In
+the afternoon, talks got more technical, which was a clear improvement.&lt;/p&gt;
+&lt;p&gt;Wednesday talks included a highly entertaining &lt;a href="https://www.youtube.com/watch?v=_mQKyIAx6Mc"&gt;look at MySQL's
+history&lt;/a&gt; from &lt;strong&gt;Stewart
+Smith&lt;/strong&gt;, &lt;strong&gt;Dave Chinner&lt;/strong&gt;'s musings on where &lt;a href="https://www.youtube.com/watch?v=DxZzSifuV4Q"&gt;Linux
+filesystems&lt;/a&gt; came from, and
+an insightful &lt;a href="https://www.youtube.com/watch?v=XyDcYV9doL8"&gt;RADOS deep
+dive&lt;/a&gt; from &lt;strong&gt;Sage Weil.&lt;/strong&gt;
+There was also a DRBD talk that I was not so fond of, but I've already
+shared my thoughts about that one on Google+, and you're certainly
+welcome to &lt;a href="https://plus.google.com/u/0/+FlorianHaas/posts/KTtvUzmATJM"&gt;take a
+look&lt;/a&gt; over
+there.&lt;/p&gt;
+&lt;p&gt;My own &lt;a href="http://youtu.be/YWVz1CSxayU"&gt;Rapid OpenStack Deployment for Novices and Experts
+Alike&lt;/a&gt; tutorial was on Thursday, had a nice
+turnout, and my hands-on stuff all worked! What more could I possibly
+ask for?&lt;/p&gt;
+&lt;p&gt;Besides my own talk, you should also totally watch &lt;strong&gt;Matthew Garrett&lt;/strong&gt;'s
+&lt;a href="https://www.youtube.com/watch?v=ixMStnFzgRM"&gt;Thursday keynote&lt;/a&gt; and
+&lt;strong&gt;Lana Brindley&lt;/strong&gt;'s &lt;a href="https://www.youtube.com/watch?v=HKmaCpOv0Ww"&gt;agile documentation tutorial with Lego
+goodness&lt;/a&gt;. And of course,
+my clear favorite among all LCA talks this year, Bdale Garbee's
+&lt;a href="https://www.youtube.com/watch?v=j7Et_eWJExU"&gt;reflections on losing his
+house&lt;/a&gt; in a wildfire last
+year.&lt;/p&gt;
+&lt;p&gt;As for Friday, again a stellar keynote from &lt;strong&gt;Jonathan Oxer&lt;/strong&gt; (&lt;a href="https://www.youtube.com/watch?v=0GHMTXiDqoA"&gt;Arduino
+satellites in space&lt;/a&gt;, geek
+overload), Lennart's &lt;a href="https://www.youtube.com/watch?v=sJyVaKZ8tbc"&gt;kdbus
+talk&lt;/a&gt; which you've probably
+already &lt;a href="https://lwn.net/Articles/580194/"&gt;read on LWN&lt;/a&gt; about, and a
+brilliant &lt;a href="http://mirror.linux.org.au/pub/linux.conf.au/2014/Friday/122-LCA_2014_-_Lightning_Talks_pt2_and_Thanks.mp4"&gt;lightning
+talk&lt;/a&gt;
+from Tim Serong about building a DIY bookscanner.&lt;/p&gt;
+&lt;p&gt;All in all, linux.conf.au in Perth was terrific, as usual, and I am
+absolutely planning to be there again next year. The trip will be even
+more atrociuous as next year's venue is
+&lt;a href="http://lca2015.linux.org.au"&gt;Auckland&lt;/a&gt;, but it will be totally worth
+it. No doubt in my mind at all.&lt;/p&gt;
+&lt;p&gt;I'd like to extend a huge thank-you to all LCA attendees, fellow
+speakers, organizers and volunteers who make this conference a fantastic
+event year after year. See you in 2015!&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="linux.conf.au"></category><category term="OpenStack"></category></entry></feed>

@@ -1,0 +1,479 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../../theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/solid.css">
+
+    <link rel="stylesheet" type="text/css" href="../../../css/override.css">
+
+    <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+    <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+  
+
+
+ 
+
+<meta name="author" content="Florian Haas" />
+<meta name="description" content="If you&#39;re familiar with web site hosting on Amazon S3, which is a simple and cheap way to host a static web site, you might be wondering whether or not you can do the same in Ceph radosgw. The short answer is you can&#39;t. Bucket Website is listed as Not …" />
+<meta name="keywords" content="Ceph">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="Hosting a web site in radosgw"/>
+  <meta property="og:description" content="If you&#39;re familiar with web site hosting on Amazon S3, which is a simple and cheap way to host a static web site, you might be wondering whether or not you can do the same in Ceph radosgw. The short answer is you can&#39;t. Bucket Website is listed as Not …"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../../resources/hints-and-kinks/hosting-website-radosgw/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2016-01-26 00:00:00+00:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../../author/florian-haas.html">
+  <meta property="article:section" content="hints-and-kinks"/>
+  <meta property="article:tag" content="Ceph"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; Hosting a web site in radosgw</title>
+
+</head>
+<body >
+  <aside>
+    <div>
+      <a href="../../../">
+        <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="../../../"></a>
+      </h1>
+
+
+
+
+      <ul class="social">
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/xahteiwi" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="me" class="sc-mastodon" href="https://mastodon.social/@xahteiwi" target="_blank">
+              <i class="fab fa-mastodon"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/fghaas" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-github" href="https://github.com/fghaas" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="../../../">Home</a>
+
+      <a href="/category/hints-and-kinks.html">Tech</a>
+      <a href="/category/presentations.html">Talks</a>
+      <a href="/category/blog.html">Thoughts</a>
+      <a href="">​</a>
+      <a href="/about/">About</a>
+      <a href="/comments/">Comments</a>
+      <a href="/legal/">Legal</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="">​</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="">​</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="hosting-website-radosgw">Hosting a web site in radosgw</h1>
+    <p>
+      Posted on Tue 26 January 2016 in <a href="../../../category/hints-and-kinks.html">hints-and-kinks</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>If you're familiar with <a href="//docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">web site hosting on Amazon
+S3</a>,
+which is a simple and cheap way to host a static web site, you might
+be wondering whether or not you can do the same in Ceph radosgw.</p>
+<p>The short answer is you can't. Bucket Website is listed as <em>Not
+Supported</em> in the radosgw S3 API
+<a href="http://docs.ceph.com/docs/master/radosgw/s3/">support matrix</a>, and
+radosgw doesn't have
+<a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/IndexDocumentSupport.html">index document support</a>
+either.</p>
+<p>But the longer answer is that you can, provided you use radosgw in
+combination with a front-end load-balancer — which, as it happens,
+can add a few more bells and whistles, as well. You could probably do
+the same thing with nginx, Varnish, or Apache in a
+<code>mod_proxy_balancer</code> balancer setup, but in this example
+configuration, we'll use HAProxy.</p>
+<h2>Getting started: the radosgw basics</h2>
+<p>Let's take look at a simple radosgw configuration with virtual host
+support, such that you can access your buckets as either
+<code>http://ceph.example.com/bucketname</code> or
+<code>http://bucketname.ceph.example.com</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">[client.rgw.radosgw01]</span><span class="w"></span>
+<span class="na">rgw_frontends</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">civetweb port=7480</span><span class="w"></span>
+<span class="na">rgw_dns_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">ceph.example.com</span><span class="w"></span>
+<span class="na">rgw_resolve_cname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">True</span><span class="w"></span>
+</code></pre></div>
+<p>Suppose we use <code>s3cmd</code> to upload an HTML file to this bucket, setting
+a public ACL:</p>
+<div class="highlight"><pre><span></span><code>s3cmd mb s3://testwebsite
+s3cmd put --acl-public index.html s3://testwebsite/
+</code></pre></div>
+<p>Then if you exposed your radosgw to the web, any client (without
+authentication) would be able to retrieve
+<code>http://testwebsite.ceph.example.com:7480/index.html</code> with a web
+browser, or any other HTTP client application (such as <code>curl</code> or
+<code>wget</code>):</p>
+<div class="highlight"><pre><span></span><code>curl -I http://testwebsite.ceph.example.com:7480/index.html
+</code></pre></div>
+<p>Which would then return something like:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Length</span><span class="o">:</span> <span class="l">18050</span>
+<span class="na">Accept-Ranges</span><span class="o">:</span> <span class="l">bytes</span>
+<span class="na">Last-Modified</span><span class="o">:</span> <span class="l">Mon, 25 Jan 2016 21:28:47 GMT</span>
+<span class="na">ETag</span><span class="o">:</span> <span class="l">"b03130a4a1fc24df0f9f336f2b6d1d90"</span>
+<span class="na">x-amz-request-id</span><span class="o">:</span> <span class="l">tx000000000000000005a88-0056a7b7eb-312df-default</span>
+<span class="na">Content-type</span><span class="o">:</span> <span class="l">text/html</span>
+<span class="na">Date</span><span class="o">:</span> <span class="l">Tue, 26 Jan 2016 18:16:11 GMT</span>
+</code></pre></div>
+<h2>Introducing HAProxy</h2>
+<p>Now let's start out with putting HAproxy in between. Nothing special
+there: radosgw listens on the conventional 7480 port, and we simply
+hand HAproxy traffic through there, and bind HAProxy itself to
+port 80.</p>
+<div class="highlight"><pre><span></span><code><span class="k">global</span><span class="w"></span>
+<span class="w">    </span><span class="s">log</span><span class="w">         </span><span class="s">/dev/log</span><span class="w"> </span><span class="s">local0</span><span class="w"></span>
+<span class="w">    </span><span class="s">pidfile</span><span class="w">     </span><span class="s">/var/run/haproxy.pid</span><span class="w"></span>
+<span class="w">    </span><span class="s">maxconn</span><span class="w">     </span><span class="mi">4000</span><span class="w"></span>
+<span class="w">    </span><span class="s">user</span><span class="w">        </span><span class="s">haproxy</span><span class="w"></span>
+<span class="w">    </span><span class="s">group</span><span class="w">       </span><span class="s">haproxy</span><span class="w"></span>
+<span class="w">    </span><span class="s">daemon</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1"># turn on stats unix socket</span>
+<span class="w">    </span><span class="s">stats</span><span class="w"> </span><span class="s">socket</span><span class="w"> </span><span class="s">/var/lib/haproxy/stats</span><span class="w"> </span><span class="s">level</span><span class="w"> </span><span class="s">admin</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1"># Default SSL material locations</span>
+<span class="w">    </span><span class="s">ca-base</span><span class="w"> </span><span class="s">/etc/ssl/certs</span><span class="w"></span>
+<span class="w">    </span><span class="s">crt-base</span><span class="w"> </span><span class="s">/etc/haproxy/ssl</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1"># Default ciphers to use on SSL-enabled listening sockets.</span>
+<span class="w">    </span><span class="c1"># For more information, see ciphers(1SSL).</span>
+<span class="w">    </span><span class="s">ssl-default-bind-ciphers</span><span class="w"> </span><span class="s">HIGH</span><span class="w"></span>
+<span class="w">    </span><span class="s">tune.ssl.default-dh-param</span><span class="w"> </span><span class="mi">2048</span><span class="w"></span>
+
+<span class="s">defaults</span><span class="w"></span>
+<span class="w">    </span><span class="s">log</span><span class="w"> </span><span class="s">global</span><span class="w"></span>
+<span class="w">    </span><span class="s">mode</span><span class="w"> </span><span class="s">http</span><span class="w"></span>
+<span class="w">    </span><span class="s">option</span><span class="w"> </span><span class="s">httplog</span><span class="w"></span>
+<span class="w">    </span><span class="s">option</span><span class="w"> </span><span class="s">dontlognull</span><span class="w"></span>
+<span class="w">    </span><span class="s">retries</span><span class="w"> </span><span class="mi">3</span><span class="w"></span>
+<span class="w">    </span><span class="s">timeout</span><span class="w"> </span><span class="s">queue</span><span class="w"> </span><span class="mi">1000</span><span class="w"></span>
+<span class="w">    </span><span class="s">timeout</span><span class="w"> </span><span class="s">connect</span><span class="w"> </span><span class="mi">1000</span><span class="w"></span>
+<span class="w">    </span><span class="s">timeout</span><span class="w"> </span><span class="s">client</span><span class="w"> </span><span class="mi">30000</span><span class="w"></span>
+<span class="w">    </span><span class="s">timeout</span><span class="w"> </span><span class="s">server</span><span class="w"> </span><span class="mi">30000</span><span class="w"></span>
+<span class="w">    </span><span class="s">option</span><span class="w"> </span><span class="s">forwardfor</span><span class="w"></span>
+
+
+<span class="s">frontend</span><span class="w"> </span><span class="s">ceph_front</span><span class="w"></span>
+<span class="w">    </span><span class="s">bind</span><span class="w"> </span><span class="n">0.0.0.0</span><span class="p">:</span><span class="mi">80</span><span class="w"></span>
+<span class="w">    </span><span class="s">default_backend</span><span class="w"> </span><span class="s">ceph_back</span><span class="w"></span>
+
+<span class="s">backend</span><span class="w"> </span><span class="s">ceph_back</span><span class="w"></span>
+<span class="w">    </span><span class="s">balance</span><span class="w"> </span><span class="s">source</span><span class="w"></span>
+<span class="w">    </span><span class="s">server</span><span class="w"> </span><span class="s">radosgw01</span><span class="w"> </span><span class="n">127.0.0.1</span><span class="p">:</span><span class="mi">7480</span><span class="w"> </span><span class="s">check</span><span class="w"></span>
+</code></pre></div>
+<h2>Index documents</h2>
+<p>So, the first thing we'll need to add is support for index
+documents. We'd like to make sure that when we retrieve
+<code>https://testwebsite.ceph.example.com/</code>, what's actually fetched from
+the backend is <code>/index.html</code>. We can do that by adding an HAproxy ACL
+that matches for the trailing slash in the path, and an <code>http-request
+set-path</code> directive that appends the index document name:</p>
+<div class="highlight"><pre><span></span><code><span class="k">frontend</span><span class="w"> </span><span class="s">ceph_front</span><span class="w"></span>
+<span class="w">    </span><span class="s">bind</span><span class="w"> </span><span class="n">0.0.0.0</span><span class="p">:</span><span class="mi">80</span><span class="w"></span>
+<span class="w">    </span><span class="s">acl</span><span class="w"> </span><span class="s">path_ends_in_slash</span><span class="w"> </span><span class="s">path_end</span><span class="w"> </span><span class="s">-i</span><span class="w"> </span><span class="s">/</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># Append index document (index.html) to any path</span>
+<span class="w">    </span><span class="c1"># ending in "/".</span>
+<span class="w">    </span><span class="s">http-request</span><span class="w"> </span><span class="s">set-path</span><span class="w"> </span><span class="s">%[path]index.html</span><span class="w"> </span><span class="s">if</span><span class="w"> </span><span class="s">path_ends_in_slash</span><span class="w"></span>
+<span class="w">    </span><span class="s">default_backend</span><span class="w"> </span><span class="s">ceph_back</span><span class="w"></span>
+</code></pre></div>
+<p>Now, that's fine in terms of <strong>getting</strong> the index document correctly:</p>
+<div class="highlight"><pre><span></span><code>curl -I http://testwebsite.ceph.example.com/index.html
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Length</span><span class="o">:</span> <span class="l">18050</span>
+<span class="na">Accept-Ranges</span><span class="o">:</span> <span class="l">bytes</span>
+<span class="na">Last-Modified</span><span class="o">:</span> <span class="l">Mon, 25 Jan 2016 21:28:47 GMT</span>
+<span class="na">ETag</span><span class="o">:</span> <span class="l">"b03130a4a1fc24df0f9f336f2b6d1d90"</span>
+<span class="na">x-amz-request-id</span><span class="o">:</span> <span class="l">tx000000000000000005a94-0056a7b9e3-312df-default</span>
+<span class="na">Content-type</span><span class="o">:</span> <span class="l">text/html</span>
+<span class="na">Date</span><span class="o">:</span> <span class="l">Tue, 26 Jan 2016 18:24:35 GMT</span>
+</code></pre></div>
+<p>However, it of course breaks uploads and even bucket listings, or in
+other words, anything that uses the S3 API. Now you could test for
+some S3-specific headers in the request, but really, you should just
+check whether the request is authorized, and only apply the index
+document logic if it isn't, like so:</p>
+<div class="highlight"><pre><span></span><code><span class="k">frontend</span><span class="w"> </span><span class="s">ceph_front</span><span class="w"></span>
+<span class="w">    </span><span class="s">bind</span><span class="w"> </span><span class="n">0.0.0.0</span><span class="p">:</span><span class="mi">80</span><span class="w"></span>
+<span class="w">    </span><span class="s">acl</span><span class="w"> </span><span class="s">path_ends_in_slash</span><span class="w"> </span><span class="s">path_end</span><span class="w"> </span><span class="s">-i</span><span class="w"> </span><span class="s">/</span><span class="w"></span>
+<span class="w">    </span><span class="s">acl</span><span class="w"> </span><span class="s">auth_header</span><span class="w"> </span><span class="s">hdr(Authorization)</span><span class="w"> </span><span class="s">-m</span><span class="w"> </span><span class="s">found</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># Append index document (index.html) to any path</span>
+<span class="w">    </span><span class="c1"># ending in "/", unless the request has an auth header</span>
+<span class="w">    </span><span class="s">http-request</span><span class="w"> </span><span class="s">set-path</span><span class="w"> </span><span class="s">%[path]index.html</span><span class="w"> </span><span class="s">if</span><span class="w"> </span><span class="s">path_ends_in_slash</span><span class="w"> </span><span class="s">!auth_header</span><span class="w"></span>
+<span class="w">    </span><span class="s">default_backend</span><span class="w"> </span><span class="s">ceph_back</span><span class="w"></span>
+</code></pre></div>
+<p>Great. Now we can upload using full paths without mangling, and on any
+un-authenticated requests, we substitute <code>/index.html</code> for any trailing
+<code>/</code>. In case you're wondering: yes, this works for any path, not just
+the root path.</p>
+<h2>Directory paths</h2>
+<p>However, you may also want something else, which is the ability to
+correctly handle a request like
+<code>http://testwebsite.ceph.example.com/my/sub/directory</code>, where of
+course you want the path <code>/my/sub/directory</code> translated into
+<code>/my/sub/directory/index.html</code>, which means we want to append a slash
+<em>and</em> an index document name to the request path.</p>
+<p>So let's do that:</p>
+<div class="highlight"><pre><span></span><code><span class="k">frontend</span><span class="w"> </span><span class="s">ceph_front</span><span class="w"></span>
+<span class="w">    </span><span class="s">bind</span><span class="w"> </span><span class="n">0.0.0.0</span><span class="p">:</span><span class="mi">80</span><span class="w"></span>
+<span class="w">    </span><span class="s">acl</span><span class="w"> </span><span class="s">path_has_dot</span><span class="w"> </span><span class="s">path_sub</span><span class="w"> </span><span class="s">-i</span><span class="w"> </span><span class="s">.</span><span class="w"></span>
+<span class="w">    </span><span class="s">acl</span><span class="w"> </span><span class="s">path_ends_in_slash</span><span class="w"> </span><span class="s">path_end</span><span class="w"> </span><span class="s">-i</span><span class="w"> </span><span class="s">/</span><span class="w"></span>
+<span class="w">    </span><span class="s">acl</span><span class="w"> </span><span class="s">auth_header</span><span class="w"> </span><span class="s">hdr(Authorization)</span><span class="w"> </span><span class="s">-m</span><span class="w"> </span><span class="s">found</span><span class="w"></span>
+<span class="w">    </span><span class="s">http-request</span><span class="w"> </span><span class="s">set-path</span><span class="w"> </span><span class="s">%[path]index.html</span><span class="w"> </span><span class="s">if</span><span class="w"> </span><span class="s">path_ends_in_slash</span><span class="w"> </span><span class="s">!auth_header</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># Append trailing slash if necessary.</span>
+<span class="w">    </span><span class="s">http-request</span><span class="w"> </span><span class="s">set-path</span><span class="w"> </span><span class="s">%[path]/index.html</span><span class="w"> </span><span class="s">if</span><span class="w"> </span><span class="s">!path_has_dot</span><span class="w"> </span><span class="s">!path_ends_in_slash</span><span class="w"> </span><span class="s">!auth_header</span><span class="w"></span>
+<span class="w">    </span><span class="s">default_backend</span><span class="w"> </span><span class="s">ceph_back</span><span class="w"></span>
+</code></pre></div>
+<p>Note that what we're doing here is somewhat crude. We're assuming that
+any actual file that we want to retrieve looks like <code>name.ext</code>,
+meaning it has a dot (period, full stop) character in it. The
+<code>path_sub -i .</code> expression in the <code>path_has_dot</code> ACL simply matches
+any path with <code>.</code> in it, and we're assuming that if a path has a dot
+then it points to a file, if it doesn't then it points to a directory.</p>
+<p>You could be a little more clever here and use <code>path_regex</code> instead of
+<code>path_sub</code> for a full regular expression match. But regex lookups are
+slower than simple substring matches, so if the substring match works
+for you, go for it.</p>
+<p>So now, we can do this:</p>
+<div class="highlight"><pre><span></span><code>s3cmd put --acl-public index.html s3://testwebsite/my/sub/directory/
+</code></pre></div>
+<p>And then:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Note omitted trailing slash</span>
+curl -I http://testwebsite.ceph.example.com/my/sub/directory
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Length</span><span class="o">:</span> <span class="l">24235</span>
+<span class="na">Accept-Ranges</span><span class="o">:</span> <span class="l">bytes</span>
+<span class="na">Last-Modified</span><span class="o">:</span> <span class="l">Mon, 25 Jan 2016 23:57:04 GMT</span>
+<span class="na">ETag</span><span class="o">:</span> <span class="l">"fecd005b33c0f6bfdee61b787cf54cb0"</span>
+<span class="na">x-amz-request-id</span><span class="o">:</span> <span class="l">tx00000000000000000bc83-0056a7bd25-312cd-default</span>
+<span class="na">Content-type</span><span class="o">:</span> <span class="l">text/html</span>
+<span class="na">Date</span><span class="o">:</span> <span class="l">Tue, 26 Jan 2016 18:38:29 GMT</span>
+</code></pre></div>
+<h2>HTTPS support</h2>
+<p>So, what else might you want to do? One obvious thing that you can use
+HAproxy for is SSL termination. The radosgw embedded <code>civetweb</code>
+webserver can do that for you, but that feature is <a href="http://tracker.ceph.com/issues/11239">currently mildly
+broken in a rather curious
+way</a>. So in order to allow HTTPS
+access to all your content via HAproxy instead, you would add:</p>
+<div class="highlight"><pre><span></span><code><span class="k">frontend</span><span class="w"> </span><span class="s">ceph_front_ssl</span><span class="w"></span>
+<span class="w">    </span><span class="s">bind</span><span class="w"> </span><span class="n">0.0.0.0</span><span class="p">:</span><span class="mi">443</span><span class="w"> </span><span class="s">ssl</span><span class="w"> </span><span class="s">crt</span><span class="w"> </span><span class="s">ceph.pem</span><span class="w"> </span><span class="s">no-sslv3</span><span class="w"> </span><span class="s">no-tls-tickets</span><span class="w"></span>
+<span class="w">    </span><span class="s">reqadd</span><span class="w"> </span><span class="s">X-Forwarded-Proto:\</span><span class="w"> </span><span class="s">https</span><span class="w"></span>
+<span class="w">    </span><span class="s">acl</span><span class="w"> </span><span class="s">path_has_dot</span><span class="w"> </span><span class="s">path_sub</span><span class="w"> </span><span class="s">-i</span><span class="w"> </span><span class="s">.</span><span class="w"></span>
+<span class="w">    </span><span class="s">acl</span><span class="w"> </span><span class="s">path_ends_in_slash</span><span class="w"> </span><span class="s">path_end</span><span class="w"> </span><span class="s">-i</span><span class="w"> </span><span class="s">/</span><span class="w"></span>
+<span class="w">    </span><span class="s">acl</span><span class="w"> </span><span class="s">auth_header</span><span class="w"> </span><span class="s">hdr(Authorization)</span><span class="w"> </span><span class="s">-m</span><span class="w"> </span><span class="s">found</span><span class="w"></span>
+<span class="w">    </span><span class="s">http-request</span><span class="w"> </span><span class="s">set-path</span><span class="w"> </span><span class="s">%[path]index.html</span><span class="w"> </span><span class="s">if</span><span class="w"> </span><span class="s">path_ends_in_slash</span><span class="w"> </span><span class="s">!auth_header</span><span class="w"></span>
+<span class="w">    </span><span class="s">http-request</span><span class="w"> </span><span class="s">set-path</span><span class="w"> </span><span class="s">%[path]/index.html</span><span class="w"> </span><span class="s">if</span><span class="w"> </span><span class="s">!path_has_dot</span><span class="w"> </span><span class="s">!path_ends_in_slash</span><span class="w"> </span><span class="s">!auth_header</span><span class="w"></span>
+<span class="w">    </span><span class="s">default_backend</span><span class="w"> </span><span class="s">ceph_back</span><span class="w"></span>
+</code></pre></div>
+<p>But maybe you'd like to <strong>force,</strong> not merely allow, HTTPS
+access. <code>redirect</code> to the rescue:</p>
+<div class="highlight"><pre><span></span><code><span class="k">frontend</span><span class="w"> </span><span class="s">ceph_front</span><span class="w"></span>
+<span class="w">    </span><span class="s">bind</span><span class="w"> </span><span class="n">0.0.0.0</span><span class="p">:</span><span class="mi">80</span><span class="w"></span>
+<span class="w">    </span><span class="s">reqadd</span><span class="w"> </span><span class="s">X-Forwarded-Proto:\</span><span class="w"> </span><span class="s">http</span><span class="w"></span>
+<span class="w">    </span><span class="s">redirect</span><span class="w"> </span><span class="s">scheme</span><span class="w"> </span><span class="s">https</span><span class="w"> </span><span class="s">code</span><span class="w"> </span><span class="mi">301</span><span class="w"> </span><span class="s">if</span><span class="w"> </span><span class="s">!</span><span class="p">{</span><span class="w"> </span><span class="kn">ssl_fc</span><span class="w"> </span><span class="err">}</span><span class="w"></span>
+
+<span class="s">frontend</span><span class="w"> </span><span class="s">ceph_front_ssl</span><span class="w"></span>
+<span class="w">    </span><span class="s">bind</span><span class="w"> </span><span class="n">0.0.0.0</span><span class="p">:</span><span class="mi">443</span><span class="w"> </span><span class="s">ssl</span><span class="w"> </span><span class="s">crt</span><span class="w"> </span><span class="s">ceph.pem</span><span class="w"> </span><span class="s">no-sslv3</span><span class="w"> </span><span class="s">no-tls-tickets</span><span class="w"></span>
+<span class="w">    </span><span class="s">reqadd</span><span class="w"> </span><span class="s">X-Forwarded-Proto:\</span><span class="w"> </span><span class="s">https</span><span class="w"></span>
+<span class="w">    </span><span class="s">acl</span><span class="w"> </span><span class="s">path_has_dot</span><span class="w"> </span><span class="s">path_sub</span><span class="w"> </span><span class="s">-i</span><span class="w"> </span><span class="s">.</span><span class="w"></span>
+<span class="w">    </span><span class="s">acl</span><span class="w"> </span><span class="s">path_ends_in_slash</span><span class="w"> </span><span class="s">path_end</span><span class="w"> </span><span class="s">-i</span><span class="w"> </span><span class="s">/</span><span class="w"></span>
+<span class="w">    </span><span class="s">acl</span><span class="w"> </span><span class="s">auth_header</span><span class="w"> </span><span class="s">hdr(Authorization)</span><span class="w"> </span><span class="s">-m</span><span class="w"> </span><span class="s">found</span><span class="w"></span>
+<span class="w">    </span><span class="s">http-request</span><span class="w"> </span><span class="s">set-path</span><span class="w"> </span><span class="s">%[path]index.html</span><span class="w"> </span><span class="s">if</span><span class="w"> </span><span class="s">path_ends_in_slash</span><span class="w"> </span><span class="s">!auth_header</span><span class="w"></span>
+<span class="w">    </span><span class="s">http-request</span><span class="w"> </span><span class="s">set-path</span><span class="w"> </span><span class="s">%[path]/index.html</span><span class="w"> </span><span class="s">if</span><span class="w"> </span><span class="s">!path_has_dot</span><span class="w"> </span><span class="s">!path_ends_in_slash</span><span class="w"> </span><span class="s">!auth_header</span><span class="w"></span>
+<span class="w">    </span><span class="s">default_backend</span><span class="w"> </span><span class="s">ceph_back</span><span class="w"></span>
+</code></pre></div>
+<p>And here we go:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Note HTTP</span>
+curl -IL http://testwebsite.ceph.example.com/my/sub/directory
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">301</span> <span class="ne">Moved Permanently</span>
+<span class="na">Content-length</span><span class="o">:</span> <span class="l">0</span>
+<span class="na">Location</span><span class="o">:</span> <span class="l">https://testwebsite.ceph.example.com/my/sub/directory</span>
+<span class="na">Connection</span><span class="o">:</span> <span class="l">close</span>
+
+HTTP/1.1 200 OK
+Content-Length: 24235
+Accept-Ranges: bytes
+Last-Modified: Mon, 25 Jan 2016 23:57:04 GMT
+ETag: "fecd005b33c0f6bfdee61b787cf54cb0"
+x-amz-request-id: tx00000000000000000bdeb-0056a7bf9b-312cd-default
+Content-type: text/html
+Date: Tue, 26 Jan 2016 18:48:59 GMT
+</code></pre></div>
+<h2>Compression</h2>
+<p>And finally, maybe you'd like to speed up access to the stuff on your
+site. Why not add gzip on-the-fly-compression? It's supported by every
+browser worth its salt, and will make your users happier. You'll want
+to restrict compression to specific MIME types though. In the
+configuration below, we enable compression for plain text, HTML, XML,
+CSS, JavaScript, and SVG images.</p>
+<div class="highlight"><pre><span></span><code><span class="k">frontend</span><span class="w"> </span><span class="s">ceph_front</span><span class="w"></span>
+<span class="w">    </span><span class="s">bind</span><span class="w"> </span><span class="n">0.0.0.0</span><span class="p">:</span><span class="mi">80</span><span class="w"></span>
+<span class="w">    </span><span class="s">reqadd</span><span class="w"> </span><span class="s">X-Forwarded-Proto:\</span><span class="w"> </span><span class="s">http</span><span class="w"></span>
+<span class="w">    </span><span class="s">redirect</span><span class="w"> </span><span class="s">scheme</span><span class="w"> </span><span class="s">https</span><span class="w"> </span><span class="s">code</span><span class="w"> </span><span class="mi">301</span><span class="w"> </span><span class="s">if</span><span class="w"> </span><span class="s">!</span><span class="p">{</span><span class="w"> </span><span class="kn">ssl_fc</span><span class="w"> </span><span class="err">}</span><span class="w"></span>
+
+<span class="s">frontend</span><span class="w"> </span><span class="s">ceph_front_ssl</span><span class="w"></span>
+<span class="w">    </span><span class="s">bind</span><span class="w"> </span><span class="n">0.0.0.0</span><span class="p">:</span><span class="mi">443</span><span class="w"> </span><span class="s">ssl</span><span class="w"> </span><span class="s">crt</span><span class="w"> </span><span class="s">ceph.pem</span><span class="w"> </span><span class="s">no-sslv3</span><span class="w"> </span><span class="s">no-tls-tickets</span><span class="w"></span>
+<span class="w">    </span><span class="s">reqadd</span><span class="w"> </span><span class="s">X-Forwarded-Proto:\</span><span class="w"> </span><span class="s">https</span><span class="w"></span>
+<span class="w">    </span><span class="s">acl</span><span class="w"> </span><span class="s">path_has_dot</span><span class="w"> </span><span class="s">path_sub</span><span class="w"> </span><span class="s">-i</span><span class="w"> </span><span class="s">.</span><span class="w"></span>
+<span class="w">    </span><span class="s">acl</span><span class="w"> </span><span class="s">path_ends_in_slash</span><span class="w"> </span><span class="s">path_end</span><span class="w"> </span><span class="s">-i</span><span class="w"> </span><span class="s">/</span><span class="w"></span>
+<span class="w">    </span><span class="s">acl</span><span class="w"> </span><span class="s">auth_header</span><span class="w"> </span><span class="s">hdr(Authorization)</span><span class="w"> </span><span class="s">-m</span><span class="w"> </span><span class="s">found</span><span class="w"></span>
+<span class="w">    </span><span class="s">http-request</span><span class="w"> </span><span class="s">set-path</span><span class="w"> </span><span class="s">%[path]index.html</span><span class="w"> </span><span class="s">if</span><span class="w"> </span><span class="s">path_ends_in_slash</span><span class="w"> </span><span class="s">!auth_header</span><span class="w"></span>
+<span class="w">    </span><span class="s">http-request</span><span class="w"> </span><span class="s">set-path</span><span class="w"> </span><span class="s">%[path]/index.html</span><span class="w"> </span><span class="s">if</span><span class="w"> </span><span class="s">!path_has_dot</span><span class="w"> </span><span class="s">!path_ends_in_slash</span><span class="w"> </span><span class="s">!auth_header</span><span class="w"></span>
+<span class="w">    </span><span class="s">compression</span><span class="w"> </span><span class="s">algo</span><span class="w"> </span><span class="s">gzip</span><span class="w"></span>
+<span class="w">    </span><span class="s">compression</span><span class="w"> </span><span class="s">type</span><span class="w"> </span><span class="s">text/html</span><span class="w"> </span><span class="s">text/xml</span><span class="w"> </span><span class="s">text/plain</span><span class="w"> </span><span class="s">text/css</span><span class="w"> </span><span class="s">application/javascript</span><span class="w"> </span><span class="s">image/svg+xml</span><span class="w"></span>
+<span class="w">    </span><span class="s">default_backend</span><span class="w"> </span><span class="s">ceph_back</span><span class="w"></span>
+</code></pre></div>
+<p>Let's see how that helps us. Do a request without gzip encoding
+support, and observe that its total download size matches the
+document's <code>Content-Length</code>:</p>
+<div class="highlight"><pre><span></span><code>curl https://testwebsite.ceph.example.com/my/sub/directory &gt; /dev/null
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>  <span class="c1">% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current</span>
+                                 <span class="nv">Dload</span>  <span class="nv">Upload</span>   <span class="nv">Total</span>   <span class="nv">Spent</span>    <span class="nv">Left</span>  <span class="nv">Speed</span>
+<span class="mi">100</span> <span class="mi">24235</span>  <span class="mi">100</span> <span class="mi">24235</span>    <span class="mi">0</span>     <span class="mi">0</span>  <span class="mi">94565</span>      <span class="mi">0</span> <span class="s s-Atom">--:--:--</span> <span class="s s-Atom">--:--:--</span> <span class="s s-Atom">--:--:--</span> <span class="mi">94299</span>
+</code></pre></div>
+<p>Now, add an <code>Accept-Encoding</code> header:</p>
+<div class="highlight"><pre><span></span><code>curl -H <span class="s1">'Accept-Encoding: gzip'</span> https://testwebsite.ceph.example.com/my/sub/directory &gt; /dev/null
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>  <span class="c1">% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current</span>
+                                 <span class="nv">Dload</span>  <span class="nv">Upload</span>   <span class="nv">Total</span>   <span class="nv">Spent</span>    <span class="nv">Left</span>  <span class="nv">Speed</span>
+<span class="mi">100</span>  <span class="mi">5237</span>    <span class="mi">0</span>  <span class="mi">5237</span>    <span class="mi">0</span>     <span class="mi">0</span>  <span class="mi">19243</span>      <span class="mi">0</span> <span class="s s-Atom">--:--:--</span> <span class="s s-Atom">--:--:--</span> <span class="s s-Atom">--:--:--</span> <span class="mi">19324</span>
+</code></pre></div>
+<p>There. Actual download size goes from 24KB down to just 5KB. </p>
+<h2>Where to go from here</h2>
+<p>There's a few additional features to be added here. You
+could enable CORS or HSTS, for example, and of course you could add
+more backends. But if you read this far, you surely get the idea.</p>
+<p>And you're welcome to examine the headers you can pull from this page
+you're reading, wink wink. :)</p>
+<hr/>
+<p>This article originally appeared on the <code>hastexo.com</code> website (now defunct).</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../tag/ceph.html">Ceph</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+
+</body>
+</html>

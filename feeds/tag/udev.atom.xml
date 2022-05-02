@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - udev</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/udev.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2021-01-17T00:00:00+00:00</updated><entry><title>Fixing powerline flicker on your webcam feed with a udev rule</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/webcam-rolling-shutter-udev/" rel="alternate"></link><published>2021-01-17T00:00:00+00:00</published><updated>2021-01-17T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-01-17:/resources/hints-and-kinks/webcam-rolling-shutter-udev/</id><summary type="html">&lt;p&gt;If you are&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;spending a non-trivial amount of time in video calls every week
+  (something that, at the time of writing, is true for &lt;strong&gt;a lot&lt;/strong&gt; of
+  people due to the COVID-19 pandemic), and also&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;having to use mains-powered artificial lighting in your office (true
+  at the time of writing …&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;If you are&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;spending a non-trivial amount of time in video calls every week
+  (something that, at the time of writing, is true for &lt;strong&gt;a lot&lt;/strong&gt; of
+  people due to the COVID-19 pandemic), and also&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;having to use mains-powered artificial lighting in your office (true
+  at the time of writing for significant portions of the Northern
+  Hemisphere, as it’s winter there),&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;then you may be dealing with an unpleasant effect where your web cam
+feed produces a permanent &lt;a href="https://dsp.stackexchange.com/questions/19853/horizontal-banding-flickering-due-to-electronic-rolling-shutters"&gt;horizontal
+flicker&lt;/a&gt;
+that is due to the electronic rolling shutter interacting with the
+(otherwise imperceptible) 50 or 60Hz AC powerline frequency.&lt;/p&gt;
+&lt;p&gt;The good news is that most webcams come with a facility to eliminate
+that effect, and on a Linux desktop it’s not difficult to permanently
+do so.&lt;/p&gt;
+&lt;h2&gt;&lt;code&gt;v4l2-ctl&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;The utility you want to use for this purpose is &lt;code&gt;v4l2-ctl&lt;/code&gt;, which on
+Ubuntu ships with &lt;a href="https://packages.ubuntu.com/v4l-utils"&gt;the &lt;code&gt;v4l-utils&lt;/code&gt;
+package&lt;/a&gt;. &lt;code&gt;v4l2-ctl&lt;/code&gt; allows you
+to read and set a bunch of parameters for your webcam. Here’s the set
+of parameters available for my &lt;a href="https://www.razer.com/gb-en/streaming-cameras/razer-kiyo/RZ19-02320100-R3U1"&gt;Razer
+Kiyo&lt;/a&gt;,
+a piece of kit that I highly recommend:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ v4l2-ctl --list-ctrls --device&lt;span class="o"&gt;=&lt;/span&gt;/dev/video0
+                     brightness 0x00980900 &lt;span class="o"&gt;(&lt;/span&gt;int&lt;span class="o"&gt;)&lt;/span&gt;    : &lt;span class="nv"&gt;min&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;max&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;255&lt;/span&gt; &lt;span class="nv"&gt;step&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="nv"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;128&lt;/span&gt; &lt;span class="nv"&gt;value&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;128&lt;/span&gt;
+                       contrast 0x00980901 &lt;span class="o"&gt;(&lt;/span&gt;int&lt;span class="o"&gt;)&lt;/span&gt;    : &lt;span class="nv"&gt;min&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;max&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;255&lt;/span&gt; &lt;span class="nv"&gt;step&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="nv"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;128&lt;/span&gt; &lt;span class="nv"&gt;value&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;128&lt;/span&gt;
+                     saturation 0x00980902 &lt;span class="o"&gt;(&lt;/span&gt;int&lt;span class="o"&gt;)&lt;/span&gt;    : &lt;span class="nv"&gt;min&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;max&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;255&lt;/span&gt; &lt;span class="nv"&gt;step&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="nv"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;128&lt;/span&gt; &lt;span class="nv"&gt;value&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;128&lt;/span&gt;
+ white_balance_temperature_auto 0x0098090c &lt;span class="o"&gt;(&lt;/span&gt;bool&lt;span class="o"&gt;)&lt;/span&gt;   : &lt;span class="nv"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="nv"&gt;value&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+                           gain 0x00980913 &lt;span class="o"&gt;(&lt;/span&gt;int&lt;span class="o"&gt;)&lt;/span&gt;    : &lt;span class="nv"&gt;min&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;max&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;255&lt;/span&gt; &lt;span class="nv"&gt;step&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="nv"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;value&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;
+           power_line_frequency 0x00980918 &lt;span class="o"&gt;(&lt;/span&gt;menu&lt;span class="o"&gt;)&lt;/span&gt;   : &lt;span class="nv"&gt;min&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;max&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt; &lt;span class="nv"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt; &lt;span class="nv"&gt;value&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;
+      white_balance_temperature 0x0098091a &lt;span class="o"&gt;(&lt;/span&gt;int&lt;span class="o"&gt;)&lt;/span&gt;    : &lt;span class="nv"&gt;min&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;2000&lt;/span&gt; &lt;span class="nv"&gt;max&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;7500&lt;/span&gt; &lt;span class="nv"&gt;step&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt; &lt;span class="nv"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;4000&lt;/span&gt; &lt;span class="nv"&gt;value&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;4000&lt;/span&gt; &lt;span class="nv"&gt;flags&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;inactive
+                      sharpness 0x0098091b &lt;span class="o"&gt;(&lt;/span&gt;int&lt;span class="o"&gt;)&lt;/span&gt;    : &lt;span class="nv"&gt;min&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;max&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;255&lt;/span&gt; &lt;span class="nv"&gt;step&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="nv"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;128&lt;/span&gt; &lt;span class="nv"&gt;value&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;128&lt;/span&gt;
+         backlight_compensation 0x0098091c &lt;span class="o"&gt;(&lt;/span&gt;int&lt;span class="o"&gt;)&lt;/span&gt;    : &lt;span class="nv"&gt;min&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;max&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="nv"&gt;step&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="nv"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;value&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;
+                  exposure_auto 0x009a0901 &lt;span class="o"&gt;(&lt;/span&gt;menu&lt;span class="o"&gt;)&lt;/span&gt;   : &lt;span class="nv"&gt;min&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;max&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt; &lt;span class="nv"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt; &lt;span class="nv"&gt;value&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+              exposure_absolute 0x009a0902 &lt;span class="o"&gt;(&lt;/span&gt;int&lt;span class="o"&gt;)&lt;/span&gt;    : &lt;span class="nv"&gt;min&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt; &lt;span class="nv"&gt;max&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;2047&lt;/span&gt; &lt;span class="nv"&gt;step&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="nv"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;127&lt;/span&gt; &lt;span class="nv"&gt;value&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;127&lt;/span&gt;
+         exposure_auto_priority 0x009a0903 &lt;span class="o"&gt;(&lt;/span&gt;bool&lt;span class="o"&gt;)&lt;/span&gt;   : &lt;span class="nv"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;value&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+                   pan_absolute 0x009a0908 &lt;span class="o"&gt;(&lt;/span&gt;int&lt;span class="o"&gt;)&lt;/span&gt;    : &lt;span class="nv"&gt;min&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;-36000 &lt;span class="nv"&gt;max&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;36000&lt;/span&gt; &lt;span class="nv"&gt;step&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;3600&lt;/span&gt; &lt;span class="nv"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;value&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;
+                  tilt_absolute 0x009a0909 &lt;span class="o"&gt;(&lt;/span&gt;int&lt;span class="o"&gt;)&lt;/span&gt;    : &lt;span class="nv"&gt;min&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;-36000 &lt;span class="nv"&gt;max&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;36000&lt;/span&gt; &lt;span class="nv"&gt;step&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;3600&lt;/span&gt; &lt;span class="nv"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;value&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;
+                 focus_absolute 0x009a090a &lt;span class="o"&gt;(&lt;/span&gt;int&lt;span class="o"&gt;)&lt;/span&gt;    : &lt;span class="nv"&gt;min&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;max&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;255&lt;/span&gt; &lt;span class="nv"&gt;step&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="nv"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;value&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;flags&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;inactive
+                     focus_auto 0x009a090c &lt;span class="o"&gt;(&lt;/span&gt;bool&lt;span class="o"&gt;)&lt;/span&gt;   : &lt;span class="nv"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="nv"&gt;value&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+                  zoom_absolute 0x009a090d &lt;span class="o"&gt;(&lt;/span&gt;int&lt;span class="o"&gt;)&lt;/span&gt;    : &lt;span class="nv"&gt;min&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;100&lt;/span&gt; &lt;span class="nv"&gt;max&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;140&lt;/span&gt; &lt;span class="nv"&gt;step&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt; &lt;span class="nv"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;100&lt;/span&gt; &lt;span class="nv"&gt;value&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;100&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The value you’re looking for is &lt;code&gt;power_line_frequency&lt;/code&gt;. Its default is
+&lt;code&gt;2&lt;/code&gt; (compensating for a 60Hz powerline frequency), which means the
+camera should work out of the box and without any powerline flicker in
+the Americas and parts of Asia. I am in Europe though, where the mains
+frequency is 50Hz, so I need to set this to &lt;code&gt;1&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;v4l2-ctl --device /dev/video0 --set-ctrl&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;power_line_frequency&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;However, it’s rather tedious to run that command every time I want to use the
+webcam.&lt;/p&gt;
+&lt;h2&gt;udev&lt;/h2&gt;
+&lt;p&gt;Thankfully, this process can be automated with a simple udev rule:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;ACTION&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s2"&gt;"add"&lt;/span&gt;, &lt;span class="nv"&gt;SUBSYSTEM&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s2"&gt;"video4linux"&lt;/span&gt;, &lt;span class="nv"&gt;DRIVERS&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s2"&gt;"uvcvideo"&lt;/span&gt;, &lt;span class="nv"&gt;RUN&lt;/span&gt;&lt;span class="o"&gt;+=&lt;/span&gt;&lt;span class="s2"&gt;"/usr/bin/v4l2-ctl --set-ctrl=power_line_frequency=1"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This way, any camera handled by the &lt;code&gt;uvcvideo&lt;/code&gt; driver (meaning,
+practically any contemporary webcam) will have its power line
+frequency setting configured to the 50Hz value, eliminating the
+banding effect from the rolling shutter.&lt;/p&gt;
+&lt;p&gt;Chuck that line into a file in &lt;code&gt;/etc/udev/rules.d&lt;/code&gt;, run &lt;code&gt;sudo udevadm
+trigger&lt;/code&gt;, and you should be good to go.&lt;/p&gt;
+&lt;h2&gt;Acknowledgments and further reading&lt;/h2&gt;
+&lt;p&gt;I got the udev rule suggestion from user
+&lt;a href="https://unix.stackexchange.com/users/258991/telcom"&gt;telcoM&lt;/a&gt;’s answer
+on &lt;a href="https://unix.stackexchange.com/questions/581867/how-can-i-change-my-webcams-power-line-frequency-setting"&gt;this StackExchange
+post&lt;/a&gt;. The
+discussion thread on that post has a few additional suggestions,
+including some not using udev.&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="udev"></category></entry></feed>

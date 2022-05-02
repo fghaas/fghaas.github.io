@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../../../../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../../../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../../../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../../../../theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/solid.css">
+
+    <link rel="stylesheet" type="text/css" href="../../../../../css/override.css">
+
+    <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+    <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+  
+
+
+ 
+
+<meta name="author" content="florian" />
+<meta name="description" content="Haven&#39;t heard of Ceph, the open-source distributed petascale storage stack? Well, you&#39;ve really been missing out. It&#39;s not just a filesystem. It&#39;s a filesystem, and a striped/replicated block device provider, and a virtualization storage backend, and a cloud object store, and then some. Most of you will, by now …" />
+<meta name="keywords" content="Ceph">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="Ceph: tickling my geek genes"/>
+  <meta property="og:description" content="Haven&#39;t heard of Ceph, the open-source distributed petascale storage stack? Well, you&#39;ve really been missing out. It&#39;s not just a filesystem. It&#39;s a filesystem, and a striped/replicated block device provider, and a virtualization storage backend, and a cloud object store, and then some. Most of you will, by now …"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../../../../blog/2012/03/08/ceph-tickling-my-geek-genes/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2012-03-08 20:12:00+00:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../../../../author/florian.html">
+  <meta property="article:section" content="blog"/>
+  <meta property="article:tag" content="Ceph"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; Ceph: tickling my geek genes</title>
+
+</head>
+<body >
+  <aside>
+    <div>
+      <a href="../../../../../">
+        <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="../../../../../"></a>
+      </h1>
+
+
+
+
+      <ul class="social">
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/xahteiwi" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="me" class="sc-mastodon" href="https://mastodon.social/@xahteiwi" target="_blank">
+              <i class="fab fa-mastodon"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/fghaas" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-github" href="https://github.com/fghaas" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="../../../../../">Home</a>
+
+      <a href="/category/hints-and-kinks.html">Tech</a>
+      <a href="/category/presentations.html">Talks</a>
+      <a href="/category/blog.html">Thoughts</a>
+      <a href="">​</a>
+      <a href="/about/">About</a>
+      <a href="/comments/">Comments</a>
+      <a href="/legal/">Legal</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="">​</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="">​</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="ceph-tickling-my-geek-genes">Ceph: tickling my geek genes</h1>
+    <p>
+      Posted on Thu 08 March 2012 in <a href="../../../../../category/blog.html">blog</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>Haven't heard of <a href="http://ceph.com/">Ceph</a>, the open-source distributed
+petascale storage stack? Well, you've really been missing out. It's not
+just a filesystem. It's a filesystem, and a striped/replicated block
+device provider, and a virtualization storage backend, and a cloud
+object store, and then some.</p>
+<p>Most of you will, by now, probably have heard of the Ceph filesystem, a
+distributed, replicated, extremely scaleable filesystem that <a href="http://kernelnewbies.org/Linux_2_6_34#head-87b23f85b5bdd35c0ab58c1ebfdcbd48d1658eef">went
+upstream with the 2.6.34 kernel
+release.</a> But
+that filesystem is really just a client to something that happens server
+side, which is much more than just file storage.</p>
+<p><a href="http://ceph.com/category/rados/">RADOS</a>, the reliable autonomic
+distributed object store is a massively distributed, replicating,
+rack-aware object store. It organizes storage in objects, where each
+object has an identifier, a payload, and a number of attributes.</p>
+<p>Objects are allocated to a Placement Group (PG), and each PG maps to one
+or several Object Storage Devices or OSDs. OSDs are managed by a
+userspace daemon – everything server-side in Ceph is in userspace,
+really – and locally map to a simple directory. For local storage,
+objects simply map to flat files, so OSDs don't need to muck around with
+local block storage. And they can take advantage of lots of useful
+features built into advanced filesystems, like extended attributes,
+clones/reflinks, copy-on-write (with btrfs). Extra points for the effort
+to <em>not</em> reinvent wheels.</p>
+<p>The entire object store uses a deterministic placement algorithm, CRUSH
+(Controlled Replication Under Scaleable Hashing). There's never a
+central instance to ask on every access, instead, everything can work
+out where objects are. That means the store scales out seamlessly, and
+can expand and contract on the admin's whim.</p>
+<p>And based on that basic architecture, there's a number of entry points
+and deployment scenarios for the stack:</p>
+<ul>
+<li>
+<p><strong>radosgw</strong> provides a RESTful API for dynamic cloud storage. And it
+    includes an S3 and Swift frontend to act as object storage for
+    AWS/Eucalyptus and OpenStack clouds, respectively.</p>
+</li>
+<li>
+<p><strong>Qemu-RBD</strong> is a storage driver for the Qemu/KVM hypervisor (fully
+    integrated with libvirt) that allows the hypervisor to access
+    replicated block devices that are also striped across the object
+    store – with a configurable number of replicas, of course.</p>
+</li>
+<li>
+<p><strong>RBD</strong> is a Linux block device that, again, is striped and
+    replicated over the object store.</p>
+</li>
+<li>
+<p><strong>librados</strong> (C) and <strong>libradospp</strong> (C++) are APIs to access the
+    object store programmatically, and come with a number of scripting
+    language bindings. As you've probably guessed, Qemu-RBD builds on
+    librados.</p>
+</li>
+<li>
+<p><strong>Ceph</strong> (the filesystem) exposes POSIX filesystem semantics built
+    on top of RADOS, where all POSIX-related metadata is again stored in
+    the object store. This is a remarkably thin client layer at just
+    17,000 LOC (compare to GFS2 at 26,000 and OCFS2 at 68,000).</p>
+</li>
+</ul>
+<p>In short: it's cool stuff. And it's 100% open source, it's all under the
+LGPL 2.1, and the developers have made a point of not creating any
+closed-source "enterprise" features – in short, they're not shipping
+"open core".<sup id="fnref:crippleware"><a class="footnote-ref" href="#fn:crippleware">1</a></sup></p>
+<p>We've recently started contributing to the Ceph project to improve its
+high-availability cluster integration: we've submitted Pacemaker
+agents <a href="https://github.com/ceph/ceph/commit/92cfad42030889d52911814faa717bebbd4dd22f">to monitor the Ceph daemons
+proper</a>
+(a pretty trivial wrapper for a script that ships with Ceph, for now).
+And we've also contributed <a href="https://github.com/ceph/ceph/commit/c31b86963ab3c51b5c6d17f6e3222fe164ef3ee9">a resource agent to manage an RBD device
+as a Pacemaker
+resource</a>.
+The latter gives Pacemaker users the ability to use RBD devices as a
+drop-in replacement for iSCSI devices, MD devices under Pacemaker
+control, or DRBD. The Ceph community
+has been exceptionally welcoming and has made contributing a
+pleasure – there's no copyright assignment nonsense, no CLAs, just a
+very positive attitude toward outside contributions.</p>
+<p>And in case you want to use a Ceph filesystem as a generally available
+file system in your Pacemaker cluster (as you would with NFS, GlusterFS,
+GFS2, or OCFS2), you can <a href="https://github.com/ClusterLabs/resource-agents/commit/f93668b4b60682363a686a293810e34ad4088a47">do that now,
+too</a>.
+However, please be cautioned that that should be considered an
+experimental feature: the Ceph devs have made it very clear on numerous
+occasions that they're currently focusing on making RADOS and RBD rock
+solid, and then they'll tackle the POSIX filesystem layer to get it out
+of experimental mode.</p>
+<hr/>
+<p>This article originally appeared on my blog on the <code>hastexo.com</code> website (now defunct).</p>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:crippleware">
+<p>The original version used the term <em>crippleware</em> here,
+  which I now consider highly inappropriate. (The term <em>open core</em>, to
+  the best of my recollection, wasn't particularly current in 2012.) I
+  would like to apologize for my use of the previous term. The article
+  contains no other edits in comparison to the 2012 original. <a class="footnote-backref" href="#fnref:crippleware" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../../../tag/ceph.html">Ceph</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../../../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../../../../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+
+</body>
+</html>

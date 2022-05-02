@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Philosophy</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/philosophy.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2019-06-06T00:00:00+00:00</updated><entry><title>Team meetings</title><link href="https://xahteiwi.eu/blog/2019/06/06/team-meetings/" rel="alternate"></link><published>2019-06-06T00:00:00+00:00</published><updated>2019-06-06T00:00:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2019-06-06:/blog/2019/06/06/team-meetings/</id><summary type="html">&lt;p&gt;Distributed teams need to meet in person every once in a while. Here are some thoughts and suggestions on team meetings.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I’ve run a distributed team — nominally the same team, though through
+people joining and leaving I am the sole original band member at this
+point — for almost 8 years. And about 3 years in was the first time we
+were sufficiently spread &lt;em&gt;and&lt;/em&gt; had enough money to spare to warrant
+flying everyone to the same place for one week per year. We have been
+doing that ever since. Every year, it’s an exceedingly enlightening
+and pleasant experience.&lt;/p&gt;
+&lt;p&gt;And this year was the first time that we did not one but &lt;strong&gt;two&lt;/strong&gt; team
+meetings back to back: first with my core team running education
+services at City Network, in the
+&lt;a href="https://en.wikipedia.org/wiki/Hellerup"&gt;Hellerup&lt;/a&gt; neighborhood in
+&lt;a href="https://en.wikipedia.org/wiki/Copenhagen"&gt;Copenhagen&lt;/a&gt;, and then as
+part of the complete City Network all-hands meeting on the island of
+Tjärö in the &lt;a href="https://en.wikipedia.org/wiki/Blekinge_archipelago"&gt;Blekinge
+archipelago&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;So here is how we do these things.&lt;/p&gt;
+&lt;h2&gt;Accommodation&lt;/h2&gt;
+&lt;p&gt;Except for the very first team meeting we did in 2014 when we put
+everyone up in hotel rooms, we’ve always rented a house. I’m a
+believer in small team sizes — 5 people being the maximum number of
+direct reports a leader can realistically have —, so that means that
+we &lt;em&gt;can&lt;/em&gt; still find houses where everyone has a room to themselves,
+and nobody has to queue for a shower.&lt;/p&gt;
+&lt;p&gt;I consider both of these things extremely important. Many, many people
+working in tech are introverts, even more so for people working &lt;em&gt;from
+home&lt;/em&gt; in tech. Many of us find the experience of constantly being
+around people emotionally draining, and we need solitude to
+recharge. Also, privacy. Our personal lives don’t stop while we’re
+having a team meeting, so you might want to have a room in which you
+can talk about your kid’s health issue with your spouse, without
+concern about colleagues overhearing the conversation.&lt;/p&gt;
+&lt;p&gt;Price-wise, since this puts us in an accommodation category that can
+qualify as a penthouse or mansion, this won’t be significantly cheaper
+than hotel accommodation — but it won’t be &lt;em&gt;more&lt;/em&gt; expensive either,
+and it’ll be a much nicer experience. Particularly if you also have
+the joy of interacting with an exceedingly pleasant, nice, and helpful
+person for a host.&lt;/p&gt;
+&lt;p&gt;As for &lt;em&gt;who&lt;/em&gt; scouts the accommodation, my rule has always been this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;In case we have a person on the team who lives, or has lived, in the
+  city we’re going to, and who thus is very familiar with the locality
+  and surroundings, I delegate the search to them. You can never beat
+  local personal experience.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Otherwise, I do the scouting on the web, and I usually run it by the
+  team — after I have made the booking, but while we can still cancel
+  or change.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Arrival&lt;/h2&gt;
+&lt;p&gt;Whoever did the scouting for the accommodation travels a day
+early, gets the key, settles in, and reports back. This has multiple
+purposes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;If they are local and so is the host, &lt;em&gt;of course&lt;/em&gt; that’ll facilitate
+  matters a lot. Particularly if we’re in a country where that one
+  team member speaks the language, and the rest of us don’t.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If there’s something seriously wrong with the property, they can
+  still cry foul and we can make other arrangements while we’re not
+  all congregated in the same spot. (This has never happened to us,
+  but just in case.)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;That person is our support backstop who can field issues and
+  customer questions, while everyone else is in the air.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;That person can also meet and collect people at the airport or train
+  station, if getting to our accommodation is nontrivial or
+  difficult. Also, this is particularly helpful when we have a new
+  team member who is perhaps less travel experienced.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;First day&lt;/h2&gt;
+&lt;p&gt;I normally don’t schedule any formal work sessions for the first
+day. People will be jet-lagged and fatigued from travel, we are often
+re-meeting in person for the first time in a year, and there is a lot
+of catching up to do about family, hobbies, recent travel, and all
+sorts of things that are not work. Somebody might be new and we might
+see them for the first time ever, in person.&lt;/p&gt;
+&lt;p&gt;And then of course people might be delayed in travel, may have had
+flights cancelled, or may have missed connections. So that means if
+you’re actually &lt;em&gt;planning&lt;/em&gt; the first day to be full of “work”
+sessions, you ran a significant chance of your schedule getting
+wrecked by a flight delay. So we just don’t do that. Instead, we try
+to make the first day as relaxed and as enjoyable as possible,
+including a nice first group dinner.&lt;/p&gt;
+&lt;p&gt;And then sometimes, as happened this year, a &lt;em&gt;remarkably&lt;/em&gt; serious and
+productive discussion over work issues ensues over a glass of wine in
+the evening. But that’s not part of the expectation.&lt;/p&gt;
+&lt;h2&gt;Work sessions&lt;/h2&gt;
+&lt;p&gt;We tend to have half-day work sessions these days, where we focus on
+one topic for 3-4 hours straight. These can get intense, and sometimes
+heated, but they are nearly always very, very productive.&lt;/p&gt;
+&lt;p&gt;We typically use a place like our house’s kitchen (if it’s roomy, and
+has a table), or patio (if it’s bearable outside), or sitting room (if
+it’s cozy) for work sessions. They are usually quite analog, with
+frequently just one person — the assigned record-keeper, often me —
+with a laptop open to take notes and record the discussion and its
+outcomes. I’ve found that on occasion, when discussing complex issues,
+working with a roll of brown paper and thick felt-tip markers
+(“sharpies” for you Americans out there) can be &lt;em&gt;much&lt;/em&gt; more useful
+than with anything pushing bits.&lt;/p&gt;
+&lt;h2&gt;Food&lt;/h2&gt;
+&lt;p&gt;I enjoy food, and I’ve never worked with anyone who doesn’t. So we
+make that part enjoyable in whatever way we fancy. We might go for
+lunch to the neighborhood bagel store that our host recommended for
+their excellent pastrami. We might jump on a train to get to a street
+food spot, or head out for pizza or tacos or curry.&lt;/p&gt;
+&lt;p&gt;And I’m buying. These meetings are for work, my team is traveling for
+just that purpose, so whenever we eat together (and we practically
+always do), the tab is on me. What I can put on the company and what
+comes out of my own pocket is my job to sort out later, but we’re
+definitely not going Dutch.&lt;/p&gt;
+&lt;h2&gt;Interesting things&lt;/h2&gt;
+&lt;p&gt;Our meetings are usually in an interesting city with art,
+architecture, and history, and not seeing any of that would be a bit
+of a waste. So there’s usually maybe two to three things that we just
+go and do. It could be a harbor or river cruise, a visit to a castle
+or palace, a bicycle tour criss-crossing the city, or a museum
+visit. Depends a bit on the weather and a bit on individual interest.&lt;/p&gt;
+&lt;h2&gt;Epilogue: going larger&lt;/h2&gt;
+&lt;p&gt;So what works for a 5-person team clearly doesn’t work for a whole
+company, not least because you’ll be hard pressed to find a rental
+home with 40 bedrooms — I guess such a dwelling would be appropriately
+referred to as a palace, and last I checked the Queen wasn’t on
+Airbnb.&lt;/p&gt;
+&lt;p&gt;But you can take a page out of City Network’s playbook and do
+something else, which is to book an island. Yes, you read that right,
+immediately after our &lt;em&gt;team&lt;/em&gt; meeting we packed up and boarded a train
+to join our &lt;em&gt;company&lt;/em&gt; all-hands meeting, in which we had an island
+practically to ourselves. &lt;/p&gt;</content><category term="blog"></category><category term="Philosophy"></category></entry><entry><title>Working from home, with little kids in the house</title><link href="https://xahteiwi.eu/blog/2018/02/18/working-from-home-with-little-kids/" rel="alternate"></link><published>2018-02-18T00:00:00+00:00</published><updated>2018-02-18T00:00:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2018-02-18:/blog/2018/02/18/working-from-home-with-little-kids/</id><summary type="html">&lt;p&gt;I very much prefer working from home to working from an office. But with little kids in the house, that’s a nontrivial endeavor.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I’ve worked exclusively from home&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt; for the last 6½ years, and
+when I first started, my older kids were 7 and 6 years old. For the
+last 3 years after the arrival of our two younger children, though,
+I’ve worked from home &lt;strong&gt;with infants/toddlers in the house,&lt;/strong&gt; and
+that’s a wholly different ball game.&lt;/p&gt;
+&lt;h2&gt;The basic rules of working from home&lt;/h2&gt;
+&lt;p&gt;If you’ve dealt with the idea of working from home, or have
+done it before, then you’re surely familiar with a few basic rules to
+follow:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Make sure that you have a &lt;em&gt;home office,&lt;/em&gt; that is a working space to
+  yourself that allows you to close a door and be undisturbed when you
+  need it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Set aside some time to go outside. Office workers have a commute
+  that ensures they get out of the house; as a home worker you’re
+  running a certain risk of turning into a hermit. Make sure you run
+  errands, take walks, go for runs.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Keep tabs on your working hours. Home workers are frequently at risk
+  of working too much or too long, which puts a strain on yourself,
+  your significant other, and your family.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Maintain relationships with others who work from home. Chat with
+  them, call them, invite them over for dinner if they live close
+  by. Working from home is still not a common thing to do in general
+  (however common it might be in the tech industry), so exchanging
+  thoughts with people in the same boat is a good thing.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Be ready to try out working-from-home strategies that have worked
+  for others. Fortunately for all of us, there are quite a few people
+  who talk about the experience publicly — for example,
+  &lt;a href="https://twitter.com/johndalton"&gt;John Dalton&lt;/a&gt; did so in a
+  &lt;a href="https://youtu.be/qFWkDPTjjEM"&gt;45-minute talk&lt;/a&gt; at linux.conf.au
+  2018.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Now, the challenging part: &lt;em&gt;little&lt;/em&gt; kids&lt;/h2&gt;
+&lt;p&gt;If anyone reading this wants to pre-emptively freak out and berate me
+for being an irresponsible or unloving parent, you are politely asked
+to chill and if incapable of doing so, to GTFO. I absolutely love
+being around my children, and I wouldn’t even &lt;em&gt;think&lt;/em&gt; to trade my job
+for an office-dwelling one. Being able to work from home is generally
+a wonderful privilege, and so is being around my kids.&lt;/p&gt;
+&lt;p&gt;You need to be aware of two things: one, working from home with a
+family is different from working from home when you’re alone or living
+with an adult partner or roomie. Two, working from home with a family
+with little children is &lt;em&gt;very&lt;/em&gt; different from a family with school-age
+kids. School-age children don’t permanently need an adult in the room,
+they spend a significant amount of their time outside the house,
+they’re usually not particularly prone to tantrums, and in the event
+that you really, really need some quiet, they can be asked to give you
+that for a limited amount of time. Kids under two?  Good luck with
+that.&lt;/p&gt;
+&lt;p&gt;If you’re not striking a balance here, here’s what’s likely to
+happen: you’ll think that you are a completely inadequate parent, or a
+terrible employee, or both. So, never lose sight of the fact that
+you’re probably a wonderful parent and a highly productive employee —
+but that you can do &lt;em&gt;anything,&lt;/em&gt; but not &lt;em&gt;everything.&lt;/em&gt;&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;My most important piece of advice here is that you &lt;strong&gt;should not attempt
+to &lt;em&gt;simultaneously&lt;/em&gt; be a primary parent and an employee.&lt;/strong&gt; (Please
+note the emphasis on “simultaneously.”)&lt;/p&gt;
+&lt;p&gt;I think it’s fundamentally impossible to be a mindful parent of your
+kids, and &lt;em&gt;at the same time&lt;/em&gt; a productive knowledge worker. And the
+repeated attempt will lead to frustration and burnout. Of course, you
+can split your day in half with your significant other, if for example
+you happen to be a night owl and they are not, and you can put in a
+full day of work between 1pm and 9pm (but do ensure you get enough
+sleep, which is probably a topic for another post). Or you could rise
+early and start working at 6 while your other half drops your kids off
+at daycare, from whence you pick them up at 2. But whatever it is that
+you decide, please don’t fool yourself into thinking that you can work
+productively, and be a good parent for your kids at the very same
+time.&lt;/p&gt;
+&lt;h2&gt;Productivity tips during work hours&lt;/h2&gt;
+&lt;p&gt;So, we’ve established that work time and parenting time shouldn’t
+overlap. So what can you do while you’re at work, and your kids are in
+the house (under the supervision of your spouse or partner, or other
+trusted guardian)? Spoiler: “please, kids, be quiet for a bit” isn’t
+going to work. Not with toddlers. And sound-proofing your room is
+quite expensive, and also remarkably ineffective for the deep bass
+&lt;em&gt;whooomp&lt;/em&gt; of an exuberant kid jumping off a couch upstairs.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;I find myself being able to focus extremely well if I &lt;strong&gt;play
+&lt;a href="https://en.wikipedia.org/wiki/Pink_noise"&gt;pink noise&lt;/a&gt; through my
+headphones.&lt;/strong&gt;&lt;sup id="fnref:3"&gt;&lt;a class="footnote-ref" href="#fn:3"&gt;3&lt;/a&gt;&lt;/sup&gt; It drowns out practically all background noise, and
+is uniform enough that my brain eventually drops it as an input, and I
+barely notice it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;I also habitually &lt;strong&gt;close my door&lt;/strong&gt; when I need to work. Obviously, my
+family knows that they can call on me when something urgent comes up,
+but little kids rightfully take an open door as an invitation. And as
+much as I would like to be able to tolerate interruptions of my
+thinking flow to play with a little one for a few minutes, and then
+immediately pick up where I left off,
+&lt;a href="http://heeris.id.au/2013/this-is-why-you-shouldnt-interrupt-a-programmer/"&gt;I am not.&lt;/a&gt;&lt;sup id="fnref:4"&gt;&lt;a class="footnote-ref" href="#fn:4"&gt;4&lt;/a&gt;&lt;/sup&gt;
+So, this is a classic trade-off: I can either enjoy the interaction
+with my kids and then deal with the frustration that comes with not
+getting things done, or I can get things done and regret that I didn’t
+spend more time with my kids. There’s no right answer. The wrong
+answer that I choose is that my door stays closed.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Striking a balance (or trying to)&lt;/h2&gt;
+&lt;p&gt;There are a few things I do to try and balance my in-house family
+absence (I’m dead serious, that’s what working from home is):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;When I’m home, &lt;strong&gt;I don’t miss lunch.&lt;/strong&gt;&lt;sup id="fnref:5"&gt;&lt;a class="footnote-ref" href="#fn:5"&gt;5&lt;/a&gt;&lt;/sup&gt; I can’t say that I’ve &lt;em&gt;never&lt;/em&gt;
+  missed lunch because I have done so when a customer’s or colleague’s
+  environment had just reached the
+  &lt;a href="https://en.wikipedia.org/wiki/Halt_and_Catch_Fire"&gt;HCF instruction&lt;/a&gt;,
+  but I won’t miss lunch for a meeting that can also be scheduled to
+  an hour earlier or later.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Also, &lt;strong&gt;tucking the little ones in&lt;/strong&gt; is my job every night.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;I don’t travel when it would mean being absent for a child’s
+  birthday.&lt;/strong&gt; Which is actually not that easy to do when you’re on the
+  conference circuit, travel about 100 days per year, and you have a
+  big family — thus far, if my math is right I’ve successfully
+  navigated 28 kids’ birthdays.&lt;sup id="fnref:6"&gt;&lt;a class="footnote-ref" href="#fn:6"&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Am I succeeding?&lt;/h2&gt;
+&lt;p&gt;Let’s be real: &lt;strong&gt;I have no way of knowing.&lt;/strong&gt; Whether I’m being a
+decent parent will ultimately be judged by my children when they’ve
+grown up. Whether I’ve had a successful career is something I’ll
+decide upon my retirement.&lt;/p&gt;
+&lt;p&gt;But hey, such is life. And thus far it looks like I don’t
+suck at it. I hope. 🙂 &lt;/p&gt;
+&lt;hr/&gt;
+&lt;h3&gt;Footnotes&lt;/h3&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on my blog on &lt;code&gt;fghaas.github.io&lt;/code&gt; (now defunct).&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr/&gt;
+&lt;ol&gt;
+&lt;li id="fn:1"&gt;
+&lt;p&gt;Well, not &lt;em&gt;just&lt;/em&gt; from home. Throughout the last few years I’ve
+traveled rather extensively, so I’ve also worked from planes,
+airport lounges, trains, hotel rooms, customer offices, cafes and
+parks. What I mean is that I haven’t had to go to an office on a
+daily basis, since 2011. &lt;a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:2"&gt;
+&lt;p&gt;Hat tip to
+&lt;a href="https://en.wikipedia.org/wiki/David_Allen_(author)"&gt;David Allen&lt;/a&gt;,
+whose &lt;a href="http://a.co/iZhglcP"&gt;Getting Things Done&lt;/a&gt; is not the
+ultimate fount of all self-management wisdom, but definitely a
+good source to have read at least once. &lt;a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:3"&gt;
+&lt;p&gt;On a Linux box with &lt;a href="https://en.wikipedia.org/wiki/SoX"&gt;SoX&lt;/a&gt;,
+you can generate an Ogg Vorbis file containing 25 minutes of pink
+noise with
+&lt;code&gt;sox -n pinknoise.ogg synth 25:00 pinknoise&lt;/code&gt;
+— the 25-minute length may come in handy if you’re using
+&lt;a href="https://en.wikipedia.org/wiki/Pomodoro_Technique"&gt;Pomodoro&lt;/a&gt;. As
+with music, I play my pink noise from
+&lt;a href="https://audacious-media-player.org/"&gt;Audacious&lt;/a&gt; with the
+&lt;a href="https://specifications.freedesktop.org/mpris-spec/latest/"&gt;MPRIS&lt;/a&gt;-2
+plugin enabled, which allows me to pause and play from
+&lt;a href="https://wiki.gnome.org/Projects/GnomeShell"&gt;gnome-shell&lt;/a&gt; with the
+&lt;a href="https://extensions.gnome.org/extension/55/media-player-indicator/"&gt;Media Player Indicator&lt;/a&gt;
+extension. &lt;a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:4"&gt;
+&lt;p&gt;I do not consider myself a programmer. But the issue described
+in the cartoon applies to any knowledge worker. In fact, it
+probably applies to &lt;em&gt;any&lt;/em&gt; worker, it’s just that I’ve been doing
+knowledge work for the entirety of my career, and can’t comment
+authoritatively on anything else. &lt;a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:5"&gt;
+&lt;p&gt;For those of you who grew up outside central Europe: over here,
+lunch (not dinner) is traditionally considered the “big” meal of
+the day. &lt;a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:6"&gt;
+&lt;p&gt;I also took uninterrupted travel breaks of 6 and 10 weeks,
+respectively, when our younger kids were born. (When the older
+ones arrived, I was traveling way less overall, so those travel
+schedule adjustments were easy at the time.) &lt;a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content><category term="blog"></category><category term="Philosophy"></category></entry><entry><title>Fragile Development: Scrum is terrible, and you should ditch it</title><link href="https://xahteiwi.eu/blog/2016/07/05/fragile-development/" rel="alternate"></link><published>2016-07-05T00:00:00+00:00</published><updated>2016-07-05T00:00:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2016-07-05:/blog/2016/07/05/fragile-development/</id><summary type="html">&lt;p&gt;Scrum is irrational, impractical, and outright dangerous for software development. It is time to stop considering it a viable method for building software.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a writeup of an
+&lt;a href="https://en.wikipedia.org/wiki/Ignite_(event)"&gt;Ignite&lt;/a&gt; talk I gave at
+&lt;a href="http://www.openstack-israel.org"&gt;OpenStack Israel 2016&lt;/a&gt;. The
+paragraph headings below approximately correspond to the content of my
+talk slides; the paragraphs themselves are an approximation of what I
+said. If you're interested in the exact slide content, you can find
+that &lt;a href="//fghaas.github.io/openstackisrael2016-ignite"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2&gt;Zero flexibility&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;_____&lt;/code&gt;'s roles, artifacts, events, and rules are &lt;em&gt;immutable&lt;/em&gt; and
+although implementing only parts of &lt;code&gt;_____&lt;/code&gt; is possible, &lt;em&gt;the result
+is not&lt;/em&gt; &lt;code&gt;_____&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;When you see a statement like this and wonder what should be filled in
+for the blanks, it's rather quite likely that you would guess either a
+radical political ideology, a very strict religious sect or cult, or
+something to that effect. You couldn't be further from the truth.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;Scrum&lt;/code&gt;'s roles, artifacts, events, and rules are &lt;em&gt;immutable&lt;/em&gt; and
+although implementing only parts of &lt;code&gt;Scrum&lt;/code&gt; is possible, &lt;em&gt;the result
+is not&lt;/em&gt; &lt;code&gt;Scrum&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Yes, that's a
+&lt;a href="http://www.scrumguides.org/scrum-guide.html#end-note"&gt;direct quote from the Scrum guide.&lt;/a&gt;
+Scrum, by its own definition, can either be implemented completely —
+that is, with all its roles, artifacts, events, and rules &lt;em&gt;unchanged&lt;/em&gt;
+— or not at all. This sounds ludicrous enough as it is, and any sane,
+thinking person should reject or at least resent &lt;em&gt;any&lt;/em&gt; such statement
+outright. But let's give Scrum the benefit of doubt, and let's
+actually start examining some of its postulates.&lt;/p&gt;
+&lt;h2&gt;Teams are self-organizing&lt;/h2&gt;
+&lt;p&gt;Scrum hinges on the idea that teams are comprised of capable
+individuals forming teams, which then self-organize. Now I'm sure
+nobody would argue that self-organizing teams cannot exist, so this
+postulate does not invalidate itself outright.&lt;/p&gt;
+&lt;p&gt;However, it is missing an important prerequisite: teams can
+self-organize &lt;strong&gt;if they are stable.&lt;/strong&gt; And team stability is a
+precondition that almost never exists in the software industry: our
+industry is &lt;em&gt;growth-oriented,&lt;/em&gt; and driven by quickly-growing startups,
+so in a successful organization having a new colleague every other
+month is not unheard of. It is also highly &lt;em&gt;competitive&lt;/em&gt; for talent,
+so having a colleague leave every few months isn't unusual either. The
+moment a new person joins or leaves, you have a new team. Team
+stability goes out the window, and with it any reasonable expectation
+of self-organization.&lt;/p&gt;
+&lt;h2&gt;Sprint after sprint after sprint&lt;/h2&gt;
+&lt;p&gt;The Scrum Guide explicitly states that every &lt;em&gt;sprint&lt;/em&gt; (a time frame of
+one month or less, in which the team completes objectives agreed to
+for the sprint backlog) is &lt;em&gt;immediately followed by the next sprint.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;This is mind-bogglingly ludicrous and outright dangerous to your
+team's mental health. Software development is a marathon, and running
+a marathon as an unbroken series of sprints leads to collapse or
+death. In software development, it's likely to cause burnout.&lt;/p&gt;
+&lt;h2&gt;The Daily Scrum&lt;/h2&gt;
+&lt;p&gt;One of Scrum's immutable events is the Daily Scrum. The Scrum Guide
+defines this event as a specific, daily occurrence, time-boxed to 15
+minutes and involving the entirety of the development team.&lt;/p&gt;
+&lt;p&gt;This is staggeringly out of place in the modern development team,
+which may well be spread out over multiple offices and timezones, and
+may not even physically be in one place more than a handful of times a
+year. Even in the unlikely event that everyone &lt;em&gt;can&lt;/em&gt; get together in
+one room for precisely fifteen minutes each day, have you ever been in
+a meeting involving more than 3 people that got anything accomplished
+in 15 minutes?&lt;/p&gt;
+&lt;p&gt;And remember, 15 minutes. Time-boxed, immutable. If you think &lt;em&gt;your&lt;/em&gt;
+Daily Scrum can be 30 or 45 minutes, or you can do it just every other
+day or maybe thrice a week, recall: if you do that, you're no longer
+doing Scrum.&lt;/p&gt;
+&lt;h2&gt;No planning beyond the current sprint&lt;/h2&gt;
+&lt;p&gt;Scrum is quite emphatic that the only thing developers should be
+really concerned about in terms of planning is the next 24 hours (the
+plan for which is ostensibly being laid out in the Daily Scrum), and
+beyond that, the current sprint at a maximum. Now, while the idea of
+freeing people's minds and allowing them to focus on a single task at
+hand is certainly laudable, the practical implications of having no
+medium to long-term planning is insane.&lt;/p&gt;
+&lt;p&gt;I'd venture a guess that an approach where no planning is for more
+than a month out is viable, under one condition: having exactly zero
+users and/or customers for the product you are developing. I leave it
+to you to decide how valuable it is, then, to develop the product in
+the first place.&lt;/p&gt;
+&lt;h2&gt;Permanent emergency mode&lt;/h2&gt;
+&lt;p&gt;Arguably, some of the methods proposed in Scrum are quite suitable for
+emergency situations. In a situation where you need to come up with a
+solution that requires creativity, hustle, and speed, you may well sit
+down, put down a requirements list, elect a coordinator and
+spokesperson for your team, and just start hacking. I'd fully agree
+that such situations can be extremely challenging, and quite
+satisfying to come out of with flying colors.&lt;/p&gt;
+&lt;p&gt;But if your organization is permanently operating in this mode,
+&lt;strong&gt;quit.&lt;/strong&gt; It doesn't matter which role you're in: as a developer,
+you're headed for burnout. As a manager, you're herding your team into
+burnout. Either way, you shouldn't be doing this job, either in your
+own interest or in that of others.&lt;/p&gt;
+&lt;h2&gt;Novelty?&lt;/h2&gt;
+&lt;p&gt;Scrum proponents frequently argue in its favor as the antithesis of
+the obsolete waterfall model, where all deliverables are defined from
+the outset and there is no room for deviation, leading to products
+that are either broken, or outdated, or both the moment they are
+completed. If you think we only found out recently that waterfall is
+bad, you've been asleep at the switch for over 30 years. In his
+seminal
+&lt;a href="https://en.wikipedia.org/wiki/The_Mythical_Man-Month"&gt;Mythical Man-Month&lt;/a&gt;
+essay collection from 1975, Fred Brooks pointed out some weaknesses of
+this model, and in his 1986 follow-up
+&lt;a href="https://en.wikipedia.org/wiki/No_Silver_Bullet"&gt;No Silver Bullet,&lt;/a&gt; he
+proposes organic, incremental software development as an alternative.&lt;/p&gt;
+&lt;h2&gt;Your team can't work with Scrum?&lt;/h2&gt;
+&lt;p&gt;Scrum advocates frequently argue that if Scrum doesn't work with your
+team, chances are that your team is the problem. This means that you
+should either replace them, or at least educate them in the ways and
+means of Scrum, so they can become a better-performing team.&lt;/p&gt;
+&lt;p&gt;At this point, it should be fairly obvious that if Scrum doesn't work
+for your team, the problem is not your team. The problem is Scrum.&lt;/p&gt;
+&lt;h2&gt;What if Scrum doesn't deliver?&lt;/h2&gt;
+&lt;p&gt;And finally, Scrum proponents usually argue that if Scrum fails to
+deliver adequate results in your organization, it's likely because you
+aren't applying its central tenets correctly. In other words, you must
+come to your senses, and implement Scrum as designed, and which point
+results with magically appear, and your team will be in a constant
+state of flow.&lt;/p&gt;
+&lt;p&gt;This is nonsense. &lt;strong&gt;If&lt;/strong&gt; you were able to actually do Scrum (meaning
+in its pure, immutable, One True Way), it would surely lead to
+disaster. But, it's impossible to do so anyway, so go ahead and ditch
+it — stop being a scrumbag.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Philosophy"></category><category term="Development"></category></entry><entry><title>Thoughts on "ecosystems"</title><link href="https://xahteiwi.eu/blog/2012/12/16/thoughts-on-ecosystems/" rel="alternate"></link><published>2012-12-16T14:47:00+00:00</published><updated>2012-12-16T14:47:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2012-12-16:/blog/2012/12/16/thoughts-on-ecosystems/</id><summary type="html">&lt;p&gt;Over the past couple of years, it seems that the term &lt;em&gt;ecosystem&lt;/em&gt; is
+being broadly applied to what we previously called a &lt;em&gt;community.&lt;/em&gt; I
+don't like that, and here's why.&lt;/p&gt;
+&lt;p&gt;The origin of the term &lt;em&gt;ecosystem,&lt;/em&gt; when applied to the environment in
+which a software project is being developed, used …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Over the past couple of years, it seems that the term &lt;em&gt;ecosystem&lt;/em&gt; is
+being broadly applied to what we previously called a &lt;em&gt;community.&lt;/em&gt; I
+don't like that, and here's why.&lt;/p&gt;
+&lt;p&gt;The origin of the term &lt;em&gt;ecosystem,&lt;/em&gt; when applied to the environment in
+which a software project is being developed, used and promoted, is
+unknown, at least to the best of my knowledge. Some say that it was
+&lt;a href="http://krow.net/" title="Brian Aker"&gt;Brian Aker&lt;/a&gt; who first spoke of “the
+MySQL ecosystem”, and it seemed rather fitting at the time. Presently
+though, it seems there's ecosystems everywhere: the Linux ecosystem, the
+OpenStack ecosystem, the Python ecosystem, you name it.&lt;/p&gt;
+&lt;p&gt;And it annoys me.&lt;/p&gt;
+&lt;p&gt;It annoys me not in the way marketing drone babbling annoys me, like
+when someone waxes lyrical about synergies or paradigm shifts — that's
+the kind of fluff you automatically filter out and disregard, a bit like
+page numbers in the slide decks of presenters stuck in the 20th century.
+But the ecosystem thing is frequently used also by developers and users,
+the actual movers and shakers, in the way we would previously use
+&lt;em&gt;community.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Now let's look for a moment at how a community works. A community is
+governed by rules and morals. Those can be explicit, as written-down
+laws, covenants or contracts. Much more commonly though, they are
+implicit: everybody understands them, everybody is expected to abide by
+them, and if you break them, you're being shunned — but there's no
+requirement to write these rules down.&lt;/p&gt;
+&lt;p&gt;When we think about communities, most will naturally associate this with
+a large group of people, like a clan or tribe, maybe a few hundred or
+even a few thousand individuals. Puny, right? We need something grander,
+something that alludes to hundreds or thousands of species with maybe
+millions of individuals playing a part. Let's pick a term: &lt;em&gt;ecosystem.&lt;/em&gt;
+Yay! Problem solved. Waaaay bigger than a community. So much more
+awe-inspiring.&lt;/p&gt;
+&lt;p&gt;But guess what: &lt;strong&gt;an ecosystem is fundamentally amoral.&lt;/strong&gt; In an
+ecosystem, there is no right or wrong — other than survival being right,
+and if it happens to be at everyone else's expense, that doesn't make it
+wrong. From the inside perspective of an ecosystem, if an invasive
+species intrudes and steamrolls the entire habitat, so be it: it just
+changed the ecosystem. Nature shrugs. Nature also shrugs at parasites,
+disease, deception, camouflage, poison, and gangs of predators
+collaborating with swift and deadly force to mercilessly kill a
+defenseless herbivore.&lt;/p&gt;
+&lt;p&gt;Now you're welcome to call me out on my naïveté, and point out that it
+is precisely those things that happen in business every day. I am
+acutely aware of that. I believe, however, we ought to consider them
+evils, and some may consider them &lt;em&gt;necessary&lt;/em&gt; evils at times. They
+shouldn't the foundations on which we build our &lt;em&gt;communities.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://en.wikipedia.org/wiki/Speech_acts"&gt;Words matter.&lt;/a&gt; I think we
+should use them wisely.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Philosophy"></category></entry><entry><title>On the merits of working from home, in a distributed virtual team</title><link href="https://xahteiwi.eu/blog/2012/12/06/on-the-merits-of-working-from-home-in-a-distributed-virtual-team/" rel="alternate"></link><published>2012-12-06T17:38:00+00:00</published><updated>2012-12-06T17:38:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2012-12-06:/blog/2012/12/06/on-the-merits-of-working-from-home-in-a-distributed-virtual-team/</id><summary type="html">&lt;p&gt;During lunch at the EMEA OpenStack day in London this week, I had a
+brief but excellent conversation with fellow OpenStacker &lt;a href="https://twitter.com/adamspiers"&gt;Adam
+Spiers&lt;/a&gt; from SUSE. Our chat turned to
+the merits of working from home, and he encouraged me to write up a blog
+post about some of the ideas …&lt;/p&gt;</summary><content type="html">&lt;p&gt;During lunch at the EMEA OpenStack day in London this week, I had a
+brief but excellent conversation with fellow OpenStacker &lt;a href="https://twitter.com/adamspiers"&gt;Adam
+Spiers&lt;/a&gt; from SUSE. Our chat turned to
+the merits of working from home, and he encouraged me to write up a blog
+post about some of the ideas of mine and of my co-founders' which we
+have since made hastexo policy, however informal or unwritten.&lt;/p&gt;
+&lt;p&gt;Note that much of what follows aren't necessarily original ideas of
+ours. Many of my thoughts I owe to some very insightful chats I've had
+over the past few months with the delightful &lt;a href="http://sarahnovotny.com/"&gt;Sarah
+Novotny&lt;/a&gt;, original co-founder of &lt;a href="http://bluegecko.com/"&gt;Blue
+Gecko&lt;/a&gt;, seasoned
+&lt;a href="http://www.oscon.com/oscon2012"&gt;OSCON&lt;/a&gt; conference chair and now CIO at
+&lt;a href="http://meteor-ent.com/"&gt;Meteor Entertainment&lt;/a&gt;. If you get a chance to
+talk to Sarah at a conference and poll her views on this, I can highly
+recommend you seize that chance.&lt;/p&gt;
+&lt;p&gt;It all starts with the observation that the separation of the place you
+live in, and the place you work at, is a fairly recent concept in human
+history. Prior to the &lt;a href="http://en.wikipedia.org/wiki/Industrial_Revolution"&gt;Industrial
+Revolution&lt;/a&gt;, which
+originated in late 18th century England and steamrolled first Europe and
+then the rest of the world, no such separation was common: the
+blacksmith would live upstairs in his shop, so would the bakerman or the
+butcher. The teacher would dwell, with his family, in the local school.
+The farmer, and the farmhands, would live on that farm. In such a
+setting it follows naturally that the work day spans essentially your
+entire waking time: you would start your day's work as soon as you got
+up, and finished it when you retired for the night. It would be equally
+natural to close the shop and interrupt your work for perhaps an hour at
+a time, in order to consume a meal with your family or run an errand, or
+to hold the &lt;em&gt;&lt;a href="http://en.wikipedia.org/wiki/Siesta"&gt;siesta&lt;/a&gt;&lt;/em&gt; common in
+the Mediterranean to pass the hottest hours of the day.&lt;/p&gt;
+&lt;p&gt;Then with the Industrial Revolution, everything changed. In the name of
+efficiency and progress, we decided that we had to pool workers in one
+place — called a factory, or perhaps a shipyard — because now we needed
+collaboration: one person could no longer fulfill the task alone, so we
+had to get many people to one place to fulfill it together. And as a
+natural continuation of our pre-industrial routine, people would work
+ten to twelve hours a day, six days a week — until we realized that it
+started messing up our lives, inflicting misery on our families and
+social ties. And we invented a new concept called spare time: time we
+could spend by ourselves, or with our families and friends, something we
+didn't have to ask for in the pre-industrial age when our work and life
+would naturally have been integrated. And we gradually got to “advances”
+like first the
+&lt;a href="http://en.wikipedia.org/wiki/Buffalo_switchmen%27s_strike"&gt;10-hour&lt;/a&gt;
+workday, then the 8-hour workday, then the 40-hour &lt;a href="http://en.wikipedia.org/wiki/Workweek"&gt;work
+week&lt;/a&gt; when we decided it would be
+better to have a rest of two days a week rather than one.&lt;/p&gt;
+&lt;p&gt;Then we invented white-collar, office jobs, and we gradually moved from
+an industry-dominated to a service-dominated economy. And because by
+this time we were all well trained in the rules of industrial life, and
+because it had brought us progress and prosperity, we applied the same
+concepts to offices that we previously had applied to factories and
+shipyards: we would gather everyone in the same place, removed from home
+and families, and we would get everyone to accept fixed “office hours”
+when all hands would have to be present. Of course, we still needed to
+collaborate, it's just that the tasks differed from the ones we faced in
+factories and shipyards.&lt;/p&gt;
+&lt;p&gt;Fast forward to the early 21st century, where we are suddenly endowed
+with an abundance of readily available, cheap technology that allows us
+to communicate and collaborate instantly, from almost anywhere. And it
+is at this point that the unnatural split between work and non-work
+life, which we inflicted upon ourselves during the Industrial Revolution
+and which we have managed to rationalize with the brainwash that a
+“clean separation” of “work and private life” is “essential” to
+well-being — that has become a complete anachronism. It is no longer
+vital for the people making up a company to physically be in the same
+place to collaborate, to serve customers, and to be productive and make
+a difference to communities. In fact, I consider it counterproductive.
+We've finally arrived in a position where we can restore the very
+natural way for humans to live and work, namely integrated with our
+families, from home, connected through technology that enables us to
+communicate just as effectively as sitting at the same desk. It also
+enables us to live healthier, better lives.&lt;/p&gt;
+&lt;p&gt;I'm fully aware that this style of work is probably not for everyone.
+But if you're thinking it's not for you (and I was one of those, until a
+little over a year ago) it's worth asking yourself &lt;em&gt;why&lt;/em&gt; you're thinking
+that. Is it really because you &lt;em&gt;want&lt;/em&gt; to work in an office, or because
+everyone has &lt;em&gt;told you&lt;/em&gt; for most of your career that you want to work in
+an office?&lt;/p&gt;
+&lt;p&gt;Here at hastexo, it took us some time — several months — to figure out
+all-electronic collaboration, but the machinery is working extremely
+well now. The &lt;a href="https://www.google.com/work/apps/business/"&gt;Google Apps&lt;/a&gt;
+stack has been enormously useful for us in that regard. We practically
+live in &lt;a href="http://www.google.com/+/learnmore/hangouts/"&gt;Google Hangouts&lt;/a&gt;
+and documents shared on &lt;a href="http://drive.google.com"&gt;Google Drive&lt;/a&gt;. We jot
+down ideas in Google Docs and sketch architectures in Google Drawings.
+We do our weekly standups that way, and increasingly customer meetings,
+too. We collaboratively draft and edit slide decks for training. And we
+rehearse conference talks via video call. It just works, and it's huge
+fun that way. And it enables us to close our laptops and go read bedtime
+stories to our kids when we're done.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Philosophy"></category></entry></feed>

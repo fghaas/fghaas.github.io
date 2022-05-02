@@ -1,0 +1,311 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../theme/font-awesome/css/solid.css">
+
+    <link rel="stylesheet" type="text/css" href="../../css/override.css">
+
+    <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+    <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+  
+
+
+ 
+
+<meta name="author" content="Florian Haas" />
+<meta name="description" content="A talk I submitted to PyCon AU 2018, linux.conf.au 2019, and PyCon DE 2019." />
+<meta name="keywords" content="Conference">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="Learn Complex Skills, From Anywhere: Combining Django, Ansible and OpenStack to teach any tech skill"/>
+  <meta property="og:description" content="A talk I submitted to PyCon AU 2018, linux.conf.au 2019, and PyCon DE 2019."/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../talk-submissions/lca-2019-openedx/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2019-08-12 00:00:00+00:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../author/florian-haas.html">
+  <meta property="article:section" content="talk-submissions"/>
+  <meta property="article:tag" content="Conference"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; Learn Complex Skills, From Anywhere: Combining Django, Ansible and OpenStack to teach any tech skill</title>
+
+</head>
+<body >
+  <aside>
+    <div>
+      <a href="../../">
+        <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="../../"></a>
+      </h1>
+
+
+
+
+      <ul class="social">
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/xahteiwi" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="me" class="sc-mastodon" href="https://mastodon.social/@xahteiwi" target="_blank">
+              <i class="fab fa-mastodon"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/fghaas" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-github" href="https://github.com/fghaas" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="../../">Home</a>
+
+      <a href="/category/hints-and-kinks.html">Tech</a>
+      <a href="/category/presentations.html">Talks</a>
+      <a href="/category/blog.html">Thoughts</a>
+      <a href="">​</a>
+      <a href="/about/">About</a>
+      <a href="/comments/">Comments</a>
+      <a href="/legal/">Legal</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="">​</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="">​</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="lca-2019-openedx">Learn Complex Skills, From Anywhere: Combining Django, Ansible and OpenStack to teach any tech skill</h1>
+    <p>
+      Posted on Mon 12 August 2019 in <a href="../../category/talk-submissions.html">talk-submissions</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>This is a talk I submitted<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> to three separate conferences:</p>
+<ul>
+<li>
+<p><a href="https://2018.pycon-au.org/">PyCon AU 2018</a>, via an anonymized CfP
+  process using <a href="https://www.papercall.io/">PaperCall</a>. This
+  submission was rejected.</p>
+</li>
+<li>
+<p><a href="https://2019.linux.conf.au/">linux.conf.au 2019</a>, which used a
+  non-anonymized CfP process on a custom platform that, <em>I think,</em> is
+  built on <a href="https://symposion.readthedocs.io/">Symposion</a>. That
+  submission was accepted, and the talk <a href="../../resources/presentations/learn-complex-skills-from-anywhere-combining-django-ansible-and-openstack-to-teach-any-tech-skill/">ran in the main conference
+  programme</a>.</p>
+</li>
+<li>
+<p><a href="https://de.pycon.org/">PyCon DE 2019</a>, via a non-anonymized CfP
+  process using <a href="https://pretalx.com/">pretalx</a>. This
+  submission was rejected.</p>
+</li>
+</ul>
+<p>It’s the linux.conf.au submission that is reflected in this page.</p>
+<h2>Title</h2>
+<p><em>Learn Complex Skills, From Anywhere: Combining Django, Ansible and
+OpenStack to teach any tech skill</em></p>
+<h2>Target Audience</h2>
+<p>Community</p>
+<h2>Abstract</h2>
+<blockquote>
+<p>This will appear in the conference programme. Up to about 500
+words. This field is rendered with the monospace font Hack with
+whitespace preserved</p>
+</blockquote>
+<p>Professional skill-building is challenging, particularly when the
+skill to acquire is about distributed, scalable platform
+technology. In this talk, I cover an open-source skill-building
+platform that is 100% Python: built on Open edX and heavily involving
+Django, Ansible, and OpenStack.</p>
+<p>The information technology industry is currently dealing with an
+interesting challenge in professional skill-building: almost every new
+technology developed in recent years has been complex, distributed,
+and built for scale: Kubernetes, Ceph, and OpenStack can serve as just
+a few representative examples. Loose coupling, asynchronicity, and
+elasticity are just some of the qualities frequently found in such
+systems that were entirely absent in many of the systems we built only
+a few years ago. As a result, people comfortable with building and
+operating these complex systems are hardly found in abundance, and
+organisations frequently struggle to adopt these technologies as a
+direct result of this scarcity: we are dealing with a skills gap, not
+a technology gap.</p>
+<p>This means that we need novel ways to educate professionals on these
+technologies. We must provide professional learners with complex,
+distributed systems to use as realistic learning environments, and we
+must enable them to learn from anywhere, at any time, and on their own
+pace. One excellent way of doing this is to use the capabilities of
+the Open edX platform to integrate a learning management system with
+hands-on, on-demand lab environments that can be just as complex, and
+just as distributed, as production systems. This allows anyone
+interested to develop a professional skill set on novel technology at
+minimal cost, and without the need for costly hardware platforms for
+evaluation.</p>
+<p>In this talk, I will give a rapid technical introduction to the core
+components of this free and open source (AGPL 3/ASL 2) all-Python
+platform:</p>
+<ul>
+<li>
+<p>edx-platform, the core learning management system (LMS) and content
+  management system (CMS), built on Django;</p>
+</li>
+<li>
+<p>edx-configuration, the automated deployment facility to roll out the
+  Open edX platform, built on Ansible;</p>
+</li>
+<li>
+<p>and finally, the Open edX XBlock extension system and its
+  integration with OpenStack, also itself an all-Python cloud
+  platform, in order to provide on-demand lab environments from both
+  private and public cloud environments.</p>
+</li>
+</ul>
+<h2>Private Abstract</h2>
+<blockquote>
+<p>This will only be shown to organisers and reviewers. You should
+provide any details about your proposal that you don't want to be
+public here. This field is rendered with the monospace font Hack
+with whitespace preserved</p>
+</blockquote>
+<p>I come from a background in technical consulting and instructor-driven
+professional education, and together with my team have been building
+and deploying Open edX based platforms as described in the talk
+since 2015. I believe I have a good understanding on why
+instructor-driven training, while desirable, is not accessible to
+everyone in need of keeping abreast with technology development, and
+that a self-paced, learn-from-anywhere alternative is needed. I am
+extremely grateful for the fact that we have an very well-suited
+platform for that purpose, and since it has a completely open-source,
+Python codebase, it might be of interest to LCA attendees.</p>
+<p>I have done a talk on a similar topic at the LCA 2018 Education
+miniconf (video link included below). In the 2018 talk, I focused
+primarily on the educational aspects of self-paced, on-line
+training. This time, and I think more appropriately for the main
+conference track, I would like to dive into the nuts and bolts of the
+platform that drives this. As such, the talk should still be appealing
+to people engaged in professional education (be it as learners,
+tutors, or instructional designers), but will also be insightful to
+Python and OpenStack developers, and heavy Ansible users.</p>
+<h2>Video URL</h2>
+<p><a href="https://www.youtube.com/watch?v=E8BhTAjMwa4">https://www.youtube.com/watch?v=E8BhTAjMwa4</a> </p>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>If you’re curious why this is here, please read
+<a href="../../blog/2019/04/23/talk-submissions/">this</a>. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../../tag/conference.html">Conference</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+
+</body>
+</html>

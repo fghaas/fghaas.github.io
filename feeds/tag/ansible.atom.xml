@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Ansible</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/ansible.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2019-01-23T00:00:00+00:00</updated><entry><title>Learn Complex Skills, From Anywhere: Combining Django, Ansible and OpenStack to teach any tech skill</title><link href="https://xahteiwi.eu/resources/presentations/learn-complex-skills-from-anywhere-combining-django-ansible-and-openstack-to-teach-any-tech-skill/" rel="alternate"></link><published>2019-01-23T00:00:00+00:00</published><updated>2019-01-23T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-01-23:/resources/presentations/learn-complex-skills-from-anywhere-combining-django-ansible-and-openstack-to-teach-any-tech-skill/</id><content type="html">&lt;p&gt;My presentation from linux.conf.au 2019.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Video: &lt;a href="https://youtu.be/B1ic5o9geqw"&gt;YouTube&lt;/a&gt;, &lt;a href="http://mirror.linux.org.au/pub/linux.conf.au/2019/c3/Wednesday/Learn_Complex_Skills_From_Anywhere_Combining_Django_Ansible_and_OpenStack_to_teach_any_tech_skill.mp4"&gt;Linux Australia
+  (MP4)&lt;/a&gt;,
+  &lt;a href="http://mirror.linux.org.au/pub/linux.conf.au/2019/c3/Wednesday/Learn_Complex_Skills_From_Anywhere_Combining_Django_Ansible_and_OpenStack_to_teach_any_tech_skill.webm"&gt;Linux Australia (WebM)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Slides (with full speaker notes): &lt;a href="https://fghaas.github.io/lca2019/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
+zoom out for an overview, or just advance by hitting the spacebar.&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="Open edX"></category><category term="OpenStack"></category><category term="Django"></category><category term="Ansible"></category><category term="linux.conf.au"></category></entry><entry><title>Heat and its Alternatives: Application Deployment in OpenStack</title><link href="https://xahteiwi.eu/resources/presentations/heat-and-its-alternatives-application-deployment-in-openstack/" rel="alternate"></link><published>2016-10-27T00:00:00+00:00</published><updated>2016-10-27T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2016-10-27:/resources/presentations/heat-and-its-alternatives-application-deployment-in-openstack/</id><summary type="html">&lt;p&gt;From the 2016 OpenStack Summit in Barcelona. A comparison of tools for
+virtual systems orchestration in OpenStack.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Heat&lt;/li&gt;
+&lt;li&gt;Juju&lt;/li&gt;
+&lt;li&gt;Ansible&lt;/li&gt;
+&lt;li&gt;Cloudify&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;About 45 minutes.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Video: &lt;a href="https://youtu.be/wtXVd09qHoo"&gt;YouTube&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Slides: &lt;a href="https://fghaas.github.io/openstacksummit2016-barcelona/"&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
+zoom out for an overview, or just advance by hitting …&lt;/p&gt;</summary><content type="html">&lt;p&gt;From the 2016 OpenStack Summit in Barcelona. A comparison of tools for
+virtual systems orchestration in OpenStack.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Heat&lt;/li&gt;
+&lt;li&gt;Juju&lt;/li&gt;
+&lt;li&gt;Ansible&lt;/li&gt;
+&lt;li&gt;Cloudify&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;About 45 minutes.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Video: &lt;a href="https://youtu.be/wtXVd09qHoo"&gt;YouTube&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Slides: &lt;a href="https://fghaas.github.io/openstacksummit2016-barcelona/"&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
+zoom out for an overview, or just advance by hitting the spacebar.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="OpenStack"></category><category term="Heat"></category><category term="Ansible"></category><category term="Juju"></category><category term="Cloudify"></category></entry><entry><title>Containers: Just Because Everyone Else is Doing Them Wrong, Doesn't Mean You Have To</title><link href="https://xahteiwi.eu/blog/2016/02/21/containers-just-because-everyone-else/" rel="alternate"></link><published>2016-02-21T00:00:00+00:00</published><updated>2016-02-21T00:00:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2016-02-21:/blog/2016/02/21/containers-just-because-everyone-else/</id><summary type="html">&lt;p&gt;The recent CVE-2015-7547 vulnerability in glibc exposed a common antipattern in container management. Here's what you can do to avoid it, and instead adopt a container management pattern that will preserve your sanity and enable you to react to critical issues in minutes.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a writeup of &lt;a href="http://sched.co/3xVu"&gt;a presentation&lt;/a&gt; I did at
+LinuxCon Europe in Dublin last year. Since Linux Foundation Events
+&lt;em&gt;still&lt;/em&gt; don't come with video recording for all talks (all they do
+record and publish are keynotes), I can't point you to a YouTube link,
+though you're certainly welcome to
+&lt;a href="https://xahteiwi.eu/resources/presentations/manageable-application-containers/"&gt;peruse my slides&lt;/a&gt;
+from that talk.&lt;/p&gt;
+&lt;h2&gt;The problem&lt;/h2&gt;
+&lt;p&gt;Suppose you're an operator who, in a massively scaled-out and highly
+automated deployment, is responsible for keeping a few hundred or a
+few thousand containers up and running. Your developers put those
+together and then basically throw them over the wall for you to
+manage. It's your job just to keep them alive, available, and secure;
+what's &lt;em&gt;in&lt;/em&gt; them is your developers' domain. Sure, you have Git repos
+you build your containers from, and a Docker registry, so you can
+always check what's in which container. You don't get to call the
+shots, though.&lt;/p&gt;
+&lt;p&gt;Suppose further that all most of your containers run some form of web
+service. And let's assume, just for the sake of this discussion, that
+they're all running Apache, because that's your reference
+platform. Your developers may be writing applications in Python or
+Ruby or (shudder) PHP, but what all your apps have in common is that
+you've settled on Apache as your reference platform. Your developers
+can assume that with Apache, you, the ops person, know the boldface
+cold, and you can give them an extremely stable, well-tuned platform
+to build on.&lt;/p&gt;
+&lt;p&gt;And then Apache is affected by some disturbing security vulnerability
+that you must now fix in record time. Say, something affecting your
+core SSL library or maybe even your C library. Sound familiar? Thought
+so.&lt;/p&gt;
+&lt;h3&gt;The fix in a non-containerized world&lt;/h3&gt;
+&lt;p&gt;OK, so you must now fix OpenSSL or libc on all your systems in record
+time before the anticipated exploit barrage rolls in. In a world
+without containers, you'd rely on your trusted software source
+(normally, your distro vendor) to provide you with a fixed package or
+packages for the affected libraries. You would then roll those out via
+your preferred software management utility, or system automation
+facility, or unattended upgrade scheme.&lt;/p&gt;
+&lt;p&gt;In short, you'd have a tense time until updated packages are
+available, but once they are, things get fixed in a matter of minutes.&lt;/p&gt;
+&lt;h3&gt;But what now?&lt;/h3&gt;
+&lt;p&gt;With the deployment of containers comes, frequently, the notion that
+packaging, package management, or dependency tracking is somehow a
+terrible idea. Instead, you put everything you need into one container
+image, deploy one container per service, and not worry about what a
+&lt;em&gt;different&lt;/em&gt; service running on the same physical hardware might need.&lt;/p&gt;
+&lt;p&gt;At first glance, that simplifies things. Your developer needs MySQL
+configured a certain way, and some other app needs it differently?
+Fine, they can put everything in their own separate containers,
+binaries, libraries and all, problem solved. Storage is dirt cheap,
+containers are efficient and produce little overhead. If they ever
+need to change anything, say go from one MySQL point release to
+another, then they just rebuild the container, you replace the old
+build with the new one, fine.&lt;/p&gt;
+&lt;p&gt;But now it's not your developer who wants to change things, it's &lt;em&gt;you&lt;/em&gt;
+who needs to deploy a critical fix.&lt;sup id="fnref:twitter"&gt;&lt;a class="footnote-ref" href="#fn:twitter"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;so.. using GlibC?&lt;/p&gt;
+&lt;p&gt;How’s re-imaging all of your
+&lt;a href="https://twitter.com/docker"&gt;@Docker&lt;/a&gt; images going?&lt;/p&gt;
+&lt;p&gt;— Josh Long (龙之春)
+(&lt;a href="https://twitter.com/starbuxman"&gt;@starbuxman&lt;/a&gt;) &lt;a href="https://twitter.com/starbuxman/status/700591322177019904"&gt;February 19,
+2016&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;So you set out to rebuild a few hundred containers, or maybe a couple
+of thousand, to get the issue fixed. In a perfect environment, you
+have access to every build chain, know about every version of every
+container in your area of responsibility, can pinpoint exactly which
+are affected by the vulnerability, have an automated toolchain to
+build and deploy them, have perfect documentation so you don't need to
+check back with any of your developers, so it doesn't matter whether
+any one is out sick, on vacation, or has left the company since they
+deployed one of their, now potentially affected, services.&lt;/p&gt;
+&lt;p&gt;And of course, everyone works in such a perfect environment. Right?&lt;/p&gt;
+&lt;p&gt;So now, even &lt;em&gt;after&lt;/em&gt; a fix to your issue is already available, you
+&lt;em&gt;still&lt;/em&gt; need to scramble to get it deployed, and deploying is &lt;em&gt;a lot&lt;/em&gt;
+more complicated than in a world without containers.&lt;/p&gt;
+&lt;h2&gt;Is this an inherent problem with containers?&lt;/h2&gt;
+&lt;p&gt;Of course not. The problem isn't with the fact that you're using
+containers, or with the specific container technology. &lt;strong&gt;The problem
+is that everyone is telling you to use containers a certain way, and
+from an operational perspective that way is wrong.&lt;/strong&gt; And it's not even
+"wrong but still better than all other options", it's just wrong. I
+guess you could call it the Docker Fallacy.&lt;/p&gt;
+&lt;p&gt;That's the bad news. The good news is that there is a way that is
+better, saner, and cleaner, and will make your life as an operator
+&lt;em&gt;much&lt;/em&gt; easier, while not being too hard on your developer friends.&lt;/p&gt;
+&lt;h2&gt;So what's a better way?&lt;/h2&gt;
+&lt;p&gt;You can use containers in a simpler, less flashy, less exciting
+— in short, &lt;em&gt;better&lt;/em&gt; way.&lt;/p&gt;
+&lt;h3&gt;Define a core platform, or platforms&lt;/h3&gt;
+&lt;p&gt;Any organization worth its salt will select a handful of distributions
+to build products and services on. Maybe it's even just one, but let's
+assume you have several, say the latest Ubuntu LTS,&lt;sup id="fnref:ubuntu"&gt;&lt;a class="footnote-ref" href="#fn:ubuntu"&gt;2&lt;/a&gt;&lt;/sup&gt; the
+latest CentOS, and the latest Debian. For each of these, you can
+define an absolute bare-minimal list of packages. I can almost
+guarantee you that none of your developers will care about a single
+item on that list. A C library, a shell, an init system, coreutils,
+NTP... chances are that you'll run up a list of well over 100 core
+system components that &lt;em&gt;you&lt;/em&gt; will be expected to keep secure; your
+developers will take them all for granted.&lt;/p&gt;
+&lt;p&gt;What &lt;em&gt;you&lt;/em&gt; can take for granted, thanks to the tireless work of
+packagers and distro vendors over years and years, is that you will
+get timely security updates for all of those.&lt;/p&gt;
+&lt;h3&gt;Deploy your core platforms as often as you need&lt;/h3&gt;
+&lt;p&gt;Deploy these reference systems across your physical hardware. Deploy
+as many as you need for all the containers you're expected to run on
+each platform. Do so in an automated fashion, so that you never have
+to log into any of these systems by hand.&lt;/p&gt;
+&lt;h3&gt;Use OverlayFS for your containers&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/OverlayFS"&gt;OverlayFS&lt;/a&gt; is a union mount
+filesystem that ships as part of the mainline kernel. With OverlayFS
+you can do a few clever things:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use a read-only base filesystem with a writable overlay to create a
+  read/write union mount.&lt;/li&gt;
+&lt;li&gt;Write to the union mount and only touch the overlay, leaving the
+  base filesystem pristine.&lt;/li&gt;
+&lt;li&gt;Hide selected content in the base filesystem from the union mount,
+  through the use of
+  &lt;a href="https://www.kernel.org/doc/Documentation/filesystems/overlayfs.txt"&gt;opaque directories&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Use one base filesystem with multiple overlays to create any number
+  of separate read/write union mounts.&lt;/li&gt;
+&lt;li&gt;Immediately make updates to the base filesystem known to &lt;em&gt;all&lt;/em&gt; union
+  mounts, by simply remounting them.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This makes OverlayFS extremely powerful when used together with
+LXC. You define a bunch of overlay directories — one for each of
+your containers —, and they can all share one base filesystem:
+your host root filesystem.&lt;sup id="fnref:automount"&gt;&lt;a class="footnote-ref" href="#fn:automount"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;Then, the union mount becomes your LXC container's root. It
+automatically has read access to everything that is available on the
+host, unless specifically hidden, and whatever it writes goes to the
+overlay. When you discard a container, you delete the overlay.&lt;/p&gt;
+&lt;p&gt;Here is a minimal example configuration for a container like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# For additional config options, please look at lxc.container.conf(5)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="c1"&gt;# Common configuration&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;lxc.include&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;/usr/share/lxc/config/ubuntu.common.conf&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="c1"&gt;# Container specific configuration&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;lxc.arch&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;amd64&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="c1"&gt;# Network configuration&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;lxc.network.type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;veth&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;lxc.network.link&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;lxcbr0&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;lxc.network.flags&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;up&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;lxc.network.hwaddr&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;00:16:3e:76:59:10&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="c1"&gt;# Automatic mounts&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;lxc.mount.auto&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;proc sys cgroup&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="na"&gt;lxc.rootfs&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;overlayfs:/var/lib/lxc/host/rootfs:/var/lib/lxc/mytestcontainer/delta0&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;lxc.utsname&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;mytestcontainer&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Note that the LXC userland presently enforces an OverlayFS base
+directory to be in a subtree of &lt;code&gt;/var/lib/lxc&lt;/code&gt;. You can satisfy this
+requirement by bind-mounting &lt;code&gt;/&lt;/code&gt; to &lt;code&gt;/var/lib/lxc/host/rootfs&lt;/code&gt;, as
+shown in the example above.&lt;/p&gt;
+&lt;p&gt;What this creates, among other things, is crystal-clear separation of
+concerns: whatever is in the overlay is for your developers to
+decide. They can pull in packages from PyPI, Ruby Gems, NPMs,
+whatever. What's in the host root is your responsibility.&lt;/p&gt;
+&lt;h3&gt;Automate, automate, automate&lt;/h3&gt;
+&lt;p&gt;It's obvious and self-evident, but it doesn't hurt to reiterate: you
+want to automate &lt;em&gt;all&lt;/em&gt; of this. You're certainly free to select your
+own tools to do it, but Ansible specifically has very good LXC
+container support so it makes this a breeze.&lt;/p&gt;
+&lt;p&gt;Here's a simple Ansible playbook example that creates 100 containers,
+all based off your host root.&lt;sup id="fnref:ansible"&gt;&lt;a class="footnote-ref" href="#fn:ansible"&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;hosts&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;localhost&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;tasks&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Create a local bind mount for the host root filesystem&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;mount&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;/var/lib/lxc/host/rootfs&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;src&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;/&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;opts&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;bind&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;fstype&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;none&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;state&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;mounted&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Create a template container using the host root&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;lxc_container&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;host&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;state&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;stopped&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;directory&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;/var/lib/lxc/host/rootfs&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;config&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;/var/lib/lxc/host/config&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;container_config&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"lxc.mount.auto&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;=&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;proc&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;sys&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;cgroup"&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"lxc.include&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;=&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;/usr/share/lxc/config/ubuntu.common.conf"&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Create 100 OverlayFS based containers&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;lxc_container&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;host&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;backing_store&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;overlayfs&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;clone_snapshot&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;true&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;clone_name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"mytestcontainer{{&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;item&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;}}"&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;state&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;started&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;with_sequence&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;count=100&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now of course, this will also mean that you'll need to get your
+developers to define their container config in Ansible. However, that
+is fundamentally a &lt;em&gt;good&lt;/em&gt; thing, because it means that developers and
+operations people will be reading and writing the same language. Also,
+if your developers can write a Dockerfile, they won't have a hard time
+with Ansible YAML either.&lt;/p&gt;
+&lt;h2&gt;How does this help?&lt;/h2&gt;
+&lt;p&gt;With this approach, think of what you now have to do to make hundreds
+of containers running on the same box get a new libc.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Update your host libc.&lt;/li&gt;
+&lt;li&gt;Restart your containers.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;That's it. That is literally all you have to do to update hundreds of
+containers in one fell swoop. LXC will remount your OverlayFS on
+container restart, and thus all changes to the host will be
+immediately visible in the container's overlay filesystem.&lt;/p&gt;
+&lt;p&gt;On an Ubuntu platform, you could even go so far as automating this in
+conjunction with unattended upgrades:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# /etc/apt/apt.conf.d/50unattended-upgrades&lt;/span&gt;
+&lt;span class="sr"&gt;//&lt;/span&gt; &lt;span class="n"&gt;Automatically&lt;/span&gt; &lt;span class="n"&gt;upgrade&lt;/span&gt; &lt;span class="n"&gt;packages&lt;/span&gt; &lt;span class="n"&gt;from&lt;/span&gt; &lt;span class="n"&gt;these&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;origin:archive&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;pairs&lt;/span&gt;
+&lt;span class="n"&gt;Unattended&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nn"&gt;Upgrade::&lt;/span&gt;&lt;span class="n"&gt;Allowed&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Origins&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="s"&gt;"${distro_id}:${distro_codename}-security"&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# /etc/apt/apt.conf.d/05lxc&lt;/span&gt;
+&lt;span class="nn"&gt;DPkg::&lt;/span&gt;&lt;span class="n"&gt;Post&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Invoke&lt;/span&gt;      &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="s"&gt;"/sbin/service lxc restart"&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="p"&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;So there you have it. Upgrade loads of containers in minutes. No
+rebuild, no redeploy, nothing. Packaging actually does work and has
+merit, regardless of what the hipster crowd is trying to sell you.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr/&gt;
+&lt;ol&gt;
+&lt;li id="fn:twitter"&gt;
+&lt;p&gt;Edit, 2016-02-22: Added Twitter quote from Josh Long. &lt;a class="footnote-backref" href="#fnref:twitter" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:ubuntu"&gt;
+&lt;p&gt;At the time of writing, the latest Ubuntu LTS is 14.04 "Trusty
+Tahr", which is based on a Linux 3.13 kernel. This Ubuntu stock
+kernel ships with a pre-release version of OverlayFS which
+predates the 3.14 mainline merge. I would not recommend using that
+kernel; instead you'll want to run your hosts with a more recent
+kernel from the
+&lt;a href="https://wiki.ubuntu.com/Kernel/LTSEnablementStack"&gt;LTS Enablement Stack&lt;/a&gt;. Again
+at the time of writing, this is a Linux 4.2 kernel that ships with
+the &lt;code&gt;linux-generic-lts-wily&lt;/code&gt; package. &lt;a class="footnote-backref" href="#fnref:ubuntu" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:automount"&gt;
+&lt;p&gt;LXC containers do present per-container specific content for some
+directories by default, notably &lt;code&gt;/proc&lt;/code&gt;, &lt;code&gt;/dev&lt;/code&gt;, and &lt;code&gt;/sys&lt;/code&gt;. Other
+host-filesystem content can be hidden by creating opaque
+directories in the container overlay; this is what you would
+commonly do for directories like &lt;code&gt;/root&lt;/code&gt;, &lt;code&gt;/home&lt;/code&gt;, &lt;code&gt;/tmp&lt;/code&gt; and
+others. &lt;a class="footnote-backref" href="#fnref:automount" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:ansible"&gt;
+&lt;p&gt;Please note that it's not &lt;em&gt;quite&lt;/em&gt; as simple as shown in the
+Ansible example. You will want to provide some additional tweaks,
+such as added mounts or opaque directories. I've tried to keep the
+example brief to illustrate the concept. &lt;a class="footnote-backref" href="#fnref:ansible" title="Jump back to footnote 4 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content><category term="blog"></category><category term="LXC"></category><category term="Containers"></category><category term="Ubuntu"></category><category term="Ansible"></category></entry></feed>

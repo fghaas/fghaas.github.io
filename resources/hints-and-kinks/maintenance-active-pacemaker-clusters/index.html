@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../../theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/solid.css">
+
+    <link rel="stylesheet" type="text/css" href="../../../css/override.css">
+
+    <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+    <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+  
+
+
+ 
+
+<meta name="author" content="Florian Haas" />
+<meta name="description" content="In a Pacemaker cluster, as in a standalone system, operators must complete maintenance tasks such as software upgrades and configuration changes. Here&#39;s what you need to keep Pacemaker&#39;s built-in monitoring features from creating unwanted side effects. Maintenance mode This is quite possibly Pacemaker&#39;s single most useful feature for cluster maintenance …" />
+<meta name="keywords" content="Pacemaker">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="Maintenance in active Pacemaker clusters"/>
+  <meta property="og:description" content="In a Pacemaker cluster, as in a standalone system, operators must complete maintenance tasks such as software upgrades and configuration changes. Here&#39;s what you need to keep Pacemaker&#39;s built-in monitoring features from creating unwanted side effects. Maintenance mode This is quite possibly Pacemaker&#39;s single most useful feature for cluster maintenance …"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../../resources/hints-and-kinks/maintenance-active-pacemaker-clusters/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2012-09-24 19:49:31+01:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../../author/florian-haas.html">
+  <meta property="article:section" content="hints-and-kinks"/>
+  <meta property="article:tag" content="Pacemaker"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; Maintenance in active Pacemaker clusters</title>
+
+</head>
+<body >
+  <aside>
+    <div>
+      <a href="../../../">
+        <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="../../../"></a>
+      </h1>
+
+
+
+
+      <ul class="social">
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/xahteiwi" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="me" class="sc-mastodon" href="https://mastodon.social/@xahteiwi" target="_blank">
+              <i class="fab fa-mastodon"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/fghaas" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-github" href="https://github.com/fghaas" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="../../../">Home</a>
+
+      <a href="/category/hints-and-kinks.html">Tech</a>
+      <a href="/category/presentations.html">Talks</a>
+      <a href="/category/blog.html">Thoughts</a>
+      <a href="">​</a>
+      <a href="/about/">About</a>
+      <a href="/comments/">Comments</a>
+      <a href="/legal/">Legal</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="">​</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="">​</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="maintenance-active-pacemaker-clusters">Maintenance in active Pacemaker clusters</h1>
+    <p>
+      Posted on Mon 24 September 2012 in <a href="../../../category/hints-and-kinks.html">hints-and-kinks</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>In a Pacemaker cluster, as in a standalone system, operators must
+complete maintenance tasks such as software upgrades and configuration
+changes. Here's what you need to keep Pacemaker's built-in monitoring
+features from creating unwanted side effects.</p>
+<h2>Maintenance mode</h2>
+<p>This is quite possibly Pacemaker's single most useful feature for
+cluster maintenance. In maintenance mode, Pacemaker essentially takes
+a "hands-off" approach to your cluster. Enabling Pacemaker maintenance
+mode is very easy using the Pacemaker <code>crm</code> shell:</p>
+<div class="highlight"><pre><span></span><code>crm configure property maintenance-mode<span class="o">=</span><span class="nb">true</span>
+</code></pre></div>
+<p>In maintenance mode, you can stop or restart cluster resources at
+will. Pacemaker will not attempt to restart them. All resources
+automatically become unmanaged, that is, Pacemaker will cease
+monitoring them and hence be oblivious about their status. You can
+even stop all Pacemaker services on a node, and all the daemons and
+processes originally started as Pacemaker managed cluster resources
+will continue to run.</p>
+<p>You should know that when you start Pacemaker services on a node while
+the cluster in maintenance mode, Pacemaker will initiate a single
+one-shot monitor operation (a "probe") for every resource just so it
+has an understanding of what resources are currently running on that
+node. It will, however, take no further action other than determining
+the resources' status.</p>
+<p>You disable maintenance mode with the crm shell, as well:</p>
+<div class="highlight"><pre><span></span><code>crm configure property maintenance-mode<span class="o">=</span><span class="nb">false</span>
+</code></pre></div>
+<p>Maintenance mode is something you enable before running other
+maintenance actions, not when you're already half-way through
+them. And unless you're very well versed in the interdependencies of
+resources running on the cluster you're working on, it's usually the
+very safest option.</p>
+<p>In short: when doing maintenance on your Pacemaker cluster, by
+default, enable maintenance mode before you start, and disable it
+after you're done.</p>
+<h2>Disabling monitoring and error recovery on specific resources</h2>
+<p>For any configuration changes that take no more than a few minutes,
+involving an admin that is potentially watching a console window the
+whole time, maintenance mode is highly recommended. However, enabling
+maintenance mode can be a bit hard to argue for large configuration
+changes lasting, say, several hours. Think of a massive database
+rebuild, for example. In such a case, you may want to put only your
+database resource in something like maintenance mode, and have
+Pacemaker continue to monitor other resources like normal.</p>
+<p>You can do so by switching the resource to unmanaged mode and disable
+its monitor operation:</p>
+<div class="highlight"><pre><span></span><code>crm configure edit p_database
+</code></pre></div>
+<p>Then change the <code>is-managed</code> meta  attribute and disable the <code>monitor</code>
+operation:</p>
+<div class="highlight"><pre><span></span><code>meta is-managed=false
+op monitor interval=&lt;interval&gt; enabled=false
+</code></pre></div>
+<p>Once you've done that, you'll effectively have enabled something akin
+to maintenance mode for a single resource. You can reverse this as you
+would expect:</p>
+<div class="highlight"><pre><span></span><code>crm configure edit p_database
+</code></pre></div>
+<p>Then change the <code>is-managed</code> meta attribute and re-enable the
+<code>monitor</code> operation:</p>
+<div class="highlight"><pre><span></span><code>meta is-managed=true
+op monitor interval=&lt;interval&gt; enabled=true
+</code></pre></div>
+<p>When using this approach, all other resources will be monitored and
+automatically recovered as they normally would. Thus, you'll have to
+be acutely aware of any side effects your maintenance activities have
+on other resources. If you're unsure, you should use the global
+maintenance mode instead.</p>
+<hr/>
+<p>This article originally appeared on the <code>hastexo.com</code> website (now defunct).</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../tag/pacemaker.html">Pacemaker</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+
+</body>
+</html>

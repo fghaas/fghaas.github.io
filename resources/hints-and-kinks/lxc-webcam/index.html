@@ -1,0 +1,290 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../../theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/solid.css">
+
+    <link rel="stylesheet" type="text/css" href="../../../css/override.css">
+
+    <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+    <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+  
+
+
+ 
+
+<meta name="author" content="Florian Haas" />
+<meta name="description" content="One of the non-open-source applications I sometimes have to run for work purposes, and which out of principle I run in LXC containers, is Zoom. Now Zoom is of course an X application, so my previously shared considerations for those apply. It also needs to process input from my microphone …" />
+<meta name="keywords" content="LXC">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="Running (Almost) Anything in LXC: Applications Using Your Webcam"/>
+  <meta property="og:description" content="One of the non-open-source applications I sometimes have to run for work purposes, and which out of principle I run in LXC containers, is Zoom. Now Zoom is of course an X application, so my previously shared considerations for those apply. It also needs to process input from my microphone …"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../../resources/hints-and-kinks/lxc-webcam/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2021-01-17 00:00:00+00:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../../author/florian-haas.html">
+  <meta property="article:section" content="hints-and-kinks"/>
+  <meta property="article:tag" content="LXC"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; Running (Almost) Anything in LXC: Applications Using Your Webcam</title>
+
+</head>
+<body >
+  <aside>
+    <div>
+      <a href="../../../">
+        <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="../../../"></a>
+      </h1>
+
+
+
+
+      <ul class="social">
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/xahteiwi" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="me" class="sc-mastodon" href="https://mastodon.social/@xahteiwi" target="_blank">
+              <i class="fab fa-mastodon"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/fghaas" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-github" href="https://github.com/fghaas" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="../../../">Home</a>
+
+      <a href="/category/hints-and-kinks.html">Tech</a>
+      <a href="/category/presentations.html">Talks</a>
+      <a href="/category/blog.html">Thoughts</a>
+      <a href="">​</a>
+      <a href="/about/">About</a>
+      <a href="/comments/">Comments</a>
+      <a href="/legal/">Legal</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="">​</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="">​</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="lxc-webcam">Running (Almost) Anything in LXC: Applications Using Your Webcam</h1>
+    <p>
+      Posted on Sun 17 January 2021 in <a href="../../../category/hints-and-kinks.html">hints-and-kinks</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>One of the non-open-source applications I sometimes have to run for
+work purposes, and which out of principle I run in LXC containers, is
+Zoom. Now Zoom is of course an X application, so my previously shared
+<a href="../../../resources/hints-and-kinks/lxc-x11/">considerations</a> for those apply. It also needs
+to process input from my microphone, and feed sound into my
+headphones, so <a href="../../../resources/hints-and-kinks/lxc-sound/">that’ll have to work, too</a>.</p>
+<p>But a thus-configured LXC container is still missing one other bit:
+it’ll have to process the video feed from my webcam. Here’s how to do
+that.</p>
+<h2>LXC Configuration</h2>
+<p>In the article on running <a href="../../../resources/hints-and-kinks/lxc-x11/">X applications in
+LXC</a>, I give the example of sharing a host
+<em>directory,</em> (the one that contains the X.org server sockets). For
+sharing a webcam, I need to do the same for a few <em>files</em>.</p>
+<p>Now, video capture devices like webcams are represented in Linux by
+<em>character devices</em> named <code>/dev/video0</code>, <code>/dev/video1</code> and so
+forth. Udev manages these and (on Ubuntu platforms) creates them as
+owned by the user <code>root</code> and the group <code>video</code> — but it helpfully also
+creates POSIX ACL entries for the user currently logged in on the X
+console.</p>
+<p>All I thus need to do is <em>mount</em> these files into the container (yes,
+LXC lets you “mount” individual files), like so:</p>
+<div class="highlight"><pre><span></span><code><span class="na">lxc.mount.entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/dev/video0 dev/video0 none bind,optional,create=file</span><span class="w"></span>
+<span class="na">lxc.mount.entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/dev/video1 dev/video0 none bind,optional,create=file</span><span class="w"></span>
+<span class="na">lxc.mount.entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/dev/video2 dev/video2 none bind,optional,create=file</span><span class="w"></span>
+<span class="na">lxc.mount.entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/dev/video3 dev/video2 none bind,optional,create=file</span><span class="w"></span>
+</code></pre></div>
+<p>Here, the <code>optional</code> bit of course means that the container will start
+even in case a particular file does not exist in the host at the time
+the container receives its <code>lxc-start</code> command.</p>
+<p>That, in principle, is all there is to it.</p>
+<h2>Things to consider</h2>
+<p>Be aware that <a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=088ead25524583e2200aa99111bea2f66a86545a">since early
+2018</a>
+(in other words, in kernel 4.16 and later) the Linux kernel’s
+<code>uvcvideo</code> subsystem will create <strong>two</strong> <code>/dev/video</code> devices for your
+webcam. One of them is the actual video capture device; the second one
+is a metadata device node. You can easily tell which is which, with
+<code>v4l2-ctl</code>: only a video capture device will have a non-empty list of
+supported formats.</p>
+<p>This is a video capture device:</p>
+<div class="highlight"><pre><span></span><code>$ v4l2-ctl --list-formats --device /dev/video0
+ioctl: VIDIOC_ENUM_FMT
+    Type: Video Capture
+
+    <span class="o">[</span><span class="m">0</span><span class="o">]</span>: <span class="s1">'MJPG'</span> <span class="o">(</span>Motion-JPEG, compressed<span class="o">)</span>
+    <span class="o">[</span><span class="m">1</span><span class="o">]</span>: <span class="s1">'YUYV'</span> <span class="o">(</span>YUYV <span class="m">4</span>:2:2<span class="o">)</span>
+    <span class="o">[</span><span class="m">2</span><span class="o">]</span>: <span class="s1">'H264'</span> <span class="o">(</span>H.264, compressed<span class="o">)</span>
+</code></pre></div>
+<p>And this is the metadata device; note that it lists no video codecs:</p>
+<div class="highlight"><pre><span></span><code>$ v4l2-ctl --list-formats --device /dev/video1
+ioctl: VIDIOC_ENUM_FMT
+    Type: Video Capture
+</code></pre></div>
+<p>Normally, device nodes <code>/dev/video0</code> and <code>/dev/video1</code> will be
+occupied by a built-in webcam, your USB webcam will use <code>/dev/video2</code>
+and <code>/dev/video3</code>, and if you have <em>another</em> video capture device then
+that will be <code>/dev/video4</code> and <code>/dev/video5</code>.</p>
+<p>Thus, perhaps you want your container to see <em>only</em> your USB webcam,
+<em>and</em> you don’t care about the metadata device. In that case, instead
+of the four <code>lxc.mount.entry</code> lines I gave above, you might use just
+one:</p>
+<div class="highlight"><pre><span></span><code><span class="na">lxc.mount.entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/dev/video2 dev/video2 none bind,optional,create=file</span><span class="w"></span>
+</code></pre></div>
+<p>Also, the bind mounts occur at the time you <em>start</em> the container. Thus,
+if you plug in a USB webcam while the container is already running, it
+won’t magically become available to the container. There are two ways
+to address this:</p>
+<ol>
+<li>
+<p>You start (or restart) your container whenever you need to use a web
+   cam (or other video device) that you have just plugged in, <em>or</em></p>
+</li>
+<li>
+<p>you remove the <code>optional</code> keyword from your <code>lxc.mount.entry</code>
+   line(s), so that the container will refuse to start unless the
+   correct webcam is plugged in.</p>
+</li>
+</ol>
+<p>Note further that for the same reason, if you disconnect your USB
+webcam <em>while your container is running,</em> you can’t just plug it
+back in and expect it to work. In that case, udev in the host will
+have deleted the device node, so the bind mount in your container is
+now stale, and your containerized applications won’t be able to use
+your capture device anymore. Under those circumstances, you’ll simply
+have to restart your container.</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../tag/lxc.html">LXC</a>
+    </p>
+  </div>
+
+
+
+
+  <div class="related-posts">
+    <h4>Part 4 of "Running (Almost) Anything in LXC"</h4>
+       <h5>Previous articles</h5>
+       <ul>
+           <li><a href="../../../resources/hints-and-kinks/lxc-basics/">Running (Almost) Anything in LXC: The Basics</a></li>
+           <li><a href="../../../resources/hints-and-kinks/lxc-x11/">Running (Almost) Anything in LXC: X applications</a></li>
+           <li><a href="../../../resources/hints-and-kinks/lxc-sound/">Running (Almost) Anything in LXC: Sound</a></li>
+       </ul>
+  </div>
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+
+</body>
+</html>

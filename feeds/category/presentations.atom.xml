@@ -1,0 +1,1739 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - presentations</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/category/presentations.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2021-10-23T00:00:00+00:00</updated><entry><title>No, We Won’t Have a Video Call for That: The Companion Pieces</title><link href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that-the-companion-pieces/" rel="alternate"></link><published>2021-10-23T00:00:00+00:00</published><updated>2021-10-23T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-23:/resources/presentations/no-we-wont-have-a-video-call-for-that-the-companion-pieces/</id><summary type="html">&lt;p&gt;&lt;a href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;The original article&lt;/a&gt; continues to prompt a
+lot of thoughts and discussions, so I’ve written a a couple of
+follow-up pieces:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://xahteiwi.eu/blog/2021/09/30/getting-out-of-meeting-hell/"&gt;Getting out of Meeting
+   Hell&lt;/a&gt; is a
+   short series about getting from a distributed workplace that
+   attempts to duplicate the synchronous nature of an office by
+   sticking everyone …&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;The original article&lt;/a&gt; continues to prompt a
+lot of thoughts and discussions, so I’ve written a a couple of
+follow-up pieces:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://xahteiwi.eu/blog/2021/09/30/getting-out-of-meeting-hell/"&gt;Getting out of Meeting
+   Hell&lt;/a&gt; is a
+   short series about getting from a distributed workplace that
+   attempts to duplicate the synchronous nature of an office by
+   sticking everyone into video meetings all the time — with usually
+   disastrous results — to one that successfully adopts an
+   asynchronous way of working. It has suggestions for employees,
+   mid-level managers, and executives.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://xahteiwi.eu/blog/2021/10/23/make-my-company-distributed/"&gt;Please, make my company
+   distributed!&lt;/a&gt;
+   takes a broader view on changing organizations so that they become
+   better suited for a distributed and asynchronous style of work, and
+   why that’s a lot harder than most people think.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="Communications"></category><category term="Work"></category></entry><entry><title>No, We Won’t Have a Video Call for That: Reader Feedback</title><link href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that-reader-feedback/" rel="alternate"></link><published>2021-09-26T00:00:00+00:00</published><updated>2021-09-26T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-09-26:/resources/presentations/no-we-wont-have-a-video-call-for-that-reader-feedback/</id><summary type="html">&lt;p&gt;Communications in distributed teams: a write-up of my talk from FrOSCon 2020, Cloud Edition.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a short summary of selected reactions to &lt;a href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;the original
+article&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Twitter, 2021-04-10&lt;/h3&gt;
+&lt;p&gt;On Twitter, &lt;a href="https://musings.danlj.org/about/"&gt;Michael K Johnson&lt;/a&gt; made
+&lt;a href="https://twitter.com/mcdanlj/status/1380661700664422406"&gt;an interesting
+point&lt;/a&gt; in
+response to this article:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;My way of thinking about DMs is a little different, or maybe we
+ think differently about confidentiality. Work goes in public,
+ meta-work is often about relationships, and I want my reports to be
+ 100% confident they can bring any question or concern to me.&lt;/p&gt;
+&lt;p&gt;So "encrypted email" is not the right metaphor or measuring stick in
+my view. DMs are a tool for saying what you aren't comfortable
+saying "out loud", but that shouldn't be about the work
+itself. Never "how do I do this?" But "advice pls about how to work
+with fred?" — yes!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I entirely agree with the sentiments behind this; I still maintain
+that chat DMs are not necessarily a good approach for addressing this,
+for reason that some chat systems give merely an illusion of
+confidentiality. If both participants in a conversation use OTR
+encryption over a protocol like IRC or XMPP, inadvertent disclosure to
+a third party is highly unlikely. Slack DMs? &lt;a href="https://www.nbcnews.com/better/business/slack-updates-privacy-policy-employers-can-read-private-dms-without-ncna862811"&gt;I wouldn't be so
+sure&lt;/a&gt;. If
+your report confides in you, you don't want them to have to worry if
+their message is &lt;em&gt;really&lt;/em&gt; just between you and them.&lt;/p&gt;
+&lt;h3&gt;Hacker News, 2021-09-25&lt;/h3&gt;
+&lt;p&gt;On 2021-09-25, &lt;a href="https://news.ycombinator.com/item?id=28636536"&gt;a link to this
+article&lt;/a&gt; ended up being
+the top post on Hacker News for a few hours. You're very welcome to
+read through the 200-odd comments in that thread, but here I'd like to
+respond to just a couple. I'm deliberately only picking out ones where I
+feel like &lt;em&gt;clarification&lt;/em&gt; on my part is necessary; as far as
+differences of opinion are concerned I'll be happy to let those stand.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The article also assumes every one is a native speaker who can write
+quickly and clearly in a chat -- in a lot of international projects
+this is not the case.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;— &lt;a href="https://news.ycombinator.com/item?id=28651678"&gt;comment&lt;/a&gt; from &lt;code&gt;papaf&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;My native language is German, and neither at the time of presenting
+the original talk nor at the time of writing this update did I work
+with anyone who is a first-language English speaker.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I have an objection to the author's blanket disregard for "pings" in
+chat - while the request could/should be worded a bit more clearly
+than just "ping", IMHO they're a valid way of requesting if an
+opportunity for synchronous communication is available in the (not
+that rare!) cases where asynchronous communication would be
+worthless.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;— &lt;a href="https://news.ycombinator.com/item?id=28652633"&gt;comment&lt;/a&gt; from &lt;code&gt;PeterisP&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;My blanket disregard is for &lt;em&gt;naked&lt;/em&gt; pings, not for pings in general.&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="Communications"></category><category term="Work"></category></entry><entry><title>Add Depth! Stereoscopic imagery for everyone</title><link href="https://xahteiwi.eu/resources/presentations/add-depth-stereoscopic-imagery-for-everyone/" rel="alternate"></link><published>2021-08-21T00:00:00+00:00</published><updated>2021-08-21T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-08-21:/resources/presentations/add-depth-stereoscopic-imagery-for-everyone/</id><summary type="html">&lt;p&gt;My talk from FrOSCon 2021, Cloud Edition.&lt;/p&gt;</summary><content type="html">&lt;p&gt;FrOSCon 2021 was again an online event due to the COVID-19 pandemic
+(&lt;a href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;just like the previous year&lt;/a&gt;), and had a
+track named &lt;em&gt;Woodwork instead of IT&lt;/em&gt;, showcasing people's hobbies and
+interests they had discovered, or rediscovered, during lockdown.&lt;/p&gt;
+&lt;p&gt;So I submitted a talk that has absolutely nothing to do with what I do
+for work, and instead covered stereography: making, and viewing,
+stereoscopic images and videos.&lt;/p&gt;
+&lt;p&gt;The talk recording is available from &lt;a href="https://youtu.be/5wh0IDdMvAk"&gt;YouTube&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;And, as always, you can also review my slides, with all my speaker notes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Rendered slides: &lt;a href="https://fghaas.github.io/add_depth/"&gt;GitHub
+  Pages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Slide sources (CC-BY-SA): &lt;a href="https://github.com/fghaas/add_depth"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="presentations"></category><category term="Conference"></category></entry><entry><title>I Don’t Think This Means What You Think It Means: Red Herrings in OpenStack</title><link href="https://xahteiwi.eu/resources/presentations/i-dont-think-this-means-what-you-think-it-means-red-herrings-in-openstack/" rel="alternate"></link><published>2020-10-22T00:00:00+00:00</published><updated>2020-10-22T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2020-10-22:/resources/presentations/i-dont-think-this-means-what-you-think-it-means-red-herrings-in-openstack/</id><summary type="html">&lt;p&gt;My talk from the Open Infrastructure Summit, October 2020.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a talk of which I had done a previous version at Open Infra
+Days Nordic in 2019, but where unfortunately the audio came out really
+messed up in the recording. This version is much better.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Talk video: &lt;a href="https://youtu.be/0nughAOezoc"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can review my slides, including all speaker notes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Rendered slides: &lt;a href="https://fghaas.github.io/red-herrings-openstack/"&gt;GitHub
+  Pages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Slide sources (CC-BY-SA): &lt;a href="https://github.com/fghaas/red-herrings-openstack"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="OpenStack"></category></entry><entry><title>What I now know about HAproxied Django database connections, and wish I'd known sooner</title><link href="https://xahteiwi.eu/resources/presentations/what-i-now-know-about-haproxied-django-database-connections-and-wish-id-known-sooner/" rel="alternate"></link><published>2020-09-08T00:00:00+00:00</published><updated>2020-09-08T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2020-09-08:/resources/presentations/what-i-now-know-about-haproxied-django-database-connections-and-wish-id-known-sooner/</id><summary type="html">&lt;p&gt;My talk from PyConline AU 2020.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I’ve been wanting to speak at PyCon.au for a long time now, and
+finally did for the 2020 &lt;em&gt;PyConline AU&lt;/em&gt; edition.&lt;/p&gt;
+&lt;p&gt;This was a truly wonderful conference, in which the organisers and
+attendees collectively bent over backwards and put in a massive effort
+to run an event that was just as wonderful as an in-person event would
+have been.&lt;/p&gt;
+&lt;p&gt;This is a purely technical talk, and covers some very interesting
+aspects of dealing with Galera high availability clusters for MySQL
+and MariaDB database servers, connecting though them from Django via
+an HAProxy load balancer, and then dealing with interesting side
+effects of that combination.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Talk video: &lt;a href="https://youtu.be/2qDh7tl-wpg"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And, as always, you can also review my slides, with all my speaker notes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Rendered slides: &lt;a href="https://fghaas.github.io/pyconau2020"&gt;GitHub
+  Pages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Slide sources (CC-BY-SA): &lt;a href="https://github.com/fghaas/pyconau2020"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="Python"></category></entry><entry><title>No, We Won’t Have a Video Call for That!</title><link href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/" rel="alternate"></link><published>2020-08-22T00:00:00+00:00</published><updated>2020-08-22T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2020-08-22:/resources/presentations/no-we-wont-have-a-video-call-for-that/</id><summary type="html">&lt;p&gt;Communications in distributed teams: a write-up of my talk from FrOSCon 2020, Cloud Edition.&lt;/p&gt;</summary><content type="html">&lt;p&gt;FrOSCon 2020 was an online event due to the COVID-19 pandemic, and
+gave me the opportunity to present an extended and heavily updated
+version of my &lt;a href="https://xahteiwi.eu/resources/presentations/devopsdays-tel-aviv-2019/"&gt;DevOpsDays 2019&lt;/a&gt; talk.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;I normally make my talks available as a video, and a slide deck with
+full speaker notes. In this case though, I consider it fitting to
+write the whole thing out, so that you &lt;em&gt;don’t&lt;/em&gt; need to watch a full
+length video in 45 minutes, but can read the whole thing in 15.&lt;/p&gt;
+&lt;p&gt;You’ll still find links to the recording and deck downpage, as usual.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;No, we won’t have a video call for that!&lt;/p&gt;
+&lt;p&gt;Communications for distributed teams&lt;/p&gt;
+&lt;p&gt;FrOSCon 2020&lt;/p&gt;
+&lt;!-- Note --&gt;
+&lt;p&gt;This presentation is a talk presented at &lt;a href="https://www.froscon.de/"&gt;FrOSCon 2020
+Cloud Edition&lt;/a&gt;. It is &lt;a href="https://creativecommons.org/licenses/by-sa/4.0/"&gt;CC-BY-SA
+4.0&lt;/a&gt; licensed, see
+&lt;a href="/LICENSE"&gt;the license&lt;/a&gt; for details.&lt;/p&gt;
+&lt;p&gt;Hello and welcome, dear FrOScon people — this is my talk on
+communications in distributed teams. My name is Florian, this is the
+second time I‘m speaking at FrOScon, and you probably want to know
+what the hell qualifies me to talk about this specific issue. So:&lt;/p&gt;
+&lt;h3&gt;Why am I talking here?&lt;/h3&gt;
+&lt;p&gt;So, why am I talking about &lt;strong&gt;that&lt;/strong&gt;?&lt;/p&gt;
+&lt;p&gt;Or rather more precisely, why am &lt;strong&gt;I&lt;/strong&gt; talking about that?&lt;/p&gt;
+&lt;p&gt;I turned 40 last year, have been in IT for about 20 years now (19
+full-time), and out of that I have worked&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;in 4 successive companies, all of which worked out of offices,
+  for 11 years, &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;in a completely distributed company, that I founded, for 6 years,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;and now, for about three years, I have been running a distributed
+  team that is a business unit of a company that has existed for 15
+  years and throughout that time, has only ever worked from a single
+  office.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So I think I might have seen and become aware of some of the rather
+interesting challenges that come with this.&lt;/p&gt;
+&lt;h3&gt;What changed since last time?&lt;/h3&gt;
+&lt;p&gt;I originally wrote and presented this talk for the first time in
+December 2019. At the time, you probably had forgotten about SARS, had
+no idea what SARS-CoV2 or COVID-19 were, and many of you were probably
+working from offices.&lt;/p&gt;
+&lt;p&gt;And then something like three months later, everything changed and
+suddenly, this talk became much more relevant to a much greater
+audience.&lt;/p&gt;
+&lt;p&gt;And something else happened: a lot of people suddenly started talking
+about working from home and distributed teams, and a lot of those
+people who were talking very loudly, had themselves only been working
+with or managing distributed teams since March. And a fair amount of
+what you could about the subject then, and can still read now, is
+complete and utter bullshit.&lt;/p&gt;
+&lt;p&gt;So there’s one point I actually &lt;em&gt;didn’t&lt;/em&gt; make in the initial version
+of this talk, because I thought it was self-evident. But I have come
+to the conclusion that to a lot of people it is not, so to rectify
+this omission from last December — and with apologies for that
+omission to the wonderful DevOpsDays Tel Aviv crowd, who were my first
+audience for this talk, let me make this one thing very clear from the
+outset:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Effective distributed collaboration is &lt;strong&gt;not&lt;/strong&gt; pretending to be in
+an office while staring into a webcam all day.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;You will never be able to capitalize on work as a distributed team
+unless you kick some office habits. The key to distributed teams being
+effective is &lt;strong&gt;not&lt;/strong&gt; that they happen to not be in the same place, as
+you’ll see from the remainder of this talk. So to expect success from
+the approach that you take the habits of an office, simply remove the
+element of locality, replace every face to face meeting with a video
+call and carry on, is ludicrous.&lt;/p&gt;
+&lt;p&gt;The good news is that if you do it right, you’ll end up with a far
+better team than a local one would ever be, &lt;em&gt;and&lt;/em&gt; everyone has a
+chance at far better work-life balance, &lt;em&gt;and&lt;/em&gt; you don’t waste awful
+amounts of time and energy and fossil fuels on your commute.&lt;/p&gt;
+&lt;h3&gt;What’s in this talk?&lt;/h3&gt;
+&lt;p&gt;So you’ll find a few general themes throughout this talk:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;What modes we have &lt;em&gt;available&lt;/em&gt; for communications in teams;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Why distributed teams always collaborate &lt;em&gt;asynchronously,&lt;/em&gt; and what
+  communication modes lend themselves to that particularly well;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Why &lt;em&gt;written communication&lt;/em&gt; is so important in distributed teams;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;And why &lt;em&gt;meetings&lt;/em&gt; (like video calls) are a mode of communication
+  that effective distributed teams hardly ever need to use — except
+  for very specific reasons.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;But I do want to state one thing upfront:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is &lt;em&gt;not science.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Nothing of what I am talking about is steeped in any scientific
+rigour. I present anecdotes, not evidence. I might be mistaking
+correlation for causation, or the other way round. It’s solely based
+on my personal experience, and the experience of others I have talked
+to, watched, or read. Everything I say here is subject to debate and
+rebuttal, or you can simply have a different opinion.&lt;/p&gt;
+&lt;p&gt;But it’s definitely &lt;strong&gt;not&lt;/strong&gt; science.&lt;/p&gt;
+&lt;p&gt;Now with all of that said, let me attempt to give a definition of a
+distributed team, according to my understanding:&lt;/p&gt;
+&lt;p&gt;A distributed team is a &lt;strong&gt;professional&lt;/strong&gt; group whose members do not
+rely on proximity in order to &lt;strong&gt;routinely&lt;/strong&gt; collaborate
+productively.&lt;/p&gt;
+&lt;p&gt;Now this is clearly not an ideal definition, not least because it
+defines something by a negative, and an outside factor to boot: it
+defines a distributed team by what it &lt;em&gt;does not need&lt;/em&gt; to exist to
+function. But it’s the best definition I’ve been able to come up with.&lt;/p&gt;
+&lt;p&gt;Now there’s a couple of key words in here:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Professional.&lt;/strong&gt; I’m talking about teams that work towards a
+  professional goal. This doesn’t necessarily mean that they all work
+  in the same company. They could, for example, all work in different
+  companies collaborating on a joint project, which is what frequently
+  happens in open source software projects. But they’re not pursuing
+  their hobby, they’re doing their jobs.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Routinely.&lt;/strong&gt; I’m talking about teams that &lt;em&gt;habitually&lt;/em&gt; work in a
+  distributed fashion, not the work that goes on in an office-based
+  team when one person is having a work-from-home day.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It is important to understand that that lack of proximity is not only
+spatial, it is temporal as well, because:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Working in a distributed team means &lt;strong&gt;working asynchronously.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;If your team is distributed, this is equivalent to saying that it
+works in an asynchronous fashion, that is to say, that people will
+work on things in parallel, and a capable distributed team will have
+just as few synchronization points as absolutely necessary.&lt;/p&gt;
+&lt;p&gt;The reason for this is not just working in different timezones, but
+also the fact that everyone will have their own daily routine, and/or
+have their individual times when they are most productive. Which you
+&lt;em&gt;will not attempt to synchronize.&lt;/em&gt; (Doing so would mean setting the
+entire team up for failure.)&lt;/p&gt;
+&lt;p&gt;Now, this doesn’t come for free, nor does it fall in our lap:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Being productive in a distributed team is a skill
+that most people must &lt;strong&gt;learn;&lt;/strong&gt; it is not innate to us.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;People are not born with the ability to work in a distributed
+team. Humans function best in groups that collaborate in close
+proximity to one another; it is only very recently that technology has
+started to enable us to override that to an extent — giving us other
+benefits like the ability to work from home, or the ability to hire
+people residing anywhere, provided they have internet connectivity.&lt;/p&gt;
+&lt;p&gt;So we now &lt;em&gt;can&lt;/em&gt; work in teams despite being continental distances away
+from each other but we do have to acquire the skills to do that. And
+if we fail to do so, that has a rather grave disadvantage, which is
+that...&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Nothing&lt;/strong&gt; has as dire an impact on productivity as &lt;strong&gt;poor
+communications.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This is a truism that applies to both distributed and non-distributed
+teams. Having bad communications will wreck any project, blow any
+budget, fail any objective. Now note that the reverse is &lt;em&gt;not true:&lt;/em&gt;
+having &lt;em&gt;good&lt;/em&gt; communications does not guarantee success. But having
+bad communications does guarantee failure.&lt;/p&gt;
+&lt;p&gt;And here is one thing to start with:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A capable distributed team &lt;strong&gt;habitually externalises&lt;/strong&gt; information.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Information is generally far less useful when it is only stored in one
+person’s head, as opposed to being accessible in a shared system that
+everyone trusts and can use. If you take important information out of
+your own head and store it in a medium that allows others to easily
+find and contextualise it, that’s a win for everyone.&lt;/p&gt;
+&lt;p&gt;And since we’re all technology people, we typically have multiple
+facilities to externalise, share, and then access information at our
+disposal. So let’s see how those compare.&lt;/p&gt;
+&lt;h2&gt;Modes of communication in distributed teams&lt;/h2&gt;
+&lt;p&gt;A distributed team will habitually use multiple modes of
+communication, relying mostly on those that make sharing, finding, and
+contextualising information easy, and avoiding those that make it
+difficult.&lt;/p&gt;
+&lt;p&gt;In many teams, distributed or not, using chat as a default mode of
+communication is becoming the norm. Now with an important exception,
+which I’ll get to near the end of the talk, this is &lt;strong&gt;not&lt;/strong&gt; a symptom
+of having a particularly dynamic or efficient team; it’s the opposite.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Excessively using chat isn’t being efficient.
+It’s being lazy.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;It’s a symptom of the worst kind of laziness &lt;em&gt;(not malice!)&lt;/em&gt;: in an
+attempt to communicate quickly and easily, for yourself, you are really
+making things harder for everyone, including yourself.&lt;/p&gt;
+&lt;table class="table table-striped"&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th align="center"&gt;Share&lt;/th&gt;
+&lt;th align="center"&gt;Find&lt;/th&gt;
+&lt;th&gt;Contextualise&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Chat&lt;/td&gt;
+&lt;td align="center"&gt;🙂&lt;/td&gt;
+&lt;td align="center"&gt;😐&lt;/td&gt;
+&lt;td&gt;🙁&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;This is because, while &lt;em&gt;sharing&lt;/em&gt; information in a chat is extremely
+easy, it is also a “fire and forget” mode of communications. Chat
+makes it difficult to find information after the fact. If you’ve ever
+attempted to scour a busy Slack or IRC archive for a discussion on a
+specific topic that you only remember to have happened a “few months
+ago”, you’ll agree with me here.&lt;/p&gt;
+&lt;p&gt;It’s even &lt;em&gt;more&lt;/em&gt; difficult to read a Slack discussion in context, that
+is to say in relation to &lt;em&gt;other&lt;/em&gt; discussions on the same topic, days
+or weeks earlier or later.&lt;/p&gt;
+&lt;p&gt;Let’s compare that to other communication modes:&lt;/p&gt;
+&lt;table class="table table-striped"&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th align="center"&gt;Share&lt;/th&gt;
+&lt;th align="center"&gt;Find&lt;/th&gt;
+&lt;th&gt;Contextualise&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Chat&lt;/td&gt;
+&lt;td align="center"&gt;🙂&lt;/td&gt;
+&lt;td align="center"&gt;😐&lt;/td&gt;
+&lt;td&gt;🙁&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Email&lt;/td&gt;
+&lt;td align="center"&gt;😐&lt;/td&gt;
+&lt;td align="center"&gt;😐&lt;/td&gt;
+&lt;td&gt;😐&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;Email makes it easy to share information with a person or a group
+  from the get-go, but quite difficult to loop people into an ongoing
+  discussion after the fact. Finding information later is just as hard
+  as with chat, and it’s marginally better at contextualizing
+  information than chat (because you get proper threading).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table class="table table-striped"&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th align="center"&gt;Share&lt;/th&gt;
+&lt;th align="center"&gt;Find&lt;/th&gt;
+&lt;th&gt;Contextualise&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Chat&lt;/td&gt;
+&lt;td align="center"&gt;🙂&lt;/td&gt;
+&lt;td align="center"&gt;😐&lt;/td&gt;
+&lt;td&gt;🙁&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Email&lt;/td&gt;
+&lt;td align="center"&gt;😐&lt;/td&gt;
+&lt;td align="center"&gt;😐&lt;/td&gt;
+&lt;td&gt;😐&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Wiki&lt;/td&gt;
+&lt;td align="center"&gt;🙂&lt;/td&gt;
+&lt;td align="center"&gt;🙂&lt;/td&gt;
+&lt;td&gt;🙂&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Issue tracker&lt;/td&gt;
+&lt;td align="center"&gt;🙂&lt;/td&gt;
+&lt;td align="center"&gt;🙂&lt;/td&gt;
+&lt;td&gt;🙂&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;A wiki and an issue tracker (provided you don’t lock them down with
+  silly view permissions), in contrast, both make it &lt;em&gt;very&lt;/em&gt; easy to
+  share, find, &lt;strong&gt;and&lt;/strong&gt; contextualise information.&lt;br/&gt;
+  Note that “wiki”, in this context, is shorthand for any facility
+  that allows you to collaboratively edit long-form documents
+  online. That can be an actual wiki like a MediaWiki, but also
+  something like Confluence, or even shared Google Docs.&lt;br/&gt;
+  Likewise, “issue tracker” can mean RT, OTRS, Jira, Taiga, Bugzilla,
+  whatever works for you.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table class="table table-striped"&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th align="center"&gt;Share&lt;/th&gt;
+&lt;th align="center"&gt;Find&lt;/th&gt;
+&lt;th&gt;Contextualise&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Chat&lt;/td&gt;
+&lt;td align="center"&gt;🙂&lt;/td&gt;
+&lt;td align="center"&gt;😐&lt;/td&gt;
+&lt;td&gt;🙁&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Email&lt;/td&gt;
+&lt;td align="center"&gt;😐&lt;/td&gt;
+&lt;td align="center"&gt;😐&lt;/td&gt;
+&lt;td&gt;😐&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Wiki&lt;/td&gt;
+&lt;td align="center"&gt;🙂&lt;/td&gt;
+&lt;td align="center"&gt;🙂&lt;/td&gt;
+&lt;td&gt;🙂&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Issue tracker&lt;/td&gt;
+&lt;td align="center"&gt;🙂&lt;/td&gt;
+&lt;td align="center"&gt;🙂&lt;/td&gt;
+&lt;td&gt;🙂&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Video call&lt;/td&gt;
+&lt;td align="center"&gt;😐&lt;/td&gt;
+&lt;td align="center"&gt;🙁&lt;/td&gt;
+&lt;td&gt;🙁&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;Video calls are even worse than chat or email, because sharing
+  information works but doesn’t scale — you can’t reasonably have more
+  than 5-or-so people in a video call, and sharing the recording of a
+  full video call is just pointless.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So really, make your wiki and your issue tracker your default mode of
+communications, and use the others sparingly. (This isn’t meant to be
+a euphemism for “don’t use them”, as we’ll get to in a moment.)&lt;/p&gt;
+&lt;h2&gt;Text chat&lt;/h2&gt;
+&lt;p&gt;So. Let’s talk about text chat. These days, that frequently means
+&lt;a href="https://slack.com/"&gt;Slack&lt;/a&gt;, but what I am talking about also and
+equally applies to
+&lt;a href="https://en.wikipedia.org/wiki/Internet_Relay_Chat"&gt;IRC&lt;/a&gt;,
+&lt;a href="https://mattermost.com/"&gt;Mattermost&lt;/a&gt;, &lt;a href="https://riot.im/"&gt;Riot&lt;/a&gt;, and 
+anything similar.&lt;/p&gt;
+&lt;p&gt;Is text chat universally useful? No. Is it universally bad? Not that,
+either. There is a very specific type of situation in which text chat
+is a good thing:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Use &lt;strong&gt;chat&lt;/strong&gt; for collaboration that requires &lt;strong&gt;immediate,
+interactive mutual feedback.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Using interactive chat is a good idea for the kind of communication
+that requires immediate, interactive mutual feedback from two or more
+participants. If that is not the case, chat is not a good idea.&lt;/p&gt;
+&lt;p&gt;This means that the only thing that chat is good for is communication
+that is required to be &lt;em&gt;synchronous,&lt;/em&gt; and remember, in a distributed
+team &lt;em&gt;asychronicity&lt;/em&gt; is the norm. So using interactive chat for
+communications needs to be an &lt;em&gt;exceptional&lt;/em&gt; event for a distributed
+team; if it is instead a regular occurrence you’ll make everyone on
+the team miserable.&lt;/p&gt;
+&lt;p&gt;For any interaction that does &lt;em&gt;not&lt;/em&gt; require feedback that is &lt;em&gt;both&lt;/em&gt;
+immediate and interactive, email, a wiki, or an issue tracker are &lt;em&gt;far
+superior&lt;/em&gt; modes of communication.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The only reason to use &lt;strong&gt;DMs&lt;/strong&gt; for collaboration&lt;br/&gt;
+is a need for immediate, interactive mutual feedback&lt;br/&gt;
+&lt;strong&gt;and confidentiality.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Using chat direct messages (DMs) as the &lt;em&gt;default&lt;/em&gt; means of
+communication is utterly braindead. In order for a chat DM to be
+useful, there is precisely one clearly delineated confluence of events
+that must occur:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You need immediate feedback from the other person,&lt;/li&gt;
+&lt;li&gt;you need mutual back-and-forth with the other person,&lt;/li&gt;
+&lt;li&gt;you don’t want others to follow the conversation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I can’t emphasize enough that this combination is perfectly valid —
+but it is &lt;em&gt;exceedingly rare.&lt;/em&gt; If you want just a private exchange of
+ideas with someone, encrypted email will do. If you want to work on
+something together with one person before you share it with others,
+restricted view permissions on a wiki page or an issue tracker ticket
+will work just fine.&lt;/p&gt;
+&lt;p&gt;If you don’t need confidentiality but you do need interactive and
+immediate feedback, chances are that you’re working on something
+urgent, and it is far more likely you’ll eventually need to poll other
+opinions, than that you won’t. So just use a shared channel from the
+get-go, that way it’s easier for others to follow the conversation if
+needed — and they might be able to point out an incorrect assumption
+that one of you has, before you end up chasing a red herring.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A chat ping is a shoulder tap.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;“Pinging” someone in a chat (that is, mentioning their username, which
+usually triggers a visual or auditory notification), is exactly like
+walking up to a person, interrupting what they are doing, tapping them
+on the shoulder, and asking them a question.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;No matter whether it is your intention or not,&lt;/strong&gt; they will feel
+compelled to answer, relatively promptly (the only exception is when
+you’ve done this so often that you have conditioned your colleagues
+to ignore you — congratulations).&lt;/p&gt;
+&lt;p&gt;This means that you’ve broken their train of thought, yanked them out
+of a potentially complex task, forced them to redo what they did
+pre-interruption, or actually have them commit a mistake.&lt;/p&gt;
+&lt;p&gt;So pinging someone in a chat is something you should only do if you
+are aware of exactly this risk, &lt;em&gt;and&lt;/em&gt; you are convinced that whatever
+you’re pinging about is more important. Otherwise, to be very blunt,
+you’ll be seen as the asshole.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Want people to hate you? Send naked pings.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;A “naked ping” is the action of sending someone a message consisting
+only of their username and a marker like “ping”, “hi”, “hey” or
+similar.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="mi"&gt;14&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;00&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;02&lt;/span&gt;&lt;span class="n"&gt;Z&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;johndoe&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;florian&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ping&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="o"&gt;[...]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;56&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;17&lt;/span&gt;&lt;span class="n"&gt;Z&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;florian&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;johndoe&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;I&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;hate&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;you&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Don’t. Just don’t.&lt;/p&gt;
+&lt;p&gt;Any person who is versed in the use of chat communications will, when
+subjected to this behavior, be inclined to flay you alive. Infinitely
+more so if it’s a DM. &lt;strong&gt;Do not do this.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Instead, always provide context. Always always always. Don’t say “can
+I ask you a question, instead, &lt;em&gt;ask the question.&lt;/em&gt; If something isn’t
+urgent, say something like “no urgency.”&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="mi"&gt;14&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;00&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;02&lt;/span&gt;&lt;span class="n"&gt;Z&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;johndoe&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;florian&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;can&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;I&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;get&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;your&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;eyes&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;on&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;PR&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="mi"&gt;1422&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="o"&gt;[...]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;56&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;17&lt;/span&gt;&lt;span class="n"&gt;Z&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;florian&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;johndoe&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;done&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="w"&gt;                   &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;was&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;afk&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bit&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;–&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sick&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;kiddo&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;56&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;58&lt;/span&gt;&lt;span class="n"&gt;Z&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;johndoe&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;florian&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ty&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;It should be self-evident why this is better than naked pings, but if
+to you it is not, then please read &lt;a href="https://blogs.gnome.org/markmc/2014/02/20/naked-pings/"&gt;Naked
+Pings&lt;/a&gt;,
+courtesy of Adam Jackson and Mark McLoughlin.&lt;/p&gt;
+&lt;h2&gt;Video calls&lt;/h2&gt;
+&lt;p&gt;(Zoom, Hangouts, BlueJeans etc.)&lt;/p&gt;
+&lt;p&gt;Next, I’d like to talk about video calls. Doesn’t matter what
+technology you’re using. Could be Zoom, Google Hangouts, BlueJeans,
+Jitsi, whatever.&lt;/p&gt;
+&lt;p&gt;And I’d like to address this specifically, given the fact that in the
+current pandemic the use of video calls appears to have skyrocketed.&lt;/p&gt;
+&lt;p&gt;There’s a very good reason to use video calls: they give you the
+ability to pick up on nontextual and nonverbal cues from the call
+participants. But that’s really the only good reason to use them.&lt;/p&gt;
+&lt;p&gt;Video calls have a significant drawback: until we get reliable
+automatic speech recognition and transcription, they are only
+half-on-the-record. Hardly anyone goes to the trouble of preparing a
+full transcript of a meeting, and if anything, we get perhaps a
+summary of points discussed and action items agreed to. So even if we
+keep recordings of every video call we attend, it’s practically
+impossible to discern, after the fact, what was discussed in a meeting
+&lt;em&gt;before&lt;/em&gt; decisions were made.&lt;/p&gt;
+&lt;p&gt;It is also practically impossible to &lt;em&gt;find&lt;/em&gt; a discussion point that
+you only have a vague recollection of when it was discussed in a video
+call, whereas doing so has a much greater probability of success if
+a discussion took place on any archived text-based medium.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Every video call needs an agenda.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This is, of course, true for any meeting, not just those conducted by
+video call.&lt;/p&gt;
+&lt;p&gt;A conversation without an agenda is useless. You want people to know
+what to expect of the call. You also want to give people the option to
+prepare for the call, such as doing some research or pulling together
+some documentation. If you fail to circulate those &lt;em&gt;ahead of time,&lt;/em&gt; I
+can guarantee that the call will be ineffective, and will likely
+result in a repeat performance.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Until machines get intelligent enough to automatically transcribe
+and summarise words spoken in a meeting, &lt;strong&gt;write notes and a summary
+of every meeting you attend,&lt;/strong&gt; and &lt;strong&gt;circulate them.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Just as important as an agenda to set the &lt;em&gt;purpose&lt;/em&gt; of the meeting, is
+a set of notes that describes its &lt;em&gt;outcome&lt;/em&gt;. &lt;/p&gt;
+&lt;p&gt;Effective distributed teams understand that the &lt;em&gt;record&lt;/em&gt; of a call is
+what counts, not the call itself. It is not the spoken word that
+matters, but the written one.&lt;/p&gt;
+&lt;p&gt;From that follows this consequence:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;To be useful, the write-up of a call &lt;strong&gt;takes more time and effort&lt;/strong&gt;
+than the call itself.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;If you think that video calls are any less work than chat meetings or
+a shared document that’s being edited together or dicussed in
+comments, think again. The only way a video call is less work, is when
+everyone’s lazy and the call is, therefore, useless. Every meeting
+needs notes and a summary, and you need to circulate these notes not
+only with everyone who attended the meeting, but with everyone who has
+a need-to-know.&lt;/p&gt;
+&lt;p&gt;Here’s the standard outline I use for meeting notes:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Meeting title&lt;/li&gt;
+&lt;li&gt;Date, time, attendees&lt;/li&gt;
+&lt;li&gt;Summary&lt;/li&gt;
+&lt;li&gt;Discussion points (tabular)&lt;/li&gt;
+&lt;li&gt;Action items&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Putting an executive summary at the very top is extraordinarily
+helpful so people can decide if they&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;should familiarise themselves with what was discussed, immediately,
+  and possibly respond if they have objections, or&lt;/li&gt;
+&lt;li&gt;only want to be aware of what was decided, or&lt;/li&gt;
+&lt;li&gt;just keep in the back of their head that a meeting happened, that
+  notes exist, and where they can find them when they need to refer
+  back to them.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Once you do meetings right, you no longer need most of them.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The funny thing is that once you adhere to this standard — and I
+repeat, having a full and detailed record is &lt;em&gt;the only acceptable
+standard&lt;/em&gt; for video meetings – you’ll note that you can actually skip
+the meeting altogether, use &lt;em&gt;just&lt;/em&gt; a collaboratively edited document
+&lt;em&gt;instead&lt;/em&gt; of your meeting notes, and remove your unnecessary
+synchronization point.&lt;/p&gt;
+&lt;h3&gt;Video calls for recurring team meetings&lt;/h3&gt;
+&lt;p&gt;There is one thing that I do believe video calls are good for, and
+that is to use them for &lt;em&gt;recurring&lt;/em&gt; meetings as as an
+opportunity to feel the pulse of your team.&lt;/p&gt;
+&lt;p&gt;Obviously, a distributed team has &lt;em&gt;few&lt;/em&gt; recurring meetings, because
+they are synchronization points, and we’ve already discussed that we
+strive to minimize those. So the idea of having daily standups, sprint
+planning meetings, and sprint retrospectives is fundamentally
+incompatible with distributed teams. &lt;em&gt;Aside: in my humble opinion,
+this is also why using Scrum is a terrible idea in distributed teams —
+not to mention &lt;a href="https://youtu.be/f-ULT_Ic4qk"&gt;that it’s a terrible idea,
+period.&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;However, having perhaps one meeting per week (or maybe even one every
+two weeks) in a video call is useful &lt;em&gt;precisely for the aforementioned
+reasons&lt;/em&gt; of being able to pick up on nonverbal clues like body
+language, posture, facial expressions, and tone. If people are
+stressed out or unhappy, it’ll show. If they are relaxed and
+productive, that will show too.&lt;/p&gt;
+&lt;p&gt;Note that these meetings, which of course do follow the same rules
+about agenda and notes, are not strictly &lt;em&gt;necessary&lt;/em&gt; to get the work
+done. The team I run has one one-hour meeting a week, but whenever
+that meeting conflicts with anything we skip it and divide up our
+work via just the circulated coordination notes, and that works
+too. The meeting really serves the purpose of syncing emotionally, and
+picking up on nonverbal communications.&lt;/p&gt;
+&lt;h2&gt;Briefing people&lt;/h2&gt;
+&lt;p&gt;Whenever you need to thoroughly &lt;strong&gt;brief a group of people on an
+important matter,&lt;/strong&gt; consider using a &lt;strong&gt;5-paragraph format.&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Situation&lt;/li&gt;
+&lt;li&gt;Mission&lt;/li&gt;
+&lt;li&gt;Execution&lt;/li&gt;
+&lt;li&gt;Logistics&lt;/li&gt;
+&lt;li&gt;Command and Signal&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This is a format as it is being used by many armed forces; in NATO
+parlance it’s called the 5-paragraph field order. Now I’m generally
+not a fan of applying military thinking to civilian life — after all
+we shouldn’t forget that the military is an institution that kills
+people and breaks things, and I say that as a commissioned officer in
+my own country’s army —, but in this case it’s actually something that
+can very much be applied to professional communications, with some
+rather minor modifications:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Situation&lt;/li&gt;
+&lt;li&gt;Objective&lt;/li&gt;
+&lt;li&gt;Plan&lt;/li&gt;
+&lt;li&gt;Logistics&lt;/li&gt;
+&lt;li&gt;Communications&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Let’s break these down in a little detail:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Situation is about what position we’re in, and &lt;strong&gt;why&lt;/strong&gt; we set out
+   to do what we want to do. You can break this down into three
+   sub-points, like the customer’s situation, the situation of your
+   own company, any extra help that is available, and the current
+   market.&lt;/li&gt;
+&lt;li&gt;Objective is &lt;strong&gt;what&lt;/strong&gt; we want to achieve.&lt;/li&gt;
+&lt;li&gt;Plan is &lt;strong&gt;how&lt;/strong&gt; we want to achieve it.&lt;/li&gt;
+&lt;li&gt;Logistics is about what budget and resources are available, and how
+   they are used.&lt;/li&gt;
+&lt;li&gt;Communications is about how you’ll be coordinating among yourselves
+   and with others in order to achieve your goal.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Note that people &lt;em&gt;always&lt;/em&gt; have questions on what they’ve just been
+briefed about. They just might not think of them straight away. Give
+people time to think through what you’ve just briefed them on, and
+they will think of good questions. So always have a follow-up round at
+a later time (2 hours later, the following day, whatever), for which
+you &lt;em&gt;encourage&lt;/em&gt; your group to come back with questions.&lt;/p&gt;
+&lt;p&gt;Also, use that same follow-up for checking how your briefing came
+across, by gently quizzing people with questions like&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;“by what date do we want to implement X?”, or&lt;/li&gt;
+&lt;li&gt;“Joe, what things will you need to coordinate with Jane on?”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This gives you valuable feedback on the quality of your briefing: if
+your team can’t answer these questions, chances are that you weren’t
+as clear as you should have been.&lt;/p&gt;
+&lt;h2&gt;Pinching the firehose&lt;/h2&gt;
+&lt;p&gt;Finally, I want to say a few words about what I like to call pinching
+the figurative firehose you might otherwise be forced to drink from:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The amount of incoming information in a distributed team can be
+daunting.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;When you work in a distributed team, since everyone is on their own
+schedule and everything is asynchronous, you may be dealing with a
+constant incoming stream of information — from your colleagues, your
+reports, your manager, your customers. &lt;/p&gt;
+&lt;p&gt;There is no way to change this, so what you need to do is apply your
+own structure to that stream. What follows is not &lt;strong&gt;the&lt;/strong&gt; way to do
+that, but &lt;em&gt;one&lt;/em&gt; way, and you may find another works better for
+you. But you will need to define and apply &lt;em&gt;some&lt;/em&gt; structure, otherwise
+you’ll feel constantly overwhelmed and run the risk of burning out.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Consider using the &lt;strong&gt;“4-D” approach&lt;/strong&gt; when dealing with incoming
+information.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;(Hat tip to David Allen)&lt;/p&gt;
+&lt;p&gt;There’s a defined approach for doing this, which I learned about from
+reading &lt;a href="https://en.wikipedia.org/wiki/David_Allen_(author)"&gt;David
+Allen&lt;/a&gt;’s &lt;a href="https://www.goodreads.com/book/show/1633.Getting_Things_Done"&gt;Getting
+Things
+Done&lt;/a&gt;. I
+don’t know if Allen invented the 4-D approach or whether someone came
+up with it before him, but that’s how I know about it.&lt;/p&gt;
+&lt;p&gt;In his book, David Allen suggests to apply one of the following four
+actions to any incoming bit of information:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Drop&lt;/strong&gt; means read, understand, and then archive. It’s what you use
+  for anything that doesn’t require any action on your part.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Delegate&lt;/strong&gt; is for things that do require action, but not from
+  you. Make sure that it gets to the right person and is understood by
+  &lt;em&gt;them&lt;/em&gt;, and make a note for follow-up.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Defer&lt;/strong&gt; means it needs doing, and it’s you who needs to do it, but
+  it doesn’t need doing &lt;em&gt;immediately&lt;/em&gt;. Enter it into your task list
+  (to use a very generic term, more on this in a bit), and clear it
+  from your inbox.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Do&lt;/strong&gt; are the (typically very few) things that remain that need to
+  be done &lt;em&gt;by you, and immediately.&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Following this approach does not mean that you’ll never be overwhelmed
+by the amount of information that you need to process. But it’ll
+greatly reduce that risk.&lt;/p&gt;
+&lt;h3&gt;“Drop” rules&lt;/h3&gt;
+&lt;p&gt;“Dropping” things doesn’t mean ignoring them. You still have to read
+and understand what’s in them, and be able to find them later. So:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Never delete things (except spam).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Only archive them in a way that that keeps them retrievable in the
+  future.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If there something isn’t understandable to you, think it through and
+  look for clarification.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;“Delegate” rules&lt;/h3&gt;
+&lt;p&gt;Delegation obviously requires that there is a person you can delegate
+to. This is &lt;em&gt;not necessarily&lt;/em&gt; someone who reports to you; indeed, it
+might be someone &lt;strong&gt;you&lt;/strong&gt; report to. (You might be asked to deal with
+something that you have no control over, but your manager does.) So:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Find the right person that can get the task done.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Preemptively send them &lt;strong&gt;all&lt;/strong&gt; the information that you think they
+  might need (and that you have access to), rather than relying on
+  them to ask.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ask them to acknowledge that they have received what they need.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Make a note to follow up to see if they need anything else, and
+  follow through by seeing the task to completion.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Within your own team, &lt;strong&gt;you only ever delegate tasks, not
+responsibility.&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Tasks without follow-up and follow-through are a waste of people’s
+time.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Do not delegate, or even define, tasks that you are not prepared to
+follow through on. If you handwave “everyone use encrypted email from
+now on,” and you’re not even prepared to make that work for your own
+email account, you might as well just leave it.&lt;/p&gt;
+&lt;p&gt;And if you do proclaim an objective or rule and &lt;em&gt;then&lt;/em&gt; you find yourself
+unable to see it through — &lt;em&gt;this happens,&lt;/em&gt; and is no sign of
+ineptitude or failure — then loudly and clearly rescind it. It’s far
+better for you to visibly backtrack, than to be perceived as someone
+whose pronouncements are safe to ignore.&lt;/p&gt;
+&lt;h3&gt;“Defer” rules&lt;/h3&gt;
+&lt;p&gt;Deferring simply means that because something you need to do doesn’t
+need doing &lt;em&gt;immediately,&lt;/em&gt; you can do it at a time that suits your
+schedule.&lt;/p&gt;
+&lt;p&gt;This means that you’ll need to&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;add the task immediately to some sort of queue (for email, this can
+  be a folder named “Needs Reply”),&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;make sure to go through that queue at a later time to prioritize
+  (ideally, right after you’re done with your “Do” tasks, which we’ll
+  get to in a second),&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;absolutely ensure that you make time to go back and actually do your
+  prioritized tasks, at a time you consider convenient.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;“Do” rules&lt;/h3&gt;
+&lt;p&gt;And finally, there’ll be your “Do” tasks — stuff that &lt;em&gt;you&lt;/em&gt; need to
+do, and do immediately.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Tell people that you’re doing them, because you’ll want to be
+  uninterrupted. Update your chat status, put some blocked time in
+  your calendar.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Make sure you’ll be uninterrupted. For email, turn off all your
+  notifications.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Plow through all the undropped, undelegated,
+  undeferred items in your inbox until it’s empty.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;But what about the watercooler?&lt;/h2&gt;
+&lt;p&gt;The entirety of this talk, up to this point, has focused on
+professional communications. And among people unfamiliar or
+unexperienced with work in a distributed team, it is often accepted
+that teams can communicate well “professionally.” &lt;/p&gt;
+&lt;p&gt;However, they frequently ask, “what about watercooler chats? What about
+the many informal discussions that happen at work while people are
+getting some water or coffee, or sit together over lunch? There’s
+always so much communication happening at work that’s informal, but is
+extremely beneficial to everyone.”&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Office workers often don’t habitually externalise information. A
+distributed team that tries that won’t last a week.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Firstly, many companies where information exchange hinges on coffee or
+cafeteria talk simply don’t give a damn about externalising
+information. Sure, if 90% of your company’s knowledge is only in
+people’s heads, you’re dead without the lunchroom. &lt;/p&gt;
+&lt;p&gt;But if the same thing happens in a distributed team, it never gets off
+the ground. So, if you have a team that’s functional and productive,
+&lt;em&gt;because it habitually externalises information,&lt;/em&gt; the absence of
+chit-chat over coffee has zero negative impact on information flow.&lt;/p&gt;
+&lt;p&gt;However, you may also be interested in the completely non-work-related
+talk that happens over coffee, that simply contributes to people’s
+relaxation and well-being.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;People working in distributed teams are often introverts. Or they
+simply choose to have their social relationships outside of work.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I know this might shock some people, but there are plenty of people
+who can make a terrific contribution to your company, but who dislike
+the “social” aspect of work. They might thrive when being left
+alone, with as little small-talk as possible, and ample opportunity to
+socialize with their friends and family, away from work.&lt;/p&gt;
+&lt;p&gt;But if you do have people on your team that enjoy having an entirely
+informal conversation every once in a while, there totally is room for
+that even in a distributed team. All you need to do is agree on a
+signal that means “I’m taking a break and I’d be happy to chat with
+anyone who’s inclined, preferably about non work related things” (or
+whatever meaning your group agrees on). &lt;/p&gt;
+&lt;p&gt;This could be&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a keyword on IRC,&lt;/li&gt;
+&lt;li&gt;a message to a specific channel, or&lt;/li&gt;
+&lt;li&gt;(if you want to get fancy) a bot that updates your group calendar
+  when it receives a message with a particular format.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;However, as a word of caution, I’ve actually done this with my team
+before, and it didn’t catch on — for the simple reason that we almost
+never took breaks that happened to overlap. But that doesn’t rule out
+that it works on &lt;em&gt;your&lt;/em&gt; team, and also there’s always the remote
+possibility that two or more people on your team might like to
+schedule their breaks concurrently.&lt;/p&gt;
+&lt;p&gt;What you can &lt;em&gt;also&lt;/em&gt; do, of course, is have a channel in which you can
+discuss completely random things that are not work related. And if the
+rule is that confidential or company-proprietary discussion topics are
+off-limits there, the channel might as well be public. It might even
+be Twitter.&lt;/p&gt;
+&lt;h2&gt;The antithesis: ChatOps&lt;/h2&gt;
+&lt;p&gt;I do want to mention one other thing for balance. There is a complete
+alternative framework for distributed teams working together, and it’s
+what people refer to as ChatOps.&lt;/p&gt;
+&lt;p&gt;To the best of my knowledge, the first company to run ChatOps on a
+large scale &lt;em&gt;and talk about it publicly&lt;/em&gt; was GitHub, &lt;a href="https://youtu.be/NST3u-GjjFw"&gt;back in
+2013&lt;/a&gt; in a
+&lt;a href="https://www.rubyfuza.org/"&gt;RubyFuza&lt;/a&gt; talk by &lt;a href="https://twitter.com/jnewland"&gt;Jesse
+Newland&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If a distributed team operates on a ChatOps basis, the interactive
+text chat is where absolutely everything happens. &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Everyone lives in chat all the time, and all issues, alerts and events are
+  piped into the chat.&lt;br/&gt;
+  Everything is discussed in the chat, and everything is also
+  &lt;em&gt;resolved&lt;/em&gt; in the chat.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Such a system relies on heavy use of chat bots. For example, if an
+  alert lands in the channel, and the discussion then yields that the
+  proper fix to the problem is to run a specific Ansible playbook,
+  you send an in-chat bot command that kicks off that playbook, and
+  then reports its result.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And this is of course very laudable, because it resolves a major issue
+with using chat, which is the classic scenario of something being
+discussed in a chat, someone else then going away for a bit and then
+coming back saying “I fixed it!”, and nobody else actually
+understanding what the problem was. &lt;/p&gt;
+&lt;p&gt;If you make everything explicit and in-band, in becomes easy, in
+principle, to go back to a previously-solved problem that reappears,
+and replay the resolution.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;When does ChatOps make sense? Here’s a hint: It’s called Chat&lt;strong&gt;Ops&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;So can this make sense? Yes, absolutely. Under what circumstances
+though? I maintain that this is best suited for when your work tends
+to be inherently linear with respect to some dimension. For example,
+if your primary job is to keep a system operational versus the linear
+passage of &lt;em&gt;time,&lt;/em&gt; ChatOps is an excellent approach.&lt;/p&gt;
+&lt;p&gt;And keeping complex systems operational over time is the definition
+of, you guessed it, ops. So ChatOps may be a very suitable
+communication mode for operations, but it’s highly unlikely to be
+efficient as a generic mode of communication across distributed teams.&lt;/p&gt;
+&lt;p&gt;And even then I posit it’s difficult to get right, since you’ll have
+to curb channel sprawl and threading and other things, but’s that’s a
+whole ‘nother talk and indeed a talk for another &lt;em&gt;speaker,&lt;/em&gt; because I
+don’t lead an ops team.&lt;/p&gt;
+&lt;h2&gt;To summarize...&lt;/h2&gt;
+&lt;p&gt;So to summarize, here are my key points from this talk, in a nutshell
+— please make these your key takeaways.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Distributed teams are better than localized teams — not because
+  they’re distributed, but because they’re asynchronous.&lt;/li&gt;
+&lt;li&gt;Avoid anything that makes a distributed team run synchronously.&lt;/li&gt;
+&lt;li&gt;Use less chat.&lt;/li&gt;
+&lt;li&gt;Have fewer meetings.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Write. Things. Down.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="Communications"></category><category term="Work"></category></entry><entry><title>No, We Won’t Have a Video Call for That: Slides and Recordings</title><link href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that-slides-and-recordings/" rel="alternate"></link><published>2020-08-22T00:00:00+00:00</published><updated>2020-08-22T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2020-08-22:/resources/presentations/no-we-wont-have-a-video-call-for-that-slides-and-recordings/</id><summary type="html">&lt;p&gt;These are the slides and recordings of the original talk that
+ultimately became &lt;a href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;this article&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The talk recording is available from two different sources:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Video and audio in multiple formats, for viewing and download: &lt;a href="https://media.ccc.de/v/froscon2020-2605-no_we_won_t_have_a_video_call_for_that"&gt;CCC
+  Media
+  server&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Streaming: &lt;a href="https://youtu.be/NVnci3tyDa4"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And, as always, you can also review my slides, with all …&lt;/p&gt;</summary><content type="html">&lt;p&gt;These are the slides and recordings of the original talk that
+ultimately became &lt;a href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;this article&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The talk recording is available from two different sources:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Video and audio in multiple formats, for viewing and download: &lt;a href="https://media.ccc.de/v/froscon2020-2605-no_we_won_t_have_a_video_call_for_that"&gt;CCC
+  Media
+  server&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Streaming: &lt;a href="https://youtu.be/NVnci3tyDa4"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And, as always, you can also review my slides, with all my speaker notes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Rendered slides: &lt;a href="https://fghaas.github.io/froscon2020/"&gt;GitHub
+  Pages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Slide sources (CC-BY-SA): &lt;a href="https://github.com/fghaas/froscon2020"&gt;GitHub&lt;/a&gt; &lt;/li&gt;
+&lt;/ul&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="Communications"></category><category term="Work"></category></entry><entry><title>DevOpsDays Tel Aviv 2019</title><link href="https://xahteiwi.eu/resources/presentations/devopsdays-tel-aviv-2019/" rel="alternate"></link><published>2019-12-20T00:00:00+00:00</published><updated>2019-12-20T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-12-20:/resources/presentations/devopsdays-tel-aviv-2019/</id><summary type="html">&lt;p&gt;I presented two talks at DevOpsDays Tel Aviv 2019: one 40-minute full-length talk, and a 5-minute Ignite.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This year, &lt;a href="https://devopsdaystlv.com"&gt;DevOpsDays Tel Aviv&lt;/a&gt; accepted
+two of my submitted talks:&lt;/p&gt;
+&lt;h2&gt;No really, don’t chuck everything in Slack: Communications for distributed teams&lt;/h2&gt;
+&lt;p&gt;This is a 40-minute talk that I presented after keynotes on day 2. It
+deals with the specific challenges that distributed teams face and
+solve, and has a bunch of ready-to-go suggestions to communicate
+better as a distributed team.&lt;/p&gt;
+&lt;p&gt;I had two surprises in this talk:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;A large number of people still appear to be unfamiliar with the
+   term &lt;a href="https://blogs.gnome.org/markmc/2014/02/20/naked-pings/"&gt;naked ping&lt;/a&gt;,
+   even though just about everyone is &lt;em&gt;very&lt;/em&gt; familiar with the
+   antipattern itself. It resulted in an “oh so &lt;em&gt;that’s&lt;/em&gt; what that’s
+   called!” reaction from a significant share of the audience.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;I usually try to not throw shade in my talks. But if and when I do
+   it’s usually about Scrum, which I continue to consider a patently
+   ludicrous idea. I did mention Scrum in a negative manner in my
+   talk, and got a rather unexpected round of mid-talk applause. (My
+   talks generally tend to be rather matter-of-factly; mid-sentence
+   applause is not something I’m used to.) Speaking to a crowd that
+   skewed hard toward the software engineering profession, this always
+   gets me thinking: engineers understand that Scrum is horrible; when
+   will their managers catch on?&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The video for this talk is forthcoming, but for now you can find my
+slides (with full speaker notes) on
+&lt;a href="https://fghaas.github.io/devopsdaystlv-2019/"&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Five is Fine: A case for small teams&lt;/h2&gt;
+&lt;p&gt;This was a 5-minute talk delivered as part of a round of “Ignite”
+talks. I use scare quotes because DevOpsDaysTLV uses a somewhat
+relaxed Ignite format: you must deliver your talk in 5 minutes, but
+you’re not restricted to the exact number of 20 slides, and your
+slides also don’t auto-advance every 15 seconds. I did not know this,
+so I &lt;em&gt;did&lt;/em&gt; follow the original Ignite format, using reveal.js
+autoSlide to advance my slides every 15000 ms.&lt;/p&gt;
+&lt;p&gt;These talks were also recorded, and the recording should become
+available relatively shortly (I will update this post when they
+do). As with the other talk, the slides are available on 
+&lt;a href="https://fghaas.github.io/five-is-fine/"&gt;GitHub&lt;/a&gt; and include my notes.&lt;/p&gt;
+&lt;p&gt;I’d like to thank &lt;a href="https://twitter.com/wholemilk"&gt;Rachel&lt;/a&gt; for
+suggesting that I write this talk.&lt;/p&gt;
+&lt;h2&gt;Know a conference that might like these talks?&lt;/h2&gt;
+&lt;p&gt;If you organize a conference that might be interested in including
+these talks, or you’ve attended one that you &lt;em&gt;think&lt;/em&gt; might, please
+&lt;a href="https://twitter.com/xahteiwi"&gt;find me on Twitter&lt;/a&gt; and let me
+know. I’ll be happy to submit one of them for consideration. I could
+definitely expand the Ignite talk into a full standard-length talk —
+doing the reverse for the other one might be a bit challenging,
+though.&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category></entry><entry><title>The Little Bag Of Tricks: 10 Things You Might Not Know You Can Do With OpenStack</title><link href="https://xahteiwi.eu/resources/presentations/the-little-bag-of-tricks-10-things-you-might-not-know-you-can-do-with-openstack/" rel="alternate"></link><published>2019-11-05T00:00:00+00:00</published><updated>2019-11-05T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-11-05:/resources/presentations/the-little-bag-of-tricks-10-things-you-might-not-know-you-can-do-with-openstack/</id><content type="html">&lt;p&gt;My presentation from the Open Infrastructure Summit 2019 in Shanghai.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Video: &lt;a href="https://youtu.be/cRqA-eYYOXE"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/openinfrasummit2019-shanghai/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
+zoom out for an overview, or just advance by hitting the spacebar.&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="OpenStack"></category></entry><entry><title>Learn Ceph — For Fun, For Real, For Free!</title><link href="https://xahteiwi.eu/resources/presentations/learn-ceph-for-fun-for-real-for-free/" rel="alternate"></link><published>2019-05-25T00:00:00+00:00</published><updated>2019-05-25T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-05-25:/resources/presentations/learn-ceph-for-fun-for-real-for-free/</id><content type="html">&lt;p&gt;My lightning talk from Cephalocon 2019.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Video:
+  &lt;a href="https://youtu.be/oEKJnHAfSiw"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="Ceph"></category><category term="Open edX"></category></entry><entry><title>Geographical Redundancy with rbd-mirror</title><link href="https://xahteiwi.eu/resources/presentations/geographical-redundancy-with-rbd-mirror/" rel="alternate"></link><published>2019-05-21T00:00:00+00:00</published><updated>2019-05-21T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-05-21:/resources/presentations/geographical-redundancy-with-rbd-mirror/</id><content type="html">&lt;p&gt;My presentation from Cephalocon 2019.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Video:
+  &lt;a href="https://youtu.be/ZifNGprBUTA"&gt;YouTube&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Slides (with full speaker notes):
+  &lt;a href="https://fghaas.github.io/cephalocon2019-rbdmirror/#intro"&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the &lt;code&gt;PgUp&lt;/code&gt;/&lt;code&gt;PgDown&lt;/code&gt; keys to navigate through the presentation, hit
+&lt;code&gt;Esc&lt;/code&gt; to zoom out for an overview, or just advance by hitting the
+spacebar.&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="Ceph"></category></entry><entry><title>Learn Complex Skills, From Anywhere: Combining Django, Ansible and OpenStack to teach any tech skill</title><link href="https://xahteiwi.eu/resources/presentations/learn-complex-skills-from-anywhere-combining-django-ansible-and-openstack-to-teach-any-tech-skill/" rel="alternate"></link><published>2019-01-23T00:00:00+00:00</published><updated>2019-01-23T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-01-23:/resources/presentations/learn-complex-skills-from-anywhere-combining-django-ansible-and-openstack-to-teach-any-tech-skill/</id><content type="html">&lt;p&gt;My presentation from linux.conf.au 2019.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Video: &lt;a href="https://youtu.be/B1ic5o9geqw"&gt;YouTube&lt;/a&gt;, &lt;a href="http://mirror.linux.org.au/pub/linux.conf.au/2019/c3/Wednesday/Learn_Complex_Skills_From_Anywhere_Combining_Django_Ansible_and_OpenStack_to_teach_any_tech_skill.mp4"&gt;Linux Australia
+  (MP4)&lt;/a&gt;,
+  &lt;a href="http://mirror.linux.org.au/pub/linux.conf.au/2019/c3/Wednesday/Learn_Complex_Skills_From_Anywhere_Combining_Django_Ansible_and_OpenStack_to_teach_any_tech_skill.webm"&gt;Linux Australia (WebM)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Slides (with full speaker notes): &lt;a href="https://fghaas.github.io/lca2019/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
+zoom out for an overview, or just advance by hitting the spacebar.&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="Open edX"></category><category term="OpenStack"></category><category term="Django"></category><category term="Ansible"></category><category term="linux.conf.au"></category></entry><entry><title>The Little Bag O’Tricks: 10 Things You Might Not Know You Can Do With OpenStack</title><link href="https://xahteiwi.eu/resources/presentations/the-little-bag-otricks-10-things-you-might-not-know-you-can-do-with-openstack/" rel="alternate"></link><published>2018-10-10T00:00:00+00:00</published><updated>2018-10-10T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2018-10-10:/resources/presentations/the-little-bag-otricks-10-things-you-might-not-know-you-can-do-with-openstack/</id><summary type="html">&lt;p&gt;My presentation from OpenStack Days Nordic 2018 in Stockholm. Actually
+talks about 11, not 10 OpenStack capabilities you might not know
+about.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Video: &lt;a href="https://youtu.be/3hUoVi_AWCU"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/osdn2018/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
+zoom out for an overview, or just advance by hitting the spacebar …&lt;/p&gt;</summary><content type="html">&lt;p&gt;My presentation from OpenStack Days Nordic 2018 in Stockholm. Actually
+talks about 11, not 10 OpenStack capabilities you might not know
+about.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Video: &lt;a href="https://youtu.be/3hUoVi_AWCU"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/osdn2018/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
+zoom out for an overview, or just advance by hitting the spacebar.&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="OSDN"></category><category term="OpenStack"></category></entry><entry><title>High Availability and Disaster Recovery in OpenStack</title><link href="https://xahteiwi.eu/resources/presentations/high-availability-and-disaster-recovery-in-openstack/" rel="alternate"></link><published>2016-11-07T00:00:00+00:00</published><updated>2016-11-07T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2016-11-07:/resources/presentations/high-availability-and-disaster-recovery-in-openstack/</id><summary type="html">&lt;p&gt;From the 2016 International Industry-Academia Workshop on Cloud
+Reliability and Resilience in Berlin. An OpenStack primer followed by
+a closer focus on OpenStack's HA &amp;amp; DR feature set.&lt;/p&gt;
+&lt;p&gt;About 35 minutes.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/cloud-reliability-workshop/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
+zoom out for an overview, or …&lt;/p&gt;</summary><content type="html">&lt;p&gt;From the 2016 International Industry-Academia Workshop on Cloud
+Reliability and Resilience in Berlin. An OpenStack primer followed by
+a closer focus on OpenStack's HA &amp;amp; DR feature set.&lt;/p&gt;
+&lt;p&gt;About 35 minutes.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/cloud-reliability-workshop/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
+zoom out for an overview, or just advance by hitting the spacebar.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="OpenStack"></category><category term="High Availability"></category></entry><entry><title>Heat and its Alternatives: Application Deployment in OpenStack</title><link href="https://xahteiwi.eu/resources/presentations/heat-and-its-alternatives-application-deployment-in-openstack/" rel="alternate"></link><published>2016-10-27T00:00:00+00:00</published><updated>2016-10-27T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2016-10-27:/resources/presentations/heat-and-its-alternatives-application-deployment-in-openstack/</id><summary type="html">&lt;p&gt;From the 2016 OpenStack Summit in Barcelona. A comparison of tools for
+virtual systems orchestration in OpenStack.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Heat&lt;/li&gt;
+&lt;li&gt;Juju&lt;/li&gt;
+&lt;li&gt;Ansible&lt;/li&gt;
+&lt;li&gt;Cloudify&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;About 45 minutes.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Video: &lt;a href="https://youtu.be/wtXVd09qHoo"&gt;YouTube&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Slides: &lt;a href="https://fghaas.github.io/openstacksummit2016-barcelona/"&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
+zoom out for an overview, or just advance by hitting …&lt;/p&gt;</summary><content type="html">&lt;p&gt;From the 2016 OpenStack Summit in Barcelona. A comparison of tools for
+virtual systems orchestration in OpenStack.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Heat&lt;/li&gt;
+&lt;li&gt;Juju&lt;/li&gt;
+&lt;li&gt;Ansible&lt;/li&gt;
+&lt;li&gt;Cloudify&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;About 45 minutes.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Video: &lt;a href="https://youtu.be/wtXVd09qHoo"&gt;YouTube&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Slides: &lt;a href="https://fghaas.github.io/openstacksummit2016-barcelona/"&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
+zoom out for an overview, or just advance by hitting the spacebar.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="OpenStack"></category><category term="Heat"></category><category term="Ansible"></category><category term="Juju"></category><category term="Cloudify"></category></entry><entry><title>CephFS and LXC: Container High Availability and Scalability, Redefined</title><link href="https://xahteiwi.eu/resources/presentations/cephfs-and-lxc-container-high-availability-and-scalability-redefined/" rel="alternate"></link><published>2016-10-06T00:00:00+00:00</published><updated>2016-10-06T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2016-10-06:/resources/presentations/cephfs-and-lxc-container-high-availability-and-scalability-redefined/</id><content type="html">&lt;p&gt;An overview of applying CephFS to LXC containers.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/lceu2016-cephlxc/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
+zoom out for an overview, or just advance by hitting the spacebar.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="Ceph"></category><category term="LXC"></category></entry><entry><title>Fragile development: Why Scrum sucks, and what you should be doing instead (full talk)</title><link href="https://xahteiwi.eu/resources/presentations/fragile-development-why-scrum-sucks-and-what-you-should-be-doing-instead-full-talk/" rel="alternate"></link><published>2016-08-20T00:00:00+00:00</published><updated>2016-08-20T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2016-08-20:/resources/presentations/fragile-development-why-scrum-sucks-and-what-you-should-be-doing-instead-full-talk/</id><summary type="html">&lt;p&gt;My presentation from FrOSCon 2016. The lengthier version of the
+&lt;a href="https://xahteiwi.eu/resources/presentations/why-scrum-sucks-and-what-you-ought-to-be-doing-instead/"&gt;Ignite talk&lt;/a&gt; I did a few
+months before, at OpenStack Israel.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Video: &lt;a href="https://youtu.be/f-ULT_Ic4qk"&gt;YouTube&lt;/a&gt;,
+  &lt;a href="https://media.ccc.de/v/froscon2016-1722-fragile_development"&gt;CCC&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/froscon2016/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
+zoom out for an overview, or just advance by hitting the spacebar …&lt;/p&gt;</summary><content type="html">&lt;p&gt;My presentation from FrOSCon 2016. The lengthier version of the
+&lt;a href="https://xahteiwi.eu/resources/presentations/why-scrum-sucks-and-what-you-ought-to-be-doing-instead/"&gt;Ignite talk&lt;/a&gt; I did a few
+months before, at OpenStack Israel.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Video: &lt;a href="https://youtu.be/f-ULT_Ic4qk"&gt;YouTube&lt;/a&gt;,
+  &lt;a href="https://media.ccc.de/v/froscon2016-1722-fragile_development"&gt;CCC&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/froscon2016/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
+zoom out for an overview, or just advance by hitting the spacebar.&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category></entry><entry><title>Why Scrum sucks, and what you ought to be doing instead</title><link href="https://xahteiwi.eu/resources/presentations/why-scrum-sucks-and-what-you-ought-to-be-doing-instead/" rel="alternate"></link><published>2016-06-29T00:00:00+00:00</published><updated>2016-06-29T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2016-06-29:/resources/presentations/why-scrum-sucks-and-what-you-ought-to-be-doing-instead/</id><content type="html">&lt;p&gt;An &lt;a href="https://en.wikipedia.org/wiki/Ignite_(event)"&gt;Ignite&lt;/a&gt; talk I
+presented at OpenStack Israel 2016.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Video: &lt;a href="https://youtu.be/FTM_-H1cPNE"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/openstackisrael2016-ignite/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="Ignite"></category></entry><entry><title>OpenStack for Open edX: Inside and Out (SWITCH ICT-Focus 2015)</title><link href="https://xahteiwi.eu/resources/presentations/ictfocus2015/" rel="alternate"></link><published>2015-11-10T00:00:00+00:00</published><updated>2015-11-10T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2015-11-10:/resources/presentations/ictfocus2015/</id><content type="html">&lt;p&gt;My presentation at &lt;a href="https://switch.ch"&gt;SWITCH&lt;/a&gt; ICT-Focus 2015.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/ictfocus2015/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="OpenStack"></category><category term="Open edX"></category></entry><entry><title>Clusters, Routers, Agents and Networks: High Availability in Neutron</title><link href="https://xahteiwi.eu/resources/presentations/openstacksummit2015-tokyo-neutron-ha/" rel="alternate"></link><published>2015-10-28T00:00:00+00:00</published><updated>2015-10-28T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2015-10-28:/resources/presentations/openstacksummit2015-tokyo-neutron-ha/</id><summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Of everything that we can build and deploy in a highly-available
+fashion in OpenStack, deploying highly available networking has been
+one of the trickiest, most complex aspects to get right.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I team up with Adam Spiers (SUSE) and Assaf Muller (Red Hat) to
+discuss high availability in OpenStack Neutron.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Video …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;p&gt;Of everything that we can build and deploy in a highly-available
+fashion in OpenStack, deploying highly available networking has been
+one of the trickiest, most complex aspects to get right.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I team up with Adam Spiers (SUSE) and Assaf Muller (Red Hat) to
+discuss high availability in OpenStack Neutron.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Video: &lt;a href="https://youtu.be/vBZgtHgSdOY"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/openstacksummit2015-tokyo-neutron-ha/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="OpenStack"></category><category term="Conference"></category></entry><entry><title>Automated OpenStack deployment: A comparison</title><link href="https://xahteiwi.eu/resources/presentations/automated-openstack-deployment-a-comparison/" rel="alternate"></link><published>2015-10-27T00:00:00+00:00</published><updated>2015-10-27T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2015-10-27:/resources/presentations/automated-openstack-deployment-a-comparison/</id><summary type="html">&lt;p&gt;From the 2015 OpenStack Summit in Tokyo. A comparison of automated
+deployment tools for OpenStack.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;OSP Director on RHEL OSP 7&lt;/li&gt;
+&lt;li&gt;Juju on Ubuntu Trusty&lt;/li&gt;
+&lt;li&gt;Chef/Crowbar on SUSE OpenStack Cloud 5&lt;/li&gt;
+&lt;li&gt;Ansible on Rackspace Private Cloud&lt;/li&gt;
+&lt;li&gt;Fuel on Mirantis OpenStack&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;About 45 minutes.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Video: &lt;a href="https://youtu.be/LM1ANSge01g"&gt;YouTube&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Slides: &lt;a href="https://fghaas.github.io/openstacksummit2015-tokyo-deployment/"&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the …&lt;/p&gt;</summary><content type="html">&lt;p&gt;From the 2015 OpenStack Summit in Tokyo. A comparison of automated
+deployment tools for OpenStack.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;OSP Director on RHEL OSP 7&lt;/li&gt;
+&lt;li&gt;Juju on Ubuntu Trusty&lt;/li&gt;
+&lt;li&gt;Chef/Crowbar on SUSE OpenStack Cloud 5&lt;/li&gt;
+&lt;li&gt;Ansible on Rackspace Private Cloud&lt;/li&gt;
+&lt;li&gt;Fuel on Mirantis OpenStack&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;About 45 minutes.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Video: &lt;a href="https://youtu.be/LM1ANSge01g"&gt;YouTube&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Slides: &lt;a href="https://fghaas.github.io/openstacksummit2015-tokyo-deployment/"&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
+zoom out for an overview, or just advance by hitting the spacebar.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="OpenStack"></category></entry><entry><title>Open edX</title><link href="https://xahteiwi.eu/resources/presentations/open-edx/" rel="alternate"></link><published>2015-10-12T05:45:00+00:00</published><updated>2015-10-12T05:45:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2015-10-12:/resources/presentations/open-edx/</id><summary type="html">&lt;p&gt;&lt;a href="http://open.edx.org"&gt;Open edX&lt;/a&gt; is an extensible, highly scalable,
+open-source learning management platform. Originally conceived at
+&lt;a href="http://www.mit.edu"&gt;MIT&lt;/a&gt; and &lt;a href="http://www.harvard.edu"&gt;Harvard
+University&lt;/a&gt;, the edx.org platform it is
+currently backed by more than 70 organizations world-wide and serves
+more than 4 million students. Since 2013, the software running edx.org
+is available under an …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="http://open.edx.org"&gt;Open edX&lt;/a&gt; is an extensible, highly scalable,
+open-source learning management platform. Originally conceived at
+&lt;a href="http://www.mit.edu"&gt;MIT&lt;/a&gt; and &lt;a href="http://www.harvard.edu"&gt;Harvard
+University&lt;/a&gt;, the edx.org platform it is
+currently backed by more than 70 organizations world-wide and serves
+more than 4 million students. Since 2013, the software running edx.org
+is available under an open source software license, enabling private and
+public organizations to run and operate the same learning platform under
+the Open edX initiative.&lt;/p&gt;
+&lt;p&gt;hastexo's contribution to Open edX is twofold: first, we enabled Open
+edX to run in an automated, distributed fashion on the OpenStack
+platform. Then, we taught Open edX the ability to automate the
+orchestration of on-demand OpenStack training environments. Both are now
+an integral part of our hastexo Academy service offering.&lt;/p&gt;
+&lt;p&gt;Want to find out how you can use Open edX and OpenStack to your
+advantage? Check out the short animation below (with audio) to find out.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/academy-openedx/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="Open edX"></category></entry><entry><title>Manageable Application Containers: Lightning Quick Updates, Scaleable Security, Easy High Availability</title><link href="https://xahteiwi.eu/resources/presentations/manageable-application-containers/" rel="alternate"></link><published>2015-10-07T00:00:00+00:00</published><updated>2015-10-07T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2015-10-07:/resources/presentations/manageable-application-containers/</id><summary type="html">&lt;p&gt;From LinuxCon Europe 2015 in Dublin. An alternative approach to
+managing application containers.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/lceu2015/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
+zoom out for an overview, or just advance by hitting the spacebar.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct …&lt;/p&gt;</summary><content type="html">&lt;p&gt;From LinuxCon Europe 2015 in Dublin. An alternative approach to
+managing application containers.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/lceu2015/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
+zoom out for an overview, or just advance by hitting the spacebar.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="LXC"></category><category term="Containers"></category><category term="Conference"></category></entry><entry><title>OpenStack Orchestration and Automation</title><link href="https://xahteiwi.eu/resources/presentations/osil2015-orchestration/" rel="alternate"></link><published>2015-06-15T00:00:00+00:00</published><updated>2015-06-15T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2015-06-15:/resources/presentations/osil2015-orchestration/</id><content type="html">&lt;p&gt;My presentation from OpenStack Israel 2015. A fast-paced
+introduction to &lt;code&gt;cloud-init&lt;/code&gt; and OpenStack Heat.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Video: &lt;a href="https://youtu.be/oXYXqwnr5io"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/osil2015-orchestration/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="OpenStack"></category><category term="Conference"></category></entry><entry><title>Ceph Tech Talk: Placement Groups</title><link href="https://xahteiwi.eu/resources/presentations/ceph-tech-talk-pg/" rel="alternate"></link><published>2015-05-27T00:00:00+00:00</published><updated>2015-05-27T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2015-05-27:/resources/presentations/ceph-tech-talk-pg/</id><summary type="html">&lt;p&gt;A Ceph Tech Talk on the ins and outs of Ceph Placement Groups (PGs).&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;p&gt;Special thanks to Patrick McGarry for inviting me to speak on a Ceph
+Tech Talk.&lt;/p&gt;
+&lt;p&gt;For the slide deck, use the PgUp/PgDown keys to navigate, or just
+advance by hitting the spacebar.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Video: &lt;a href="https://youtu.be/BPuaKErc0uA"&gt;YouTube&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Slides …&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;A Ceph Tech Talk on the ins and outs of Ceph Placement Groups (PGs).&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;p&gt;Special thanks to Patrick McGarry for inviting me to speak on a Ceph
+Tech Talk.&lt;/p&gt;
+&lt;p&gt;For the slide deck, use the PgUp/PgDown keys to navigate, or just
+advance by hitting the spacebar.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Video: &lt;a href="https://youtu.be/BPuaKErc0uA"&gt;YouTube&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Slides: &lt;a href="https://fghaas.github.io/ceph-tech-talk-pg/"&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="Ceph"></category></entry><entry><title>Have Data, Want Scale, Indefinitely: Exploring Ceph</title><link href="https://xahteiwi.eu/resources/presentations/ceph-intro/" rel="alternate"></link><published>2014-11-15T00:00:00+00:00</published><updated>2014-11-15T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2014-11-15:/resources/presentations/ceph-intro/</id><summary type="html">&lt;p&gt;An introduction to Ceph (with audio).&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;p&gt;For the slide deck, use the PgUp/PgDown keys to navigate, or just
+advance by hitting the spacebar. For audio narration, just click the
+icon in the bottom-left corner and the presentation will auto-advance
+in step with the narration.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/ceph-intro/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally …&lt;/p&gt;</summary><content type="html">&lt;p&gt;An introduction to Ceph (with audio).&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;p&gt;For the slide deck, use the PgUp/PgDown keys to navigate, or just
+advance by hitting the spacebar. For audio narration, just click the
+icon in the bottom-left corner and the presentation will auto-advance
+in step with the narration.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/ceph-intro/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="Ceph"></category></entry><entry><title>Ceph Performance Demystified: Benchmarks, Tools, and the Metrics that Matter</title><link href="https://xahteiwi.eu/resources/presentations/ceph-day-london/" rel="alternate"></link><published>2014-10-22T00:00:00+00:00</published><updated>2014-10-22T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2014-10-22:/resources/presentations/ceph-day-london/</id><content type="html">&lt;p&gt;Mystified about Ceph performance tuning and benchmarking? Don't
+despair!&lt;/p&gt;
+&lt;p&gt;This presentation was given at Ceph Day London in 2014. &lt;!--break--&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Slides: &lt;a href="//fghaas.github.io/ceph-day-london/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Video (courtesy of the Ceph team at Red Hat): &lt;a href="//youtu.be/0B_A9VkRb1E"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="Ceph"></category></entry><entry><title>OpenStack High Availability: Are We There Yet?</title><link href="https://xahteiwi.eu/resources/presentations/lceu2014-openstack-ha/" rel="alternate"></link><published>2014-10-14T00:00:00+00:00</published><updated>2014-10-14T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2014-10-14:/resources/presentations/lceu2014-openstack-ha/</id><content type="html">&lt;p&gt;My presentation from LinuxCon Europe 2014, outlining the state
+of high availability in OpenStack.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/lceu2014-openstack-ha/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="OpenStack"></category><category term="Conference"></category></entry><entry><title>Speak! How to talk in public and not wreck your voice</title><link href="https://xahteiwi.eu/resources/presentations/speak-how-to-talk-in-public-and-not-wreck-your-voice/" rel="alternate"></link><published>2014-07-24T00:00:00+00:00</published><updated>2014-07-24T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2014-07-24:/resources/presentations/speak-how-to-talk-in-public-and-not-wreck-your-voice/</id><content type="html">&lt;p&gt;An &lt;a href="https://en.wikipedia.org/wiki/Ignite_(event)"&gt;Ignite&lt;/a&gt; talk I
+presented at OSCON 2014. Decidedly non-technical, this covers vocal
+hygiene and how to take care of your voice.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Video: &lt;a href="https://youtu.be/2LZXGesneMo"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="OSCON"></category><category term="Ignite"></category></entry><entry><title>Hands On Trove: Database as a Service in OpenStack</title><link href="https://xahteiwi.eu/resources/presentations/hands-trove-database-service-openstack/" rel="alternate"></link><published>2014-03-27T11:17:00+00:00</published><updated>2014-03-27T11:17:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2014-03-27:/resources/presentations/hands-trove-database-service-openstack/</id><summary type="html">&lt;p&gt;&lt;a href="http://www.percona.com/live/mysql-conference-2014/sessions/hands-trove-database-service-openstack-mysql"&gt;This
+tutorial&lt;/a&gt;
+covered OpenStack Trove at Percona Live 2014. If you want to recreate
+the experience, read on!&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;p&gt;In order to make the most of this tutorial, you can recreate the
+interactive steps presented. Please note: the process, while simple, is
+extremely bandwidth intensive and you don't want to be …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="http://www.percona.com/live/mysql-conference-2014/sessions/hands-trove-database-service-openstack-mysql"&gt;This
+tutorial&lt;/a&gt;
+covered OpenStack Trove at Percona Live 2014. If you want to recreate
+the experience, read on!&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;p&gt;In order to make the most of this tutorial, you can recreate the
+interactive steps presented. Please note: the process, while simple, is
+extremely bandwidth intensive and you don't want to be the bandwidth hog
+that everyone hates in your hotel, or on a conference wifi. Do so in
+your office (or home) instead.&lt;/p&gt;
+&lt;p&gt;The set-up process is decribed in &lt;a href="https://github.com/fghaas/perconalive2014/blob/master/README.md"&gt;a brief
+README&lt;/a&gt;.
+Effectively, it boils down to cloning a Git repo and then running
+vagrant up, and you'll be good to go. But do pay attention to the system
+requirements.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Slides: &lt;a href="https://www.slideshare.net/slideshow/embed_code/33588994"&gt;SlideShare&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="MySQL"></category><category term="OpenStack"></category></entry><entry><title>Greetings from Havana: A fresh perspective on globally distributed OpenStack</title><link href="https://xahteiwi.eu/resources/presentations/greetings-from-havana/" rel="alternate"></link><published>2013-12-10T00:00:00+00:00</published><updated>2013-12-10T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2013-12-10:/resources/presentations/greetings-from-havana/</id><summary type="html">&lt;p&gt;My second appearance at OpenStack Israel, this time with news on
+distributed OpenStack environments in the Havana release.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;p&gt;The video (courtesy of OpenStack Israel) and slides are below. For the
+introduction given in Hebrew, the slides contain a transcript in
+English.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Video: &lt;a href="https://youtu.be/28p6Ls6hQJM"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/openstackisraeldec2013/#/personal-intro"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on …&lt;/p&gt;</summary><content type="html">&lt;p&gt;My second appearance at OpenStack Israel, this time with news on
+distributed OpenStack environments in the Havana release.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;p&gt;The video (courtesy of OpenStack Israel) and slides are below. For the
+introduction given in Hebrew, the slides contain a transcript in
+English.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Video: &lt;a href="https://youtu.be/28p6Ls6hQJM"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/openstackisraeldec2013/#/personal-intro"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="OpenStack"></category></entry><entry><title>Ceph: object storage, block storage, file system, replication, massive scalability and then some!</title><link href="https://xahteiwi.eu/resources/presentations/ceph-object-storage-block-storage-file-system-replication-massive-scalabilit/" rel="alternate"></link><published>2013-05-31T08:02:00+00:00</published><updated>2013-05-31T08:02:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2013-05-31:/resources/presentations/ceph-object-storage-block-storage-file-system-replication-massive-scalabilit/</id><content type="html">&lt;p&gt;This is one of my most popular talks, co-presented with intrepid
+cartoonist-turned-engineer &lt;a href="http://ourobengr.com/"&gt;Tim Serong&lt;/a&gt; from
+&lt;a href="https://www.suse.com/"&gt;SUSE&lt;/a&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Video: &lt;a href="https://youtu.be/dDA1sBg4H98"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="Ceph"></category><category term="Conference"></category></entry><entry><title>Ceph: The Storage Stack for OpenStack</title><link href="https://xahteiwi.eu/resources/presentations/ceph-storage-stack-openstack/" rel="alternate"></link><published>2013-05-28T11:49:00+00:00</published><updated>2013-05-28T11:49:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2013-05-28:/resources/presentations/ceph-storage-stack-openstack/</id><summary type="html">&lt;p&gt;My presentation from &lt;a href="http://www.openstack-israel.org"&gt;OpenStack
+Israel&lt;/a&gt;, May 27, 2013. After a brief
+introduction into Ceph, I dive into OpenStack specific Ceph features
+and outlines RBD integration with Glance and Cinder, and explains
+RadosGW Swift compatibility.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;p&gt;Use the PgUp/PgDown keys to navigate through the presentation, or just
+advance by hitting the …&lt;/p&gt;</summary><content type="html">&lt;p&gt;My presentation from &lt;a href="http://www.openstack-israel.org"&gt;OpenStack
+Israel&lt;/a&gt;, May 27, 2013. After a brief
+introduction into Ceph, I dive into OpenStack specific Ceph features
+and outlines RBD integration with Glance and Cinder, and explains
+RadosGW Swift compatibility.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;p&gt;Use the PgUp/PgDown keys to navigate through the presentation, or just
+advance by hitting the spacebar.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/openstackisrael2013/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="Ceph"></category><category term="Conference"></category></entry><entry><title>More Reliable, More Resilient, More Redundant</title><link href="https://xahteiwi.eu/resources/presentations/more-reliable-more-resilient-more-redundant/" rel="alternate"></link><published>2013-04-17T16:33:00+00:00</published><updated>2013-04-17T16:33:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2013-04-17:/resources/presentations/more-reliable-more-resilient-more-redundant/</id><summary type="html">&lt;p&gt;Another update on OpenStack's progress in high availability, for the
+Grizzly and Havana releases. Presented at the OpenStack Summit in
+Portland, on April 17, 2013.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;p&gt;I give an overview of infrastructure, compute and networking high
+availability development in the April 2013 OpenStack Grizzly release,
+and an outlook for OpenStack Havana …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Another update on OpenStack's progress in high availability, for the
+Grizzly and Havana releases. Presented at the OpenStack Summit in
+Portland, on April 17, 2013.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;p&gt;I give an overview of infrastructure, compute and networking high
+availability development in the April 2013 OpenStack Grizzly release,
+and an outlook for OpenStack Havana.&lt;/p&gt;
+&lt;p&gt;Use the PgUp/PgDown keys to navigate through the presentation, or just
+advance by hitting the spacebar.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/openstacksummitapril2013/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="OpenStack"></category></entry><entry><title>High Availability Update (Grizzly and Havana)</title><link href="https://xahteiwi.eu/resources/presentations/high-availability-update-grizzly-and-havana/" rel="alternate"></link><published>2013-02-20T12:58:00+00:00</published><updated>2013-02-20T12:58:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2013-02-20:/resources/presentations/high-availability-update-grizzly-and-havana/</id><summary type="html">&lt;p&gt;Another update on
+&lt;a href="https://www.hastexo.com/knowledge/openstack"&gt;OpenStack's&lt;/a&gt; progress in
+high availability, for the Grizzly and Havana releases. Presented at the
+Swiss OpenStack User Group meetup in Zurich, on February 19, 2013.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;p&gt;I give an overview of infrastructure, compute and networking high
+availability development in the run-up to the Grizzly feature freeze.&lt;/p&gt;
+&lt;p&gt;Use the …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Another update on
+&lt;a href="https://www.hastexo.com/knowledge/openstack"&gt;OpenStack's&lt;/a&gt; progress in
+high availability, for the Grizzly and Havana releases. Presented at the
+Swiss OpenStack User Group meetup in Zurich, on February 19, 2013.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;p&gt;I give an overview of infrastructure, compute and networking high
+availability development in the run-up to the Grizzly feature freeze.&lt;/p&gt;
+&lt;p&gt;Use the PgUp/PgDown keys to navigate through the presentation, or just
+advance by hitting the spacebar.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/chosugmeetup201302/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="OpenStack"></category></entry><entry><title>MySQL High Availability Deep Dive</title><link href="https://xahteiwi.eu/resources/presentations/mysql-high-availability-deep-dive/" rel="alternate"></link><published>2012-12-03T13:50:00+00:00</published><updated>2012-12-03T13:50:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-12-03:/resources/presentations/mysql-high-availability-deep-dive/</id><content type="html">&lt;p&gt;This is a tutorial that Yves Trudeau and I presented at the
+Percona Live UK 2012 conference in London. It covers Pacemaker
+integration with DRBD, MySQL Replication, and Galera.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Slides: &lt;a href="https://docs.google.com/presentation/d/12CzmvBOUpbIOrS2CGbG4PU6v74g99C0gGlh0Zf0Qh7g/embed"&gt;Google Slides&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="MySQL"></category><category term="Pacemaker"></category><category term="Galera"></category></entry><entry><title>GlusterFS in High Availability Clusters</title><link href="https://xahteiwi.eu/resources/presentations/glusterfs-high-availability-clusters/" rel="alternate"></link><published>2012-11-08T08:15:00+00:00</published><updated>2012-11-08T08:15:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-11-08:/resources/presentations/glusterfs-high-availability-clusters/</id><summary type="html">&lt;p&gt;My Pacemaker presentation from the GlusterFS Workshop at LinuxCon
+Europe 2012. Presented in Barcelona in November of 2012, this is a
+overview of integrating GlusterFS with the Pacemaker cluster stack.&lt;/p&gt;
+&lt;p&gt;This tutorial gives an overview of&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The Pacemaker stack,&lt;/li&gt;
+&lt;li&gt;Using GlusterFS for Pacemaker storage,&lt;/li&gt;
+&lt;li&gt;Managing GlusterFS volumes from Pacemaker.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;My …&lt;/p&gt;</summary><content type="html">&lt;p&gt;My Pacemaker presentation from the GlusterFS Workshop at LinuxCon
+Europe 2012. Presented in Barcelona in November of 2012, this is a
+overview of integrating GlusterFS with the Pacemaker cluster stack.&lt;/p&gt;
+&lt;p&gt;This tutorial gives an overview of&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The Pacemaker stack,&lt;/li&gt;
+&lt;li&gt;Using GlusterFS for Pacemaker storage,&lt;/li&gt;
+&lt;li&gt;Managing GlusterFS volumes from Pacemaker.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;My original presentation included several live demos. In this version,
+they have been replaced by placeholders.&lt;/p&gt;
+&lt;p&gt;Use the PgUp/PgDown keys to navigate through the presentation, or just
+advance by hitting the spacebar.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/lceu2012/glusterfs.html"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="GlusterFS"></category></entry><entry><title>Hands-On With Ceph</title><link href="https://xahteiwi.eu/resources/presentations/hands-ceph/" rel="alternate"></link><published>2012-11-08T08:15:00+00:00</published><updated>2012-11-08T08:15:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-11-08:/resources/presentations/hands-ceph/</id><summary type="html">&lt;p&gt;My Ceph tutorial from LinuxCon Europe 2012. Presented in
+Barcelona in November of 2012, this is a dense summary of the features
+of the &lt;a href="https://www.hastexo.com/knowledge/storage-io/ceph"&gt;Ceph&lt;/a&gt;
+distributed storage stack.&lt;/p&gt;
+&lt;p&gt;This tutorial gives an overview of&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Native RADOS object storage,&lt;/li&gt;
+&lt;li&gt;The RBD block device,&lt;/li&gt;
+&lt;li&gt;ReSTful object storage with radosgw,&lt;/li&gt;
+&lt;li&gt;the Ceph distributed …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;My Ceph tutorial from LinuxCon Europe 2012. Presented in
+Barcelona in November of 2012, this is a dense summary of the features
+of the &lt;a href="https://www.hastexo.com/knowledge/storage-io/ceph"&gt;Ceph&lt;/a&gt;
+distributed storage stack.&lt;/p&gt;
+&lt;p&gt;This tutorial gives an overview of&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Native RADOS object storage,&lt;/li&gt;
+&lt;li&gt;The RBD block device,&lt;/li&gt;
+&lt;li&gt;ReSTful object storage with radosgw,&lt;/li&gt;
+&lt;li&gt;the Ceph distributed filesystem.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;My original presentation included several live demos. In this
+version, they have been replaced by placeholders.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/lceu2012/ceph.html"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="Ceph"></category><category term="Conference"></category></entry><entry><title>High Availability in OpenStack</title><link href="https://xahteiwi.eu/resources/presentations/high-availability-openstack/" rel="alternate"></link><published>2012-08-30T15:48:00+00:00</published><updated>2012-08-30T15:48:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-08-30:/resources/presentations/high-availability-openstack/</id><summary type="html">&lt;p&gt;An update on high-availability development during the
+&lt;a href="http://www.openstack.org"&gt;OpenStack&lt;/a&gt; Folsom development cycle. This
+presentation was delivered August 30, 2012 in San Diego, California. It
+was part of the inaugural
+&lt;a href="http://events.linuxfoundation.org/events/cloudopen-north-america"&gt;CloudOpen&lt;/a&gt;
+conference hosted by the &lt;a href="http://www.linuxfoundation.org"&gt;Linux
+Foundation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Following up on my earlier talks at OpenStack Summit and OSCON, I
+summarized the high-availability …&lt;/p&gt;</summary><content type="html">&lt;p&gt;An update on high-availability development during the
+&lt;a href="http://www.openstack.org"&gt;OpenStack&lt;/a&gt; Folsom development cycle. This
+presentation was delivered August 30, 2012 in San Diego, California. It
+was part of the inaugural
+&lt;a href="http://events.linuxfoundation.org/events/cloudopen-north-america"&gt;CloudOpen&lt;/a&gt;
+conference hosted by the &lt;a href="http://www.linuxfoundation.org"&gt;Linux
+Foundation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Following up on my earlier talks at OpenStack Summit and OSCON, I
+summarized the high-availability features OpenStack gained during the
+Folsom development cycle.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Slides: &lt;a href='https://prezi.com/embed/xaclzhzpjmau/"&amp;gt;&amp;lt;/'&gt;Prezi&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="OpenStack"></category></entry><entry><title>Highly Available Cloud: Pacemaker integration with OpenStack</title><link href="https://xahteiwi.eu/resources/presentations/highly-available-cloud-pacemaker-integration-openstack/" rel="alternate"></link><published>2012-07-17T21:12:00+00:00</published><updated>2012-07-17T21:12:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-07-17:/resources/presentations/highly-available-cloud-pacemaker-integration-openstack/</id><summary type="html">&lt;p&gt;This presentation was delivered July 17, 2012 at OSCON in
+Portland, Oregon.&lt;/p&gt;
+&lt;p&gt;I summarize high availability in OpenStack Folsom, particularly
+OpenStack integration with the Pacemaker high availability cluster
+stack.&lt;/p&gt;
+&lt;p&gt;I talk about high availability shortcomings in OpenStack Essex,
+comparing OpenStack to some of its important competitors. I then
+explain how …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This presentation was delivered July 17, 2012 at OSCON in
+Portland, Oregon.&lt;/p&gt;
+&lt;p&gt;I summarize high availability in OpenStack Folsom, particularly
+OpenStack integration with the Pacemaker high availability cluster
+stack.&lt;/p&gt;
+&lt;p&gt;I talk about high availability shortcomings in OpenStack Essex,
+comparing OpenStack to some of its important competitors. I then
+explain how these shortcomings are being addressed in Folsom, and give
+an overview of the current progress in view of current OpenStack Folsom
+development.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Slides: &lt;a href='https://prezi.com/embed/p4jstawrfqwh/"&amp;gt;&amp;lt;/'&gt;Prezi&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="OpenStack"></category><category term="Pacemaker"></category></entry><entry><title>Reliable, Redundant, Resilient: High Availability in OpenStack</title><link href="https://xahteiwi.eu/resources/presentations/reliable-redundant-resilient-high-availability-in-openstack/" rel="alternate"></link><published>2012-04-20T15:36:00+00:00</published><updated>2012-04-20T15:36:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-04-20:/resources/presentations/reliable-redundant-resilient-high-availability-in-openstack/</id><content type="html">&lt;p&gt;I explain the high availability features in the upcoming OpenStack
+Folsom release at the OpenStack Conference Spring 2012. This
+presentation was delivered April 21, 2012 in San Francisco,
+California.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Slides: &lt;a href='https://prezi.com/embed/gxaohiwl46z2/"&amp;gt;&amp;lt;/'&gt;Prezi&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="OpenStack"></category></entry><entry><title>Storage Replication in High-Performance High-Availability Environments</title><link href="https://xahteiwi.eu/resources/presentations/storage-replication-high-performance-high-availability-environments/" rel="alternate"></link><published>2012-03-19T10:54:00+00:00</published><updated>2012-03-19T10:54:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-03-19:/resources/presentations/storage-replication-high-performance-high-availability-environments/</id><summary type="html">&lt;p&gt;At linux.conf.au 2012, Florian I this presentation on the integration
+of &lt;a href="https://www.hastexo.com/drbd"&gt;DRBD&lt;/a&gt;, Flashcache and
+&lt;a href="https://www.hastexo.com/knowledge/high-availability/pacemaker"&gt;Pacemaker&lt;/a&gt;
+in the High Availability and Distributed Storage miniconf.&lt;/p&gt;
+&lt;p&gt;In this 30-minute presentation, I explore the benefits of
+&lt;a href="https://github.com/facebook/flashcache"&gt;Flashcache&lt;/a&gt; for replicated
+storage. Flashcache, &lt;a href="https://www.facebook.com/note.php?note_id=388112370932"&gt;originally developed at
+Facebook,&lt;/a&gt; is a
+general purpose, &lt;a href="https://github.com/facebook/flashcache/blob/master/doc/flashcache-doc.txt"&gt;block level cache …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;At linux.conf.au 2012, Florian I this presentation on the integration
+of &lt;a href="https://www.hastexo.com/drbd"&gt;DRBD&lt;/a&gt;, Flashcache and
+&lt;a href="https://www.hastexo.com/knowledge/high-availability/pacemaker"&gt;Pacemaker&lt;/a&gt;
+in the High Availability and Distributed Storage miniconf.&lt;/p&gt;
+&lt;p&gt;In this 30-minute presentation, I explore the benefits of
+&lt;a href="https://github.com/facebook/flashcache"&gt;Flashcache&lt;/a&gt; for replicated
+storage. Flashcache, &lt;a href="https://www.facebook.com/note.php?note_id=388112370932"&gt;originally developed at
+Facebook,&lt;/a&gt; is a
+general purpose, &lt;a href="https://github.com/facebook/flashcache/blob/master/doc/flashcache-doc.txt"&gt;block level cache device implemented in the Linux
+device-mapper
+framework.&lt;/a&gt;
+You can use flashcache in two distinct ways in Pacemaker
+high-availability clusters, which I both explain in his talk.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Video: &lt;a href="https://youtu.be/l910kiEuHOM"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="DRBD"></category><category term="Flashcache"></category><category term="Pacemaker"></category><category term="Performance"></category></entry><entry><title>Roll Your Own Cloud</title><link href="https://xahteiwi.eu/resources/presentations/roll-your-own-cloud/" rel="alternate"></link><published>2012-03-19T08:27:00+00:00</published><updated>2012-03-19T08:27:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-03-19:/resources/presentations/roll-your-own-cloud/</id><summary type="html">&lt;p&gt;Tim Serong and I explore the capabilities of KVM, iSCSI, DRBD and Pacemaker to
+create a fully open-source enterprise cloud.&lt;/p&gt;
+&lt;p&gt;Shot at linux.conf.au 2011 in Brisbane, this is me babbling, and Tim
+live-cartooning to the delight of the audience.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Video: &lt;a href="https://youtu.be/NyHJ8Uf03qg"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo …&lt;/code&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;Tim Serong and I explore the capabilities of KVM, iSCSI, DRBD and Pacemaker to
+create a fully open-source enterprise cloud.&lt;/p&gt;
+&lt;p&gt;Shot at linux.conf.au 2011 in Brisbane, this is me babbling, and Tim
+live-cartooning to the delight of the audience.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Video: &lt;a href="https://youtu.be/NyHJ8Uf03qg"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="DRBD"></category><category term="KVM"></category><category term="libvirt"></category><category term="Pacemaker"></category></entry><entry><title>The Zen of Pacemaker</title><link href="https://xahteiwi.eu/resources/presentations/zen-pacemaker/" rel="alternate"></link><published>2012-03-13T13:37:00+00:00</published><updated>2012-03-13T13:37:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-03-13:/resources/presentations/zen-pacemaker/</id><summary type="html">&lt;p&gt;I team up with Tim Serong and Andrew Beekhof for a tutorial at
+linux.conf.au 2012.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;p&gt;Pacemaker author Andrew Beekhof dropped in as well, to field questions
+and provide additional insight into Pacemaker development.&lt;/p&gt;
+&lt;p&gt;The tutorial covers the configuration of a MySQL 2-node high
+availability cluster front to back …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I team up with Tim Serong and Andrew Beekhof for a tutorial at
+linux.conf.au 2012.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;p&gt;Pacemaker author Andrew Beekhof dropped in as well, to field questions
+and provide additional insight into Pacemaker development.&lt;/p&gt;
+&lt;p&gt;The tutorial covers the configuration of a MySQL 2-node high
+availability cluster front to back, diving into the configuration of
+replicated storage, the cluster communications infrastructure, cluster
+resource management, and of course the MySQL database itself.&lt;/p&gt;
+&lt;p&gt;Reviews for this tutorial were rather enthusiastic, with bloggers
+comparing the experience to &lt;a href="http://www.anchor.com.au/blog/2012/01/lca-day-3-high-availability/"&gt;an enlightenment session from the Jedi
+grand
+masters&lt;/a&gt;
+of high availability.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Video: &lt;a href="https://youtu.be/3GoT36cK6os"&gt;YouTube&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Slides: &lt;a href="https://www.slideshare.net/slideshow/embed_code/key/jIo0ZxOl7znyYd"&gt;SlideShare&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="Pacemaker"></category></entry><entry><title>Fencing and Maintaining Sanity in High-Availability Clusters</title><link href="https://xahteiwi.eu/resources/presentations/fencing-and-maintaining-sanity-high-availability-clusters/" rel="alternate"></link><published>2011-11-01T13:45:00+00:00</published><updated>2011-11-01T13:45:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2011-11-01:/resources/presentations/fencing-and-maintaining-sanity-high-availability-clusters/</id><summary type="html">&lt;p&gt;A 45-minute talk I co-presented with &lt;a href="https://alteeve.ca/w/Main_Page"&gt;Madison
+Kelly&lt;/a&gt; at Linuxcon Europe 2011 in
+Prague. We explain the purpose of fencing, options for implementing
+fencing, and common pitfalls.&lt;/p&gt;
+&lt;p&gt;This presentation rounded out a series of high-availability talks at
+Linuxcon Europe 2011, the first Linuxcon event hosted by the Linux
+Foundation in …&lt;/p&gt;</summary><content type="html">&lt;p&gt;A 45-minute talk I co-presented with &lt;a href="https://alteeve.ca/w/Main_Page"&gt;Madison
+Kelly&lt;/a&gt; at Linuxcon Europe 2011 in
+Prague. We explain the purpose of fencing, options for implementing
+fencing, and common pitfalls.&lt;/p&gt;
+&lt;p&gt;This presentation rounded out a series of high-availability talks at
+Linuxcon Europe 2011, the first Linuxcon event hosted by the Linux
+Foundation in Europe. Madison and I presented at the Clarion
+Congress hotel, in the main conference track.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Slides: &lt;a href="https://www.slideshare.net/slideshow/embed_code/key/JQdx4FrVorOzkW"&gt;SlideShare&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category></entry><entry><title>MySQL High Availability Sprint: Launch the Pacemaker!</title><link href="https://xahteiwi.eu/resources/presentations/mysql-high-availability-sprint-launch-pacemaker/" rel="alternate"></link><published>2011-11-01T13:45:00+00:00</published><updated>2011-11-01T13:45:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2011-11-01:/resources/presentations/mysql-high-availability-sprint-launch-pacemaker/</id><content type="html">&lt;p&gt;This is a very dense tutorial given at Percona Live UK 2011 in London,
+England. In three hours, I covered the MySQL HA Stack with
+Pacemaker and DRBD, front to back.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Slides: &lt;a href="https://www.slideshare.net/slideshow/embed_code/key/sz9doig59uDdAC"&gt;SlideShare&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="MySQL"></category><category term="Pacemaker"></category></entry></feed>

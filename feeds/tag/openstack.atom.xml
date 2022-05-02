@@ -1,0 +1,1747 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - OpenStack</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/openstack.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2020-10-22T00:00:00+00:00</updated><entry><title>I Don’t Think This Means What You Think It Means: Red Herrings in OpenStack</title><link href="https://xahteiwi.eu/resources/presentations/i-dont-think-this-means-what-you-think-it-means-red-herrings-in-openstack/" rel="alternate"></link><published>2020-10-22T00:00:00+00:00</published><updated>2020-10-22T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2020-10-22:/resources/presentations/i-dont-think-this-means-what-you-think-it-means-red-herrings-in-openstack/</id><summary type="html">&lt;p&gt;My talk from the Open Infrastructure Summit, October 2020.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a talk of which I had done a previous version at Open Infra
+Days Nordic in 2019, but where unfortunately the audio came out really
+messed up in the recording. This version is much better.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Talk video: &lt;a href="https://youtu.be/0nughAOezoc"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can review my slides, including all speaker notes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Rendered slides: &lt;a href="https://fghaas.github.io/red-herrings-openstack/"&gt;GitHub
+  Pages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Slide sources (CC-BY-SA): &lt;a href="https://github.com/fghaas/red-herrings-openstack"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="OpenStack"></category></entry><entry><title>The Little Bag Of Tricks: 10 Things You Might Not Know You Can Do With OpenStack</title><link href="https://xahteiwi.eu/resources/presentations/the-little-bag-of-tricks-10-things-you-might-not-know-you-can-do-with-openstack/" rel="alternate"></link><published>2019-11-05T00:00:00+00:00</published><updated>2019-11-05T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-11-05:/resources/presentations/the-little-bag-of-tricks-10-things-you-might-not-know-you-can-do-with-openstack/</id><content type="html">&lt;p&gt;My presentation from the Open Infrastructure Summit 2019 in Shanghai.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Video: &lt;a href="https://youtu.be/cRqA-eYYOXE"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/openinfrasummit2019-shanghai/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
+zoom out for an overview, or just advance by hitting the spacebar.&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="OpenStack"></category></entry><entry><title>I Don’t Think This Means What You Think It Means: Red Herrings in OpenStack</title><link href="https://xahteiwi.eu/talk-submissions/oidn-2019-red-herrings/" rel="alternate"></link><published>2019-05-08T00:00:00+00:00</published><updated>2019-05-08T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-05-08:/talk-submissions/oidn-2019-red-herrings/</id><summary type="html">&lt;p&gt;A talk I submitted to OpenInfra Days Nordics 2019.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a talk I proposed&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt; for &lt;a href="https://openinfranordics.com/"&gt;OpenInfra Days
+Nordics&lt;/a&gt;, via a non-anonymized CfP
+process using &lt;a href="https://www.papercall.io/"&gt;PaperCall&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Title&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;I Don’t Think This Means What You Think It Means: Red Herrings in
+OpenStack&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;Elevator Pitch&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You have 300 characters to sell your talk. This is known as the
+"elevator pitch". Make it as exciting and enticing as possible.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;OpenStack’s complexity comes with operational challenges. And in
+situations where OpenStack misbehaves, it is frequently non-trivial to
+find the actual cause of an issue. This talk includes several examples
+of red herrings in OpenStack, and suggestions for spotting
+and avoiding them.&lt;/p&gt;
+&lt;h2&gt;Talk Format&lt;/h2&gt;
+&lt;p&gt;Talk (&amp;gt;30-45 minutes)&lt;/p&gt;
+&lt;h2&gt;Audience Level&lt;/h2&gt;
+&lt;p&gt;All&lt;/p&gt;
+&lt;h2&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This field supports Markdown. The description will be seen by
+reviewers during the CFP process and may eventually be seen by the
+attendees of the event.&lt;/p&gt;
+&lt;p&gt;You should make the description of your talk as compelling and
+exciting as possible. Remember, you're selling both the organizers
+of the events to select your talk, as well as trying to convince
+attendees your talk is the one they should see.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;When working with OpenStack, you deal with an environment that is
+inherently complex. As with all complex environments, things sometimes
+go wrong or behave unexpectedly. And when &lt;em&gt;that&lt;/em&gt; happens, your
+immediate goal is to locate, pinpoint, and then troubleshoot the
+issue.&lt;/p&gt;
+&lt;p&gt;And then, sometimes, you go down the dead-wrong path, and end up
+chasing a red herring for some time, before you find the real
+problem. This talk contains examples of such red herrings, enabling
+you to recognize and avoid them.&lt;/p&gt;
+&lt;p&gt;This talk is both for those who &lt;em&gt;run&lt;/em&gt; an OpenStack cloud, and those
+who &lt;em&gt;consume&lt;/em&gt; its functionality as a service. It talks about both red
+herrings in OpenStack operations, and red herrings in operating
+applications &lt;em&gt;on&lt;/em&gt;  OpenStack. &lt;/p&gt;
+&lt;h2&gt;Notes&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This field supports Markdown. Notes will only be seen by reviewers
+during the CFP process. This is where you should explain things such
+as technical requirements, why you're the best person to speak on
+this subject, etc...&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I’ve been working on OpenStack since 2012, have consulted on lots of
+private and public cloud deployments using OpenStack, and I work for
+the operator of a multi-region global OpenStack Cloud. “I've seen
+things you people wouldn't believe. Attack ships on fire off the
+shoulder of Orion...”&lt;/p&gt;
+&lt;p&gt;In addition to what &lt;strong&gt;I&lt;/strong&gt; have seen, others have seen other things,
+which is why I am crowdsourcing the content of this talk. That being
+so, the talk proposal &lt;a href="https://xahteiwi.eu/talk-submissions/oidn-2019-red-herrings/"&gt;is
+public&lt;/a&gt;,
+and I am asking people &lt;a href="https://twitter.com/xahteiwi/status/1126030330937380864"&gt;on
+Twitter&lt;/a&gt; to
+send me their stories, which I will add to and mix with my own, with
+due attribution.&lt;/p&gt;
+&lt;p&gt;Just to give one example of what I would like to cover, see &lt;a href="https://xahteiwi.eu/resources/hints-and-kinks/1000-routers-per-tenant-think-again/"&gt;this
+article&lt;/a&gt;
+on my web site, which talks about how you can run into what looks like
+a quota issue in Neutron, but whose cause is in fact buried deep in
+&lt;a href="https://tools.ietf.org/html/rfc5798"&gt;RFC 5798&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Tags&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Tag your talk to make it easier for event organizers to be able to
+find. Examples are "ruby, javascript, rails".&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;OpenStack, Operations&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr/&gt;
+&lt;ol&gt;
+&lt;li id="fn:1"&gt;
+&lt;p&gt;If you’re curious why this is here, please read
+&lt;a href="https://xahteiwi.eu/blog/2019/04/23/talk-submissions/"&gt;this&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content><category term="talk-submissions"></category><category term="Conference"></category><category term="OpenStack"></category></entry><entry><title>One For All: Using Terraform to manage OpenStack and Kubernetes resources</title><link href="https://xahteiwi.eu/talk-submissions/oidn-2019-terraform/" rel="alternate"></link><published>2019-05-07T00:00:00+00:00</published><updated>2019-05-07T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-05-07:/talk-submissions/oidn-2019-terraform/</id><summary type="html">&lt;p&gt;A workshop I submitted to Open Infra Days Nordics 2019.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a workshop I proposed&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt; for &lt;a href="https://openinfranordics.com/"&gt;OpenInfra Days
+Nordics&lt;/a&gt;, via a non-anonymized CfP
+process using &lt;a href="https://www.papercall.io/"&gt;PaperCall&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Title&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;One For All: Using Terraform to manage OpenStack and Kubernetes
+resources&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;Elevator Pitch&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You have 300 characters to sell your talk. This is known as the
+"elevator pitch". Make it as exciting and enticing as possible.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;A hands-on introduction to Terraform in an OpenStack and Kubernetes
+context. Get the basics (of Terraform), then spin up a Kubernetes
+cluster in an OpenStack public cloud (with Terraform), and manage
+resources on it (with Terraform).&lt;/p&gt;
+&lt;h2&gt;Talk Format&lt;/h2&gt;
+&lt;p&gt;Workshop (&amp;gt;60 minutes)&lt;/p&gt;
+&lt;h2&gt;Audience Level&lt;/h2&gt;
+&lt;p&gt;Intermediate&lt;/p&gt;
+&lt;h2&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This field supports Markdown. The description will be seen by
+reviewers during the CFP process and may eventually be seen by the
+attendees of the event.&lt;/p&gt;
+&lt;p&gt;You should make the description of your talk as compelling and
+exciting as possible. Remember, you're selling both the organizers
+of the events to select your talk, as well as trying to convince
+attendees your talk is the one they should see.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;If you are interested in deployment automation for arbitrarily complex
+containerized microservice applications, this is for you!&lt;/p&gt;
+&lt;p&gt;In this workshop, you will&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;get to know the basics of &lt;a href="https://www.terraform.io/"&gt;Terraform&lt;/a&gt; and
+  &lt;a href="https://www.terraform.io/docs/configuration/"&gt;Terraform
+  configurations&lt;/a&gt;,&lt;/li&gt;
+&lt;li&gt;spin up a Kubernetes cluster with Terraform, using the &lt;a href="https://www.terraform.io/docs/providers/openstack/"&gt;OpenStack
+  provider&lt;/a&gt; and
+  interfacing with &lt;a href="https://docs.openstack.org/magnum/latest/user/"&gt;OpenStack
+  Magnum&lt;/a&gt; in a public
+  cloud,&lt;/li&gt;
+&lt;li&gt;start managing Kubernetes resources from Terraform, using the
+  &lt;a href="https://www.terraform.io/docs/providers/kubernetes/"&gt;Kubernetes
+  provider&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You'll walk away with a solid understanding of Terraform's
+capabilities, enabling you to make an informed decision of whether
+Terraform is a suitable deployment automation facility for your
+organization's needs.&lt;/p&gt;
+&lt;p&gt;Prior Terraform knowledge is not required.&lt;/p&gt;
+&lt;h2&gt;Notes&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This field supports Markdown. Notes will only be seen by reviewers
+during the CFP process. This is where you should explain things such
+as technical requirements, why you're the best person to speak on
+this subject, etc...&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;There are no technical requirements other than internet connectivity,
+and a web browser (preferably on a laptop, though a reasonably-sized
+tablet with a modern browser should work as well).&lt;/p&gt;
+&lt;h2&gt;Tags&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Tag your talk to make it easier for event organizers to be able to
+find. Examples are "ruby, javascript, rails".&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Terraform, OpenStack, Kubernetes, Magnum&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr/&gt;
+&lt;ol&gt;
+&lt;li id="fn:1"&gt;
+&lt;p&gt;If you’re curious why this is here, please read
+&lt;a href="https://xahteiwi.eu/blog/2019/04/23/talk-submissions/"&gt;this&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content><category term="talk-submissions"></category><category term="Conference"></category><category term="Terraform"></category><category term="OpenStack"></category><category term="Kubernetes"></category></entry><entry><title>Learn Complex Skills, From Anywhere: Combining Django, Ansible and OpenStack to teach any tech skill</title><link href="https://xahteiwi.eu/resources/presentations/learn-complex-skills-from-anywhere-combining-django-ansible-and-openstack-to-teach-any-tech-skill/" rel="alternate"></link><published>2019-01-23T00:00:00+00:00</published><updated>2019-01-23T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-01-23:/resources/presentations/learn-complex-skills-from-anywhere-combining-django-ansible-and-openstack-to-teach-any-tech-skill/</id><content type="html">&lt;p&gt;My presentation from linux.conf.au 2019.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Video: &lt;a href="https://youtu.be/B1ic5o9geqw"&gt;YouTube&lt;/a&gt;, &lt;a href="http://mirror.linux.org.au/pub/linux.conf.au/2019/c3/Wednesday/Learn_Complex_Skills_From_Anywhere_Combining_Django_Ansible_and_OpenStack_to_teach_any_tech_skill.mp4"&gt;Linux Australia
+  (MP4)&lt;/a&gt;,
+  &lt;a href="http://mirror.linux.org.au/pub/linux.conf.au/2019/c3/Wednesday/Learn_Complex_Skills_From_Anywhere_Combining_Django_Ansible_and_OpenStack_to_teach_any_tech_skill.webm"&gt;Linux Australia (WebM)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Slides (with full speaker notes): &lt;a href="https://fghaas.github.io/lca2019/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
+zoom out for an overview, or just advance by hitting the spacebar.&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="Open edX"></category><category term="OpenStack"></category><category term="Django"></category><category term="Ansible"></category><category term="linux.conf.au"></category></entry><entry><title>1,000 routers per tenant? Think again!</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/1000-routers-per-tenant-think-again/" rel="alternate"></link><published>2018-12-08T00:00:00+00:00</published><updated>2018-12-08T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2018-12-08:/resources/hints-and-kinks/1000-routers-per-tenant-think-again/</id><summary type="html">&lt;p&gt;When you allow one of your OpenStack tenants a large number of routers, they may not be getting as many as you think they will.&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Neutron quotas&lt;/h2&gt;
+&lt;p&gt;As with all other OpenStack services, Neutron uses a fairly extensive
+quota system. An OpenStack admin can give a tenant&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt; a quota limit
+on networks, routers, port, subnets, IPv6 subnetpools, and many other
+object types.&lt;/p&gt;
+&lt;p&gt;Most OpenStack deployments set the default per-tenant quota at 10
+routers. &lt;strong&gt;However, nothing stops an admin from setting a much higher
+router quota, including one above 255. When such a quota change has
+been applied to your tenant, you’re in for a surprise.&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;HA routers&lt;/h2&gt;
+&lt;p&gt;Way back in the OpenStack Juno release, we got high-availability
+support for Neutron routers. This means that, assuming you have more
+than one network gateway node that can host them, your virtual routers
+will work in an automated active/backup configuration. &lt;/p&gt;
+&lt;p&gt;In effect, what Neutron does for you is that for every subnet that is
+plugged into the router — and for which it therefore acts as the
+default gateway — the gateway address binds to a keepalived-backed
+VRRP interface. On one of the network nodes that interface is active,
+and on the others it’s in standby. &lt;strong&gt;If your network node goes down,
+keepalived makes sure that the subnets’ default gateway IPs come up on
+the other node.&lt;/strong&gt; The keepalived configuration is completely
+abstracted away from the user; the Neutron L3 agent happily takes care
+of all of it.&lt;/p&gt;
+&lt;p&gt;In addition, in case a network node is up but has lost upstream
+network connectivity itself, whereas another is still available that
+retains it, HA routers also fail over in order to ensure connectivity
+for your VMs.&lt;/p&gt;
+&lt;h2&gt;The catch: one HA router network per tenant&lt;/h2&gt;
+&lt;p&gt;In order to enable HA routers, Neutron creates &lt;em&gt;one&lt;/em&gt; administrative
+network per tenant, over which it runs VRRP traffic. In order to tell
+apart all the keepalived instances that it manages on that network, it
+assigns each an individual Virtual Router ID or VRID.&lt;/p&gt;
+&lt;p&gt;And here’s the problem: &lt;strong&gt;&lt;a href="https://tools.ietf.org/html/rfc5798"&gt;RFC
+5798&lt;/a&gt; defines the VRID to be an
+8-bit integer.&lt;/strong&gt; That means that if you use HA routers, then setting a
+router quota over 255 is useless — Neutron will run out of VRIDs in
+the administrative network, before your tenant can ever hit the quota.&lt;/p&gt;
+&lt;p&gt;And this is a hard limit; there’s really not much that Neutron can do
+about this — apart from starting to spin up additional administrative
+networks once it runs out of VRIDs in the first one, but that likely
+would be a pretty involved change. &lt;strong&gt;Thus, at least for the time
+being, if you want more than 255 &lt;em&gt;highly-available&lt;/em&gt; virtual routers,
+you’ll have to spread them across multiple tenants.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;What’s more is that Neutron is not very forthcoming about this
+limitation itself: an attempt to create an HA router beyond the limit
+simply leads to an &lt;code&gt;Unknown&lt;/code&gt; error from the Neutron API endpoint.&lt;/p&gt;
+&lt;h2&gt;Wait, what if I really don’t &lt;em&gt;need&lt;/em&gt; HA routers?&lt;/h2&gt;
+&lt;p&gt;Well, firstly you probably do want them, really. But that aside,
+let’s assume for a moment that you actually don’t. Or rather, that
+it’s more important for you to have more than 255 routers in a single
+tenant, than for any of them to be highly available. So you create
+routers with the &lt;code&gt;ha&lt;/code&gt; flag set to &lt;code&gt;False&lt;/code&gt;, simple, right?&lt;/p&gt;
+&lt;p&gt;It turns out that you probably won’t be able to do that. And that’s
+not because you can’t change a router’s &lt;code&gt;ha&lt;/code&gt; flag without first
+temporarily disabling it — that’s not going to hurt you much if you’ve
+already decided you don’t need HA; in such a case a brief router blip
+will be acceptable. Instead, it’s because (at the time of writing)
+&lt;strong&gt;the default Neutron policy restricts setting the &lt;code&gt;ha&lt;/code&gt; flag on a
+router to admins only.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;So &lt;em&gt;if&lt;/em&gt; you want to be able to disable a router’s HA capability,
+you’ll first need to convince your cloud service provider to override
+the following default entries in Neutron’s &lt;code&gt;policy.json&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;"create_router:ha"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"rule:admin_only"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;"get_router:ha"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"rule:admin_only"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;"update_router:ha"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"rule:admin_only"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;... and instead set them as follows:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;"create_router:ha"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"rule:admin_or_owner"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;"get_router:ha"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"rule:admin_or_owner"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;"update_router:ha"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"rule:admin_or_owner"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;If your cloud service provider deploys Neutron with
+&lt;a href="https://docs.openstack.org/openstack-ansible/latest/"&gt;OpenStack-Ansible&lt;/a&gt;,
+they can define this in the &lt;a href="https://docs.openstack.org/openstack-ansible-os_neutron/latest/"&gt;following
+variable&lt;/a&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;neutron_policy_overrides&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s"&gt;"create_router:ha"&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"rule:admin_or_owner"&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s"&gt;"get_router:ha"&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"rule:admin_or_owner"&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s"&gt;"update_router:ha"&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"rule:admin_or_owner"&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Once the policy has been overridden in this manner, you should be able
+to create a new router with:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;openstack router create --no-ha &amp;lt;name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And modify an existing router’s high-availability flag with:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;openstack router &lt;span class="nb"&gt;set&lt;/span&gt; --disable &amp;lt;name&amp;gt;
+openstack router &lt;span class="nb"&gt;set&lt;/span&gt; --no-ha &amp;lt;name&amp;gt;
+openstack router &lt;span class="nb"&gt;set&lt;/span&gt; --enable &amp;lt;name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;&lt;em&gt;Is&lt;/em&gt; my router HA, really?&lt;/h2&gt;
+&lt;p&gt;In relation to what I described above, you may want to &lt;em&gt;find out&lt;/em&gt;
+whether one of your routers is configured to be highly available in
+the first place. You’d expect to easily be able to do this with an
+&lt;code&gt;openstack router show&lt;/code&gt; command:&lt;/p&gt;
+&lt;p&gt;Alas, what you see in the example above &lt;em&gt;is&lt;/em&gt; indeed a highly-available
+router, &lt;strong&gt;so why does it clearly report its &lt;code&gt;ha&lt;/code&gt; flag as being
+&lt;code&gt;False&lt;/code&gt;?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Well, that’s another consequence of that default Neutron policy, in
+combination with rather unintuitive behavior by the &lt;code&gt;openstack&lt;/code&gt;
+command line client. You see, this part of the aforementioned policy&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;"get_router:ha"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"rule:admin_only"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;... means you’re not even allowed to &lt;em&gt;query&lt;/em&gt; the &lt;code&gt;ha&lt;/code&gt; flag if you’re
+not an admin, and when the &lt;code&gt;openstack&lt;/code&gt; client is asked to display a
+boolean value that the user is not allowed to even read, then it
+always displays &lt;code&gt;False&lt;/code&gt;.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;div class="footnote"&gt;
+&lt;hr/&gt;
+&lt;ol&gt;
+&lt;li id="fn:1"&gt;
+&lt;p&gt;I’m very sorry, I still can’t force myself to call a tenant it a
+“project”, as I find that term profoundly illogical: the proper
+term for the concept being discussed here is multitenancy, not
+multiprojectcy. &lt;a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content><category term="hints-and-kinks"></category><category term="OpenStack"></category></entry><entry><title>The Little Bag O’Tricks: 10 Things You Might Not Know You Can Do With OpenStack</title><link href="https://xahteiwi.eu/resources/presentations/the-little-bag-otricks-10-things-you-might-not-know-you-can-do-with-openstack/" rel="alternate"></link><published>2018-10-10T00:00:00+00:00</published><updated>2018-10-10T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2018-10-10:/resources/presentations/the-little-bag-otricks-10-things-you-might-not-know-you-can-do-with-openstack/</id><summary type="html">&lt;p&gt;My presentation from OpenStack Days Nordic 2018 in Stockholm. Actually
+talks about 11, not 10 OpenStack capabilities you might not know
+about.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Video: &lt;a href="https://youtu.be/3hUoVi_AWCU"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/osdn2018/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
+zoom out for an overview, or just advance by hitting the spacebar …&lt;/p&gt;</summary><content type="html">&lt;p&gt;My presentation from OpenStack Days Nordic 2018 in Stockholm. Actually
+talks about 11, not 10 OpenStack capabilities you might not know
+about.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Video: &lt;a href="https://youtu.be/3hUoVi_AWCU"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/osdn2018/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
+zoom out for an overview, or just advance by hitting the spacebar.&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="OSDN"></category><category term="OpenStack"></category></entry><entry><title>More recommendations for Ceph and OpenStack</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/more-recommendations-ceph-openstack/" rel="alternate"></link><published>2017-08-03T00:00:00+00:00</published><updated>2017-08-03T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2017-08-03:/resources/hints-and-kinks/more-recommendations-ceph-openstack/</id><summary type="html">&lt;p&gt;Our series on best practices for Ceph and OpenStack continues.&lt;/p&gt;</summary><content type="html">&lt;p&gt;A few months ago, we
+&lt;a href="https://xahteiwi.eu/resources/hints-and-kinks/dos-donts-ceph-openstack/"&gt;shared our Dos and Don'ts&lt;/a&gt;,
+as they relate to Ceph and OpenStack. Since that post has proved quite
+popular, here are a few additional considerations for your Ceph-backed
+OpenStack cluster.&lt;/p&gt;
+&lt;h2&gt;Do configure your images for VirtIO-SCSI&lt;/h2&gt;
+&lt;p&gt;By default, RBD-backed Nova instances use the &lt;code&gt;virtio-blk&lt;/code&gt; driver to
+expose RBD images to the guest -- either as ephemeral drives, or as
+persistent volumes. In this default configuration, VirtIO presents a
+virtual PCI device to the guest that represents the paravirtual I/O
+bus, and devices are named &lt;code&gt;/dev/vda&lt;/code&gt;, &lt;code&gt;/dev/vdb&lt;/code&gt;, and so
+forth. VirtIO block devices are lightweight and efficient, but they
+come with a drawback: they don't support the &lt;code&gt;discard&lt;/code&gt; operation.&lt;/p&gt;
+&lt;p&gt;Not being able to use &lt;code&gt;discard&lt;/code&gt; means the guest cannot mount a
+filesystem with &lt;code&gt;mount -o discard&lt;/code&gt;, and it also cannot clean up freed
+blocks on a filesystem with &lt;code&gt;fstrim&lt;/code&gt;. This can be a security concern
+for your users, who might want to be able to really, actually &lt;em&gt;delete&lt;/em&gt;
+data from within the guest (after overwriting it, presumably). It can
+also be an operational concern for you as the cluster operator.&lt;/p&gt;
+&lt;p&gt;This is because not supporting &lt;code&gt;discard&lt;/code&gt; also means that RADOS objects
+owned by the corresponding RBD image and never &lt;em&gt;removed&lt;/em&gt; during the
+image's lifetime -- they persist until the whole image is deleted. So
+your cluster may carry the overhead of perhaps tens of thousands of
+RADOS objects that no-one actually cares about.&lt;/p&gt;
+&lt;p&gt;Thankfully, there is an alternative VirtIO disk driver that &lt;em&gt;does&lt;/em&gt;
+support &lt;code&gt;discard&lt;/code&gt;: the paravirtualized VirtIO SCSI controller,
+&lt;code&gt;virtio-scsi&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Enabling the VirtIO SCSI controller is something you do by setting a
+couple of Glance &lt;strong&gt;image properties,&lt;/strong&gt; namely &lt;code&gt;hw_scsi_model&lt;/code&gt; and
+&lt;code&gt;hw_disk_bus&lt;/code&gt;. You do so by running the following &lt;code&gt;openstack&lt;/code&gt; commands
+on your image:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;openstack image &lt;span class="nb"&gt;set&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+  --property &lt;span class="nv"&gt;hw_scsi_model&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;virtio-scsi &lt;span class="se"&gt;\&lt;/span&gt;
+  --property &lt;span class="nv"&gt;hw_disk_bus&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;scsi &lt;span class="se"&gt;\&lt;/span&gt;
+  &amp;lt;name or ID of your image&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then, if you boot an instance from this image, you'll see that its
+block device names switch from &lt;code&gt;/dev/vdX&lt;/code&gt; to &lt;code&gt;/dev/sdX&lt;/code&gt;, and you also
+get everything else you expect from a SCSI stack. For example, there's
+&lt;code&gt;/proc/scsi/scsi&lt;/code&gt;, you can extract information about your bus,
+controller, and LUs with &lt;code&gt;lsscsi&lt;/code&gt; command, and so on.&lt;/p&gt;
+&lt;p&gt;It's important to note that this &lt;em&gt;image&lt;/em&gt; property is inherited by the
+&lt;em&gt;instance&lt;/em&gt; booted from that image, which also passes it on to all
+&lt;em&gt;volumes&lt;/em&gt; that you may subsequently attach to that instance. Thus,
+&lt;code&gt;openstack server add volume&lt;/code&gt; will now add &lt;code&gt;/dev/sdb&lt;/code&gt;, not &lt;code&gt;/dev/vdb&lt;/code&gt;,
+and you will automatically get the benefits of &lt;code&gt;discard&lt;/code&gt; on your
+volumes, as well.&lt;/p&gt;
+&lt;h2&gt;Do set disk I/O limits on your Nova flavors&lt;/h2&gt;
+&lt;p&gt;In a Ceph cluster that acts as backing storage for OpenStack,
+naturally many OpenStack VMs share the bandwidth and IOPS of your
+whole cluster. When that happens, occasionally you may have a VM
+that’s very busy (meaning it produces a lot of I/O), which the Ceph
+cluster will attempt to process to the best of its abilities. In doing
+so, since RBD has no built-in QoS guarantees
+(&lt;a href="http://tracker.ceph.com/projects/ceph/wiki/Add_QoS_capacity_to_librbd"&gt;yet&lt;/a&gt;),
+it might cause &lt;em&gt;other&lt;/em&gt; VMs to suffer from reduced throughput,
+increased latency, or both.&lt;/p&gt;
+&lt;p&gt;The trouble with this is that it’s almost impossible for your users to
+calculate and reckon with. They’ll see a VM that sustains, say, 10,000
+IOPS at times, and then drop to 2,000 with no warning or
+explanation. It is much smarter to pre-emptively &lt;em&gt;limit&lt;/em&gt; Ceph RBD
+performance from the hypervisor, and luckily, OpenStack Nova
+absolutely allows you to do that. This concept is known as &lt;strong&gt;instance
+resource quotas&lt;/strong&gt;, and you set them via flavor properties. For
+example, an you may want to limit a specific flavor to 1,500 IOPS and
+a maximum throughput of 100 MB/s:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;openstack flavor &lt;span class="nb"&gt;set&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+  --property quota:disk_total_bytes_sec&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;100&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class="m"&gt;20&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt;
+  --property quota:disk_total_iops_sec&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1500&lt;/span&gt;
+  m1.medium
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In the background, these settings are handed through to libvirt and
+ultimately fed into cgroup limitations for Qemu/KVM, when a VM with
+this flavor spins up. So these limits aren’t specific to RBD, but they
+come in particularly handy when dealing with RBD.&lt;/p&gt;
+&lt;p&gt;Obviously, since flavors can be public, but can also be limited to
+specific tenants, you can set relatively low instance resource quotas
+in public flavors, and then make flavors with higher resource quotas
+available to select tenants only.&lt;/p&gt;
+&lt;h2&gt;Do differentiate Cinder volume types by disk I/O limits&lt;/h2&gt;
+&lt;p&gt;In addition to setting I/O limits on flavors for VMs, you can also
+influence the I/O characteristics of volumes. You do so by specifying
+distinct Cinder volume &lt;em&gt;types&lt;/em&gt;. Volume types are frequently used to
+enable users to select a specific Cinder backend — say, to stick
+volumes either on a NetApp box or on RBD, but it’s perfectly OK if you
+define multiple volume types using the same backend. You can then set
+characteristics like maximum IOPS or maximum throughput via Cinder QoS
+specifications. A QoS specification akin to the Nova flavor decribed
+above — limiting throughput to 100 MB/s and 1,500 IOPS would be
+created like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;openstack volume qos create &lt;span class="se"&gt;\&lt;/span&gt;
+  --consumer front-end
+  --property &lt;span class="nv"&gt;total_bytes_sec&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;100&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class="m"&gt;20&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+  --property &lt;span class="nv"&gt;total_iops_sec&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1500&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+  &lt;span class="s2"&gt;"100MB/s-1500iops"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You would then create a corresponding volume type, and associate the
+QoS spec with it:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;openstack volume &lt;span class="nb"&gt;type&lt;/span&gt; create &lt;span class="se"&gt;\&lt;/span&gt;
+  --public &lt;span class="se"&gt;\&lt;/span&gt;
+  &lt;span class="s2"&gt;"100MB/s-1500iops"&lt;/span&gt;
+openstack volume qos associate &lt;span class="se"&gt;\&lt;/span&gt;
+  &lt;span class="s2"&gt;"100MB/s-1500iops"&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+  &lt;span class="s2"&gt;"100MB/s-1500iops"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Again, as with Nova flavors, you can make volume types public, but you
+can also limit them to specific tenants.&lt;/p&gt;
+&lt;h2&gt;Don't forget about suspend files&lt;/h2&gt;
+&lt;p&gt;When you &lt;strong&gt;suspend&lt;/strong&gt; a Nova/libvirt/KVM instance, what really happens
+is what libvirt calls a &lt;strong&gt;managed save&lt;/strong&gt;: the instance's entire memory
+is written to a file, and then KVM process shuts down. This is
+actually quite neat because it means that the VM does not consume any
+CPU cycles nor memory until it restarts, and it will continue right
+where it left off, even if the compute node is rebooted in the
+interim.&lt;/p&gt;
+&lt;p&gt;You should understand that these savefiles are not compressed in any
+way: if your instance has 16GB of RAM, that's a 16GB file that
+instance suspension drops into &lt;code&gt;/var/lib/nova/save&lt;/code&gt;. This can add up
+pretty quickly: if a single compute node hosts something like 10
+suspended instances, their combined save file size can easily exceed 
+100 GB. Obviously, this can put you in a really bad spot if this fills
+up your &lt;code&gt;/var&lt;/code&gt; (or worse, &lt;code&gt;/&lt;/code&gt;) filesystem.&lt;/p&gt;
+&lt;p&gt;Of course, if you already have a Ceph cluster, you can put it to good
+use here too: just deep-mount a CephFS file system into that
+spot. Here's an Ansible playbook snippet that you may use as
+inspiration:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nn"&gt;---&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;hosts&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;compute-nodes&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;vars&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;ceph_mons&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;ceph-mon01&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;ceph-mon02&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;ceph-mon03&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;cephfs_client&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;cephfs&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;cephfs_secret&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"{{&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;vaulted_cephfs_secret&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;}}"&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;tasks&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"install&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;ceph-fs-common&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;package"&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;apt&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;ceph-fs-common&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;state&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;installed&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"create&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;ceph&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;directory"&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;file&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;dest&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;/etc/ceph&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;owner&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;root&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;group&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;root&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;mode&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'0755'&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;state&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;directory&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"create&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;cephfs&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;secretfile"&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;copy&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;dest&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;/etc/ceph/cephfs.secret&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;owner&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;root&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;group&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;root&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;mode&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'0600'&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;content&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'{{&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;cephfs_secret&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;}}'&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"mount&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;savefile&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;directory"&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;mount&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;fstype&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;ceph&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;path&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;/var/lib/nova/save&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;src&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"{{&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;ceph_mons&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;|&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;join(',')&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;}}:/nova/save/{{&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;ansible_hostname&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;}}"&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;opts&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"name={{&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;cephfs_client&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;}},secretfile=/etc/ceph/cephfs.secret"&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;state&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;mounted&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"fix&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;savefile&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;directory&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;ownership"&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;file&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;path&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;/var/lib/nova/save&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;owner&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;libvirt-qemu&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;group&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;kvm&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;state&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;directory&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2&gt;Got more?&lt;/h2&gt;
+&lt;p&gt;Do you have Ceph/OpenStack hints of your own? Leave them in the
+comments below and we’ll include them in the next installment.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="OpenStack"></category><category term="Ceph"></category></entry><entry><title>Importing an existing Ceph RBD image into Glance</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/importing-rbd-into-glance/" rel="alternate"></link><published>2017-02-17T00:00:00+00:00</published><updated>2017-02-17T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2017-02-17:/resources/hints-and-kinks/importing-rbd-into-glance/</id><summary type="html">&lt;p&gt;As an OpenStack/Ceph operator, you may sometimes want to forgo uploading a new image using the Glance API, because the process can be inefficient and time-consuming. Here's a faster way.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The normal process of uploading an image into Glance is
+straightforward: you use &lt;code&gt;glance image-create&lt;/code&gt; or &lt;code&gt;openstack image
+create&lt;/code&gt;, or the Horizon dashboard. Whichever process you choose, you
+select a local file, which you upload into the Glance image store.&lt;/p&gt;
+&lt;p&gt;This process can be unpleasantly time-consuming when your Glance
+service is backed with Ceph RBD, for a practical reason. When using
+the &lt;code&gt;rbd&lt;/code&gt; image store, you're expected to use &lt;code&gt;raw&lt;/code&gt; images, which have
+interesting characteristics.&lt;/p&gt;
+&lt;h2&gt;Raw images and sparse files&lt;/h2&gt;
+&lt;p&gt;Most people will take an existing vendor cloud image, which is
+typically available in the &lt;code&gt;qcow2&lt;/code&gt; format, and convert it using the
+&lt;code&gt;qemu-img&lt;/code&gt; utility, like so:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ wget -O ubuntu-xenial.qcow2 &lt;span class="se"&gt;\&lt;/span&gt;
+  https://cloud-images.ubuntu.com/xenial/current/xenial-server-cloudimg-amd64-disk1.img
+$ qemu-img convert -p -f qcow2 -O raw ubuntu-xenial.qcow2 ubuntu-xenial.raw
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;On face value, the result looks innocuous enough:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ qemu-img info ubuntu-xenial.qcow2 
+image: ubuntu-xenial.qcow2
+file format: qcow2
+virtual size: &lt;span class="m"&gt;2&lt;/span&gt;.2G &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;2361393152&lt;/span&gt; bytes&lt;span class="o"&gt;)&lt;/span&gt;
+disk size: 308M
+cluster_size: &lt;span class="m"&gt;65536&lt;/span&gt;
+Format specific information:
+    compat: &lt;span class="m"&gt;0&lt;/span&gt;.10
+    refcount bits: &lt;span class="m"&gt;16&lt;/span&gt;
+
+$ qemu-img info ubuntu-xenial.raw
+image: ubuntu-xenial.raw
+file format: raw
+virtual size: &lt;span class="m"&gt;2&lt;/span&gt;.2G &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;2361393152&lt;/span&gt; bytes&lt;span class="o"&gt;)&lt;/span&gt;
+disk size: 1000M
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;As you can see, in both cases the virtual image size differs starkly
+from the actual file size. In &lt;code&gt;qcow2&lt;/code&gt;, this is due to the
+copy-on-write nature of the file format and zlib compression; for the
+&lt;code&gt;raw&lt;/code&gt; image, we're dealing with a sparse file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ ls -lh ubuntu-xenial.qcow2
+-rw-rw-r-- &lt;span class="m"&gt;1&lt;/span&gt; florian florian 308M Feb &lt;span class="m"&gt;17&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;:05 ubuntu-xenial.qcow2
+$ du -h  ubuntu-xenial.qcow2
+308M    ubuntu-xenial.qcow2
+$ ls -lh info ubuntu-xenial.raw
+-rw-r--r-- &lt;span class="m"&gt;1&lt;/span&gt; florian florian &lt;span class="m"&gt;2&lt;/span&gt;.2G Feb &lt;span class="m"&gt;17&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;:16 ubuntu-xenial.raw
+$ du -h  ubuntu-xenial.raw
+1000M   ubuntu-xenial.raw
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;So, while the &lt;code&gt;qcow2&lt;/code&gt; file's physical and logical sizes match, the
+&lt;code&gt;raw&lt;/code&gt; file looks much larger in terms of filesystem metadata, as
+opposed to its actual storage utilization. That's because in a sparse
+file, "holes" (essentially, sequences of null bytes) aren't actually
+written to the filesystem. Instead, the filesystems just records the
+position and length of each "hole", and when we read from the "holes"
+in the file, the read would just return null bytes again.&lt;/p&gt;
+&lt;p&gt;The trouble with sparse files is that RESTful web services, like
+Glance, don't know too much about them. So, if we were to import that
+raw file with &lt;code&gt;openstack image-create --file my_cloud_image.raw&lt;/code&gt;, the
+command line client would upload null bytes with happy abandon, which
+would greatly lengthen the process.&lt;/p&gt;
+&lt;h2&gt;Importing images into RBD with &lt;code&gt;qemu-img convert&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Luckily for us, &lt;code&gt;qemu-img&lt;/code&gt; also allows us to upload &lt;em&gt;directly&lt;/em&gt; into
+RBD. All you need to do is make sure the image goes into the correct
+pool, and is reasonably named. Glance names uploaded images by their
+image ID, which is a universally unique identifier (UUID), so let's
+follow Glance's precedent.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;IMAGE_ID&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;uuidgen&lt;span class="sb"&gt;`&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;POOL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"glance-images"&lt;/span&gt;  &lt;span class="c1"&gt;# replace with your Glance pool name&lt;/span&gt;
+
+qemu-img convert &lt;span class="se"&gt;\&lt;/span&gt;
+  -f qcow2 -O raw &lt;span class="se"&gt;\&lt;/span&gt;
+  my_cloud_image.raw &lt;span class="se"&gt;\&lt;/span&gt;
+  rbd:&lt;span class="nv"&gt;$POOL&lt;/span&gt;/&lt;span class="nv"&gt;$IMAGE_ID&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Creating the clone baseline snapshot&lt;/h2&gt;
+&lt;p&gt;Glance expects a snapshot named &lt;code&gt;snap&lt;/code&gt; to exist on any image that is
+subsequently cloned by Cinder or Nova, so let's create that as
+well:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;rbd snap create &lt;span class="nv"&gt;$POOL&lt;/span&gt;/&lt;span class="nv"&gt;$IMAGE_ID&lt;/span&gt;@snap
+rbd snap protect &lt;span class="nv"&gt;$POOL&lt;/span&gt;/&lt;span class="nv"&gt;$IMAGE_ID&lt;/span&gt;@snap
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Making Glance aware of the image&lt;/h2&gt;
+&lt;p&gt;Finally, we can let Glance know about this image. Now, there's a catch
+to this: this trick &lt;em&gt;only&lt;/em&gt; works with the Glance v1 API, and thus you
+&lt;em&gt;must&lt;/em&gt; use the &lt;code&gt;glance&lt;/code&gt; client to do it. Your Glance is v2 only?
+Sorry. Insist on using the &lt;code&gt;openstack&lt;/code&gt; client? Out of luck.&lt;/p&gt;
+&lt;p&gt;What's special about this invocation of the &lt;code&gt;glance&lt;/code&gt; client are simply
+the pre-populated &lt;code&gt;location&lt;/code&gt; and &lt;code&gt;id&lt;/code&gt; fields. The &lt;code&gt;location&lt;/code&gt; is composed of the following segments:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the fixed string &lt;code&gt;rbd://&lt;/code&gt;,&lt;/li&gt;
+&lt;li&gt;your Ceph cluster UUID (you get this from &lt;code&gt;ceph fsid&lt;/code&gt;),&lt;/li&gt;
+&lt;li&gt;a forward slash (&lt;code&gt;/&lt;/code&gt;),&lt;/li&gt;
+&lt;li&gt;the name of the pool that the image is stored in,&lt;/li&gt;
+&lt;li&gt;the name of your image (which you previously created with &lt;code&gt;uuidgen&lt;/code&gt;),&lt;/li&gt;
+&lt;li&gt;another forward slash (&lt;code&gt;/&lt;/code&gt;, not &lt;code&gt;@&lt;/code&gt; as you might expect),&lt;/li&gt;
+&lt;li&gt;and finally, the name of your snapshot (&lt;code&gt;snap&lt;/code&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Other than that, the &lt;code&gt;glance&lt;/code&gt; client invocation is pretty
+straightforward for a v1 API call:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;CLUSTER_ID&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;ceph fsid&lt;span class="sb"&gt;`&lt;/span&gt;
+glance --os-image-api-version &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+  image-create &lt;span class="se"&gt;\&lt;/span&gt;
+  --disk-format raw &lt;span class="se"&gt;\&lt;/span&gt;
+  --id &lt;span class="nv"&gt;$IMAGE_ID&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+  --location rbd://&lt;span class="nv"&gt;$CLUSTER_ID&lt;/span&gt;/&lt;span class="nv"&gt;$POOL&lt;/span&gt;/&lt;span class="nv"&gt;$IMAGE_ID&lt;/span&gt;/snap
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Of course, you might add other options, like &lt;code&gt;--private&lt;/code&gt; or
+&lt;code&gt;--protected&lt;/code&gt; or &lt;code&gt;--name&lt;/code&gt;, but the above options are the bare minimum.&lt;/p&gt;
+&lt;h2&gt;And that's it!&lt;/h2&gt;
+&lt;p&gt;Now you can happily fire up VMs, or clone your image into a volume and
+fire a VM up from that.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Ceph"></category><category term="OpenStack"></category></entry><entry><title>The Dos and Don'ts for Ceph for OpenStack</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/dos-donts-ceph-openstack/" rel="alternate"></link><published>2016-11-28T00:00:00+00:00</published><updated>2016-11-28T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2016-11-28:/resources/hints-and-kinks/dos-donts-ceph-openstack/</id><summary type="html">&lt;p&gt;Ceph and OpenStack are an extremely useful and
+&lt;a href="https://www.openstack.org/assets/survey/April-2016-User-Survey-Report.pdf"&gt;highly popular&lt;/a&gt;
+combination. Still, new Ceph/OpenStack deployments frequently come
+with easily avoided shortcomings — we'll help you fix them!&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;h2&gt;Do use &lt;code&gt;show_image_direct_url&lt;/code&gt; and the Glance v2 API&lt;/h2&gt;
+&lt;p&gt;With Ceph RBD (RADOS Block Device), you have the ability to create
+&lt;strong&gt;clones.&lt;/strong&gt; You can …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ceph and OpenStack are an extremely useful and
+&lt;a href="https://www.openstack.org/assets/survey/April-2016-User-Survey-Report.pdf"&gt;highly popular&lt;/a&gt;
+combination. Still, new Ceph/OpenStack deployments frequently come
+with easily avoided shortcomings — we'll help you fix them!&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;h2&gt;Do use &lt;code&gt;show_image_direct_url&lt;/code&gt; and the Glance v2 API&lt;/h2&gt;
+&lt;p&gt;With Ceph RBD (RADOS Block Device), you have the ability to create
+&lt;strong&gt;clones.&lt;/strong&gt; You can think of clones as the writable siblings of
+&lt;em&gt;snapshots&lt;/em&gt; (which are read-only). A clone creates RADOS objects only
+for those parts of your block device which have been modified relative
+to its parent snapshot, and this means two things:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;You save space. That's a no-brainer, but in and of itself it's not
+   a very compelling argument as storage space is one of the cheapest
+   things in a distributed system.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;What's &lt;em&gt;not&lt;/em&gt; been modified in the clone can be served from the
+   original volume. This is important because, of course, it means you
+   are effectively hitting the same RADOS objects — and thus, the
+   same OSDs — no matter which clone you're talking to. And that, in
+   turn, means, those objects are likely to be served from the
+   respective OSD's page caches, in other words, from RAM. RAM is way
+   faster to access than any persistent storage device, so being able
+   to serve lots of reads from the page cache is good. That, in turn,
+   means, that serving data from a clone will be faster than serving
+   the same data from a full copy of a volume.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Both Cinder (when creating a volume from an image) and Nova (when
+serving ephemeral disks from Ceph) will make use of cloning RBD images
+in the Ceph backend, and will do so automatically. But they will do so
+only if &lt;code&gt;show_image_direct_url=true&lt;/code&gt; is set in &lt;code&gt;glance‑api.conf&lt;/code&gt;, and
+they are configured to connect to Glance using the Glance v2
+API. &lt;a href="http://docs.ceph.com/docs/jewel/rbd/rbd-openstack/#any-openstack-version"&gt;So do both.&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Do set &lt;code&gt;libvirt/images_type = rbd&lt;/code&gt; on Nova compute nodes&lt;/h2&gt;
+&lt;p&gt;In Nova (using the libvirt compute driver with KVM), you have several
+options of storing ephemeral disk images, that is, storage for any VM
+that is &lt;em&gt;not&lt;/em&gt; booted from a Cinder volume. You do so by setting the
+&lt;code&gt;images_type&lt;/code&gt; option in the &lt;code&gt;[libvirt]&lt;/code&gt; section in
+&lt;code&gt;nova‑compute.conf&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[libvirt]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;images_type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;lt;type&amp;gt;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The default type is &lt;code&gt;disk&lt;/code&gt;, which means that when you fire up a new
+VM, the following events occur:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;nova‑compute&lt;/code&gt; on your hypervisor node connects to the Glance API,
+  looks up the desired image, and downloads the image to your compute
+  node (into the &lt;code&gt;/var/lib/nova/instances/_base&lt;/code&gt; directory by
+  default).&lt;/li&gt;
+&lt;li&gt;It then creates a new qcow2 file which uses the downloaded image as
+  its backing file.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This process uses up a fair amount of space on your compute nodes,
+and can quite seriously delay spawning a new VM if it has been
+scheduled to a host that hasn't downloaded the desired image
+before. It also makes it impossible for such a VM to be live-migrated
+to another host without downtime.&lt;/p&gt;
+&lt;p&gt;Flipping &lt;code&gt;images_type&lt;/code&gt; to &lt;code&gt;rbd&lt;/code&gt; means the disk lives in the RBD
+backend, as an RBD clone of the original image, and can be created
+instantaneously. No delay on boot, no wasting space, all the benefits
+of
+clones. &lt;a href="http://docs.ceph.com/docs/jewel/rbd/rbd-openstack/#id2"&gt;Use it.&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Do enable RBD caching on Nova compute nodes&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;librbd&lt;/code&gt;, the library that underpins the Qemu/KVM RBD storage driver,
+can enable a disk cache that uses the hypervisor host's RAM for
+caching purposes. You should use this.&lt;/p&gt;
+&lt;p&gt;Yes, it's a cache that is safe to use. On the one hand, the
+combination of &lt;code&gt;virtio-blk&lt;/code&gt; with the Qemu RBD storage driver &lt;strong&gt;will&lt;/strong&gt;
+properly honor disk flushes. That is to say, when an application
+inside your VM says "I want this data on disk now," then &lt;code&gt;virtio‑blk&lt;/code&gt;,
+Qemu, and Ceph will all work together to only report the write as
+complete when it has been&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;written to the primary OSD,&lt;/li&gt;
+&lt;li&gt;replicated to the available replica OSDs,&lt;/li&gt;
+&lt;li&gt;acknowledged to have hit at least the persistent journal on all OSDs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In addition, Ceph RBD has an intelligent safeguard in place: even if
+it is configured to cache in write-back mode, &lt;em&gt;it will refuse to do
+so&lt;/em&gt; (meaning, it will operate in write-through mode) until it has
+received the first flush request from its user. Thus, if you run a VM
+that just never does that — because it has been misconfigured or its
+guest OS is just ages old — then RBD will stubbornly refuse to cache
+any writes. The corresponding RBD option is called
+&lt;a href="http://docs.ceph.com/docs/jewel/rbd/rbd-config-ref/#cache-settings"&gt;&lt;code&gt;rbd cache writethrough until flush&lt;/code&gt;&lt;/a&gt;,
+it defaults to &lt;code&gt;true&lt;/code&gt; and you should never disable it.&lt;/p&gt;
+&lt;p&gt;You can enable writeback caching for Ceph by setting the following
+&lt;code&gt;nova-compute&lt;/code&gt; configuration option:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[libvirt]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;images_type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;rbd&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;...&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;disk_cachemodes&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"network=writeback"&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And you just should.&lt;/p&gt;
+&lt;h2&gt;Do use separate pools for images, volumes, and ephemeral disks&lt;/h2&gt;
+&lt;p&gt;Now that you have enabled &lt;code&gt;show_image_direct_url=true&lt;/code&gt; in Glance,
+configured Cinder and &lt;code&gt;nova-compute&lt;/code&gt; to talk to Glance using the v2
+API, and configured &lt;code&gt;nova-compute&lt;/code&gt; with &lt;code&gt;libvirt/images_type=rbd&lt;/code&gt;, all
+your VMs and volumes will be using RBD clones. Clones can span
+multiple RADOS pools, meaning you can have an RBD image (and its
+snapshots) in one pool, and its clones in another.&lt;/p&gt;
+&lt;p&gt;You should do exactly that, for several reasons:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Separate pools means you can lock down access to those pools
+   separately. This is just a standard threat mitigation approach: if
+   your &lt;code&gt;nova-compute&lt;/code&gt; node gets compromised and the attacker can
+   corrupt or delete ephemeral disks, then that's bad — but it would
+   be &lt;em&gt;worse&lt;/em&gt; if they could also corrupt your Glance images.&lt;/li&gt;
+&lt;li&gt;Separate pools also means that you can have different pool
+   settings, such as the settings for &lt;code&gt;size&lt;/code&gt; or &lt;code&gt;pg_num&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Most importantly, separate pools can use separate &lt;code&gt;crush_ruleset&lt;/code&gt;
+   settings. We'll get back to this in a second, it'll come in handy
+   shortly.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;It's common to have three different pools: one for your Glance images
+(usually named &lt;code&gt;glance&lt;/code&gt; or &lt;code&gt;images&lt;/code&gt;), one for your Cinder volumes
+(&lt;code&gt;cinder&lt;/code&gt; or &lt;code&gt;volumes&lt;/code&gt;), and one for your VMs (&lt;code&gt;nova-compute&lt;/code&gt; or
+&lt;code&gt;vms&lt;/code&gt;).&lt;/p&gt;
+&lt;h2&gt;Don't necessarily use SSDs for your Ceph OSD journals&lt;/h2&gt;
+&lt;p&gt;Of the recommendations in this article, this one will probably be the
+one that surprises the most people. Of course, conventional wisdom
+holds that you should &lt;em&gt;always&lt;/em&gt; put your OSD journals on fast OSDs, and
+that you should deploy SSDs and spinners in a 1:4 to 1:6 ratio, right?&lt;/p&gt;
+&lt;p&gt;Let's take a look. Suppose you're following the 1:6 approach, and your
+SATA spinners are capable of writing at 100 MB/s. 6 spinners make 6
+OSDs, and each OSD uses a journal device that's on a partition on an
+enterprise SSD. Suppose further that the SSD is capable of writing at
+500 MB/s.&lt;/p&gt;
+&lt;p&gt;Congratulations, in that scenario you've just made your SSD your
+bottleneck. While you would be able to hit your OSDs at 600 MB/s on
+aggregate, your SSD limits you to about 83% of that.&lt;/p&gt;
+&lt;p&gt;In that scenario you &lt;em&gt;would&lt;/em&gt; actually be fine with a 1:4 ratio, but
+make your spindles just a little faster and the SSD advantage goes out
+the window again.&lt;/p&gt;
+&lt;p&gt;Now, of course, do consider the alternative: if you're putting your
+journals on the same drive as your OSD filestores, then you
+effectively get only half the nominal bandwidth of your drive, on
+average, because you write everything twice, to the same device. So
+that means that &lt;em&gt;without&lt;/em&gt; SSDs, your effective spinner bandwidth is
+only about 50 MB/s, so the &lt;em&gt;total&lt;/em&gt; bandwidth you get out of 6 drives
+that way is more like 300 MB/s, against which 500 MB/s is still a
+substantial improvement.&lt;/p&gt;
+&lt;p&gt;So you will need to plug your own numbers into this, and make your own
+evaluation for price &lt;em&gt;and&lt;/em&gt; performance. Just don't assume that journal
+SSD will be a panacea, or that it's always a good idea to use them.&lt;/p&gt;
+&lt;h2&gt;Do create all-flash OSDs&lt;/h2&gt;
+&lt;p&gt;One thing your journal SSDs don't help with are reads. So, what can you
+do to take advantage of SSDs on reads, too?&lt;/p&gt;
+&lt;p&gt;Make them OSDs. That is, not OSD &lt;em&gt;journals,&lt;/em&gt; but actual OSDs with a
+filestore &lt;em&gt;and&lt;/em&gt; journal. What this will create are OSDs that don't
+just write fast, but read fast, too.&lt;/p&gt;
+&lt;h2&gt;Do put your all-flash OSDs into a separate CRUSH root&lt;/h2&gt;
+&lt;p&gt;Assuming you don't run on all-flash hardware, but operate a
+cost-effective mixed cluster where some OSDs are spinners and others
+are SSDs (or NVMe devices or whatever), you obviously want to treat
+those OSDs separately. The simplest and easiest way to do that is to
+create a separate CRUSH &lt;code&gt;root&lt;/code&gt; in addition to the normally configured
+&lt;code&gt;default&lt;/code&gt; root.&lt;/p&gt;
+&lt;p&gt;For example, you could set up your CRUSH hierarchy as follows:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ID WEIGHT  TYPE NAME         UP/DOWN REWEIGHT PRIMARY-AFFINITY
+- 
+-1 4.85994 root default
+-2 1.61998     host elk
+ 0 0.53999         osd.0          up  1.00000          1.00000 
+ 1 0.53999         osd.1          up  1.00000          1.00000 
+ 2 0.53999         osd.2          up  1.00000          1.00000 
+-3 1.61998     host moose
+ 3 0.53999         osd.3          up  1.00000          1.00000 
+ 4 0.53999         osd.4          up  1.00000          1.00000 
+ 5 0.53999         osd.5          up  1.00000          1.00000 
+-4 1.61998     host reindeer
+ 6 0.53999         osd.6          up  1.00000          1.00000 
+ 7 0.53999         osd.7          up  1.00000          1.00000 
+ 8 0.53999         osd.8          up  1.00000          1.00000
+-5 4.85994 root highperf
+-6 1.61998     host elk-ssd
+ 9 0.53999         osd.9          up  1.00000          1.00000 
+10 0.53999         osd.10         up  1.00000          1.00000 
+11 0.53999         osd.11         up  1.00000          1.00000 
+-7 1.61998     host moose-ssd
+12 0.53999         osd.12         up  1.00000          1.00000 
+13 0.53999         osd.13         up  1.00000          1.00000 
+14 0.53999         osd.14         up  1.00000          1.00000 
+-8 1.61998     host reindeer-ssd
+15 0.53999         osd.15         up  1.00000          1.00000 
+16 0.53999         osd.16         up  1.00000          1.00000 
+17 0.53999         osd.17         up  1.00000          1.00000
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In the example above, OSDs 0-8 are assigned to the &lt;code&gt;default&lt;/code&gt; root,
+whereas OSDs 9-17 (our SSDs) belong to the root &lt;code&gt;highperf&lt;/code&gt;. We can now
+create two separate CRUSH rulesets:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;rule replicated_ruleset {
+    ruleset 0
+    type replicated
+    min_size 1
+    max_size 10
+    step take default
+    step chooseleaf firstn 0 type host
+    step emit
+}
+
+rule highperf_ruleset {
+    ruleset 1
+    type replicated
+    min_size 1
+    max_size 10
+    step take highperf
+    step chooseleaf firstn 0 type host
+    step emit
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The default ruleset, &lt;code&gt;replicated_ruleset&lt;/code&gt;, picks OSDs from the
+&lt;code&gt;default&lt;/code&gt; root, whereas &lt;code&gt;step take highperf&lt;/code&gt; in &lt;code&gt;highperf_ruleset&lt;/code&gt;
+means it covers only OSDs in the &lt;code&gt;highperf&lt;/code&gt; root.&lt;/p&gt;
+&lt;h2&gt;Do assign individual pools to your all-flash ruleset&lt;/h2&gt;
+&lt;p&gt;Assigning individual pools to a new CRUSH ruleset (and hence, to a
+whole different set of OSDs) is a matter of issuing a single command:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ceph osd pool set &amp;lt;name&amp;gt; crush_ruleset &amp;lt;number&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;... where &lt;code&gt;&amp;lt;name&amp;gt;&lt;/code&gt; name of your pool and &lt;code&gt;&amp;lt;number&amp;gt;&lt;/code&gt; is the numerical
+ID of your ruleset as per your CRUSH map. You can do this while the
+pool is online, and while clients are accessing its data — although
+of course, there will be a lot of remapping and backfilling so your
+overall performance may be affected somewhat.&lt;/p&gt;
+&lt;p&gt;Now, the assumption is that you will have more spinner storage than
+SSD storage. Thus, you will want to select individual pools for your
+all-flash OSDs. Here are a handful of pools that might come in handy
+as first candidates to migrate to all-flash. You can interpret the
+list below as a priority list: as you add more SSD capacity to your
+cluster, you can move pools over to all-flash storage one by one.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Nova ephemeral RBD pools (&lt;code&gt;vms&lt;/code&gt;, &lt;code&gt;nova-compute&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;radosgw bucket indexes (&lt;code&gt;.rgw.buckets.index&lt;/code&gt; and friends)
+   — if you're using radosgw as your drop-in OpenStack Swift
+   replacement&lt;/li&gt;
+&lt;li&gt;Cinder volume pools (&lt;code&gt;cinder&lt;/code&gt;, &lt;code&gt;volumes&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;radosgw data pools (&lt;code&gt;.rgw.buckets&lt;/code&gt; and friends) — if you need
+   low-latency reads and writes on Swift storage&lt;/li&gt;
+&lt;li&gt;Glance image pools (&lt;code&gt;glance&lt;/code&gt;, &lt;code&gt;images&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Cinder backup pools (&lt;code&gt;cinder-backup&lt;/code&gt;) — usually the last pool to
+   convert to all-flash OSDs.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Do designate some non-Ceph compute hosts with low-latency local storage&lt;/h2&gt;
+&lt;p&gt;Now, there will undoubtedly be some applications where Ceph does not
+produce the latency you desire. Or, for that matter, &lt;em&gt;any&lt;/em&gt;
+network-based storage. That's just a direct consequence of recent
+developments in storage and network technology.&lt;/p&gt;
+&lt;p&gt;Just a few years ago, the average latency of a single-sector uncached
+write to a block device was on the order of a millisecond, or 1,000
+microseconds (µs). In contrast, the latency incurred on a TCP packet
+carrying a 512-byte (1-sector) payload was about 50 µs, which makes
+for a 100-µs round trip. All in all, the &lt;em&gt;additional&lt;/em&gt; latency incurred
+from writing to a device over the network, as opposed to locally, was
+approximately 10%.&lt;/p&gt;
+&lt;p&gt;In the interim, a single-sector write for a device of the same price
+is itself about 100 µs, tops, with some reasonably-priced devices down
+to about 40 µs. Network latency, in contrast, hasn't changed all that
+much — going down about 20% from Gigabit Ethernet to 10 GbE.&lt;/p&gt;
+&lt;p&gt;So even going to a single, un-replicated SSD device over the network
+will now be 40 + 80 = 120 µs latency, vs. just 40 µs locally. That's
+not a 10% overhead anymore, that's a whopping &lt;em&gt;factor&lt;/em&gt; of 3.&lt;/p&gt;
+&lt;p&gt;With Ceph, that gets worse. Ceph writes data multiple times, first to
+the primary OSD, then (in parallel) to all replicas. So in contrast to
+a single-sector write at 40 µs, we now incur a latency of at least two
+writes, &lt;em&gt;plus&lt;/em&gt; two network round-trips, to that's 40 x 2 + 80 x 2 =
+240 µs, &lt;em&gt;six times&lt;/em&gt; the local write latency.&lt;/p&gt;
+&lt;p&gt;The good news is, &lt;em&gt;most&lt;/em&gt; applications don't care about this sort of
+latency overhead, because they're not latency-critical at all. The bad
+news is, &lt;em&gt;some&lt;/em&gt; will.&lt;/p&gt;
+&lt;p&gt;So, should you ditch Ceph because of that? Nope. But do consider
+adding a handful of compute nodes that are &lt;em&gt;not&lt;/em&gt; configured with
+&lt;code&gt;libvirt/images_type=rbd&lt;/code&gt;, but that use local disk images instead. Roll
+those hosts into a
+&lt;a href="http://docs.openstack.org/admin-guide/dashboard-manage-host-aggregates.html"&gt;host aggregate,&lt;/a&gt;
+and map them to a specific flavor. Recommend to your users that they
+use that flavor for low-latency applications.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="OpenStack"></category><category term="Ceph"></category></entry><entry><title>High Availability and Disaster Recovery in OpenStack</title><link href="https://xahteiwi.eu/resources/presentations/high-availability-and-disaster-recovery-in-openstack/" rel="alternate"></link><published>2016-11-07T00:00:00+00:00</published><updated>2016-11-07T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2016-11-07:/resources/presentations/high-availability-and-disaster-recovery-in-openstack/</id><summary type="html">&lt;p&gt;From the 2016 International Industry-Academia Workshop on Cloud
+Reliability and Resilience in Berlin. An OpenStack primer followed by
+a closer focus on OpenStack's HA &amp;amp; DR feature set.&lt;/p&gt;
+&lt;p&gt;About 35 minutes.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/cloud-reliability-workshop/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
+zoom out for an overview, or …&lt;/p&gt;</summary><content type="html">&lt;p&gt;From the 2016 International Industry-Academia Workshop on Cloud
+Reliability and Resilience in Berlin. An OpenStack primer followed by
+a closer focus on OpenStack's HA &amp;amp; DR feature set.&lt;/p&gt;
+&lt;p&gt;About 35 minutes.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/cloud-reliability-workshop/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
+zoom out for an overview, or just advance by hitting the spacebar.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="OpenStack"></category><category term="High Availability"></category></entry><entry><title>Heat and its Alternatives: Application Deployment in OpenStack</title><link href="https://xahteiwi.eu/resources/presentations/heat-and-its-alternatives-application-deployment-in-openstack/" rel="alternate"></link><published>2016-10-27T00:00:00+00:00</published><updated>2016-10-27T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2016-10-27:/resources/presentations/heat-and-its-alternatives-application-deployment-in-openstack/</id><summary type="html">&lt;p&gt;From the 2016 OpenStack Summit in Barcelona. A comparison of tools for
+virtual systems orchestration in OpenStack.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Heat&lt;/li&gt;
+&lt;li&gt;Juju&lt;/li&gt;
+&lt;li&gt;Ansible&lt;/li&gt;
+&lt;li&gt;Cloudify&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;About 45 minutes.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Video: &lt;a href="https://youtu.be/wtXVd09qHoo"&gt;YouTube&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Slides: &lt;a href="https://fghaas.github.io/openstacksummit2016-barcelona/"&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
+zoom out for an overview, or just advance by hitting …&lt;/p&gt;</summary><content type="html">&lt;p&gt;From the 2016 OpenStack Summit in Barcelona. A comparison of tools for
+virtual systems orchestration in OpenStack.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Heat&lt;/li&gt;
+&lt;li&gt;Juju&lt;/li&gt;
+&lt;li&gt;Ansible&lt;/li&gt;
+&lt;li&gt;Cloudify&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;About 45 minutes.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Video: &lt;a href="https://youtu.be/wtXVd09qHoo"&gt;YouTube&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Slides: &lt;a href="https://fghaas.github.io/openstacksummit2016-barcelona/"&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
+zoom out for an overview, or just advance by hitting the spacebar.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="OpenStack"></category><category term="Heat"></category><category term="Ansible"></category><category term="Juju"></category><category term="Cloudify"></category></entry><entry><title>Wiping and resetting your SUSE OpenStack Cloud Crowbar configuration</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/wipe-suse-openstack-cloud-config/" rel="alternate"></link><published>2016-07-05T00:00:00+00:00</published><updated>2016-07-05T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2016-07-05:/resources/hints-and-kinks/wipe-suse-openstack-cloud-config/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Note: This article was originally written for SUSE OpenStack Cloud
+6, and updated for SUSE OpenStack Cloud 7. It may not apply to later
+SUSE OpenStack Cloud releases.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;If you're using &lt;a href="https://www.suse.com/products/suse-openstack-cloud"&gt;SUSE OpenStack
+Cloud&lt;/a&gt;, you may
+want to erase and reinstall your cloud deployment a few times during
+the testing …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;Note: This article was originally written for SUSE OpenStack Cloud
+6, and updated for SUSE OpenStack Cloud 7. It may not apply to later
+SUSE OpenStack Cloud releases.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;If you're using &lt;a href="https://www.suse.com/products/suse-openstack-cloud"&gt;SUSE OpenStack
+Cloud&lt;/a&gt;, you may
+want to erase and reinstall your cloud deployment a few times during
+the testing or proof-of-concept phase. You may also want to experiment
+with a few permutations of Crowbar network configurations. SUSE's
+(otherwise excellent) &lt;a href="https://www.suse.com/documentation/suse-openstack-cloud-7/book_cloud_deploy/data/book_cloud_deploy.html"&gt;Deployment
+Guide&lt;/a&gt;
+suggests that the only way to change your Crowbar settings, after
+&lt;code&gt;install-suse-cloud&lt;/code&gt; has been run, &lt;a href="https://www.suse.com/documentation/suse-openstack-cloud-7/book_cloud_deploy/data/sec_depl_adm_inst_crowbar_network.html"&gt;is to reinstall your entire admin
+node&lt;/a&gt;.
+That isn't really true if you know what you're doing.&lt;/p&gt;
+&lt;p&gt;You may be thinking that you could just use
+&lt;a href="http://snapper.io/"&gt;&lt;code&gt;snapper&lt;/code&gt;&lt;/a&gt; to
+&lt;a href="https://www.suse.com/documentation/sles-12/book_sle_admin/data/sec_snapper_auto.html"&gt;revert to your last Btrfs snapshot&lt;/a&gt;
+created before you ran &lt;code&gt;install-suse-cloud&lt;/code&gt;. After all, running &lt;code&gt;yast2
+crowbar&lt;/code&gt;, like any other YaST module, automatically creates a
+before-and-after Btrfs snapshot of your root filesystem and all its
+subvolumes. So, reboot machine, select pre-&lt;code&gt;install-suse-cloud&lt;/code&gt;
+snapshot, complete boot, run &lt;code&gt;snapper rollback&lt;/code&gt;, done. Right?&lt;/p&gt;
+&lt;p&gt;Well, not quite. If you
+&lt;a href="https://www.suse.com/documentation/suse-openstack-cloud-7/book_cloud_deploy/data/sec_depl_adm_inst_partition.html"&gt;followed the Deployment Guide closely,&lt;/a&gt;
+you will have removed your Btrfs subvolume for the &lt;code&gt;/srv&lt;/code&gt; directory,
+and replaced it with a separate, XFS-formatted partition. That means
+it is excluded from all &lt;code&gt;snapper&lt;/code&gt; Btrfs snapshots, and thus, no
+rollback for you for that directory. Which, of course, Crowbar uses
+rather extensively.&lt;/p&gt;
+&lt;p&gt;So, here is your checklist for resetting your admin node to a
+pre-&lt;code&gt;install-suse-cloud&lt;/code&gt; state:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Reboot your admin node.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In the SLES boot menu, select an appropriate snapshot taken
+  immediately prior to running &lt;code&gt;install-suse-cloud&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Boot into your snapshot.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Run &lt;code&gt;snapper rollback&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Reboot again.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;After rebooting, delete the following and directories:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;/srv/tftpboot/authorized_keys&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/srv/tftpboot/validation.pem&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;all subdirectories under &lt;code&gt;/srv/tftpboot/nodes/&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Then, you can reconfigure Crowbar (&lt;code&gt;yast2 crowbar&lt;/code&gt;), run
+&lt;code&gt;install-suse-cloud&lt;/code&gt;, and reboot your OpenStack nodes. They should be
+discovered anew, and you're then able to redeploy your OpenStack
+barclamps to them.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="OpenStack"></category><category term="SUSE"></category></entry><entry><title>Dogfooding Dogwood</title><link href="https://xahteiwi.eu/blog/2016/02/12/dogfooding-dogwood/" rel="alternate"></link><published>2016-02-12T00:00:00+00:00</published><updated>2016-02-12T00:00:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2016-02-12:/blog/2016/02/12/dogfooding-dogwood/</id><summary type="html">&lt;p&gt;The Open edX "Dogwood" release is out. We've been running its code base in production for several weeks, and can share some first-hand experience.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This week, the &lt;a href="https://open.edx.org"&gt;Open edX&lt;/a&gt; community
+&lt;a href="https://open.edx.org/blog/newest-open-edx-release-dogwood-now-available"&gt;announced&lt;/a&gt;
+its latest release,
+&lt;a href="http://edx.readthedocs.org/projects/open-edx-release-notes/en/latest/dogwood.html"&gt;Open edX Dogwood&lt;/a&gt;. (In
+case you don't follow the Open edX community closely, its releases are
+alphabetically named after trees, so on the heels of the Birch and
+Cypress releases, we now have
+&lt;a href="https://en.wikipedia.org/wiki/Cornus_(genus)"&gt;Dogwood&lt;/a&gt;, and
+Eucalyptus will be next.)&lt;/p&gt;
+&lt;p&gt;Our team got involved in Open edX around the Cypress release
+timeframe, and we shifted our OpenStack integration work to track the
+master branch in December, to ensure we would be ready in time for
+Dogwood. &lt;a href="//academy.hastexo.com"&gt;hastexo Academy&lt;/a&gt; also tracks master,
+so if you take one of our self-paced online courses, you'll be running
+the latest and greatest from Open edX.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2&gt;Checking out the new features&lt;/h2&gt;
+&lt;p&gt;There are several new features in Open edX Dogwood, some of which we
+tested and ran, with somewhat mixed (but generally positive) results.&lt;/p&gt;
+&lt;h3&gt;Platform upgrades&lt;/h3&gt;
+&lt;p&gt;Open edX now builds upon Django 1.8 and Python 2.7.10. It's great to
+see some technical debt pay-down by moving beyond the now-unsupported
+Django 1.4. We hope to see this continue by Eucalyptus
+&lt;a href="https://openedx.slack.com/archives/general/p1455215550000885"&gt;hopefully moving to the next Ubuntu LTS, 16.04 "Xenial Xerus".&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;It would also be great to see a move to Python 3, but we're not
+holding our breath on that, for various reasons — including the fact
+that Ansible, which Open edX uses for deployment, &lt;a href="https://lwn.net/Articles/661590/"&gt;also still requires
+Python 2.&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Comprehensive theming&lt;/h3&gt;
+&lt;p&gt;Comprehensive theming is a new and improved way to apply theming and
+branding to Open edX platforms, which will eventually replace the
+current "Stanford" theming engine (named after an Open edX theme
+developed at Stanford University, which became a popular basis for
+rebranding the Open edX LMS). In mid-January, we shifted
+&lt;a href="https://github.com/hastexo/edx-theme"&gt;our own Stanford-style Open edX theme&lt;/a&gt;
+to Comprehensive Theming and test-deployed on hastexo Academy, then
+still in pre-launch. We ran into a critical bug
+&lt;a href="https://github.com/edx/edx-platform/pull/11319"&gt;that has been fixed for the release,&lt;/a&gt;
+and will come back to redeploying our new Comprehensive theme at a
+later date.&lt;/p&gt;
+&lt;p&gt;We're also waiting for a
+&lt;a href="https://github.com/edx/configuration/pull/2676"&gt;patch to the &lt;code&gt;edx-configuration&lt;/code&gt; Ansible repository&lt;/a&gt;
+to land, so we can properly deploy our Comprehensive theme to our Open
+edX instance.&lt;/p&gt;
+&lt;h3&gt;Otto&lt;/h3&gt;
+&lt;p&gt;We also looked extensively at the new Open edX ecommerce framework,
+"Otto", for buying and sellling course seats. Sadly, we found multiple
+issues that prevented us from using it in our infrastructure for the
+time being, and we pushed Otto off for our Eucalyptus respin.&lt;/p&gt;
+&lt;p&gt;Otto has no support for tax assessment on course seats; this is a show
+stopper for anyone who wants to sell courses to people in Europe, as
+course seats are Digital Goods under EU VAT regulations and require
+VAT assessment. We were admittedly a little dismayed to find that Otto
+had made some design decisions that made this impossible to fix in the
+way you would normally do this in the
+&lt;a href="http://django-oscar.readthedocs.org/en/latest/"&gt;Oscar&lt;/a&gt; framework that
+Otto builds on. Fixing Otto in-place would likely have delayed our
+Academy launch by several months, so that was a delay we were
+unwilling to accept. There are other issues with Otto, notably the
+fact that it comes with its own PayPal integration (as if
+&lt;a href="http://django-oscar-paypal.readthedocs.org/en/latest/"&gt;django-oscar-paypal&lt;/a&gt;
+didn't exist), which made us rather uncomfortable.&lt;/p&gt;
+&lt;p&gt;So we instead integrated hastexo Academy with our own, pure-Oscar web
+store that makes use of upstream community supported features much
+more extensively than Otto, and that also enables us to sell other
+products and services besides hastexo Academy course seats.&lt;/p&gt;
+&lt;h3&gt;LTI XBlock&lt;/h3&gt;
+&lt;p&gt;With the Dogwood release, the LTI XModule has been refactored into the
+&lt;a href="https://github.com/edx/xblock-lti-consumer"&gt;LTI Consumer XBlock&lt;/a&gt;. While
+we do not currently use this XBlock in production, it comes in very
+handy as a good reference for
+&lt;a href="https://github.com/edx/xblock-lti-consumer/tree/master/lti_consumer/tests/unit"&gt;XBlock unit tests&lt;/a&gt;,
+which we'll be using to improve the test coverage in our own XBlock.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2&gt;Open edX integration with OpenStack&lt;/h2&gt;
+&lt;p&gt;Our OpenStack integration work for Open edX is continuing at its
+regular, steady pace.&lt;/p&gt;
+&lt;h3&gt;Running Open edX Dogwood on OpenStack&lt;/h3&gt;
+&lt;p&gt;You're of course still able to deploy Open edX on OpenStack, using the
+Heat templates we've maintained since Cypress.&lt;/p&gt;
+&lt;h3&gt;Running the hastexo XBlock on Open edX Dogwood&lt;/h3&gt;
+&lt;p&gt;The hastexo XBlock, enabling course authors to define arbitrarily
+complex lab environments for courses with OpenStack Heat, is of course
+fully supported for Open edX Dogwood. That's exactly what you're using
+when speeding through interactive labs on hastexo Academy.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2&gt;Congrats, and thanks!&lt;/h2&gt;
+&lt;p&gt;Congratulations are in order for the entire development community! Our
+team at hastexo would like to extend a big thank-you to everyone who
+made a contribution to this release.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Open edX"></category><category term="OpenStack"></category></entry><entry><title>A minimal Ubuntu OpenStack Juju configuration in just four nodes</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/ubuntu-openstack-juju-4-nodes/" rel="alternate"></link><published>2015-12-23T00:00:00+00:00</published><updated>2015-12-23T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2015-12-23:/resources/hints-and-kinks/ubuntu-openstack-juju-4-nodes/</id><summary type="html">&lt;p&gt;Juju is Ubuntu's supported and preferred means of deployment
+automation for an OpenStack cloud. While in Juju, a deployment unit (a
+&lt;em&gt;Juju charm&lt;/em&gt;) generally expects to fully own the filesystem it is
+being deployed on, Juju allows you to co-deploy charms on the same
+physical machines, by way of using …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Juju is Ubuntu's supported and preferred means of deployment
+automation for an OpenStack cloud. While in Juju, a deployment unit (a
+&lt;em&gt;Juju charm&lt;/em&gt;) generally expects to fully own the filesystem it is
+being deployed on, Juju allows you to co-deploy charms on the same
+physical machines, by way of using LXC containers.&lt;/p&gt;
+&lt;p&gt;Now in general, Juju should allow you to deploy complex service
+&lt;em&gt;bundles&lt;/em&gt; in one swoop, however this works best when deploying to the
+bare metal (i.e. without containers). Still, it is perfectly possible
+to automate Juju deployment of an entire OpenStack cloud in just 4
+physical nodes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A controller node (running your OpenStack APIs and your dashboard);&lt;/li&gt;
+&lt;li&gt;a compute node (running VMs under libvirt/KVM management);&lt;/li&gt;
+&lt;li&gt;a network gateway node (providing L3 network connectivity);&lt;/li&gt;
+&lt;li&gt;a storage node (providing Cinder volumes via iSCSI and LVM).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The assumption for the setup below is that you already have a Juju
+infrastructure in place. You may have set this up with MAAS, or you
+may have just bootstrapped a deployment node and then created a Juju
+&lt;code&gt;manual&lt;/code&gt; environment and added your 4 nodes via SSH.&lt;/p&gt;
+&lt;p&gt;Note that the environment described here should not be used for
+production purposes. However, the same approach is also applicable to
+a 3-node controller HA cluster, 2-node Neutron gateway cluster with
+support for HA routers, and as many converged Ceph/&lt;code&gt;nova-compute&lt;/code&gt;
+nodes as you want.&lt;/p&gt;
+&lt;h2&gt;Juju configuration&lt;/h2&gt;
+&lt;p&gt;Consider the following Juju configuration YAML example, which you
+might put into your home directory as &lt;code&gt;juju-config.yaml&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;keystone&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;openstack-origin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'cloud:trusty-liberty'&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;admin-password&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'my&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;very&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;secret&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;password'&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nt"&gt;nova-cloud-controller&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;openstack-origin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'cloud:trusty-liberty'&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;network-manager&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Neutron&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nt"&gt;neutron-gateway&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;openstack-origin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'cloud:trusty-liberty'&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;ext-port&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;eth2&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;bridge-mappings&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'external:br-ex'&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;os-data-network&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;192.168.133.0/24&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;instance-mtu&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;1400&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nt"&gt;neutron-api&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;openstack-origin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'cloud:trusty-liberty'&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;network-device-mtu&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;1400&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;# Always make sure you enable security groups&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;neutron-security-groups&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;true&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;overlay-network-type&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;vxlan&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nt"&gt;rabbitmq-server&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="c1"&gt;# Cinder is deployed in two parts: one for the API and scheduler&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="c1"&gt;# (which can live in a container), one for the volume service (which&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="c1"&gt;# cannot, at least not for the LVM/iSCSI backend)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nt"&gt;cinder-api&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;openstack-origin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'cloud:trusty-liberty'&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;enabled-services&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;api,scheduler&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nt"&gt;cinder-volume&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;openstack-origin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'cloud:trusty-liberty'&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;enabled-services&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;volume&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;# Adjust this to match the block device on your volume host&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;block-device&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;vdb&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nt"&gt;glance&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;openstack-origin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'cloud:trusty-liberty'&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nt"&gt;heat&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;openstack-origin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'cloud:trusty-liberty'&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nt"&gt;mysql&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nt"&gt;openstack-dashboard&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;openstack-origin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'cloud:trusty-liberty'&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;webroot&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;/&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nt"&gt;nova-compute&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;openstack-origin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'cloud:trusty-liberty'&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;manage-neutron-plugin-legacy-mode&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;false&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;# Change to qemu if in a nested cloud environment&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;virt-type&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;kvm&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nt"&gt;neutron-openvswitch&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;os-data-network&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;192.168.133.0/24&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Deployment&lt;/h2&gt;
+&lt;p&gt;Then, you can run the following shell script to deploy your control
+services to LXC containers on machine 1, &lt;code&gt;nova-compute&lt;/code&gt; (and its
+subordinate charm, &lt;code&gt;neutron-openvswitch&lt;/code&gt;) to machine 2,
+&lt;code&gt;neutron-gateway&lt;/code&gt; to machine 3, and &lt;code&gt;cinder-volume&lt;/code&gt; to machine 4.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/bin/bash -ex&lt;/span&gt;
+
+&lt;span class="nv"&gt;CONFIG&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;~/juju-config.yaml
+
+juju deploy --config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt; mysql --to lxc:1
+juju deploy --config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt; rabbitmq-server --to lxc:1
+
+sleep 120s
+
+juju deploy --config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt; keystone --to lxc:1
+juju add-relation keystone:shared-db mysql:shared-db
+
+juju deploy --config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt; glance --to lxc:1
+juju add-relation glance:identity-service keystone:identity-service
+juju add-relation glance:shared-db mysql:shared-db
+
+juju deploy --config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt; neutron-api --to lxc:1
+juju add-relation neutron-api:amqp rabbitmq-server:amqp
+juju add-relation neutron-api:identity-service keystone:identity-service
+juju add-relation neutron-api:shared-db mysql:shared-db
+
+juju deploy --config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt; neutron-gateway --to &lt;span class="m"&gt;3&lt;/span&gt;
+juju add-relation neutron-gateway:amqp rabbitmq-server:amqp
+juju add-relation neutron-gateway:neutron-plugin-api neutron-api:neutron-plugin-api
+juju add-relation neutron-gateway:shared-db mysql:shared-db
+
+juju deploy --config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt; nova-cloud-controller --to lxc:1
+juju add-relation nova-cloud-controller:amqp rabbitmq-server:amqp
+juju add-relation nova-cloud-controller:identity-service keystone:identity-service
+juju add-relation nova-cloud-controller:image-service glance:image-service
+juju add-relation nova-cloud-controller:neutron-api neutron-api:neutron-api
+juju add-relation nova-cloud-controller:shared-db mysql:shared-db
+
+juju deploy --config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt; nova-compute --to &lt;span class="m"&gt;2&lt;/span&gt;
+juju add-relation nova-compute:amqp rabbitmq-server:amqp
+juju add-relation nova-compute:cloud-compute nova-cloud-controller:cloud-compute
+juju add-relation nova-compute:image-service glance:image-service
+juju add-relation nova-compute:shared-db mysql:shared-db
+
+juju deploy --config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt; neutron-openvswitch
+juju add-relation neutron-openvswitch:amqp rabbitmq-server:amqp
+juju add-relation neutron-openvswitch:neutron-plugin-api neutron-api:neutron-plugin-api
+juju add-relation neutron-openvswitch:neutron-plugin nova-compute:neutron-plugin 
+juju deploy --config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt; cinder cinder-api --to lxc:1
+juju add-relation cinder-api:amqp rabbitmq-server:amqp
+juju add-relation cinder-api:cinder-volume-service nova-cloud-controller:cinder-volume-service
+juju add-relation cinder-api:identity-service keystone:identity-service
+juju add-relation cinder-api:image-service glance:image-service
+juju add-relation cinder-api:shared-db mysql:shared-db
+
+juju deploy --config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt; cinder cinder-volume --to &lt;span class="m"&gt;4&lt;/span&gt;
+juju add-relation cinder-volume:amqp rabbitmq-server:amqp
+juju add-relation cinder-volume:shared-db mysql:shared-db
+juju add-relation cinder-volume:image-service glance:image-service
+
+juju deploy --config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt; openstack-dashboard --to &lt;span class="m"&gt;1&lt;/span&gt;
+juju add-relation openstack-dashboard:identity-service keystone:identity-service
+
+juju deploy --config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt; heat --to lxc:1
+juju add-relation heat:amqp rabbitmq-server:amqp
+juju add-relation heat:identity-service keystone:identity-service
+juju add-relation heat:shared-db mysql:shared-db
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And you're done! The whole process should give you an OpenStack cloud
+in about 20-30 minutes.&lt;/p&gt;
+&lt;p&gt;By the way, an exceedingly useful command to watch the installation progress of your Juju environment is:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;watch "juju stat --format=tabular"
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="OpenStack"></category><category term="Juju"></category></entry><entry><title>OpenStack for Open edX: Inside and Out (SWITCH ICT-Focus 2015)</title><link href="https://xahteiwi.eu/resources/presentations/ictfocus2015/" rel="alternate"></link><published>2015-11-10T00:00:00+00:00</published><updated>2015-11-10T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2015-11-10:/resources/presentations/ictfocus2015/</id><content type="html">&lt;p&gt;My presentation at &lt;a href="https://switch.ch"&gt;SWITCH&lt;/a&gt; ICT-Focus 2015.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/ictfocus2015/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="OpenStack"></category><category term="Open edX"></category></entry><entry><title>Clusters, Routers, Agents and Networks: High Availability in Neutron</title><link href="https://xahteiwi.eu/resources/presentations/openstacksummit2015-tokyo-neutron-ha/" rel="alternate"></link><published>2015-10-28T00:00:00+00:00</published><updated>2015-10-28T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2015-10-28:/resources/presentations/openstacksummit2015-tokyo-neutron-ha/</id><summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Of everything that we can build and deploy in a highly-available
+fashion in OpenStack, deploying highly available networking has been
+one of the trickiest, most complex aspects to get right.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I team up with Adam Spiers (SUSE) and Assaf Muller (Red Hat) to
+discuss high availability in OpenStack Neutron.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Video …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;p&gt;Of everything that we can build and deploy in a highly-available
+fashion in OpenStack, deploying highly available networking has been
+one of the trickiest, most complex aspects to get right.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I team up with Adam Spiers (SUSE) and Assaf Muller (Red Hat) to
+discuss high availability in OpenStack Neutron.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Video: &lt;a href="https://youtu.be/vBZgtHgSdOY"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/openstacksummit2015-tokyo-neutron-ha/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="OpenStack"></category><category term="Conference"></category></entry><entry><title>Automated OpenStack deployment: A comparison</title><link href="https://xahteiwi.eu/resources/presentations/automated-openstack-deployment-a-comparison/" rel="alternate"></link><published>2015-10-27T00:00:00+00:00</published><updated>2015-10-27T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2015-10-27:/resources/presentations/automated-openstack-deployment-a-comparison/</id><summary type="html">&lt;p&gt;From the 2015 OpenStack Summit in Tokyo. A comparison of automated
+deployment tools for OpenStack.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;OSP Director on RHEL OSP 7&lt;/li&gt;
+&lt;li&gt;Juju on Ubuntu Trusty&lt;/li&gt;
+&lt;li&gt;Chef/Crowbar on SUSE OpenStack Cloud 5&lt;/li&gt;
+&lt;li&gt;Ansible on Rackspace Private Cloud&lt;/li&gt;
+&lt;li&gt;Fuel on Mirantis OpenStack&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;About 45 minutes.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Video: &lt;a href="https://youtu.be/LM1ANSge01g"&gt;YouTube&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Slides: &lt;a href="https://fghaas.github.io/openstacksummit2015-tokyo-deployment/"&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the …&lt;/p&gt;</summary><content type="html">&lt;p&gt;From the 2015 OpenStack Summit in Tokyo. A comparison of automated
+deployment tools for OpenStack.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;OSP Director on RHEL OSP 7&lt;/li&gt;
+&lt;li&gt;Juju on Ubuntu Trusty&lt;/li&gt;
+&lt;li&gt;Chef/Crowbar on SUSE OpenStack Cloud 5&lt;/li&gt;
+&lt;li&gt;Ansible on Rackspace Private Cloud&lt;/li&gt;
+&lt;li&gt;Fuel on Mirantis OpenStack&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;About 45 minutes.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Video: &lt;a href="https://youtu.be/LM1ANSge01g"&gt;YouTube&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Slides: &lt;a href="https://fghaas.github.io/openstacksummit2015-tokyo-deployment/"&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
+zoom out for an overview, or just advance by hitting the spacebar.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="OpenStack"></category></entry><entry><title>OpenStack Orchestration and Automation</title><link href="https://xahteiwi.eu/resources/presentations/osil2015-orchestration/" rel="alternate"></link><published>2015-06-15T00:00:00+00:00</published><updated>2015-06-15T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2015-06-15:/resources/presentations/osil2015-orchestration/</id><content type="html">&lt;p&gt;My presentation from OpenStack Israel 2015. A fast-paced
+introduction to &lt;code&gt;cloud-init&lt;/code&gt; and OpenStack Heat.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Video: &lt;a href="https://youtu.be/oXYXqwnr5io"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/osil2015-orchestration/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="OpenStack"></category><category term="Conference"></category></entry><entry><title>OpenStack High Availability: Are We There Yet?</title><link href="https://xahteiwi.eu/resources/presentations/lceu2014-openstack-ha/" rel="alternate"></link><published>2014-10-14T00:00:00+00:00</published><updated>2014-10-14T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2014-10-14:/resources/presentations/lceu2014-openstack-ha/</id><content type="html">&lt;p&gt;My presentation from LinuxCon Europe 2014, outlining the state
+of high availability in OpenStack.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/lceu2014-openstack-ha/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="OpenStack"></category><category term="Conference"></category></entry><entry><title>Hands On Trove: Database as a Service in OpenStack</title><link href="https://xahteiwi.eu/resources/presentations/hands-trove-database-service-openstack/" rel="alternate"></link><published>2014-03-27T11:17:00+00:00</published><updated>2014-03-27T11:17:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2014-03-27:/resources/presentations/hands-trove-database-service-openstack/</id><summary type="html">&lt;p&gt;&lt;a href="http://www.percona.com/live/mysql-conference-2014/sessions/hands-trove-database-service-openstack-mysql"&gt;This
+tutorial&lt;/a&gt;
+covered OpenStack Trove at Percona Live 2014. If you want to recreate
+the experience, read on!&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;p&gt;In order to make the most of this tutorial, you can recreate the
+interactive steps presented. Please note: the process, while simple, is
+extremely bandwidth intensive and you don't want to be …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="http://www.percona.com/live/mysql-conference-2014/sessions/hands-trove-database-service-openstack-mysql"&gt;This
+tutorial&lt;/a&gt;
+covered OpenStack Trove at Percona Live 2014. If you want to recreate
+the experience, read on!&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;p&gt;In order to make the most of this tutorial, you can recreate the
+interactive steps presented. Please note: the process, while simple, is
+extremely bandwidth intensive and you don't want to be the bandwidth hog
+that everyone hates in your hotel, or on a conference wifi. Do so in
+your office (or home) instead.&lt;/p&gt;
+&lt;p&gt;The set-up process is decribed in &lt;a href="https://github.com/fghaas/perconalive2014/blob/master/README.md"&gt;a brief
+README&lt;/a&gt;.
+Effectively, it boils down to cloning a Git repo and then running
+vagrant up, and you'll be good to go. But do pay attention to the system
+requirements.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Slides: &lt;a href="https://www.slideshare.net/slideshow/embed_code/33588994"&gt;SlideShare&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="MySQL"></category><category term="OpenStack"></category></entry><entry><title>linux.conf.au 2014, or My Annual Journey To Awesome</title><link href="https://xahteiwi.eu/blog/2014/01/20/linuxconfau-2014-or-my-annual-journey-to-awesome/" rel="alternate"></link><published>2014-01-20T11:36:00+00:00</published><updated>2014-01-20T11:36:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2014-01-20:/blog/2014/01/20/linuxconfau-2014-or-my-annual-journey-to-awesome/</id><summary type="html">&lt;p&gt;Earlier this month, I got on a flight to Perth, WA to make my annual
+trek to &lt;strong&gt;linux.conf.au&lt;/strong&gt;, the largest open-source conference in the
+Southern Hemisphere and one of my favorite conferences on the circuit.
+LCA is an excellent, volunteer-run, hugely insightful conference and
+well worth the 26-hour …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Earlier this month, I got on a flight to Perth, WA to make my annual
+trek to &lt;strong&gt;linux.conf.au&lt;/strong&gt;, the largest open-source conference in the
+Southern Hemisphere and one of my favorite conferences on the circuit.
+LCA is an excellent, volunteer-run, hugely insightful conference and
+well worth the 26-hour trip.&lt;/p&gt;
+&lt;p&gt;I arrived in Perth in time to catch part of the Systems Administration
+mini-conference on day 1. In particular, I caught a &lt;a href="https://www.youtube.com/watch?v=jwBdrvEXMk0"&gt;&lt;strong&gt;systemd&lt;/strong&gt;
+talk&lt;/a&gt; by &lt;strong&gt;Rodger
+Donaldson&lt;/strong&gt; which was both informative and entertaining, so I encourage
+you to watch that when you get the chance.&lt;/p&gt;
+&lt;p&gt;Day 2 had the OpenStack miniconf, which was good but a bit too focused
+on OpenStack governance and organizational issues in its first half. In
+the afternoon, talks got more technical, which was a clear improvement.&lt;/p&gt;
+&lt;p&gt;Wednesday talks included a highly entertaining &lt;a href="https://www.youtube.com/watch?v=_mQKyIAx6Mc"&gt;look at MySQL's
+history&lt;/a&gt; from &lt;strong&gt;Stewart
+Smith&lt;/strong&gt;, &lt;strong&gt;Dave Chinner&lt;/strong&gt;'s musings on where &lt;a href="https://www.youtube.com/watch?v=DxZzSifuV4Q"&gt;Linux
+filesystems&lt;/a&gt; came from, and
+an insightful &lt;a href="https://www.youtube.com/watch?v=XyDcYV9doL8"&gt;RADOS deep
+dive&lt;/a&gt; from &lt;strong&gt;Sage Weil.&lt;/strong&gt;
+There was also a DRBD talk that I was not so fond of, but I've already
+shared my thoughts about that one on Google+, and you're certainly
+welcome to &lt;a href="https://plus.google.com/u/0/+FlorianHaas/posts/KTtvUzmATJM"&gt;take a
+look&lt;/a&gt; over
+there.&lt;/p&gt;
+&lt;p&gt;My own &lt;a href="http://youtu.be/YWVz1CSxayU"&gt;Rapid OpenStack Deployment for Novices and Experts
+Alike&lt;/a&gt; tutorial was on Thursday, had a nice
+turnout, and my hands-on stuff all worked! What more could I possibly
+ask for?&lt;/p&gt;
+&lt;p&gt;Besides my own talk, you should also totally watch &lt;strong&gt;Matthew Garrett&lt;/strong&gt;'s
+&lt;a href="https://www.youtube.com/watch?v=ixMStnFzgRM"&gt;Thursday keynote&lt;/a&gt; and
+&lt;strong&gt;Lana Brindley&lt;/strong&gt;'s &lt;a href="https://www.youtube.com/watch?v=HKmaCpOv0Ww"&gt;agile documentation tutorial with Lego
+goodness&lt;/a&gt;. And of course,
+my clear favorite among all LCA talks this year, Bdale Garbee's
+&lt;a href="https://www.youtube.com/watch?v=j7Et_eWJExU"&gt;reflections on losing his
+house&lt;/a&gt; in a wildfire last
+year.&lt;/p&gt;
+&lt;p&gt;As for Friday, again a stellar keynote from &lt;strong&gt;Jonathan Oxer&lt;/strong&gt; (&lt;a href="https://www.youtube.com/watch?v=0GHMTXiDqoA"&gt;Arduino
+satellites in space&lt;/a&gt;, geek
+overload), Lennart's &lt;a href="https://www.youtube.com/watch?v=sJyVaKZ8tbc"&gt;kdbus
+talk&lt;/a&gt; which you've probably
+already &lt;a href="https://lwn.net/Articles/580194/"&gt;read on LWN&lt;/a&gt; about, and a
+brilliant &lt;a href="http://mirror.linux.org.au/pub/linux.conf.au/2014/Friday/122-LCA_2014_-_Lightning_Talks_pt2_and_Thanks.mp4"&gt;lightning
+talk&lt;/a&gt;
+from Tim Serong about building a DIY bookscanner.&lt;/p&gt;
+&lt;p&gt;All in all, linux.conf.au in Perth was terrific, as usual, and I am
+absolutely planning to be there again next year. The trip will be even
+more atrociuous as next year's venue is
+&lt;a href="http://lca2015.linux.org.au"&gt;Auckland&lt;/a&gt;, but it will be totally worth
+it. No doubt in my mind at all.&lt;/p&gt;
+&lt;p&gt;I'd like to extend a huge thank-you to all LCA attendees, fellow
+speakers, organizers and volunteers who make this conference a fantastic
+event year after year. See you in 2015!&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="linux.conf.au"></category><category term="OpenStack"></category></entry><entry><title>Greetings from Havana: A fresh perspective on globally distributed OpenStack</title><link href="https://xahteiwi.eu/resources/presentations/greetings-from-havana/" rel="alternate"></link><published>2013-12-10T00:00:00+00:00</published><updated>2013-12-10T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2013-12-10:/resources/presentations/greetings-from-havana/</id><summary type="html">&lt;p&gt;My second appearance at OpenStack Israel, this time with news on
+distributed OpenStack environments in the Havana release.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;p&gt;The video (courtesy of OpenStack Israel) and slides are below. For the
+introduction given in Hebrew, the slides contain a transcript in
+English.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Video: &lt;a href="https://youtu.be/28p6Ls6hQJM"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/openstackisraeldec2013/#/personal-intro"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on …&lt;/p&gt;</summary><content type="html">&lt;p&gt;My second appearance at OpenStack Israel, this time with news on
+distributed OpenStack environments in the Havana release.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;p&gt;The video (courtesy of OpenStack Israel) and slides are below. For the
+introduction given in Hebrew, the slides contain a transcript in
+English.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Video: &lt;a href="https://youtu.be/28p6Ls6hQJM"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/openstackisraeldec2013/#/personal-intro"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="OpenStack"></category></entry><entry><title>More Reliable, More Resilient, More Redundant</title><link href="https://xahteiwi.eu/resources/presentations/more-reliable-more-resilient-more-redundant/" rel="alternate"></link><published>2013-04-17T16:33:00+00:00</published><updated>2013-04-17T16:33:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2013-04-17:/resources/presentations/more-reliable-more-resilient-more-redundant/</id><summary type="html">&lt;p&gt;Another update on OpenStack's progress in high availability, for the
+Grizzly and Havana releases. Presented at the OpenStack Summit in
+Portland, on April 17, 2013.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;p&gt;I give an overview of infrastructure, compute and networking high
+availability development in the April 2013 OpenStack Grizzly release,
+and an outlook for OpenStack Havana …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Another update on OpenStack's progress in high availability, for the
+Grizzly and Havana releases. Presented at the OpenStack Summit in
+Portland, on April 17, 2013.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;p&gt;I give an overview of infrastructure, compute and networking high
+availability development in the April 2013 OpenStack Grizzly release,
+and an outlook for OpenStack Havana.&lt;/p&gt;
+&lt;p&gt;Use the PgUp/PgDown keys to navigate through the presentation, or just
+advance by hitting the spacebar.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/openstacksummitapril2013/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="OpenStack"></category></entry><entry><title>High Availability Update: You can now vote our talk into the OpenStack summit!</title><link href="https://xahteiwi.eu/blog/2013/02/21/high-availability-update-you-can-now-vote-our-talk-into-the-openstack-summit/" rel="alternate"></link><published>2013-02-21T06:59:00+00:00</published><updated>2013-02-21T06:59:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2013-02-21:/blog/2013/02/21/high-availability-update-you-can-now-vote-our-talk-into-the-openstack-summit/</id><summary type="html">&lt;p&gt;For the upcoming OpenStack Summit in Portland, Syed Armani and I have
+&lt;a href="https://www.openstack.org/summit/portland-2013/vote-for-speakers/presentation/531"&gt;submitted a
+talk&lt;/a&gt;
+on OpenStack high availability. Here's how you can make sure it makes it
+into the program.&lt;/p&gt;
+&lt;p&gt;Our talk, &lt;strong&gt;&lt;em&gt;More reliable, more resilient, more redundant: High
+Availability Update for Grizzly and beyond,&lt;/em&gt;&lt;/strong&gt; is an extended overview …&lt;/p&gt;</summary><content type="html">&lt;p&gt;For the upcoming OpenStack Summit in Portland, Syed Armani and I have
+&lt;a href="https://www.openstack.org/summit/portland-2013/vote-for-speakers/presentation/531"&gt;submitted a
+talk&lt;/a&gt;
+on OpenStack high availability. Here's how you can make sure it makes it
+into the program.&lt;/p&gt;
+&lt;p&gt;Our talk, &lt;strong&gt;&lt;em&gt;More reliable, more resilient, more redundant: High
+Availability Update for Grizzly and beyond,&lt;/em&gt;&lt;/strong&gt; is an extended overview
+about current and future high availability features in OpenStack. It
+covers infrastructure high availability, HA features in Nova, Quantum,
+and several other topics.&lt;/p&gt;
+&lt;p&gt;I've given a shorter version of this talk &lt;a href="https://www.hastexo.com/resources/presentations/high-availability-update-grizzly-and-havana"&gt;just this week, at the 2nd
+Swiss OpenStack User Group
+meetup,&lt;/a&gt;
+where apparently &lt;a href="http://www.meetup.com/zhgeeks/events/97648722/"&gt;around 55 people liked it a
+lot.&lt;/a&gt; You can take a
+look at the slides
+&lt;a href="https://www.hastexo.com/resources/presentations/high-availability-update-grizzly-and-havana"&gt;here,&lt;/a&gt;
+and there will also be a video that should be available later this week.&lt;/p&gt;
+&lt;p&gt;So, to make sure that this talk makes it into the Summit, we need your
+help! Voting for Summit sessions is up, and you can vote for our talk
+&lt;a href="https://www.openstack.org/summit/portland-2013/vote-for-speakers/presentation/531"&gt;here.&lt;/a&gt;
+Please note, you must be an OpenStack Foundation member to vote. If
+you're not, and you're into OpenStack, you can &lt;a href="https://www.openstack.org/join/register/"&gt;join (for free!) as an
+Individual Member.&lt;/a&gt; Then, you
+can immediately &lt;a href="https://www.openstack.org/summit/portland-2013/vote-for-speakers/presentation/531"&gt;proceed to the voting
+page&lt;/a&gt;
+to cast your vote.&lt;/p&gt;
+&lt;p&gt;Thanks for your support, and we hope to see you in Portland!&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Conference"></category><category term="OpenStack"></category></entry><entry><title>High Availability Update (Grizzly and Havana)</title><link href="https://xahteiwi.eu/resources/presentations/high-availability-update-grizzly-and-havana/" rel="alternate"></link><published>2013-02-20T12:58:00+00:00</published><updated>2013-02-20T12:58:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2013-02-20:/resources/presentations/high-availability-update-grizzly-and-havana/</id><summary type="html">&lt;p&gt;Another update on
+&lt;a href="https://www.hastexo.com/knowledge/openstack"&gt;OpenStack's&lt;/a&gt; progress in
+high availability, for the Grizzly and Havana releases. Presented at the
+Swiss OpenStack User Group meetup in Zurich, on February 19, 2013.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;p&gt;I give an overview of infrastructure, compute and networking high
+availability development in the run-up to the Grizzly feature freeze.&lt;/p&gt;
+&lt;p&gt;Use the …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Another update on
+&lt;a href="https://www.hastexo.com/knowledge/openstack"&gt;OpenStack's&lt;/a&gt; progress in
+high availability, for the Grizzly and Havana releases. Presented at the
+Swiss OpenStack User Group meetup in Zurich, on February 19, 2013.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;p&gt;I give an overview of infrastructure, compute and networking high
+availability development in the run-up to the Grizzly feature freeze.&lt;/p&gt;
+&lt;p&gt;Use the PgUp/PgDown keys to navigate through the presentation, or just
+advance by hitting the spacebar.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/chosugmeetup201302/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="OpenStack"></category></entry><entry><title>High Availability in OpenStack</title><link href="https://xahteiwi.eu/resources/presentations/high-availability-openstack/" rel="alternate"></link><published>2012-08-30T15:48:00+00:00</published><updated>2012-08-30T15:48:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-08-30:/resources/presentations/high-availability-openstack/</id><summary type="html">&lt;p&gt;An update on high-availability development during the
+&lt;a href="http://www.openstack.org"&gt;OpenStack&lt;/a&gt; Folsom development cycle. This
+presentation was delivered August 30, 2012 in San Diego, California. It
+was part of the inaugural
+&lt;a href="http://events.linuxfoundation.org/events/cloudopen-north-america"&gt;CloudOpen&lt;/a&gt;
+conference hosted by the &lt;a href="http://www.linuxfoundation.org"&gt;Linux
+Foundation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Following up on my earlier talks at OpenStack Summit and OSCON, I
+summarized the high-availability …&lt;/p&gt;</summary><content type="html">&lt;p&gt;An update on high-availability development during the
+&lt;a href="http://www.openstack.org"&gt;OpenStack&lt;/a&gt; Folsom development cycle. This
+presentation was delivered August 30, 2012 in San Diego, California. It
+was part of the inaugural
+&lt;a href="http://events.linuxfoundation.org/events/cloudopen-north-america"&gt;CloudOpen&lt;/a&gt;
+conference hosted by the &lt;a href="http://www.linuxfoundation.org"&gt;Linux
+Foundation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Following up on my earlier talks at OpenStack Summit and OSCON, I
+summarized the high-availability features OpenStack gained during the
+Folsom development cycle.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Slides: &lt;a href='https://prezi.com/embed/xaclzhzpjmau/"&amp;gt;&amp;lt;/'&gt;Prezi&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="OpenStack"></category></entry><entry><title>Speaking and BoFing at CloudOpen in San Diego!</title><link href="https://xahteiwi.eu/blog/2012/08/20/speaking-and-bofing-at-cloudopen-in-san-diego/" rel="alternate"></link><published>2012-08-20T07:26:00+00:00</published><updated>2012-08-20T07:26:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2012-08-20:/blog/2012/08/20/speaking-and-bofing-at-cloudopen-in-san-diego/</id><summary type="html">&lt;p&gt;Next week, I will be speaking at the inaugural CloudOpen conference in
+San Diego. This is your chance to learn about
+&lt;a href="https://www.hastexo.com/knowledge/openstack"&gt;OpenStack&lt;/a&gt; high
+availability and
+&lt;a href="https://www.hastexo.com/knowledge/storage-io/ceph"&gt;Ceph!&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;August 29-31, San Diego hosts the
+first &lt;a href="http://events.linuxfoundation.org/events/cloudopen-north-america"&gt;CloudOpen&lt;/a&gt;
+conference, colocated with &lt;a href="http://events.linuxfoundation.org/events/linuxcon-north-america"&gt;LinuxCon North
+America&lt;/a&gt;.
+CloudOpen is the &lt;a href="http://www.linuxfoundation.org/"&gt;Linux Foundation&lt;/a&gt;'s
+brand new, stack-agnostic cloud …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Next week, I will be speaking at the inaugural CloudOpen conference in
+San Diego. This is your chance to learn about
+&lt;a href="https://www.hastexo.com/knowledge/openstack"&gt;OpenStack&lt;/a&gt; high
+availability and
+&lt;a href="https://www.hastexo.com/knowledge/storage-io/ceph"&gt;Ceph!&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;August 29-31, San Diego hosts the
+first &lt;a href="http://events.linuxfoundation.org/events/cloudopen-north-america"&gt;CloudOpen&lt;/a&gt;
+conference, colocated with &lt;a href="http://events.linuxfoundation.org/events/linuxcon-north-america"&gt;LinuxCon North
+America&lt;/a&gt;.
+CloudOpen is the &lt;a href="http://www.linuxfoundation.org/"&gt;Linux Foundation&lt;/a&gt;'s
+brand new, stack-agnostic cloud conference where OpenStackers can mingle
+with CloudStackers and Eucalyptus folks to discuss open-source cloud
+solutions.&lt;/p&gt;
+&lt;p&gt;It's also the conference where I will be giving my fourth (and likely
+last, at least for the time being) incarnation of the High Availability
+for OpenStack talk I first delivered at the Folsom design summit back in
+April. Since then, we've had a lot of community involvement for HA in
+OpenStack, and have made some excellent progress, and I will be more
+than happy to report on that. This presentation is on &lt;a href="http://cloudopen2012.sched.org/event/06939ee7fd5fe48bf202525bbd7e506d#.UDIX9hXwh2M"&gt;Thursday,
+2:25-3:10pm in Executsoemive Center Room
+2&lt;/a&gt;,
+in the &lt;em&gt;Operations&lt;/em&gt; track.&lt;/p&gt;
+&lt;p&gt;Also, &lt;a href="http://ceph.com/community/people-profile/sage-weil/"&gt;Sage Weil&lt;/a&gt;
+of Ceph fame is joining me for an birds-of-a-feather (BoF) session on
+Ceph. &lt;a href="http://rtrk.us/"&gt;Ross Turk&lt;/a&gt; and I had such an excellent turnout
+(and a great time) in the Ceph BoF at OSCON that we just had to do
+another. And Sage agreed to take part, which is excellent. He has &lt;a href="http://cloudopen2012.sched.org/event/f3e84388068b1855c5a705a97c917f44#.UDIZeBXwh2M"&gt;a
+talk on Ceph in the main conference
+track&lt;/a&gt;
+as well.&lt;/p&gt;
+&lt;p&gt;The conference organizers do not announce BoF sessions ahead of time on
+the CloudOpen web site, so I've simply &lt;a href="https://plus.google.com/events/cq28o7cvj9dg1ki1om3clfo8700/110443614427234590648"&gt;set up a Google+
+event&lt;/a&gt;
+for you to check in on. The exact location is still TBD (we will be
+assigned a room based on availability), but we will definitely be in the
+conference area at the Sheraton in San Diego. If you're attending
+CloudOpen and you want to learn more about Ceph, you're more than
+welcome to join us!&lt;/p&gt;
+&lt;p&gt;My personal CloudOpen schedule is available
+&lt;a href="http://cloudopen2012.sched.org/fghaas"&gt;here&lt;/a&gt;, by the way. Feel free to
+grab me at a talk, or in the hallway. See you in San Diego!&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Ceph"></category><category term="Conference"></category><category term="high availability"></category><category term="OpenStack"></category></entry><entry><title>Highly Available Cloud: Pacemaker integration with OpenStack</title><link href="https://xahteiwi.eu/resources/presentations/highly-available-cloud-pacemaker-integration-openstack/" rel="alternate"></link><published>2012-07-17T21:12:00+00:00</published><updated>2012-07-17T21:12:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-07-17:/resources/presentations/highly-available-cloud-pacemaker-integration-openstack/</id><summary type="html">&lt;p&gt;This presentation was delivered July 17, 2012 at OSCON in
+Portland, Oregon.&lt;/p&gt;
+&lt;p&gt;I summarize high availability in OpenStack Folsom, particularly
+OpenStack integration with the Pacemaker high availability cluster
+stack.&lt;/p&gt;
+&lt;p&gt;I talk about high availability shortcomings in OpenStack Essex,
+comparing OpenStack to some of its important competitors. I then
+explain how …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This presentation was delivered July 17, 2012 at OSCON in
+Portland, Oregon.&lt;/p&gt;
+&lt;p&gt;I summarize high availability in OpenStack Folsom, particularly
+OpenStack integration with the Pacemaker high availability cluster
+stack.&lt;/p&gt;
+&lt;p&gt;I talk about high availability shortcomings in OpenStack Essex,
+comparing OpenStack to some of its important competitors. I then
+explain how these shortcomings are being addressed in Folsom, and give
+an overview of the current progress in view of current OpenStack Folsom
+development.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Slides: &lt;a href='https://prezi.com/embed/p4jstawrfqwh/"&amp;gt;&amp;lt;/'&gt;Prezi&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="OpenStack"></category><category term="Pacemaker"></category></entry><entry><title>A look back at my first OpenStack Design Summit &amp; Conference</title><link href="https://xahteiwi.eu/blog/2012/04/24/a-look-back-at-my-first-openstack-design-summit-conference/" rel="alternate"></link><published>2012-04-24T09:35:00+00:00</published><updated>2012-04-24T09:35:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2012-04-24:/blog/2012/04/24/a-look-back-at-my-first-openstack-design-summit-conference/</id><summary type="html">&lt;p&gt;I've just returned from the &lt;a href="http://www.openstack.org/conference/san-francisco-2012/"&gt;OpenStack Folsom Design Summit and Spring
+2012
+Conference&lt;/a&gt;,
+and am finally getting rid of my jet lag. Here's a summary of what's
+been a mind-blowing conference experience for me.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;p&gt;This was my first OpenStack Design Summit and Conference. And as anyone
+who's in open source …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I've just returned from the &lt;a href="http://www.openstack.org/conference/san-francisco-2012/"&gt;OpenStack Folsom Design Summit and Spring
+2012
+Conference&lt;/a&gt;,
+and am finally getting rid of my jet lag. Here's a summary of what's
+been a mind-blowing conference experience for me.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;p&gt;This was my first OpenStack Design Summit and Conference. And as anyone
+who's in open source is acutely aware, some communities can be reluctant
+to accept newcomers. Some may even seem outright hostile to the timid.
+Not the &lt;a href="http://www.openstack.org/community"&gt;OpenStack&lt;/a&gt; community.&lt;/p&gt;
+&lt;p&gt;The minute I sat down in the opening session of the Design Summit on
+Monday, I felt instantly welcome and at home. Even as a relative
+OpenStack newbie (who was invited to the Design Summit to provide some
+insights and guidance on high availability), I immediately got the
+impression that I was in the right place at the right time. I've rarely
+seen a developer community on such a positive vibe. Sure, we'll blast
+each other on technical disagreements, but all in a good-natured, fun
+way.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://folsomdesignsummit2012.sched.org/event/fa2a5803a4b4ba857db57c84a1e1d3bc"&gt;My own Design Summit
+session&lt;/a&gt;
+clearly wasn't without such disagreements, and expectedly so. But I
+think we came to some excellent conclusions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Infrastructure high availability will be an overarching design goal
+    in the upcoming OpenStack Folsom release.&lt;/li&gt;
+&lt;li&gt;We will shoot for providing HA solutions for all OpenStack
+    infrastructure services. This includes MySQL, RabbitMQ, Glance,
+    Keystone, Nova and Horizon (Swift already has HA built in). hastexo
+    will play a very active role in this.&lt;/li&gt;
+&lt;li&gt;We will not reinvent the wheel, and instead rely on &lt;a href="http://clusterlabs.org/"&gt;the Pacemaker
+    stack&lt;/a&gt; wherever possible.&lt;/li&gt;
+&lt;li&gt;Most of the challenge is really in the documentation and in the
+    development of reference solutions that deployment solutions
+    (&lt;a href="https://jujucharms.com/"&gt;Juju&lt;/a&gt;, &lt;a href="https://www.chef.io/chef/"&gt;Chef&lt;/a&gt;,
+    &lt;a href="https://puppetlabs.com/"&gt;Puppet&lt;/a&gt;) can then build on. We will take a
+    lot of responsibility in that effort, as well.&lt;/li&gt;
+&lt;li&gt;Some services still require some work to become fully HA capable.
+    Cinder (the volume service that's being factored out of Nova for
+    Folsom) is one example, Quantum is another. This work will be
+    tackled.&lt;/li&gt;
+&lt;li&gt;We're currently planning to stop short of providing monitoring and
+    HA for Nova instances (a.k.a. &lt;em&gt;guest HA&lt;/em&gt;). This is on the list for
+    the next release past Folsom.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;With those issues discussed, voted on and on the record, I had the honor
+of &lt;a href="http://openstackconferencespring2012.sched.org/event/a6d940d2ebd11e37c6ac389f7d4d2125"&gt;presenting them to a larger audience at the main
+conference&lt;/a&gt;.
+It seems to have hit home pretty well, based on feedback from attendees
+given in-person and on Twitter. &lt;span style="text-decoration: line-through;"&gt;I'm hoping the conference
+organizers will make a video recording available shortly. Meanwhile, my
+presentation is already available
+&lt;a href="https://prezi.com/gxaohiwl46z2/high-availability-in-openstack/"&gt;here&lt;/a&gt;.&lt;/span&gt; &lt;a href="https://www.hastexo.com/resources/presentations/reliable-redundant-resilient-high-availability-openstack"&gt;It's
+now available here in the &lt;em&gt;Presentations&lt;/em&gt;
+section.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Overall, this has been a wonderful and very well organized conference,
+and I'm very much looking forward to coming back next time around.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;
+&lt;!--break--&gt;</content><category term="blog"></category><category term="Conference"></category><category term="OpenStack"></category></entry><entry><title>Reliable, Redundant, Resilient: High Availability in OpenStack</title><link href="https://xahteiwi.eu/resources/presentations/reliable-redundant-resilient-high-availability-in-openstack/" rel="alternate"></link><published>2012-04-20T15:36:00+00:00</published><updated>2012-04-20T15:36:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-04-20:/resources/presentations/reliable-redundant-resilient-high-availability-in-openstack/</id><content type="html">&lt;p&gt;I explain the high availability features in the upcoming OpenStack
+Folsom release at the OpenStack Conference Spring 2012. This
+presentation was delivered April 21, 2012 in San Francisco,
+California.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Slides: &lt;a href='https://prezi.com/embed/gxaohiwl46z2/"&amp;gt;&amp;lt;/'&gt;Prezi&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="OpenStack"></category></entry><entry><title>Speaking at OSCON 2012</title><link href="https://xahteiwi.eu/blog/2012/04/03/speaking-at-oscon-2012/" rel="alternate"></link><published>2012-04-03T09:24:00+00:00</published><updated>2012-04-03T09:24:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2012-04-03:/blog/2012/04/03/speaking-at-oscon-2012/</id><summary type="html">&lt;p&gt;I'll be speaking at &lt;a href="http://www.oscon.com/oscon2012"&gt;OSCON 2012&lt;/a&gt; in
+Portland, on high availability in
+&lt;a href="https://www.hastexo.com/knowledge/openstack"&gt;OpenStack&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I learned from O'Reilly yesterday that my presentation proposal for this
+year's &lt;a href="http://www.oscon.com/oscon2012"&gt;OSCON&lt;/a&gt;, which takes place July
+16-20, 2012 in Portland, Oregon, has been accepted. As this is my first
+OSCON speaking slot (actually, it's my first …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I'll be speaking at &lt;a href="http://www.oscon.com/oscon2012"&gt;OSCON 2012&lt;/a&gt; in
+Portland, on high availability in
+&lt;a href="https://www.hastexo.com/knowledge/openstack"&gt;OpenStack&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I learned from O'Reilly yesterday that my presentation proposal for this
+year's &lt;a href="http://www.oscon.com/oscon2012"&gt;OSCON&lt;/a&gt;, which takes place July
+16-20, 2012 in Portland, Oregon, has been accepted. As this is my first
+OSCON speaking slot (actually, it's my first OSCON altogether), this is
+a thrilling speaking opportunity for me.&lt;/p&gt;
+&lt;p&gt;My talk, &lt;em&gt;Highly Available Cloud: OpenStack integration with Pacemaker&lt;/em&gt;
+is currently (tentatively, I suppose) scheduled for 11:30 on July 18.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Conference"></category><category term="OpenStack"></category><category term="OSCON"></category></entry><entry><title>Presentation accepted for OpenStack Spring 2012 Conference</title><link href="https://xahteiwi.eu/blog/2012/03/28/presentation-accepted-for-openstack-spring-2012-conference/" rel="alternate"></link><published>2012-03-28T19:52:00+00:00</published><updated>2012-03-28T19:52:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2012-03-28:/blog/2012/03/28/presentation-accepted-for-openstack-spring-2012-conference/</id><summary type="html">&lt;p&gt;I just learned that my presentation is going ahead at the &lt;a href="http://www.openstack.org/conference/san-francisco-2012/"&gt;OpenStack
+Spring 2012
+Conference&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;My presentation, &lt;em&gt;Reliable, Redundant: High Availability in
+OpenStack,&lt;/em&gt; has been accepted for the main conference track. The
+official schedule isn't yet up pending confirmation from all speakers,
+but I've been tentatively informed that it's on …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I just learned that my presentation is going ahead at the &lt;a href="http://www.openstack.org/conference/san-francisco-2012/"&gt;OpenStack
+Spring 2012
+Conference&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;My presentation, &lt;em&gt;Reliable, Redundant: High Availability in
+OpenStack,&lt;/em&gt; has been accepted for the main conference track. The
+official schedule isn't yet up pending confirmation from all speakers,
+but I've been tentatively informed that it's on at 11:30 am on Friday,
+April 20.&lt;/p&gt;
+&lt;p&gt;This of course means that you should totally &lt;a href="http://www.openstack.org/conference/san-francisco-2012/register/"&gt;register for the
+conference&lt;/a&gt;
+if you haven't already done so, and I'll be happy to chat with anyone
+interested in OpenStack HA. See you in San Francisco!&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Conference"></category><category term="OpenStack"></category></entry></feed>

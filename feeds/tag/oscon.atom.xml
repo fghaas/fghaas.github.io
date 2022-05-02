@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - OSCON</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/oscon.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2014-07-24T00:00:00+00:00</updated><entry><title>Speak! How to talk in public and not wreck your voice</title><link href="https://xahteiwi.eu/resources/presentations/speak-how-to-talk-in-public-and-not-wreck-your-voice/" rel="alternate"></link><published>2014-07-24T00:00:00+00:00</published><updated>2014-07-24T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2014-07-24:/resources/presentations/speak-how-to-talk-in-public-and-not-wreck-your-voice/</id><content type="html">&lt;p&gt;An &lt;a href="https://en.wikipedia.org/wiki/Ignite_(event)"&gt;Ignite&lt;/a&gt; talk I
+presented at OSCON 2014. Decidedly non-technical, this covers vocal
+hygiene and how to take care of your voice.&lt;/p&gt;
+&lt;!--break--&gt;
+&lt;ul&gt;
+&lt;li&gt;Video: &lt;a href="https://youtu.be/2LZXGesneMo"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="OSCON"></category><category term="Ignite"></category></entry><entry><title>Speaking at OSCON 2012</title><link href="https://xahteiwi.eu/blog/2012/04/03/speaking-at-oscon-2012/" rel="alternate"></link><published>2012-04-03T09:24:00+00:00</published><updated>2012-04-03T09:24:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2012-04-03:/blog/2012/04/03/speaking-at-oscon-2012/</id><summary type="html">&lt;p&gt;I'll be speaking at &lt;a href="http://www.oscon.com/oscon2012"&gt;OSCON 2012&lt;/a&gt; in
+Portland, on high availability in
+&lt;a href="https://www.hastexo.com/knowledge/openstack"&gt;OpenStack&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I learned from O'Reilly yesterday that my presentation proposal for this
+year's &lt;a href="http://www.oscon.com/oscon2012"&gt;OSCON&lt;/a&gt;, which takes place July
+16-20, 2012 in Portland, Oregon, has been accepted. As this is my first
+OSCON speaking slot (actually, it's my first …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I'll be speaking at &lt;a href="http://www.oscon.com/oscon2012"&gt;OSCON 2012&lt;/a&gt; in
+Portland, on high availability in
+&lt;a href="https://www.hastexo.com/knowledge/openstack"&gt;OpenStack&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I learned from O'Reilly yesterday that my presentation proposal for this
+year's &lt;a href="http://www.oscon.com/oscon2012"&gt;OSCON&lt;/a&gt;, which takes place July
+16-20, 2012 in Portland, Oregon, has been accepted. As this is my first
+OSCON speaking slot (actually, it's my first OSCON altogether), this is
+a thrilling speaking opportunity for me.&lt;/p&gt;
+&lt;p&gt;My talk, &lt;em&gt;Highly Available Cloud: OpenStack integration with Pacemaker&lt;/em&gt;
+is currently (tentatively, I suppose) scheduled for 11:30 on July 18.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Conference"></category><category term="OpenStack"></category><category term="OSCON"></category></entry></feed>

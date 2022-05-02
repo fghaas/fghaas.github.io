@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Terraform</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/terraform.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2019-05-07T00:00:00+00:00</updated><entry><title>One For All: Using Terraform to manage OpenStack and Kubernetes resources</title><link href="https://xahteiwi.eu/talk-submissions/oidn-2019-terraform/" rel="alternate"></link><published>2019-05-07T00:00:00+00:00</published><updated>2019-05-07T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-05-07:/talk-submissions/oidn-2019-terraform/</id><summary type="html">&lt;p&gt;A workshop I submitted to Open Infra Days Nordics 2019.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a workshop I proposed&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt; for &lt;a href="https://openinfranordics.com/"&gt;OpenInfra Days
+Nordics&lt;/a&gt;, via a non-anonymized CfP
+process using &lt;a href="https://www.papercall.io/"&gt;PaperCall&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Title&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;One For All: Using Terraform to manage OpenStack and Kubernetes
+resources&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;Elevator Pitch&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You have 300 characters to sell your talk. This is known as the
+"elevator pitch". Make it as exciting and enticing as possible.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;A hands-on introduction to Terraform in an OpenStack and Kubernetes
+context. Get the basics (of Terraform), then spin up a Kubernetes
+cluster in an OpenStack public cloud (with Terraform), and manage
+resources on it (with Terraform).&lt;/p&gt;
+&lt;h2&gt;Talk Format&lt;/h2&gt;
+&lt;p&gt;Workshop (&amp;gt;60 minutes)&lt;/p&gt;
+&lt;h2&gt;Audience Level&lt;/h2&gt;
+&lt;p&gt;Intermediate&lt;/p&gt;
+&lt;h2&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This field supports Markdown. The description will be seen by
+reviewers during the CFP process and may eventually be seen by the
+attendees of the event.&lt;/p&gt;
+&lt;p&gt;You should make the description of your talk as compelling and
+exciting as possible. Remember, you're selling both the organizers
+of the events to select your talk, as well as trying to convince
+attendees your talk is the one they should see.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;If you are interested in deployment automation for arbitrarily complex
+containerized microservice applications, this is for you!&lt;/p&gt;
+&lt;p&gt;In this workshop, you will&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;get to know the basics of &lt;a href="https://www.terraform.io/"&gt;Terraform&lt;/a&gt; and
+  &lt;a href="https://www.terraform.io/docs/configuration/"&gt;Terraform
+  configurations&lt;/a&gt;,&lt;/li&gt;
+&lt;li&gt;spin up a Kubernetes cluster with Terraform, using the &lt;a href="https://www.terraform.io/docs/providers/openstack/"&gt;OpenStack
+  provider&lt;/a&gt; and
+  interfacing with &lt;a href="https://docs.openstack.org/magnum/latest/user/"&gt;OpenStack
+  Magnum&lt;/a&gt; in a public
+  cloud,&lt;/li&gt;
+&lt;li&gt;start managing Kubernetes resources from Terraform, using the
+  &lt;a href="https://www.terraform.io/docs/providers/kubernetes/"&gt;Kubernetes
+  provider&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You'll walk away with a solid understanding of Terraform's
+capabilities, enabling you to make an informed decision of whether
+Terraform is a suitable deployment automation facility for your
+organization's needs.&lt;/p&gt;
+&lt;p&gt;Prior Terraform knowledge is not required.&lt;/p&gt;
+&lt;h2&gt;Notes&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This field supports Markdown. Notes will only be seen by reviewers
+during the CFP process. This is where you should explain things such
+as technical requirements, why you're the best person to speak on
+this subject, etc...&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;There are no technical requirements other than internet connectivity,
+and a web browser (preferably on a laptop, though a reasonably-sized
+tablet with a modern browser should work as well).&lt;/p&gt;
+&lt;h2&gt;Tags&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Tag your talk to make it easier for event organizers to be able to
+find. Examples are "ruby, javascript, rails".&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Terraform, OpenStack, Kubernetes, Magnum&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr/&gt;
+&lt;ol&gt;
+&lt;li id="fn:1"&gt;
+&lt;p&gt;If you’re curious why this is here, please read
+&lt;a href="https://xahteiwi.eu/blog/2019/04/23/talk-submissions/"&gt;this&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content><category term="talk-submissions"></category><category term="Conference"></category><category term="Terraform"></category><category term="OpenStack"></category><category term="Kubernetes"></category></entry></feed>

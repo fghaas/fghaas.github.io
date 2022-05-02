@@ -1,0 +1,294 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../../theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/solid.css">
+
+    <link rel="stylesheet" type="text/css" href="../../../css/override.css">
+
+    <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+    <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+  
+
+
+ 
+
+<meta name="author" content="Florian Haas" />
+<meta name="description" content="Some of the X applications I run in LXC make sounds. Now, I find alert sounds horribly distracting so I turn them off, but for some containerized applications I want to actually play sound. Examples include the Spotify Linux client (which I run in its own LXC container because it …" />
+<meta name="keywords" content="LXC">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="Running (Almost) Anything in LXC: Sound"/>
+  <meta property="og:description" content="Some of the X applications I run in LXC make sounds. Now, I find alert sounds horribly distracting so I turn them off, but for some containerized applications I want to actually play sound. Examples include the Spotify Linux client (which I run in its own LXC container because it …"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../../resources/hints-and-kinks/lxc-sound/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2021-01-16 00:00:00+00:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../../author/florian-haas.html">
+  <meta property="article:section" content="hints-and-kinks"/>
+  <meta property="article:tag" content="LXC"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; Running (Almost) Anything in LXC: Sound</title>
+
+</head>
+<body >
+  <aside>
+    <div>
+      <a href="../../../">
+        <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="../../../"></a>
+      </h1>
+
+
+
+
+      <ul class="social">
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/xahteiwi" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="me" class="sc-mastodon" href="https://mastodon.social/@xahteiwi" target="_blank">
+              <i class="fab fa-mastodon"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/fghaas" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-github" href="https://github.com/fghaas" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="../../../">Home</a>
+
+      <a href="/category/hints-and-kinks.html">Tech</a>
+      <a href="/category/presentations.html">Talks</a>
+      <a href="/category/blog.html">Thoughts</a>
+      <a href="">​</a>
+      <a href="/about/">About</a>
+      <a href="/comments/">Comments</a>
+      <a href="/legal/">Legal</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="">​</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="">​</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="lxc-sound">Running (Almost) Anything in LXC: Sound</h1>
+    <p>
+      Posted on Sat 16 January 2021 in <a href="../../../category/hints-and-kinks.html">hints-and-kinks</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>Some of the <a href="../../../resources/hints-and-kinks/lxc-x11/">X applications I run in LXC</a> make
+sounds. Now, I find alert sounds horribly distracting so I turn them
+off, but for some containerized applications I want to actually play
+sound.</p>
+<p>Examples include the <a href="https://www.spotify.com/download/linux/">Spotify Linux
+client</a> (which I run in its
+own LXC container because it’s not open source), and occasionally
+things like the latest available <a href="https://shotcut.org/">Shotcut</a>
+version for video editing.</p>
+<p>You’ll notice that, on face value, that’s a pretty similar problem
+compared to getting containerized applications to talk to my X
+server. It’s just that rather than applications only being clients to
+my X server, I also want them to be clients to my PulseAudio daemon.</p>
+<h2>LXC (Non-)Configuration</h2>
+<p>In the article on running <a href="../../../resources/hints-and-kinks/lxc-x11/">X applications in
+LXC</a>, I give the example of sharing a host
+directory, which contains X.org server sockets.</p>
+<p>In principle, I <em>could</em> do the same thing with the Unix socket that
+PulseAudio runs. However, there’s a small problem with that: the
+directory I would have to bind-mount into my container is
+<code>/run/1000/pulse</code>, and you see the difference to bind-mounting
+<code>/tmp/.X11-unix</code>: <code>/tmp</code> already exists in my container on system
+startup — but while <code>/run</code> also does, <code>/run/1000</code> does not. I have
+experimented with making this work, and I’ll spare you the details but
+it’s not as simple as it initially looks. I eventually gave up on that
+approach, because there is a much simpler way to do this — and it
+doesn’t even require any specific LXC container configuration.</p>
+<p>The trick is to use the PulseAudio <code>native-protocol-tcp</code> module. When
+I load it into my running PulseAudio configuration, like so:</p>
+<div class="highlight"><pre><span></span><code>pactl load-module module-native-protocol-tcp
+</code></pre></div>
+<p>... then a PulseAudio sound server starts listening on a TCP socket on
+port 4713.</p>
+<p>I can of course also add this line (minus its <code>pactl</code> prefix) to my
+PulseAudio configuration file, <code>~/config/pulse/default.pa</code>.</p>
+<p>And then, all I need to do is attach to my container, export the
+<code>PULSE_SERVER</code> environment variable set to <code>10.0.3.1</code> (my IPv4 address
+of the host on the <code>lxcbr0</code> bridge), and launch an application.</p>
+<p>I can do this all in one go, like so (using the Spotify client as an example):</p>
+<div class="highlight"><pre><span></span><code>pactl load-module module-native-protocol-tcp <span class="o">&amp;&amp;</span> <span class="se">\</span>
+  lxc-start -n focal-spotify <span class="o">&amp;&amp;</span> <span class="se">\</span>
+  sleep <span class="m">1</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
+  lxc-attach -n focal-spotify -- <span class="se">\</span>
+  sudo -Hu florian env <span class="nv">PULSE_SERVER</span><span class="o">=</span><span class="s2">"10.0.3.1"</span> spotify <span class="o">&amp;&amp;</span> <span class="se">\</span>
+  lxc-stop -n focal-spotify
+</code></pre></div>
+<p>... and as long as the application links to any PulseAudio client
+libraries, it will correctly parse the set <code>PULSE_SERVER</code> environment
+variable as an instruction to connect to the given IP address on its
+default port, and send its audio stream there.</p>
+<p>I am then still able to control my volume, control my mix, and mute
+the output from my host.</p>
+<p>Of course, you probably want to chuck that long command into a
+<code>.desktop</code> file, or wrap it in a script or function.</p>
+<p>By the way, no I don’t really know why I need that 1-second <code>sleep</code>
+between starting the container and attaching to it, but it works for
+me and breaks without it. I presume there is <em>some</em> initialization
+going on in the container that needs just a few tenths of a second to
+complete. And I can deal with waiting for my music for one more
+second.</p>
+<h2>Things to consider</h2>
+<p>Your Ubuntu desktop will most likely run with
+<a href="https://wiki.ubuntu.com/UncomplicatedFirewall"><code>ufw</code></a> enabled. If
+your containerized applications are unable to connect to the
+PulseAudio server because your firewall blocks them, you won’t get
+sound. Here’s what I do:</p>
+<p>First, I create <code>/etc/ufw/applications.d/pulseaudio</code>, with this
+content:</p>
+<div class="highlight"><pre><span></span><code><span class="k">[pulseaudio]</span><span class="w"></span>
+<span class="na">title</span><span class="o">=</span><span class="s">PulseAudio Native Protocol TCP</span><span class="w"></span>
+<span class="na">description</span><span class="o">=</span><span class="s">PulseAudio Sound Server </span><span class="w"></span>
+<span class="na">ports</span><span class="o">=</span><span class="s">4713/tcp</span><span class="w"></span>
+</code></pre></div>
+<p>Then, I allow traffic incoming via the LXC bridge to connect to that
+server:</p>
+<div class="highlight"><pre><span></span><code>sudo ufw allow <span class="k">in</span> on lxcbr0 to any app pulseaudio
+</code></pre></div>
+<p>Also do consider, of course, that once your system is set up in this
+way, not only will your LXC applications be able to play sound through
+your speakers, but they will also be able to pick up input from your
+microphone. So use this wisely, particularly if the application you
+are running does record and process sound.</p>
+<p>Sometimes you totally <strong>want</strong> your application to record sound,
+though, and indeed see the video stream from your webcam, too. Zoom
+calls come to mind as one such example. More on this in the next
+installment of this series, where I’ll talk about letting your
+containerized app use host video input.</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../tag/lxc.html">LXC</a>
+    </p>
+  </div>
+
+
+
+
+  <div class="related-posts">
+    <h4>Part 3 of "Running (Almost) Anything in LXC"</h4>
+       <h5>Previous articles</h5>
+       <ul>
+           <li><a href="../../../resources/hints-and-kinks/lxc-basics/">Running (Almost) Anything in LXC: The Basics</a></li>
+           <li><a href="../../../resources/hints-and-kinks/lxc-x11/">Running (Almost) Anything in LXC: X applications</a></li>
+       </ul>
+       <h5>Next articles</h5>
+       <ul>
+           <li><a href="../../../resources/hints-and-kinks/lxc-webcam/">Running (Almost) Anything in LXC: Applications Using Your Webcam</a></li>
+       </ul>
+  </div>
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+
+</body>
+</html>

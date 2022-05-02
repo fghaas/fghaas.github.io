@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../../../../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../../../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../../../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../../../../theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/solid.css">
+
+    <link rel="stylesheet" type="text/css" href="../../../../../css/override.css">
+
+    <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+    <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+  
+
+
+ 
+
+<meta name="author" content="Florian Haas" />
+<meta name="description" content="“I can’t figure out how upload filters should work, but I’m not a technical person — surely someone who is can sort it out!” That is a misconception. I’ll be happy to explain, requiring — I promise! — no technical understanding of what an upload filter is, or how it works." />
+<meta name="keywords" content="Politics">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="Why upload filters don’t work (really simple math!)"/>
+  <meta property="og:description" content="“I can’t figure out how upload filters should work, but I’m not a technical person — surely someone who is can sort it out!” That is a misconception. I’ll be happy to explain, requiring — I promise! — no technical understanding of what an upload filter is, or how it works."/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../../../../blog/2019/03/25/upload-filter-math/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2019-03-25 20:00:00+00:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../../../../author/florian-haas.html">
+  <meta property="article:section" content="blog"/>
+  <meta property="article:tag" content="Politics"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; Why upload filters don’t work (really simple math!)</title>
+
+</head>
+<body >
+  <aside>
+    <div>
+      <a href="../../../../../">
+        <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="../../../../../"></a>
+      </h1>
+
+
+
+
+      <ul class="social">
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/xahteiwi" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="me" class="sc-mastodon" href="https://mastodon.social/@xahteiwi" target="_blank">
+              <i class="fab fa-mastodon"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/fghaas" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-github" href="https://github.com/fghaas" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="../../../../../">Home</a>
+
+      <a href="/category/hints-and-kinks.html">Tech</a>
+      <a href="/category/presentations.html">Talks</a>
+      <a href="/category/blog.html">Thoughts</a>
+      <a href="">​</a>
+      <a href="/about/">About</a>
+      <a href="/comments/">Comments</a>
+      <a href="/legal/">Legal</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="">​</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="">​</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="upload-filter-math">Why upload filters don’t work (really simple math!)</h1>
+    <p>
+      Posted on Mon 25 March 2019 in <a href="../../../../../category/blog.html">blog</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>“I can’t figure out how upload filters should work, but I’m not a
+technical person — surely someone who is can sort it out!”</p>
+<p>That is a misconception. I’ll be happy to explain, requiring — I
+promise! — no technical understanding of what an upload filter is, or
+how it works.</p>
+
+<p>The current draft of the EU Directive “on copyright and related
+rights in the Digital Single Market”, available
+<a href="http://www.europarl.europa.eu/doceo/document/A-8-2018-0245-AM-271-271_EN.pdf">here</a>,
+(PDF in English), also known as <a href="https://en.wikipedia.org/wiki/Directive_on_Copyright_in_the_Digital_Single_Market">the <strong>EU Copyright
+Directive</strong></a>,
+requires in its Article 17 (formerly Article 13), clause 4, that the
+service provider undergoes,</p>
+<blockquote>
+<p>in accordance with high industry standards of professional
+diligence, best efforts to ensure the unavailability of specific
+works and other subject matter for which the rightholders have
+provided the service providers with the relevant and necessary
+information.</p>
+</blockquote>
+<p>It is obvious that the only way any platform hosting
+user-generated content would thus have to intercept any such content
+<em>on upload,</em> failing which it would immediately become potentially liable for a
+copyright violation. This would require a technical facility commonly
+called an <em>upload filter.</em></p>
+<h2>We don't need to talk about how upload filters <em>work</em></h2>
+<p>Now, an upload filter is immensely complex and there are tons of
+technical difficulties — the only time this has been attempted on a
+large scale is YouTube’s <a href="https://en.wikipedia.org/wiki/Content_ID_(algorithm)">Content
+ID</a>, and it is
+exceedingly unreliable and prone to overblocking. But for the purposes
+of this discussion, it doesn’t matter whether implementing an upload
+filter is difficult to do.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+<p>Assume for a moment someone has built a magnificent upload
+filter. Something that operates on magic pixie dust that catches <em>all</em>
+copyright violations.</p>
+<h2>Interactions</h2>
+<p>Now, let’s call every instance of someone uploading content to the
+internet an “interaction”. Every tweet, every Facebook post and
+comment, every comment on your favorite news site, every blog post you
+write, every picture that you take and post to a WhatsApp group of 50
+people or more, every YouTube video and comment — let’s call all of
+those “interactions.”</p>
+<p>And let’s make an outrageously overblown assumption: suppose that on
+the internet today, 1% of such interactions infringe someone’s
+copyright. Again, let me reiterate that this is ludicrously high. The vast
+majority of internet interactions today are either completely trivial
+and thus irrelevant to copyright, or works of your own, or a perfectly
+legal fair-use way of using someone else’s work, such as when you
+quote a passage of a book. But purely for the sake of this discussion,
+let’s say it’s 1%.</p>
+<p>So then let’s look at 10,000 interactions that completely random
+people make on the internet.</p>
+<p>Those would then break down like so:</p>
+<table class="table table-striped">
+<thead>
+<tr>
+<th></th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Perfectly legal</td>
+<td>9,900</td>
+</tr>
+<tr>
+<td>Infringing copyright</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+<h2>Catching copyright violations. Or non-violations.</h2>
+<p>OK. Now, suppose we built a <em>perfect</em> upload filter, i.e. one that
+catches <em>all</em> copyright infringements. Remember, the Directive calls
+for “best effort to ensure the <strong>unavailability</strong>” (emphasis mine) of
+potentially infringing content. It does not allow providers to balance
+for freedom of expression or the like, so to err on the side of
+caution, they must strive to over- rather than underblock. So a
+perfect filter is one that has <strong>no false negatives</strong> — meaning if
+content infringes, it is always caught.</p>
+<p>Now, suppose further that the filter mis-identifies content (meaning,
+flags content as infringing when it is not) with a rate of only
+2%. That means it has <strong>2% false positives.</strong> That, now, is
+ridiculously low for any automated screening procedure.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
+<p>So that means that out of our 10,000 interactions tracked by our
+“perfect” content filter, the numbers break down like this:</p>
+<table class="table table-striped">
+<thead>
+<tr>
+<th></th>
+<th>Total</th>
+<th>Flagged as legal</th>
+<th>Flagged as infringing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Perfectly legal</td>
+<td>9,900</td>
+<td>9,802</td>
+<td>198</td>
+</tr>
+<tr>
+<td>Infringing copyright</td>
+<td>100</td>
+<td>0</td>
+<td>100</td>
+</tr>
+<tr>
+<td><strong>Overall</strong></td>
+<td>10,000</td>
+<td>9,802</td>
+<td>298</td>
+</tr>
+</tbody>
+</table>
+<h2>Congratulations, a coin toss beats your upload filter.</h2>
+<p>That leads us to the question: if you upload something and it gets
+flagged, how likely is it that it is <em>actually</em> infringing any
+copyright? Answer: 100 in 298. Roughly one in three. <strong>Yes, that is
+worse than a coin toss.</strong> And remember, this is assuming an
+implausibly high rate of infringements overall, and a ludicrously low
+false-positive and false-negative rate on your filter.</p>
+<p>Go ahead and play with the numbers, tweak the false-negatives and
+false-positives, whatever. <strong>As long as what you’re looking for is
+exceedingly rare, automated filters detect it with poor accuracy.</strong></p>
+<p>And if you leave all parameters the same, but consider a probably much
+more realistic infringement rate of 1 in 1000, that is, 0.1%, then
+things look like this: </p>
+<table class="table table-striped">
+<thead>
+<tr>
+<th></th>
+<th>Total</th>
+<th>Flagged as legal</th>
+<th>Flagged as infringing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Perfectly legal</td>
+<td>9,990</td>
+<td>9,800</td>
+<td>200</td>
+</tr>
+<tr>
+<td>Infringing copyright</td>
+<td>10</td>
+<td>0</td>
+<td>10</td>
+</tr>
+<tr>
+<td><strong>Overall</strong></td>
+<td>10,000</td>
+<td>9,800</td>
+<td>300</td>
+</tr>
+</tbody>
+</table>
+<p>Now there’s a one-in-thirty chance that an upload block is
+legitimate. Assuming there is an appeals process, and all false
+positives get appealed, then that means the <strong>human</strong> going through
+the appeals will have to undo a block <strong>29 times out of 30.</strong> </p>
+<h2>A cheap optimization</h2>
+<p>I’d like to propose an optimization here: any website seeking to
+implement a content filter should consider to just use a <strong>random
+number generator to reject your upload, comment, tweet, or post with a
+certain probability that is demonstrably larger than that of an upload
+filter.</strong> I’d posit that that would be by far the safest, cheapest way
+to comply with the directive — if it becomes law.</p>
+<p>Of course, everyone who is now in favor of this directive (including
+its Article 17) will hate that.</p>
+<hr/>
+<h2>Footnotes</h2>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>It’s also easy to dismiss with a “try harder”
+retort, which is completely disingenuous, because it’s akin to
+saying, doc, this patient has terminal pancreatic cancer, but you
+<em>must</em> cure her. Inoperable? Terminal? No there’s <em>got</em> to be a
+way. Sometimes there is no way, and it’s OK when an expert tells
+you that. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:2">
+<p>I don’t believe YouTube releases numbers on its ContentID error
+rate, but it’s apparently <a href="https://www.techdirt.com/articles/20181214/17272041233/youtubes-100-million-upload-filter-failures-demonstrate-what-disaster-article-13-will-be-internet.shtml">pretty
+bad</a>
+for a system that cost $100M to build. <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../../../tag/politics.html">Politics</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../../../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../../../../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+
+</body>
+</html>

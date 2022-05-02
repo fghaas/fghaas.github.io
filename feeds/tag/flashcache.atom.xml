@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Flashcache</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/flashcache.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2012-03-19T10:54:00+00:00</updated><entry><title>Storage Replication in High-Performance High-Availability Environments</title><link href="https://xahteiwi.eu/resources/presentations/storage-replication-high-performance-high-availability-environments/" rel="alternate"></link><published>2012-03-19T10:54:00+00:00</published><updated>2012-03-19T10:54:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-03-19:/resources/presentations/storage-replication-high-performance-high-availability-environments/</id><summary type="html">&lt;p&gt;At linux.conf.au 2012, Florian I this presentation on the integration
+of &lt;a href="https://www.hastexo.com/drbd"&gt;DRBD&lt;/a&gt;, Flashcache and
+&lt;a href="https://www.hastexo.com/knowledge/high-availability/pacemaker"&gt;Pacemaker&lt;/a&gt;
+in the High Availability and Distributed Storage miniconf.&lt;/p&gt;
+&lt;p&gt;In this 30-minute presentation, I explore the benefits of
+&lt;a href="https://github.com/facebook/flashcache"&gt;Flashcache&lt;/a&gt; for replicated
+storage. Flashcache, &lt;a href="https://www.facebook.com/note.php?note_id=388112370932"&gt;originally developed at
+Facebook,&lt;/a&gt; is a
+general purpose, &lt;a href="https://github.com/facebook/flashcache/blob/master/doc/flashcache-doc.txt"&gt;block level cache …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;At linux.conf.au 2012, Florian I this presentation on the integration
+of &lt;a href="https://www.hastexo.com/drbd"&gt;DRBD&lt;/a&gt;, Flashcache and
+&lt;a href="https://www.hastexo.com/knowledge/high-availability/pacemaker"&gt;Pacemaker&lt;/a&gt;
+in the High Availability and Distributed Storage miniconf.&lt;/p&gt;
+&lt;p&gt;In this 30-minute presentation, I explore the benefits of
+&lt;a href="https://github.com/facebook/flashcache"&gt;Flashcache&lt;/a&gt; for replicated
+storage. Flashcache, &lt;a href="https://www.facebook.com/note.php?note_id=388112370932"&gt;originally developed at
+Facebook,&lt;/a&gt; is a
+general purpose, &lt;a href="https://github.com/facebook/flashcache/blob/master/doc/flashcache-doc.txt"&gt;block level cache device implemented in the Linux
+device-mapper
+framework.&lt;/a&gt;
+You can use flashcache in two distinct ways in Pacemaker
+high-availability clusters, which I both explain in his talk.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Video: &lt;a href="https://youtu.be/l910kiEuHOM"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="DRBD"></category><category term="Flashcache"></category><category term="Pacemaker"></category><category term="Performance"></category></entry></feed>

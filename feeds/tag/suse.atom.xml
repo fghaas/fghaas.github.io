@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - SUSE</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/suse.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2016-07-05T00:00:00+00:00</updated><entry><title>Wiping and resetting your SUSE OpenStack Cloud Crowbar configuration</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/wipe-suse-openstack-cloud-config/" rel="alternate"></link><published>2016-07-05T00:00:00+00:00</published><updated>2016-07-05T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2016-07-05:/resources/hints-and-kinks/wipe-suse-openstack-cloud-config/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Note: This article was originally written for SUSE OpenStack Cloud
+6, and updated for SUSE OpenStack Cloud 7. It may not apply to later
+SUSE OpenStack Cloud releases.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;If you're using &lt;a href="https://www.suse.com/products/suse-openstack-cloud"&gt;SUSE OpenStack
+Cloud&lt;/a&gt;, you may
+want to erase and reinstall your cloud deployment a few times during
+the testing …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;Note: This article was originally written for SUSE OpenStack Cloud
+6, and updated for SUSE OpenStack Cloud 7. It may not apply to later
+SUSE OpenStack Cloud releases.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;If you're using &lt;a href="https://www.suse.com/products/suse-openstack-cloud"&gt;SUSE OpenStack
+Cloud&lt;/a&gt;, you may
+want to erase and reinstall your cloud deployment a few times during
+the testing or proof-of-concept phase. You may also want to experiment
+with a few permutations of Crowbar network configurations. SUSE's
+(otherwise excellent) &lt;a href="https://www.suse.com/documentation/suse-openstack-cloud-7/book_cloud_deploy/data/book_cloud_deploy.html"&gt;Deployment
+Guide&lt;/a&gt;
+suggests that the only way to change your Crowbar settings, after
+&lt;code&gt;install-suse-cloud&lt;/code&gt; has been run, &lt;a href="https://www.suse.com/documentation/suse-openstack-cloud-7/book_cloud_deploy/data/sec_depl_adm_inst_crowbar_network.html"&gt;is to reinstall your entire admin
+node&lt;/a&gt;.
+That isn't really true if you know what you're doing.&lt;/p&gt;
+&lt;p&gt;You may be thinking that you could just use
+&lt;a href="http://snapper.io/"&gt;&lt;code&gt;snapper&lt;/code&gt;&lt;/a&gt; to
+&lt;a href="https://www.suse.com/documentation/sles-12/book_sle_admin/data/sec_snapper_auto.html"&gt;revert to your last Btrfs snapshot&lt;/a&gt;
+created before you ran &lt;code&gt;install-suse-cloud&lt;/code&gt;. After all, running &lt;code&gt;yast2
+crowbar&lt;/code&gt;, like any other YaST module, automatically creates a
+before-and-after Btrfs snapshot of your root filesystem and all its
+subvolumes. So, reboot machine, select pre-&lt;code&gt;install-suse-cloud&lt;/code&gt;
+snapshot, complete boot, run &lt;code&gt;snapper rollback&lt;/code&gt;, done. Right?&lt;/p&gt;
+&lt;p&gt;Well, not quite. If you
+&lt;a href="https://www.suse.com/documentation/suse-openstack-cloud-7/book_cloud_deploy/data/sec_depl_adm_inst_partition.html"&gt;followed the Deployment Guide closely,&lt;/a&gt;
+you will have removed your Btrfs subvolume for the &lt;code&gt;/srv&lt;/code&gt; directory,
+and replaced it with a separate, XFS-formatted partition. That means
+it is excluded from all &lt;code&gt;snapper&lt;/code&gt; Btrfs snapshots, and thus, no
+rollback for you for that directory. Which, of course, Crowbar uses
+rather extensively.&lt;/p&gt;
+&lt;p&gt;So, here is your checklist for resetting your admin node to a
+pre-&lt;code&gt;install-suse-cloud&lt;/code&gt; state:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Reboot your admin node.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In the SLES boot menu, select an appropriate snapshot taken
+  immediately prior to running &lt;code&gt;install-suse-cloud&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Boot into your snapshot.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Run &lt;code&gt;snapper rollback&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Reboot again.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;After rebooting, delete the following and directories:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;/srv/tftpboot/authorized_keys&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/srv/tftpboot/validation.pem&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;all subdirectories under &lt;code&gt;/srv/tftpboot/nodes/&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Then, you can reconfigure Crowbar (&lt;code&gt;yast2 crowbar&lt;/code&gt;), run
+&lt;code&gt;install-suse-cloud&lt;/code&gt;, and reboot your OpenStack nodes. They should be
+discovered anew, and you're then able to redeploy your OpenStack
+barclamps to them.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="OpenStack"></category><category term="SUSE"></category></entry></feed>

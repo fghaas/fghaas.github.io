@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Development</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/development.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2016-07-05T00:00:00+00:00</updated><entry><title>Fragile Development: Scrum is terrible, and you should ditch it</title><link href="https://xahteiwi.eu/blog/2016/07/05/fragile-development/" rel="alternate"></link><published>2016-07-05T00:00:00+00:00</published><updated>2016-07-05T00:00:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2016-07-05:/blog/2016/07/05/fragile-development/</id><summary type="html">&lt;p&gt;Scrum is irrational, impractical, and outright dangerous for software development. It is time to stop considering it a viable method for building software.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a writeup of an
+&lt;a href="https://en.wikipedia.org/wiki/Ignite_(event)"&gt;Ignite&lt;/a&gt; talk I gave at
+&lt;a href="http://www.openstack-israel.org"&gt;OpenStack Israel 2016&lt;/a&gt;. The
+paragraph headings below approximately correspond to the content of my
+talk slides; the paragraphs themselves are an approximation of what I
+said. If you're interested in the exact slide content, you can find
+that &lt;a href="//fghaas.github.io/openstackisrael2016-ignite"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2&gt;Zero flexibility&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;_____&lt;/code&gt;'s roles, artifacts, events, and rules are &lt;em&gt;immutable&lt;/em&gt; and
+although implementing only parts of &lt;code&gt;_____&lt;/code&gt; is possible, &lt;em&gt;the result
+is not&lt;/em&gt; &lt;code&gt;_____&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;When you see a statement like this and wonder what should be filled in
+for the blanks, it's rather quite likely that you would guess either a
+radical political ideology, a very strict religious sect or cult, or
+something to that effect. You couldn't be further from the truth.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;Scrum&lt;/code&gt;'s roles, artifacts, events, and rules are &lt;em&gt;immutable&lt;/em&gt; and
+although implementing only parts of &lt;code&gt;Scrum&lt;/code&gt; is possible, &lt;em&gt;the result
+is not&lt;/em&gt; &lt;code&gt;Scrum&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Yes, that's a
+&lt;a href="http://www.scrumguides.org/scrum-guide.html#end-note"&gt;direct quote from the Scrum guide.&lt;/a&gt;
+Scrum, by its own definition, can either be implemented completely —
+that is, with all its roles, artifacts, events, and rules &lt;em&gt;unchanged&lt;/em&gt;
+— or not at all. This sounds ludicrous enough as it is, and any sane,
+thinking person should reject or at least resent &lt;em&gt;any&lt;/em&gt; such statement
+outright. But let's give Scrum the benefit of doubt, and let's
+actually start examining some of its postulates.&lt;/p&gt;
+&lt;h2&gt;Teams are self-organizing&lt;/h2&gt;
+&lt;p&gt;Scrum hinges on the idea that teams are comprised of capable
+individuals forming teams, which then self-organize. Now I'm sure
+nobody would argue that self-organizing teams cannot exist, so this
+postulate does not invalidate itself outright.&lt;/p&gt;
+&lt;p&gt;However, it is missing an important prerequisite: teams can
+self-organize &lt;strong&gt;if they are stable.&lt;/strong&gt; And team stability is a
+precondition that almost never exists in the software industry: our
+industry is &lt;em&gt;growth-oriented,&lt;/em&gt; and driven by quickly-growing startups,
+so in a successful organization having a new colleague every other
+month is not unheard of. It is also highly &lt;em&gt;competitive&lt;/em&gt; for talent,
+so having a colleague leave every few months isn't unusual either. The
+moment a new person joins or leaves, you have a new team. Team
+stability goes out the window, and with it any reasonable expectation
+of self-organization.&lt;/p&gt;
+&lt;h2&gt;Sprint after sprint after sprint&lt;/h2&gt;
+&lt;p&gt;The Scrum Guide explicitly states that every &lt;em&gt;sprint&lt;/em&gt; (a time frame of
+one month or less, in which the team completes objectives agreed to
+for the sprint backlog) is &lt;em&gt;immediately followed by the next sprint.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;This is mind-bogglingly ludicrous and outright dangerous to your
+team's mental health. Software development is a marathon, and running
+a marathon as an unbroken series of sprints leads to collapse or
+death. In software development, it's likely to cause burnout.&lt;/p&gt;
+&lt;h2&gt;The Daily Scrum&lt;/h2&gt;
+&lt;p&gt;One of Scrum's immutable events is the Daily Scrum. The Scrum Guide
+defines this event as a specific, daily occurrence, time-boxed to 15
+minutes and involving the entirety of the development team.&lt;/p&gt;
+&lt;p&gt;This is staggeringly out of place in the modern development team,
+which may well be spread out over multiple offices and timezones, and
+may not even physically be in one place more than a handful of times a
+year. Even in the unlikely event that everyone &lt;em&gt;can&lt;/em&gt; get together in
+one room for precisely fifteen minutes each day, have you ever been in
+a meeting involving more than 3 people that got anything accomplished
+in 15 minutes?&lt;/p&gt;
+&lt;p&gt;And remember, 15 minutes. Time-boxed, immutable. If you think &lt;em&gt;your&lt;/em&gt;
+Daily Scrum can be 30 or 45 minutes, or you can do it just every other
+day or maybe thrice a week, recall: if you do that, you're no longer
+doing Scrum.&lt;/p&gt;
+&lt;h2&gt;No planning beyond the current sprint&lt;/h2&gt;
+&lt;p&gt;Scrum is quite emphatic that the only thing developers should be
+really concerned about in terms of planning is the next 24 hours (the
+plan for which is ostensibly being laid out in the Daily Scrum), and
+beyond that, the current sprint at a maximum. Now, while the idea of
+freeing people's minds and allowing them to focus on a single task at
+hand is certainly laudable, the practical implications of having no
+medium to long-term planning is insane.&lt;/p&gt;
+&lt;p&gt;I'd venture a guess that an approach where no planning is for more
+than a month out is viable, under one condition: having exactly zero
+users and/or customers for the product you are developing. I leave it
+to you to decide how valuable it is, then, to develop the product in
+the first place.&lt;/p&gt;
+&lt;h2&gt;Permanent emergency mode&lt;/h2&gt;
+&lt;p&gt;Arguably, some of the methods proposed in Scrum are quite suitable for
+emergency situations. In a situation where you need to come up with a
+solution that requires creativity, hustle, and speed, you may well sit
+down, put down a requirements list, elect a coordinator and
+spokesperson for your team, and just start hacking. I'd fully agree
+that such situations can be extremely challenging, and quite
+satisfying to come out of with flying colors.&lt;/p&gt;
+&lt;p&gt;But if your organization is permanently operating in this mode,
+&lt;strong&gt;quit.&lt;/strong&gt; It doesn't matter which role you're in: as a developer,
+you're headed for burnout. As a manager, you're herding your team into
+burnout. Either way, you shouldn't be doing this job, either in your
+own interest or in that of others.&lt;/p&gt;
+&lt;h2&gt;Novelty?&lt;/h2&gt;
+&lt;p&gt;Scrum proponents frequently argue in its favor as the antithesis of
+the obsolete waterfall model, where all deliverables are defined from
+the outset and there is no room for deviation, leading to products
+that are either broken, or outdated, or both the moment they are
+completed. If you think we only found out recently that waterfall is
+bad, you've been asleep at the switch for over 30 years. In his
+seminal
+&lt;a href="https://en.wikipedia.org/wiki/The_Mythical_Man-Month"&gt;Mythical Man-Month&lt;/a&gt;
+essay collection from 1975, Fred Brooks pointed out some weaknesses of
+this model, and in his 1986 follow-up
+&lt;a href="https://en.wikipedia.org/wiki/No_Silver_Bullet"&gt;No Silver Bullet,&lt;/a&gt; he
+proposes organic, incremental software development as an alternative.&lt;/p&gt;
+&lt;h2&gt;Your team can't work with Scrum?&lt;/h2&gt;
+&lt;p&gt;Scrum advocates frequently argue that if Scrum doesn't work with your
+team, chances are that your team is the problem. This means that you
+should either replace them, or at least educate them in the ways and
+means of Scrum, so they can become a better-performing team.&lt;/p&gt;
+&lt;p&gt;At this point, it should be fairly obvious that if Scrum doesn't work
+for your team, the problem is not your team. The problem is Scrum.&lt;/p&gt;
+&lt;h2&gt;What if Scrum doesn't deliver?&lt;/h2&gt;
+&lt;p&gt;And finally, Scrum proponents usually argue that if Scrum fails to
+deliver adequate results in your organization, it's likely because you
+aren't applying its central tenets correctly. In other words, you must
+come to your senses, and implement Scrum as designed, and which point
+results with magically appear, and your team will be in a constant
+state of flow.&lt;/p&gt;
+&lt;p&gt;This is nonsense. &lt;strong&gt;If&lt;/strong&gt; you were able to actually do Scrum (meaning
+in its pure, immutable, One True Way), it would surely lead to
+disaster. But, it's impossible to do so anyway, so go ahead and ditch
+it — stop being a scrumbag.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Philosophy"></category><category term="Development"></category></entry></feed>
