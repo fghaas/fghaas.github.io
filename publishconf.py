@@ -10,7 +10,15 @@ import sys
 sys.path.append(os.curdir)
 from pelicanconf import *
 
-SITEURL = 'https://xahteiwi.eu'
+cname = os.path.basename(os.getcwd())
+try:
+    with open(os.path.join('content', 'CNAME')) as f:
+        cname = f.read().strip()
+        SITEURL = "https://%s" % cname
+except FileNotFoundError:
+    pass
+
+SITEURL = "https://%s" % cname
 SITELOGO = SITEURL + '/' + AVATAR
 
 FEED_ALL_ATOM = 'feeds/all.atom.xml'

@@ -5,6 +5,7 @@ from datetime import datetime
 
 AUTHOR = 'Florian Haas'
 SITENAME = 'xahteiwi.eu'
+
 # If your site is available via HTTPS, make sure SITEURL begins with https://
 SITEURL = 'http://localhost:8000'
 AVATAR = 'images/avatar.jpg'
