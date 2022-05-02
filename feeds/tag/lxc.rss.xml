@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>xahteiwi.eu - LXC</title><link>https://xahteiwi.eu/</link><description></description><lastBuildDate>Sun, 17 Jan 2021 00:00:00 +0000</lastBuildDate><item><title>Running (Almost) Anything in LXC: Applications Using Your Webcam</title><link>https://xahteiwi.eu/resources/hints-and-kinks/lxc-webcam/</link><description>&lt;p&gt;One of the non-open-source applications I sometimes have to run for
+<rss version="2.0"><channel><title>fghaas.github.io - LXC</title><link>https://xahteiwi.eu/</link><description></description><lastBuildDate>Sun, 17 Jan 2021 00:00:00 +0000</lastBuildDate><item><title>Running (Almost) Anything in LXC: Applications Using Your Webcam</title><link>https://xahteiwi.eu/resources/hints-and-kinks/lxc-webcam/</link><description>&lt;p&gt;One of the non-open-source applications I sometimes have to run for
 work purposes, and which out of principle I run in LXC containers, is
 Zoom. Now Zoom is of course an X application, so my previously shared
 &lt;a href="https://xahteiwi.eu/resources/hints-and-kinks/lxc-x11/"&gt;considerations&lt;/a&gt; for those apply. It also needs

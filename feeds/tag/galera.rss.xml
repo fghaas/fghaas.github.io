@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>xahteiwi.eu - Galera</title><link>https://xahteiwi.eu/</link><description></description><lastBuildDate>Tue, 04 Dec 2012 10:53:27 +0100</lastBuildDate><item><title>Adding MySQL/Galera resources to Pacemaker</title><link>https://xahteiwi.eu/resources/hints-and-kinks/mysqlgalera-pacemaker-adding-mysqlgalera-resources-pacemaker/</link><description>&lt;p&gt;Once you have one instance of Galera running, and it is running on the
+<rss version="2.0"><channel><title>fghaas.github.io - Galera</title><link>https://xahteiwi.eu/</link><description></description><lastBuildDate>Tue, 04 Dec 2012 10:53:27 +0100</lastBuildDate><item><title>Adding MySQL/Galera resources to Pacemaker</title><link>https://xahteiwi.eu/resources/hints-and-kinks/mysqlgalera-pacemaker-adding-mysqlgalera-resources-pacemaker/</link><description>&lt;p&gt;Once you have one instance of Galera running, and it is running on the
 same node that holds the temporarily-configured cluster IP
 (192.168.122.99 in our example), you can add your resources to the
 Pacemaker cluster configuration.&lt;/p&gt;

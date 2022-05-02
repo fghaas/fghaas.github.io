@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>xahteiwi.eu - GlusterFS</title><link>https://xahteiwi.eu/</link><description></description><lastBuildDate>Thu, 08 Nov 2012 08:15:00 +0000</lastBuildDate><item><title>GlusterFS in High Availability Clusters</title><link>https://xahteiwi.eu/resources/presentations/glusterfs-high-availability-clusters/</link><description>&lt;p&gt;My Pacemaker presentation from the GlusterFS Workshop at LinuxCon
+<rss version="2.0"><channel><title>fghaas.github.io - GlusterFS</title><link>https://xahteiwi.eu/</link><description></description><lastBuildDate>Thu, 08 Nov 2012 08:15:00 +0000</lastBuildDate><item><title>GlusterFS in High Availability Clusters</title><link>https://xahteiwi.eu/resources/presentations/glusterfs-high-availability-clusters/</link><description>&lt;p&gt;My Pacemaker presentation from the GlusterFS Workshop at LinuxCon
 Europe 2012. Presented in Barcelona in November of 2012, this is a
 overview of integrating GlusterFS with the Pacemaker cluster stack.&lt;/p&gt;
 &lt;p&gt;This tutorial gives an overview of&lt;/p&gt;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>xahteiwi.eu - libvirt</title><link>https://xahteiwi.eu/</link><description></description><lastBuildDate>Wed, 21 Aug 2019 00:00:00 +0000</lastBuildDate><item><title>Using ftrace to trace function calls from qemu-guest-agent</title><link>https://xahteiwi.eu/resources/hints-and-kinks/ftrace-qemu-ga/</link><description>&lt;p&gt;When you are using functionality that is buried deep in the Linux
+<rss version="2.0"><channel><title>fghaas.github.io - libvirt</title><link>https://xahteiwi.eu/</link><description></description><lastBuildDate>Wed, 21 Aug 2019 00:00:00 +0000</lastBuildDate><item><title>Using ftrace to trace function calls from qemu-guest-agent</title><link>https://xahteiwi.eu/resources/hints-and-kinks/ftrace-qemu-ga/</link><description>&lt;p&gt;When you are using functionality that is buried deep in the Linux
 kernel, &lt;a href="https://en.wikipedia.org/wiki/Ftrace"&gt;&lt;code&gt;ftrace&lt;/code&gt;&lt;/a&gt; can be
 extremely useful. Here are some suggestions on how to use it, using
 the example of tracing function calls from &lt;code&gt;qemu-guest-agent&lt;/code&gt;.&lt;/p&gt;
