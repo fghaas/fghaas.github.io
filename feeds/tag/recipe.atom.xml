@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>fghaas.github.io - Recipe</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/recipe.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2020-01-01T00:00:00+00:00</updated><entry><title>Salacious Salad and Omelette</title><link href="https://xahteiwi.eu/blog/2020/01/01/salacious-salad-and-omelette/" rel="alternate"></link><published>2020-01-01T00:00:00+00:00</published><updated>2020-01-01T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2020-01-01:/blog/2020/01/01/salacious-salad-and-omelette/</id><summary type="html">&lt;p&gt;A breakfast experiment that turned out well.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Sometime last year I came across a post on
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Recipe</title><link href="https://fghaas.github.io/" rel="alternate"></link><link href="https://fghaas.github.io/feeds/tag/recipe.atom.xml" rel="self"></link><id>https://fghaas.github.io/</id><updated>2020-01-01T00:00:00+00:00</updated><entry><title>Salacious Salad and Omelette</title><link href="https://fghaas.github.io/blog/2020/01/01/salacious-salad-and-omelette/" rel="alternate"></link><published>2020-01-01T00:00:00+00:00</published><updated>2020-01-01T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2020-01-01:/blog/2020/01/01/salacious-salad-and-omelette/</id><summary type="html">&lt;p&gt;A breakfast experiment that turned out well.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Sometime last year I came across a post on
 &lt;a href="https://www.reddit.com/r/food/"&gt;/r/food&lt;/a&gt; that I seem to be unable to
 dig up. However, I recall that it had an infographic asserting that
 for a salad to be perfect, it had to have&lt;/p&gt;
@@ -112,7 +112,7 @@ came this.&lt;/p&gt;
 &lt;/ol&gt;
 &lt;h2&gt;Nutrition facts&lt;/h2&gt;
 &lt;p&gt;No warranty of any kind on these. Values are per serving.&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Calories (kcal)&lt;/th&gt;
@@ -141,7 +141,7 @@ came this.&lt;/p&gt;
 &lt;td&gt;12.9&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
-&lt;/table&gt;</content><category term="blog"></category><category term="Food"></category><category term="Recipe"></category></entry><entry><title>Exceptional Pan Pizza</title><link href="https://xahteiwi.eu/blog/2019/12/30/exceptional-pan-pizza/" rel="alternate"></link><published>2019-12-30T00:00:00+00:00</published><updated>2019-12-30T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-12-30:/blog/2019/12/30/exceptional-pan-pizza/</id><summary type="html">&lt;p&gt;My go-to recipe for pan (deep dish) pizza.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I’ve found this to be the pan pizza to end all pan pizzas. It’s my
+&lt;/table&gt;</content><category term="blog"></category><category term="Food"></category><category term="Recipe"></category></entry><entry><title>Exceptional Pan Pizza</title><link href="https://fghaas.github.io/blog/2019/12/30/exceptional-pan-pizza/" rel="alternate"></link><published>2019-12-30T00:00:00+00:00</published><updated>2019-12-30T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2019-12-30:/blog/2019/12/30/exceptional-pan-pizza/</id><summary type="html">&lt;p&gt;My go-to recipe for pan (deep dish) pizza.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I’ve found this to be the pan pizza to end all pan pizzas. It’s my
 standard pizza dough recipe, plus some inspiration from &lt;a href="https://youtu.be/uYxB4QBlrx4"&gt;this
 video&lt;/a&gt;. The trick with seasoning the pan
 is an absolute kicker and makes the crust taste oodles better than
@@ -262,7 +262,7 @@ several to accommodate a larger crowd, or very hungry people.&lt;/p&gt;
 &lt;h2&gt;Nutrition facts&lt;/h2&gt;
 &lt;p&gt;No warranty of any kind on these. Values are per serving, counting one
 serving as one-quarter of the whole pizza.&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Calories (kcal)&lt;/th&gt;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>fghaas.github.io - CI</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/ci.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-01-29T00:00:00+00:00</updated><entry><title>The Review Review</title><link href="https://xahteiwi.eu/./blog/2022/01/29/review-review/" rel="alternate"></link><published>2022-01-29T00:00:00+00:00</published><updated>2022-01-29T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-01-29:/./blog/2022/01/29/review-review/</id><summary type="html">&lt;p&gt;Musings on source code management, code review, testing, deployment, and collaboration culture.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I wanted to share a few thoughts on something I consider a rather
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - CI</title><link href="https://fghaas.github.io/" rel="alternate"></link><link href="https://fghaas.github.io/feeds/tag/ci.atom.xml" rel="self"></link><id>https://fghaas.github.io/</id><updated>2022-01-29T00:00:00+00:00</updated><entry><title>The Review Review</title><link href="https://fghaas.github.io/./blog/2022/01/29/review-review/" rel="alternate"></link><published>2022-01-29T00:00:00+00:00</published><updated>2022-01-29T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2022-01-29:/./blog/2022/01/29/review-review/</id><summary type="html">&lt;p&gt;Musings on source code management, code review, testing, deployment, and collaboration culture.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I wanted to share a few thoughts on something I consider a rather
 important topic in our industry: code review and CI/CD tools, and how
 they relate.&lt;/p&gt;
 &lt;p&gt;This means that I'm talking about&lt;/p&gt;
@@ -14,7 +14,7 @@ they relate.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;In case it’s not obvious, that means I’m talking about a large
 fraction of the software engineering cycle. Not all of it; the part
-involving “fooling around” (&lt;a href="https://xahteiwi.eu/blog/2021/11/21/creativity/"&gt;creative play&lt;/a&gt;)
+involving “fooling around” (&lt;a href="https://fghaas.github.io/blog/2021/11/21/creativity/"&gt;creative play&lt;/a&gt;)
 is perhaps excluded — but substantially everything where people can be
 said to be “developing” in a software engineering organization is
 encompassed in these things.&lt;/p&gt;
@@ -69,7 +69,7 @@ MD’s responsibility.&lt;/p&gt;
 &lt;p&gt;Of course, that person may delegate some of the &lt;em&gt;tasks&lt;/em&gt; and details of
 running your source code management and code review and CI/CD
 platform, but &lt;em&gt;responsibility&lt;/em&gt; stays with them.&lt;/p&gt;
-&lt;p&gt;And that responsibility requires both an understanding &lt;a href="https://xahteiwi.eu/blog/2019/04/21/non-technical/"&gt;of the
+&lt;p&gt;And that responsibility requires both an understanding &lt;a href="https://fghaas.github.io/blog/2019/04/21/non-technical/"&gt;of the
 technology itself&lt;/a&gt;, &lt;em&gt;and&lt;/em&gt; an understanding
 of how it interacts with your engineering culture. A &lt;em&gt;profound&lt;/em&gt;
 understanding. &lt;/p&gt;
@@ -382,7 +382,7 @@ depends on your priorities. And I’ll give you this from four angles.&lt;/p&gt;
   — meaning using tools that they’re most likely already familiar with
   — GitHub is your platform of choice.&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content><category term="blog"></category><category term="Work"></category><category term="CI"></category><category term="Gerrit"></category><category term="GitLab"></category><category term="GitHub"></category><category term="Zuul"></category></entry><entry><title>Universal tox tests (from just about any CI)</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/universal-tox-tests-from-just-about-any-ci/" rel="alternate"></link><published>2021-10-17T00:00:00+00:00</published><updated>2021-10-17T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-17:/resources/hints-and-kinks/universal-tox-tests-from-just-about-any-ci/</id><summary type="html">&lt;p&gt;I like tox. A lot. I use it all the time. This is a quick summary on how to use it in such a way that it becomes a central anchor point that you can use from all your CI systems.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I like &lt;code&gt;tox&lt;/code&gt;. A lot. I use it all the time. This is a quick summary on
+&lt;/ul&gt;</content><category term="blog"></category><category term="Work"></category><category term="CI"></category><category term="Gerrit"></category><category term="GitLab"></category><category term="GitHub"></category><category term="Zuul"></category></entry><entry><title>Universal tox tests (from just about any CI)</title><link href="https://fghaas.github.io/resources/hints-and-kinks/universal-tox-tests-from-just-about-any-ci/" rel="alternate"></link><published>2021-10-17T00:00:00+00:00</published><updated>2021-10-17T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2021-10-17:/resources/hints-and-kinks/universal-tox-tests-from-just-about-any-ci/</id><summary type="html">&lt;p&gt;I like tox. A lot. I use it all the time. This is a quick summary on how to use it in such a way that it becomes a central anchor point that you can use from all your CI systems.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I like &lt;code&gt;tox&lt;/code&gt;. A lot. I use it all the time. This is a quick summary on
 how to use it in such a way that it becomes a central anchor point that
 you can use from all your CI systems.&lt;/p&gt;
 &lt;h2&gt;What’s tox for?&lt;/h2&gt;
@@ -598,7 +598,7 @@ shared GitLab runners using Docker, or a self-hosted runner on
 Kubernetes. &lt;a class="footnote-backref" href="#fnref:docker-runners" title="Jump back to footnote 4 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="hints-and-kinks"></category><category term="CI"></category><category term="Python"></category><category term="GitLab"></category><category term="GitHub"></category><category term="Zuul"></category></entry><entry><title>Using coverage with multiple parallel GitLab CI jobs</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/coverage-gitlab-ci/" rel="alternate"></link><published>2019-03-10T00:00:00+00:00</published><updated>2019-03-10T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-03-10:/resources/hints-and-kinks/coverage-gitlab-ci/</id><summary type="html">&lt;p&gt;If you ever write unit tests in Python, you are probably familiar with Ned Batchelder’s &lt;code&gt;coverage&lt;/code&gt; tool. This article explains how you can use &lt;code&gt;coverage&lt;/code&gt; in combination with &lt;code&gt;tox&lt;/code&gt; and a GitLab CI pipeline, for coverage reports in your Python code.&lt;/p&gt;</summary><content type="html">&lt;p&gt;If you ever write unit tests in Python, you are probably familiar with
+&lt;/div&gt;</content><category term="hints-and-kinks"></category><category term="CI"></category><category term="Python"></category><category term="GitLab"></category><category term="GitHub"></category><category term="Zuul"></category></entry><entry><title>Using coverage with multiple parallel GitLab CI jobs</title><link href="https://fghaas.github.io/resources/hints-and-kinks/coverage-gitlab-ci/" rel="alternate"></link><published>2019-03-10T00:00:00+00:00</published><updated>2019-03-10T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2019-03-10:/resources/hints-and-kinks/coverage-gitlab-ci/</id><summary type="html">&lt;p&gt;If you ever write unit tests in Python, you are probably familiar with Ned Batchelder’s &lt;code&gt;coverage&lt;/code&gt; tool. This article explains how you can use &lt;code&gt;coverage&lt;/code&gt; in combination with &lt;code&gt;tox&lt;/code&gt; and a GitLab CI pipeline, for coverage reports in your Python code.&lt;/p&gt;</summary><content type="html">&lt;p&gt;If you ever write unit tests in Python, you are probably familiar with
 &lt;a href="https://twitter.com/nedbat"&gt;Ned Batchelder&lt;/a&gt;’s &lt;a href="https://coverage.readthedocs.io"&gt;&lt;code&gt;coverage&lt;/code&gt;
 tool&lt;/a&gt;. This article explains how you
 can use &lt;code&gt;coverage&lt;/code&gt; in combination with &lt;code&gt;tox&lt;/code&gt; and a GitLab CI pipeline,

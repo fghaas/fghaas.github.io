@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>fghaas.github.io - Politics</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/politics.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2020-02-04T00:00:00+00:00</updated><entry><title>Why do they always lie?</title><link href="https://xahteiwi.eu/blog/2020/02/04/why-do-they-always-lie/" rel="alternate"></link><published>2020-02-04T00:00:00+00:00</published><updated>2020-02-04T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2020-02-04:/blog/2020/02/04/why-do-they-always-lie/</id><summary type="html">&lt;p&gt;When politicians (and their supporters) keep lying even though their lies are easily exposed, it’s a strategy.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recently I came across a tweet from my Irish OpenStack community
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Politics</title><link href="https://fghaas.github.io/" rel="alternate"></link><link href="https://fghaas.github.io/feeds/tag/politics.atom.xml" rel="self"></link><id>https://fghaas.github.io/</id><updated>2020-02-04T00:00:00+00:00</updated><entry><title>Why do they always lie?</title><link href="https://fghaas.github.io/blog/2020/02/04/why-do-they-always-lie/" rel="alternate"></link><published>2020-02-04T00:00:00+00:00</published><updated>2020-02-04T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2020-02-04:/blog/2020/02/04/why-do-they-always-lie/</id><summary type="html">&lt;p&gt;When politicians (and their supporters) keep lying even though their lies are easily exposed, it’s a strategy.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recently I came across a tweet from my Irish OpenStack community
 friend &lt;a href="https://twitter.com/nearyd"&gt;Dave Neary&lt;/a&gt;, &lt;a href="https://twitter.com/nearyd/status/1224727999951572993"&gt;in which he wondered
 aloud&lt;/a&gt; why a
 picture, which was very obviously (and poorly) doctored, made its way
@@ -69,7 +69,7 @@ if your lie is exposed, in fact, your lies &lt;em&gt;must&lt;/em&gt; be exposed 
 strategy to work.&lt;/p&gt;
 &lt;p&gt;And now you know how to spot someone in politics who has decided to
 break the rules. And why you shouldn’t assume they’re stupid, just
-because they say objectively stupid things.&lt;/p&gt;</content><category term="blog"></category><category term="Politics"></category></entry><entry><title>Why upload filters don’t work (really simple math!)</title><link href="https://xahteiwi.eu/blog/2019/03/25/upload-filter-math/" rel="alternate"></link><published>2019-03-25T20:00:00+00:00</published><updated>2019-03-25T20:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-03-25:/blog/2019/03/25/upload-filter-math/</id><summary type="html">&lt;p&gt;“I can’t figure out how upload filters should work, but I’m not a
+because they say objectively stupid things.&lt;/p&gt;</content><category term="blog"></category><category term="Politics"></category></entry><entry><title>Why upload filters don’t work (really simple math!)</title><link href="https://fghaas.github.io/blog/2019/03/25/upload-filter-math/" rel="alternate"></link><published>2019-03-25T20:00:00+00:00</published><updated>2019-03-25T20:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2019-03-25:/blog/2019/03/25/upload-filter-math/</id><summary type="html">&lt;p&gt;“I can’t figure out how upload filters should work, but I’m not a
 technical person — surely someone who is can sort it out!”&lt;/p&gt;
 &lt;p&gt;That is a misconception. I’ll be happy to explain, requiring — I
 promise! — no technical understanding of what an upload filter is, or
@@ -127,7 +127,7 @@ let’s say it’s 1%.&lt;/p&gt;
 &lt;p&gt;So then let’s look at 10,000 interactions that completely random
 people make on the internet.&lt;/p&gt;
 &lt;p&gt;Those would then break down like so:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -160,7 +160,7 @@ flags content as infringing when it is not) with a rate of only
 ridiculously low for any automated screening procedure.&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;So that means that out of our 10,000 interactions tracked by our
 “perfect” content filter, the numbers break down like this:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -203,7 +203,7 @@ exceedingly rare, automated filters detect it with poor accuracy.&lt;/strong&gt;
 &lt;p&gt;And if you leave all parameters the same, but consider a probably much
 more realistic infringement rate of 1 in 1000, that is, 0.1%, then
 things look like this: &lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -266,7 +266,7 @@ bad&lt;/a&gt;
 for a system that cost $100M to build. &lt;a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Politics"></category></entry><entry><title>Article 17: The time to act is now.</title><link href="https://xahteiwi.eu/blog/2019/03/21/copyright-reform/" rel="alternate"></link><published>2019-03-21T17:38:00+00:00</published><updated>2019-03-21T17:38:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-03-21:/blog/2019/03/21/copyright-reform/</id><summary type="html">&lt;p&gt;Next Tuesday, the European Parliament is due to vote on something that will impact your life. Yes, yours.&lt;/p&gt;</summary><content type="html">&lt;p&gt;On Tuesday, March 26 at half-past noon Central European Time, the
+&lt;/div&gt;</content><category term="blog"></category><category term="Politics"></category></entry><entry><title>Article 17: The time to act is now.</title><link href="https://fghaas.github.io/blog/2019/03/21/copyright-reform/" rel="alternate"></link><published>2019-03-21T17:38:00+00:00</published><updated>2019-03-21T17:38:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2019-03-21:/blog/2019/03/21/copyright-reform/</id><summary type="html">&lt;p&gt;Next Tuesday, the European Parliament is due to vote on something that will impact your life. Yes, yours.&lt;/p&gt;</summary><content type="html">&lt;p&gt;On Tuesday, March 26 at half-past noon Central European Time, the
 European Parliament is due to vote on an issue that will definitely
 impact your life, no matter if you live in or outside the EU. No, it
 has nothing to do with Brexit. Brexit has just managed to monopolise

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>fghaas.github.io - talk-submissions</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/category/talk-submissions.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2021-10-07T00:00:00+00:00</updated><entry><title>On Contravictions</title><link href="https://xahteiwi.eu/talk-submissions/devopsdaystlv-2021-contravictions/" rel="alternate"></link><published>2021-10-07T00:00:00+00:00</published><updated>2021-10-07T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-07:/talk-submissions/devopsdaystlv-2021-contravictions/</id><summary type="html">&lt;p&gt;A talk I submitted to DevOpsDays Tel Aviv, 2021&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a talk I submitted&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt; to DevOpsDays Tel Aviv 2021, which used
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - talk-submissions</title><link href="https://fghaas.github.io/" rel="alternate"></link><link href="https://fghaas.github.io/feeds/category/talk-submissions.atom.xml" rel="self"></link><id>https://fghaas.github.io/</id><updated>2021-10-07T00:00:00+00:00</updated><entry><title>On Contravictions</title><link href="https://fghaas.github.io/talk-submissions/devopsdaystlv-2021-contravictions/" rel="alternate"></link><published>2021-10-07T00:00:00+00:00</published><updated>2021-10-07T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2021-10-07:/talk-submissions/devopsdaystlv-2021-contravictions/</id><summary type="html">&lt;p&gt;A talk I submitted to DevOpsDays Tel Aviv, 2021&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a talk I submitted&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt; to DevOpsDays Tel Aviv 2021, which used
 a non-anonymized CfP process via
 &lt;a href="https://www.papercall.io/"&gt;PaperCall&lt;/a&gt;. This submission was rejected.&lt;/p&gt;
 &lt;h2&gt;Title&lt;/h2&gt;
@@ -89,7 +89,7 @@ does not permit itself on account of the Covid-19 situation or of
 travel restrictions, and I would have to rely on a streamed talk and
 have no way of reading the room or scanning the audience for body
 language feedback (some more details on this topic
-&lt;a href="https://xahteiwi.eu/blog/2021/08/24/online-conferences-audience-feedback/"&gt;here&lt;/a&gt;),
+&lt;a href="https://fghaas.github.io/blog/2021/08/24/online-conferences-audience-feedback/"&gt;here&lt;/a&gt;),
 then I'd rather not give the talk at all, rather than stream it.&lt;/p&gt;
 &lt;p&gt;If this disqualifies the talk (or if you just consider it too
 controversial to begin with), no hard feelings at all.&lt;/p&gt;
@@ -104,10 +104,10 @@ find. Examples are "ruby, javascript, rails".&lt;/p&gt;
 &lt;ol&gt;
 &lt;li id="fn:1"&gt;
 &lt;p&gt;If you’re curious why this is here, please read
-&lt;a href="https://xahteiwi.eu/blog/2019/04/23/talk-submissions/"&gt;this&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;a href="https://fghaas.github.io/blog/2019/04/23/talk-submissions/"&gt;this&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="talk-submissions"></category><category term="Conference"></category></entry><entry><title>The Review Review</title><link href="https://xahteiwi.eu/./talk-submissions/review-review/" rel="alternate"></link><published>2021-10-07T00:00:00+00:00</published><updated>2021-10-07T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-07:/./talk-submissions/review-review/</id><summary type="html">&lt;p&gt;A talk I submitted to DevOpsDays Tel Aviv 2021 and DevConf.CZ 2022&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a talk I submitted&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt; to
+&lt;/div&gt;</content><category term="talk-submissions"></category><category term="Conference"></category></entry><entry><title>The Review Review</title><link href="https://fghaas.github.io/./talk-submissions/review-review/" rel="alternate"></link><published>2021-10-07T00:00:00+00:00</published><updated>2021-10-07T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2021-10-07:/./talk-submissions/review-review/</id><summary type="html">&lt;p&gt;A talk I submitted to DevOpsDays Tel Aviv 2021 and DevConf.CZ 2022&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a talk I submitted&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt; to
 &lt;a href="https://www.devconf.info/cz/"&gt;DevConf.CZ&lt;/a&gt; 2022, which used a
 non-anonymized CfP process via &lt;a href="https://cfp.devconf.info"&gt;Red Hat’s CfP
 website&lt;/a&gt;. For that conference, it was
@@ -198,10 +198,10 @@ find. Examples are "ruby, javascript, rails".&lt;/p&gt;
 &lt;ol&gt;
 &lt;li id="fn:1"&gt;
 &lt;p&gt;If you’re curious why this is here, please read
-&lt;a href="https://xahteiwi.eu/blog/2019/04/23/talk-submissions/"&gt;this&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;a href="https://fghaas.github.io/blog/2019/04/23/talk-submissions/"&gt;this&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="talk-submissions"></category><category term="Conference"></category><category term="GitLab"></category><category term="GitHub"></category><category term="Zuul"></category></entry><entry><title>Add depth! Stereoscopic imagery for everyone</title><link href="https://xahteiwi.eu/talk-submissions/lca-2021-stereoscopy/" rel="alternate"></link><published>2020-11-06T00:00:00+00:00</published><updated>2020-11-06T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2020-11-06:/talk-submissions/lca-2021-stereoscopy/</id><summary type="html">&lt;p&gt;A talk I submitted to linux.conf.au 2021.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a talk I submitted&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt; to linux.conf.au 2021. It was,
+&lt;/div&gt;</content><category term="talk-submissions"></category><category term="Conference"></category><category term="GitLab"></category><category term="GitHub"></category><category term="Zuul"></category></entry><entry><title>Add depth! Stereoscopic imagery for everyone</title><link href="https://fghaas.github.io/talk-submissions/lca-2021-stereoscopy/" rel="alternate"></link><published>2020-11-06T00:00:00+00:00</published><updated>2020-11-06T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2020-11-06:/talk-submissions/lca-2021-stereoscopy/</id><summary type="html">&lt;p&gt;A talk I submitted to linux.conf.au 2021.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a talk I submitted&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt; to linux.conf.au 2021. It was,
 unfortunately, rejected. &lt;/p&gt;
 &lt;p&gt;If you run a conference or meetup (on-person or online) where you
 think this talk would be a good fit, please let me know! I’d still
@@ -278,10 +278,10 @@ the talk.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li id="fn:1"&gt;
 &lt;p&gt;If you’re curious why this is here, please read
-&lt;a href="https://xahteiwi.eu/blog/2019/04/23/talk-submissions/"&gt;this&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;a href="https://fghaas.github.io/blog/2019/04/23/talk-submissions/"&gt;this&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="talk-submissions"></category><category term="Conference"></category><category term="Stereoscopy"></category></entry><entry><title>Learn Complex Skills, From Anywhere: Combining Django, Ansible and OpenStack to teach any tech skill</title><link href="https://xahteiwi.eu/talk-submissions/lca-2019-openedx/" rel="alternate"></link><published>2019-08-12T00:00:00+00:00</published><updated>2019-08-12T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-08-12:/talk-submissions/lca-2019-openedx/</id><summary type="html">&lt;p&gt;A talk I submitted to PyCon AU 2018, linux.conf.au 2019, and PyCon DE 2019.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a talk I submitted&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt; to three separate conferences:&lt;/p&gt;
+&lt;/div&gt;</content><category term="talk-submissions"></category><category term="Conference"></category><category term="Stereoscopy"></category></entry><entry><title>Learn Complex Skills, From Anywhere: Combining Django, Ansible and OpenStack to teach any tech skill</title><link href="https://fghaas.github.io/talk-submissions/lca-2019-openedx/" rel="alternate"></link><published>2019-08-12T00:00:00+00:00</published><updated>2019-08-12T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2019-08-12:/talk-submissions/lca-2019-openedx/</id><summary type="html">&lt;p&gt;A talk I submitted to PyCon AU 2018, linux.conf.au 2019, and PyCon DE 2019.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a talk I submitted&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt; to three separate conferences:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href="https://2018.pycon-au.org/"&gt;PyCon AU 2018&lt;/a&gt;, via an anonymized CfP
@@ -292,7 +292,7 @@ the talk.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://2019.linux.conf.au/"&gt;linux.conf.au 2019&lt;/a&gt;, which used a
   non-anonymized CfP process on a custom platform that, &lt;em&gt;I think,&lt;/em&gt; is
   built on &lt;a href="https://symposion.readthedocs.io/"&gt;Symposion&lt;/a&gt;. That
-  submission was accepted, and the talk &lt;a href="https://xahteiwi.eu/resources/presentations/learn-complex-skills-from-anywhere-combining-django-ansible-and-openstack-to-teach-any-tech-skill/"&gt;ran in the main conference
+  submission was accepted, and the talk &lt;a href="https://fghaas.github.io/resources/presentations/learn-complex-skills-from-anywhere-combining-django-ansible-and-openstack-to-teach-any-tech-skill/"&gt;ran in the main conference
   programme&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -393,10 +393,10 @@ Python and OpenStack developers, and heavy Ansible users.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li id="fn:1"&gt;
 &lt;p&gt;If you’re curious why this is here, please read
-&lt;a href="https://xahteiwi.eu/blog/2019/04/23/talk-submissions/"&gt;this&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;a href="https://fghaas.github.io/blog/2019/04/23/talk-submissions/"&gt;this&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="talk-submissions"></category><category term="Conference"></category></entry><entry><title>I Don’t Think This Means What You Think It Means: Red Herrings in OpenStack</title><link href="https://xahteiwi.eu/talk-submissions/oidn-2019-red-herrings/" rel="alternate"></link><published>2019-05-08T00:00:00+00:00</published><updated>2019-05-08T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-05-08:/talk-submissions/oidn-2019-red-herrings/</id><summary type="html">&lt;p&gt;A talk I submitted to OpenInfra Days Nordics 2019.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a talk I proposed&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt; for &lt;a href="https://openinfranordics.com/"&gt;OpenInfra Days
+&lt;/div&gt;</content><category term="talk-submissions"></category><category term="Conference"></category></entry><entry><title>I Don’t Think This Means What You Think It Means: Red Herrings in OpenStack</title><link href="https://fghaas.github.io/talk-submissions/oidn-2019-red-herrings/" rel="alternate"></link><published>2019-05-08T00:00:00+00:00</published><updated>2019-05-08T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2019-05-08:/talk-submissions/oidn-2019-red-herrings/</id><summary type="html">&lt;p&gt;A talk I submitted to OpenInfra Days Nordics 2019.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a talk I proposed&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt; for &lt;a href="https://openinfranordics.com/"&gt;OpenInfra Days
 Nordics&lt;/a&gt;, via a non-anonymized CfP
 process using &lt;a href="https://www.papercall.io/"&gt;PaperCall&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Title&lt;/h2&gt;
@@ -475,10 +475,10 @@ find. Examples are "ruby, javascript, rails".&lt;/p&gt;
 &lt;ol&gt;
 &lt;li id="fn:1"&gt;
 &lt;p&gt;If you’re curious why this is here, please read
-&lt;a href="https://xahteiwi.eu/blog/2019/04/23/talk-submissions/"&gt;this&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;a href="https://fghaas.github.io/blog/2019/04/23/talk-submissions/"&gt;this&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="talk-submissions"></category><category term="Conference"></category><category term="OpenStack"></category></entry><entry><title>One For All: Using Terraform to manage OpenStack and Kubernetes resources</title><link href="https://xahteiwi.eu/talk-submissions/oidn-2019-terraform/" rel="alternate"></link><published>2019-05-07T00:00:00+00:00</published><updated>2019-05-07T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-05-07:/talk-submissions/oidn-2019-terraform/</id><summary type="html">&lt;p&gt;A workshop I submitted to Open Infra Days Nordics 2019.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a workshop I proposed&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt; for &lt;a href="https://openinfranordics.com/"&gt;OpenInfra Days
+&lt;/div&gt;</content><category term="talk-submissions"></category><category term="Conference"></category><category term="OpenStack"></category></entry><entry><title>One For All: Using Terraform to manage OpenStack and Kubernetes resources</title><link href="https://fghaas.github.io/talk-submissions/oidn-2019-terraform/" rel="alternate"></link><published>2019-05-07T00:00:00+00:00</published><updated>2019-05-07T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2019-05-07:/talk-submissions/oidn-2019-terraform/</id><summary type="html">&lt;p&gt;A workshop I submitted to Open Infra Days Nordics 2019.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a workshop I proposed&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt; for &lt;a href="https://openinfranordics.com/"&gt;OpenInfra Days
 Nordics&lt;/a&gt;, via a non-anonymized CfP
 process using &lt;a href="https://www.papercall.io/"&gt;PaperCall&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Title&lt;/h2&gt;
@@ -549,10 +549,10 @@ find. Examples are "ruby, javascript, rails".&lt;/p&gt;
 &lt;ol&gt;
 &lt;li id="fn:1"&gt;
 &lt;p&gt;If you’re curious why this is here, please read
-&lt;a href="https://xahteiwi.eu/blog/2019/04/23/talk-submissions/"&gt;this&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;a href="https://fghaas.github.io/blog/2019/04/23/talk-submissions/"&gt;this&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="talk-submissions"></category><category term="Conference"></category><category term="Terraform"></category><category term="OpenStack"></category><category term="Kubernetes"></category></entry><entry><title>No, really, don't chuck everything in Slack: communications for distributed teams</title><link href="https://xahteiwi.eu/talk-submissions/lca-2019-slack/" rel="alternate"></link><published>2019-04-24T00:00:00+00:00</published><updated>2019-04-24T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-04-24:/talk-submissions/lca-2019-slack/</id><summary type="html">&lt;p&gt;A talk I submitted to linux.conf.au 2019.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a talk I submitted&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt; to
+&lt;/div&gt;</content><category term="talk-submissions"></category><category term="Conference"></category><category term="Terraform"></category><category term="OpenStack"></category><category term="Kubernetes"></category></entry><entry><title>No, really, don't chuck everything in Slack: communications for distributed teams</title><link href="https://fghaas.github.io/talk-submissions/lca-2019-slack/" rel="alternate"></link><published>2019-04-24T00:00:00+00:00</published><updated>2019-04-24T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2019-04-24:/talk-submissions/lca-2019-slack/</id><summary type="html">&lt;p&gt;A talk I submitted to linux.conf.au 2019.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a talk I submitted&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt; to
 &lt;a href="https://linux.conf.au/"&gt;linux.conf.au&lt;/a&gt; 2019. The conference uses a
 non-anonymized CfP process on a custom platform that, &lt;em&gt;I think,&lt;/em&gt; is
 built on &lt;a href="https://symposion.readthedocs.io/"&gt;Symposion&lt;/a&gt;.&lt;/p&gt;
@@ -620,10 +620,10 @@ with whitespace preserved&lt;/p&gt;
 &lt;ol&gt;
 &lt;li id="fn:1"&gt;
 &lt;p&gt;If you’re curious why this is here, please read
-&lt;a href="https://xahteiwi.eu/blog/2019/04/23/talk-submissions/"&gt;this&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;a href="https://fghaas.github.io/blog/2019/04/23/talk-submissions/"&gt;this&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="talk-submissions"></category><category term="Conference"></category></entry><entry><title>Writing for learners: best practices for creating, developing, and maintaining self-paced learning resources</title><link href="https://xahteiwi.eu/talk-submissions/wtd-prague-2019/" rel="alternate"></link><published>2019-04-23T00:00:00+00:00</published><updated>2019-04-23T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-04-23:/talk-submissions/wtd-prague-2019/</id><summary type="html">&lt;p&gt;A talk I submitted to Write The Docs Prague, 2019.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a talk I submitted&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt; to &lt;a href="https://www.writethedocs.org/conf/"&gt;Write The
+&lt;/div&gt;</content><category term="talk-submissions"></category><category term="Conference"></category></entry><entry><title>Writing for learners: best practices for creating, developing, and maintaining self-paced learning resources</title><link href="https://fghaas.github.io/talk-submissions/wtd-prague-2019/" rel="alternate"></link><published>2019-04-23T00:00:00+00:00</published><updated>2019-04-23T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2019-04-23:/talk-submissions/wtd-prague-2019/</id><summary type="html">&lt;p&gt;A talk I submitted to Write The Docs Prague, 2019.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a talk I submitted&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt; to &lt;a href="https://www.writethedocs.org/conf/"&gt;Write The
 Docs&lt;/a&gt; Prague, September
 15-17, 2019. The conference uses a non-anonymized CfP process with a
 simple Google Form. The CfP page is
@@ -690,7 +690,7 @@ which runs on Open edX.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li id="fn:1"&gt;
 &lt;p&gt;If you’re curious why this is here, please read
-&lt;a href="https://xahteiwi.eu/blog/2019/04/23/talk-submissions/"&gt;this&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;a href="https://fghaas.github.io/blog/2019/04/23/talk-submissions/"&gt;this&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;</content><category term="talk-submissions"></category><category term="Conference"></category></entry></feed>

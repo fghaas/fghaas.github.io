@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>fghaas.github.io - Kubernetes</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/kubernetes.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2019-05-07T00:00:00+00:00</updated><entry><title>One For All: Using Terraform to manage OpenStack and Kubernetes resources</title><link href="https://xahteiwi.eu/talk-submissions/oidn-2019-terraform/" rel="alternate"></link><published>2019-05-07T00:00:00+00:00</published><updated>2019-05-07T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-05-07:/talk-submissions/oidn-2019-terraform/</id><summary type="html">&lt;p&gt;A workshop I submitted to Open Infra Days Nordics 2019.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a workshop I proposed&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt; for &lt;a href="https://openinfranordics.com/"&gt;OpenInfra Days
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Kubernetes</title><link href="https://fghaas.github.io/" rel="alternate"></link><link href="https://fghaas.github.io/feeds/tag/kubernetes.atom.xml" rel="self"></link><id>https://fghaas.github.io/</id><updated>2019-05-07T00:00:00+00:00</updated><entry><title>One For All: Using Terraform to manage OpenStack and Kubernetes resources</title><link href="https://fghaas.github.io/talk-submissions/oidn-2019-terraform/" rel="alternate"></link><published>2019-05-07T00:00:00+00:00</published><updated>2019-05-07T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2019-05-07:/talk-submissions/oidn-2019-terraform/</id><summary type="html">&lt;p&gt;A workshop I submitted to Open Infra Days Nordics 2019.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a workshop I proposed&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt; for &lt;a href="https://openinfranordics.com/"&gt;OpenInfra Days
 Nordics&lt;/a&gt;, via a non-anonymized CfP
 process using &lt;a href="https://www.papercall.io/"&gt;PaperCall&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Title&lt;/h2&gt;
@@ -70,7 +70,7 @@ find. Examples are "ruby, javascript, rails".&lt;/p&gt;
 &lt;ol&gt;
 &lt;li id="fn:1"&gt;
 &lt;p&gt;If you’re curious why this is here, please read
-&lt;a href="https://xahteiwi.eu/blog/2019/04/23/talk-submissions/"&gt;this&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;a href="https://fghaas.github.io/blog/2019/04/23/talk-submissions/"&gt;this&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;</content><category term="talk-submissions"></category><category term="Conference"></category><category term="Terraform"></category><category term="OpenStack"></category><category term="Kubernetes"></category></entry></feed>
