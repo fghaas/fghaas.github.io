@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Work</title><link href="https://fghaas.github.io/" rel="alternate"></link><link href="https://fghaas.github.io/feeds/tag/work.atom.xml" rel="self"></link><id>https://fghaas.github.io/</id><updated>2022-01-29T00:00:00+00:00</updated><entry><title>The Review Review</title><link href="https://fghaas.github.io/./blog/2022/01/29/review-review/" rel="alternate"></link><published>2022-01-29T00:00:00+00:00</published><updated>2022-01-29T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2022-01-29:/./blog/2022/01/29/review-review/</id><summary type="html">&lt;p&gt;Musings on source code management, code review, testing, deployment, and collaboration culture.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I wanted to share a few thoughts on something I consider a rather
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Work</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/work.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-01-29T00:00:00+00:00</updated><entry><title>The Review Review</title><link href="https://xahteiwi.eu/./blog/2022/01/29/review-review/" rel="alternate"></link><published>2022-01-29T00:00:00+00:00</published><updated>2022-01-29T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-01-29:/./blog/2022/01/29/review-review/</id><summary type="html">&lt;p&gt;Musings on source code management, code review, testing, deployment, and collaboration culture.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I wanted to share a few thoughts on something I consider a rather
 important topic in our industry: code review and CI/CD tools, and how
 they relate.&lt;/p&gt;
 &lt;p&gt;This means that I'm talking about&lt;/p&gt;
@@ -14,7 +14,7 @@ they relate.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;In case it’s not obvious, that means I’m talking about a large
 fraction of the software engineering cycle. Not all of it; the part
-involving “fooling around” (&lt;a href="https://fghaas.github.io/blog/2021/11/21/creativity/"&gt;creative play&lt;/a&gt;)
+involving “fooling around” (&lt;a href="https://xahteiwi.eu/blog/2021/11/21/creativity/"&gt;creative play&lt;/a&gt;)
 is perhaps excluded — but substantially everything where people can be
 said to be “developing” in a software engineering organization is
 encompassed in these things.&lt;/p&gt;
@@ -69,7 +69,7 @@ MD’s responsibility.&lt;/p&gt;
 &lt;p&gt;Of course, that person may delegate some of the &lt;em&gt;tasks&lt;/em&gt; and details of
 running your source code management and code review and CI/CD
 platform, but &lt;em&gt;responsibility&lt;/em&gt; stays with them.&lt;/p&gt;
-&lt;p&gt;And that responsibility requires both an understanding &lt;a href="https://fghaas.github.io/blog/2019/04/21/non-technical/"&gt;of the
+&lt;p&gt;And that responsibility requires both an understanding &lt;a href="https://xahteiwi.eu/blog/2019/04/21/non-technical/"&gt;of the
 technology itself&lt;/a&gt;, &lt;em&gt;and&lt;/em&gt; an understanding
 of how it interacts with your engineering culture. A &lt;em&gt;profound&lt;/em&gt;
 understanding. &lt;/p&gt;
@@ -382,7 +382,7 @@ depends on your priorities. And I’ll give you this from four angles.&lt;/p&gt;
   — meaning using tools that they’re most likely already familiar with
   — GitHub is your platform of choice.&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content><category term="blog"></category><category term="Work"></category><category term="CI"></category><category term="Gerrit"></category><category term="GitLab"></category><category term="GitHub"></category><category term="Zuul"></category></entry><entry><title>Scaling the flat organization</title><link href="https://fghaas.github.io/blog/2022/01/16/flat-org-scaling/" rel="alternate"></link><published>2022-01-16T00:00:00+00:00</published><updated>2022-01-16T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2022-01-16:/blog/2022/01/16/flat-org-scaling/</id><summary type="html">&lt;p&gt;“We need a flat organizational structure in order to scale.” Or do we, really?&lt;/p&gt;</summary><content type="html">&lt;p&gt;There’s a common trope in management that goes something like “in
+&lt;/ul&gt;</content><category term="blog"></category><category term="Work"></category><category term="CI"></category><category term="Gerrit"></category><category term="GitLab"></category><category term="GitHub"></category><category term="Zuul"></category></entry><entry><title>Scaling the flat organization</title><link href="https://xahteiwi.eu/blog/2022/01/16/flat-org-scaling/" rel="alternate"></link><published>2022-01-16T00:00:00+00:00</published><updated>2022-01-16T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-01-16:/blog/2022/01/16/flat-org-scaling/</id><summary type="html">&lt;p&gt;“We need a flat organizational structure in order to scale.” Or do we, really?&lt;/p&gt;</summary><content type="html">&lt;p&gt;There’s a common trope in management that goes something like “in
 order to better scale the organization as we grow, we need to keep it
 flat.” The thrust of the argument is that as the organization grows to
 meet customer and demand growth (and with it, growth in head count),
@@ -547,7 +547,7 @@ planned.&lt;/p&gt;
 &lt;p&gt;So Alex, being a good CEO, opens some spread sheet software and
 creates this handy table that simply plugs in values for &lt;span class="math"&gt;\(x\)&lt;/span&gt; and &lt;span class="math"&gt;\(y\)&lt;/span&gt;,
 with &lt;span class="math"&gt;\(x\)&lt;/span&gt; (width) in columns and &lt;span class="math"&gt;\(y\)&lt;/span&gt; (depth) in rows.&lt;sup id="fnref:table"&gt;&lt;a class="footnote-ref" href="#fn:table"&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -771,7 +771,7 @@ interjects that Alex is missing a point, namely all the managers that
 the company will now no longer need, and the cost savings thus
 generated.&lt;/p&gt;
 &lt;p&gt;So Alex looks at the table again (width in columns, depth in rows):&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -960,7 +960,7 @@ cell &lt;em&gt;directly above it&lt;/em&gt; will contain the total number of man
 again, but considers the number of managers proportional to the number
 of people in the company, a pattern quickly emerges (again, width
 is in columns, depth is in rows):&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -1246,11 +1246,11 @@ expression as &lt;span class="math"&gt;\(y\)&lt;/span&gt; goes to infinity:
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Voice messages</title><link href="https://fghaas.github.io/blog/2021/12/05/voice-messages/" rel="alternate"></link><published>2021-12-05T00:00:00+00:00</published><updated>2021-12-05T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2021-12-05:/blog/2021/12/05/voice-messages/</id><summary type="html">&lt;p&gt;Apparently, some people think you should replace professional textual communications with voice messaging. Here’s why I think that that’s a bad idea.&lt;/p&gt;</summary><content type="html">&lt;p&gt;As of late, I've noticed that when people share one of my articles on
+&lt;/script&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Voice messages</title><link href="https://xahteiwi.eu/blog/2021/12/05/voice-messages/" rel="alternate"></link><published>2021-12-05T00:00:00+00:00</published><updated>2021-12-05T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-12-05:/blog/2021/12/05/voice-messages/</id><summary type="html">&lt;p&gt;Apparently, some people think you should replace professional textual communications with voice messaging. Here’s why I think that that’s a bad idea.&lt;/p&gt;</summary><content type="html">&lt;p&gt;As of late, I've noticed that when people share one of my articles on
 asynchronous communications on Twitter (particularly any from the
-&lt;a href="https://fghaas.github.io/blog/2021/09/30/getting-out-of-meeting-hell/"&gt;Getting out of Meeting
+&lt;a href="https://xahteiwi.eu/blog/2021/09/30/getting-out-of-meeting-hell/"&gt;Getting out of Meeting
 Hell&lt;/a&gt; series, or the one on
-&lt;a href="https://fghaas.github.io/blog/2021/10/27/this-meeting-should-have-been-an-email/"&gt;meetings that should have been an
+&lt;a href="https://xahteiwi.eu/blog/2021/10/27/this-meeting-should-have-been-an-email/"&gt;meetings that should have been an
 email&lt;/a&gt;), there's
 a reply from a brand account that likes to plug/advertise their
 service. That service recommends that synchronous meetings be replaced
@@ -1342,7 +1342,7 @@ depends largely on the average number of syllables per word in
 that language. &lt;a class="footnote-backref" href="#fnref:speech-tempo" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category><category term="Accessibility"></category></entry><entry><title>Creativity: How we lost it, why that’s bad, and how we get it back</title><link href="https://fghaas.github.io/blog/2021/11/21/creativity/" rel="alternate"></link><published>2021-11-21T00:00:00+00:00</published><updated>2021-11-21T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2021-11-21:/blog/2021/11/21/creativity/</id><summary type="html">&lt;p&gt;A summary of how I think we ended up where we are right now, and what we can do to get moving again.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Right now, it’s easy to open a news site and come to the conclusion
+&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category><category term="Accessibility"></category></entry><entry><title>Creativity: How we lost it, why that’s bad, and how we get it back</title><link href="https://xahteiwi.eu/blog/2021/11/21/creativity/" rel="alternate"></link><published>2021-11-21T00:00:00+00:00</published><updated>2021-11-21T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-11-21:/blog/2021/11/21/creativity/</id><summary type="html">&lt;p&gt;A summary of how I think we ended up where we are right now, and what we can do to get moving again.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Right now, it’s easy to open a news site and come to the conclusion
 that the world as we know it is well and truly fucked. It doesn’t
 matter if you’re looking at Covid response, or inaction on climate
 change, or corruption, or communications surveillance: it increasingly
@@ -1499,7 +1499,7 @@ followed by the exasperated question, “so what do you recommend?” Or,
 worse, “what’s the right way?”&lt;/p&gt;
 &lt;p&gt;You can probably guess which category of answers was more likely to
 come from managers — or “leaders”, as such people like to be called
-in a &lt;a href="https://fghaas.github.io/blog/2019/04/21/non-technical/"&gt;gross exaggeration of their
+in a &lt;a href="https://xahteiwi.eu/blog/2019/04/21/non-technical/"&gt;gross exaggeration of their
 capabilities&lt;/a&gt;.&lt;/p&gt;
 &lt;hr/&gt;
 &lt;p&gt;And now imagine someone having gone through a conventional primary and
@@ -1641,7 +1641,7 @@ with managers who take being signed into a chat (and thereby
 &lt;em&gt;constantly&lt;/em&gt; listening for interruptions) as a measure of being
 “active”, so much so that they &lt;a href="https://twitter.com/pleia2/status/1456629767743016966"&gt;end up tracking metrics for
 it&lt;/a&gt;, and of
-course also &lt;a href="https://fghaas.github.io/blog/2021/11/14/meaningless-metrics-treacherous-targets/"&gt;making it a
+course also &lt;a href="https://xahteiwi.eu/blog/2021/11/14/meaningless-metrics-treacherous-targets/"&gt;making it a
 target&lt;/a&gt; they
 call “engagement” or some other abomination.&lt;/p&gt;
 &lt;p&gt;Organizations that do that are at risk of constantly shutting down
@@ -1667,7 +1667,7 @@ creative play, and innovation in my younger kids’ education than I did
 in my older ones’.&lt;/p&gt;
 &lt;p&gt;And then, there’s the big push towards asynchronous distributed work —
 where obviously the &lt;em&gt;asynchronous&lt;/em&gt; part is the bit that matters. Sure,
-&lt;a href="https://fghaas.github.io/blog/2021/10/23/make-my-company-distributed/"&gt;companies suffering from &lt;em&gt;offissification&lt;/em&gt;&lt;/a&gt;
+&lt;a href="https://xahteiwi.eu/blog/2021/10/23/make-my-company-distributed/"&gt;companies suffering from &lt;em&gt;offissification&lt;/em&gt;&lt;/a&gt;
 still exist, but for a while, &lt;a href="https://en.wikipedia.org/wiki/Dodo"&gt;so did
 dodos&lt;/a&gt;. But an ever-increasing
 share of humanity is beginning to understand what it’s like when
@@ -1675,10 +1675,10 @@ you’re no longer shackled to seventeen Slack channels you constantly
 need to watch, when you can take a walk in the middle of the day
 because you know it’s OK to push something off for an hour to clear
 your head and come up with an idea, and when instead of spending an
-hour in a meeting &lt;a href="https://fghaas.github.io/blog/2021/10/27/this-meeting-should-have-been-an-email/"&gt;you can spend 5 minutes reading a memo and use the
+hour in a meeting &lt;a href="https://xahteiwi.eu/blog/2021/10/27/this-meeting-should-have-been-an-email/"&gt;you can spend 5 minutes reading a memo and use the
 other 55 minutes for
 thinking&lt;/a&gt;.  And
-that’s where things get interesting.&lt;/p&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Meaningless Metrics, Treacherous Targets</title><link href="https://fghaas.github.io/blog/2021/11/14/meaningless-metrics-treacherous-targets/" rel="alternate"></link><published>2021-11-14T00:00:00+00:00</published><updated>2021-11-14T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2021-11-14:/blog/2021/11/14/meaningless-metrics-treacherous-targets/</id><summary type="html">&lt;p&gt;A quick introduction to Goodhart, Strathern, Campbell, Yankelovich, and McNamara.&lt;/p&gt;</summary><content type="html">&lt;p&gt;A common feature of organizations in the software technology industry
+that’s where things get interesting.&lt;/p&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Meaningless Metrics, Treacherous Targets</title><link href="https://xahteiwi.eu/blog/2021/11/14/meaningless-metrics-treacherous-targets/" rel="alternate"></link><published>2021-11-14T00:00:00+00:00</published><updated>2021-11-14T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-11-14:/blog/2021/11/14/meaningless-metrics-treacherous-targets/</id><summary type="html">&lt;p&gt;A quick introduction to Goodhart, Strathern, Campbell, Yankelovich, and McNamara.&lt;/p&gt;</summary><content type="html">&lt;p&gt;A common feature of organizations in the software technology industry
 (but certainly not &lt;em&gt;only&lt;/em&gt; in that industry) is their fixation on
 metrics, measurements, and quantifiers. I understand that this is
 frequently done and advocated for in the spirit of making management
@@ -2180,7 +2180,7 @@ metric system is nonzero. But once you’ve got it set up, the cost
 of &lt;em&gt;adding a new metric&lt;/em&gt; should be substantially zero. &lt;a class="footnote-backref" href="#fnref:marginal" title="Jump back to footnote 12 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Warnock’s Dilemma, Objections, and Acknowledgements</title><link href="https://fghaas.github.io/blog/2021/10/30/warnock-dilemma/" rel="alternate"></link><published>2021-10-30T00:00:00+00:00</published><updated>2021-10-30T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2021-10-30:/blog/2021/10/30/warnock-dilemma/</id><summary type="html">&lt;p&gt;“Warnock’s Dilemma” is a classic feature of distributed, asynchronous, online communications. You can’t avoid it, you can’t work around it, but you can deal with it with two simple changes to your communicative behavior.&lt;/p&gt;</summary><content type="html">&lt;p&gt;People skeptical of distributed, asynchronous, written communications
+&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Warnock’s Dilemma, Objections, and Acknowledgements</title><link href="https://xahteiwi.eu/blog/2021/10/30/warnock-dilemma/" rel="alternate"></link><published>2021-10-30T00:00:00+00:00</published><updated>2021-10-30T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-30:/blog/2021/10/30/warnock-dilemma/</id><summary type="html">&lt;p&gt;“Warnock’s Dilemma” is a classic feature of distributed, asynchronous, online communications. You can’t avoid it, you can’t work around it, but you can deal with it with two simple changes to your communicative behavior.&lt;/p&gt;</summary><content type="html">&lt;p&gt;People skeptical of distributed, asynchronous, written communications
 sometimes make they understandable objection that it is often
 difficult to interpret the reactions, specifically the &lt;em&gt;absence of&lt;/em&gt;
 reactions, to written online communications. &lt;/p&gt;
@@ -2236,7 +2236,7 @@ change&lt;/a&gt;”,
 perl.bootstrap mailing list, 2000-08-07&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;In asynchronous and distributed work communications, we have much the
-same issue. The beautifully crafted &lt;a href="https://fghaas.github.io/blog/2021/10/27/this-meeting-should-have-been-an-email/"&gt;five-paragraph
+same issue. The beautifully crafted &lt;a href="https://xahteiwi.eu/blog/2021/10/27/this-meeting-should-have-been-an-email/"&gt;five-paragraph
 briefing&lt;/a&gt; that
 you sent out this morning may have been considered manna from heaven
 by your recipients (if you’re a manager, your recipients are usually
@@ -2319,7 +2319,7 @@ originator, not by correctness or factual merit. &lt;a class="footnote-backref"
 guidelines. You don’t have something like that? Write them. &lt;a class="footnote-backref" href="#fnref:guidelines" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>This Meeting Should Have Been an Email</title><link href="https://fghaas.github.io/blog/2021/10/27/this-meeting-should-have-been-an-email/" rel="alternate"></link><published>2021-10-27T00:00:00+00:00</published><updated>2021-10-27T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2021-10-27:/blog/2021/10/27/this-meeting-should-have-been-an-email/</id><summary type="html">&lt;p&gt;If you believe that it’s just a silly joke or an overused trope, please read this.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Fellow managers, there is an ongoing trope in just about any software
+&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>This Meeting Should Have Been an Email</title><link href="https://xahteiwi.eu/blog/2021/10/27/this-meeting-should-have-been-an-email/" rel="alternate"></link><published>2021-10-27T00:00:00+00:00</published><updated>2021-10-27T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-27:/blog/2021/10/27/this-meeting-should-have-been-an-email/</id><summary type="html">&lt;p&gt;If you believe that it’s just a silly joke or an overused trope, please read this.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Fellow managers, there is an ongoing trope in just about any software
 technology or knowledge based organization (and probably others, too)
 that goes like this:&lt;/p&gt;
 &lt;blockquote&gt;
@@ -2422,7 +2422,7 @@ dramatically so for you (the writer) as for your erstwhile attendees
 order-of-magnitude range, see above, should make your heart jump with
 joy.)&lt;/p&gt;
 &lt;h2&gt;OK but how? I don’t know where to start!&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://fghaas.github.io/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;I’ve written about this
+&lt;p&gt;&lt;a href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;I’ve written about this
 before&lt;/a&gt;, but I’d
 like to come back to this again: if you’re looking for guidelines on
 structuring your writing for what you would otherwise communicate in
@@ -2494,9 +2494,9 @@ list. It fails the “formulate complex thoughts and reasoning”
 test. &lt;a class="footnote-backref" href="#fnref:chat" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Please, Make My Company Distributed!</title><link href="https://fghaas.github.io/blog/2021/10/23/make-my-company-distributed/" rel="alternate"></link><published>2021-10-23T00:00:00+00:00</published><updated>2021-10-23T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2021-10-23:/blog/2021/10/23/make-my-company-distributed/</id><summary type="html">&lt;p&gt;Turning an organization into one that works in a distributed and asynchronous fashion is far from trivial.&lt;/p&gt;</summary><content type="html">&lt;p&gt;After &lt;a href="https://fghaas.github.io/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;No, We Won’t Have a Video Call for
+&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Please, Make My Company Distributed!</title><link href="https://xahteiwi.eu/blog/2021/10/23/make-my-company-distributed/" rel="alternate"></link><published>2021-10-23T00:00:00+00:00</published><updated>2021-10-23T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-23:/blog/2021/10/23/make-my-company-distributed/</id><summary type="html">&lt;p&gt;Turning an organization into one that works in a distributed and asynchronous fashion is far from trivial.&lt;/p&gt;</summary><content type="html">&lt;p&gt;After &lt;a href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;No, We Won’t Have a Video Call for
 That&lt;/a&gt;, which
-covered how productive distributed teams operate, and the &lt;a href="https://fghaas.github.io/blog/2021/09/30/getting-out-of-meeting-hell/"&gt;Getting out
+covered how productive distributed teams operate, and the &lt;a href="https://xahteiwi.eu/blog/2021/09/30/getting-out-of-meeting-hell/"&gt;Getting out
 of Meeting Hell&lt;/a&gt; series,
 which focused on how &lt;em&gt;you&lt;/em&gt; as an individual can get to being a member
 of a functional distributed team, let’s zoom out a bit.&lt;/p&gt;
@@ -2556,7 +2556,7 @@ couple of laps ahead of you.&lt;/p&gt;
 &lt;p&gt;But your company hasn’t even &lt;em&gt;started&lt;/em&gt; the change to distributed and
 async work? You spent the last nearly two years in unfettered meeting
 hell?  Your bosses think you’ll now go “back to normal”, because an
-office is the only “normal” they know? &lt;a href="https://fghaas.github.io/blog/2021/10/01/getting-out-of-meeting-hell-employees/"&gt;You know what to
+office is the only “normal” they know? &lt;a href="https://xahteiwi.eu/blog/2021/10/01/getting-out-of-meeting-hell-employees/"&gt;You know what to
 do.&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Hiring people to help: aye, there’s the rub.&lt;/h2&gt;
 &lt;p&gt;Now on to the idea of hiring people to help. There’s two ways to look
@@ -2670,21 +2670,21 @@ no-brainer, you should consider that top management &lt;em&gt;are people,&lt;/em
 and people don’t always act rationally. &lt;a class="footnote-backref" href="#fnref:rational" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>No, We Won’t Have a Video Call for That: The Companion Pieces</title><link href="https://fghaas.github.io/resources/presentations/no-we-wont-have-a-video-call-for-that-the-companion-pieces/" rel="alternate"></link><published>2021-10-23T00:00:00+00:00</published><updated>2021-10-23T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2021-10-23:/resources/presentations/no-we-wont-have-a-video-call-for-that-the-companion-pieces/</id><summary type="html">&lt;p&gt;&lt;a href="https://fghaas.github.io/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;The original article&lt;/a&gt; continues to prompt a
+&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>No, We Won’t Have a Video Call for That: The Companion Pieces</title><link href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that-the-companion-pieces/" rel="alternate"></link><published>2021-10-23T00:00:00+00:00</published><updated>2021-10-23T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-23:/resources/presentations/no-we-wont-have-a-video-call-for-that-the-companion-pieces/</id><summary type="html">&lt;p&gt;&lt;a href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;The original article&lt;/a&gt; continues to prompt a
 lot of thoughts and discussions, so I’ve written a a couple of
 follow-up pieces:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href="https://fghaas.github.io/blog/2021/09/30/getting-out-of-meeting-hell/"&gt;Getting out of Meeting
+&lt;p&gt;&lt;a href="https://xahteiwi.eu/blog/2021/09/30/getting-out-of-meeting-hell/"&gt;Getting out of Meeting
    Hell&lt;/a&gt; is a
    short series about getting from a distributed workplace that
    attempts to duplicate the synchronous nature of an office by
-   sticking everyone …&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://fghaas.github.io/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;The original article&lt;/a&gt; continues to prompt a
+   sticking everyone …&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;The original article&lt;/a&gt; continues to prompt a
 lot of thoughts and discussions, so I’ve written a a couple of
 follow-up pieces:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href="https://fghaas.github.io/blog/2021/09/30/getting-out-of-meeting-hell/"&gt;Getting out of Meeting
+&lt;p&gt;&lt;a href="https://xahteiwi.eu/blog/2021/09/30/getting-out-of-meeting-hell/"&gt;Getting out of Meeting
    Hell&lt;/a&gt; is a
    short series about getting from a distributed workplace that
    attempts to duplicate the synchronous nature of an office by
@@ -2694,15 +2694,15 @@ follow-up pieces:&lt;/p&gt;
    mid-level managers, and executives.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href="https://fghaas.github.io/blog/2021/10/23/make-my-company-distributed/"&gt;Please, make my company
+&lt;p&gt;&lt;a href="https://xahteiwi.eu/blog/2021/10/23/make-my-company-distributed/"&gt;Please, make my company
    distributed!&lt;/a&gt;
    takes a broader view on changing organizations so that they become
    better suited for a distributed and asynchronous style of work, and
    why that’s a lot harder than most people think.&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ol&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="Communications"></category><category term="Work"></category></entry><entry><title>Getting out of Meeting Hell: As a top-level executive</title><link href="https://fghaas.github.io/blog/2021/10/03/getting-out-of-meeting-hell-executives/" rel="alternate"></link><published>2021-10-03T00:00:00+00:00</published><updated>2021-10-03T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2021-10-03:/blog/2021/10/03/getting-out-of-meeting-hell-executives/</id><summary type="html">&lt;p&gt;A short series on transitioning to distributed work and asynchronous collaboration. This article is on what you can do if you are stuck in meeting hell as a top-level executive, such as a CEO, Managing Director, or Executive Director.&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;/ol&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="Communications"></category><category term="Work"></category></entry><entry><title>Getting out of Meeting Hell: As a top-level executive</title><link href="https://xahteiwi.eu/blog/2021/10/03/getting-out-of-meeting-hell-executives/" rel="alternate"></link><published>2021-10-03T00:00:00+00:00</published><updated>2021-10-03T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-03:/blog/2021/10/03/getting-out-of-meeting-hell-executives/</id><summary type="html">&lt;p&gt;A short series on transitioning to distributed work and asynchronous collaboration. This article is on what you can do if you are stuck in meeting hell as a top-level executive, such as a CEO, Managing Director, or Executive Director.&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
 &lt;p&gt;Please have a look at the
-&lt;a href="https://fghaas.github.io/blog/2021/09/30/getting-out-of-meeting-hell/"&gt;introduction&lt;/a&gt; for
+&lt;a href="https://xahteiwi.eu/blog/2021/09/30/getting-out-of-meeting-hell/"&gt;introduction&lt;/a&gt; for
 background, for applicable disclaimers, and for information about
 the specific environments this series talks about.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -2760,7 +2760,7 @@ turning one that &lt;em&gt;isn't&lt;/em&gt;, into one that is.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Take no shortcuts. If you're setting up communications rules for
-  everyone, live by them yourself. &lt;a href="https://fghaas.github.io/blog/2021/09/16/rules-are-rules/"&gt;There's a bad, hidden cost in
+  everyone, live by them yourself. &lt;a href="https://xahteiwi.eu/blog/2021/09/16/rules-are-rules/"&gt;There's a bad, hidden cost in
   skirting around them.&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -2821,7 +2821,7 @@ turning one that &lt;em&gt;isn't&lt;/em&gt;, into one that is.&lt;/p&gt;
   company whose sole chance at long-term success is to pull &lt;em&gt;all&lt;/em&gt;
   corporate communications into synchronous chat. Yes, these judgments
   require technical expertise. If this is something you don't have
-  because you consider yourself a "non-technical" person, &lt;a href="https://fghaas.github.io/blog/2019/04/21/non-technical/"&gt;I have
+  because you consider yourself a "non-technical" person, &lt;a href="https://xahteiwi.eu/blog/2019/04/21/non-technical/"&gt;I have
   something to read for you&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -2863,10 +2863,10 @@ with the unreformed meeting addict, things can go three ways:&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;As a final thought, &lt;em&gt;please&lt;/em&gt; take a moment to put yourself in other
 people's shoes, and understand what options &lt;em&gt;they&lt;/em&gt; have with being
-stuck in meeting hell. Whether it's your &lt;a href="https://fghaas.github.io/blog/2021/10/02/getting-out-of-meeting-hell-managers/"&gt;line
+stuck in meeting hell. Whether it's your &lt;a href="https://xahteiwi.eu/blog/2021/10/02/getting-out-of-meeting-hell-managers/"&gt;line
 managers&lt;/a&gt; or your
 regular
-&lt;a href="https://fghaas.github.io/blog/2021/10/01/getting-out-of-meeting-hell-employees/"&gt;employees&lt;/a&gt;, they
+&lt;a href="https://xahteiwi.eu/blog/2021/10/01/getting-out-of-meeting-hell-employees/"&gt;employees&lt;/a&gt;, they
 both have the option to just chuck in their notice and leave, and
 leave they will, if they're sufficiently deep in meeting hell. They
 have plenty of opportunities.&lt;/p&gt;
@@ -2879,9 +2879,9 @@ people reading this will have opinions, air their grievances, and
 share feedback. Those usually give me good thinking material to
 dwell on, so I’ll probably have an additional installment based on
 reader feedback at some point.&lt;/p&gt;
-&lt;/blockquote&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Getting out of Meeting Hell: As a mid-level manager</title><link href="https://fghaas.github.io/blog/2021/10/02/getting-out-of-meeting-hell-managers/" rel="alternate"></link><published>2021-10-02T00:00:00+00:00</published><updated>2021-10-02T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2021-10-02:/blog/2021/10/02/getting-out-of-meeting-hell-managers/</id><summary type="html">&lt;p&gt;A short series on transitioning to distributed work and asynchronous collaboration. This article is on what you can do if you are stuck in meeting hell as a mid-level manager.&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;/blockquote&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Getting out of Meeting Hell: As a mid-level manager</title><link href="https://xahteiwi.eu/blog/2021/10/02/getting-out-of-meeting-hell-managers/" rel="alternate"></link><published>2021-10-02T00:00:00+00:00</published><updated>2021-10-02T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-02:/blog/2021/10/02/getting-out-of-meeting-hell-managers/</id><summary type="html">&lt;p&gt;A short series on transitioning to distributed work and asynchronous collaboration. This article is on what you can do if you are stuck in meeting hell as a mid-level manager.&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
 &lt;p&gt;Please have a look at the
-&lt;a href="https://fghaas.github.io/blog/2021/09/30/getting-out-of-meeting-hell/"&gt;introduction&lt;/a&gt; for
+&lt;a href="https://xahteiwi.eu/blog/2021/09/30/getting-out-of-meeting-hell/"&gt;introduction&lt;/a&gt; for
 background, for applicable disclaimers, and for information about
 the specific environments this series talks about.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -2898,7 +2898,7 @@ in meeting hell in two ways:&lt;/p&gt;
 &lt;/ol&gt;
 &lt;p&gt;And I’ll cover both of those angles, but before I do, I should note
 that you, of course, have one option to improve your personal
-situation that is &lt;a href="https://fghaas.github.io/blog/2021/10/01/getting-out-of-meeting-hell-employees/"&gt;also available to your
+situation that is &lt;a href="https://xahteiwi.eu/blog/2021/10/01/getting-out-of-meeting-hell-employees/"&gt;also available to your
 reports&lt;/a&gt;:
 &lt;strong&gt;Leave.&lt;/strong&gt; It’s not the only option you have, and it may not be your
 &lt;em&gt;first&lt;/em&gt; option, but an option it is. And, for your personal
@@ -2932,7 +2932,7 @@ more than for non-manager employees. You have to make a conscious
 effort to learn how distributed work works, and how you manage a
 distributed team.&lt;/p&gt;
 &lt;p&gt;But, chances are that you won’t be limited to watching talks or
-listening to podcasts or reading articles (you might have &lt;a href="https://fghaas.github.io/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;read this
+listening to podcasts or reading articles (you might have &lt;a href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;read this
 one&lt;/a&gt; before you
 landed here). Instead, it’s not unlikely that if you’re doing software
 or technology development, some of the people on your team are already
@@ -3047,7 +3047,7 @@ want to drop something like “we did this on one meeting a week.”&lt;/p&gt;
   these won’t need to be autocratically decreed, because they just
   make sense and people tend to intuitively agree on them (like the
   just-mentioned &lt;em&gt;URGENT&lt;/em&gt; marker and the circumstances under which to
-  use them). Then, make sure you &lt;a href="https://fghaas.github.io/blog/2021/09/16/rules-are-rules/"&gt;stick to
+  use them). Then, make sure you &lt;a href="https://xahteiwi.eu/blog/2021/09/16/rules-are-rules/"&gt;stick to
   them&lt;/a&gt;. Stick to them yourself, and
   correct others who break them.&lt;sup id="fnref:asshole-filter"&gt;&lt;a class="footnote-ref" href="#fn:asshole-filter"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;/li&gt;
@@ -3057,11 +3057,11 @@ want to drop something like “we did this on one meeting a week.”&lt;/p&gt;
 while swimming against the company tide, at least temporarily. If they
 know you're actively striving to make their work situation better, more
 productive &lt;em&gt;and healthier&lt;/em&gt; it may well make the difference between
-&lt;a href="https://fghaas.github.io/blog/2021/10/01/getting-out-of-meeting-hell-employees/"&gt;them leaving&lt;/a&gt; and
+&lt;a href="https://xahteiwi.eu/blog/2021/10/01/getting-out-of-meeting-hell-employees/"&gt;them leaving&lt;/a&gt; and
 staying on board.&lt;/p&gt;
 &lt;p&gt;Finally, keep an eye on corporate policy and the messages you get from
 company leadership. If they're obviously stuck in 1995, you might as
-well go and update your CV. If the people at the top do &lt;a href="https://fghaas.github.io/blog/2021/10/03/getting-out-of-meeting-hell-executives/"&gt;make an
+well go and update your CV. If the people at the top do &lt;a href="https://xahteiwi.eu/blog/2021/10/03/getting-out-of-meeting-hell-executives/"&gt;make an
 effort to implement distributed and async friendly
 policies&lt;/a&gt;,
 however, then things may not change overnight, but there’s hope that
@@ -3088,9 +3088,9 @@ urgent by default. &lt;a class="footnote-backref" href="#fnref:not-urgent-by-de
   jerks&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:asshole-filter" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Getting out of Meeting Hell: As a regular employee</title><link href="https://fghaas.github.io/blog/2021/10/01/getting-out-of-meeting-hell-employees/" rel="alternate"></link><published>2021-10-01T00:00:00+00:00</published><updated>2021-10-01T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2021-10-01:/blog/2021/10/01/getting-out-of-meeting-hell-employees/</id><summary type="html">&lt;p&gt;A short series on transitioning to distributed work and asynchronous collaboration. This article is on what you can do if you are stuck in meeting hell as a regular employee who isn't in a management role.&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Getting out of Meeting Hell: As a regular employee</title><link href="https://xahteiwi.eu/blog/2021/10/01/getting-out-of-meeting-hell-employees/" rel="alternate"></link><published>2021-10-01T00:00:00+00:00</published><updated>2021-10-01T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-01:/blog/2021/10/01/getting-out-of-meeting-hell-employees/</id><summary type="html">&lt;p&gt;A short series on transitioning to distributed work and asynchronous collaboration. This article is on what you can do if you are stuck in meeting hell as a regular employee who isn't in a management role.&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
 &lt;p&gt;Please have a look at the
-&lt;a href="https://fghaas.github.io/blog/2021/09/30/getting-out-of-meeting-hell/"&gt;introduction&lt;/a&gt; for
+&lt;a href="https://xahteiwi.eu/blog/2021/09/30/getting-out-of-meeting-hell/"&gt;introduction&lt;/a&gt; for
 background, for applicable disclaimers, and for information about
 the specific environments this series talks about.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -3153,10 +3153,10 @@ teams that you can’t reasonably join forces with, I’d argue that you
 just shouldn’t be risking your health. In contrast, if your
 manager&lt;sup id="fnref:direct-manager"&gt;&lt;a class="footnote-ref" href="#fn:direct-manager"&gt;1&lt;/a&gt;&lt;/sup&gt; and a couple of your peers are on your side —
 consider your manager may be in their own
-&lt;a href="https://fghaas.github.io/blog/2021/10/02/getting-out-of-meeting-hell-managers/"&gt;learning&lt;/a&gt; phase
+&lt;a href="https://xahteiwi.eu/blog/2021/10/02/getting-out-of-meeting-hell-managers/"&gt;learning&lt;/a&gt; phase
 about distributed and async collaboration — then things are a lot less
 clean cut, and maybe you’d want to stay on for the ride. Particularly
-so if there's an active, supportive push &lt;a href="https://fghaas.github.io/blog/2021/10/03/getting-out-of-meeting-hell-executives/"&gt;from the
+so if there's an active, supportive push &lt;a href="https://xahteiwi.eu/blog/2021/10/03/getting-out-of-meeting-hell-executives/"&gt;from the
 top&lt;/a&gt; of the
 organization.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Even if&lt;/em&gt; your manager and some of your peers are on your side, I can
@@ -3190,12 +3190,12 @@ work. You don’t want to trade being stuck in meeting hell for
 being in stuck in meeting hell &lt;em&gt;and corporate politics.&lt;/em&gt; &lt;a class="footnote-backref" href="#fnref:direct-manager" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Getting out of Meeting Hell: What this is about</title><link href="https://fghaas.github.io/blog/2021/09/30/getting-out-of-meeting-hell/" rel="alternate"></link><published>2021-09-30T00:00:00+00:00</published><updated>2021-09-30T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2021-09-30:/blog/2021/09/30/getting-out-of-meeting-hell/</id><summary type="html">&lt;p&gt;A short series on transitioning to distributed work and asynchronous collaboration. This article is the introduction.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In 2020, I presented a talk at &lt;a href="https://www.froscon.de"&gt;FrOSCon&lt;/a&gt;
+&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Getting out of Meeting Hell: What this is about</title><link href="https://xahteiwi.eu/blog/2021/09/30/getting-out-of-meeting-hell/" rel="alternate"></link><published>2021-09-30T00:00:00+00:00</published><updated>2021-09-30T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-09-30:/blog/2021/09/30/getting-out-of-meeting-hell/</id><summary type="html">&lt;p&gt;A short series on transitioning to distributed work and asynchronous collaboration. This article is the introduction.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In 2020, I presented a talk at &lt;a href="https://www.froscon.de"&gt;FrOSCon&lt;/a&gt;
 titled &lt;a href="https://media.ccc.de/v/froscon2020-2605-no_we_won_t_have_a_video_call_for_that"&gt;No, we won’t have a video call for that: Communications for
 distributed
 teams.&lt;/a&gt;
 In early 2021 I put together a full-length writeup of that talk, and
-&lt;a href="https://fghaas.github.io/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;published it
+&lt;a href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;published it
 here&lt;/a&gt;. And for no
 apparent reason that article then &lt;a href="https://news.ycombinator.com/item?id=28636536"&gt;made it to the top of Hacker
 News&lt;/a&gt; on one day in
@@ -3295,7 +3295,7 @@ telephone, that was a &lt;em&gt;telephone call&lt;/em&gt;. Now a &lt;em&gt;call&
 phone call, except when explicitly specified as a &lt;em&gt;house call.&lt;/em&gt; &lt;a class="footnote-backref" href="#fnref:in-person-meeting" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>No, We Won’t Have a Video Call for That: Reader Feedback</title><link href="https://fghaas.github.io/resources/presentations/no-we-wont-have-a-video-call-for-that-reader-feedback/" rel="alternate"></link><published>2021-09-26T00:00:00+00:00</published><updated>2021-09-26T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2021-09-26:/resources/presentations/no-we-wont-have-a-video-call-for-that-reader-feedback/</id><summary type="html">&lt;p&gt;Communications in distributed teams: a write-up of my talk from FrOSCon 2020, Cloud Edition.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a short summary of selected reactions to &lt;a href="https://fghaas.github.io/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;the original
+&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>No, We Won’t Have a Video Call for That: Reader Feedback</title><link href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that-reader-feedback/" rel="alternate"></link><published>2021-09-26T00:00:00+00:00</published><updated>2021-09-26T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-09-26:/resources/presentations/no-we-wont-have-a-video-call-for-that-reader-feedback/</id><summary type="html">&lt;p&gt;Communications in distributed teams: a write-up of my talk from FrOSCon 2020, Cloud Edition.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a short summary of selected reactions to &lt;a href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;the original
 article&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;Twitter, 2021-04-10&lt;/h3&gt;
 &lt;p&gt;On Twitter, &lt;a href="https://musings.danlj.org/about/"&gt;Michael K Johnson&lt;/a&gt; made
@@ -3348,12 +3348,12 @@ that rare!) cases where asynchronous communication would be
 worthless.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;— &lt;a href="https://news.ycombinator.com/item?id=28652633"&gt;comment&lt;/a&gt; from &lt;code&gt;PeterisP&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;My blanket disregard is for &lt;em&gt;naked&lt;/em&gt; pings, not for pings in general.&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="Communications"></category><category term="Work"></category></entry><entry><title>Rules are rules</title><link href="https://fghaas.github.io/blog/2021/09/16/rules-are-rules/" rel="alternate"></link><published>2021-09-16T00:00:00+00:00</published><updated>2021-09-16T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2021-09-16:/blog/2021/09/16/rules-are-rules/</id><summary type="html">&lt;p&gt;I have a reputation for being rigid when it comes to communication rules. Here's why I am.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I have a reputation among my colleagues that I am very strict and
+&lt;p&gt;My blanket disregard is for &lt;em&gt;naked&lt;/em&gt; pings, not for pings in general.&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="Communications"></category><category term="Work"></category></entry><entry><title>Rules are rules</title><link href="https://xahteiwi.eu/blog/2021/09/16/rules-are-rules/" rel="alternate"></link><published>2021-09-16T00:00:00+00:00</published><updated>2021-09-16T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-09-16:/blog/2021/09/16/rules-are-rules/</id><summary type="html">&lt;p&gt;I have a reputation for being rigid when it comes to communication rules. Here's why I am.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I have a reputation among my colleagues that I am very strict and
 rigid about the communications rules I follow for myself, and for my
 team. That reputation is entirely deserved, and I am indeed not
 particularly flexible in my strong preference for asynchronous,
 non-interruptive communication methods. I have discussed
-&lt;a href="https://youtu.be/CyzoF7mHEBo"&gt;elsewhere&lt;/a&gt;, and &lt;a href="https://fghaas.github.io/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;at
+&lt;a href="https://youtu.be/CyzoF7mHEBo"&gt;elsewhere&lt;/a&gt;, and &lt;a href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;at
 length&lt;/a&gt;, what
 those are and &lt;em&gt;why&lt;/em&gt; I have that strong preference. But I haven't
 really outlined why I very rarely allow myself, or others if I can
@@ -3433,9 +3433,9 @@ taking your sense of "urgent" with a big pinch of salt.&lt;/p&gt;
 has suggested that I refer to another, much more elaborate article on
 a similar subject: Siderea's &lt;em&gt;&lt;a href="https://siderea.dreamwidth.org/1209794.html"&gt;The Asshole
 Filter&lt;/a&gt;&lt;/em&gt;. I recommend you
-give it a read if you're inclined.&lt;/p&gt;</content><category term="blog"></category><category term="Communications"></category><category term="Work"></category></entry><entry><title>No, We Won’t Have a Video Call for That!</title><link href="https://fghaas.github.io/resources/presentations/no-we-wont-have-a-video-call-for-that/" rel="alternate"></link><published>2020-08-22T00:00:00+00:00</published><updated>2020-08-22T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2020-08-22:/resources/presentations/no-we-wont-have-a-video-call-for-that/</id><summary type="html">&lt;p&gt;Communications in distributed teams: a write-up of my talk from FrOSCon 2020, Cloud Edition.&lt;/p&gt;</summary><content type="html">&lt;p&gt;FrOSCon 2020 was an online event due to the COVID-19 pandemic, and
+give it a read if you're inclined.&lt;/p&gt;</content><category term="blog"></category><category term="Communications"></category><category term="Work"></category></entry><entry><title>No, We Won’t Have a Video Call for That!</title><link href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/" rel="alternate"></link><published>2020-08-22T00:00:00+00:00</published><updated>2020-08-22T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2020-08-22:/resources/presentations/no-we-wont-have-a-video-call-for-that/</id><summary type="html">&lt;p&gt;Communications in distributed teams: a write-up of my talk from FrOSCon 2020, Cloud Edition.&lt;/p&gt;</summary><content type="html">&lt;p&gt;FrOSCon 2020 was an online event due to the COVID-19 pandemic, and
 gave me the opportunity to present an extended and heavily updated
-version of my &lt;a href="https://fghaas.github.io/resources/presentations/devopsdays-tel-aviv-2019/"&gt;DevOpsDays 2019&lt;/a&gt; talk.&lt;/p&gt;
+version of my &lt;a href="https://xahteiwi.eu/resources/presentations/devopsdays-tel-aviv-2019/"&gt;DevOpsDays 2019&lt;/a&gt; talk.&lt;/p&gt;
 &lt;hr/&gt;
 &lt;p&gt;I normally make my talks available as a video, and a slide deck with
 full speaker notes. In this case though, I consider it fitting to
@@ -3634,7 +3634,7 @@ It’s being lazy.&lt;/p&gt;
 &lt;p&gt;It’s a symptom of the worst kind of laziness &lt;em&gt;(not malice!)&lt;/em&gt;: in an
 attempt to communicate quickly and easily, for yourself, you are really
 making things harder for everyone, including yourself.&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -3662,7 +3662,7 @@ ago”, you’ll agree with me here.&lt;/p&gt;
 is to say in relation to &lt;em&gt;other&lt;/em&gt; discussions on the same topic, days
 or weeks earlier or later.&lt;/p&gt;
 &lt;p&gt;Let’s compare that to other communication modes:&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -3693,7 +3693,7 @@ or weeks earlier or later.&lt;/p&gt;
   as with chat, and it’s marginally better at contextualizing
   information than chat (because you get proper threading).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -3740,7 +3740,7 @@ or weeks earlier or later.&lt;/p&gt;
   Likewise, “issue tracker” can mean RT, OTRS, Jira, Taiga, Bugzilla,
   whatever works for you.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -4305,8 +4305,8 @@ don’t lead an ops team.&lt;/p&gt;
 &lt;li&gt;Use less chat.&lt;/li&gt;
 &lt;li&gt;Have fewer meetings.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Write. Things. Down.&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="Communications"></category><category term="Work"></category></entry><entry><title>No, We Won’t Have a Video Call for That: Slides and Recordings</title><link href="https://fghaas.github.io/resources/presentations/no-we-wont-have-a-video-call-for-that-slides-and-recordings/" rel="alternate"></link><published>2020-08-22T00:00:00+00:00</published><updated>2020-08-22T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2020-08-22:/resources/presentations/no-we-wont-have-a-video-call-for-that-slides-and-recordings/</id><summary type="html">&lt;p&gt;These are the slides and recordings of the original talk that
-ultimately became &lt;a href="https://fghaas.github.io/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;this article&lt;/a&gt;.&lt;/p&gt;
+&lt;/ul&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="Communications"></category><category term="Work"></category></entry><entry><title>No, We Won’t Have a Video Call for That: Slides and Recordings</title><link href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that-slides-and-recordings/" rel="alternate"></link><published>2020-08-22T00:00:00+00:00</published><updated>2020-08-22T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2020-08-22:/resources/presentations/no-we-wont-have-a-video-call-for-that-slides-and-recordings/</id><summary type="html">&lt;p&gt;These are the slides and recordings of the original talk that
+ultimately became &lt;a href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;this article&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The talk recording is available from two different sources:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Video and audio in multiple formats, for viewing and download: &lt;a href="https://media.ccc.de/v/froscon2020-2605-no_we_won_t_have_a_video_call_for_that"&gt;CCC
@@ -4315,7 +4315,7 @@ ultimately became &lt;a href="https://fghaas.github.io/resources/presentations/n
 &lt;li&gt;Streaming: &lt;a href="https://youtu.be/NVnci3tyDa4"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;And, as always, you can also review my slides, with all …&lt;/p&gt;</summary><content type="html">&lt;p&gt;These are the slides and recordings of the original talk that
-ultimately became &lt;a href="https://fghaas.github.io/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;this article&lt;/a&gt;.&lt;/p&gt;
+ultimately became &lt;a href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;this article&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The talk recording is available from two different sources:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Video and audio in multiple formats, for viewing and download: &lt;a href="https://media.ccc.de/v/froscon2020-2605-no_we_won_t_have_a_video_call_for_that"&gt;CCC
@@ -4328,7 +4328,7 @@ ultimately became &lt;a href="https://fghaas.github.io/resources/presentations/n
 &lt;li&gt;Rendered slides: &lt;a href="https://fghaas.github.io/froscon2020/"&gt;GitHub
   Pages&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Slide sources (CC-BY-SA): &lt;a href="https://github.com/fghaas/froscon2020"&gt;GitHub&lt;/a&gt; &lt;/li&gt;
-&lt;/ul&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="Communications"></category><category term="Work"></category></entry><entry><title>Paying People</title><link href="https://fghaas.github.io/blog/2020/02/04/paying-people/" rel="alternate"></link><published>2020-02-04T00:00:00+00:00</published><updated>2020-02-04T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2020-02-04:/blog/2020/02/04/paying-people/</id><summary type="html">&lt;p&gt;Paying people equally is straightforward, right? We all agree on that, and then once we’re talking about people living in different countries, we all disagree on what “equal” really means.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In my now almost 10ish years of first running my own company, and then
+&lt;/ul&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="Communications"></category><category term="Work"></category></entry><entry><title>Paying People</title><link href="https://xahteiwi.eu/blog/2020/02/04/paying-people/" rel="alternate"></link><published>2020-02-04T00:00:00+00:00</published><updated>2020-02-04T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2020-02-04:/blog/2020/02/04/paying-people/</id><summary type="html">&lt;p&gt;Paying people equally is straightforward, right? We all agree on that, and then once we’re talking about people living in different countries, we all disagree on what “equal” really means.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In my now almost 10ish years of first running my own company, and then
 managing a team in the company I sold my company to, I have very
 frequently struggled with what’s a “fair” way of paying people. &lt;/p&gt;
 &lt;p&gt;I’ve come to the conclusion that when it comes to hiring distributed,

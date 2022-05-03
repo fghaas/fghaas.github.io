@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>xahteiwi.eu - KVM</title><link>https://fghaas.github.io/</link><description></description><lastBuildDate>Mon, 19 Mar 2012 08:27:00 +0000</lastBuildDate><item><title>Roll Your Own Cloud</title><link>https://fghaas.github.io/resources/presentations/roll-your-own-cloud/</link><description>&lt;p&gt;Tim Serong and I explore the capabilities of KVM, iSCSI, DRBD and Pacemaker to
+<rss version="2.0"><channel><title>xahteiwi.eu - KVM</title><link>https://xahteiwi.eu/</link><description></description><lastBuildDate>Mon, 19 Mar 2012 08:27:00 +0000</lastBuildDate><item><title>Roll Your Own Cloud</title><link>https://xahteiwi.eu/resources/presentations/roll-your-own-cloud/</link><description>&lt;p&gt;Tim Serong and I explore the capabilities of KVM, iSCSI, DRBD and Pacemaker to
 create a fully open-source enterprise cloud.&lt;/p&gt;
 &lt;p&gt;Shot at linux.conf.au 2011 in Brisbane, this is me babbling, and Tim
 live-cartooning to the delight of the audience.&lt;/p&gt;
@@ -7,4 +7,4 @@ live-cartooning to the delight of the audience.&lt;/p&gt;
 &lt;li&gt;Video: &lt;a href="https://youtu.be/NyHJ8Uf03qg"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo …&lt;/code&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Florian Haas</dc:creator><pubDate>Mon, 19 Mar 2012 08:27:00 +0000</pubDate><guid isPermaLink="false">tag:fghaas.github.io,2012-03-19:/resources/presentations/roll-your-own-cloud/</guid><category>presentations</category><category>DRBD</category><category>KVM</category><category>libvirt</category><category>Pacemaker</category></item></channel></rss>
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo …&lt;/code&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Florian Haas</dc:creator><pubDate>Mon, 19 Mar 2012 08:27:00 +0000</pubDate><guid isPermaLink="false">tag:xahteiwi.eu,2012-03-19:/resources/presentations/roll-your-own-cloud/</guid><category>presentations</category><category>DRBD</category><category>KVM</category><category>libvirt</category><category>Pacemaker</category></item></channel></rss>

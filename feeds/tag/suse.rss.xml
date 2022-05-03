@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>xahteiwi.eu - SUSE</title><link>https://fghaas.github.io/</link><description></description><lastBuildDate>Tue, 05 Jul 2016 00:00:00 +0000</lastBuildDate><item><title>Wiping and resetting your SUSE OpenStack Cloud Crowbar configuration</title><link>https://fghaas.github.io/resources/hints-and-kinks/wipe-suse-openstack-cloud-config/</link><description>&lt;p&gt;&lt;strong&gt;Note: This article was originally written for SUSE OpenStack Cloud
+<rss version="2.0"><channel><title>xahteiwi.eu - SUSE</title><link>https://xahteiwi.eu/</link><description></description><lastBuildDate>Tue, 05 Jul 2016 00:00:00 +0000</lastBuildDate><item><title>Wiping and resetting your SUSE OpenStack Cloud Crowbar configuration</title><link>https://xahteiwi.eu/resources/hints-and-kinks/wipe-suse-openstack-cloud-config/</link><description>&lt;p&gt;&lt;strong&gt;Note: This article was originally written for SUSE OpenStack Cloud
 6, and updated for SUSE OpenStack Cloud 7. It may not apply to later
 SUSE OpenStack Cloud releases.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;If you're using &lt;a href="https://www.suse.com/products/suse-openstack-cloud"&gt;SUSE OpenStack
 Cloud&lt;/a&gt;, you may
 want to erase and reinstall your cloud deployment a few times during
-the testing …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Florian Haas</dc:creator><pubDate>Tue, 05 Jul 2016 00:00:00 +0000</pubDate><guid isPermaLink="false">tag:fghaas.github.io,2016-07-05:/resources/hints-and-kinks/wipe-suse-openstack-cloud-config/</guid><category>hints-and-kinks</category><category>OpenStack</category><category>SUSE</category></item></channel></rss>
+the testing …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Florian Haas</dc:creator><pubDate>Tue, 05 Jul 2016 00:00:00 +0000</pubDate><guid isPermaLink="false">tag:xahteiwi.eu,2016-07-05:/resources/hints-and-kinks/wipe-suse-openstack-cloud-config/</guid><category>hints-and-kinks</category><category>OpenStack</category><category>SUSE</category></item></channel></rss>

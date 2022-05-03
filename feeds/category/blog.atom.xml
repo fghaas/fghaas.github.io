@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - blog</title><link href="https://fghaas.github.io/" rel="alternate"></link><link href="https://fghaas.github.io/feeds/category/blog.atom.xml" rel="self"></link><id>https://fghaas.github.io/</id><updated>2022-01-29T00:00:00+00:00</updated><entry><title>The Review Review</title><link href="https://fghaas.github.io/./blog/2022/01/29/review-review/" rel="alternate"></link><published>2022-01-29T00:00:00+00:00</published><updated>2022-01-29T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2022-01-29:/./blog/2022/01/29/review-review/</id><summary type="html">&lt;p&gt;Musings on source code management, code review, testing, deployment, and collaboration culture.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I wanted to share a few thoughts on something I consider a rather
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - blog</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/category/blog.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-01-29T00:00:00+00:00</updated><entry><title>The Review Review</title><link href="https://xahteiwi.eu/./blog/2022/01/29/review-review/" rel="alternate"></link><published>2022-01-29T00:00:00+00:00</published><updated>2022-01-29T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-01-29:/./blog/2022/01/29/review-review/</id><summary type="html">&lt;p&gt;Musings on source code management, code review, testing, deployment, and collaboration culture.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I wanted to share a few thoughts on something I consider a rather
 important topic in our industry: code review and CI/CD tools, and how
 they relate.&lt;/p&gt;
 &lt;p&gt;This means that I'm talking about&lt;/p&gt;
@@ -14,7 +14,7 @@ they relate.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;In case it’s not obvious, that means I’m talking about a large
 fraction of the software engineering cycle. Not all of it; the part
-involving “fooling around” (&lt;a href="https://fghaas.github.io/blog/2021/11/21/creativity/"&gt;creative play&lt;/a&gt;)
+involving “fooling around” (&lt;a href="https://xahteiwi.eu/blog/2021/11/21/creativity/"&gt;creative play&lt;/a&gt;)
 is perhaps excluded — but substantially everything where people can be
 said to be “developing” in a software engineering organization is
 encompassed in these things.&lt;/p&gt;
@@ -69,7 +69,7 @@ MD’s responsibility.&lt;/p&gt;
 &lt;p&gt;Of course, that person may delegate some of the &lt;em&gt;tasks&lt;/em&gt; and details of
 running your source code management and code review and CI/CD
 platform, but &lt;em&gt;responsibility&lt;/em&gt; stays with them.&lt;/p&gt;
-&lt;p&gt;And that responsibility requires both an understanding &lt;a href="https://fghaas.github.io/blog/2019/04/21/non-technical/"&gt;of the
+&lt;p&gt;And that responsibility requires both an understanding &lt;a href="https://xahteiwi.eu/blog/2019/04/21/non-technical/"&gt;of the
 technology itself&lt;/a&gt;, &lt;em&gt;and&lt;/em&gt; an understanding
 of how it interacts with your engineering culture. A &lt;em&gt;profound&lt;/em&gt;
 understanding. &lt;/p&gt;
@@ -382,7 +382,7 @@ depends on your priorities. And I’ll give you this from four angles.&lt;/p&gt;
   — meaning using tools that they’re most likely already familiar with
   — GitHub is your platform of choice.&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content><category term="blog"></category><category term="Work"></category><category term="CI"></category><category term="Gerrit"></category><category term="GitLab"></category><category term="GitHub"></category><category term="Zuul"></category></entry><entry><title>Scaling the flat organization</title><link href="https://fghaas.github.io/blog/2022/01/16/flat-org-scaling/" rel="alternate"></link><published>2022-01-16T00:00:00+00:00</published><updated>2022-01-16T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2022-01-16:/blog/2022/01/16/flat-org-scaling/</id><summary type="html">&lt;p&gt;“We need a flat organizational structure in order to scale.” Or do we, really?&lt;/p&gt;</summary><content type="html">&lt;p&gt;There’s a common trope in management that goes something like “in
+&lt;/ul&gt;</content><category term="blog"></category><category term="Work"></category><category term="CI"></category><category term="Gerrit"></category><category term="GitLab"></category><category term="GitHub"></category><category term="Zuul"></category></entry><entry><title>Scaling the flat organization</title><link href="https://xahteiwi.eu/blog/2022/01/16/flat-org-scaling/" rel="alternate"></link><published>2022-01-16T00:00:00+00:00</published><updated>2022-01-16T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-01-16:/blog/2022/01/16/flat-org-scaling/</id><summary type="html">&lt;p&gt;“We need a flat organizational structure in order to scale.” Or do we, really?&lt;/p&gt;</summary><content type="html">&lt;p&gt;There’s a common trope in management that goes something like “in
 order to better scale the organization as we grow, we need to keep it
 flat.” The thrust of the argument is that as the organization grows to
 meet customer and demand growth (and with it, growth in head count),
@@ -547,7 +547,7 @@ planned.&lt;/p&gt;
 &lt;p&gt;So Alex, being a good CEO, opens some spread sheet software and
 creates this handy table that simply plugs in values for &lt;span class="math"&gt;\(x\)&lt;/span&gt; and &lt;span class="math"&gt;\(y\)&lt;/span&gt;,
 with &lt;span class="math"&gt;\(x\)&lt;/span&gt; (width) in columns and &lt;span class="math"&gt;\(y\)&lt;/span&gt; (depth) in rows.&lt;sup id="fnref:table"&gt;&lt;a class="footnote-ref" href="#fn:table"&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -771,7 +771,7 @@ interjects that Alex is missing a point, namely all the managers that
 the company will now no longer need, and the cost savings thus
 generated.&lt;/p&gt;
 &lt;p&gt;So Alex looks at the table again (width in columns, depth in rows):&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -960,7 +960,7 @@ cell &lt;em&gt;directly above it&lt;/em&gt; will contain the total number of man
 again, but considers the number of managers proportional to the number
 of people in the company, a pattern quickly emerges (again, width
 is in columns, depth is in rows):&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -1246,11 +1246,11 @@ expression as &lt;span class="math"&gt;\(y\)&lt;/span&gt; goes to infinity:
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Voice messages</title><link href="https://fghaas.github.io/blog/2021/12/05/voice-messages/" rel="alternate"></link><published>2021-12-05T00:00:00+00:00</published><updated>2021-12-05T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2021-12-05:/blog/2021/12/05/voice-messages/</id><summary type="html">&lt;p&gt;Apparently, some people think you should replace professional textual communications with voice messaging. Here’s why I think that that’s a bad idea.&lt;/p&gt;</summary><content type="html">&lt;p&gt;As of late, I've noticed that when people share one of my articles on
+&lt;/script&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Voice messages</title><link href="https://xahteiwi.eu/blog/2021/12/05/voice-messages/" rel="alternate"></link><published>2021-12-05T00:00:00+00:00</published><updated>2021-12-05T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-12-05:/blog/2021/12/05/voice-messages/</id><summary type="html">&lt;p&gt;Apparently, some people think you should replace professional textual communications with voice messaging. Here’s why I think that that’s a bad idea.&lt;/p&gt;</summary><content type="html">&lt;p&gt;As of late, I've noticed that when people share one of my articles on
 asynchronous communications on Twitter (particularly any from the
-&lt;a href="https://fghaas.github.io/blog/2021/09/30/getting-out-of-meeting-hell/"&gt;Getting out of Meeting
+&lt;a href="https://xahteiwi.eu/blog/2021/09/30/getting-out-of-meeting-hell/"&gt;Getting out of Meeting
 Hell&lt;/a&gt; series, or the one on
-&lt;a href="https://fghaas.github.io/blog/2021/10/27/this-meeting-should-have-been-an-email/"&gt;meetings that should have been an
+&lt;a href="https://xahteiwi.eu/blog/2021/10/27/this-meeting-should-have-been-an-email/"&gt;meetings that should have been an
 email&lt;/a&gt;), there's
 a reply from a brand account that likes to plug/advertise their
 service. That service recommends that synchronous meetings be replaced
@@ -1342,7 +1342,7 @@ depends largely on the average number of syllables per word in
 that language. &lt;a class="footnote-backref" href="#fnref:speech-tempo" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category><category term="Accessibility"></category></entry><entry><title>Creativity: How we lost it, why that’s bad, and how we get it back</title><link href="https://fghaas.github.io/blog/2021/11/21/creativity/" rel="alternate"></link><published>2021-11-21T00:00:00+00:00</published><updated>2021-11-21T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2021-11-21:/blog/2021/11/21/creativity/</id><summary type="html">&lt;p&gt;A summary of how I think we ended up where we are right now, and what we can do to get moving again.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Right now, it’s easy to open a news site and come to the conclusion
+&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category><category term="Accessibility"></category></entry><entry><title>Creativity: How we lost it, why that’s bad, and how we get it back</title><link href="https://xahteiwi.eu/blog/2021/11/21/creativity/" rel="alternate"></link><published>2021-11-21T00:00:00+00:00</published><updated>2021-11-21T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-11-21:/blog/2021/11/21/creativity/</id><summary type="html">&lt;p&gt;A summary of how I think we ended up where we are right now, and what we can do to get moving again.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Right now, it’s easy to open a news site and come to the conclusion
 that the world as we know it is well and truly fucked. It doesn’t
 matter if you’re looking at Covid response, or inaction on climate
 change, or corruption, or communications surveillance: it increasingly
@@ -1499,7 +1499,7 @@ followed by the exasperated question, “so what do you recommend?” Or,
 worse, “what’s the right way?”&lt;/p&gt;
 &lt;p&gt;You can probably guess which category of answers was more likely to
 come from managers — or “leaders”, as such people like to be called
-in a &lt;a href="https://fghaas.github.io/blog/2019/04/21/non-technical/"&gt;gross exaggeration of their
+in a &lt;a href="https://xahteiwi.eu/blog/2019/04/21/non-technical/"&gt;gross exaggeration of their
 capabilities&lt;/a&gt;.&lt;/p&gt;
 &lt;hr/&gt;
 &lt;p&gt;And now imagine someone having gone through a conventional primary and
@@ -1641,7 +1641,7 @@ with managers who take being signed into a chat (and thereby
 &lt;em&gt;constantly&lt;/em&gt; listening for interruptions) as a measure of being
 “active”, so much so that they &lt;a href="https://twitter.com/pleia2/status/1456629767743016966"&gt;end up tracking metrics for
 it&lt;/a&gt;, and of
-course also &lt;a href="https://fghaas.github.io/blog/2021/11/14/meaningless-metrics-treacherous-targets/"&gt;making it a
+course also &lt;a href="https://xahteiwi.eu/blog/2021/11/14/meaningless-metrics-treacherous-targets/"&gt;making it a
 target&lt;/a&gt; they
 call “engagement” or some other abomination.&lt;/p&gt;
 &lt;p&gt;Organizations that do that are at risk of constantly shutting down
@@ -1667,7 +1667,7 @@ creative play, and innovation in my younger kids’ education than I did
 in my older ones’.&lt;/p&gt;
 &lt;p&gt;And then, there’s the big push towards asynchronous distributed work —
 where obviously the &lt;em&gt;asynchronous&lt;/em&gt; part is the bit that matters. Sure,
-&lt;a href="https://fghaas.github.io/blog/2021/10/23/make-my-company-distributed/"&gt;companies suffering from &lt;em&gt;offissification&lt;/em&gt;&lt;/a&gt;
+&lt;a href="https://xahteiwi.eu/blog/2021/10/23/make-my-company-distributed/"&gt;companies suffering from &lt;em&gt;offissification&lt;/em&gt;&lt;/a&gt;
 still exist, but for a while, &lt;a href="https://en.wikipedia.org/wiki/Dodo"&gt;so did
 dodos&lt;/a&gt;. But an ever-increasing
 share of humanity is beginning to understand what it’s like when
@@ -1675,10 +1675,10 @@ you’re no longer shackled to seventeen Slack channels you constantly
 need to watch, when you can take a walk in the middle of the day
 because you know it’s OK to push something off for an hour to clear
 your head and come up with an idea, and when instead of spending an
-hour in a meeting &lt;a href="https://fghaas.github.io/blog/2021/10/27/this-meeting-should-have-been-an-email/"&gt;you can spend 5 minutes reading a memo and use the
+hour in a meeting &lt;a href="https://xahteiwi.eu/blog/2021/10/27/this-meeting-should-have-been-an-email/"&gt;you can spend 5 minutes reading a memo and use the
 other 55 minutes for
 thinking&lt;/a&gt;.  And
-that’s where things get interesting.&lt;/p&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Meaningless Metrics, Treacherous Targets</title><link href="https://fghaas.github.io/blog/2021/11/14/meaningless-metrics-treacherous-targets/" rel="alternate"></link><published>2021-11-14T00:00:00+00:00</published><updated>2021-11-14T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2021-11-14:/blog/2021/11/14/meaningless-metrics-treacherous-targets/</id><summary type="html">&lt;p&gt;A quick introduction to Goodhart, Strathern, Campbell, Yankelovich, and McNamara.&lt;/p&gt;</summary><content type="html">&lt;p&gt;A common feature of organizations in the software technology industry
+that’s where things get interesting.&lt;/p&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Meaningless Metrics, Treacherous Targets</title><link href="https://xahteiwi.eu/blog/2021/11/14/meaningless-metrics-treacherous-targets/" rel="alternate"></link><published>2021-11-14T00:00:00+00:00</published><updated>2021-11-14T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-11-14:/blog/2021/11/14/meaningless-metrics-treacherous-targets/</id><summary type="html">&lt;p&gt;A quick introduction to Goodhart, Strathern, Campbell, Yankelovich, and McNamara.&lt;/p&gt;</summary><content type="html">&lt;p&gt;A common feature of organizations in the software technology industry
 (but certainly not &lt;em&gt;only&lt;/em&gt; in that industry) is their fixation on
 metrics, measurements, and quantifiers. I understand that this is
 frequently done and advocated for in the spirit of making management
@@ -2180,7 +2180,7 @@ metric system is nonzero. But once you’ve got it set up, the cost
 of &lt;em&gt;adding a new metric&lt;/em&gt; should be substantially zero. &lt;a class="footnote-backref" href="#fnref:marginal" title="Jump back to footnote 12 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Warnock’s Dilemma, Objections, and Acknowledgements</title><link href="https://fghaas.github.io/blog/2021/10/30/warnock-dilemma/" rel="alternate"></link><published>2021-10-30T00:00:00+00:00</published><updated>2021-10-30T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2021-10-30:/blog/2021/10/30/warnock-dilemma/</id><summary type="html">&lt;p&gt;“Warnock’s Dilemma” is a classic feature of distributed, asynchronous, online communications. You can’t avoid it, you can’t work around it, but you can deal with it with two simple changes to your communicative behavior.&lt;/p&gt;</summary><content type="html">&lt;p&gt;People skeptical of distributed, asynchronous, written communications
+&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Warnock’s Dilemma, Objections, and Acknowledgements</title><link href="https://xahteiwi.eu/blog/2021/10/30/warnock-dilemma/" rel="alternate"></link><published>2021-10-30T00:00:00+00:00</published><updated>2021-10-30T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-30:/blog/2021/10/30/warnock-dilemma/</id><summary type="html">&lt;p&gt;“Warnock’s Dilemma” is a classic feature of distributed, asynchronous, online communications. You can’t avoid it, you can’t work around it, but you can deal with it with two simple changes to your communicative behavior.&lt;/p&gt;</summary><content type="html">&lt;p&gt;People skeptical of distributed, asynchronous, written communications
 sometimes make they understandable objection that it is often
 difficult to interpret the reactions, specifically the &lt;em&gt;absence of&lt;/em&gt;
 reactions, to written online communications. &lt;/p&gt;
@@ -2236,7 +2236,7 @@ change&lt;/a&gt;”,
 perl.bootstrap mailing list, 2000-08-07&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;In asynchronous and distributed work communications, we have much the
-same issue. The beautifully crafted &lt;a href="https://fghaas.github.io/blog/2021/10/27/this-meeting-should-have-been-an-email/"&gt;five-paragraph
+same issue. The beautifully crafted &lt;a href="https://xahteiwi.eu/blog/2021/10/27/this-meeting-should-have-been-an-email/"&gt;five-paragraph
 briefing&lt;/a&gt; that
 you sent out this morning may have been considered manna from heaven
 by your recipients (if you’re a manager, your recipients are usually
@@ -2319,7 +2319,7 @@ originator, not by correctness or factual merit. &lt;a class="footnote-backref"
 guidelines. You don’t have something like that? Write them. &lt;a class="footnote-backref" href="#fnref:guidelines" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>This Meeting Should Have Been an Email</title><link href="https://fghaas.github.io/blog/2021/10/27/this-meeting-should-have-been-an-email/" rel="alternate"></link><published>2021-10-27T00:00:00+00:00</published><updated>2021-10-27T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2021-10-27:/blog/2021/10/27/this-meeting-should-have-been-an-email/</id><summary type="html">&lt;p&gt;If you believe that it’s just a silly joke or an overused trope, please read this.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Fellow managers, there is an ongoing trope in just about any software
+&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>This Meeting Should Have Been an Email</title><link href="https://xahteiwi.eu/blog/2021/10/27/this-meeting-should-have-been-an-email/" rel="alternate"></link><published>2021-10-27T00:00:00+00:00</published><updated>2021-10-27T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-27:/blog/2021/10/27/this-meeting-should-have-been-an-email/</id><summary type="html">&lt;p&gt;If you believe that it’s just a silly joke or an overused trope, please read this.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Fellow managers, there is an ongoing trope in just about any software
 technology or knowledge based organization (and probably others, too)
 that goes like this:&lt;/p&gt;
 &lt;blockquote&gt;
@@ -2422,7 +2422,7 @@ dramatically so for you (the writer) as for your erstwhile attendees
 order-of-magnitude range, see above, should make your heart jump with
 joy.)&lt;/p&gt;
 &lt;h2&gt;OK but how? I don’t know where to start!&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://fghaas.github.io/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;I’ve written about this
+&lt;p&gt;&lt;a href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;I’ve written about this
 before&lt;/a&gt;, but I’d
 like to come back to this again: if you’re looking for guidelines on
 structuring your writing for what you would otherwise communicate in
@@ -2494,9 +2494,9 @@ list. It fails the “formulate complex thoughts and reasoning”
 test. &lt;a class="footnote-backref" href="#fnref:chat" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Please, Make My Company Distributed!</title><link href="https://fghaas.github.io/blog/2021/10/23/make-my-company-distributed/" rel="alternate"></link><published>2021-10-23T00:00:00+00:00</published><updated>2021-10-23T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2021-10-23:/blog/2021/10/23/make-my-company-distributed/</id><summary type="html">&lt;p&gt;Turning an organization into one that works in a distributed and asynchronous fashion is far from trivial.&lt;/p&gt;</summary><content type="html">&lt;p&gt;After &lt;a href="https://fghaas.github.io/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;No, We Won’t Have a Video Call for
+&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Please, Make My Company Distributed!</title><link href="https://xahteiwi.eu/blog/2021/10/23/make-my-company-distributed/" rel="alternate"></link><published>2021-10-23T00:00:00+00:00</published><updated>2021-10-23T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-23:/blog/2021/10/23/make-my-company-distributed/</id><summary type="html">&lt;p&gt;Turning an organization into one that works in a distributed and asynchronous fashion is far from trivial.&lt;/p&gt;</summary><content type="html">&lt;p&gt;After &lt;a href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;No, We Won’t Have a Video Call for
 That&lt;/a&gt;, which
-covered how productive distributed teams operate, and the &lt;a href="https://fghaas.github.io/blog/2021/09/30/getting-out-of-meeting-hell/"&gt;Getting out
+covered how productive distributed teams operate, and the &lt;a href="https://xahteiwi.eu/blog/2021/09/30/getting-out-of-meeting-hell/"&gt;Getting out
 of Meeting Hell&lt;/a&gt; series,
 which focused on how &lt;em&gt;you&lt;/em&gt; as an individual can get to being a member
 of a functional distributed team, let’s zoom out a bit.&lt;/p&gt;
@@ -2556,7 +2556,7 @@ couple of laps ahead of you.&lt;/p&gt;
 &lt;p&gt;But your company hasn’t even &lt;em&gt;started&lt;/em&gt; the change to distributed and
 async work? You spent the last nearly two years in unfettered meeting
 hell?  Your bosses think you’ll now go “back to normal”, because an
-office is the only “normal” they know? &lt;a href="https://fghaas.github.io/blog/2021/10/01/getting-out-of-meeting-hell-employees/"&gt;You know what to
+office is the only “normal” they know? &lt;a href="https://xahteiwi.eu/blog/2021/10/01/getting-out-of-meeting-hell-employees/"&gt;You know what to
 do.&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Hiring people to help: aye, there’s the rub.&lt;/h2&gt;
 &lt;p&gt;Now on to the idea of hiring people to help. There’s two ways to look
@@ -2670,9 +2670,9 @@ no-brainer, you should consider that top management &lt;em&gt;are people,&lt;/em
 and people don’t always act rationally. &lt;a class="footnote-backref" href="#fnref:rational" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Getting out of Meeting Hell: As a top-level executive</title><link href="https://fghaas.github.io/blog/2021/10/03/getting-out-of-meeting-hell-executives/" rel="alternate"></link><published>2021-10-03T00:00:00+00:00</published><updated>2021-10-03T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2021-10-03:/blog/2021/10/03/getting-out-of-meeting-hell-executives/</id><summary type="html">&lt;p&gt;A short series on transitioning to distributed work and asynchronous collaboration. This article is on what you can do if you are stuck in meeting hell as a top-level executive, such as a CEO, Managing Director, or Executive Director.&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Getting out of Meeting Hell: As a top-level executive</title><link href="https://xahteiwi.eu/blog/2021/10/03/getting-out-of-meeting-hell-executives/" rel="alternate"></link><published>2021-10-03T00:00:00+00:00</published><updated>2021-10-03T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-03:/blog/2021/10/03/getting-out-of-meeting-hell-executives/</id><summary type="html">&lt;p&gt;A short series on transitioning to distributed work and asynchronous collaboration. This article is on what you can do if you are stuck in meeting hell as a top-level executive, such as a CEO, Managing Director, or Executive Director.&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
 &lt;p&gt;Please have a look at the
-&lt;a href="https://fghaas.github.io/blog/2021/09/30/getting-out-of-meeting-hell/"&gt;introduction&lt;/a&gt; for
+&lt;a href="https://xahteiwi.eu/blog/2021/09/30/getting-out-of-meeting-hell/"&gt;introduction&lt;/a&gt; for
 background, for applicable disclaimers, and for information about
 the specific environments this series talks about.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -2730,7 +2730,7 @@ turning one that &lt;em&gt;isn't&lt;/em&gt;, into one that is.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Take no shortcuts. If you're setting up communications rules for
-  everyone, live by them yourself. &lt;a href="https://fghaas.github.io/blog/2021/09/16/rules-are-rules/"&gt;There's a bad, hidden cost in
+  everyone, live by them yourself. &lt;a href="https://xahteiwi.eu/blog/2021/09/16/rules-are-rules/"&gt;There's a bad, hidden cost in
   skirting around them.&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -2791,7 +2791,7 @@ turning one that &lt;em&gt;isn't&lt;/em&gt;, into one that is.&lt;/p&gt;
   company whose sole chance at long-term success is to pull &lt;em&gt;all&lt;/em&gt;
   corporate communications into synchronous chat. Yes, these judgments
   require technical expertise. If this is something you don't have
-  because you consider yourself a "non-technical" person, &lt;a href="https://fghaas.github.io/blog/2019/04/21/non-technical/"&gt;I have
+  because you consider yourself a "non-technical" person, &lt;a href="https://xahteiwi.eu/blog/2019/04/21/non-technical/"&gt;I have
   something to read for you&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -2833,10 +2833,10 @@ with the unreformed meeting addict, things can go three ways:&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;As a final thought, &lt;em&gt;please&lt;/em&gt; take a moment to put yourself in other
 people's shoes, and understand what options &lt;em&gt;they&lt;/em&gt; have with being
-stuck in meeting hell. Whether it's your &lt;a href="https://fghaas.github.io/blog/2021/10/02/getting-out-of-meeting-hell-managers/"&gt;line
+stuck in meeting hell. Whether it's your &lt;a href="https://xahteiwi.eu/blog/2021/10/02/getting-out-of-meeting-hell-managers/"&gt;line
 managers&lt;/a&gt; or your
 regular
-&lt;a href="https://fghaas.github.io/blog/2021/10/01/getting-out-of-meeting-hell-employees/"&gt;employees&lt;/a&gt;, they
+&lt;a href="https://xahteiwi.eu/blog/2021/10/01/getting-out-of-meeting-hell-employees/"&gt;employees&lt;/a&gt;, they
 both have the option to just chuck in their notice and leave, and
 leave they will, if they're sufficiently deep in meeting hell. They
 have plenty of opportunities.&lt;/p&gt;
@@ -2849,9 +2849,9 @@ people reading this will have opinions, air their grievances, and
 share feedback. Those usually give me good thinking material to
 dwell on, so I’ll probably have an additional installment based on
 reader feedback at some point.&lt;/p&gt;
-&lt;/blockquote&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Getting out of Meeting Hell: As a mid-level manager</title><link href="https://fghaas.github.io/blog/2021/10/02/getting-out-of-meeting-hell-managers/" rel="alternate"></link><published>2021-10-02T00:00:00+00:00</published><updated>2021-10-02T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2021-10-02:/blog/2021/10/02/getting-out-of-meeting-hell-managers/</id><summary type="html">&lt;p&gt;A short series on transitioning to distributed work and asynchronous collaboration. This article is on what you can do if you are stuck in meeting hell as a mid-level manager.&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;/blockquote&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Getting out of Meeting Hell: As a mid-level manager</title><link href="https://xahteiwi.eu/blog/2021/10/02/getting-out-of-meeting-hell-managers/" rel="alternate"></link><published>2021-10-02T00:00:00+00:00</published><updated>2021-10-02T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-02:/blog/2021/10/02/getting-out-of-meeting-hell-managers/</id><summary type="html">&lt;p&gt;A short series on transitioning to distributed work and asynchronous collaboration. This article is on what you can do if you are stuck in meeting hell as a mid-level manager.&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
 &lt;p&gt;Please have a look at the
-&lt;a href="https://fghaas.github.io/blog/2021/09/30/getting-out-of-meeting-hell/"&gt;introduction&lt;/a&gt; for
+&lt;a href="https://xahteiwi.eu/blog/2021/09/30/getting-out-of-meeting-hell/"&gt;introduction&lt;/a&gt; for
 background, for applicable disclaimers, and for information about
 the specific environments this series talks about.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -2868,7 +2868,7 @@ in meeting hell in two ways:&lt;/p&gt;
 &lt;/ol&gt;
 &lt;p&gt;And I’ll cover both of those angles, but before I do, I should note
 that you, of course, have one option to improve your personal
-situation that is &lt;a href="https://fghaas.github.io/blog/2021/10/01/getting-out-of-meeting-hell-employees/"&gt;also available to your
+situation that is &lt;a href="https://xahteiwi.eu/blog/2021/10/01/getting-out-of-meeting-hell-employees/"&gt;also available to your
 reports&lt;/a&gt;:
 &lt;strong&gt;Leave.&lt;/strong&gt; It’s not the only option you have, and it may not be your
 &lt;em&gt;first&lt;/em&gt; option, but an option it is. And, for your personal
@@ -2902,7 +2902,7 @@ more than for non-manager employees. You have to make a conscious
 effort to learn how distributed work works, and how you manage a
 distributed team.&lt;/p&gt;
 &lt;p&gt;But, chances are that you won’t be limited to watching talks or
-listening to podcasts or reading articles (you might have &lt;a href="https://fghaas.github.io/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;read this
+listening to podcasts or reading articles (you might have &lt;a href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;read this
 one&lt;/a&gt; before you
 landed here). Instead, it’s not unlikely that if you’re doing software
 or technology development, some of the people on your team are already
@@ -3017,7 +3017,7 @@ want to drop something like “we did this on one meeting a week.”&lt;/p&gt;
   these won’t need to be autocratically decreed, because they just
   make sense and people tend to intuitively agree on them (like the
   just-mentioned &lt;em&gt;URGENT&lt;/em&gt; marker and the circumstances under which to
-  use them). Then, make sure you &lt;a href="https://fghaas.github.io/blog/2021/09/16/rules-are-rules/"&gt;stick to
+  use them). Then, make sure you &lt;a href="https://xahteiwi.eu/blog/2021/09/16/rules-are-rules/"&gt;stick to
   them&lt;/a&gt;. Stick to them yourself, and
   correct others who break them.&lt;sup id="fnref:asshole-filter"&gt;&lt;a class="footnote-ref" href="#fn:asshole-filter"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;/li&gt;
@@ -3027,11 +3027,11 @@ want to drop something like “we did this on one meeting a week.”&lt;/p&gt;
 while swimming against the company tide, at least temporarily. If they
 know you're actively striving to make their work situation better, more
 productive &lt;em&gt;and healthier&lt;/em&gt; it may well make the difference between
-&lt;a href="https://fghaas.github.io/blog/2021/10/01/getting-out-of-meeting-hell-employees/"&gt;them leaving&lt;/a&gt; and
+&lt;a href="https://xahteiwi.eu/blog/2021/10/01/getting-out-of-meeting-hell-employees/"&gt;them leaving&lt;/a&gt; and
 staying on board.&lt;/p&gt;
 &lt;p&gt;Finally, keep an eye on corporate policy and the messages you get from
 company leadership. If they're obviously stuck in 1995, you might as
-well go and update your CV. If the people at the top do &lt;a href="https://fghaas.github.io/blog/2021/10/03/getting-out-of-meeting-hell-executives/"&gt;make an
+well go and update your CV. If the people at the top do &lt;a href="https://xahteiwi.eu/blog/2021/10/03/getting-out-of-meeting-hell-executives/"&gt;make an
 effort to implement distributed and async friendly
 policies&lt;/a&gt;,
 however, then things may not change overnight, but there’s hope that
@@ -3058,9 +3058,9 @@ urgent by default. &lt;a class="footnote-backref" href="#fnref:not-urgent-by-de
   jerks&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:asshole-filter" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Getting out of Meeting Hell: As a regular employee</title><link href="https://fghaas.github.io/blog/2021/10/01/getting-out-of-meeting-hell-employees/" rel="alternate"></link><published>2021-10-01T00:00:00+00:00</published><updated>2021-10-01T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2021-10-01:/blog/2021/10/01/getting-out-of-meeting-hell-employees/</id><summary type="html">&lt;p&gt;A short series on transitioning to distributed work and asynchronous collaboration. This article is on what you can do if you are stuck in meeting hell as a regular employee who isn't in a management role.&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Getting out of Meeting Hell: As a regular employee</title><link href="https://xahteiwi.eu/blog/2021/10/01/getting-out-of-meeting-hell-employees/" rel="alternate"></link><published>2021-10-01T00:00:00+00:00</published><updated>2021-10-01T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-01:/blog/2021/10/01/getting-out-of-meeting-hell-employees/</id><summary type="html">&lt;p&gt;A short series on transitioning to distributed work and asynchronous collaboration. This article is on what you can do if you are stuck in meeting hell as a regular employee who isn't in a management role.&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
 &lt;p&gt;Please have a look at the
-&lt;a href="https://fghaas.github.io/blog/2021/09/30/getting-out-of-meeting-hell/"&gt;introduction&lt;/a&gt; for
+&lt;a href="https://xahteiwi.eu/blog/2021/09/30/getting-out-of-meeting-hell/"&gt;introduction&lt;/a&gt; for
 background, for applicable disclaimers, and for information about
 the specific environments this series talks about.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -3123,10 +3123,10 @@ teams that you can’t reasonably join forces with, I’d argue that you
 just shouldn’t be risking your health. In contrast, if your
 manager&lt;sup id="fnref:direct-manager"&gt;&lt;a class="footnote-ref" href="#fn:direct-manager"&gt;1&lt;/a&gt;&lt;/sup&gt; and a couple of your peers are on your side —
 consider your manager may be in their own
-&lt;a href="https://fghaas.github.io/blog/2021/10/02/getting-out-of-meeting-hell-managers/"&gt;learning&lt;/a&gt; phase
+&lt;a href="https://xahteiwi.eu/blog/2021/10/02/getting-out-of-meeting-hell-managers/"&gt;learning&lt;/a&gt; phase
 about distributed and async collaboration — then things are a lot less
 clean cut, and maybe you’d want to stay on for the ride. Particularly
-so if there's an active, supportive push &lt;a href="https://fghaas.github.io/blog/2021/10/03/getting-out-of-meeting-hell-executives/"&gt;from the
+so if there's an active, supportive push &lt;a href="https://xahteiwi.eu/blog/2021/10/03/getting-out-of-meeting-hell-executives/"&gt;from the
 top&lt;/a&gt; of the
 organization.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Even if&lt;/em&gt; your manager and some of your peers are on your side, I can
@@ -3160,12 +3160,12 @@ work. You don’t want to trade being stuck in meeting hell for
 being in stuck in meeting hell &lt;em&gt;and corporate politics.&lt;/em&gt; &lt;a class="footnote-backref" href="#fnref:direct-manager" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Getting out of Meeting Hell: What this is about</title><link href="https://fghaas.github.io/blog/2021/09/30/getting-out-of-meeting-hell/" rel="alternate"></link><published>2021-09-30T00:00:00+00:00</published><updated>2021-09-30T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2021-09-30:/blog/2021/09/30/getting-out-of-meeting-hell/</id><summary type="html">&lt;p&gt;A short series on transitioning to distributed work and asynchronous collaboration. This article is the introduction.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In 2020, I presented a talk at &lt;a href="https://www.froscon.de"&gt;FrOSCon&lt;/a&gt;
+&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Getting out of Meeting Hell: What this is about</title><link href="https://xahteiwi.eu/blog/2021/09/30/getting-out-of-meeting-hell/" rel="alternate"></link><published>2021-09-30T00:00:00+00:00</published><updated>2021-09-30T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-09-30:/blog/2021/09/30/getting-out-of-meeting-hell/</id><summary type="html">&lt;p&gt;A short series on transitioning to distributed work and asynchronous collaboration. This article is the introduction.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In 2020, I presented a talk at &lt;a href="https://www.froscon.de"&gt;FrOSCon&lt;/a&gt;
 titled &lt;a href="https://media.ccc.de/v/froscon2020-2605-no_we_won_t_have_a_video_call_for_that"&gt;No, we won’t have a video call for that: Communications for
 distributed
 teams.&lt;/a&gt;
 In early 2021 I put together a full-length writeup of that talk, and
-&lt;a href="https://fghaas.github.io/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;published it
+&lt;a href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;published it
 here&lt;/a&gt;. And for no
 apparent reason that article then &lt;a href="https://news.ycombinator.com/item?id=28636536"&gt;made it to the top of Hacker
 News&lt;/a&gt; on one day in
@@ -3265,12 +3265,12 @@ telephone, that was a &lt;em&gt;telephone call&lt;/em&gt;. Now a &lt;em&gt;call&
 phone call, except when explicitly specified as a &lt;em&gt;house call.&lt;/em&gt; &lt;a class="footnote-backref" href="#fnref:in-person-meeting" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Rules are rules</title><link href="https://fghaas.github.io/blog/2021/09/16/rules-are-rules/" rel="alternate"></link><published>2021-09-16T00:00:00+00:00</published><updated>2021-09-16T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2021-09-16:/blog/2021/09/16/rules-are-rules/</id><summary type="html">&lt;p&gt;I have a reputation for being rigid when it comes to communication rules. Here's why I am.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I have a reputation among my colleagues that I am very strict and
+&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Rules are rules</title><link href="https://xahteiwi.eu/blog/2021/09/16/rules-are-rules/" rel="alternate"></link><published>2021-09-16T00:00:00+00:00</published><updated>2021-09-16T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-09-16:/blog/2021/09/16/rules-are-rules/</id><summary type="html">&lt;p&gt;I have a reputation for being rigid when it comes to communication rules. Here's why I am.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I have a reputation among my colleagues that I am very strict and
 rigid about the communications rules I follow for myself, and for my
 team. That reputation is entirely deserved, and I am indeed not
 particularly flexible in my strong preference for asynchronous,
 non-interruptive communication methods. I have discussed
-&lt;a href="https://youtu.be/CyzoF7mHEBo"&gt;elsewhere&lt;/a&gt;, and &lt;a href="https://fghaas.github.io/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;at
+&lt;a href="https://youtu.be/CyzoF7mHEBo"&gt;elsewhere&lt;/a&gt;, and &lt;a href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;at
 length&lt;/a&gt;, what
 those are and &lt;em&gt;why&lt;/em&gt; I have that strong preference. But I haven't
 really outlined why I very rarely allow myself, or others if I can
@@ -3350,7 +3350,7 @@ taking your sense of "urgent" with a big pinch of salt.&lt;/p&gt;
 has suggested that I refer to another, much more elaborate article on
 a similar subject: Siderea's &lt;em&gt;&lt;a href="https://siderea.dreamwidth.org/1209794.html"&gt;The Asshole
 Filter&lt;/a&gt;&lt;/em&gt;. I recommend you
-give it a read if you're inclined.&lt;/p&gt;</content><category term="blog"></category><category term="Communications"></category><category term="Work"></category></entry><entry><title>How to write a decent job ad</title><link href="https://fghaas.github.io/blog/2021/08/27/decent-job-ads/" rel="alternate"></link><published>2021-08-27T00:00:00+00:00</published><updated>2021-08-27T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2021-08-27:/blog/2021/08/27/decent-job-ads/</id><summary type="html">&lt;p&gt;This is a series on writing job ads that people actually get interested in.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Over time I've come to accept that one of the things I'm apparently
+give it a read if you're inclined.&lt;/p&gt;</content><category term="blog"></category><category term="Communications"></category><category term="Work"></category></entry><entry><title>How to write a decent job ad</title><link href="https://xahteiwi.eu/blog/2021/08/27/decent-job-ads/" rel="alternate"></link><published>2021-08-27T00:00:00+00:00</published><updated>2021-08-27T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-08-27:/blog/2021/08/27/decent-job-ads/</id><summary type="html">&lt;p&gt;This is a series on writing job ads that people actually get interested in.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Over time I've come to accept that one of the things I'm apparently
 reasonably competent at is writing and publishing ads for open
 positions, and I've received questions and requests for advice from
 other folks who hire people. So I'm going to try and break down what I
@@ -3422,7 +3422,7 @@ define the role better. &lt;a class="footnote-backref" href="#fnref:one-sentenc
 &lt;p&gt;If your answer to this question is "no", I bid you good luck! &lt;a class="footnote-backref" href="#fnref:wfh" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Hiring"></category></entry><entry><title>Audience feedback on online conference platforms: a speaker's view</title><link href="https://fghaas.github.io/blog/2021/08/24/online-conferences-audience-feedback/" rel="alternate"></link><published>2021-08-24T00:00:00+00:00</published><updated>2021-08-24T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2021-08-24:/blog/2021/08/24/online-conferences-audience-feedback/</id><summary type="html">&lt;p&gt;As a speaker, I look for something very specific in online conference platforms.&lt;/p&gt;</summary><content type="html">&lt;p&gt;We are in year 2 of the Covid-19 pandemic, and open-source conferences
+&lt;/div&gt;</content><category term="blog"></category><category term="Hiring"></category></entry><entry><title>Audience feedback on online conference platforms: a speaker's view</title><link href="https://xahteiwi.eu/blog/2021/08/24/online-conferences-audience-feedback/" rel="alternate"></link><published>2021-08-24T00:00:00+00:00</published><updated>2021-08-24T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-08-24:/blog/2021/08/24/online-conferences-audience-feedback/</id><summary type="html">&lt;p&gt;As a speaker, I look for something very specific in online conference platforms.&lt;/p&gt;</summary><content type="html">&lt;p&gt;We are in year 2 of the Covid-19 pandemic, and open-source conferences
 are still, for the most part, online-only events. (And I find myself
 questioning the judgment of those that put on large in-person
 conferences.) I have spoken at several of such conferences, and I'd
@@ -3492,7 +3492,7 @@ FrOSCon, allegedly predates Venueless and was excellent in terms of
 streaming, but in terms of audience interaction it's essentially
 &lt;a href="https://bigbluebutton.org/"&gt;BigBlueButton&lt;/a&gt; on steroids, meaning it's
 about on the same level as the LoudSwarm/Slack combination I saw at
-DjangoCon.&lt;/p&gt;</content><category term="blog"></category><category term="Conference"></category></entry><entry><title>Paying People</title><link href="https://fghaas.github.io/blog/2020/02/04/paying-people/" rel="alternate"></link><published>2020-02-04T00:00:00+00:00</published><updated>2020-02-04T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2020-02-04:/blog/2020/02/04/paying-people/</id><summary type="html">&lt;p&gt;Paying people equally is straightforward, right? We all agree on that, and then once we’re talking about people living in different countries, we all disagree on what “equal” really means.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In my now almost 10ish years of first running my own company, and then
+DjangoCon.&lt;/p&gt;</content><category term="blog"></category><category term="Conference"></category></entry><entry><title>Paying People</title><link href="https://xahteiwi.eu/blog/2020/02/04/paying-people/" rel="alternate"></link><published>2020-02-04T00:00:00+00:00</published><updated>2020-02-04T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2020-02-04:/blog/2020/02/04/paying-people/</id><summary type="html">&lt;p&gt;Paying people equally is straightforward, right? We all agree on that, and then once we’re talking about people living in different countries, we all disagree on what “equal” really means.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In my now almost 10ish years of first running my own company, and then
 managing a team in the company I sold my company to, I have very
 frequently struggled with what’s a “fair” way of paying people. &lt;/p&gt;
 &lt;p&gt;I’ve come to the conclusion that when it comes to hiring distributed,
@@ -3583,7 +3583,7 @@ assumption, then € 3,000 next year is still the same € 3,000 it
 was this year, regardless of whether inflation was maybe 5%. &lt;a class="footnote-backref" href="#fnref:inflation" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category></entry><entry><title>Why do they always lie?</title><link href="https://fghaas.github.io/blog/2020/02/04/why-do-they-always-lie/" rel="alternate"></link><published>2020-02-04T00:00:00+00:00</published><updated>2020-02-04T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2020-02-04:/blog/2020/02/04/why-do-they-always-lie/</id><summary type="html">&lt;p&gt;When politicians (and their supporters) keep lying even though their lies are easily exposed, it’s a strategy.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recently I came across a tweet from my Irish OpenStack community
+&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category></entry><entry><title>Why do they always lie?</title><link href="https://xahteiwi.eu/blog/2020/02/04/why-do-they-always-lie/" rel="alternate"></link><published>2020-02-04T00:00:00+00:00</published><updated>2020-02-04T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2020-02-04:/blog/2020/02/04/why-do-they-always-lie/</id><summary type="html">&lt;p&gt;When politicians (and their supporters) keep lying even though their lies are easily exposed, it’s a strategy.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recently I came across a tweet from my Irish OpenStack community
 friend &lt;a href="https://twitter.com/nearyd"&gt;Dave Neary&lt;/a&gt;, &lt;a href="https://twitter.com/nearyd/status/1224727999951572993"&gt;in which he wondered
 aloud&lt;/a&gt; why a
 picture, which was very obviously (and poorly) doctored, made its way
@@ -3653,7 +3653,7 @@ if your lie is exposed, in fact, your lies &lt;em&gt;must&lt;/em&gt; be exposed 
 strategy to work.&lt;/p&gt;
 &lt;p&gt;And now you know how to spot someone in politics who has decided to
 break the rules. And why you shouldn’t assume they’re stupid, just
-because they say objectively stupid things.&lt;/p&gt;</content><category term="blog"></category><category term="Politics"></category></entry><entry><title>Salacious Salad and Omelette</title><link href="https://fghaas.github.io/blog/2020/01/01/salacious-salad-and-omelette/" rel="alternate"></link><published>2020-01-01T00:00:00+00:00</published><updated>2020-01-01T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2020-01-01:/blog/2020/01/01/salacious-salad-and-omelette/</id><summary type="html">&lt;p&gt;A breakfast experiment that turned out well.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Sometime last year I came across a post on
+because they say objectively stupid things.&lt;/p&gt;</content><category term="blog"></category><category term="Politics"></category></entry><entry><title>Salacious Salad and Omelette</title><link href="https://xahteiwi.eu/blog/2020/01/01/salacious-salad-and-omelette/" rel="alternate"></link><published>2020-01-01T00:00:00+00:00</published><updated>2020-01-01T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2020-01-01:/blog/2020/01/01/salacious-salad-and-omelette/</id><summary type="html">&lt;p&gt;A breakfast experiment that turned out well.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Sometime last year I came across a post on
 &lt;a href="https://www.reddit.com/r/food/"&gt;/r/food&lt;/a&gt; that I seem to be unable to
 dig up. However, I recall that it had an infographic asserting that
 for a salad to be perfect, it had to have&lt;/p&gt;
@@ -3766,7 +3766,7 @@ came this.&lt;/p&gt;
 &lt;/ol&gt;
 &lt;h2&gt;Nutrition facts&lt;/h2&gt;
 &lt;p&gt;No warranty of any kind on these. Values are per serving.&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Calories (kcal)&lt;/th&gt;
@@ -3795,7 +3795,7 @@ came this.&lt;/p&gt;
 &lt;td&gt;12.9&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
-&lt;/table&gt;</content><category term="blog"></category><category term="Food"></category><category term="Recipe"></category></entry><entry><title>My 2010s</title><link href="https://fghaas.github.io/blog/2019/12/31/my-2010s/" rel="alternate"></link><published>2019-12-31T00:00:00+00:00</published><updated>2019-12-31T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2019-12-31:/blog/2019/12/31/my-2010s/</id><summary type="html">&lt;p&gt;I guess at the end of a decade, it’s a good time as any to look back.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is my look back at the decade we’re just finishing up.&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/table&gt;</content><category term="blog"></category><category term="Food"></category><category term="Recipe"></category></entry><entry><title>My 2010s</title><link href="https://xahteiwi.eu/blog/2019/12/31/my-2010s/" rel="alternate"></link><published>2019-12-31T00:00:00+00:00</published><updated>2019-12-31T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-12-31:/blog/2019/12/31/my-2010s/</id><summary type="html">&lt;p&gt;I guess at the end of a decade, it’s a good time as any to look back.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is my look back at the decade we’re just finishing up.&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;h2&gt;Some stats&lt;/h2&gt;
 &lt;p&gt;Besides managing to grow 10 years older, in this decade I founded 1
 company, sold 1 company, left 1 company, joined 1 company, folded 0
@@ -3928,7 +3928,7 @@ to expect when you’re being acquired one day. &lt;a class="footnote-backref" 
 too. &lt;a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category></entry><entry><title>Exceptional Pan Pizza</title><link href="https://fghaas.github.io/blog/2019/12/30/exceptional-pan-pizza/" rel="alternate"></link><published>2019-12-30T00:00:00+00:00</published><updated>2019-12-30T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2019-12-30:/blog/2019/12/30/exceptional-pan-pizza/</id><summary type="html">&lt;p&gt;My go-to recipe for pan (deep dish) pizza.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I’ve found this to be the pan pizza to end all pan pizzas. It’s my
+&lt;/div&gt;</content><category term="blog"></category></entry><entry><title>Exceptional Pan Pizza</title><link href="https://xahteiwi.eu/blog/2019/12/30/exceptional-pan-pizza/" rel="alternate"></link><published>2019-12-30T00:00:00+00:00</published><updated>2019-12-30T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-12-30:/blog/2019/12/30/exceptional-pan-pizza/</id><summary type="html">&lt;p&gt;My go-to recipe for pan (deep dish) pizza.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I’ve found this to be the pan pizza to end all pan pizzas. It’s my
 standard pizza dough recipe, plus some inspiration from &lt;a href="https://youtu.be/uYxB4QBlrx4"&gt;this
 video&lt;/a&gt;. The trick with seasoning the pan
 is an absolute kicker and makes the crust taste oodles better than
@@ -4049,7 +4049,7 @@ several to accommodate a larger crowd, or very hungry people.&lt;/p&gt;
 &lt;h2&gt;Nutrition facts&lt;/h2&gt;
 &lt;p&gt;No warranty of any kind on these. Values are per serving, counting one
 serving as one-quarter of the whole pizza.&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Calories (kcal)&lt;/th&gt;
@@ -4105,7 +4105,7 @@ placed on the floor (we have floor heating), on the running
 laundry dryer, or out on the countertop. &lt;a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Food"></category><category term="Recipe"></category></entry><entry><title>Slidecraft updates</title><link href="https://fghaas.github.io/blog/2019/12/13/slidecraft/" rel="alternate"></link><published>2019-12-13T00:00:00+00:00</published><updated>2019-12-13T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2019-12-13:/blog/2019/12/13/slidecraft/</id><summary type="html">&lt;p&gt;I’ve been doing public talks and presentations rather frequently for the last 10-or-so years, but this year I made significant changes to my process for creating, rehearsing, and presenting talks.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I’ve been doing public talks and presentations rather frequently for
+&lt;/div&gt;</content><category term="blog"></category><category term="Food"></category><category term="Recipe"></category></entry><entry><title>Slidecraft updates</title><link href="https://xahteiwi.eu/blog/2019/12/13/slidecraft/" rel="alternate"></link><published>2019-12-13T00:00:00+00:00</published><updated>2019-12-13T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-12-13:/blog/2019/12/13/slidecraft/</id><summary type="html">&lt;p&gt;I’ve been doing public talks and presentations rather frequently for the last 10-or-so years, but this year I made significant changes to my process for creating, rehearsing, and presenting talks.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I’ve been doing public talks and presentations rather frequently for
 the last 10-or-so years, but this year I made significant changes to
 my process for creating, rehearsing, and presenting talks.&lt;/p&gt;
 &lt;h2&gt;What I used to do&lt;/h2&gt;
@@ -4222,7 +4222,7 @@ make a suggestion for me to improve the accessibility of my slides,
 &lt;em&gt;please&lt;/em&gt; &lt;a href="https://github.com/fghaas/cookiecutter-presentation/issues"&gt;file an
 issue&lt;/a&gt;
 against my Cookiecutter and I’ll try to work that in as best I
-can. Thank you!&lt;/p&gt;</content><category term="blog"></category><category term="Conference"></category></entry><entry><title>Team meetings</title><link href="https://fghaas.github.io/blog/2019/06/06/team-meetings/" rel="alternate"></link><published>2019-06-06T00:00:00+00:00</published><updated>2019-06-06T00:00:00+00:00</updated><author><name>florian</name></author><id>tag:fghaas.github.io,2019-06-06:/blog/2019/06/06/team-meetings/</id><summary type="html">&lt;p&gt;Distributed teams need to meet in person every once in a while. Here are some thoughts and suggestions on team meetings.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I’ve run a distributed team — nominally the same team, though through
+can. Thank you!&lt;/p&gt;</content><category term="blog"></category><category term="Conference"></category></entry><entry><title>Team meetings</title><link href="https://xahteiwi.eu/blog/2019/06/06/team-meetings/" rel="alternate"></link><published>2019-06-06T00:00:00+00:00</published><updated>2019-06-06T00:00:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2019-06-06:/blog/2019/06/06/team-meetings/</id><summary type="html">&lt;p&gt;Distributed teams need to meet in person every once in a while. Here are some thoughts and suggestions on team meetings.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I’ve run a distributed team — nominally the same team, though through
 people joining and leaving I am the sole original band member at this
 point — for almost 8 years. And about 3 years in was the first time we
 were sufficiently spread &lt;em&gt;and&lt;/em&gt; had enough money to spare to warrant
@@ -4358,7 +4358,7 @@ Airbnb.&lt;/p&gt;
 something else, which is to book an island. Yes, you read that right,
 immediately after our &lt;em&gt;team&lt;/em&gt; meeting we packed up and boarded a train
 to join our &lt;em&gt;company&lt;/em&gt; all-hands meeting, in which we had an island
-practically to ourselves. &lt;/p&gt;</content><category term="blog"></category><category term="Philosophy"></category></entry><entry><title>Nonexisticon</title><link href="https://fghaas.github.io/blog/2019/04/27/nonexisticon/" rel="alternate"></link><published>2019-04-27T00:00:00+00:00</published><updated>2019-04-27T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2019-04-27:/blog/2019/04/27/nonexisticon/</id><summary type="html">&lt;p&gt;I have no experience with, and presently no plans for, running or
+practically to ourselves. &lt;/p&gt;</content><category term="blog"></category><category term="Philosophy"></category></entry><entry><title>Nonexisticon</title><link href="https://xahteiwi.eu/blog/2019/04/27/nonexisticon/" rel="alternate"></link><published>2019-04-27T00:00:00+00:00</published><updated>2019-04-27T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-04-27:/blog/2019/04/27/nonexisticon/</id><summary type="html">&lt;p&gt;I have no experience with, and presently no plans for, running or
 organizing a grassroots knowledge-sharing conference. But if I did run
 one, and I could shape it exactly as I wanted, this might be what it
 would look like. Please be advised that I have no idea what I …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I have no experience with, and presently no plans for, running or
@@ -4529,7 +4529,7 @@ in the conference.&lt;/p&gt;
 &lt;p&gt;Nonexisticon’s attendee-visible run-up cycle is 6 months.&lt;/p&gt;
 &lt;p&gt;Assuming a Nonexisticon is scheduled to run from May 15-17, the
 following schedule applies:&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Date&lt;/th&gt;
@@ -4646,7 +4646,7 @@ cost, even if that means a higher registration fee for everyone,
 and thus a slightly elevated risk of conference cancellation. &lt;a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Conference"></category></entry><entry><title>Talk submissions</title><link href="https://fghaas.github.io/blog/2019/04/23/talk-submissions/" rel="alternate"></link><published>2019-04-23T00:00:00+00:00</published><updated>2019-04-23T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2019-04-23:/blog/2019/04/23/talk-submissions/</id><summary type="html">&lt;p&gt;I put talk submissions on this site, regardless of whether they get accepted or not. Here’s why.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I have spoken at tech conferences for the better part of a decade, and
+&lt;/div&gt;</content><category term="blog"></category><category term="Conference"></category></entry><entry><title>Talk submissions</title><link href="https://xahteiwi.eu/blog/2019/04/23/talk-submissions/" rel="alternate"></link><published>2019-04-23T00:00:00+00:00</published><updated>2019-04-23T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-04-23:/blog/2019/04/23/talk-submissions/</id><summary type="html">&lt;p&gt;I put talk submissions on this site, regardless of whether they get accepted or not. Here’s why.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I have spoken at tech conferences for the better part of a decade, and
 up to this point I have only ever published &lt;a href="/category/presentations.html"&gt;my
 talks&lt;/a&gt; after I’ve actually presented
 them. I’ll change that from here on out, and I’ll instead record any
@@ -4722,7 +4722,7 @@ notice. However, in case I am re-submitting a talk previously given at
 removing &lt;em&gt;that&lt;/em&gt; article.&lt;/p&gt;
 &lt;p&gt;You can find my (continuously updated) list of talk submissions
 &lt;a href="/category/talk-submissions.html"&gt;here&lt;/a&gt;, and there’s also an Atom
-feed, &lt;a href="/feeds/category/talk-submissions.atom.xml"&gt;here&lt;/a&gt;.&lt;/p&gt;</content><category term="blog"></category><category term="Conference"></category></entry><entry><title>If you’re a leader in tech, “non-technical” is not a free pass</title><link href="https://fghaas.github.io/blog/2019/04/21/non-technical/" rel="alternate"></link><published>2019-04-21T00:00:00+00:00</published><updated>2019-04-21T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2019-04-21:/blog/2019/04/21/non-technical/</id><summary type="html">&lt;p&gt;There’s a specific use of the term “non-technical,” and that’s applying it to oneself, as a cop-out. If you’re a leader in tech, you don’t get to do that.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The excellent &lt;a href="https://joshsimmons.com/"&gt;Josh Simmons&lt;/a&gt; recently
+feed, &lt;a href="/feeds/category/talk-submissions.atom.xml"&gt;here&lt;/a&gt;.&lt;/p&gt;</content><category term="blog"></category><category term="Conference"></category></entry><entry><title>If you’re a leader in tech, “non-technical” is not a free pass</title><link href="https://xahteiwi.eu/blog/2019/04/21/non-technical/" rel="alternate"></link><published>2019-04-21T00:00:00+00:00</published><updated>2019-04-21T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-04-21:/blog/2019/04/21/non-technical/</id><summary type="html">&lt;p&gt;There’s a specific use of the term “non-technical,” and that’s applying it to oneself, as a cop-out. If you’re a leader in tech, you don’t get to do that.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The excellent &lt;a href="https://joshsimmons.com/"&gt;Josh Simmons&lt;/a&gt; recently
 &lt;a href="https://twitter.com/joshsimmons/status/1111292871594774529"&gt;implored people on
 Twitter&lt;/a&gt;
 to stop using the term “non-technical” when talking about another
@@ -4792,7 +4792,7 @@ to not understand things, stop. It isn’t.&lt;/p&gt;
 &lt;p&gt;Yes I am aware that this is exceedingly rare. &lt;a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Communications"></category></entry><entry><title>Why upload filters don’t work (really simple math!)</title><link href="https://fghaas.github.io/blog/2019/03/25/upload-filter-math/" rel="alternate"></link><published>2019-03-25T20:00:00+00:00</published><updated>2019-03-25T20:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2019-03-25:/blog/2019/03/25/upload-filter-math/</id><summary type="html">&lt;p&gt;“I can’t figure out how upload filters should work, but I’m not a
+&lt;/div&gt;</content><category term="blog"></category><category term="Communications"></category></entry><entry><title>Why upload filters don’t work (really simple math!)</title><link href="https://xahteiwi.eu/blog/2019/03/25/upload-filter-math/" rel="alternate"></link><published>2019-03-25T20:00:00+00:00</published><updated>2019-03-25T20:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-03-25:/blog/2019/03/25/upload-filter-math/</id><summary type="html">&lt;p&gt;“I can’t figure out how upload filters should work, but I’m not a
 technical person — surely someone who is can sort it out!”&lt;/p&gt;
 &lt;p&gt;That is a misconception. I’ll be happy to explain, requiring — I
 promise! — no technical understanding of what an upload filter is, or
@@ -4850,7 +4850,7 @@ let’s say it’s 1%.&lt;/p&gt;
 &lt;p&gt;So then let’s look at 10,000 interactions that completely random
 people make on the internet.&lt;/p&gt;
 &lt;p&gt;Those would then break down like so:&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -4883,7 +4883,7 @@ flags content as infringing when it is not) with a rate of only
 ridiculously low for any automated screening procedure.&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;So that means that out of our 10,000 interactions tracked by our
 “perfect” content filter, the numbers break down like this:&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -4926,7 +4926,7 @@ exceedingly rare, automated filters detect it with poor accuracy.&lt;/strong&gt;
 &lt;p&gt;And if you leave all parameters the same, but consider a probably much
 more realistic infringement rate of 1 in 1000, that is, 0.1%, then
 things look like this: &lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -4989,7 +4989,7 @@ bad&lt;/a&gt;
 for a system that cost $100M to build. &lt;a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Politics"></category></entry><entry><title>Article 17: The time to act is now.</title><link href="https://fghaas.github.io/blog/2019/03/21/copyright-reform/" rel="alternate"></link><published>2019-03-21T17:38:00+00:00</published><updated>2019-03-21T17:38:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:fghaas.github.io,2019-03-21:/blog/2019/03/21/copyright-reform/</id><summary type="html">&lt;p&gt;Next Tuesday, the European Parliament is due to vote on something that will impact your life. Yes, yours.&lt;/p&gt;</summary><content type="html">&lt;p&gt;On Tuesday, March 26 at half-past noon Central European Time, the
+&lt;/div&gt;</content><category term="blog"></category><category term="Politics"></category></entry><entry><title>Article 17: The time to act is now.</title><link href="https://xahteiwi.eu/blog/2019/03/21/copyright-reform/" rel="alternate"></link><published>2019-03-21T17:38:00+00:00</published><updated>2019-03-21T17:38:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-03-21:/blog/2019/03/21/copyright-reform/</id><summary type="html">&lt;p&gt;Next Tuesday, the European Parliament is due to vote on something that will impact your life. Yes, yours.&lt;/p&gt;</summary><content type="html">&lt;p&gt;On Tuesday, March 26 at half-past noon Central European Time, the
 European Parliament is due to vote on an issue that will definitely
 impact your life, no matter if you live in or outside the EU. No, it
 has nothing to do with Brexit. Brexit has just managed to monopolise
@@ -5060,7 +5060,7 @@ and that only astroturfing bots want this law struck down. You can
 &lt;strong&gt;call them.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;And finally, &lt;a href="https://savetheinternet.info/demos"&gt;Save The Internet&lt;/a&gt;
 (yes, everyone’s, not just yours). March 23 is a day of pan-European
-protest against Article 17. &lt;strong&gt;Find a rally and go.&lt;/strong&gt;&lt;/p&gt;</content><category term="blog"></category><category term="Politics"></category></entry><entry><title>Working from home, with little kids in the house</title><link href="https://fghaas.github.io/blog/2018/02/18/working-from-home-with-little-kids/" rel="alternate"></link><published>2018-02-18T00:00:00+00:00</published><updated>2018-02-18T00:00:00+00:00</updated><author><name>florian</name></author><id>tag:fghaas.github.io,2018-02-18:/blog/2018/02/18/working-from-home-with-little-kids/</id><summary type="html">&lt;p&gt;I very much prefer working from home to working from an office. But with little kids in the house, that’s a nontrivial endeavor.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I’ve worked exclusively from home&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt; for the last 6½ years, and
+protest against Article 17. &lt;strong&gt;Find a rally and go.&lt;/strong&gt;&lt;/p&gt;</content><category term="blog"></category><category term="Politics"></category></entry><entry><title>Working from home, with little kids in the house</title><link href="https://xahteiwi.eu/blog/2018/02/18/working-from-home-with-little-kids/" rel="alternate"></link><published>2018-02-18T00:00:00+00:00</published><updated>2018-02-18T00:00:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2018-02-18:/blog/2018/02/18/working-from-home-with-little-kids/</id><summary type="html">&lt;p&gt;I very much prefer working from home to working from an office. But with little kids in the house, that’s a nontrivial endeavor.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I’ve worked exclusively from home&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt; for the last 6½ years, and
 when I first started, my older kids were 7 and 6 years old. For the
 last 3 years after the arrival of our two younger children, though,
 I’ve worked from home &lt;strong&gt;with infants/toddlers in the house,&lt;/strong&gt; and
@@ -5255,7 +5255,7 @@ ones arrived, I was traveling way less overall, so those travel
 schedule adjustments were easy at the time.) &lt;a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Philosophy"></category></entry><entry><title>Fragile Development: Scrum is terrible, and you should ditch it</title><link href="https://fghaas.github.io/blog/2016/07/05/fragile-development/" rel="alternate"></link><published>2016-07-05T00:00:00+00:00</published><updated>2016-07-05T00:00:00+00:00</updated><author><name>florian</name></author><id>tag:fghaas.github.io,2016-07-05:/blog/2016/07/05/fragile-development/</id><summary type="html">&lt;p&gt;Scrum is irrational, impractical, and outright dangerous for software development. It is time to stop considering it a viable method for building software.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a writeup of an
+&lt;/div&gt;</content><category term="blog"></category><category term="Philosophy"></category></entry><entry><title>Fragile Development: Scrum is terrible, and you should ditch it</title><link href="https://xahteiwi.eu/blog/2016/07/05/fragile-development/" rel="alternate"></link><published>2016-07-05T00:00:00+00:00</published><updated>2016-07-05T00:00:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2016-07-05:/blog/2016/07/05/fragile-development/</id><summary type="html">&lt;p&gt;Scrum is irrational, impractical, and outright dangerous for software development. It is time to stop considering it a viable method for building software.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a writeup of an
 &lt;a href="https://en.wikipedia.org/wiki/Ignite_(event)"&gt;Ignite&lt;/a&gt; talk I gave at
 &lt;a href="http://www.openstack-israel.org"&gt;OpenStack Israel 2016&lt;/a&gt;. The
 paragraph headings below approximately correspond to the content of my
@@ -5382,12 +5382,12 @@ in its pure, immutable, One True Way), it would surely lead to
 disaster. But, it's impossible to do so anyway, so go ahead and ditch
 it — stop being a scrumbag.&lt;/p&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Philosophy"></category><category term="Development"></category></entry><entry><title>Containers: Just Because Everyone Else is Doing Them Wrong, Doesn't Mean You Have To</title><link href="https://fghaas.github.io/blog/2016/02/21/containers-just-because-everyone-else/" rel="alternate"></link><published>2016-02-21T00:00:00+00:00</published><updated>2016-02-21T00:00:00+00:00</updated><author><name>florian</name></author><id>tag:fghaas.github.io,2016-02-21:/blog/2016/02/21/containers-just-because-everyone-else/</id><summary type="html">&lt;p&gt;The recent CVE-2015-7547 vulnerability in glibc exposed a common antipattern in container management. Here's what you can do to avoid it, and instead adopt a container management pattern that will preserve your sanity and enable you to react to critical issues in minutes.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a writeup of &lt;a href="http://sched.co/3xVu"&gt;a presentation&lt;/a&gt; I did at
+&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Philosophy"></category><category term="Development"></category></entry><entry><title>Containers: Just Because Everyone Else is Doing Them Wrong, Doesn't Mean You Have To</title><link href="https://xahteiwi.eu/blog/2016/02/21/containers-just-because-everyone-else/" rel="alternate"></link><published>2016-02-21T00:00:00+00:00</published><updated>2016-02-21T00:00:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2016-02-21:/blog/2016/02/21/containers-just-because-everyone-else/</id><summary type="html">&lt;p&gt;The recent CVE-2015-7547 vulnerability in glibc exposed a common antipattern in container management. Here's what you can do to avoid it, and instead adopt a container management pattern that will preserve your sanity and enable you to react to critical issues in minutes.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a writeup of &lt;a href="http://sched.co/3xVu"&gt;a presentation&lt;/a&gt; I did at
 LinuxCon Europe in Dublin last year. Since Linux Foundation Events
 &lt;em&gt;still&lt;/em&gt; don't come with video recording for all talks (all they do
 record and publish are keynotes), I can't point you to a YouTube link,
 though you're certainly welcome to
-&lt;a href="https://fghaas.github.io/resources/presentations/manageable-application-containers/"&gt;peruse my slides&lt;/a&gt;
+&lt;a href="https://xahteiwi.eu/resources/presentations/manageable-application-containers/"&gt;peruse my slides&lt;/a&gt;
 from that talk.&lt;/p&gt;
 &lt;h2&gt;The problem&lt;/h2&gt;
 &lt;p&gt;Suppose you're an operator who, in a massively scaled-out and highly
@@ -5640,7 +5640,7 @@ such as added mounts or opaque directories. I've tried to keep the
 example brief to illustrate the concept. &lt;a class="footnote-backref" href="#fnref:ansible" title="Jump back to footnote 4 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="LXC"></category><category term="Containers"></category><category term="Ubuntu"></category><category term="Ansible"></category></entry><entry><title>Dogfooding Dogwood</title><link href="https://fghaas.github.io/blog/2016/02/12/dogfooding-dogwood/" rel="alternate"></link><published>2016-02-12T00:00:00+00:00</published><updated>2016-02-12T00:00:00+00:00</updated><author><name>florian</name></author><id>tag:fghaas.github.io,2016-02-12:/blog/2016/02/12/dogfooding-dogwood/</id><summary type="html">&lt;p&gt;The Open edX "Dogwood" release is out. We've been running its code base in production for several weeks, and can share some first-hand experience.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This week, the &lt;a href="https://open.edx.org"&gt;Open edX&lt;/a&gt; community
+&lt;/div&gt;</content><category term="blog"></category><category term="LXC"></category><category term="Containers"></category><category term="Ubuntu"></category><category term="Ansible"></category></entry><entry><title>Dogfooding Dogwood</title><link href="https://xahteiwi.eu/blog/2016/02/12/dogfooding-dogwood/" rel="alternate"></link><published>2016-02-12T00:00:00+00:00</published><updated>2016-02-12T00:00:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2016-02-12:/blog/2016/02/12/dogfooding-dogwood/</id><summary type="html">&lt;p&gt;The Open edX "Dogwood" release is out. We've been running its code base in production for several weeks, and can share some first-hand experience.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This week, the &lt;a href="https://open.edx.org"&gt;Open edX&lt;/a&gt; community
 &lt;a href="https://open.edx.org/blog/newest-open-edx-release-dogwood-now-available"&gt;announced&lt;/a&gt;
 its latest release,
 &lt;a href="http://edx.readthedocs.org/projects/open-edx-release-notes/en/latest/dogwood.html"&gt;Open edX Dogwood&lt;/a&gt;. (In
@@ -5731,7 +5731,7 @@ when speeding through interactive labs on hastexo Academy.&lt;/p&gt;
 team at hastexo would like to extend a big thank-you to everyone who
 made a contribution to this release.&lt;/p&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Open edX"></category><category term="OpenStack"></category></entry><entry><title>My first Open edX contribution</title><link href="https://fghaas.github.io/blog/2016/01/05/my-first-open-edx-contribution/" rel="alternate"></link><published>2016-01-05T00:00:00+00:00</published><updated>2016-01-05T00:00:00+00:00</updated><author><name>florian</name></author><id>tag:fghaas.github.io,2016-01-05:/blog/2016/01/05/my-first-open-edx-contribution/</id><summary type="html">&lt;p&gt;In which I talk about landing my first patch in Open edX.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I've finally submitted my first code contribution to &lt;a href="https://open.edx.org/"&gt;Open
+&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Open edX"></category><category term="OpenStack"></category></entry><entry><title>My first Open edX contribution</title><link href="https://xahteiwi.eu/blog/2016/01/05/my-first-open-edx-contribution/" rel="alternate"></link><published>2016-01-05T00:00:00+00:00</published><updated>2016-01-05T00:00:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2016-01-05:/blog/2016/01/05/my-first-open-edx-contribution/</id><summary type="html">&lt;p&gt;In which I talk about landing my first patch in Open edX.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I've finally submitted my first code contribution to &lt;a href="https://open.edx.org/"&gt;Open
 edX&lt;/a&gt;, a trivial patch for an annoying issue in
 the LMS start page. The PR is
 &lt;a href="https://github.com/edx/edx-platform/pull/11138"&gt;here&lt;/a&gt;.&lt;/p&gt;
@@ -5756,7 +5756,7 @@ fast&lt;/a&gt;;
 the patch review did, however, take some time. &lt;a href="//github.com/edx/edx-platform/commit/71a6779dfa44baa27d9c2b509587385edb4380af"&gt;But it's in
 now&lt;/a&gt;.&lt;/p&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Open edX"></category></entry><entry><title>linux.conf.au 2014, or My Annual Journey To Awesome</title><link href="https://fghaas.github.io/blog/2014/01/20/linuxconfau-2014-or-my-annual-journey-to-awesome/" rel="alternate"></link><published>2014-01-20T11:36:00+00:00</published><updated>2014-01-20T11:36:00+00:00</updated><author><name>florian</name></author><id>tag:fghaas.github.io,2014-01-20:/blog/2014/01/20/linuxconfau-2014-or-my-annual-journey-to-awesome/</id><summary type="html">&lt;p&gt;Earlier this month, I got on a flight to Perth, WA to make my annual
+&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Open edX"></category></entry><entry><title>linux.conf.au 2014, or My Annual Journey To Awesome</title><link href="https://xahteiwi.eu/blog/2014/01/20/linuxconfau-2014-or-my-annual-journey-to-awesome/" rel="alternate"></link><published>2014-01-20T11:36:00+00:00</published><updated>2014-01-20T11:36:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2014-01-20:/blog/2014/01/20/linuxconfau-2014-or-my-annual-journey-to-awesome/</id><summary type="html">&lt;p&gt;Earlier this month, I got on a flight to Perth, WA to make my annual
 trek to &lt;strong&gt;linux.conf.au&lt;/strong&gt;, the largest open-source conference in the
 Southern Hemisphere and one of my favorite conferences on the circuit.
 LCA is an excellent, volunteer-run, hugely insightful conference and
@@ -5813,7 +5813,7 @@ it. No doubt in my mind at all.&lt;/p&gt;
 speakers, organizers and volunteers who make this conference a fantastic
 event year after year. See you in 2015!&lt;/p&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="linux.conf.au"></category><category term="OpenStack"></category></entry><entry><title>Enter the cuttlefish!</title><link href="https://fghaas.github.io/blog/2013/05/07/enter-the-cuttlefish/" rel="alternate"></link><published>2013-05-07T07:43:00+00:00</published><updated>2013-05-07T07:43:00+00:00</updated><author><name>florian</name></author><id>tag:fghaas.github.io,2013-05-07:/blog/2013/05/07/enter-the-cuttlefish/</id><summary type="html">&lt;p&gt;Today, the developers released Ceph 0.61, codenamed cuttlefish. There
+&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="linux.conf.au"></category><category term="OpenStack"></category></entry><entry><title>Enter the cuttlefish!</title><link href="https://xahteiwi.eu/blog/2013/05/07/enter-the-cuttlefish/" rel="alternate"></link><published>2013-05-07T07:43:00+00:00</published><updated>2013-05-07T07:43:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2013-05-07:/blog/2013/05/07/enter-the-cuttlefish/</id><summary type="html">&lt;p&gt;Today, the developers released Ceph 0.61, codenamed cuttlefish. There
 are some interesting features in this new release, take a look.&lt;/p&gt;
 &lt;p&gt;One thing that will undoubtedly make Ceph a lot more palatable to
 RHEL/CentOS users is the &lt;strong&gt;availability of Ceph in EPEL&lt;/strong&gt;. This was
@@ -5878,7 +5878,7 @@ for one of the following events:&lt;/p&gt;
 a couple of weeks away. So make sure you grab your seat, and we'll see
 you there!&lt;/p&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Ceph"></category></entry><entry><title>High Availability Update: You can now vote our talk into the OpenStack summit!</title><link href="https://fghaas.github.io/blog/2013/02/21/high-availability-update-you-can-now-vote-our-talk-into-the-openstack-summit/" rel="alternate"></link><published>2013-02-21T06:59:00+00:00</published><updated>2013-02-21T06:59:00+00:00</updated><author><name>florian</name></author><id>tag:fghaas.github.io,2013-02-21:/blog/2013/02/21/high-availability-update-you-can-now-vote-our-talk-into-the-openstack-summit/</id><summary type="html">&lt;p&gt;For the upcoming OpenStack Summit in Portland, Syed Armani and I have
+&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Ceph"></category></entry><entry><title>High Availability Update: You can now vote our talk into the OpenStack summit!</title><link href="https://xahteiwi.eu/blog/2013/02/21/high-availability-update-you-can-now-vote-our-talk-into-the-openstack-summit/" rel="alternate"></link><published>2013-02-21T06:59:00+00:00</published><updated>2013-02-21T06:59:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2013-02-21:/blog/2013/02/21/high-availability-update-you-can-now-vote-our-talk-into-the-openstack-summit/</id><summary type="html">&lt;p&gt;For the upcoming OpenStack Summit in Portland, Syed Armani and I have
 &lt;a href="https://www.openstack.org/summit/portland-2013/vote-for-speakers/presentation/531"&gt;submitted a
 talk&lt;/a&gt;
 on OpenStack high availability. Here's how you can make sure it makes it
@@ -5913,7 +5913,7 @@ page&lt;/a&gt;
 to cast your vote.&lt;/p&gt;
 &lt;p&gt;Thanks for your support, and we hope to see you in Portland!&lt;/p&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Conference"></category><category term="OpenStack"></category></entry><entry><title>My week at linux.conf.au 2013</title><link href="https://fghaas.github.io/blog/2013/01/28/my-week-at-linuxconfau-2013/" rel="alternate"></link><published>2013-01-28T01:27:00+00:00</published><updated>2013-01-28T01:27:00+00:00</updated><author><name>florian</name></author><id>tag:fghaas.github.io,2013-01-28:/blog/2013/01/28/my-week-at-linuxconfau-2013/</id><summary type="html">&lt;p&gt;linux.conf.au 2013 has kicked off this morning, and here is a brief
+&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Conference"></category><category term="OpenStack"></category></entry><entry><title>My week at linux.conf.au 2013</title><link href="https://xahteiwi.eu/blog/2013/01/28/my-week-at-linuxconfau-2013/" rel="alternate"></link><published>2013-01-28T01:27:00+00:00</published><updated>2013-01-28T01:27:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2013-01-28:/blog/2013/01/28/my-week-at-linuxconfau-2013/</id><summary type="html">&lt;p&gt;linux.conf.au 2013 has kicked off this morning, and here is a brief
 preview of my talks and related activities this week.&lt;/p&gt;
 &lt;p&gt;This afternoon, as part of the &lt;a href="https://lca2013.linux.org.au/wiki/Miniconfs/CloudDistributedStorageandHighAvailability"&gt;Cloud, Distributed Storage and High
 Availability
@@ -5940,7 +5940,7 @@ Watch this space, we'll announce where to download your VM images no
 later than Wednesday (as soon as we've figured out just where in the
 conference network we can upload it).&lt;/p&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>Thoughts on "ecosystems"</title><link href="https://fghaas.github.io/blog/2012/12/16/thoughts-on-ecosystems/" rel="alternate"></link><published>2012-12-16T14:47:00+00:00</published><updated>2012-12-16T14:47:00+00:00</updated><author><name>florian</name></author><id>tag:fghaas.github.io,2012-12-16:/blog/2012/12/16/thoughts-on-ecosystems/</id><summary type="html">&lt;p&gt;Over the past couple of years, it seems that the term &lt;em&gt;ecosystem&lt;/em&gt; is
+&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>Thoughts on "ecosystems"</title><link href="https://xahteiwi.eu/blog/2012/12/16/thoughts-on-ecosystems/" rel="alternate"></link><published>2012-12-16T14:47:00+00:00</published><updated>2012-12-16T14:47:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2012-12-16:/blog/2012/12/16/thoughts-on-ecosystems/</id><summary type="html">&lt;p&gt;Over the past couple of years, it seems that the term &lt;em&gt;ecosystem&lt;/em&gt; is
 being broadly applied to what we previously called a &lt;em&gt;community.&lt;/em&gt; I
 don't like that, and here's why.&lt;/p&gt;
 &lt;p&gt;The origin of the term &lt;em&gt;ecosystem,&lt;/em&gt; when applied to the environment in
@@ -5992,7 +5992,7 @@ shouldn't the foundations on which we build our &lt;em&gt;communities.&lt;/em&gt
 &lt;p&gt;&lt;a href="http://en.wikipedia.org/wiki/Speech_acts"&gt;Words matter.&lt;/a&gt; I think we
 should use them wisely.&lt;/p&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Philosophy"></category></entry><entry><title>On the merits of working from home, in a distributed virtual team</title><link href="https://fghaas.github.io/blog/2012/12/06/on-the-merits-of-working-from-home-in-a-distributed-virtual-team/" rel="alternate"></link><published>2012-12-06T17:38:00+00:00</published><updated>2012-12-06T17:38:00+00:00</updated><author><name>florian</name></author><id>tag:fghaas.github.io,2012-12-06:/blog/2012/12/06/on-the-merits-of-working-from-home-in-a-distributed-virtual-team/</id><summary type="html">&lt;p&gt;During lunch at the EMEA OpenStack day in London this week, I had a
+&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Philosophy"></category></entry><entry><title>On the merits of working from home, in a distributed virtual team</title><link href="https://xahteiwi.eu/blog/2012/12/06/on-the-merits-of-working-from-home-in-a-distributed-virtual-team/" rel="alternate"></link><published>2012-12-06T17:38:00+00:00</published><updated>2012-12-06T17:38:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2012-12-06:/blog/2012/12/06/on-the-merits-of-working-from-home-in-a-distributed-virtual-team/</id><summary type="html">&lt;p&gt;During lunch at the EMEA OpenStack day in London this week, I had a
 brief but excellent conversation with fellow OpenStacker &lt;a href="https://twitter.com/adamspiers"&gt;Adam
 Spiers&lt;/a&gt; from SUSE. Our chat turned to
 the merits of working from home, and he encouraged me to write up a blog
@@ -6089,7 +6089,7 @@ rehearse conference talks via video call. It just works, and it's huge
 fun that way. And it enables us to close our laptops and go read bedtime
 stories to our kids when we're done.&lt;/p&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Philosophy"></category></entry><entry><title>Talking Ceph and GlusterFS at LinuxCon Europe</title><link href="https://fghaas.github.io/blog/2012/10/24/talking-ceph-and-glusterfs-at-linuxcon-europe/" rel="alternate"></link><published>2012-10-24T12:55:00+00:00</published><updated>2012-10-24T12:55:00+00:00</updated><author><name>florian</name></author><id>tag:fghaas.github.io,2012-10-24:/blog/2012/10/24/talking-ceph-and-glusterfs-at-linuxcon-europe/</id><summary type="html">&lt;p&gt;Early next month, I'll be off to Barcelona for speaking at LinuxCon
+&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Philosophy"></category></entry><entry><title>Talking Ceph and GlusterFS at LinuxCon Europe</title><link href="https://xahteiwi.eu/blog/2012/10/24/talking-ceph-and-glusterfs-at-linuxcon-europe/" rel="alternate"></link><published>2012-10-24T12:55:00+00:00</published><updated>2012-10-24T12:55:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2012-10-24:/blog/2012/10/24/talking-ceph-and-glusterfs-at-linuxcon-europe/</id><summary type="html">&lt;p&gt;Early next month, I'll be off to Barcelona for speaking at LinuxCon
 Europe. Here's an overview of my talks.&lt;/p&gt;
 &lt;p&gt;November 5-7, the &lt;a href="http://www.linuxfoundation.org/"&gt;Linux Foundation&lt;/a&gt; is
 holding the annual &lt;a href="http://events.linuxfoundation.org/events/linuxcon-europe"&gt;LinuxCon
@@ -6126,7 +6126,7 @@ headed there, please &lt;a href="https://www.hastexo.com/users/florian/contact"&
 note&lt;/a&gt; and let me know so
 we can catch up. Thanks — see you there!&lt;/p&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Ceph"></category><category term="Conference"></category><category term="GlusterFS"></category></entry><entry><title>Pacemaker and the recent GitHub service interruption</title><link href="https://fghaas.github.io/blog/2012/09/26/pacemaker-and-the-recent-github-service-interruption/" rel="alternate"></link><published>2012-09-26T11:32:00+00:00</published><updated>2012-09-26T11:32:00+00:00</updated><author><name>florian</name></author><id>tag:fghaas.github.io,2012-09-26:/blog/2012/09/26/pacemaker-and-the-recent-github-service-interruption/</id><summary type="html">&lt;p&gt;It never fails. Someone manages to break their Pacemaker cluster, and
+&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Ceph"></category><category term="Conference"></category><category term="GlusterFS"></category></entry><entry><title>Pacemaker and the recent GitHub service interruption</title><link href="https://xahteiwi.eu/blog/2012/09/26/pacemaker-and-the-recent-github-service-interruption/" rel="alternate"></link><published>2012-09-26T11:32:00+00:00</published><updated>2012-09-26T11:32:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2012-09-26:/blog/2012/09/26/pacemaker-and-the-recent-github-service-interruption/</id><summary type="html">&lt;p&gt;It never fails. Someone manages to break their Pacemaker cluster, and
 &lt;a href="http://openlife.cc/author"&gt;Henrik&lt;/a&gt; starts preaching &lt;a href="http://openlife.cc/blogs/2012/september/failover-evil"&gt;his usual sermon
 of why Pacemaker is
 terrible&lt;/a&gt; and why
@@ -6333,7 +6333,7 @@ the segfault on Tuesday.&lt;/p&gt;
 &lt;a href="https://www.hastexo.com/services/checkup"&gt;we can help.&lt;/a&gt;&lt;/p&gt;
 &lt;hr/&gt;
 &lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;
-&lt;!--break--&gt;</content><category term="blog"></category><category term="MySQL"></category><category term="Pacemaker"></category></entry><entry><title>Speaking and BoFing at CloudOpen in San Diego!</title><link href="https://fghaas.github.io/blog/2012/08/20/speaking-and-bofing-at-cloudopen-in-san-diego/" rel="alternate"></link><published>2012-08-20T07:26:00+00:00</published><updated>2012-08-20T07:26:00+00:00</updated><author><name>florian</name></author><id>tag:fghaas.github.io,2012-08-20:/blog/2012/08/20/speaking-and-bofing-at-cloudopen-in-san-diego/</id><summary type="html">&lt;p&gt;Next week, I will be speaking at the inaugural CloudOpen conference in
+&lt;!--break--&gt;</content><category term="blog"></category><category term="MySQL"></category><category term="Pacemaker"></category></entry><entry><title>Speaking and BoFing at CloudOpen in San Diego!</title><link href="https://xahteiwi.eu/blog/2012/08/20/speaking-and-bofing-at-cloudopen-in-san-diego/" rel="alternate"></link><published>2012-08-20T07:26:00+00:00</published><updated>2012-08-20T07:26:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2012-08-20:/blog/2012/08/20/speaking-and-bofing-at-cloudopen-in-san-diego/</id><summary type="html">&lt;p&gt;Next week, I will be speaking at the inaugural CloudOpen conference in
 San Diego. This is your chance to learn about
 &lt;a href="https://www.hastexo.com/knowledge/openstack"&gt;OpenStack&lt;/a&gt; high
 availability and
@@ -6385,7 +6385,7 @@ welcome to join us!&lt;/p&gt;
 &lt;a href="http://cloudopen2012.sched.org/fghaas"&gt;here&lt;/a&gt;, by the way. Feel free to
 grab me at a talk, or in the hallway. See you in San Diego!&lt;/p&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Ceph"></category><category term="Conference"></category><category term="high availability"></category><category term="OpenStack"></category></entry><entry><title>An exciting day for the Ceph community</title><link href="https://fghaas.github.io/blog/2012/05/03/an-exciting-day-for-the-ceph-community/" rel="alternate"></link><published>2012-05-03T11:10:00+00:00</published><updated>2012-05-03T11:10:00+00:00</updated><author><name>florian</name></author><id>tag:fghaas.github.io,2012-05-03:/blog/2012/05/03/an-exciting-day-for-the-ceph-community/</id><summary type="html">&lt;p&gt;Today, as you've probably noticed if you're following the development of
+&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Ceph"></category><category term="Conference"></category><category term="high availability"></category><category term="OpenStack"></category></entry><entry><title>An exciting day for the Ceph community</title><link href="https://xahteiwi.eu/blog/2012/05/03/an-exciting-day-for-the-ceph-community/" rel="alternate"></link><published>2012-05-03T11:10:00+00:00</published><updated>2012-05-03T11:10:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2012-05-03:/blog/2012/05/03/an-exciting-day-for-the-ceph-community/</id><summary type="html">&lt;p&gt;Today, as you've probably noticed if you're following the development of
 the &lt;a href="https://www.hastexo.com/knowledge/storage-io/ceph"&gt;Ceph&lt;/a&gt; stack,
 something mighty cool has been happening. The
 &lt;a href="http://ceph.com/"&gt;ceph.com&lt;/a&gt; web site received a major makeover with a
@@ -6437,7 +6437,7 @@ sadly can't be at their &lt;a href="https://www.eventbrite.com/e/always-bet-on-i
 8&lt;/a&gt;.
 We appreciate the invitation, guys – have fun!&lt;/p&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Ceph"></category></entry><entry><title>A look back at my first OpenStack Design Summit &amp; Conference</title><link href="https://fghaas.github.io/blog/2012/04/24/a-look-back-at-my-first-openstack-design-summit-conference/" rel="alternate"></link><published>2012-04-24T09:35:00+00:00</published><updated>2012-04-24T09:35:00+00:00</updated><author><name>florian</name></author><id>tag:fghaas.github.io,2012-04-24:/blog/2012/04/24/a-look-back-at-my-first-openstack-design-summit-conference/</id><summary type="html">&lt;p&gt;I've just returned from the &lt;a href="http://www.openstack.org/conference/san-francisco-2012/"&gt;OpenStack Folsom Design Summit and Spring
+&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Ceph"></category></entry><entry><title>A look back at my first OpenStack Design Summit &amp; Conference</title><link href="https://xahteiwi.eu/blog/2012/04/24/a-look-back-at-my-first-openstack-design-summit-conference/" rel="alternate"></link><published>2012-04-24T09:35:00+00:00</published><updated>2012-04-24T09:35:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2012-04-24:/blog/2012/04/24/a-look-back-at-my-first-openstack-design-summit-conference/</id><summary type="html">&lt;p&gt;I've just returned from the &lt;a href="http://www.openstack.org/conference/san-francisco-2012/"&gt;OpenStack Folsom Design Summit and Spring
 2012
 Conference&lt;/a&gt;,
 and am finally getting rid of my jet lag. Here's a summary of what's
@@ -6502,7 +6502,7 @@ section.&lt;/a&gt;&lt;/p&gt;
 and I'm very much looking forward to coming back next time around.&lt;/p&gt;
 &lt;hr/&gt;
 &lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;
-&lt;!--break--&gt;</content><category term="blog"></category><category term="Conference"></category><category term="OpenStack"></category></entry><entry><title>Speaking at OSCON 2012</title><link href="https://fghaas.github.io/blog/2012/04/03/speaking-at-oscon-2012/" rel="alternate"></link><published>2012-04-03T09:24:00+00:00</published><updated>2012-04-03T09:24:00+00:00</updated><author><name>florian</name></author><id>tag:fghaas.github.io,2012-04-03:/blog/2012/04/03/speaking-at-oscon-2012/</id><summary type="html">&lt;p&gt;I'll be speaking at &lt;a href="http://www.oscon.com/oscon2012"&gt;OSCON 2012&lt;/a&gt; in
+&lt;!--break--&gt;</content><category term="blog"></category><category term="Conference"></category><category term="OpenStack"></category></entry><entry><title>Speaking at OSCON 2012</title><link href="https://xahteiwi.eu/blog/2012/04/03/speaking-at-oscon-2012/" rel="alternate"></link><published>2012-04-03T09:24:00+00:00</published><updated>2012-04-03T09:24:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2012-04-03:/blog/2012/04/03/speaking-at-oscon-2012/</id><summary type="html">&lt;p&gt;I'll be speaking at &lt;a href="http://www.oscon.com/oscon2012"&gt;OSCON 2012&lt;/a&gt; in
 Portland, on high availability in
 &lt;a href="https://www.hastexo.com/knowledge/openstack"&gt;OpenStack&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I learned from O'Reilly yesterday that my presentation proposal for this
@@ -6519,7 +6519,7 @@ a thrilling speaking opportunity for me.&lt;/p&gt;
 &lt;p&gt;My talk, &lt;em&gt;Highly Available Cloud: OpenStack integration with Pacemaker&lt;/em&gt;
 is currently (tentatively, I suppose) scheduled for 11:30 on July 18.&lt;/p&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Conference"></category><category term="OpenStack"></category><category term="OSCON"></category></entry><entry><title>Presentation accepted for OpenStack Spring 2012 Conference</title><link href="https://fghaas.github.io/blog/2012/03/28/presentation-accepted-for-openstack-spring-2012-conference/" rel="alternate"></link><published>2012-03-28T19:52:00+00:00</published><updated>2012-03-28T19:52:00+00:00</updated><author><name>florian</name></author><id>tag:fghaas.github.io,2012-03-28:/blog/2012/03/28/presentation-accepted-for-openstack-spring-2012-conference/</id><summary type="html">&lt;p&gt;I just learned that my presentation is going ahead at the &lt;a href="http://www.openstack.org/conference/san-francisco-2012/"&gt;OpenStack
+&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Conference"></category><category term="OpenStack"></category><category term="OSCON"></category></entry><entry><title>Presentation accepted for OpenStack Spring 2012 Conference</title><link href="https://xahteiwi.eu/blog/2012/03/28/presentation-accepted-for-openstack-spring-2012-conference/" rel="alternate"></link><published>2012-03-28T19:52:00+00:00</published><updated>2012-03-28T19:52:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2012-03-28:/blog/2012/03/28/presentation-accepted-for-openstack-spring-2012-conference/</id><summary type="html">&lt;p&gt;I just learned that my presentation is going ahead at the &lt;a href="http://www.openstack.org/conference/san-francisco-2012/"&gt;OpenStack
 Spring 2012
 Conference&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;My presentation, &lt;em&gt;Reliable, Redundant: High Availability in
@@ -6538,7 +6538,7 @@ conference&lt;/a&gt;
 if you haven't already done so, and I'll be happy to chat with anyone
 interested in OpenStack HA. See you in San Francisco!&lt;/p&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Conference"></category><category term="OpenStack"></category></entry><entry><title>High Availability in OpenStack</title><link href="https://fghaas.github.io/blog/2012/03/21/high-availability-in-openstack/" rel="alternate"></link><published>2012-03-21T13:08:00+00:00</published><updated>2012-03-21T13:08:00+00:00</updated><author><name>florian</name></author><id>tag:fghaas.github.io,2012-03-21:/blog/2012/03/21/high-availability-in-openstack/</id><summary type="html">&lt;p&gt;A few thoughts on high availability features (or the current absence
+&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Conference"></category><category term="OpenStack"></category></entry><entry><title>High Availability in OpenStack</title><link href="https://xahteiwi.eu/blog/2012/03/21/high-availability-in-openstack/" rel="alternate"></link><published>2012-03-21T13:08:00+00:00</published><updated>2012-03-21T13:08:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2012-03-21:/blog/2012/03/21/high-availability-in-openstack/</id><summary type="html">&lt;p&gt;A few thoughts on high availability features (or the current absence
 thereof) in OpenStack.&lt;/p&gt;
 &lt;p&gt;I've just proposed a session for the &lt;a href="http://wiki.openstack.org/Summit/Folsom"&gt;OpenStack Folsom design
 summit&lt;/a&gt; which &lt;a href="http://www.joinfu.com/"&gt;Jay
@@ -6638,7 +6638,7 @@ developers who visit this blog for the first time: you need to login to
 post comments in our effort to combat comment spam – but you can simply
 use your Launchpad OpenID to do so.&lt;/p&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>On my (ex-)maintainership of the DRBD User's Guide</title><link href="https://fghaas.github.io/blog/2012/03/20/on-my-ex-maintainership-of-the-drbd-users-guide/" rel="alternate"></link><published>2012-03-20T11:01:00+00:00</published><updated>2012-03-20T11:01:00+00:00</updated><author><name>florian</name></author><id>tag:fghaas.github.io,2012-03-20:/blog/2012/03/20/on-my-ex-maintainership-of-the-drbd-users-guide/</id><summary type="html">&lt;p&gt;Here's a quick summary of my past and current relationship with the DRBD
+&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>On my (ex-)maintainership of the DRBD User's Guide</title><link href="https://xahteiwi.eu/blog/2012/03/20/on-my-ex-maintainership-of-the-drbd-users-guide/" rel="alternate"></link><published>2012-03-20T11:01:00+00:00</published><updated>2012-03-20T11:01:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2012-03-20:/blog/2012/03/20/on-my-ex-maintainership-of-the-drbd-users-guide/</id><summary type="html">&lt;p&gt;Here's a quick summary of my past and current relationship with the DRBD
 User's Guide.&lt;/p&gt;
 &lt;p&gt;As you probably know, I created the original &lt;a href="http://drbd.linbit.com/users-guide/"&gt;DRBD User's
 Guide&lt;/a&gt; several years back, and I
@@ -6696,7 +6696,7 @@ earlier work that the User's Guide was based on. My co-authorship
 doesn't imply, however, that I'm a currently active author or
 maintainer.&lt;/p&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="DRBD"></category></entry><entry><title>Ceph: tickling my geek genes</title><link href="https://fghaas.github.io/blog/2012/03/08/ceph-tickling-my-geek-genes/" rel="alternate"></link><published>2012-03-08T20:12:00+00:00</published><updated>2012-03-08T20:12:00+00:00</updated><author><name>florian</name></author><id>tag:fghaas.github.io,2012-03-08:/blog/2012/03/08/ceph-tickling-my-geek-genes/</id><summary type="html">&lt;p&gt;Haven't heard of &lt;a href="http://ceph.com/"&gt;Ceph&lt;/a&gt;, the open-source distributed
+&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="DRBD"></category></entry><entry><title>Ceph: tickling my geek genes</title><link href="https://xahteiwi.eu/blog/2012/03/08/ceph-tickling-my-geek-genes/" rel="alternate"></link><published>2012-03-08T20:12:00+00:00</published><updated>2012-03-08T20:12:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2012-03-08:/blog/2012/03/08/ceph-tickling-my-geek-genes/</id><summary type="html">&lt;p&gt;Haven't heard of &lt;a href="http://ceph.com/"&gt;Ceph&lt;/a&gt;, the open-source distributed
 petascale storage stack? Well, you've really been missing out. It's not
 just a filesystem. It's a filesystem, and a striped/replicated block
 device provider, and a virtualization storage backend, and a cloud
@@ -6801,7 +6801,7 @@ of experimental mode.&lt;/p&gt;
   contains no other edits in comparison to the 2012 original. &lt;a class="footnote-backref" href="#fnref:crippleware" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Ceph"></category></entry><entry><title>Speaking at the 2012 Percona Live MySQL Conference</title><link href="https://fghaas.github.io/blog/2012/02/27/speaking-2012-percona-live-mysql-conference/" rel="alternate"></link><published>2012-02-27T13:39:00+00:00</published><updated>2012-02-27T13:39:00+00:00</updated><author><name>florian</name></author><id>tag:fghaas.github.io,2012-02-27:/blog/2012/02/27/speaking-2012-percona-live-mysql-conference/</id><summary type="html">&lt;p&gt;This year, I have the pleasure of returning to the MySQL Conference &amp;amp;
+&lt;/div&gt;</content><category term="blog"></category><category term="Ceph"></category></entry><entry><title>Speaking at the 2012 Percona Live MySQL Conference</title><link href="https://xahteiwi.eu/blog/2012/02/27/speaking-2012-percona-live-mysql-conference/" rel="alternate"></link><published>2012-02-27T13:39:00+00:00</published><updated>2012-02-27T13:39:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2012-02-27:/blog/2012/02/27/speaking-2012-percona-live-mysql-conference/</id><summary type="html">&lt;p&gt;This year, I have the pleasure of returning to the MySQL Conference &amp;amp;
 Expo as a speaker. Percona have picked up the torch that O'Reilly had
 held as the conference organizers, and they're putting together a 3-day
 conference this year. I am co-presenting a tutorial with Yves Trudeau
