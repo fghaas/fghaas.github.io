@@ -33,6 +33,7 @@ STATIC_PATHS = [
     'fonts',
     'robots.txt',
     'favicon.ico',
+    'CNAME',
     ]
 
 PLUGIN_PATHS = [
