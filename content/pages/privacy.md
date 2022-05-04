@@ -2,26 +2,24 @@ Title: Privacy Information/GDPR Notice
 Slug: privacy
 Summary: Information about your privacy on this site.
 
-## Personally Identifiable Information
+## Personal Data
 
-This web site does not collect, store, or process Personally
-Identifiable Information (PII). It does not require the use of
-cookies.
+This web site does not collect, store, or process Personal Data. It
+does not require the use of cookies.
 
 
 ## Privacy Policy
 
-This web site is hosted at [easyname
-GmbH](https://www.easyname.at/en/company/contact). The easyname
-[privacy
-policy](https://www.easyname.at/download/data-protection-policy-en-v1.pdf)
+This web site is hosted on [GitHub Pages](https://pages.github.com/)
+The GitHub [Privacy
+Statement](https://help.github.com/en/articles/github-privacy-statement)
 applies.
+
 
 ## External resources
 
 Through this site, you will access some resources that are hosted
 externally, from the following sources:
-
 
 | Source | Domain(s) | Applicable Policy |
 |-|-|-|
