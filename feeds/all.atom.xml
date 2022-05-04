@@ -1,5 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/all.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-01-29T00:00:00+00:00</updated><entry><title>The Review Review</title><link href="https://xahteiwi.eu/./blog/2022/01/29/review-review/" rel="alternate"></link><published>2022-01-29T00:00:00+00:00</published><updated>2022-01-29T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-01-29:/./blog/2022/01/29/review-review/</id><summary type="html">&lt;p&gt;Musings on source code management, code review, testing, deployment, and collaboration culture.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I wanted to share a few thoughts on something I consider a rather
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/all.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-05-05T00:00:00+00:00</updated><entry><title>This site now lives on GitHub</title><link href="https://xahteiwi.eu/blog/2022/05/05/moving-to-github/" rel="alternate"></link><published>2022-05-05T00:00:00+00:00</published><updated>2022-05-05T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-05-05:/blog/2022/05/05/moving-to-github/</id><summary type="html">&lt;p&gt;I have moved my site to GitHub Pages. Here's what that means.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I have moved this site to GitHub. It's still available under the same
+URL, of course, but it uses &lt;a href="https://pages.github.com/"&gt;GitHub Pages&lt;/a&gt;
+for hosting.&lt;/p&gt;
+&lt;p&gt;Why did I do this? A few reasons:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;I don't have a &lt;a href="https://xahteiwi.eu/comments/"&gt;comment facility&lt;/a&gt;
+  on this site, and I don't intend to add one, but I do want to give
+  people the ability to submit corrections or sugggestions. You can do
+  that now, by &lt;a href="https://github.com/fghaas/fghaas.github.io/issues"&gt;creating a GitHub
+  issue&lt;/a&gt;, sending
+  me a pull request, or doing a &lt;a href="https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files"&gt;GitHub
+  edit&lt;/a&gt;
+  (which is really just a streamlined way of sending a PR from your
+  browser).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;It gives me the option to use a GitHub Actions workflow to deploy
+  the site fully automatically. As you may know I build this site with
+  &lt;a href="https://docs.getpelican.com/"&gt;Pelican&lt;/a&gt;, and wiring up a workflow
+  that first sets off a Pelican build and then invokes &lt;code&gt;ghp-import&lt;/code&gt;
+  (via &lt;code&gt;tox&lt;/code&gt;) was a breeze. You're welcome to &lt;a href="https://github.com/fghaas/fghaas.github.io/blob/main/.github/workflows/deploy.yml"&gt;take a look at the
+  implementation&lt;/a&gt;
+  if you like. (You can also look at &lt;a href="https://docs.getpelican.com/en/latest/tips.html#publishing-to-github"&gt;the relevant
+  section&lt;/a&gt;
+  in the Pelican docs, of course.)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Overall, this gives me the ability to do quick edits from almost
+  anywhere, and also gives someone else (like you!) the ability to
+  suggest fixes, which I can then apply almost instantaneously. But
+  please don't &lt;em&gt;expect&lt;/em&gt; any such things; I do maintain this site on a
+  "when I get around to it" basis.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In short: if you've used this site as a regular or irregular
+visitor/reader, not much will change. If however you wanted to chuck
+in the occasional fix or correction, you can do that more easily now.&lt;/p&gt;
+&lt;p&gt;If at any point I find that GitHub Pages hosting isn't the right thing
+to after all, I'll happily rehome the site elsewhere.&lt;/p&gt;
+&lt;p&gt;Please be advised that this is still my site, though, and I maintain
+editorial control of all content. If you're sending me a PR, please do
+so with the understanding that I might decline to merge or publish it,
+for any reason at all. If that's not for you, please use your own
+platform.&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>The Review Review</title><link href="https://xahteiwi.eu/./blog/2022/01/29/review-review/" rel="alternate"></link><published>2022-01-29T00:00:00+00:00</published><updated>2022-01-29T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-01-29:/./blog/2022/01/29/review-review/</id><summary type="html">&lt;p&gt;Musings on source code management, code review, testing, deployment, and collaboration culture.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I wanted to share a few thoughts on something I consider a rather
 important topic in our industry: code review and CI/CD tools, and how
 they relate.&lt;/p&gt;
 &lt;p&gt;This means that I'm talking about&lt;/p&gt;

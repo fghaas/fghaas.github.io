@@ -119,6 +119,32 @@
 
 <article>
   <header>
+    <h2><a href="../resources/hints-and-kinks/mysqlgalera-pacemaker-testing-resource-recovery/#mysqlgalera-pacemaker-testing-resource-recovery">Testing resource recovery</a></h2>
+    <p>
+      Posted on Tue 04 December 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
+
+          &#8226; Tagged with
+              <a href="../tag/galera.html">Galera</a>,              <a href="../tag/mysql.html">MySQL</a>,              <a href="../tag/pacemaker.html">Pacemaker</a>
+    </p>
+  </header>
+  <div>
+      <div><p>If MySQL happens to die in your cluster, Pacemaker will automatically
+recover the service in place. To test this, select any node on your
+cluster and send the <code>mysqld</code> process a <code>KILL</code> signal:</p>
+<div class="highlight"><pre><span></span><code>killall -KILL mysqld
+</code></pre></div>
+<p>Then, monitor your cluster status with <code>crm_mon -rf</code>. After a few
+seconds, you should …</p></div>
+        <br>
+        <a class="btn"
+           href="../resources/hints-and-kinks/mysqlgalera-pacemaker-testing-resource-recovery/#mysqlgalera-pacemaker-testing-resource-recovery">
+          Continue reading
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="../resources/presentations/mysql-high-availability-deep-dive/#mysql-high-availability-deep-dive">MySQL High Availability Deep Dive</a></h2>
     <p>
       Posted on Mon 03 December 2012 in <a href="../category/presentations.html">presentations</a>
@@ -219,32 +245,6 @@ solution.</p>
         <br>
         <a class="btn"
            href="../resources/hints-and-kinks/migrating-virtual-machines-block-based-storage-radosceph/#migrating-virtual-machines-block-based-storage-radosceph">
-          Continue reading
-        </a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="../resources/hints-and-kinks/maintenance-active-pacemaker-clusters/#maintenance-active-pacemaker-clusters">Maintenance in active Pacemaker clusters</a></h2>
-    <p>
-      Posted on Mon 24 September 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
-
-          &#8226; Tagged with
-              <a href="../tag/pacemaker.html">Pacemaker</a>
-    </p>
-  </header>
-  <div>
-      <div><p>In a Pacemaker cluster, as in a standalone system, operators must
-complete maintenance tasks such as software upgrades and configuration
-changes. Here's what you need to keep Pacemaker's built-in monitoring
-features from creating unwanted side effects.</p>
-<h2>Maintenance mode</h2>
-<p>This is quite possibly Pacemaker's single most useful feature for
-cluster maintenance …</p></div>
-        <br>
-        <a class="btn"
-           href="../resources/hints-and-kinks/maintenance-active-pacemaker-clusters/#maintenance-active-pacemaker-clusters">
           Continue reading
         </a>
   </div>
