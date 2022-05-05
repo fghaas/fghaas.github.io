@@ -1,5 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - blog</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/category/blog.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-05-05T00:00:00+00:00</updated><entry><title>This site now lives on GitHub</title><link href="https://xahteiwi.eu/blog/2022/05/05/moving-to-github/" rel="alternate"></link><published>2022-05-05T00:00:00+00:00</published><updated>2022-05-05T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-05-05:/blog/2022/05/05/moving-to-github/</id><summary type="html">&lt;p&gt;I have moved my site to GitHub Pages. Here's what that means.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I have moved this site to GitHub. It's still available under the same
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - blog</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/category/blog.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-05-06T00:00:00+00:00</updated><entry><title>An experiment</title><link href="https://xahteiwi.eu/blog/2022/05/06/experiment/" rel="alternate"></link><published>2022-05-06T00:00:00+00:00</published><updated>2022-05-06T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-05-06:/blog/2022/05/06/experiment/</id><summary type="html">&lt;p&gt;I am launching a small experiment. Would you like to help?&lt;/p&gt;</summary><content type="html">&lt;p&gt;A little while back, I posted on my Twitter and Mastodon feeds&lt;sup id="fnref:crossposter"&gt;&lt;a class="footnote-ref" href="#fn:crossposter"&gt;1&lt;/a&gt;&lt;/sup&gt;
+asking people who kept a personal blog to post their RSS or Atom feed
+URLs. A surprising number of people responded — many more on Mastodon
+than on Twitter, incidentally, though I have about 15 times as many
+Twitter as Mastodon followers. You can find the Twitter thread
+&lt;a href="https://twitter.com/xahteiwi/status/1515233714162356224"&gt;here&lt;/a&gt; and the
+Mastodon thread
+&lt;a href="https://mastodon.social/@xahteiwi/108140619829880299"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I now have a very decent aggregated feed, thanks to all who responded!&lt;/p&gt;
+&lt;p&gt;Now, normally, when I put a new post out, I chuck out a link to the
+post on those two social networks. For some time, I’d like to do
+something different, and if you’re inclined, you can help!&lt;/p&gt;
+&lt;p&gt;So what I’d ask you to do is subscribe to the &lt;a href="/feeds/all.rss.xml"&gt;RSS
+feed&lt;/a&gt; or the &lt;a href="/feeds/all.atom.xml"&gt;Atom feed&lt;/a&gt; for my
+site. For the next few things I post, I will &lt;strong&gt;not&lt;/strong&gt; link them on
+Twitter or Mastodon — but if you notice them in your feed and find them
+share-worthy, I would very much appreciate if &lt;em&gt;you&lt;/em&gt; posted them there.&lt;sup id="fnref:analytics"&gt;&lt;a class="footnote-ref" href="#fn:analytics"&gt;2&lt;/a&gt;&lt;/sup&gt;
+Feel free to tag me in them, I’m &lt;code&gt;@xahteiwi&lt;/code&gt; on Twitter and
+&lt;code&gt;@xahteiwi@mastodon.social&lt;/code&gt; on Mastodon.&lt;/p&gt;
+&lt;p&gt;I’d be really curious to see if it’s feasible in 2022 to reach blog
+readers with essentially just an RSS feed, and word-of-mouth.&lt;/p&gt;
+&lt;p&gt;So, if you would like to participate, then just add my feed to your
+reader, and keep your eyes peeled for the next few articles. Thank you!&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr/&gt;
+&lt;ol&gt;
+&lt;li id="fn:crossposter"&gt;
+&lt;p&gt;If you’re curious about these things: I use &lt;a href="https://lond.com.br/"&gt;Renato
+  Cerqueira&lt;/a&gt;’s &lt;a href="https://crossposter.masto.donte.com.br/"&gt;Mastodon Twitter
+  Crossposter&lt;/a&gt; to mirror my
+  Twitter feed to Mastodon, and vice versa. You can take a look at its
+  &lt;a href="https://github.com/renatolond/mastodon-twitter-poster"&gt;GitHub
+  project&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:crossposter" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:analytics"&gt;
+&lt;p&gt;I don’t want to run Google Analytics on this site out of
+  concern for your privacy, which is why I don't know where my traffic
+  comes from. If you post them and tag me, I have something
+  functionally approaching a pingback beacon. &lt;a class="footnote-backref" href="#fnref:analytics" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content><category term="blog"></category></entry><entry><title>This site now lives on GitHub</title><link href="https://xahteiwi.eu/blog/2022/05/05/moving-to-github/" rel="alternate"></link><published>2022-05-05T00:00:00+00:00</published><updated>2022-05-05T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-05-05:/blog/2022/05/05/moving-to-github/</id><summary type="html">&lt;p&gt;I have moved my site to GitHub Pages. Here's what that means.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I have moved this site to GitHub. It's still available under the same
 URL, of course, but it uses &lt;a href="https://pages.github.com/"&gt;GitHub Pages&lt;/a&gt;
 for hosting.&lt;/p&gt;
 &lt;p&gt;Why did I do this? A few reasons:&lt;/p&gt;

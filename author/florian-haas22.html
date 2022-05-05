@@ -119,6 +119,34 @@
 
 <article>
   <header>
+    <h2><a href="../resources/hints-and-kinks/mysqlgalera-pacemaker-starting-pacemaker/#mysqlgalera-pacemaker-starting-pacemaker">Starting Pacemaker</a></h2>
+    <p>
+      Posted on Tue 04 December 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
+
+          &#8226; Tagged with
+              <a href="../tag/galera.html">Galera</a>,              <a href="../tag/mysql.html">MySQL</a>,              <a href="../tag/pacemaker.html">Pacemaker</a>
+    </p>
+  </header>
+  <div>
+      <div><p>Once Corosync is running, you are able to start the Pacemaker cluster
+resource manager on all cluster nodes:</p>
+<div class="highlight"><pre><span></span><code>service pacemaker start
+</code></pre></div>
+<p>Once cluster startup is completed, you should see output similar to
+the following when invoking the <code>crm_mon</code> utility:</p>
+<div class="highlight"><pre><span></span><code>============
+Last updated: Mon Dec  3 15:37:59 2012
+Last change …</code></pre></div></div>
+        <br>
+        <a class="btn"
+           href="../resources/hints-and-kinks/mysqlgalera-pacemaker-starting-pacemaker/#mysqlgalera-pacemaker-starting-pacemaker">
+          Continue reading
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="../resources/hints-and-kinks/mysqlgalera-pacemaker-testing-resource-recovery/#mysqlgalera-pacemaker-testing-resource-recovery">Testing resource recovery</a></h2>
     <p>
       Posted on Tue 04 December 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
@@ -219,32 +247,6 @@ distributed storage stack.</p>
         <br>
         <a class="btn"
            href="../resources/presentations/hands-ceph/#hands-ceph">
-          Continue reading
-        </a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="../resources/hints-and-kinks/migrating-virtual-machines-block-based-storage-radosceph/#migrating-virtual-machines-block-based-storage-radosceph">Migrating virtual machines from block-based storage to RADOS/Ceph</a></h2>
-    <p>
-      Posted on Mon 22 October 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
-
-          &#8226; Tagged with
-              <a href="../tag/ceph.html">Ceph</a>,              <a href="../tag/libvirt.html">libvirt</a>
-    </p>
-  </header>
-  <div>
-      <div><p>Ceph allows you to replace existing SAN storage (or SAN drop-in
-substitutes) with a flexible storage solution with real scale-out
-capabilities. Here is how you migrate existing virtual machines
-managed by libvirt from block-based storage to a Ceph based storage
-solution.</p>
-<h2>Prerequisites</h2>
-<p>What you'll need in order to successfully manage …</p></div>
-        <br>
-        <a class="btn"
-           href="../resources/hints-and-kinks/migrating-virtual-machines-block-based-storage-radosceph/#migrating-virtual-machines-block-based-storage-radosceph">
           Continue reading
         </a>
   </div>
