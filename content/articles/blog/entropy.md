@@ -1,10 +1,10 @@
-Title: Entropy, management, and XKCD 927
+Title: Entropy, management, and xkcd 927
 Date: 2022-05-07
 Slug: entropy
 Summary: As a manager, don’t try to negotiate with the laws of physics.
 Tags: Work, Communications
 
-[XKCD 927](https://xkcd.com/927/) is a modern internet classic that is
+[xkcd 927](https://xkcd.com/927/) is a modern internet classic that is
 frequently brought up in conversations to remind people that a proposal
 that they’re making will, while being intended to simplify things,
 actually make them more complicated.
@@ -112,7 +112,7 @@ your organization’s entropy decelerator.
     to this idea.
 
 * Somebody wants to replace multiple existing things with one new
-  thing (the original XKCD 927 scenario): the only circumstance under
+  thing (the original xkcd 927 scenario): the only circumstance under
   which you should agree to this is when you already know *for
   certain* that the existing things must go away, within a manageable
   timeframe. For example, the software solutions that your company has
