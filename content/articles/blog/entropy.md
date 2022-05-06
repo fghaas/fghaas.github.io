@@ -10,7 +10,7 @@ that they’re making will, while being intended to simplify things,
 actually make them more complicated.
 
 Most people quote that strip to satirize or even ridicule the idea of
-introducing a “16th standard”, as if the natural order of things was
+introducing a “15th standard”, as if the natural order of things was
 simplification. Such people are frequently baffled by the amount of
 cruft and clutter that accumulates over time in an organization they
 work in, and some of them embark on a constant — perhaps career-long —
