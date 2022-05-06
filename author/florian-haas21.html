@@ -119,6 +119,32 @@
 
 <article>
   <header>
+    <h2><a href="../resources/hints-and-kinks/mysqlgalera-pacemaker-bootstrapping-galera-cluster/#mysqlgalera-pacemaker-bootstrapping-galera-cluster">Bootstrapping the Galera cluster</a></h2>
+    <p>
+      Posted on Tue 04 December 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
+
+          &#8226; Tagged with
+              <a href="../tag/galera.html">Galera</a>,              <a href="../tag/mysql.html">MySQL</a>,              <a href="../tag/pacemaker.html">Pacemaker</a>
+    </p>
+  </header>
+  <div>
+      <div><p>In order to bootstrap your Galera cluster, manually bring up the
+cluster IP address on the desired interface. In this example, we'll
+use 192.168.122.99 and eth1:</p>
+<div class="highlight"><pre><span></span><code>ip address add <span class="m">192</span>.168.122.99/24 dev eth1 label eth1:galera
+</code></pre></div>
+<p>And initialize the Galera cluster:</p>
+<div class="highlight"><pre><span></span><code>mysqld --wsrep_cluster_address<span class="o">=</span>gcomm …</code></pre></div></div>
+        <br>
+        <a class="btn"
+           href="../resources/hints-and-kinks/mysqlgalera-pacemaker-bootstrapping-galera-cluster/#mysqlgalera-pacemaker-bootstrapping-galera-cluster">
+          Continue reading
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="../resources/hints-and-kinks/mysqlgalera-pacemaker-configuring-corosync/#mysqlgalera-pacemaker-configuring-corosync">Configuring Corosync</a></h2>
     <p>
       Posted on Tue 04 December 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
@@ -207,37 +233,6 @@ state. In effect, this is identical to bootstrapping the cluster.</p>
         <br>
         <a class="btn"
            href="../resources/hints-and-kinks/mysqlgalera-pacemaker-recovering-full-cluster-shutdown/#mysqlgalera-pacemaker-recovering-full-cluster-shutdown">
-          Continue reading
-        </a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="../resources/hints-and-kinks/mysqlgalera-pacemaker-setting-galera-specific-mysql-options/#mysqlgalera-pacemaker-setting-galera-specific-mysql-options">Setting Galera-specific MySQL options</a></h2>
-    <p>
-      Posted on Tue 04 December 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
-
-          &#8226; Tagged with
-              <a href="../tag/galera.html">Galera</a>,              <a href="../tag/mysql.html">MySQL</a>,              <a href="../tag/pacemaker.html">Pacemaker</a>
-    </p>
-  </header>
-  <div>
-      <div><p>Now you can proceed with setting Galera specifics in your MySQL
-configurations.</p>
-<p>Create a configuration file, <strong>identical on all cluster nodes,</strong> named
-<code>/etc/mysql/conf.d/galera.cnf</code> with the following content:</p>
-<div class="highlight"><pre><span></span><code><span class="k">[mysqld]</span><span class="w"></span>
-<span class="na">bind_address</span><span class="o">=</span><span class="s">0.0.0.0</span><span class="w"></span>
-<span class="na">binlog_format</span><span class="o">=</span><span class="s">ROW</span><span class="w"></span>
-<span class="na">default_storage_engine</span><span class="o">=</span><span class="s">InnoDB</span><span class="w"></span>
-<span class="na">innodb_autoinc_lock_mode</span><span class="o">=</span><span class="s">2</span><span class="w"></span>
-<span class="na">innodb_locks_unsafe_for_binlog</span><span class="o">=</span><span class="s">1</span><span class="w"></span>
-</code></pre></div>
-<p>Create another configuration file …</p></div>
-        <br>
-        <a class="btn"
-           href="../resources/hints-and-kinks/mysqlgalera-pacemaker-setting-galera-specific-mysql-options/#mysqlgalera-pacemaker-setting-galera-specific-mysql-options">
           Continue reading
         </a>
   </div>

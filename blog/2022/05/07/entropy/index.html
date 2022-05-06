@@ -1,0 +1,409 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../../../../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../../../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../../../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../../../../theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/solid.css">
+
+    <link rel="stylesheet" type="text/css" href="../../../../../css/override.css">
+
+    <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+    <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+  
+
+
+ 
+
+<meta name="author" content="Florian Haas" />
+<meta name="description" content="As a manager, don’t try negotiate with the laws of physics." />
+<meta name="keywords" content="Work, Communications">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="Entropy, management, and XKCD 927"/>
+  <meta property="og:description" content="As a manager, don’t try negotiate with the laws of physics."/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../../../../blog/2022/05/07/entropy/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2022-05-07 00:00:00+00:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../../../../author/florian-haas.html">
+  <meta property="article:section" content="blog"/>
+  <meta property="article:tag" content="Work"/>
+  <meta property="article:tag" content="Communications"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; Entropy, management, and XKCD 927</title>
+
+</head>
+<body >
+  <aside>
+    <div>
+      <a href="../../../../../">
+        <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="../../../../../"></a>
+      </h1>
+
+
+
+
+      <ul class="social">
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/xahteiwi" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="me" class="sc-mastodon" href="https://mastodon.social/@xahteiwi" target="_blank">
+              <i class="fab fa-mastodon"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/fghaas" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-github" href="https://github.com/fghaas" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="../../../../../">Home</a>
+
+      <a href="/category/hints-and-kinks.html">Tech</a>
+      <a href="/category/presentations.html">Talks</a>
+      <a href="/category/blog.html">Thoughts</a>
+      <a href="">​</a>
+      <a href="/about/">About</a>
+      <a href="/comments/">Comments</a>
+      <a href="/legal/">Legal</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="">​</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="">​</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="entropy">Entropy, management, and XKCD 927</h1>
+    <p>
+      Posted on Sat 07 May 2022 in <a href="../../../../../category/blog.html">blog</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p><a href="https://xkcd.com/927/">XKCD 927</a> is a modern internet classic that is
+frequently brought up in conversations to remind people that a proposal
+that they’re making will, while being intended to simplify things,
+actually make them more complicated.</p>
+<p>Most people quote that strip to satirize or even ridicule the idea of
+introducing a “16th standard”, as if the natural order of things was
+simplification. Such people are frequently baffled by the amount of
+cruft and clutter that accumulates over time in an organization they
+work in, and some of them embark on a constant — perhaps career-long —
+quest of “streamlining,” “process optimization,” or “reducing
+technical debt.”</p>
+<p>If you are one such person, please get ready for some bad news.</p>
+<p>As far as we know, there are three fundamental theories that,
+combined, explain the universe as we know it: <a href="https://en.wikipedia.org/wiki/General_relativity">general
+relativity</a>,
+<a href="https://en.wikipedia.org/wiki/Quantum_mechanics">quantum mechanics</a>,
+and
+<a href="https://en.wikipedia.org/wiki/Thermodynamics">thermodynamics</a>. Thermodynamics
+has a famous <a href="https://en.wikipedia.org/wiki/Second_law_of_thermodynamics">Second
+Law</a> that
+can be stated in various ways — in one modern and simplified form, we
+say:</p>
+<blockquote>
+<p>The total entropy of a system never decreases.</p>
+</blockquote>
+<p>“Entropy,” in this context, is <a href="https://openstax.org/books/physics/pages/12-3-second-law-of-thermodynamics-entropy">essentially the degree to which the
+system is
+disorderly</a>.
+In effect, the Second Law states that any system can stay just as
+orderly as it is now, or it can become more disorderly, but in can
+never again become as orderly as it once was. <strong>The normal state of
+the world is that things keep getting more and more disorderly.</strong></p>
+<p>There are multiple classic examples of this: you can mix two paints in
+a bucket but cannot unmix them, you can open a container of gas in a
+vacuum chamber and the gas will disperse but never go back into the
+container, you can scramble and cook and egg but never return it to
+its original protein structure.</p>
+<p>Sometimes the growth in entropy isn’t noticeable: you can of course
+pick up your cluttered desk and put everything neatly away in boxes or
+drawers (or the trash), and your office will look nice and clean and
+uncluttered thereafter. But, in the process you will have turned so
+much of your body’s energy into heat that the overall disorder in the
+“system” (consisting of the things in your office, the room, you, all
+the gas molecules in the air, and so forth) will have gone up quite
+considerably.</p>
+<p>Now, I realize that not all laws of physics can be directly applied on
+a macro scale, that is, to organizations, families, or societies. For
+example, you’ll have to go through various mind-bends to imagine your
+life as a path through gazillions of <a href="https://en.wikipedia.org/wiki/Many-worlds_interpretation">Everettian many-worlds
+bifurcations</a>.
+But I’d posit that the constant growth of entropy is indeed rather
+fundamental — after all, growth in entropy is one of our best
+definitions of the <a href="https://en.wikipedia.org/wiki/Arrow_of_time#Thermodynamic_arrow_of_time">passage of
+time</a>.
+Escaping the growth of entropy is literally just as impossible as
+stopping time.</p>
+<p>What does that mean for each of us, individually? It means, bluntly
+speaking, that our lives get objectively and perpetually messier over
+time. I don’t know if you’re in a better or worse place than you were
+10 or 20 years ago in your life, but I’m pretty sure that you’re in a
+more <em>complicated</em> place now. And many of us might probably <em>want</em> to
+go back to our less-complicated life from back then, but alas,
+backwards time travel (and hence entropy reduction, read: “a more
+orderly life”) is not an option.</p>
+<p>Now as long as you’re just trying (and failing) to rewind disorder in
+your own life, then — as long as you live and work alone — that will
+probably not have a harmful effect on anyone. But it gets tricky when
+you’re applying the same thinking to living with a spouse, or in a
+family. Good luck trying to rewind your life with teenage offspring,
+for example, to the presumably simpler time when they were three month
+old babies that slept most of the day.</p>
+<p>But let’s also talk about how this affects your work in a management
+position.</p>
+<p><strong>If you are a manager, it is your job to slow the growth of disorder
+in your part of the organization.</strong> You won’t be able to <em>reduce</em>
+disorder, and any attempt to do so pits you against a most fundamental
+law of physics. (Laws of physics are like terrorists: you shouldn’t
+attempt to negotiate with them.) However, many managers are exactly
+the opposite: they are entropy accelerators; they <em>speed up</em> the
+growth of disorder in the organization.</p>
+<p>You can do better than that.<sup id="fnref:hadfield"><a class="footnote-ref" href="#fn:hadfield">1</a></sup> Here are a few suggestions you
+can apply when dealing with your management peers, so you can act as
+your organization’s entropy decelerator.</p>
+<ul>
+<li>
+<p>Somebody wants to replace multiple existing things with one new
+  thing (the original XKCD 927 scenario): the only circumstance under
+  which you should agree to this is when you already know <em>for
+  certain</em> that the existing things must go away, within a manageable
+  timeframe. For example, the software solutions that your company has
+  been buying from one vendor have had such a massive price hike that
+  they now break the budget, or the legal ramifications of continuing
+  to use them have become untenable. That’s when you have an option of
+  possibly replacing two (or three) things with one. Under all other
+  circumstances, you can hope to replace one thing with one other, at
+  best.</p>
+</li>
+<li>
+<p>Somebody wants to solve a communications issue by adding more
+  channels to your company chat, more categories to your issue
+  tracker, more whatever? That’s your cue to stop that dead in its
+  tracks. Opening more lanes of communication never simplifies
+  anything; it always makes things more complicated. Those new chat
+  channels? Tit for tat. They want three new ones, so they must retire
+  three. No, not two. Three.</p>
+</li>
+<li>
+<p>Somebody wants to “open up team communications”, or “flatten the
+  organization”, so that everyone’s <a href="%7Bfilename%7Dflat-org-scaling.md">complete
+  graph</a> has way more edges?
+  That’s when you educate them about <span class="math">\({n(n-1)}\over 2\)</span>, and what
+  quadratic growth means.</p>
+</li>
+</ul>
+<p>Do you notice how <strong>a lot of these involve saying “no” to someone,</strong>
+and that that may place you at odds with the the well-meaning
+proponent? Congratulations on your realization that leadership is not
+a popularity contest among your management colleagues.</p>
+<p>One word of caution though: even if you fight this good fight — and
+trust me, it <em>is</em> a good fight — you will <em>still</em> occasionally look
+back at when you started working in your organization, and realize
+that despite all your efforts it’s a messier place than when you
+started. Not just the whole organization, but maybe even your own team
+or whatever your little corner of the corporate world is. The part
+where <em>you</em> are responsible for your part of the mess.</p>
+<p>This is especially true if you are just in the middle of leaving an
+organization (or a role therein), and are reflecting on the impact of
+your tenure: you might fall for the thought of “I tried really hard,
+but things still are messier than when I got here.” They always will
+be. The point is not to compare today’s degree of disorder to that
+when you started. The point is to compare how disorderly it is now, to
+how disorderly it would have been if you hadn’t been there.</p>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:hadfield">
+<p>Making a positive contribution to a group in a leadership
+role is frequently — and somewhat counter-intuitively — achieved
+by simply focusing on not making things worse for
+everyone. Canadian astronaut and former
+<a href="https://en.wikipedia.org/wiki/International_Space_Station">ISS</a>
+commander <a href="https://en.wikipedia.org/wiki/Chris_Hadfield">Chris
+Hadfield</a> calls this
+approach “aiming to be a zero” and dedicates a whole chapter in
+his excellent <a href="https://www.goodreads.com/book/show/18170143-an-astronaut-s-guide-to-life-on-earth">Astronaut’s Guide to Life on
+Earth</a>
+to this idea. <a class="footnote-backref" href="#fnref:hadfield" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../../../tag/work.html">Work</a>
+      <a href="../../../../../tag/communications.html">Communications</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../../../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../../../../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+
+</body>
+</html>

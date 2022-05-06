@@ -119,6 +119,31 @@
 
 <article>
   <header>
+    <h2><a href="../resources/hints-and-kinks/solve-drbd-split-brain-4-steps/#solve-drbd-split-brain-4-steps">Solve a DRBD split-brain in 4 steps</a></h2>
+    <p>
+      Posted on Tue 06 March 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
+
+          &#8226; Tagged with
+              <a href="../tag/drbd.html">DRBD</a>
+    </p>
+  </header>
+  <div>
+      <div><p>Whenever a DRBD setup runs into a situation where the replication
+network is disconnected and fencing policy is set to <code>dont-care</code>
+(default), there is the potential risk of a split-brain. Even with
+resource level fencing or STONITH setup, there are corner cases that
+will end up in a split-brain.</p>
+<p>When …</p></div>
+        <br>
+        <a class="btn"
+           href="../resources/hints-and-kinks/solve-drbd-split-brain-4-steps/#solve-drbd-split-brain-4-steps">
+          Continue reading
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="../resources/hints-and-kinks/checking-corosync-cluster-membership/#checking-corosync-cluster-membership">Checking Corosync cluster membership</a></h2>
     <p>
       Posted on Sun 04 March 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
@@ -213,31 +238,6 @@ the <code>dlm-pcmk</code>, <code>gfs2-tools</code>, and <code>gfs-pcmk</code> pa
         <br>
         <a class="btn"
            href="../resources/hints-and-kinks/gfs2-pacemaker-debianubuntu/#gfs2-pacemaker-debianubuntu">
-          Continue reading
-        </a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="../resources/hints-and-kinks/interleaving-pacemaker-clones/#interleaving-pacemaker-clones">Interleaving in Pacemaker clones</a></h2>
-    <p>
-      Posted on Sun 26 February 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
-
-          &#8226; Tagged with
-              <a href="../tag/pacemaker.html">Pacemaker</a>
-    </p>
-  </header>
-  <div>
-      <div><p>Ever wonder what <code>meta interleave</code> really means in a Pacemaker clone
-definition? We'll explain.</p>
-<p>The <code>interleave</code> meta attribute is only valid on Pacemaker clone
-definitions – and their extended version of sorts, master/slave
-sets. It's not available on primitives and groups. Clones are often
-used in configurations involving cluster filesystems …</p></div>
-        <br>
-        <a class="btn"
-           href="../resources/hints-and-kinks/interleaving-pacemaker-clones/#interleaving-pacemaker-clones">
           Continue reading
         </a>
   </div>
