@@ -28,12 +28,13 @@ OUTPUT_RETENTION = ['.git',
 JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
 
 STATIC_PATHS = [
-    'images',
-    'css',
-    'fonts',
-    'robots.txt',
-    'favicon.ico',
     'CNAME',
+    'css',
+    'favicon.ico',
+    'fonts',
+    'images',
+    'keybase.txt',
+    'robots.txt',
     ]
 
 PLUGIN_PATHS = [
