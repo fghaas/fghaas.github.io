@@ -1,7 +1,7 @@
 Title: Entropy, management, and XKCD 927
 Date: 2022-05-07
 Slug: entropy
-Summary: As a manager, don’t try negotiate with the laws of physics.
+Summary: As a manager, don’t try to negotiate with the laws of physics.
 Tags: Work, Communications
 
 [XKCD 927](https://xkcd.com/927/) is a modern internet classic that is
