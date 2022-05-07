@@ -119,6 +119,30 @@
 
 <article>
   <header>
+    <h2><a href="../resources/hints-and-kinks/mysqlgalera-pacemaker-recovering-full-cluster-shutdown/#mysqlgalera-pacemaker-recovering-full-cluster-shutdown">Recovering from full cluster shutdown</a></h2>
+    <p>
+      Posted on Tue 04 December 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
+
+          &#8226; Tagged with
+              <a href="../tag/galera.html">Galera</a>,              <a href="../tag/mysql.html">MySQL</a>,              <a href="../tag/pacemaker.html">Pacemaker</a>
+    </p>
+  </header>
+  <div>
+      <div><p>If at any time <em>all</em> of the nodes in your cluster have been taken
+down, it is necessary to re-initialize the Galera replication
+state. In effect, this is identical to bootstrapping the cluster.</p>
+<p>Start by manually bringing up the cluster IP on one of your nodes:</p>
+<div class="highlight"><pre><span></span><code>ip address add <span class="m">192 …</span></code></pre></div></div>
+        <br>
+        <a class="btn"
+           href="../resources/hints-and-kinks/mysqlgalera-pacemaker-recovering-full-cluster-shutdown/#mysqlgalera-pacemaker-recovering-full-cluster-shutdown">
+          Continue reading
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="../resources/hints-and-kinks/mysqlgalera-pacemaker-setting-galera-specific-mysql-options/#mysqlgalera-pacemaker-setting-galera-specific-mysql-options">Setting Galera-specific MySQL options</a></h2>
     <p>
       Posted on Tue 04 December 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
@@ -220,35 +244,6 @@ integration with DRBD, MySQL Replication, and Galera.</p>
         <br>
         <a class="btn"
            href="../resources/presentations/mysql-high-availability-deep-dive/#mysql-high-availability-deep-dive">
-          Continue reading
-        </a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="../resources/presentations/glusterfs-high-availability-clusters/#glusterfs-high-availability-clusters">GlusterFS in High Availability Clusters</a></h2>
-    <p>
-      Posted on Thu 08 November 2012 in <a href="../category/presentations.html">presentations</a>
-
-          &#8226; Tagged with
-              <a href="../tag/conference.html">Conference</a>,              <a href="../tag/glusterfs.html">GlusterFS</a>
-    </p>
-  </header>
-  <div>
-      <div><p>My Pacemaker presentation from the GlusterFS Workshop at LinuxCon
-Europe 2012. Presented in Barcelona in November of 2012, this is a
-overview of integrating GlusterFS with the Pacemaker cluster stack.</p>
-<p>This tutorial gives an overview of</p>
-<ul>
-<li>The Pacemaker stack,</li>
-<li>Using GlusterFS for Pacemaker storage,</li>
-<li>Managing GlusterFS volumes from Pacemaker.</li>
-</ul>
-<p>My …</p></div>
-        <br>
-        <a class="btn"
-           href="../resources/presentations/glusterfs-high-availability-clusters/#glusterfs-high-availability-clusters">
           Continue reading
         </a>
   </div>

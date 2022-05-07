@@ -1,5 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - blog</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/category/blog.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-05-07T00:00:00+00:00</updated><entry><title>Entropy, management, and xkcd 927</title><link href="https://xahteiwi.eu/blog/2022/05/07/entropy/" rel="alternate"></link><published>2022-05-07T00:00:00+00:00</published><updated>2022-05-07T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-05-07:/blog/2022/05/07/entropy/</id><summary type="html">&lt;p&gt;As a manager, don’t try to negotiate with the laws of physics.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://xkcd.com/927/"&gt;xkcd 927&lt;/a&gt; is a modern internet classic that is
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - blog</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/category/blog.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-05-08T00:00:00+00:00</updated><entry><title>Sweet &amp; savoury stir fry</title><link href="https://xahteiwi.eu/blog/2022/05/08/sweet-savoury-stir-fry/" rel="alternate"></link><published>2022-05-08T00:00:00+00:00</published><updated>2022-05-08T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-05-08:/blog/2022/05/08/sweet-savoury-stir-fry/</id><summary type="html">&lt;p&gt;Easy lunch. With meat, or vegan.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is inspired by a dish that goes by "Mongolian beef" in parts of
+the U.S., but I opted for the generic title since it's neither
+Mongolian, nor does it require beef. It works with any red meat, but
+you can also leave the meat out altogether, at which point this
+becomes a vegan dish.&lt;/p&gt;
+&lt;p&gt;I normally serve this with jasmine or basmati rice. I have yet to try
+it with &lt;a href="https://en.wikipedia.org/wiki/Udon"&gt;udon&lt;/a&gt;, which I am
+guessing should work well too.&lt;/p&gt;
+&lt;h2&gt;Ingredients&lt;/h2&gt;
+&lt;p&gt;Amounts are for 4 servings.&lt;/p&gt;
+&lt;p&gt;Meat (optional):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;About 400g of red meat (beef flank steak, or leg of lamb)&lt;/li&gt;
+&lt;li&gt;3 tbsp soy sauce&lt;/li&gt;
+&lt;li&gt;1 tbsp rice vinegar (or &lt;a href="https://en.wikipedia.org/wiki/Shaoxing_wine"&gt;Shaoxing
+  wine&lt;/a&gt;, for a finer
+  flavor)&lt;/li&gt;
+&lt;li&gt;1 tbsp sesame oil&lt;/li&gt;
+&lt;li&gt;3-4 tbsp cornstarch or potato starch&lt;/li&gt;
+&lt;li&gt;4-5 tbsp peanut oil (for frying)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Vegetables:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2 tbsp peanut oil (for frying)&lt;/li&gt;
+&lt;li&gt;4 cloves garlic, finely chopped&lt;/li&gt;
+&lt;li&gt;1-2 red bell peppers, cut into 2cm squares&lt;/li&gt;
+&lt;li&gt;1 hot chili pepper, seeds removed (alternatively a jalapeño pepper,
+  if you like it milder), chopped&lt;/li&gt;
+&lt;li&gt;180g (drained) bamboo shoots&lt;/li&gt;
+&lt;li&gt;5-6 scallions (spring onions), cut diagonally into 2-3cm pieces&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Sauce:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2 tbsp granulated sugar&lt;/li&gt;
+&lt;li&gt;3 tbsp soy sauce&lt;/li&gt;
+&lt;li&gt;2 tbsp &lt;a href="https://en.wikipedia.org/wiki/Hoisin_sauce"&gt;hoisin sauce&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;2 tbsp sesame seeds&lt;/li&gt;
+&lt;li&gt;1 tbsp cornstarch or potato starch&lt;/li&gt;
+&lt;li&gt;1 tbsp rice vinegar (optional)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Equipment&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;1 small bowls (for sauce)&lt;/li&gt;
+&lt;li&gt;1 medium-size bowl (for meat)&lt;/li&gt;
+&lt;li&gt;Cooking knife and board&lt;/li&gt;
+&lt;li&gt;Whisk&lt;/li&gt;
+&lt;li&gt;Large skillet or wok&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Method&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Prepare the sauce: whisk sugar, soy sauce, hoisin sauce, sesame
+   seeds, and optionally rice vinegar together in a small bowl and set
+   aside.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If you're including the meat: prepare the marinade by whisking all
+   liquid ingredients together in a medium bowl. Cut the meat into
+   very thin strips and put them in the bowl. Marinate for at least 20
+   minutes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Toss the meat in the cornstarch or potato starch.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Heat peanut oil in the skillet or wok on high heat. Fry the meat in
+   batches until the starch turns golden brown, about 3 minutes or so
+   per batch, keeping heat on high. Put fried meat aside in a bowl.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Vegetable fry: heat peanut oil in wok or skillet on high
+   heat. Sauté garlic until fragrant but not brown. Add bell peppers,
+   chili pepper, and bamboo shoots. Continue frying on high heat for
+   about a minute.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add the cut scallions, mix thoroughly. Cover skillet or wok with a
+   lid, and cook vegetables for about 5 minutes in their own
+   steam. Taste the scallions. If they've lost their onion punch and
+   developed a slightly sweet taste but still retain some crunch,
+   they're perfect.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If going for the meat option, return the fried meat to the wok or
+   skillet.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pour the sauce prepared in step 1 over everthing, mix thoroughly,
+   and keep cooking for another 30-60 seconds until sauce thickens.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Serve.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Nutrition facts&lt;/h2&gt;
+&lt;p&gt;No warranty of any kind on these. Values are per serving.&lt;/p&gt;
+&lt;p&gt;With meat:&lt;/p&gt;
+&lt;table class="table-striped table"&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Calories (kcal)&lt;/th&gt;
+&lt;th&gt;561&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Total fat (g)&lt;/td&gt;
+&lt;td&gt;34.9&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Saturated fat (g)&lt;/td&gt;
+&lt;td&gt;7.8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Total carbohydrates (g)&lt;/td&gt;
+&lt;td&gt;29.4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Sugars (g)&lt;/td&gt;
+&lt;td&gt;13.6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Protein (g)&lt;/td&gt;
+&lt;td&gt;32.8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Without meat:&lt;/p&gt;
+&lt;table class="table-striped table"&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Calories (kcal)&lt;/th&gt;
+&lt;th&gt;223&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Total fat (g)&lt;/td&gt;
+&lt;td&gt;13.0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Saturated fat (g)&lt;/td&gt;
+&lt;td&gt;2.1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Total carbohydrates (g)&lt;/td&gt;
+&lt;td&gt;24.8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Sugars (g)&lt;/td&gt;
+&lt;td&gt;13.4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Protein (g)&lt;/td&gt;
+&lt;td&gt;4.2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</content><category term="blog"></category><category term="Food"></category><category term="Recipe"></category></entry><entry><title>Entropy, management, and xkcd 927</title><link href="https://xahteiwi.eu/blog/2022/05/07/entropy/" rel="alternate"></link><published>2022-05-07T00:00:00+00:00</published><updated>2022-05-07T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-05-07:/blog/2022/05/07/entropy/</id><summary type="html">&lt;p&gt;As a manager, don’t try to negotiate with the laws of physics.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://xkcd.com/927/"&gt;xkcd 927&lt;/a&gt; is a modern internet classic that is
 frequently brought up in conversations to remind people that a proposal
 that they’re making will, while being intended to simplify things,
 actually make them more complicated.&lt;/p&gt;
@@ -843,7 +1000,7 @@ planned.&lt;/p&gt;
 &lt;p&gt;So Alex, being a good CEO, opens some spread sheet software and
 creates this handy table that simply plugs in values for &lt;span class="math"&gt;\(x\)&lt;/span&gt; and &lt;span class="math"&gt;\(y\)&lt;/span&gt;,
 with &lt;span class="math"&gt;\(x\)&lt;/span&gt; (width) in columns and &lt;span class="math"&gt;\(y\)&lt;/span&gt; (depth) in rows.&lt;sup id="fnref:table"&gt;&lt;a class="footnote-ref" href="#fn:table"&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -1067,7 +1224,7 @@ interjects that Alex is missing a point, namely all the managers that
 the company will now no longer need, and the cost savings thus
 generated.&lt;/p&gt;
 &lt;p&gt;So Alex looks at the table again (width in columns, depth in rows):&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -1256,7 +1413,7 @@ cell &lt;em&gt;directly above it&lt;/em&gt; will contain the total number of man
 again, but considers the number of managers proportional to the number
 of people in the company, a pattern quickly emerges (again, width
 is in columns, depth is in rows):&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -4062,7 +4219,7 @@ came this.&lt;/p&gt;
 &lt;/ol&gt;
 &lt;h2&gt;Nutrition facts&lt;/h2&gt;
 &lt;p&gt;No warranty of any kind on these. Values are per serving.&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Calories (kcal)&lt;/th&gt;
@@ -4345,7 +4502,7 @@ several to accommodate a larger crowd, or very hungry people.&lt;/p&gt;
 &lt;h2&gt;Nutrition facts&lt;/h2&gt;
 &lt;p&gt;No warranty of any kind on these. Values are per serving, counting one
 serving as one-quarter of the whole pizza.&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Calories (kcal)&lt;/th&gt;
@@ -4825,7 +4982,7 @@ in the conference.&lt;/p&gt;
 &lt;p&gt;Nonexisticon’s attendee-visible run-up cycle is 6 months.&lt;/p&gt;
 &lt;p&gt;Assuming a Nonexisticon is scheduled to run from May 15-17, the
 following schedule applies:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Date&lt;/th&gt;
@@ -5146,7 +5303,7 @@ let’s say it’s 1%.&lt;/p&gt;
 &lt;p&gt;So then let’s look at 10,000 interactions that completely random
 people make on the internet.&lt;/p&gt;
 &lt;p&gt;Those would then break down like so:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -5179,7 +5336,7 @@ flags content as infringing when it is not) with a rate of only
 ridiculously low for any automated screening procedure.&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;So that means that out of our 10,000 interactions tracked by our
 “perfect” content filter, the numbers break down like this:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -5222,7 +5379,7 @@ exceedingly rare, automated filters detect it with poor accuracy.&lt;/strong&gt;
 &lt;p&gt;And if you leave all parameters the same, but consider a probably much
 more realistic infringement rate of 1 in 1000, that is, 0.1%, then
 things look like this: &lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
