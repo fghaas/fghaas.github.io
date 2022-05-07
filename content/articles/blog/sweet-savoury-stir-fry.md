@@ -51,7 +51,7 @@ Sauce:
 
 ## Equipment
 
-* 1 small bowls (for sauce)
+* 1 small bowl (for sauce)
 * 1 medium-size bowl (for meat)
 * Cooking knife and board
 * Whisk
