@@ -133,7 +133,7 @@ your organization’s entropy decelerator.
 
 * Somebody wants to “open up team communications”, or “flatten the
   organization”, so that everyone’s [complete
-  graph](%7Bfilename%7Dflat-org-scaling.md) has way more edges?
+  graph]({filename}flat-org-scaling.md) has way more edges?
   That’s when you educate them about ${n(n-1)}\over 2$, and what
   quadratic growth means.
 
