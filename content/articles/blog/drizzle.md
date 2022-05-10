@@ -2,7 +2,7 @@ Title: Drizzle: the most influential software project you’ve (probably) never 
 Date: 2022-05-10 17:15
 Slug: drizzle
 Summary: Drizzle aimed to rewrite the MySQL database server. It instead rewrote collaborative software development.
-Tags: Work, Communications
+Tags: Development, CI, MySQL, OpenStack
 
 **Drizzle** was an open-source project[^disclaimer] that, for all
 intents and purposes, died in 2016. Its project web site is now
