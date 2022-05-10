@@ -1,0 +1,429 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../../../../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../../../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../../../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../../../../theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/solid.css">
+
+    <link rel="stylesheet" type="text/css" href="../../../../../css/override.css">
+
+    <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+    <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+  
+
+
+ 
+
+<meta name="author" content="Florian Haas" />
+<meta name="description" content="Drizzle aimed to rewrite the MySQL database server. It instead rewrote collaborative software development." />
+<meta name="keywords" content="Work, Communications">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="Drizzle: the most influential software project you’ve (probably) never heard of"/>
+  <meta property="og:description" content="Drizzle aimed to rewrite the MySQL database server. It instead rewrote collaborative software development."/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../../../../blog/2022/05/10/drizzle/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2022-05-10 17:15:00+00:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../../../../author/florian-haas.html">
+  <meta property="article:section" content="blog"/>
+  <meta property="article:tag" content="Work"/>
+  <meta property="article:tag" content="Communications"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; Drizzle: the most influential software project you’ve (probably) never heard of</title>
+
+</head>
+<body >
+  <aside>
+    <div>
+      <a href="../../../../../">
+        <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="../../../../../"></a>
+      </h1>
+
+
+
+
+      <ul class="social">
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/xahteiwi" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="me" class="sc-mastodon" href="https://mastodon.social/@xahteiwi" target="_blank">
+              <i class="fab fa-mastodon"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/fghaas" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-github" href="https://github.com/fghaas" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="../../../../../">Home</a>
+
+      <a href="/category/hints-and-kinks.html">Tech</a>
+      <a href="/category/presentations.html">Talks</a>
+      <a href="/category/blog.html">Thoughts</a>
+      <a href="">​</a>
+      <a href="/about/">About</a>
+      <a href="/comments/">Comments</a>
+      <a href="/legal/">Legal</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="">​</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="">​</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="drizzle">Drizzle: the most influential software project you’ve (probably) never heard of</h1>
+    <p>
+      Posted on Tue 10 May 2022 in <a href="../../../../../category/blog.html">blog</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p><strong>Drizzle</strong> was an open-source project<sup id="fnref:disclaimer"><a class="footnote-ref" href="#fn:disclaimer">1</a></sup> that, for all
+intents and purposes, died in 2016. Its project web site is now
+defunct, and the most recent snapshot from the Wayback Machine is
+<a href="https://web.archive.org/web/20160902091713/http://www.drizzle.org/">that of September 2,
+2016</a>.
+In July of that year, Stewart Smith (one of the project’s core team)
+<a href="(https://www.mail-archive.com/drizzle-discuss@lists.launchpad.net/msg09228.html).">announced on the project mailing
+list</a>
+that neither he nor any other core team members had time to dedicate
+to Drizzle anymore.</p>
+<p>Prior to that, the project had been mostly dormant since 2012<sup id="fnref:2013"><a class="footnote-ref" href="#fn:2013">2</a></sup>,
+having been founded in 2008. So it was properly “active” for just 4
+years, and then in limbo for 4 more before finally wrapping
+up. Chances are, you’ve probably never run a Drizzle database server
+in production, and quite possibly never spun one up for any purpose
+either.</p>
+<p>And yet, if you’re an open source software developer, you’re probably
+using something, every single day, that came out of Drizzle. And that
+something isn’t even software.</p>
+<h2>Drizzle’s history, a very brief summary</h2>
+<p>Drizzle started as an attempt to refactor MySQL, and was originally
+driven by Brian Aker, together with a small team of engineers at Sun
+(which had then-recently acquired MySQL), in the first half of 2008. A
+skunk works project that flew under the radar — to put it charitably —
+at Sun, Drizzle was publicly announced at O’Reilly OSCON of that year.
+There are a couple of videos floating around from that event (<a href="https://youtu.be/9DuJFUnxg7k">from
+the keynotes</a>, and <a href="https://youtu.be/2tO7_Ozr-9U">from a booth
+presentation</a>) that are both… well, go
+and see for yourself. The aforementioned Stewart Smith did a very
+entertaining talk at linux.conf.au some five years later that covers
+those events, which you can watch from <a href="https://mirror.linux.org.au/pub/linux.conf.au/2014/Wednesday/28-Past_Present_and_future_of_MySQL_and_variants_-_Stewart_Smith.mp4">the official Linux Australia
+mirror</a>,
+or from a <a href="https://www.youtube.com/watch?v=6Uv9vcb4SdA">YouTube
+upload</a>.</p>
+<p>There’s also an interesting old blog post from MySQL co-founder Monty
+Widenius, <a href="https://monty-says.blogspot.com/2008/07/what-if.html">written in late July of
+2008</a>, which
+outlines the state of affairs at the time.</p>
+<p>Of course, in 2010 Oracle acquired Sun (and with it, the MySQL
+database) — and Oracle was presumably less than keen on having an
+<em>in-house</em> fork of the database technology it had just acquired. Thus,
+the Drizzle engineers found a new home at Rackspace, with the goal of
+getting Drizzle to a production-ready release. That <em>sort of</em>
+happened, and the Drizzle package even got into Debian, but after <a href="https://launchpad.net/drizzle/7.1">the
+Drizzle 7.1 release in 2012</a>,
+adoption did not exactly skyrocket. Development on Drizzle stagnated
+and eventually petered out.  The 7.2 release branch <a href="https://launchpad.net/drizzle/7.2">never made it out
+of the alpha stage</a>.</p>
+<p>Today, to the best of my knowledge, you can’t install a Drizzle
+package on any contemporary operating system. There is <a href="https://hub.docker.com/search?q=drizzle">no official
+Drizzle container image on Docker
+Hub</a>, no DBaaS offering based
+on Drizzle, nothing.</p>
+<p>But Drizzle left a very important legacy.</p>
+<h2>What did Drizzle do differently?</h2>
+<p>In 2008, it was already common for open source software to live in
+public version-controlled repositories. But far from all of them used
+<a href="https://git-scm.com/">Git</a>, like the vast majority do today: some
+used <a href="https://en.wikipedia.org/wiki/Concurrent_Versions_System">CVS</a>
+or <a href="https://en.wikipedia.org/wiki/Apache_Subversion">Subversion</a>, some
+used <a href="https://en.wikipedia.org/wiki/Mercurial">Mercurial</a>, and the
+<a href="https://launchpad.net/">Launchpad</a> platform (which Drizzle lived on)
+used <a href="https://en.wikipedia.org/wiki/GNU_Bazaar">Bazaar</a>.</p>
+<p>But most of them did have one thing in common, which is how changes
+landed in the tree. You had a small group of “core committers”, who
+had write access to the “official” code repository. They could (and
+would) push changes to the codebase on their own volition and
+authority. In smaller projects, the core committers “group” might be
+just one person.  If someone <em>outside</em> the core committers group
+wanted to make a contribution, they had to convince a core committer
+to merge it.</p>
+<p>Sometimes (though quite rarely at the time), projects had some form of
+scripted unit testing — typically implemented with the then-popular
+<a href="https://en.wikipedia.org/wiki/Hudson_(software)">Hudson</a> server,
+which was subsequently forked to become
+<a href="https://www.jenkins.io/">Jenkins</a>.  But such unit tests would be seen
+as merely advisory: breaking unit tests didn’t necessarily mean that a
+patch couldn’t land, <em>specifically</em> if the patch originated with a
+core committer. Unit tests would also not necessarily run
+automatically when a patch was submitted, they might instead run only
+if specifically kicked off by a core committer.</p>
+<p>The Drizzle team, as Brian put it in a talk I recall attending (though
+not exactly when and where), “took commit rights away from everybody.”
+That meant that <em>nobody</em> could push changes directly to a central
+repository, and <em>everything</em> had to flow through CI tests. The process
+generally went like this:</p>
+<ul>
+<li>
+<p>You submitted a patch to Drizzle, implementing a new feature.
+  Immediately after your submission, an automated process (in Hudson,
+  later Jenkins) would automatically run its complete suite of unit
+  tests against the current code base, with your patch applied.</p>
+</li>
+<li>
+<p>Your patch would perhaps break an existing regression test. You
+  would immediately be notified of the failure, giving you a chance to
+  fix the problem that your change introduced.</p>
+</li>
+<li>
+<p>You submitted a new version of the patch, which would now pass the
+  test suite.</p>
+</li>
+<li>
+<p>Humans would now review your patch. They would no longer have to
+  worry that your patch broke anything pre-existing (a common question
+  in patch reviews in many contemporary projects), and could instead
+  focus on the merit of your feature addition.</p>
+</li>
+<li>
+<p>If your reviewers determined that your new feature should come with
+  <em>additional</em> tests (and they usually should), they would recommend
+  you implement a test for your new feature.</p>
+</li>
+<li>
+<p>You would then resubmit your patch with the added testing
+  functionality, and — assuming everyone was happy with the
+  implementation — your reviewers would give the go-ahead to merge
+  your patch.</p>
+</li>
+<li>
+<p>At this stage of course, the rest of the codebase might have
+  changed: some other patches might have landed before yours. So, the
+  entire pipeline — including tests that predated your patch, the new
+  tests your patch introduced, and the new tests that <em>other</em> patches
+  might have added in the interim — would re-run with the current
+  state of the codebase with your patch applied. If your patch broke
+  things <em>now,</em> you would be asked to fix them once more.</p>
+</li>
+<li>
+<p>However, if your change <em>didn’t</em> break anything even now, then there
+  would be no human blocking the merge anymore: as soon as the tests
+  passed, <em>the thing that ran the tests</em> (I don’t recall if in 2008 we
+  already had the term “CI pipeline” for that thing) would merge the
+  patch on your behalf.</p>
+</li>
+</ul>
+<p>Much of this automation was brand new innovation at the time, largely
+due to the work of Drizzle developer Monty Taylor — who later went on
+to becoming a highly influential engineer in other projects, which
+(among many other things) <a href="https://www.wired.com/2013/04/new-hackers-taylor/">landed him a profile in WIRED in
+2013</a>.</p>
+<p>The Drizzle team also was pretty diligent about what they considered
+“breaking things:” for example, the Drizzle test suite contained
+several performance benchmarks. If a patch made the server perform
+worse, i.e. introduced a performance regression, that would be treated
+the same as a functional regression. So you not only would be unable
+to land a patch that actually broke functionality or made the database
+server eat data; you would also be unable to land a patch that made
+the server slower.</p>
+<p>The Drizzle team is also where, to the best of my knowledge, a coinage
+for this kind of approach originated: “gated commits”, or “gating” in
+general.</p>
+<h2>How is this relevant?</h2>
+<p>A substantial fraction on the Drizzle core team — which had moved to
+Rackspace in 2010 — was instrumental in launching another project that
+came out of that company (and NASA) that same year:
+<a href="https://openstack.org">OpenStack</a>. And OpenStack took the gating
+approach from its humble beginnings with Drizzle to an absolutely
+massive scale in its hype years (2011 – 2015 or thereabouts) — so much
+so that it established a new default in collaborative software
+projects.  Many other projects that launched in that timeframe
+(including <a href="https://kubernetes.io">Kubernetes</a> and
+<a href="https://www.terraform.io">Terraform</a>) adopted this approach as well.</p>
+<p>Today, having automated CI testing on every submitted patch is
+considered par for the course in a collaborative software project.
+<a href="https://docs.gitlab.com/ee/ci/">GitLab CI</a> and <a href="https://docs.github.com/en/actions/automating-builds-and-tests/about-continuous-integration">GitHub Actions
+workflows</a>
+have made these much more accessible than they used to be with Hudson
+and Jenkins. It’s also exceedingly common to do detailed collaborative
+reviews in a public forum before merging — GitHub’s PR review workflow
+is ever more closely approaching the Gerrit review workflow that
+OpenStack uses. GitHub’s <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/automatically-merging-a-pull-request">auto-merge
+functionality</a>
+(which lands patches automatically once they have passed both
+automated unit tests and human review) is more or less a direct copy
+of the automated merge found in OpenStack’s <a href="https://docs.opendev.org/opendev/infra-manual/latest/developers.html#development-workflow">development
+workflow</a>,
+which itself can be directly traced back to Drizzle’s review process.</p>
+<p>And all these things are found in open source software projects across
+all sorts of communities. Kubernetes, Terraform,
+<a href="https://www.djangoproject.com/">Django</a>,
+<a href="https://github.com/python/cpython">CPython</a>, <a href="https://openedx.org">Open
+edX</a> — you name it, it probably uses an approach
+first pioneered in Drizzle.</p>
+<p>And that’s the real lasting legacy of a project that few people even
+remember by name.</p>
+<h2>Who do we owe this to?</h2>
+<p>I know some of the Drizzle developers personally, though certainly not
+all. What follows is an incomplete list of people you can buy a meal
+or a drink if you run into them, and you like the way you
+collaboratively develop software today:</p>
+<ul>
+<li>Brian Aker</li>
+<li>Mark Atwood</li>
+<li>Aeva Black</li>
+<li>Patrick Crews</li>
+<li>Eric Day</li>
+<li>Patrick Galbraith</li>
+<li>Andrew Hutchings</li>
+<li>Jay Pipes</li>
+<li>David Shrewsbury</li>
+<li>Stewart Smith</li>
+<li>Pádraig O’Sullivan</li>
+<li>Monty Taylor</li>
+</ul>
+<hr/>
+<h3>Acknowledgements</h3>
+<p>Stewart Smith and Mark Atwood kindly <a href="https://github.com/fghaas/fghaas.github.io/pull/7">reviewed this
+article</a> and
+provided valuable feedback on it. Thanks to both of you! All errors
+and omissions are of course mine, and mine alone.</p>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:disclaimer">
+<p>Disclaimer: I was never a part of the Drizzle project
+in any role, which for the purposes of this article is probably a
+good thing as I am not talking about personal accomplishments or
+failures, in other words I have no skin in the game. This article
+also does not contain any information about the Drizzle project
+except that which was available via public channels at the time,
+or has become public since. <a class="footnote-backref" href="#fnref:disclaimer" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:2013">
+<p>The project did participate in Google Summer of Code in 2013,
+which is what the <a href="https://twitter.com/drizzledb">last tweets on the project’s Twitter
+account</a> are about. But the
+project’s development branch <a href="https://launchpad.net/drizzle/7.2">had its last alpha release in
+September 2012</a>. <a class="footnote-backref" href="#fnref:2013" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../../../tag/work.html">Work</a>
+      <a href="../../../../../tag/communications.html">Communications</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../../../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../../../../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+
+</body>
+</html>
