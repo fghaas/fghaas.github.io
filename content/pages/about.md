@@ -10,9 +10,10 @@ work for [LINBIT](https://www.linbit.com) for about 4½ years, and
 co-founded hastexo with my partners Martin Loschwitz and Andreas Kurz
 in 2011. We parted ways 3 years in, and 3 years after _that_ I [sold
 hastexo](https://www.citynetwork.eu/pressreleases/city-network-shifts-high-gear-hastexo-acquisition/)
-to [City Network AB](https://www.citynetwork.eu).
+to City Network AB. Finally, in 2022, City Network [rebranded as
+Cleura](https://cleura.com/press-releases/city-network-becomes-cleura/).
 
-At City Network I currently serve as Head of Education, and I am also
+At Cleura I currently serve as Head of Education, and I am also
 the MD of City Network Education Services, the legal entity formerly
 known as hastexo (the hastexo brand is defunct). Some of the content
 on this site was originally hosted on `hastexo.com`, was not carried
@@ -22,7 +23,7 @@ spelled out as such at the bottom of the respective pages. Regardless,
 **I work on this site in my spare time** (which is also why articles
 tend to appear here on weekends) **and you should not mistake
 anything on this site as official pronouncements of my employer.** For
-those, please head over to [citycloud.com](https://www.citycloud.com).
+those, please head over to [cleura.com](https://cleura.com/).
 
 Most of the articles on this site cover technical issues, largely
 around [OpenStack](/tag/openstack.html), [Open
