@@ -1,5 +1,236 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Development</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/development.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2016-07-05T00:00:00+00:00</updated><entry><title>Fragile Development: Scrum is terrible, and you should ditch it</title><link href="https://xahteiwi.eu/blog/2016/07/05/fragile-development/" rel="alternate"></link><published>2016-07-05T00:00:00+00:00</published><updated>2016-07-05T00:00:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2016-07-05:/blog/2016/07/05/fragile-development/</id><summary type="html">&lt;p&gt;Scrum is irrational, impractical, and outright dangerous for software development. It is time to stop considering it a viable method for building software.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a writeup of an
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Development</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/development.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-05-10T17:15:00+00:00</updated><entry><title>Drizzle: the most influential software project you’ve (probably) never heard of</title><link href="https://xahteiwi.eu/blog/2022/05/10/drizzle/" rel="alternate"></link><published>2022-05-10T17:15:00+00:00</published><updated>2022-05-10T17:15:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-05-10:/blog/2022/05/10/drizzle/</id><summary type="html">&lt;p&gt;Drizzle aimed to rewrite the MySQL database server. It instead rewrote collaborative software development.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;Drizzle&lt;/strong&gt; was an open-source project&lt;sup id="fnref:disclaimer"&gt;&lt;a class="footnote-ref" href="#fn:disclaimer"&gt;1&lt;/a&gt;&lt;/sup&gt; that, for all
+intents and purposes, died in 2016. Its project web site is now
+defunct, and the most recent snapshot from the Wayback Machine is
+&lt;a href="https://web.archive.org/web/20160902091713/http://www.drizzle.org/"&gt;that of September 2,
+2016&lt;/a&gt;.
+In July of that year, Stewart Smith (one of the project’s core team)
+&lt;a href="(https://www.mail-archive.com/drizzle-discuss@lists.launchpad.net/msg09228.html)."&gt;announced on the project mailing
+list&lt;/a&gt;
+that neither he nor any other core team members had time to dedicate
+to Drizzle anymore.&lt;/p&gt;
+&lt;p&gt;Prior to that, the project had been mostly dormant since 2012&lt;sup id="fnref:2013"&gt;&lt;a class="footnote-ref" href="#fn:2013"&gt;2&lt;/a&gt;&lt;/sup&gt;,
+having been founded in 2008. So it was properly “active” for just 4
+years, and then in limbo for 4 more before finally wrapping
+up. Chances are, you’ve probably never run a Drizzle database server
+in production, and quite possibly never spun one up for any purpose
+either.&lt;/p&gt;
+&lt;p&gt;And yet, if you’re an open source software developer, you’re probably
+using something, every single day, that came out of Drizzle. And that
+something isn’t even software.&lt;/p&gt;
+&lt;h2&gt;Drizzle’s history, a very brief summary&lt;/h2&gt;
+&lt;p&gt;Drizzle started as an attempt to refactor MySQL, and was originally
+driven by Brian Aker, together with a small team of engineers at Sun
+(which had then-recently acquired MySQL), in the first half of 2008. A
+skunk works project that flew under the radar — to put it charitably —
+at Sun, Drizzle was publicly announced at O’Reilly OSCON of that year.
+There are a couple of videos floating around from that event (&lt;a href="https://youtu.be/9DuJFUnxg7k"&gt;from
+the keynotes&lt;/a&gt;, and &lt;a href="https://youtu.be/2tO7_Ozr-9U"&gt;from a booth
+presentation&lt;/a&gt;) that are both… well, go
+and see for yourself. The aforementioned Stewart Smith did a very
+entertaining talk at linux.conf.au some five years later that covers
+those events, which you can watch from &lt;a href="https://mirror.linux.org.au/pub/linux.conf.au/2014/Wednesday/28-Past_Present_and_future_of_MySQL_and_variants_-_Stewart_Smith.mp4"&gt;the official Linux Australia
+mirror&lt;/a&gt;,
+or from a &lt;a href="https://www.youtube.com/watch?v=6Uv9vcb4SdA"&gt;YouTube
+upload&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;There’s also an interesting old blog post from MySQL co-founder Monty
+Widenius, &lt;a href="https://monty-says.blogspot.com/2008/07/what-if.html"&gt;written in late July of
+2008&lt;/a&gt;, which
+outlines the state of affairs at the time.&lt;/p&gt;
+&lt;p&gt;Of course, in 2010 Oracle acquired Sun (and with it, the MySQL
+database) — and Oracle was presumably less than keen on having an
+&lt;em&gt;in-house&lt;/em&gt; fork of the database technology it had just acquired. Thus,
+the Drizzle engineers found a new home at Rackspace, with the goal of
+getting Drizzle to a production-ready release. That &lt;em&gt;sort of&lt;/em&gt;
+happened, and the Drizzle package even got into Debian, but after &lt;a href="https://launchpad.net/drizzle/7.1"&gt;the
+Drizzle 7.1 release in 2012&lt;/a&gt;,
+adoption did not exactly skyrocket. Development on Drizzle stagnated
+and eventually petered out.  The 7.2 release branch &lt;a href="https://launchpad.net/drizzle/7.2"&gt;never made it out
+of the alpha stage&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Today, to the best of my knowledge, you can’t install a Drizzle
+package on any contemporary operating system. There is &lt;a href="https://hub.docker.com/search?q=drizzle"&gt;no official
+Drizzle container image on Docker
+Hub&lt;/a&gt;, no DBaaS offering based
+on Drizzle, nothing.&lt;/p&gt;
+&lt;p&gt;But Drizzle left a very important legacy.&lt;/p&gt;
+&lt;h2&gt;What did Drizzle do differently?&lt;/h2&gt;
+&lt;p&gt;In 2008, it was already common for open source software to live in
+public version-controlled repositories. But far from all of them used
+&lt;a href="https://git-scm.com/"&gt;Git&lt;/a&gt;, like the vast majority do today: some
+used &lt;a href="https://en.wikipedia.org/wiki/Concurrent_Versions_System"&gt;CVS&lt;/a&gt;
+or &lt;a href="https://en.wikipedia.org/wiki/Apache_Subversion"&gt;Subversion&lt;/a&gt;, some
+used &lt;a href="https://en.wikipedia.org/wiki/Mercurial"&gt;Mercurial&lt;/a&gt;, and the
+&lt;a href="https://launchpad.net/"&gt;Launchpad&lt;/a&gt; platform (which Drizzle lived on)
+used &lt;a href="https://en.wikipedia.org/wiki/GNU_Bazaar"&gt;Bazaar&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;But most of them did have one thing in common, which is how changes
+landed in the tree. You had a small group of “core committers”, who
+had write access to the “official” code repository. They could (and
+would) push changes to the codebase on their own volition and
+authority. In smaller projects, the core committers “group” might be
+just one person.  If someone &lt;em&gt;outside&lt;/em&gt; the core committers group
+wanted to make a contribution, they had to convince a core committer
+to merge it.&lt;/p&gt;
+&lt;p&gt;Sometimes (though quite rarely at the time), projects had some form of
+scripted unit testing — typically implemented with the then-popular
+&lt;a href="https://en.wikipedia.org/wiki/Hudson_(software)"&gt;Hudson&lt;/a&gt; server,
+which was subsequently forked to become
+&lt;a href="https://www.jenkins.io/"&gt;Jenkins&lt;/a&gt;.  But such unit tests would be seen
+as merely advisory: breaking unit tests didn’t necessarily mean that a
+patch couldn’t land, &lt;em&gt;specifically&lt;/em&gt; if the patch originated with a
+core committer. Unit tests would also not necessarily run
+automatically when a patch was submitted, they might instead run only
+if specifically kicked off by a core committer.&lt;/p&gt;
+&lt;p&gt;The Drizzle team, as Brian put it in a talk I recall attending (though
+not exactly when and where), “took commit rights away from everybody.”
+That meant that &lt;em&gt;nobody&lt;/em&gt; could push changes directly to a central
+repository, and &lt;em&gt;everything&lt;/em&gt; had to flow through CI tests. The process
+generally went like this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;You submitted a patch to Drizzle, implementing a new feature.
+  Immediately after your submission, an automated process (in Hudson,
+  later Jenkins) would automatically run its complete suite of unit
+  tests against the current code base, with your patch applied.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Your patch would perhaps break an existing regression test. You
+  would immediately be notified of the failure, giving you a chance to
+  fix the problem that your change introduced.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You submitted a new version of the patch, which would now pass the
+  test suite.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Humans would now review your patch. They would no longer have to
+  worry that your patch broke anything pre-existing (a common question
+  in patch reviews in many contemporary projects), and could instead
+  focus on the merit of your feature addition.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If your reviewers determined that your new feature should come with
+  &lt;em&gt;additional&lt;/em&gt; tests (and they usually should), they would recommend
+  you implement a test for your new feature.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You would then resubmit your patch with the added testing
+  functionality, and — assuming everyone was happy with the
+  implementation — your reviewers would give the go-ahead to merge
+  your patch.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;At this stage of course, the rest of the codebase might have
+  changed: some other patches might have landed before yours. So, the
+  entire pipeline — including tests that predated your patch, the new
+  tests your patch introduced, and the new tests that &lt;em&gt;other&lt;/em&gt; patches
+  might have added in the interim — would re-run with the current
+  state of the codebase with your patch applied. If your patch broke
+  things &lt;em&gt;now,&lt;/em&gt; you would be asked to fix them once more.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;However, if your change &lt;em&gt;didn’t&lt;/em&gt; break anything even now, then there
+  would be no human blocking the merge anymore: as soon as the tests
+  passed, &lt;em&gt;the thing that ran the tests&lt;/em&gt; (I don’t recall if in 2008 we
+  already had the term “CI pipeline” for that thing) would merge the
+  patch on your behalf.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Much of this automation was brand new innovation at the time, largely
+due to the work of Drizzle developer Monty Taylor — who later went on
+to becoming a highly influential engineer in other projects, which
+(among many other things) &lt;a href="https://www.wired.com/2013/04/new-hackers-taylor/"&gt;landed him a profile in WIRED in
+2013&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The Drizzle team also was pretty diligent about what they considered
+“breaking things:” for example, the Drizzle test suite contained
+several performance benchmarks. If a patch made the server perform
+worse, i.e. introduced a performance regression, that would be treated
+the same as a functional regression. So you not only would be unable
+to land a patch that actually broke functionality or made the database
+server eat data; you would also be unable to land a patch that made
+the server slower.&lt;/p&gt;
+&lt;p&gt;The Drizzle team is also where, to the best of my knowledge, a coinage
+for this kind of approach originated: “gated commits”, or “gating” in
+general.&lt;/p&gt;
+&lt;h2&gt;How is this relevant?&lt;/h2&gt;
+&lt;p&gt;A substantial fraction on the Drizzle core team — which had moved to
+Rackspace in 2010 — was instrumental in launching another project that
+came out of that company (and NASA) that same year:
+&lt;a href="https://openstack.org"&gt;OpenStack&lt;/a&gt;. And OpenStack took the gating
+approach from its humble beginnings with Drizzle to an absolutely
+massive scale in its hype years (2011 – 2015 or thereabouts) — so much
+so that it established a new default in collaborative software
+projects.  Many other projects that launched in that timeframe
+(including &lt;a href="https://kubernetes.io"&gt;Kubernetes&lt;/a&gt; and
+&lt;a href="https://www.terraform.io"&gt;Terraform&lt;/a&gt;) adopted this approach as well.&lt;/p&gt;
+&lt;p&gt;Today, having automated CI testing on every submitted patch is
+considered par for the course in a collaborative software project.
+&lt;a href="https://docs.gitlab.com/ee/ci/"&gt;GitLab CI&lt;/a&gt; and &lt;a href="https://docs.github.com/en/actions/automating-builds-and-tests/about-continuous-integration"&gt;GitHub Actions
+workflows&lt;/a&gt;
+have made these much more accessible than they used to be with Hudson
+and Jenkins. It’s also exceedingly common to do detailed collaborative
+reviews in a public forum before merging — GitHub’s PR review workflow
+is ever more closely approaching the Gerrit review workflow that
+OpenStack uses. GitHub’s &lt;a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/automatically-merging-a-pull-request"&gt;auto-merge
+functionality&lt;/a&gt;
+(which lands patches automatically once they have passed both
+automated unit tests and human review) is more or less a direct copy
+of the automated merge found in OpenStack’s &lt;a href="https://docs.opendev.org/opendev/infra-manual/latest/developers.html#development-workflow"&gt;development
+workflow&lt;/a&gt;,
+which itself can be directly traced back to Drizzle’s review process.&lt;/p&gt;
+&lt;p&gt;And all these things are found in open source software projects across
+all sorts of communities. Kubernetes, Terraform,
+&lt;a href="https://www.djangoproject.com/"&gt;Django&lt;/a&gt;,
+&lt;a href="https://github.com/python/cpython"&gt;CPython&lt;/a&gt;, &lt;a href="https://openedx.org"&gt;Open
+edX&lt;/a&gt; — you name it, it probably uses an approach
+first pioneered in Drizzle.&lt;/p&gt;
+&lt;p&gt;And that’s the real lasting legacy of a project that few people even
+remember by name.&lt;/p&gt;
+&lt;h2&gt;Who do we owe this to?&lt;/h2&gt;
+&lt;p&gt;I know some of the Drizzle developers personally, though certainly not
+all. What follows is an incomplete list of people you can buy a meal
+or a drink if you run into them, and you like the way you
+collaboratively develop software today:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Brian Aker&lt;/li&gt;
+&lt;li&gt;Mark Atwood&lt;/li&gt;
+&lt;li&gt;Aeva Black&lt;/li&gt;
+&lt;li&gt;Patrick Crews&lt;/li&gt;
+&lt;li&gt;Eric Day&lt;/li&gt;
+&lt;li&gt;Patrick Galbraith&lt;/li&gt;
+&lt;li&gt;Andrew Hutchings&lt;/li&gt;
+&lt;li&gt;Jay Pipes&lt;/li&gt;
+&lt;li&gt;David Shrewsbury&lt;/li&gt;
+&lt;li&gt;Stewart Smith&lt;/li&gt;
+&lt;li&gt;Pádraig O’Sullivan&lt;/li&gt;
+&lt;li&gt;Monty Taylor&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h3&gt;Acknowledgements&lt;/h3&gt;
+&lt;p&gt;Stewart Smith and Mark Atwood kindly &lt;a href="https://github.com/fghaas/fghaas.github.io/pull/7"&gt;reviewed this
+article&lt;/a&gt; and
+provided valuable feedback on it. Thanks to both of you! All errors
+and omissions are of course mine, and mine alone.&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr/&gt;
+&lt;ol&gt;
+&lt;li id="fn:disclaimer"&gt;
+&lt;p&gt;Disclaimer: I was never a part of the Drizzle project
+in any role, which for the purposes of this article is probably a
+good thing as I am not talking about personal accomplishments or
+failures, in other words I have no skin in the game. This article
+also does not contain any information about the Drizzle project
+except that which was available via public channels at the time,
+or has become public since. &lt;a class="footnote-backref" href="#fnref:disclaimer" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:2013"&gt;
+&lt;p&gt;The project did participate in Google Summer of Code in 2013,
+which is what the &lt;a href="https://twitter.com/drizzledb"&gt;last tweets on the project’s Twitter
+account&lt;/a&gt; are about. But the
+project’s development branch &lt;a href="https://launchpad.net/drizzle/7.2"&gt;had its last alpha release in
+September 2012&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:2013" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content><category term="blog"></category><category term="Development"></category><category term="CI"></category><category term="MySQL"></category><category term="OpenStack"></category></entry><entry><title>Fragile Development: Scrum is terrible, and you should ditch it</title><link href="https://xahteiwi.eu/blog/2016/07/05/fragile-development/" rel="alternate"></link><published>2016-07-05T00:00:00+00:00</published><updated>2016-07-05T00:00:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2016-07-05:/blog/2016/07/05/fragile-development/</id><summary type="html">&lt;p&gt;Scrum is irrational, impractical, and outright dangerous for software development. It is time to stop considering it a viable method for building software.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a writeup of an
 &lt;a href="https://en.wikipedia.org/wiki/Ignite_(event)"&gt;Ignite&lt;/a&gt; talk I gave at
 &lt;a href="http://www.openstack-israel.org"&gt;OpenStack Israel 2016&lt;/a&gt;. The
 paragraph headings below approximately correspond to the content of my
