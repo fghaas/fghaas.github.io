@@ -1,5 +1,6 @@
 Title: Drizzle: the most influential software project you’ve (probably) never heard of
 Date: 2022-05-10 17:15
+Modified: 2022-05-11 16:30
 Slug: drizzle
 Summary: Drizzle aimed to rewrite the MySQL database server. It instead rewrote collaborative software development.
 Tags: Development, CI, MySQL, OpenStack
@@ -245,3 +246,9 @@ Stewart Smith and Mark Atwood kindly [reviewed this
 article](https://github.com/fghaas/fghaas.github.io/pull/7) and
 provided valuable feedback on it. Thanks to both of you! All errors
 and omissions are of course mine, and mine alone.
+
+Also, though I’ve been meaning to write something like this post for a
+while, it was ultimately [a Mastodon
+thread](https://floss.social/@juliaferraioli/108256786270538144) by
+[Julia Ferraioli](https://www.juliaferraioli.com/) that became my
+writing prompt. Thanks for that, too!
