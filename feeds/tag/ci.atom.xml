@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - CI</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/ci.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-05-10T17:15:00+00:00</updated><entry><title>Drizzle: the most influential software project you’ve (probably) never heard of</title><link href="https://xahteiwi.eu/blog/2022/05/10/drizzle/" rel="alternate"></link><published>2022-05-10T17:15:00+00:00</published><updated>2022-05-10T17:15:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-05-10:/blog/2022/05/10/drizzle/</id><summary type="html">&lt;p&gt;Drizzle aimed to rewrite the MySQL database server. It instead rewrote collaborative software development.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;Drizzle&lt;/strong&gt; was an open-source project&lt;sup id="fnref:disclaimer"&gt;&lt;a class="footnote-ref" href="#fn:disclaimer"&gt;1&lt;/a&gt;&lt;/sup&gt; that, for all
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - CI</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/ci.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-05-11T16:30:00+00:00</updated><entry><title>Drizzle: the most influential software project you’ve (probably) never heard of</title><link href="https://xahteiwi.eu/blog/2022/05/10/drizzle/" rel="alternate"></link><published>2022-05-10T17:15:00+00:00</published><updated>2022-05-11T16:30:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-05-10:/blog/2022/05/10/drizzle/</id><summary type="html">&lt;p&gt;Drizzle aimed to rewrite the MySQL database server. It instead rewrote collaborative software development.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;Drizzle&lt;/strong&gt; was an open-source project&lt;sup id="fnref:disclaimer"&gt;&lt;a class="footnote-ref" href="#fn:disclaimer"&gt;1&lt;/a&gt;&lt;/sup&gt; that, for all
 intents and purposes, died in 2016. Its project web site is now
 defunct, and the most recent snapshot from the Wayback Machine is
 &lt;a href="https://web.archive.org/web/20160902091713/http://www.drizzle.org/"&gt;that of September 2,
@@ -210,6 +210,11 @@ collaboratively develop software today:&lt;/p&gt;
 article&lt;/a&gt; and
 provided valuable feedback on it. Thanks to both of you! All errors
 and omissions are of course mine, and mine alone.&lt;/p&gt;
+&lt;p&gt;Also, though I’ve been meaning to write something like this post for a
+while, it was ultimately &lt;a href="https://floss.social/@juliaferraioli/108256786270538144"&gt;a Mastodon
+thread&lt;/a&gt; by
+&lt;a href="https://www.juliaferraioli.com/"&gt;Julia Ferraioli&lt;/a&gt; that became my
+writing prompt. Thanks for that, too!&lt;/p&gt;
 &lt;div class="footnote"&gt;
 &lt;hr/&gt;
 &lt;ol&gt;
