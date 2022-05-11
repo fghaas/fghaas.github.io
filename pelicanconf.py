@@ -56,6 +56,7 @@ PLUGINS = [
     'series',
     'sitemap',
     'summary',
+    'tipue_search',
 ]
 
 PATH = 'content'
