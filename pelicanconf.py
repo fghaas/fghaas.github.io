@@ -51,6 +51,7 @@ PLUGINS = [
     'custom_article_urls',
     'i18n_subsites',
     'page_hierarchy',
+    'post_stats',
     'render_math',
     'series',
     'sitemap',
