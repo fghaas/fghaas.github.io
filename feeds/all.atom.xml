@@ -20,7 +20,7 @@ USB-typical 5V, like you know from your phone.&lt;/p&gt;
 &lt;p&gt;Now the PBP comes with a separate barrel-plug charging port, but most
 of the time I just charge it via it USB-C. This I do primarily for
 convenience; it’s simply one fewer piece of kit to carry around. I can
-charge thus charge the PBP with a standard wall-socket USB charger, a
+thus charge the PBP with a standard wall-socket USB charger, a
 USB power bank, or any other USB power source.&lt;/p&gt;
 &lt;p&gt;Which is where the solar panel comes into play. Mine is a &lt;a href="http://www.ibigblue.com/product/detail/?id=17"&gt;28W charger
 from BigBlue&lt;/a&gt;. Now,
@@ -430,7 +430,7 @@ guessing should work well too.&lt;/p&gt;
 &lt;h2&gt;Nutrition facts&lt;/h2&gt;
 &lt;p&gt;No warranty of any kind on these. Values are per serving.&lt;/p&gt;
 &lt;p&gt;With meat:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Calories (kcal)&lt;/th&gt;
@@ -461,7 +461,7 @@ guessing should work well too.&lt;/p&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;Without meat:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Calories (kcal)&lt;/th&gt;
@@ -1717,7 +1717,7 @@ planned.&lt;/p&gt;
 &lt;p&gt;So Alex, being a good CEO, opens some spread sheet software and
 creates this handy table that simply plugs in values for &lt;span class="math"&gt;\(x\)&lt;/span&gt; and &lt;span class="math"&gt;\(y\)&lt;/span&gt;,
 with &lt;span class="math"&gt;\(x\)&lt;/span&gt; (width) in columns and &lt;span class="math"&gt;\(y\)&lt;/span&gt; (depth) in rows.&lt;sup id="fnref:table"&gt;&lt;a class="footnote-ref" href="#fn:table"&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -1941,7 +1941,7 @@ interjects that Alex is missing a point, namely all the managers that
 the company will now no longer need, and the cost savings thus
 generated.&lt;/p&gt;
 &lt;p&gt;So Alex looks at the table again (width in columns, depth in rows):&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -2130,7 +2130,7 @@ cell &lt;em&gt;directly above it&lt;/em&gt; will contain the total number of man
 again, but considers the number of managers proportional to the number
 of people in the company, a pattern quickly emerges (again, width
 is in columns, depth is in rows):&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -6029,7 +6029,7 @@ It’s being lazy.&lt;/p&gt;
 &lt;p&gt;It’s a symptom of the worst kind of laziness &lt;em&gt;(not malice!)&lt;/em&gt;: in an
 attempt to communicate quickly and easily, for yourself, you are really
 making things harder for everyone, including yourself.&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -6057,7 +6057,7 @@ ago”, you’ll agree with me here.&lt;/p&gt;
 is to say in relation to &lt;em&gt;other&lt;/em&gt; discussions on the same topic, days
 or weeks earlier or later.&lt;/p&gt;
 &lt;p&gt;Let’s compare that to other communication modes:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -6088,7 +6088,7 @@ or weeks earlier or later.&lt;/p&gt;
   as with chat, and it’s marginally better at contextualizing
   information than chat (because you get proper threading).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -6135,7 +6135,7 @@ or weeks earlier or later.&lt;/p&gt;
   Likewise, “issue tracker” can mean RT, OTRS, Jira, Taiga, Bugzilla,
   whatever works for you.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -7308,7 +7308,7 @@ came this.&lt;/p&gt;
 &lt;/ol&gt;
 &lt;h2&gt;Nutrition facts&lt;/h2&gt;
 &lt;p&gt;No warranty of any kind on these. Values are per serving.&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Calories (kcal)&lt;/th&gt;
@@ -7591,7 +7591,7 @@ several to accommodate a larger crowd, or very hungry people.&lt;/p&gt;
 &lt;h2&gt;Nutrition facts&lt;/h2&gt;
 &lt;p&gt;No warranty of any kind on these. Values are per serving, counting one
 serving as one-quarter of the whole pizza.&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Calories (kcal)&lt;/th&gt;
@@ -8844,7 +8844,7 @@ in the conference.&lt;/p&gt;
 &lt;p&gt;Nonexisticon’s attendee-visible run-up cycle is 6 months.&lt;/p&gt;
 &lt;p&gt;Assuming a Nonexisticon is scheduled to run from May 15-17, the
 following schedule applies:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Date&lt;/th&gt;
@@ -9306,7 +9306,7 @@ let’s say it’s 1%.&lt;/p&gt;
 &lt;p&gt;So then let’s look at 10,000 interactions that completely random
 people make on the internet.&lt;/p&gt;
 &lt;p&gt;Those would then break down like so:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -9339,7 +9339,7 @@ flags content as infringing when it is not) with a rate of only
 ridiculously low for any automated screening procedure.&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;So that means that out of our 10,000 interactions tracked by our
 “perfect” content filter, the numbers break down like this:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -9382,7 +9382,7 @@ exceedingly rare, automated filters detect it with poor accuracy.&lt;/strong&gt;
 &lt;p&gt;And if you leave all parameters the same, but consider a probably much
 more realistic infringement rate of 1 in 1000, that is, 0.1%, then
 things look like this: &lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
