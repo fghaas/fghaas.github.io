@@ -29,7 +29,7 @@ USB-typical 5V, like you know from your phone.
 Now the PBP comes with a separate barrel-plug charging port, but most
 of the time I just charge it via it USB-C. This I do primarily for
 convenience; it’s simply one fewer piece of kit to carry around. I can
-charge thus charge the PBP with a standard wall-socket USB charger, a
+thus charge the PBP with a standard wall-socket USB charger, a
 USB power bank, or any other USB power source.
 
 Which is where the solar panel comes into play. Mine is a [28W charger
