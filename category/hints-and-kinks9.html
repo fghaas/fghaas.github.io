@@ -123,6 +123,32 @@
 
 <article>
   <header>
+    <h2><a href="../resources/hints-and-kinks/fencing-vmware-virtualized-pacemaker-nodes/#fencing-vmware-virtualized-pacemaker-nodes">Fencing in VMware virtualized Pacemaker nodes</a></h2>
+    <p>
+      Posted on Fri 18 May 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
+
+          &#8226; Tagged with
+              <a href="../tag/pacemaker.html">Pacemaker</a>
+        &#8226; 2 min read
+    </p>
+  </header>
+  <div>
+      <div><p>For users of VMware virtualization, it's becoming increasingly common
+to deploy Pacemaker clusters within the virtual infrastructure. Doing
+this requires that you set up fencing via ESX Server or, more
+commonly, vCenter. Here's how to do that.</p>
+<p>The <code>cluster-glue</code> package contains node Pacemaker's fencing (STONITH)
+plugins, one of which is …</p></div>
+        <br>
+        <a class="btn"
+           href="../resources/hints-and-kinks/fencing-vmware-virtualized-pacemaker-nodes/#fencing-vmware-virtualized-pacemaker-nodes">
+          Continue reading
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="../resources/hints-and-kinks/mandatory-and-advisory-ordering-pacemaker/#mandatory-and-advisory-ordering-pacemaker">Mandatory and advisory ordering in Pacemaker</a></h2>
     <p>
       Posted on Thu 22 March 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
@@ -218,32 +244,6 @@ objects that make up the RBD …</p></div>
         <br>
         <a class="btn"
            href="../resources/hints-and-kinks/which-osd-stores-specific-rados-object/#which-osd-stores-specific-rados-object">
-          Continue reading
-        </a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="../resources/hints-and-kinks/solve-drbd-split-brain-4-steps/#solve-drbd-split-brain-4-steps">Solve a DRBD split-brain in 4 steps</a></h2>
-    <p>
-      Posted on Tue 06 March 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
-
-          &#8226; Tagged with
-              <a href="../tag/drbd.html">DRBD</a>
-        &#8226; 3 min read
-    </p>
-  </header>
-  <div>
-      <div><p>Whenever a DRBD setup runs into a situation where the replication
-network is disconnected and fencing policy is set to <code>dont-care</code>
-(default), there is the potential risk of a split-brain. Even with
-resource level fencing or STONITH setup, there are corner cases that
-will end up in a split-brain.</p>
-<p>When …</p></div>
-        <br>
-        <a class="btn"
-           href="../resources/hints-and-kinks/solve-drbd-split-brain-4-steps/#solve-drbd-split-brain-4-steps">
           Continue reading
         </a>
   </div>
