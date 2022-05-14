@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/all.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-05-14T00:00:00+00:00</updated><entry><title>Running a solar-powered laptop</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/solar-powered-laptop/" rel="alternate"></link><published>2022-05-14T00:00:00+00:00</published><updated>2022-05-14T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-05-14:/resources/hints-and-kinks/solar-powered-laptop/</id><summary type="html">&lt;p&gt;I’m a happy Pinebook Pro user, and I frequently use it on solar power.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Pinebook Pro laptop sitting on a table, outside, connected to a solar charging panel" class="img-fluid" src="/images/pinebookpro.jpg"/&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/all.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-05-14T06:30:00+00:00</updated><entry><title>My experiment: an interim update</title><link href="https://xahteiwi.eu/blog/2022/05/14/experiment-update/" rel="alternate"></link><published>2022-05-14T06:30:00+00:00</published><updated>2022-05-14T06:30:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-05-14:/blog/2022/05/14/experiment-update/</id><summary type="html">&lt;p&gt;An update on my small RSS/Mastodon/Twitter social media experiment&lt;/p&gt;</summary><content type="html">&lt;p&gt;My &lt;a href="https://xahteiwi.eu/blog/2022/05/06/experiment/"&gt;social media experiment&lt;/a&gt; is still
+ongoing. A week without posting articles on social media, while asking
+people to subscribe my RSS feed, has yielded&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;practically zero engagement on Twitter (except for &lt;a href="https://xahteiwi.eu/blog/2022/05/10/drizzle/"&gt;the article on
+  Drizzle&lt;/a&gt; article, which was reviewed by other
+  people and then shared by my reviewers),&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;very much non-zero engagement on Mastodon (where some of my
+  followers have apparently been subscribers to my RSS feed for quite
+  a while).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This doesn’t surprise me much: evidently, the habit of subscribing to
+feed sources via RSS comes more naturally to citizens of the
+Fediverse.&lt;/p&gt;
+&lt;p&gt;One nice upside of the experiment is that &lt;strong&gt;I&lt;/strong&gt; have been enjoying
+content written by others more. My aggregation of about 20-or-so
+feeds, followed via
+&lt;a href="https://play.google.com/store/apps/details?id=com.tughi.aggregator"&gt;Aggregator&lt;/a&gt;,
+gives me about 1 to two notifications new post per day, and most of
+those I find truly enjoyable and insightful.&lt;/p&gt;
+&lt;p&gt;I will now progress to phase II in my experiment which is to throw new
+posts out via RSS and Mastodon, but not on Twitter.&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>Running a solar-powered laptop</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/solar-powered-laptop/" rel="alternate"></link><published>2022-05-14T00:00:00+00:00</published><updated>2022-05-14T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-05-14:/resources/hints-and-kinks/solar-powered-laptop/</id><summary type="html">&lt;p&gt;I’m a happy Pinebook Pro user, and I frequently use it on solar power.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Pinebook Pro laptop sitting on a table, outside, connected to a solar charging panel" class="img-fluid" src="/images/pinebookpro.jpg"/&gt;&lt;/p&gt;
 &lt;p&gt;This piece of kit has been a conversation starter everywhere I take it
 out, so I figured it could use a short writeup.&lt;/p&gt;
 &lt;p&gt;In 2020 I purchased a &lt;a href="https://www.pine64.org/pinebook-pro/"&gt;Pinebook
