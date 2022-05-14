@@ -1,5 +1,6 @@
 Title: An experiment
 Date: 2022-05-06
+Series: social-media-experiment
 Slug: experiment
 Summary: I am launching a small experiment. Would you like to help?
 
