@@ -1,5 +1,6 @@
 Title: Running a solar-powered laptop
 Date: 2022-05-14
+Modified: 2022-05-15
 Slug: solar-powered-laptop
 Summary: I’m a happy Pinebook Pro user, and I frequently use it on solar power.
 
@@ -14,7 +15,14 @@ low-power ARM laptop for a while, the PBP came in a tolerable size
 (this is a 14" screen; about the top end of acceptable screen sizes
 for me), and it was an absolute steal. Including shipping and import
 duty — my device shipped from Hong Kong — I got mine for €277 all
-told.
+told.[^pine64eu]
+
+[^pine64eu]: If the PBP becomes available for order in Europe via
+    [pine64.eu](https://www.pine64.eu/shop/), then shipping should be
+    faster and you wouldn’t need to pay import duty. At the time of
+    writing, however, the PBP can only be purchased from the main
+    [pine64.com](https://pine64.com/product-category/pinebook-pro/)
+    store.
 
 Now if you haven’t heard of the Pinebook Pro, or for that matter of
 the PINE64 community, you should [check out their web
@@ -71,8 +79,8 @@ started with the Ubuntu Focal XFCE image, and then installed the
 `vanilla-gnome-desktop` metapackage and subsequently removed `xfce4*`.
 
 Overall the Ubuntu `aarch64` port works very well on this device with
-the armbian kernel (currently, that’s 5.9.14), with a couple of small
-caveats:
+the armbian Linux kernel (currently, that’s 5.9.14), with a couple of
+small caveats:
 
 * Suspend support is essentially limited to suspend-to-idle. I’d
   really love to have suspend-to-disk support on this device (ideally
