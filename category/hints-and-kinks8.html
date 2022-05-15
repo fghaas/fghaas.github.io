@@ -123,6 +123,38 @@
 
 <article>
   <header>
+    <h2><a href="../resources/hints-and-kinks/mysqlgalera-pacemaker-setting-galera-specific-mysql-options/#mysqlgalera-pacemaker-setting-galera-specific-mysql-options">Setting Galera-specific MySQL options</a></h2>
+    <p>
+      Posted on Tue 04 December 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
+
+          &#8226; Tagged with
+              <a href="../tag/galera.html">Galera</a>,              <a href="../tag/mysql.html">MySQL</a>,              <a href="../tag/pacemaker.html">Pacemaker</a>
+        &#8226; 1 min read
+    </p>
+  </header>
+  <div>
+      <div><p>Now you can proceed with setting Galera specifics in your MySQL
+configurations.</p>
+<p>Create a configuration file, <strong>identical on all cluster nodes,</strong> named
+<code>/etc/mysql/conf.d/galera.cnf</code> with the following content:</p>
+<div class="highlight"><pre><span></span><code><span class="k">[mysqld]</span><span class="w"></span>
+<span class="na">bind_address</span><span class="o">=</span><span class="s">0.0.0.0</span><span class="w"></span>
+<span class="na">binlog_format</span><span class="o">=</span><span class="s">ROW</span><span class="w"></span>
+<span class="na">default_storage_engine</span><span class="o">=</span><span class="s">InnoDB</span><span class="w"></span>
+<span class="na">innodb_autoinc_lock_mode</span><span class="o">=</span><span class="s">2</span><span class="w"></span>
+<span class="na">innodb_locks_unsafe_for_binlog</span><span class="o">=</span><span class="s">1</span><span class="w"></span>
+</code></pre></div>
+<p>Create another configuration file …</p></div>
+        <br>
+        <a class="btn"
+           href="../resources/hints-and-kinks/mysqlgalera-pacemaker-setting-galera-specific-mysql-options/#mysqlgalera-pacemaker-setting-galera-specific-mysql-options">
+          Continue reading
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="../resources/hints-and-kinks/mysqlgalera-pacemaker-starting-pacemaker/#mysqlgalera-pacemaker-starting-pacemaker">Starting Pacemaker</a></h2>
     <p>
       Posted on Tue 04 December 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
@@ -226,32 +258,6 @@ cluster maintenance …</p></div>
         <br>
         <a class="btn"
            href="../resources/hints-and-kinks/maintenance-active-pacemaker-clusters/#maintenance-active-pacemaker-clusters">
-          Continue reading
-        </a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="../resources/hints-and-kinks/configuring-radosgw-behave-amazon-s3/#configuring-radosgw-behave-amazon-s3">Configuring radosgw to behave like Amazon S3</a></h2>
-    <p>
-      Posted on Mon 09 July 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
-
-          &#8226; Tagged with
-              <a href="../tag/ceph.html">Ceph</a>
-        &#8226; 3 min read
-    </p>
-  </header>
-  <div>
-      <div><p>If you've heard of Ceph, you've surely heard of radosgw, a RESTful
-gateway interface to the RADOS object store. You've probably also
-heard that it provides a front-end interface that is compatible with
-Amazon's S3 API.</p>
-<p>The question remains, if you have an S3 client that always assumes it
-can …</p></div>
-        <br>
-        <a class="btn"
-           href="../resources/hints-and-kinks/configuring-radosgw-behave-amazon-s3/#configuring-radosgw-behave-amazon-s3">
           Continue reading
         </a>
   </div>

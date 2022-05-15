@@ -1,5 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - hints-and-kinks</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/category/hints-and-kinks.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-05-15T00:00:00+00:00</updated><entry><title>Running a solar-powered laptop</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/solar-powered-laptop/" rel="alternate"></link><published>2022-05-14T00:00:00+00:00</published><updated>2022-05-15T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-05-14:/resources/hints-and-kinks/solar-powered-laptop/</id><summary type="html">&lt;p&gt;I’m a happy Pinebook Pro user, and I frequently use it on solar power.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Pinebook Pro laptop sitting on a table, outside, connected to a solar charging panel" class="img-fluid" src="/images/pinebookpro.jpg"/&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - hints-and-kinks</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/category/hints-and-kinks.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-05-15T21:00:00+00:00</updated><entry><title>Batch-processing stereograms with StereoscoPy</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/batch-process-stereo/" rel="alternate"></link><published>2022-05-15T21:00:00+00:00</published><updated>2022-05-15T21:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-05-15:/resources/hints-and-kinks/batch-process-stereo/</id><summary type="html">&lt;p&gt;I often need to process stereograms in bulk. A Python tool named StereoscoPy is very handy in doing that.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="My camera with the Loreo 40mm stereoscopic lens attached (cross-view stereo image)" class="img-fluid" src="/images/loreo-stereo-lens.jpg"/&gt;&lt;/p&gt;
+&lt;p&gt;I have two methods of taking stereoscopic images, both of which I use
+regularly:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The “left foot, right foot” method, which I can do with any camera,
+  including that on my smart phone (I covered this method at length
+  &lt;a href="https://xahteiwi.eu/resources/presentations/add-depth-stereoscopic-imagery-for-everyone/"&gt;in my 2021 FrOSCon
+  talk&lt;/a&gt;). This is the method
+  I prefer when doing stereograms of landscapes, buildings, statues
+  and such like, and also what works very well for posed stereo
+  portraits.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;My &lt;a href="http://www.loreo.com/pages/products/loreo_3dlenscap9005-43_spec.html"&gt;Loreo stereoscopic
+  lens&lt;/a&gt;,
+  shown in the picture above attached to my camera.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Either way, I need to post-process my images to get cross-view
+stereograms like the one you’re seeing here.&lt;/p&gt;
+&lt;p&gt;In the former case the need is obvious: I start with two images and
+need to make them into one stereogram.&lt;/p&gt;
+&lt;p&gt;In the latter case, it’s perhaps less so: my stereo lens obviously
+already produces a stereogram, but it’s a wall-eyed one (which I’m not
+particularly good at viewing), and it has an area in the centre of the
+frame where the two images slightly overlap. I have found this area to
+be about 6% of the total width of the image. So that means that what I
+need to do, starting with the original stereo image, is this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Split the original image into two halves.&lt;/li&gt;
+&lt;li&gt;Cut off 3% on the left and right of each image — on one side, that
+  crop removes the overlap; on the other, it restores symmetry.&lt;/li&gt;
+&lt;li&gt;Swap the sides of the image: the originally left side goes right,
+  the right side goes left.&lt;/li&gt;
+&lt;li&gt;For easier viewing, add a divider, and a border.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;What comes in very handy here is a neat little tool:
+&lt;a href="https://github.com/2sh/StereoscoPy"&gt;StereoscoPy&lt;/a&gt; is a small Python
+library and CLI that is helpful in batch-processing stereo images.&lt;/p&gt;
+&lt;p&gt;In combination with &lt;code&gt;convert&lt;/code&gt; from
+&lt;a href="https://imagemagick.org/"&gt;ImageMagick&lt;/a&gt;, this enables me to
+batch-process a whole folder of stereo images into something that is
+much more suitable for general consumption than the original images
+that the Loreo lens produces.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Set the border/divider width, in pixels&lt;/span&gt;
+&lt;span class="nv"&gt;BORDER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;40&lt;/span&gt;
+
+&lt;span class="k"&gt;for&lt;/span&gt; f &lt;span class="k"&gt;in&lt;/span&gt; *.JPG&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+    &lt;span class="c1"&gt;# Grab the file name, sans extension&lt;/span&gt;
+    &lt;span class="nv"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;f&lt;/span&gt;&lt;span class="p"&gt;/.JPG/&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;
+
+    &lt;span class="c1"&gt;# If the cross-view stereogram already exists, &lt;/span&gt;
+    &lt;span class="c1"&gt;# skip to the next original image&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; -e stereo/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;name&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;-cross.jpg &lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+       &lt;span class="k"&gt;continue&lt;/span&gt;
+    &lt;span class="k"&gt;fi&lt;/span&gt;
+
+    &lt;span class="c1"&gt;# Convert the wall-eyed stereogram foo.JPG &lt;/span&gt;
+    &lt;span class="c1"&gt;# into foo-0.jpg (left) and foo-1.jpg (right)&lt;/span&gt;
+    convert &lt;span class="nv"&gt;$f&lt;/span&gt; -crop &lt;span class="m"&gt;50&lt;/span&gt;%x100% stereo/&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;f&lt;/span&gt;&lt;span class="p"&gt;%.JPG&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;.jpg
+
+    &lt;span class="c1"&gt;# Create a cross-view image, with auto-alignment, &lt;/span&gt;
+    &lt;span class="c1"&gt;# that crops 3% off each side of the image, auto-aligns, &lt;/span&gt;
+    &lt;span class="c1"&gt;# and creates a border and divider&lt;/span&gt;
+    StereoscoPy -x -A &lt;span class="se"&gt;\&lt;/span&gt;
+      --div &lt;span class="nv"&gt;$BORDER&lt;/span&gt; --border &lt;span class="nv"&gt;$BORDER&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+      -C &lt;span class="m"&gt;3&lt;/span&gt;% &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="m"&gt;3&lt;/span&gt;% &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+      stereo/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;name&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;-0.jpg stereo/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;name&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;-1.jpg &lt;span class="se"&gt;\&lt;/span&gt;
+      stereo/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;name&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;-cross.jpg
+
+    &lt;span class="c1"&gt;# Remove the intermediate images&lt;/span&gt;
+    rm stereo/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;name&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;-0.jpg stereo/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;name&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;-1.jpg
+&lt;span class="k"&gt;done&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Maybe I’ll eventually get round to submitting a patch to StereoscoPy
+itself, so that the pre-processing step with &lt;code&gt;convert&lt;/code&gt; is no longer
+necessary and the little script above becomes an actual one-liner. But
+for now this works okay for me.&lt;/p&gt;</content><category term="hints-and-kinks"></category></entry><entry><title>Running a solar-powered laptop</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/solar-powered-laptop/" rel="alternate"></link><published>2022-05-14T00:00:00+00:00</published><updated>2022-05-15T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-05-14:/resources/hints-and-kinks/solar-powered-laptop/</id><summary type="html">&lt;p&gt;I’m a happy Pinebook Pro user, and I frequently use it on solar power.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Pinebook Pro laptop sitting on a table, outside, connected to a solar charging panel" class="img-fluid" src="/images/pinebookpro.jpg"/&gt;&lt;/p&gt;
 &lt;p&gt;This piece of kit has been a conversation starter everywhere I take it
 out, so I figured it could use a short writeup.&lt;/p&gt;
 &lt;p&gt;In 2020 I purchased a &lt;a href="https://www.pine64.org/pinebook-pro/"&gt;Pinebook

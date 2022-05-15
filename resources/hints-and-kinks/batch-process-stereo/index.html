@@ -1,0 +1,279 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../../theme/pygments/github.min.css">
+
+    <link rel="stylesheet" href="../../../theme/tipuesearch/tipuesearch.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/solid.css">
+
+    <link rel="stylesheet" type="text/css" href="../../../css/override.css">
+
+    <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+    <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+  
+
+
+ 
+
+<meta name="author" content="Florian Haas" />
+<meta name="description" content="I often need to process stereograms in bulk. A Python tool named StereoscoPy is very handy in doing that." />
+<meta name="keywords" content="">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="Batch-processing stereograms with StereoscoPy"/>
+  <meta property="og:description" content="I often need to process stereograms in bulk. A Python tool named StereoscoPy is very handy in doing that."/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../../resources/hints-and-kinks/batch-process-stereo/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2022-05-15 21:00:00+00:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../../author/florian-haas.html">
+  <meta property="article:section" content="hints-and-kinks"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; Batch-processing stereograms with StereoscoPy</title>
+
+</head>
+<body >
+  <aside>
+    <div>
+      <a href="../../../">
+        <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="../../../"></a>
+      </h1>
+
+
+        <form class="navbar-search" action="../../../search.html" role="search">
+          <input type="text" name="q" id="tipue_search_input" placeholder="Search...">
+        </form>
+
+
+      <ul class="social">
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/xahteiwi" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="me" class="sc-mastodon" href="https://mastodon.social/@xahteiwi" target="_blank">
+              <i class="fab fa-mastodon"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/fghaas" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-github" href="https://github.com/fghaas" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="../../../">Home</a>
+
+      <a href="/category/hints-and-kinks.html">Tech</a>
+      <a href="/category/presentations.html">Talks</a>
+      <a href="/category/blog.html">Thoughts</a>
+      <a href="">​</a>
+      <a href="/about/">About</a>
+      <a href="/comments/">Comments</a>
+      <a href="/legal/">Legal</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="">​</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="">​</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="batch-process-stereo">Batch-processing stereograms with StereoscoPy</h1>
+    <p>
+      Posted on Sun 15 May 2022 in <a href="../../../category/hints-and-kinks.html">hints-and-kinks</a>
+
+        &#8226; 2 min read
+    </p>
+  </header>
+
+
+  <div>
+    <p><img alt="My camera with the Loreo 40mm stereoscopic lens attached (cross-view stereo image)" class="img-fluid" src="/images/loreo-stereo-lens.jpg"/></p>
+<p>I have two methods of taking stereoscopic images, both of which I use
+regularly:</p>
+<ul>
+<li>
+<p>The “left foot, right foot” method, which I can do with any camera,
+  including that on my smart phone (I covered this method at length
+  <a href="../../../resources/presentations/add-depth-stereoscopic-imagery-for-everyone/">in my 2021 FrOSCon
+  talk</a>). This is the method
+  I prefer when doing stereograms of landscapes, buildings, statues
+  and such like, and also what works very well for posed stereo
+  portraits.</p>
+</li>
+<li>
+<p>My <a href="http://www.loreo.com/pages/products/loreo_3dlenscap9005-43_spec.html">Loreo stereoscopic
+  lens</a>,
+  shown in the picture above attached to my camera.</p>
+</li>
+</ul>
+<p>Either way, I need to post-process my images to get cross-view
+stereograms like the one you’re seeing here.</p>
+<p>In the former case the need is obvious: I start with two images and
+need to make them into one stereogram.</p>
+<p>In the latter case, it’s perhaps less so: my stereo lens obviously
+already produces a stereogram, but it’s a wall-eyed one (which I’m not
+particularly good at viewing), and it has an area in the centre of the
+frame where the two images slightly overlap. I have found this area to
+be about 6% of the total width of the image. So that means that what I
+need to do, starting with the original stereo image, is this:</p>
+<ul>
+<li>Split the original image into two halves.</li>
+<li>Cut off 3% on the left and right of each image — on one side, that
+  crop removes the overlap; on the other, it restores symmetry.</li>
+<li>Swap the sides of the image: the originally left side goes right,
+  the right side goes left.</li>
+<li>For easier viewing, add a divider, and a border.</li>
+</ul>
+<p>What comes in very handy here is a neat little tool:
+<a href="https://github.com/2sh/StereoscoPy">StereoscoPy</a> is a small Python
+library and CLI that is helpful in batch-processing stereo images.</p>
+<p>In combination with <code>convert</code> from
+<a href="https://imagemagick.org/">ImageMagick</a>, this enables me to
+batch-process a whole folder of stereo images into something that is
+much more suitable for general consumption than the original images
+that the Loreo lens produces.</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="c1"># Set the border/divider width, in pixels</span>
+<span class="nv">BORDER</span><span class="o">=</span><span class="m">40</span>
+
+<span class="k">for</span> f <span class="k">in</span> *.JPG<span class="p">;</span> <span class="k">do</span>
+    <span class="c1"># Grab the file name, sans extension</span>
+    <span class="nv">name</span><span class="o">=</span><span class="si">${</span><span class="nv">f</span><span class="p">/.JPG/</span><span class="si">}</span>
+
+    <span class="c1"># If the cross-view stereogram already exists, </span>
+    <span class="c1"># skip to the next original image</span>
+    <span class="k">if</span> <span class="o">[</span> -e stereo/<span class="si">${</span><span class="nv">name</span><span class="si">}</span>-cross.jpg <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+       <span class="k">continue</span>
+    <span class="k">fi</span>
+
+    <span class="c1"># Convert the wall-eyed stereogram foo.JPG </span>
+    <span class="c1"># into foo-0.jpg (left) and foo-1.jpg (right)</span>
+    convert <span class="nv">$f</span> -crop <span class="m">50</span>%x100% stereo/<span class="s2">"</span><span class="si">${</span><span class="nv">f</span><span class="p">%.JPG</span><span class="si">}</span><span class="s2">"</span>.jpg
+
+    <span class="c1"># Create a cross-view image, with auto-alignment, </span>
+    <span class="c1"># that crops 3% off each side of the image, auto-aligns, </span>
+    <span class="c1"># and creates a border and divider</span>
+    StereoscoPy -x -A <span class="se">\</span>
+      --div <span class="nv">$BORDER</span> --border <span class="nv">$BORDER</span> <span class="se">\</span>
+      -C <span class="m">3</span>% <span class="m">0</span> <span class="m">3</span>% <span class="m">0</span> <span class="se">\</span>
+      stereo/<span class="si">${</span><span class="nv">name</span><span class="si">}</span>-0.jpg stereo/<span class="si">${</span><span class="nv">name</span><span class="si">}</span>-1.jpg <span class="se">\</span>
+      stereo/<span class="si">${</span><span class="nv">name</span><span class="si">}</span>-cross.jpg
+
+    <span class="c1"># Remove the intermediate images</span>
+    rm stereo/<span class="si">${</span><span class="nv">name</span><span class="si">}</span>-0.jpg stereo/<span class="si">${</span><span class="nv">name</span><span class="si">}</span>-1.jpg
+<span class="k">done</span>
+</code></pre></div>
+<p>Maybe I’ll eventually get round to submitting a patch to StereoscoPy
+itself, so that the pre-processing step with <code>convert</code> is no longer
+necessary and the little script above becomes an actual one-liner. But
+for now this works okay for me.</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+
+</body>
+</html>
