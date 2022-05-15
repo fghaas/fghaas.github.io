@@ -53,7 +53,7 @@
   <meta property="og:url" content="../../../resources/hints-and-kinks/solar-powered-laptop/"/>
   <meta property="og:type" content="article"/>
   <meta property="article:published_time" content="2022-05-14 00:00:00+00:00"/>
-  <meta property="article:modified_time" content=""/>
+  <meta property="article:modified_time" content="2022-05-15 00:00:00+00:00"/>
   <meta property="article:author" content="../../../author/florian-haas.html">
   <meta property="article:section" content="hints-and-kinks"/>
   <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
@@ -148,7 +148,7 @@ low-power ARM laptop for a while, the PBP came in a tolerable size
 (this is a 14" screen; about the top end of acceptable screen sizes
 for me), and it was an absolute steal. Including shipping and import
 duty — my device shipped from Hong Kong — I got mine for €277 all
-told.</p>
+told.<sup id="fnref:pine64eu"><a class="footnote-ref" href="#fn:pine64eu">1</a></sup></p>
 <p>Now if you haven’t heard of the Pinebook Pro, or for that matter of
 the PINE64 community, you should <a href="https://www.pine64.org/">check out their web
 site</a>. They make a bunch of really neat
@@ -172,7 +172,7 @@ that. Under optimal conditions where I live (at 48°N latitude), that
 is direct sunlight around solar noon on a cloudless day, I can get
 just under 3A out of the panel in total. Out of this, the maximum
 output of a single port is 2.1A, so that’s my maximum solar charge
-current for the PBP.<sup id="fnref:charge"><a class="footnote-ref" href="#fn:charge">1</a></sup></p>
+current for the PBP.<sup id="fnref:charge"><a class="footnote-ref" href="#fn:charge">2</a></sup></p>
 <p>Overall, for the PBP’s power consumption this is generally perfectly
 fine. I can work under a sunny or partly cloudy sky for the whole day
 if I want to.</p>
@@ -193,8 +193,8 @@ a big fan of Cinnamon or XFCE either, but that’s no big issue: I just
 started with the Ubuntu Focal XFCE image, and then installed the
 <code>vanilla-gnome-desktop</code> metapackage and subsequently removed <code>xfce4*</code>.</p>
 <p>Overall the Ubuntu <code>aarch64</code> port works very well on this device with
-the armbian kernel (currently, that’s 5.9.14), with a couple of small
-caveats:</p>
+the armbian Linux kernel (currently, that’s 5.9.14), with a couple of
+small caveats:</p>
 <ul>
 <li>
 <p>Suspend support is essentially limited to suspend-to-idle. I’d
@@ -219,7 +219,7 @@ caveats:</p>
 <p>The PBP’s SoC maxes out at 4GiB RAM, which means you shouldn’t be
   using the PBP for video editing or gaming or any other RAM-intensive
   activities. Even the GIMP runs out of steam pretty quickly at about
-  3 or 4 concurrently opened images.<sup id="fnref:ram"><a class="footnote-ref" href="#fn:ram">2</a></sup></p>
+  3 or 4 concurrently opened images.<sup id="fnref:ram"><a class="footnote-ref" href="#fn:ram">3</a></sup></p>
 </li>
 </ul>
 <p>So can I use this as my daily driver? Yes, with some minor drawbacks.
@@ -227,14 +227,22 @@ But those I can work around fairly well.</p>
 <div class="footnote">
 <hr/>
 <ol>
+<li id="fn:pine64eu">
+<p>If the PBP becomes available for order in Europe via
+<a href="https://www.pine64.eu/shop/">pine64.eu</a>, then shipping should be
+faster and you wouldn’t need to pay import duty. At the time of
+writing, however, the PBP can only be purchased from the main
+<a href="https://pine64.com/product-category/pinebook-pro/">pine64.com</a>
+store. <a class="footnote-backref" href="#fnref:pine64eu" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
 <li id="fn:charge">
 <p>The device cannot charge over the barrel port and USB-C
-simultaneously. <a class="footnote-backref" href="#fnref:charge" title="Jump back to footnote 1 in the text">↩</a></p>
+simultaneously. <a class="footnote-backref" href="#fnref:charge" title="Jump back to footnote 2 in the text">↩</a></p>
 </li>
 <li id="fn:ram">
 <p>Note that I can get cloud computing capacity for cheap at work, so
 if I need more RAM for something I can get it in a pinch — I am
-aware that that option is not available to everyone. <a class="footnote-backref" href="#fnref:ram" title="Jump back to footnote 2 in the text">↩</a></p>
+aware that that option is not available to everyone. <a class="footnote-backref" href="#fnref:ram" title="Jump back to footnote 3 in the text">↩</a></p>
 </li>
 </ol>
 </div>

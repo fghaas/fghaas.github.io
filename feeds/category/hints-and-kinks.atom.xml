@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - hints-and-kinks</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/category/hints-and-kinks.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-05-14T00:00:00+00:00</updated><entry><title>Running a solar-powered laptop</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/solar-powered-laptop/" rel="alternate"></link><published>2022-05-14T00:00:00+00:00</published><updated>2022-05-14T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-05-14:/resources/hints-and-kinks/solar-powered-laptop/</id><summary type="html">&lt;p&gt;I’m a happy Pinebook Pro user, and I frequently use it on solar power.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Pinebook Pro laptop sitting on a table, outside, connected to a solar charging panel" class="img-fluid" src="/images/pinebookpro.jpg"/&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - hints-and-kinks</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/category/hints-and-kinks.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-05-15T00:00:00+00:00</updated><entry><title>Running a solar-powered laptop</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/solar-powered-laptop/" rel="alternate"></link><published>2022-05-14T00:00:00+00:00</published><updated>2022-05-15T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-05-14:/resources/hints-and-kinks/solar-powered-laptop/</id><summary type="html">&lt;p&gt;I’m a happy Pinebook Pro user, and I frequently use it on solar power.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Pinebook Pro laptop sitting on a table, outside, connected to a solar charging panel" class="img-fluid" src="/images/pinebookpro.jpg"/&gt;&lt;/p&gt;
 &lt;p&gt;This piece of kit has been a conversation starter everywhere I take it
 out, so I figured it could use a short writeup.&lt;/p&gt;
 &lt;p&gt;In 2020 I purchased a &lt;a href="https://www.pine64.org/pinebook-pro/"&gt;Pinebook
@@ -8,7 +8,7 @@ low-power ARM laptop for a while, the PBP came in a tolerable size
 (this is a 14" screen; about the top end of acceptable screen sizes
 for me), and it was an absolute steal. Including shipping and import
 duty — my device shipped from Hong Kong — I got mine for €277 all
-told.&lt;/p&gt;
+told.&lt;sup id="fnref:pine64eu"&gt;&lt;a class="footnote-ref" href="#fn:pine64eu"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;Now if you haven’t heard of the Pinebook Pro, or for that matter of
 the PINE64 community, you should &lt;a href="https://www.pine64.org/"&gt;check out their web
 site&lt;/a&gt;. They make a bunch of really neat
@@ -32,7 +32,7 @@ that. Under optimal conditions where I live (at 48°N latitude), that
 is direct sunlight around solar noon on a cloudless day, I can get
 just under 3A out of the panel in total. Out of this, the maximum
 output of a single port is 2.1A, so that’s my maximum solar charge
-current for the PBP.&lt;sup id="fnref:charge"&gt;&lt;a class="footnote-ref" href="#fn:charge"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+current for the PBP.&lt;sup id="fnref:charge"&gt;&lt;a class="footnote-ref" href="#fn:charge"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;Overall, for the PBP’s power consumption this is generally perfectly
 fine. I can work under a sunny or partly cloudy sky for the whole day
 if I want to.&lt;/p&gt;
@@ -53,8 +53,8 @@ a big fan of Cinnamon or XFCE either, but that’s no big issue: I just
 started with the Ubuntu Focal XFCE image, and then installed the
 &lt;code&gt;vanilla-gnome-desktop&lt;/code&gt; metapackage and subsequently removed &lt;code&gt;xfce4*&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Overall the Ubuntu &lt;code&gt;aarch64&lt;/code&gt; port works very well on this device with
-the armbian kernel (currently, that’s 5.9.14), with a couple of small
-caveats:&lt;/p&gt;
+the armbian Linux kernel (currently, that’s 5.9.14), with a couple of
+small caveats:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Suspend support is essentially limited to suspend-to-idle. I’d
@@ -79,7 +79,7 @@ caveats:&lt;/p&gt;
 &lt;p&gt;The PBP’s SoC maxes out at 4GiB RAM, which means you shouldn’t be
   using the PBP for video editing or gaming or any other RAM-intensive
   activities. Even the GIMP runs out of steam pretty quickly at about
-  3 or 4 concurrently opened images.&lt;sup id="fnref:ram"&gt;&lt;a class="footnote-ref" href="#fn:ram"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+  3 or 4 concurrently opened images.&lt;sup id="fnref:ram"&gt;&lt;a class="footnote-ref" href="#fn:ram"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;So can I use this as my daily driver? Yes, with some minor drawbacks.
@@ -87,14 +87,22 @@ But those I can work around fairly well.&lt;/p&gt;
 &lt;div class="footnote"&gt;
 &lt;hr/&gt;
 &lt;ol&gt;
+&lt;li id="fn:pine64eu"&gt;
+&lt;p&gt;If the PBP becomes available for order in Europe via
+&lt;a href="https://www.pine64.eu/shop/"&gt;pine64.eu&lt;/a&gt;, then shipping should be
+faster and you wouldn’t need to pay import duty. At the time of
+writing, however, the PBP can only be purchased from the main
+&lt;a href="https://pine64.com/product-category/pinebook-pro/"&gt;pine64.com&lt;/a&gt;
+store. &lt;a class="footnote-backref" href="#fnref:pine64eu" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;li id="fn:charge"&gt;
 &lt;p&gt;The device cannot charge over the barrel port and USB-C
-simultaneously. &lt;a class="footnote-backref" href="#fnref:charge" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+simultaneously. &lt;a class="footnote-backref" href="#fnref:charge" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:ram"&gt;
 &lt;p&gt;Note that I can get cloud computing capacity for cheap at work, so
 if I need more RAM for something I can get it in a pinch — I am
-aware that that option is not available to everyone. &lt;a class="footnote-backref" href="#fnref:ram" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+aware that that option is not available to everyone. &lt;a class="footnote-backref" href="#fnref:ram" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;</content><category term="hints-and-kinks"></category></entry><entry><title>Universal tox tests (from just about any CI)</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/universal-tox-tests-from-just-about-any-ci/" rel="alternate"></link><published>2021-10-17T00:00:00+00:00</published><updated>2021-10-17T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-17:/resources/hints-and-kinks/universal-tox-tests-from-just-about-any-ci/</id><summary type="html">&lt;p&gt;I like tox. A lot. I use it all the time. This is a quick summary on how to use it in such a way that it becomes a central anchor point that you can use from all your CI systems.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I like &lt;code&gt;tox&lt;/code&gt;. A lot. I use it all the time. This is a quick summary on
