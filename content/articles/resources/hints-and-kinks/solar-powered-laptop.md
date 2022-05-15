@@ -18,9 +18,10 @@ duty — my device shipped from Hong Kong — I got mine for €277 all
 told.[^pine64eu]
 
 [^pine64eu]: If the PBP becomes available for order in Europe via
-    [pine64.eu](https://www.pine64.eu/shop/), then shipping should be
-    faster and you wouldn’t need to pay import duty. At the time of
-    writing, however, the PBP can only be purchased from the main
+    [pine64.eu](https://www.pine64.eu/shop/), then — if you are an EU
+    resident — shipping should be faster and you wouldn’t need to pay
+    import duty. At the time of writing, however, the PBP can only be
+    purchased from the main
     [pine64.com](https://pine64.com/product-category/pinebook-pro/)
     store.
 
