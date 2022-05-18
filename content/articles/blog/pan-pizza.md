@@ -1,7 +1,7 @@
 Title: Exceptional Pan Pizza
 Date: 2019-12-30
 Tags: Food, Recipe
-Summary: My go-to recipe for pan (deep dish) pizza.
+Summary: My go-to recipe for pan pizza. Works best in a castiron pan, but really any large pan will do.
 
 I’ve found this to be the pan pizza to end all pan pizzas. It’s my
 standard pizza dough recipe, plus some inspiration from [this
