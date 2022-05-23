@@ -39,7 +39,10 @@ Now the PBP comes with a separate barrel-plug charging port, but most
 of the time I just charge it via it USB-C. This I do primarily for
 convenience; it’s simply one fewer piece of kit to carry around. I can
 thus charge the PBP with a standard wall-socket USB charger, a
-USB power bank, or any other USB power source.
+USB power bank, or any other USB power source.[^charge]
+
+[^charge]: The device cannot charge over the barrel port and USB-C
+    simultaneously.
 
 Which is where the solar panel comes into play. Mine is a [28W charger
 from BigBlue](http://www.ibigblue.com/product/detail/?id=17). Now,
@@ -50,11 +53,8 @@ maximum amperage is 4.8A, but I’ve never seen it actually generate
 that. Under optimal conditions where I live (at 48°N latitude), that
 is direct sunlight around solar noon on a cloudless day, I can get
 just under 3A out of the panel in total. Out of this, the maximum
-output of a single port is 2.1A, so that’s my maximum solar charge
-current for the PBP.[^charge]
-
-[^charge]: The device cannot charge over the barrel port and USB-C
-    simultaneously.
+output of a single port is 2.4A, so that’s my maximum solar charge
+current for the PBP.
 
 Overall, for the PBP’s power consumption this is generally perfectly
 fine. I can work under a sunny or partly cloudy sky for the whole day
