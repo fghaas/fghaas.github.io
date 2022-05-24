@@ -126,7 +126,7 @@ USB-typical 5V, like you know from your phone.&lt;/p&gt;
 of the time I just charge it via it USB-C. This I do primarily for
 convenience; it’s simply one fewer piece of kit to carry around. I can
 thus charge the PBP with a standard wall-socket USB charger, a
-USB power bank, or any other USB power source.&lt;/p&gt;
+USB power bank, or any other USB power source.&lt;sup id="fnref:charge"&gt;&lt;a class="footnote-ref" href="#fn:charge"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;Which is where the solar panel comes into play. Mine is a &lt;a href="http://www.ibigblue.com/product/detail/?id=17"&gt;28W charger
 from BigBlue&lt;/a&gt;. Now,
 please don’t mistake me for an authority on solar panels; there may be
@@ -136,8 +136,8 @@ maximum amperage is 4.8A, but I’ve never seen it actually generate
 that. Under optimal conditions where I live (at 48°N latitude), that
 is direct sunlight around solar noon on a cloudless day, I can get
 just under 3A out of the panel in total. Out of this, the maximum
-output of a single port is 2.1A, so that’s my maximum solar charge
-current for the PBP.&lt;sup id="fnref:charge"&gt;&lt;a class="footnote-ref" href="#fn:charge"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+output of a single port is 2.4A, so that’s my maximum solar charge
+current for the PBP.&lt;/p&gt;
 &lt;p&gt;Overall, for the PBP’s power consumption this is generally perfectly
 fine. I can work under a sunny or partly cloudy sky for the whole day
 if I want to.&lt;/p&gt;
