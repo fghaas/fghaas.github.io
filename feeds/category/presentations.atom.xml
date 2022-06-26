@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - presentations</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/category/presentations.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2021-10-23T00:00:00+00:00</updated><entry><title>No, We Won’t Have a Video Call for That: The Companion Pieces</title><link href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that-the-companion-pieces/" rel="alternate"></link><published>2021-10-23T00:00:00+00:00</published><updated>2021-10-23T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-23:/resources/presentations/no-we-wont-have-a-video-call-for-that-the-companion-pieces/</id><summary type="html">&lt;p&gt;&lt;a href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;The original article&lt;/a&gt; continues to prompt a
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - presentations</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/category/presentations.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-05-30T00:00:00+00:00</updated><entry><title>Writing Professionally (C!Conf 2022)</title><link href="https://xahteiwi.eu/resources/presentations/c-conf2022/" rel="alternate"></link><published>2022-05-30T00:00:00+00:00</published><updated>2022-05-30T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-05-30:/resources/presentations/c-conf2022/</id><summary type="html">&lt;p&gt;I did a workshop on writing in a professional context at my employer's annual unconference, C!Conf.&lt;/p&gt;</summary><content type="html">&lt;p&gt;At work we have an annual&lt;sup id="fnref:annual"&gt;&lt;a class="footnote-ref" href="#fn:annual"&gt;1&lt;/a&gt;&lt;/sup&gt; conference, &lt;em&gt;C!Conf,&lt;/em&gt; where we pull
+the whole company together for 3 days of talks and workshops. All
+conference sessions are conducted by employees — we don't bring in any
+external consultants or (deity forbid) "motivational speakers", so it
+tends to be a very productive affair.&lt;/p&gt;
+&lt;p&gt;This year I ran a 45-minute session on writing in a professional
+context. There is no recording, but the whole talk is available with
+my full speaker notes at
+&lt;a href="https://fghaas.github.io/writing-professionally"&gt;https://fghaas.github.io/writing-professionally&lt;/a&gt;. It is available
+under a &lt;a href="https://creativecommons.org/licenses/by-sa/4.0/"&gt;CC BY-SA&lt;/a&gt;
+license, as usual.&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr/&gt;
+&lt;ol&gt;
+&lt;li id="fn:annual"&gt;
+&lt;p&gt;For obvious reasons, we didn't have this event in 2020 and
+2021, so this was actually the first we did in 3 years. But the
+intention is for it to be an annual occurrence. &lt;a class="footnote-backref" href="#fnref:annual" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content><category term="presentations"></category><category term="Conference"></category></entry><entry><title>No, We Won’t Have a Video Call for That: The Companion Pieces</title><link href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that-the-companion-pieces/" rel="alternate"></link><published>2021-10-23T00:00:00+00:00</published><updated>2021-10-23T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-23:/resources/presentations/no-we-wont-have-a-video-call-for-that-the-companion-pieces/</id><summary type="html">&lt;p&gt;&lt;a href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;The original article&lt;/a&gt; continues to prompt a
 lot of thoughts and discussions, so I’ve written a a couple of
 follow-up pieces:&lt;/p&gt;
 &lt;ol&gt;

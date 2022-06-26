@@ -1,5 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/all.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-05-15T21:00:00+00:00</updated><entry><title>Batch-processing stereograms with StereoscoPy</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/batch-process-stereo/" rel="alternate"></link><published>2022-05-15T21:00:00+00:00</published><updated>2022-05-15T21:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-05-15:/resources/hints-and-kinks/batch-process-stereo/</id><summary type="html">&lt;p&gt;I often need to process stereograms in bulk. A Python tool named StereoscoPy is very handy in doing that.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="My camera with the Loreo 40mm stereoscopic lens attached (cross-view stereo image)" class="img-fluid" src="/images/loreo-stereo-lens.jpg"/&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/all.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-06-26T20:00:00+00:00</updated><entry><title>Python package dependency checking in a CI pipeline with pipdeptree</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/pipdeptree-ci/" rel="alternate"></link><published>2022-06-26T20:00:00+00:00</published><updated>2022-06-26T20:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-06-26:/resources/hints-and-kinks/pipdeptree-ci/</id><summary type="html">&lt;p&gt;Sometimes pip behaves rather oddly when it comes to package dependency resolution. Here’s one way to catch such issues in your CI pipeline.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recently at work we ran into rather strange-looking errors that broke
+some functionality we depend on.&lt;/p&gt;
+&lt;p&gt;In an application run from a CI-built container image, we were seeing
+&lt;code&gt;pkg_resources.ContextualVersionConflict&lt;/code&gt; errors indicating that one of
+our packages could not find a matching installed version of &lt;code&gt;protobuf&lt;/code&gt;.
+Specifically, that package wanted &lt;code&gt;protobuf&amp;lt;4&lt;/code&gt; installed, but the
+installed version of the &lt;code&gt;protobuf&lt;/code&gt; package was 4.21.1.&lt;/p&gt;
+&lt;p&gt;This was somewhat puzzling: all Python packages in the image were
+installed with &lt;code&gt;pip&lt;/code&gt;, and the packages’ requirements ought to have been
+in good shape.&lt;/p&gt;
+&lt;p&gt;We found another dependency that did specify &lt;code&gt;protobuf&amp;lt;5&lt;/code&gt;, but taken
+together &lt;code&gt;pip&lt;/code&gt; should surely resolve that into a 3.x version of
+&lt;code&gt;protobuf&lt;/code&gt;, in order to satisfy both the &lt;code&gt;protobuf&amp;lt;4&lt;/code&gt; requirement from
+one package, and the &lt;code&gt;protobuf&amp;lt;5&lt;/code&gt; one from another?&lt;/p&gt;
+&lt;p&gt;To visualize and test such dependencies, the &lt;code&gt;pipdeptree&lt;/code&gt; utility comes
+in quite handy.&lt;/p&gt;
+&lt;p&gt;So, I hacked up a couple of minimal &lt;code&gt;tox&lt;/code&gt; testenvs:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[testenv:pipdeptree]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;deps&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="na"&gt;pipdeptree&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;commands&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;pipdeptree -w fail&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="k"&gt;[testenv:pipdeptree-requirements]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;deps&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="na"&gt;-rrequirements.txt&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="na"&gt;pipdeptree&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;commands&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;pipdeptree -w fail&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The first one, &lt;code&gt;pipdeptree&lt;/code&gt;, merely installs the package being built,
+obeying the &lt;code&gt;install_requires&lt;/code&gt; list in its &lt;code&gt;setup.py&lt;/code&gt; file. This is the
+“minimal” installation.&lt;/p&gt;
+&lt;p&gt;The second one, &lt;code&gt;pipdeptree-requirements&lt;/code&gt;, runs a full installation,
+pulling in everything needed from the &lt;code&gt;requirements.txt&lt;/code&gt; file.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pipdeptree&lt;/code&gt; generates warnings on potential version conflicts between
+dependent packages. So, in both testenvs, we run &lt;code&gt;pipdeptree&lt;/code&gt; in
+&lt;code&gt;-w fail&lt;/code&gt; mode, which turns all warnings into errors that fail the
+testenv.&lt;/p&gt;
+&lt;p&gt;So now, &lt;a href="%7Bfilename%7Duniversal-tox-tests.md"&gt;having added tox to both our CI and our local Git
+hooks&lt;/a&gt;, we can run these checks
+locally and from GitHub Actions, and they should both fail and thereby
+expose our package dependency bug, right?&lt;/p&gt;
+&lt;p&gt;Well, here is where it got weird.&lt;/p&gt;
+&lt;p&gt;Because if I ran that locally, on my Ubuntu Focal development laptop, I
+got:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;        - protobuf [required: &amp;gt;=3.15.0,&amp;lt;4.0.0dev, installed: 4.21.1]
+      - protobuf [required: &amp;gt;=3.15.0,&amp;lt;5.0.0dev, installed: 4.21.1]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This is “bad” in the sense that it’s the wrong &lt;code&gt;protobuf&lt;/code&gt; version, but
+good in that it exposes the bug that we’re trying to fix. Progress!&lt;/p&gt;
+&lt;p&gt;However, running the same thing from our GitHub Actions workflow,
+there’s this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;          - protobuf [required: &amp;gt;=3.15.0,&amp;lt;4.0.0dev, installed: 3.20.1]
+        - protobuf [required: &amp;gt;=3.15.0,&amp;lt;5.0.0dev, installed: 3.20.1]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;So here, in GitHub Actions, we see a &lt;code&gt;protobuf&lt;/code&gt; version being installed
+that &lt;em&gt;doesn’t&lt;/em&gt; break anything, but it also means that our test doesn’t
+expose our bug, which is a problem!&lt;/p&gt;
+&lt;p&gt;I’ll spare you the details of finding this out, but it turned out that
+this is actually a &lt;code&gt;pip&lt;/code&gt; problem. &lt;code&gt;pip&lt;/code&gt; 20.0.2 (which is the version you
+get when you run &lt;code&gt;apt install python3-pip&lt;/code&gt; on Ubuntu Focal) has the
+dependency resolution error, which results in a &lt;code&gt;protobuf&lt;/code&gt; package that
+is “too new”. If you install with &lt;code&gt;pip&lt;/code&gt; version 21 or later, you get a
+&lt;code&gt;protobuf&lt;/code&gt; that is “old enough” to make all installed packages happy.&lt;/p&gt;
+&lt;p&gt;So, how do we test &lt;em&gt;that?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;There is a package called
+&lt;a href="https://pypi.org/project/tox-pip-version/"&gt;&lt;code&gt;tox-pip-version&lt;/code&gt;&lt;/a&gt; that
+comes in very handy here, in that it allows you to set an environment
+variable, &lt;code&gt;TOX_PIP_VERSION&lt;/code&gt;, instructing &lt;code&gt;tox&lt;/code&gt; what &lt;code&gt;pip&lt;/code&gt; version it
+should use in order to install packages into testenvs.&lt;/p&gt;
+&lt;p&gt;This you can use from a GitHub Actions &lt;code&gt;jobs&lt;/code&gt; definition, making use of
+a &lt;code&gt;matrix&lt;/code&gt; strategy:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;jobs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;build&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;runs-on&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;ubuntu-latest&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;strategy&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;matrix&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;python-version&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;3.8&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;3.9&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;pip-version&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;20.0.2&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;22.0.4&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;steps&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Check out code&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;uses&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;actions/checkout@v1&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Set up Python ${{ matrix.python-version }}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;uses&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;actions/setup-python@v2&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;with&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;python-version&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;${{ matrix.python-version }}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Install dependencies&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;run&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p p-Indicator"&gt;|&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="no"&gt;pip install tox tox-gh-actions tox-pip-version&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;env&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;TOX_PIP_VERSION&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;${{ matrix.pip-version }}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Test with tox (pip ${{ matrix.pip-version }})&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;run&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;tox&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;What this does is it sets up a 2×2 matrix: run with Python 3.8 and
+Python 3.9, and for both those Python versions run with &lt;code&gt;pip&lt;/code&gt; 20.0.2 and
+22.0.4 (these happen to be the two versions that we’re interested in).&lt;/p&gt;
+&lt;p&gt;That way, we were able to expose the package dependency bug, and then
+fix it. The test now serves as a regression test, to make sure we don’t
+run into a similar issue again.&lt;/p&gt;
+&lt;p&gt;If you’re curious, the full PR discussion with additional context is &lt;a href="https://github.com/hastexo/hastexo-xblock/pull/216"&gt;on
+GitHub&lt;/a&gt;.&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Python"></category><category term="CI"></category></entry><entry><title>Writing Professionally (C!Conf 2022)</title><link href="https://xahteiwi.eu/resources/presentations/c-conf2022/" rel="alternate"></link><published>2022-05-30T00:00:00+00:00</published><updated>2022-05-30T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-05-30:/resources/presentations/c-conf2022/</id><summary type="html">&lt;p&gt;I did a workshop on writing in a professional context at my employer's annual unconference, C!Conf.&lt;/p&gt;</summary><content type="html">&lt;p&gt;At work we have an annual&lt;sup id="fnref:annual"&gt;&lt;a class="footnote-ref" href="#fn:annual"&gt;1&lt;/a&gt;&lt;/sup&gt; conference, &lt;em&gt;C!Conf,&lt;/em&gt; where we pull
+the whole company together for 3 days of talks and workshops. All
+conference sessions are conducted by employees — we don't bring in any
+external consultants or (deity forbid) "motivational speakers", so it
+tends to be a very productive affair.&lt;/p&gt;
+&lt;p&gt;This year I ran a 45-minute session on writing in a professional
+context. There is no recording, but the whole talk is available with
+my full speaker notes at
+&lt;a href="https://fghaas.github.io/writing-professionally"&gt;https://fghaas.github.io/writing-professionally&lt;/a&gt;. It is available
+under a &lt;a href="https://creativecommons.org/licenses/by-sa/4.0/"&gt;CC BY-SA&lt;/a&gt;
+license, as usual.&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr/&gt;
+&lt;ol&gt;
+&lt;li id="fn:annual"&gt;
+&lt;p&gt;For obvious reasons, we didn't have this event in 2020 and
+2021, so this was actually the first we did in 3 years. But the
+intention is for it to be an annual occurrence. &lt;a class="footnote-backref" href="#fnref:annual" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content><category term="presentations"></category><category term="Conference"></category></entry><entry><title>Batch-processing stereograms with StereoscoPy</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/batch-process-stereo/" rel="alternate"></link><published>2022-05-15T21:00:00+00:00</published><updated>2022-05-15T21:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-05-15:/resources/hints-and-kinks/batch-process-stereo/</id><summary type="html">&lt;p&gt;I often need to process stereograms in bulk. A Python tool named StereoscoPy is very handy in doing that.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="My camera with the Loreo 40mm stereoscopic lens attached (cross-view stereo image)" class="img-fluid" src="/images/loreo-stereo-lens.jpg"/&gt;&lt;/p&gt;
 &lt;p&gt;I have two methods of taking stereoscopic images, both of which I use
 regularly:&lt;/p&gt;
 &lt;ul&gt;
