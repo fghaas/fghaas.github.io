@@ -5,49 +5,49 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://xahteiwi.eu/categories.html</loc>
-<lastmod>2022-06-26T19:34:16-00:00</lastmod>
+<lastmod>2022-07-15T21:00:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://xahteiwi.eu/tags.html</loc>
-<lastmod>2022-06-26T19:34:16-00:00</lastmod>
+<lastmod>2022-07-15T21:00:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://xahteiwi.eu/authors.html</loc>
-<lastmod>2022-06-26T19:34:16-00:00</lastmod>
+<lastmod>2022-07-15T21:00:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://xahteiwi.eu/archives.html</loc>
-<lastmod>2022-06-26T19:34:16-00:00</lastmod>
+<lastmod>2022-07-15T21:00:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://xahteiwi.eu/search.html</loc>
-<lastmod>2022-06-26T19:34:16-00:00</lastmod>
+<lastmod>2022-07-15T21:00:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://xahteiwi.eu/about/</loc>
-<lastmod>2022-06-26T19:34:16-00:00</lastmod>
+<lastmod>2022-07-15T21:00:47-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://xahteiwi.eu/comments/</loc>
-<lastmod>2022-06-26T19:34:16-00:00</lastmod>
+<lastmod>2022-07-15T21:00:47-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -61,14 +61,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://xahteiwi.eu/legal/</loc>
-<lastmod>2022-06-26T19:34:16-00:00</lastmod>
+<lastmod>2022-07-15T21:00:47-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://xahteiwi.eu/privacy/</loc>
-<lastmod>2022-06-26T19:34:16-00:00</lastmod>
+<lastmod>2022-07-15T21:00:47-00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://xahteiwi.eu/blog/2022/07/16/something-interesting/</loc>
+<lastmod>2022-07-16T00:00:00+00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -1223,7 +1230,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://xahteiwi.eu/category/blog.html</loc>
-<lastmod>2022-05-14T06:30:00+00:00</lastmod>
+<lastmod>2022-07-16T00:00:00+00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -1245,6 +1252,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://xahteiwi.eu/category/talk-submissions.html</loc>
 <lastmod>2021-10-07T00:00:00+00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://xahteiwi.eu/tag/work.html</loc>
+<lastmod>2022-07-16T00:00:00+00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -1301,13 +1315,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://xahteiwi.eu/tag/recipe.html</loc>
 <lastmod>2022-05-08T00:00:00+00:00</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://xahteiwi.eu/tag/work.html</loc>
-<lastmod>2022-05-07T00:00:00+00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -1622,7 +1629,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://xahteiwi.eu/author/florian-haas.html</loc>
-<lastmod>2022-06-26T20:00:00+00:00</lastmod>
+<lastmod>2022-07-16T00:00:00+00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

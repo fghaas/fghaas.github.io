@@ -1,5 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/all.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-06-26T20:00:00+00:00</updated><entry><title>Python package dependency checking in a CI pipeline with pipdeptree</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/pipdeptree-ci/" rel="alternate"></link><published>2022-06-26T20:00:00+00:00</published><updated>2022-06-26T20:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-06-26:/resources/hints-and-kinks/pipdeptree-ci/</id><summary type="html">&lt;p&gt;Sometimes pip behaves rather oddly when it comes to package dependency resolution. Here’s one way to catch such issues in your CI pipeline.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recently at work we ran into rather strange-looking errors that broke
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/all.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-07-16T00:00:00+00:00</updated><entry><title>Something interesting happened at work the other week...</title><link href="https://xahteiwi.eu/blog/2022/07/16/something-interesting/" rel="alternate"></link><published>2022-07-16T00:00:00+00:00</published><updated>2022-07-16T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-07-16:/blog/2022/07/16/something-interesting/</id><summary type="html">&lt;p&gt;My company's MD recently put out a well-written email update instead of calling an all-hands meeting. It was excellent.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I am sure that many of you have been summoned to your fair share of
+quarterly, end-of-half-year, or end-of-year updates which were held by
+way of a company meeting. You probably didn't like them too much,
+maybe even dreaded the thought of 45 minutes (or longer! 😱) of Death
+By PowerPoint. But perhaps you didn't mind turning up because hey, at
+least it was free coffee and donuts.&lt;/p&gt;
+&lt;p&gt;When the pandemic rolled around, many organizations turned that
+quarterly all-hands summons into a quarterly all-hands &lt;em&gt;virtual&lt;/em&gt;
+summons, in the shape of a video call. Now you had to supply your own
+self-funded donuts, and probably didn't like the idea of staring into
+a camera for 45 minutes straight (or longer! 😖🔨). Worse still, I
+hear that some of you might be have been subjected to virtual
+&lt;em&gt;pre-recorded&lt;/em&gt; events, where you could watch an executive pontificate
+from a script, with no interactivity whatsoever. Something, I imagine,
+that is approximately as engaging as watching a wannabe investment
+advisor on a YouTube channel with 6 subscribers, 4 of them relatives.&lt;/p&gt;
+&lt;p&gt;Last week, our Managing Director Jim (who, to his credit, previously
+ran these events in a reasonably engaging fashion) did something
+different. At the end of our second quarter, and a few days before
+going on annual leave, he sat down and wrote an email. As in, he
+actually &lt;em&gt;sat down&lt;/em&gt; and wrote an email. It had structure, it had a
+format, it had clear messaging, it was to the point.&lt;/p&gt;
+&lt;h2&gt;What was in the message?&lt;/h2&gt;
+&lt;p&gt;I'm obviously not going to go into the detailed content of the
+email, but here's what stood out:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The message started with an intro that clearly settled the reader's
+  expectations: this is what I'm writing about; this is what you'll be
+  reading.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;It clearly delineated that some of the items discussed were going to
+  be somewhat negative (as in, worthy of improvement); many others
+  were positive. It also clearly established that the negatives were
+  coming first, and the positives thereafter.&lt;sup id="fnref:negatives-first"&gt;&lt;a class="footnote-ref" href="#fn:negatives-first"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;It used paragraphs, which were clearly separated by topic. As you
+  read, you knew exactly where one thought concluded and the next one
+  started.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;It conveyed an obviously personal viewpoint: Jim was giving his own
+  perspective on things, rather than writing like a detached
+  omniscient narrator.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;It was very evident that Jim hadn't just bashed out the message and
+  sent it off in a hurry, but that some careful re-reading and editing
+  went into it. I have no idea if he did this by himself or asked
+  someone else to go over it with him, but &lt;em&gt;that does not matter:&lt;/em&gt;
+  what matters is that he edited, not whether he was his own
+  editor.&lt;sup id="fnref:editor"&gt;&lt;a class="footnote-ref" href="#fn:editor"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;What else is good about this?&lt;/h2&gt;
+&lt;p&gt;Best of all, the whole thing was a remarkable exercise in
+efficiency. Jim put his thoughts into &lt;em&gt;precisely&lt;/em&gt; 1,500
+words.&lt;sup id="fnref:precision"&gt;&lt;a class="footnote-ref" href="#fn:precision"&gt;3&lt;/a&gt;&lt;/sup&gt; As I've &lt;a href="https://xahteiwi.eu/blog/2021/10/27/this-meeting-should-have-been-an-email/"&gt;pointed out
+elsewhere&lt;/a&gt;,
+information you can express in 1,500 concisely written words is at the
+top end of what you can convey in a 60-minute verbal meeting — but
+when put in writing, it takes a fluent English speaker only about
+6 minutes to read.&lt;/p&gt;
+&lt;p&gt;How does this compare to the conventional meeting-based approach?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Had Jim prepared slides and a speech for an all-hands meeting, it
+  would have taken him at least two hours, plus the hour of conducting
+  the meeting. He probably spent the same total of three hours writing
+  out, rereading, and editing his message. So the total effort &lt;em&gt;he&lt;/em&gt;
+  had to spend on his email was about the same he would have needed to
+  spend on the preparation and the conduct of a meeting.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;For everyone else, that is the other 98% of the company, reading the
+  email took &lt;strong&gt;one-tenth&lt;/strong&gt; of the time that participating in a meeting
+  conveying the same information would have taken. Jim gave back 90%
+  of the productivity that would have been spent in a meeting, to 98%
+  of the company.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Makes sense, doesn't it?&lt;/h2&gt;
+&lt;p&gt;Yes it eminently does. So, next time you consider summoning your whole
+company to an all-hands meeting or video call, try to be a little more
+like Jim.&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr/&gt;
+&lt;ol&gt;
+&lt;li id="fn:negatives-first"&gt;
+&lt;p&gt;This is an excellent move on two counts: first,
+readers naturally perceive what comes last as being emphasised. By
+getting the negatives out of the way first, the positives stick in
+people's minds more strongly. Second, it establishes that once you
+get to the positives, there is no further downer coming to
+sucker-punch you. &lt;a class="footnote-backref" href="#fnref:negatives-first" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:editor"&gt;
+&lt;p&gt;A trusted editor is a gift from god (if you believe in such
+things). I can highly recommend asking someone you enjoy working
+with to lend you an extra pair of eyes to go over what you
+write. I was mutual editors with
+&lt;a href="https://twitter.com/elenalindq"&gt;Elena Lindqvist&lt;/a&gt; for two years;
+it was glorious. &lt;a class="footnote-backref" href="#fnref:editor" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:precision"&gt;
+&lt;p&gt;I am told this exact round-number precision was
+coincidence. &lt;a class="footnote-backref" href="#fnref:precision" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category></entry><entry><title>Python package dependency checking in a CI pipeline with pipdeptree</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/pipdeptree-ci/" rel="alternate"></link><published>2022-06-26T20:00:00+00:00</published><updated>2022-06-26T20:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-06-26:/resources/hints-and-kinks/pipdeptree-ci/</id><summary type="html">&lt;p&gt;Sometimes pip behaves rather oddly when it comes to package dependency resolution. Here’s one way to catch such issues in your CI pipeline.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recently at work we ran into rather strange-looking errors that broke
 some functionality we depend on.&lt;/p&gt;
 &lt;p&gt;In an application run from a CI-built container image, we were seeing
 &lt;code&gt;pkg_resources.ContextualVersionConflict&lt;/code&gt; errors indicating that one of
@@ -669,7 +780,7 @@ guessing should work well too.&lt;/p&gt;
 &lt;h2&gt;Nutrition facts&lt;/h2&gt;
 &lt;p&gt;No warranty of any kind on these. Values are per serving.&lt;/p&gt;
 &lt;p&gt;With meat:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Calories (kcal)&lt;/th&gt;
@@ -700,7 +811,7 @@ guessing should work well too.&lt;/p&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;Without meat:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Calories (kcal)&lt;/th&gt;
@@ -839,7 +950,7 @@ your organization’s entropy decelerator.&lt;/p&gt;
 &lt;p&gt;Somebody wants to “open up team communications”, or “flatten the
   organization”, so that everyone’s &lt;a href="https://xahteiwi.eu/blog/2022/01/16/flat-org-scaling/"&gt;complete
   graph&lt;/a&gt; has way more edges?
-  That’s when you educate them about &lt;span class="math"&gt;\({n(n-1)}\over 2\)&lt;/span&gt;, and what
+  That’s when you educate them about ${n(n-1)}\over 2$, and what
   quadratic growth means.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -878,69 +989,7 @@ Earth&lt;/a&gt;
 to this idea. &lt;a class="footnote-backref" href="#fnref:hadfield" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width &lt; 768) ? "left" : align;
-        indent = (screen.width &lt; 768) ? "0em" : indent;
-        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var configscript = document.createElement('script');
-    configscript.type = 'text/x-mathjax-config';
-    configscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        availableFonts: ['STIX', 'TeX']," +
-        "        preferredFont: 'STIX'," +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>An experiment</title><link href="https://xahteiwi.eu/blog/2022/05/06/experiment/" rel="alternate"></link><published>2022-05-06T00:00:00+00:00</published><updated>2022-05-06T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-05-06:/blog/2022/05/06/experiment/</id><summary type="html">&lt;p&gt;I am launching a small experiment. Would you like to help?&lt;/p&gt;</summary><content type="html">&lt;p&gt;A little while back, I posted on my Twitter and Mastodon feeds&lt;sup id="fnref:crossposter"&gt;&lt;a class="footnote-ref" href="#fn:crossposter"&gt;1&lt;/a&gt;&lt;/sup&gt;
+&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>An experiment</title><link href="https://xahteiwi.eu/blog/2022/05/06/experiment/" rel="alternate"></link><published>2022-05-06T00:00:00+00:00</published><updated>2022-05-06T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-05-06:/blog/2022/05/06/experiment/</id><summary type="html">&lt;p&gt;I am launching a small experiment. Would you like to help?&lt;/p&gt;</summary><content type="html">&lt;p&gt;A little while back, I posted on my Twitter and Mastodon feeds&lt;sup id="fnref:crossposter"&gt;&lt;a class="footnote-ref" href="#fn:crossposter"&gt;1&lt;/a&gt;&lt;/sup&gt;
 asking people who kept a personal blog to post their RSS or Atom feed
 URLs. A surprising number of people responded — many more on Mastodon
 than on Twitter, incidentally, though I have about 15 times as many
@@ -1865,7 +1914,7 @@ staying &lt;em&gt;narrow&lt;/em&gt;, or should it grow &lt;em&gt;wider&lt;/em&gt
 &lt;h2&gt;Fast-forward five years&lt;/h2&gt;
 &lt;p&gt;To look at that, Alex mentally fast-forwards five years under the
 currently assumed growth model. After five years of doubling in
-headcount, the company now has &lt;span class="math"&gt;\(21 \cdot 2^5 = 672\)&lt;/span&gt; employees.&lt;/p&gt;
+headcount, the company now has $21 \cdot 2^5 = 672$ employees.&lt;/p&gt;
 &lt;p&gt;In this scenario, everyone in the company works still works in a
 5-person team, out of which one person is the leader. So every leader
 has 4 people that report to them. Let’s look at one employee, Sam. Sam
@@ -1887,29 +1936,26 @@ what’s the maximum company size this model can handle?&lt;/p&gt;
 &lt;p&gt;Let’s quickly break that down and see how we can plug other numbers in.&lt;/p&gt;
 &lt;h2&gt;A gentle bit of maths, part I: team size and hierarchy levels&lt;/h2&gt;
 &lt;p&gt;Say we take company’s &lt;em&gt;width&lt;/em&gt;, that is the number of people working
-together in any group, &lt;em&gt;excluding&lt;/em&gt; the leader, as &lt;span class="math"&gt;\(x\)&lt;/span&gt;. In our example,
-that’s &lt;span class="math"&gt;\(4\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;Then, any team’s size (which we’ll call &lt;span class="math"&gt;\(n\)&lt;/span&gt;, for reasons we’ll get to
-in a jiffy) is of course &lt;span class="math"&gt;\(x+1=5\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;The number of people any Senior Manager is reponsible for is &lt;span class="math"&gt;\((x+1)x +
-1 = x^2+x+1 = 21\)&lt;/span&gt; (that is, their Manager’s teams, and themselves).&lt;/p&gt;
-&lt;p&gt;The number of people any Director is responsible for is &lt;span class="math"&gt;\(((x+1)x+1)x+1
-= x^3+x^2+x+1 = 85\)&lt;/span&gt;.&lt;/p&gt;
+together in any group, &lt;em&gt;excluding&lt;/em&gt; the leader, as $x$. In our example,
+that’s $4$.&lt;/p&gt;
+&lt;p&gt;Then, any team’s size (which we’ll call $n$, for reasons we’ll get to
+in a jiffy) is of course $x+1=5$.&lt;/p&gt;
+&lt;p&gt;The number of people any Senior Manager is reponsible for is $(x+1)x +
+1 = x^2+x+1 = 21$ (that is, their Manager’s teams, and themselves).&lt;/p&gt;
+&lt;p&gt;The number of people any Director is responsible for is $((x+1)x+1)x+1
+= x^3+x^2+x+1 = 85$.&lt;/p&gt;
 &lt;p&gt;You see where this is going. For any additional level of &lt;em&gt;depth&lt;/em&gt;, we
-simply need to add another power of &lt;span class="math"&gt;\(x\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;And of course &lt;span class="math"&gt;\(1 = x^0\)&lt;/span&gt; — at the zeroth depth level there’s one
+simply need to add another power of $x$.&lt;/p&gt;
+&lt;p&gt;And of course $1 = x^0$ — at the zeroth depth level there’s one
 single person: the CEO.&lt;/p&gt;
 &lt;p&gt;So we can express the number of people in an organization with a width
-of &lt;span class="math"&gt;\(x\)&lt;/span&gt; and a depth of &lt;span class="math"&gt;\(y\)&lt;/span&gt; as
-&lt;/p&gt;
-&lt;div class="math"&gt;$$x^0 + x^1 + x^2 + ... + x^y$$&lt;/div&gt;
-&lt;p&gt;or, more briefly:&lt;sup id="fnref:i"&gt;&lt;a class="footnote-ref" href="#fn:i"&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;/p&gt;
-&lt;div class="math"&gt;$$\sum_{i=0}^{y} x^{i}$$&lt;/div&gt;
+of $x$ and a depth of $y$ as
+$$x^0 + x^1 + x^2 + ... + x^y$$&lt;/p&gt;
+&lt;p&gt;or, more briefly:&lt;sup id="fnref:i"&gt;&lt;a class="footnote-ref" href="#fn:i"&gt;1&lt;/a&gt;&lt;/sup&gt; $$\sum_{i=0}^{y} x^{i}$$&lt;/p&gt;
 &lt;p&gt;And that, in turn, &lt;a href="https://www.wolframalpha.com/input/?i2d=true&amp;amp;i=Sum%5BPower%5Bx%2Cn%5D%2C%7Bn%2C0%2Cy%7D%5D"&gt;happens to work out
 to&lt;/a&gt;&lt;sup id="fnref:indeterminate"&gt;&lt;a class="footnote-ref" href="#fn:indeterminate"&gt;2&lt;/a&gt;&lt;/sup&gt;
-&lt;/p&gt;
-&lt;div class="math"&gt;$${x^{y+1}-1} \over {x-1}$$&lt;/div&gt;
-&lt;p&gt;Plug in the numbers for &lt;span class="math"&gt;\(x=4\)&lt;/span&gt; and &lt;span class="math"&gt;\(y=5\)&lt;/span&gt;, and we get 1,365. &lt;/p&gt;
+$${x^{y+1}-1} \over {x-1}$$&lt;/p&gt;
+&lt;p&gt;Plug in the numbers for $x=4$ and $y=5$, and we get 1,365. &lt;/p&gt;
 &lt;h2&gt;A gentle bit of maths, part II: communications in complete graphs&lt;/h2&gt;
 &lt;p&gt;Now, what’s our scaling constraint in a knowledge organization? The
 number of people you need to constantly be in touch with in order to
@@ -1924,13 +1970,11 @@ Joe, and how Joe and Harry are coordinating their latest change
 (etc.).&lt;/p&gt;
 &lt;p&gt;That means that &lt;strong&gt;within a team, communications are a &lt;a href="https://en.wikipedia.org/wiki/Complete_graph"&gt;complete
 graph&lt;/a&gt;&lt;/strong&gt;. And for a
-complete graph, the number of &lt;em&gt;edges&lt;/em&gt; is given by &lt;/p&gt;
-&lt;div class="math"&gt;$${n(n-1)}\over 2$$&lt;/div&gt;
-&lt;p&gt;In our case, &lt;span class="math"&gt;\(n\)&lt;/span&gt; is our team size (including the leader), thus
-&lt;span class="math"&gt;\(x+1\)&lt;/span&gt; (the reports plus the leader). &lt;/p&gt;
+complete graph, the number of &lt;em&gt;edges&lt;/em&gt; is given by $${n(n-1)}\over 2$$&lt;/p&gt;
+&lt;p&gt;In our case, $n$ is our team size (including the leader), thus
+$x+1$ (the reports plus the leader). &lt;/p&gt;
 &lt;p&gt;So we can rewrite the complete-graph formula as: 
-&lt;/p&gt;
-&lt;div class="math"&gt;$${{(x+1)(x+1-1)} \over 2} = {{x(x+1)} \over 2}$$&lt;/div&gt;
+$${{(x+1)(x+1-1)} \over 2} = {{x(x+1)} \over 2}$$&lt;/p&gt;
 &lt;p&gt;So in order for the team to be well informed of everyone’s
 actions at all times, a 5-person team must keep track of 10
 communications links between people. That’s absolutely doable, though
@@ -1954,9 +1998,9 @@ manage the same headcount growth is to make the company wider — in
 other words, have more people report to one manager than previously
 planned.&lt;/p&gt;
 &lt;p&gt;So Alex, being a good CEO, opens some spread sheet software and
-creates this handy table that simply plugs in values for &lt;span class="math"&gt;\(x\)&lt;/span&gt; and &lt;span class="math"&gt;\(y\)&lt;/span&gt;,
-with &lt;span class="math"&gt;\(x\)&lt;/span&gt; (width) in columns and &lt;span class="math"&gt;\(y\)&lt;/span&gt; (depth) in rows.&lt;sup id="fnref:table"&gt;&lt;a class="footnote-ref" href="#fn:table"&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+creates this handy table that simply plugs in values for $x$ and $y$,
+with $x$ (width) in columns and $y$ (depth) in rows.&lt;sup id="fnref:table"&gt;&lt;a class="footnote-ref" href="#fn:table"&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -2106,50 +2150,48 @@ with &lt;span class="math"&gt;\(x\)&lt;/span&gt; (width) in columns and &lt;span
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;For our previous five-year plan, Alex can just look up the cell
-matching &lt;span class="math"&gt;\(x=4\)&lt;/span&gt;, &lt;span class="math"&gt;\(y=5\)&lt;/span&gt; and finds our known outcome, a maximum head
+matching $x=4$, $y=5$ and finds our known outcome, a maximum head
 count of 1,365.&lt;/p&gt;
 &lt;p&gt;Now, Alex looks at what it takes to flatten the organization by
 eliminating one hierarchy level, or by two.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;If we want to reduce depth by 1, we simply go up one row (thus,
-  &lt;span class="math"&gt;\(y=4\)&lt;/span&gt;) and find the value for &lt;span class="math"&gt;\(x\)&lt;/span&gt; that just accommodates 1,365
-  people or more. Alex sees that that's &lt;span class="math"&gt;\(x=6\)&lt;/span&gt;, which can accommodate
+  $y=4$) and find the value for $x$ that just accommodates 1,365
+  people or more. Alex sees that that's $x=6$, which can accommodate
   1,555 people. That is, increase the width by 2: reorganize from
-  teams of 5 to teams of 7. Alex could also pick &lt;span class="math"&gt;\(x=5\)&lt;/span&gt;, that is
+  teams of 5 to teams of 7. Alex could also pick $x=5$, that is
   increase the width by only 1, which would land the company at a
-  maximum head count of 781. That is well below what &lt;span class="math"&gt;\(x=4\)&lt;/span&gt; can handle,
+  maximum head count of 781. That is well below what $x=4$ can handle,
   but it still lands Alex north of the original growth target of 672.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;If we want to reduce depth by 2, we go up two rows (&lt;span class="math"&gt;\(y=3\)&lt;/span&gt;) and do
-  the same. We end up at &lt;span class="math"&gt;\(x=11\)&lt;/span&gt;, which means to increase width by 7:
+&lt;p&gt;If we want to reduce depth by 2, we go up two rows ($y=3$) and do
+  the same. We end up at $x=11$, which means to increase width by 7:
   reorganize from teams of 5 to teams of 12. Thus, we land at a
   maximum of 1,464 people, slightly exceeding the headcount we’re able
   to accommodate if we keep growing with the current structure. We
-  could also do &lt;span class="math"&gt;\(x=10\)&lt;/span&gt; or &lt;span class="math"&gt;\(x=9\)&lt;/span&gt;, landing us at maxima well below that
+  could also do $x=10$ or $x=9$, landing us at maxima well below that
   (1,111 or 820), but still north of 672.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Now what does that mean in terms of communication channels each person
 has to maintain?&lt;/p&gt;
 &lt;p&gt;Again, what we want to keep in mind is the number of edges in a
-complete graph connecting &lt;span class="math"&gt;\(n\)&lt;/span&gt; (that is, &lt;span class="math"&gt;\(x+1\)&lt;/span&gt;) points. For regular
-employees, we know that that’s &lt;/p&gt;
-&lt;div class="math"&gt;$${x(x+1)}\over 2$$&lt;/div&gt;
-&lt;p&gt;And for any manager, who is effectively on two teams of size &lt;span class="math"&gt;\(x+1\)&lt;/span&gt;
-simultaneously, that’s &lt;/p&gt;
-&lt;div class="math"&gt;$$2 \cdot {{x(x+1)}\over 2} = x(x+1)$$&lt;/div&gt;
+complete graph connecting $n$ (that is, $x+1$) points. For regular
+employees, we know that that’s $${x(x+1)}\over 2$$&lt;/p&gt;
+&lt;p&gt;And for any manager, who is effectively on two teams of size $x+1$
+simultaneously, that’s $$2 \cdot {{x(x+1)}\over 2} = x(x+1)$$&lt;/p&gt;
 &lt;p&gt;Which means:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;If we want to reduce depth by 1 and go from &lt;span class="math"&gt;\(x=4\)&lt;/span&gt; to
-  &lt;span class="math"&gt;\(x=5\)&lt;/span&gt;, every non-manager employee now needs to be aware of 15
+&lt;p&gt;If we want to reduce depth by 1 and go from $x=4$ to
+  $x=5$, every non-manager employee now needs to be aware of 15
   communications links (instead of 10), every manager, of 30 (instead
   of 20).&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;If instead we go from &lt;span class="math"&gt;\(x=4\)&lt;/span&gt; to &lt;span class="math"&gt;\(x=6\)&lt;/span&gt;, every non-manager employee now
+&lt;p&gt;If instead we go from $x=4$ to $x=6$, every non-manager employee now
   needs to be aware of 21 communications links, every manager, of 42.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -2158,16 +2200,16 @@ communications complexity.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;For the elimination of two hierarchy levels (a depth reduction by
-  2), we’ll need to move from &lt;span class="math"&gt;\(x=4\)&lt;/span&gt; to at least &lt;span class="math"&gt;\(x=8\)&lt;/span&gt;. At that point,
+  2), we’ll need to move from $x=4$ to at least $x=8$. At that point,
   every regular employee has at least 36 communications links on their
   teams to deal with; every manager deals with 72.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;If instead we go to &lt;span class="math"&gt;\(x=9\)&lt;/span&gt;, every non-manager employee now needs to
+&lt;p&gt;If instead we go to $x=9$, every non-manager employee now needs to
   be aware of 45 communications links, every manager, of 90.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;And for &lt;span class="math"&gt;\(x=10\)&lt;/span&gt;, every non-manager employee now needs to
+&lt;p&gt;And for $x=10$, every non-manager employee now needs to
   be aware of 55 communications links, every manager, of 110.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -2180,7 +2222,7 @@ interjects that Alex is missing a point, namely all the managers that
 the company will now no longer need, and the cost savings thus
 generated.&lt;/p&gt;
 &lt;p&gt;So Alex looks at the table again (width in columns, depth in rows):&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -2334,32 +2376,32 @@ cell &lt;em&gt;directly above it&lt;/em&gt; will contain the total number of man
 (that is, people who have direct reports) for the same width. So,&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;for &lt;span class="math"&gt;\(x=4\)&lt;/span&gt;, &lt;span class="math"&gt;\(y=5\)&lt;/span&gt; (our original scenario allowing the company to grow
+&lt;p&gt;for $x=4$, $y=5$ (our original scenario allowing the company to grow
   to 1,365 people), Alex would have to hire and pay a total of 341
   managers.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;for &lt;span class="math"&gt;\(x=6\)&lt;/span&gt;, &lt;span class="math"&gt;\(y=4\)&lt;/span&gt; (the scenario that eliminates one level, and can
+&lt;p&gt;for $x=6$, $y=4$ (the scenario that eliminates one level, and can
   accommodate 1,555 people), Alex’ company will need 259
   managers. That's 82 fewer managers, or a reduction by about 24%.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;for &lt;span class="math"&gt;\(x=5\)&lt;/span&gt;, &lt;span class="math"&gt;\(y=4\)&lt;/span&gt; (the scenario that eliminates one level, but
+&lt;p&gt;for $x=5$, $y=4$ (the scenario that eliminates one level, but
   accommodates only 781 people), Alex’ company will need 156
   managers. That's 185 fewer managers, or a reduction by about 54%.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;for &lt;span class="math"&gt;\(x=11\)&lt;/span&gt;, &lt;span class="math"&gt;\(y=3\)&lt;/span&gt; (the scenario that eliminates two levels, and can
+&lt;p&gt;for $x=11$, $y=3$ (the scenario that eliminates two levels, and can
   accommodate 1,464 people), the company will need 133
   managers. That's 208 fewer managers, or a reduction by about 61%.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;for &lt;span class="math"&gt;\(x=10\)&lt;/span&gt;, &lt;span class="math"&gt;\(y=3\)&lt;/span&gt; (the scenario that eliminates two levels, but
+&lt;p&gt;for $x=10$, $y=3$ (the scenario that eliminates two levels, but
   accommodates only 1,111 people), the company will need 111
   managers. That's 230 fewer managers, or a reduction by about 67%.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;for &lt;span class="math"&gt;\(x=9\)&lt;/span&gt;, &lt;span class="math"&gt;\(y=3\)&lt;/span&gt; (the scenario that eliminates two levels, but
+&lt;p&gt;for $x=9$, $y=3$ (the scenario that eliminates two levels, but
   accommodates only 820 people), the company will need 91
   managers. That's 250 fewer managers, or a reduction by about 73%.&lt;/p&gt;
 &lt;/li&gt;
@@ -2369,7 +2411,7 @@ cell &lt;em&gt;directly above it&lt;/em&gt; will contain the total number of man
 again, but considers the number of managers proportional to the number
 of people in the company, a pattern quickly emerges (again, width
 is in columns, depth is in rows):&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -2518,10 +2560,9 @@ is in columns, depth is in rows):&lt;/p&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;You’ll see that at a depth of 1, the share of managers is obviously &lt;span class="math"&gt;\(1
-\over {x+1}\)&lt;/span&gt;, but then as we increase in depth it quickly trends
-toward:&lt;sup id="fnref:reciprocal"&gt;&lt;a class="footnote-ref" href="#fn:reciprocal"&gt;5&lt;/a&gt;&lt;/sup&gt; &lt;/p&gt;
-&lt;div class="math"&gt;$$1 \over x$$&lt;/div&gt;
+&lt;p&gt;You’ll see that at a depth of 1, the share of managers is obviously $1
+\over {x+1}$, but then as we increase in depth it quickly trends
+toward:&lt;sup id="fnref:reciprocal"&gt;&lt;a class="footnote-ref" href="#fn:reciprocal"&gt;5&lt;/a&gt;&lt;/sup&gt;  $$1 \over x$$&lt;/p&gt;
 &lt;p&gt;The number of managers in Alex’ company is roughly the reciprocal of
 the company’s width. In other words, the number of managers is
 inversely proportional to width.&lt;/p&gt;
@@ -2543,21 +2584,21 @@ scales progressively worse, the “flatter” (wider) it gets.&lt;/p&gt;
 &lt;li id="fn:i"&gt;
 &lt;p&gt;In this &lt;a href="https://en.wikipedia.org/wiki/Summation#Capital-sigma_notation"&gt;capital-sigma summation
 formula&lt;/a&gt;,
-&lt;span class="math"&gt;\(i\)&lt;/span&gt; doesn’t mean anything other than it being a counter. The
-formula is pronounced, in English, as “sum of &lt;span class="math"&gt;\(x\)&lt;/span&gt; to the &lt;span class="math"&gt;\(i\)&lt;/span&gt;, from
-&lt;span class="math"&gt;\(i\)&lt;/span&gt; equals zero to &lt;span class="math"&gt;\(y\)&lt;/span&gt;” (in other words, add up all whole-number
-powers of &lt;span class="math"&gt;\(x\)&lt;/span&gt;, from &lt;span class="math"&gt;\(x^0\)&lt;/span&gt; to &lt;span class="math"&gt;\(x^y\)&lt;/span&gt;). &lt;a class="footnote-backref" href="#fnref:i" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+$i$ doesn’t mean anything other than it being a counter. The
+formula is pronounced, in English, as “sum of $x$ to the $i$, from
+$i$ equals zero to $y$” (in other words, add up all whole-number
+powers of $x$, from $x^0$ to $x^y$). &lt;a class="footnote-backref" href="#fnref:i" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:indeterminate"&gt;
 &lt;p&gt;You might notice that this expression is
 &lt;a href="https://en.wikipedia.org/wiki/Indeterminate_form"&gt;indeterminate&lt;/a&gt;
-for &lt;span class="math"&gt;\(x = 1\)&lt;/span&gt;. Now I’d say the idea of a hierarchical company made
+for $x = 1$. Now I’d say the idea of a hierarchical company made
 up of one-on-one teams (every manager has one report, who in turn
 is the manager of one report, and so on) is extremely unrealistic.
 But just for completeness’ sake, we can apply &lt;a href="https://www.wolframalpha.com/input/?i2d=true&amp;amp;i=Limit%5BDivide%5BPower%5Bx%2Cy%2B1%5D-1%2Cx-1%5D%2Cx-%3E1%5D"&gt;a
 limit&lt;/a&gt;
 to show that 
-&lt;div class="math"&gt;$$\lim_{x \to 1} {{x^{y+1}-1} \over {x-1}} = {y + 1}$$&lt;/div&gt; 
+$$\lim_{x \to 1} {{x^{y+1}-1} \over {x-1}} = {y + 1}$$ 
 In other words, such an organization could accommodate a
 number of people that is equal to its depth plus 1. &lt;a class="footnote-backref" href="#fnref:indeterminate" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
@@ -2579,83 +2620,21 @@ employers&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:table" title="
 &lt;p&gt;If you’re curious, that is because the share of
 managers in relation to the total number of people in the company
 is 
-&lt;div class="math"&gt;$${\sum_{i=0}^{y-1} x^{i}} \over {\sum_{i=0}^{y} x^{i}}$$&lt;/div&gt;
-That works out to be &lt;div class="math"&gt;$${x^y-1} \over {x^{y+1}-1}$$&lt;/div&gt;
-Which, for &lt;span class="math"&gt;\(y=1\)&lt;/span&gt;, is
-&lt;div class="math"&gt;$${{x-1} \over {x^2-1}} = {{x-1} \over {(x+1)\cdot(x-1)}} = {1 \over {x+1}}$$&lt;/div&gt;
-And for larger values of &lt;span class="math"&gt;\(y\)&lt;/span&gt;, both &lt;span class="math"&gt;\(x^y\)&lt;/span&gt; and
-&lt;span class="math"&gt;\(x^{y+1}\)&lt;/span&gt; become so large that the &lt;span class="math"&gt;\(-1\)&lt;/span&gt; part barely matters, so
+$${\sum_{i=0}^{y-1} x^{i}} \over {\sum_{i=0}^{y} x^{i}}$$
+That works out to be $${x^y-1} \over {x^{y+1}-1}$$
+Which, for $y=1$, is
+$${{x-1} \over {x^2-1}} = {{x-1} \over {(x+1)\cdot(x-1)}} = {1 \over {x+1}}$$
+And for larger values of $y$, both $x^y$ and
+$x^{y+1}$ become so large that the $-1$ part barely matters, so
 it’s effectively: 
-&lt;div class="math"&gt;$${{x^y-1} \over {x^{y+1}-1}} \approx {x^y \over x^{y+1}} = {1 \over x}$$&lt;/div&gt;
-In slightly more formal terms, we can consider &lt;span class="math"&gt;\(1 \over x\)&lt;/span&gt; the 
+$${{x^y-1} \over {x^{y+1}-1}} \approx {x^y \over x^{y+1}} = {1 \over x}$$
+In slightly more formal terms, we can consider $1 \over x$ the 
 &lt;em&gt;&lt;a href="https://en.wikipedia.org/wiki/Limit_(mathematics)"&gt;limit&lt;/a&gt;&lt;/em&gt; of the
-expression as &lt;span class="math"&gt;\(y\)&lt;/span&gt; goes to infinity:
-&lt;div class="math"&gt;$$\lim_{y \to \infty} {{x^y-1} \over {x^{y+1}-1}} = {1 \over x}$$&lt;/div&gt; &lt;a class="footnote-backref" href="#fnref:reciprocal" title="Jump back to footnote 5 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+expression as $y$ goes to infinity:
+$$\lim_{y \to \infty} {{x^y-1} \over {x^{y+1}-1}} = {1 \over x}$$ &lt;a class="footnote-backref" href="#fnref:reciprocal" title="Jump back to footnote 5 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width &lt; 768) ? "left" : align;
-        indent = (screen.width &lt; 768) ? "0em" : indent;
-        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var configscript = document.createElement('script');
-    configscript.type = 'text/x-mathjax-config';
-    configscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        availableFonts: ['STIX', 'TeX']," +
-        "        preferredFont: 'STIX'," +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Voice messages</title><link href="https://xahteiwi.eu/blog/2021/12/05/voice-messages/" rel="alternate"></link><published>2021-12-05T00:00:00+00:00</published><updated>2021-12-05T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-12-05:/blog/2021/12/05/voice-messages/</id><summary type="html">&lt;p&gt;Apparently, some people think you should replace professional textual communications with voice messaging. Here’s why I think that that’s a bad idea.&lt;/p&gt;</summary><content type="html">&lt;p&gt;As of late, I've noticed that when people share one of my articles on
+&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Voice messages</title><link href="https://xahteiwi.eu/blog/2021/12/05/voice-messages/" rel="alternate"></link><published>2021-12-05T00:00:00+00:00</published><updated>2021-12-05T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-12-05:/blog/2021/12/05/voice-messages/</id><summary type="html">&lt;p&gt;Apparently, some people think you should replace professional textual communications with voice messaging. Here’s why I think that that’s a bad idea.&lt;/p&gt;</summary><content type="html">&lt;p&gt;As of late, I've noticed that when people share one of my articles on
 asynchronous communications on Twitter (particularly any from the
 &lt;a href="https://xahteiwi.eu/blog/2021/09/30/getting-out-of-meeting-hell/"&gt;Getting out of Meeting
 Hell&lt;/a&gt; series, or the one on
@@ -6268,20 +6247,20 @@ It’s being lazy.&lt;/p&gt;
 &lt;p&gt;It’s a symptom of the worst kind of laziness &lt;em&gt;(not malice!)&lt;/em&gt;: in an
 attempt to communicate quickly and easily, for yourself, you are really
 making things harder for everyone, including yourself.&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
-&lt;th align="center"&gt;Share&lt;/th&gt;
-&lt;th align="center"&gt;Find&lt;/th&gt;
+&lt;th style="text-align: center;"&gt;Share&lt;/th&gt;
+&lt;th style="text-align: center;"&gt;Find&lt;/th&gt;
 &lt;th&gt;Contextualise&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Chat&lt;/td&gt;
-&lt;td align="center"&gt;🙂&lt;/td&gt;
-&lt;td align="center"&gt;😐&lt;/td&gt;
+&lt;td style="text-align: center;"&gt;🙂&lt;/td&gt;
+&lt;td style="text-align: center;"&gt;😐&lt;/td&gt;
 &lt;td&gt;🙁&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -6296,26 +6275,26 @@ ago”, you’ll agree with me here.&lt;/p&gt;
 is to say in relation to &lt;em&gt;other&lt;/em&gt; discussions on the same topic, days
 or weeks earlier or later.&lt;/p&gt;
 &lt;p&gt;Let’s compare that to other communication modes:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
-&lt;th align="center"&gt;Share&lt;/th&gt;
-&lt;th align="center"&gt;Find&lt;/th&gt;
+&lt;th style="text-align: center;"&gt;Share&lt;/th&gt;
+&lt;th style="text-align: center;"&gt;Find&lt;/th&gt;
 &lt;th&gt;Contextualise&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Chat&lt;/td&gt;
-&lt;td align="center"&gt;🙂&lt;/td&gt;
-&lt;td align="center"&gt;😐&lt;/td&gt;
+&lt;td style="text-align: center;"&gt;🙂&lt;/td&gt;
+&lt;td style="text-align: center;"&gt;😐&lt;/td&gt;
 &lt;td&gt;🙁&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Email&lt;/td&gt;
-&lt;td align="center"&gt;😐&lt;/td&gt;
-&lt;td align="center"&gt;😐&lt;/td&gt;
+&lt;td style="text-align: center;"&gt;😐&lt;/td&gt;
+&lt;td style="text-align: center;"&gt;😐&lt;/td&gt;
 &lt;td&gt;😐&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -6327,38 +6306,38 @@ or weeks earlier or later.&lt;/p&gt;
   as with chat, and it’s marginally better at contextualizing
   information than chat (because you get proper threading).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
-&lt;th align="center"&gt;Share&lt;/th&gt;
-&lt;th align="center"&gt;Find&lt;/th&gt;
+&lt;th style="text-align: center;"&gt;Share&lt;/th&gt;
+&lt;th style="text-align: center;"&gt;Find&lt;/th&gt;
 &lt;th&gt;Contextualise&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Chat&lt;/td&gt;
-&lt;td align="center"&gt;🙂&lt;/td&gt;
-&lt;td align="center"&gt;😐&lt;/td&gt;
+&lt;td style="text-align: center;"&gt;🙂&lt;/td&gt;
+&lt;td style="text-align: center;"&gt;😐&lt;/td&gt;
 &lt;td&gt;🙁&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Email&lt;/td&gt;
-&lt;td align="center"&gt;😐&lt;/td&gt;
-&lt;td align="center"&gt;😐&lt;/td&gt;
+&lt;td style="text-align: center;"&gt;😐&lt;/td&gt;
+&lt;td style="text-align: center;"&gt;😐&lt;/td&gt;
 &lt;td&gt;😐&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Wiki&lt;/td&gt;
-&lt;td align="center"&gt;🙂&lt;/td&gt;
-&lt;td align="center"&gt;🙂&lt;/td&gt;
+&lt;td style="text-align: center;"&gt;🙂&lt;/td&gt;
+&lt;td style="text-align: center;"&gt;🙂&lt;/td&gt;
 &lt;td&gt;🙂&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Issue tracker&lt;/td&gt;
-&lt;td align="center"&gt;🙂&lt;/td&gt;
-&lt;td align="center"&gt;🙂&lt;/td&gt;
+&lt;td style="text-align: center;"&gt;🙂&lt;/td&gt;
+&lt;td style="text-align: center;"&gt;🙂&lt;/td&gt;
 &lt;td&gt;🙂&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -6374,44 +6353,44 @@ or weeks earlier or later.&lt;/p&gt;
   Likewise, “issue tracker” can mean RT, OTRS, Jira, Taiga, Bugzilla,
   whatever works for you.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
-&lt;th align="center"&gt;Share&lt;/th&gt;
-&lt;th align="center"&gt;Find&lt;/th&gt;
+&lt;th style="text-align: center;"&gt;Share&lt;/th&gt;
+&lt;th style="text-align: center;"&gt;Find&lt;/th&gt;
 &lt;th&gt;Contextualise&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Chat&lt;/td&gt;
-&lt;td align="center"&gt;🙂&lt;/td&gt;
-&lt;td align="center"&gt;😐&lt;/td&gt;
+&lt;td style="text-align: center;"&gt;🙂&lt;/td&gt;
+&lt;td style="text-align: center;"&gt;😐&lt;/td&gt;
 &lt;td&gt;🙁&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Email&lt;/td&gt;
-&lt;td align="center"&gt;😐&lt;/td&gt;
-&lt;td align="center"&gt;😐&lt;/td&gt;
+&lt;td style="text-align: center;"&gt;😐&lt;/td&gt;
+&lt;td style="text-align: center;"&gt;😐&lt;/td&gt;
 &lt;td&gt;😐&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Wiki&lt;/td&gt;
-&lt;td align="center"&gt;🙂&lt;/td&gt;
-&lt;td align="center"&gt;🙂&lt;/td&gt;
+&lt;td style="text-align: center;"&gt;🙂&lt;/td&gt;
+&lt;td style="text-align: center;"&gt;🙂&lt;/td&gt;
 &lt;td&gt;🙂&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Issue tracker&lt;/td&gt;
-&lt;td align="center"&gt;🙂&lt;/td&gt;
-&lt;td align="center"&gt;🙂&lt;/td&gt;
+&lt;td style="text-align: center;"&gt;🙂&lt;/td&gt;
+&lt;td style="text-align: center;"&gt;🙂&lt;/td&gt;
 &lt;td&gt;🙂&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Video call&lt;/td&gt;
-&lt;td align="center"&gt;😐&lt;/td&gt;
-&lt;td align="center"&gt;🙁&lt;/td&gt;
+&lt;td style="text-align: center;"&gt;😐&lt;/td&gt;
+&lt;td style="text-align: center;"&gt;🙁&lt;/td&gt;
 &lt;td&gt;🙁&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -7547,7 +7526,7 @@ came this.&lt;/p&gt;
 &lt;/ol&gt;
 &lt;h2&gt;Nutrition facts&lt;/h2&gt;
 &lt;p&gt;No warranty of any kind on these. Values are per serving.&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Calories (kcal)&lt;/th&gt;
@@ -7830,7 +7809,7 @@ several to accommodate a larger crowd, or very hungry people.&lt;/p&gt;
 &lt;h2&gt;Nutrition facts&lt;/h2&gt;
 &lt;p&gt;No warranty of any kind on these. Values are per serving, counting one
 serving as one-quarter of the whole pizza.&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Calories (kcal)&lt;/th&gt;
@@ -8061,43 +8040,35 @@ codes&lt;/a&gt;,
 but you’re not quite sure of exactly how much extra space you’re going
 to save, and whether or not that’s worth the performance penalty?
 Here’s a simple recipe for calculating that space overhead.&lt;/p&gt;
-&lt;p&gt;Suppose a RADOS object has a size of &lt;span class="math"&gt;\(S\)&lt;/span&gt;, and because it’s in an EC
+&lt;p&gt;Suppose a RADOS object has a size of $S$, and because it’s in an EC
 pool using the
 &lt;a href="https://docs.ceph.com/docs/master/rados/operations/erasure-code-jerasure/"&gt;&lt;code&gt;jerasure&lt;/code&gt;&lt;/a&gt;
 or
 &lt;a href="https://docs.ceph.com/docs/master/rados/operations/erasure-code-isa/"&gt;&lt;code&gt;isa&lt;/code&gt;&lt;/a&gt;
-plugin,&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt; Ceph splits it into &lt;span class="math"&gt;\(k\)&lt;/span&gt; equally-sized chunks. Then the
-size of any of its &lt;span class="math"&gt;\(k\)&lt;/span&gt; chunks will be: &lt;/p&gt;
-&lt;div class="math"&gt;$$S \over k$$&lt;/div&gt;
-&lt;p&gt;In addition, we get &lt;span class="math"&gt;\(m\)&lt;/span&gt; more parity chunks, also of size &lt;span class="math"&gt;\(S \over k\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;Thus, the total amount of storage taken by an object of size &lt;span class="math"&gt;\(S\)&lt;/span&gt; is:
-&lt;/p&gt;
-&lt;div class="math"&gt;$$k \cdot {S \over k} + m \cdot {S \over k}$$&lt;/div&gt;
-&lt;p&gt;This of course we can rearrange and reduce to &lt;/p&gt;
-&lt;div class="math"&gt;$$S + S \cdot {m \over
-k}$$&lt;/div&gt;
-&lt;p&gt; or &lt;/p&gt;
-&lt;div class="math"&gt;$$S \cdot (1 + {m \over k})$$&lt;/div&gt;
+plugin,&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt; Ceph splits it into $k$ equally-sized chunks. Then the
+size of any of its $k$ chunks will be: $$S \over k$$&lt;/p&gt;
+&lt;p&gt;In addition, we get $m$ more parity chunks, also of size $S \over k$.&lt;/p&gt;
+&lt;p&gt;Thus, the total amount of storage taken by an object of size $S$ is:
+$$k \cdot {S \over k} + m \cdot {S \over k}$$&lt;/p&gt;
+&lt;p&gt;This of course we can rearrange and reduce to $$S + S \cdot {m \over
+k}$$ or $$S \cdot (1 + {m \over k})$$ &lt;/p&gt;
 &lt;p&gt;In other words, the overhead (that is, the &lt;strong&gt;additional storage&lt;/strong&gt;
-taken up by the EC parity data) is &lt;/p&gt;
-&lt;div class="math"&gt;$$S \cdot {m \over k}$$&lt;/div&gt;
-&lt;p&gt; or when
-expressed as a proportion to &lt;span class="math"&gt;\(S\)&lt;/span&gt;, simply &lt;/p&gt;
-&lt;div class="math"&gt;$$m \over k$$&lt;/div&gt;
-&lt;p&gt;As an example, an EC profile with &lt;span class="math"&gt;\(k = 8, m=3\)&lt;/span&gt; comes with a storage
-overhead of &lt;span class="math"&gt;\(3 \over 8\)&lt;/span&gt; or 37.5%.&lt;/p&gt;
-&lt;p&gt;One with &lt;span class="math"&gt;\(k=5, m=2\)&lt;/span&gt; has an overhead of &lt;span class="math"&gt;\(2 \over 5\)&lt;/span&gt;, or 40%. &lt;/p&gt;
+taken up by the EC parity data) is $$S \cdot {m \over k}$$ or when
+expressed as a proportion to $S$, simply $$m \over k$$&lt;/p&gt;
+&lt;p&gt;As an example, an EC profile with $k = 8, m=3$ comes with a storage
+overhead of $3 \over 8$ or 37.5%.&lt;/p&gt;
+&lt;p&gt;One with $k=5, m=2$ has an overhead of $2 \over 5$, or 40%. &lt;/p&gt;
 &lt;p&gt;And finally, a &lt;em&gt;replicated&lt;/em&gt; (conventional, non-EC) pool with 3
 replicas can be thought of as having a degenerate EC profile with
-&lt;span class="math"&gt;\(k=1, m=2\)&lt;/span&gt;, resulting in an overhead of &lt;span class="math"&gt;\(2 \over 1\)&lt;/span&gt;, or 200%.&lt;/p&gt;
+$k=1, m=2$, resulting in an overhead of $2 \over 1$, or 200%.&lt;/p&gt;
 &lt;p&gt;On a parting note, you should realize that the space utilization
 overhead is only one factor by which you should weigh erasure code
 profiles against one another. The other is performance. Here, the
 general (deliberately oversimplified) rule is that the more chunks you
-define — in other words, the higher your &lt;span class="math"&gt;\(k\)&lt;/span&gt; — the higher the
+define — in other words, the higher your $k$ — the higher the
 performance penalty you suffer, particularly on reads.&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2"&gt;2&lt;/a&gt;&lt;/sup&gt; This is due to
 the fact that in order to reconstruct the object and serve it to the
-application, your client must collect data from &lt;span class="math"&gt;\(k\)&lt;/span&gt; different OSDs and
+application, your client must collect data from $k$ different OSDs and
 assemble it locally.&lt;sup id="fnref:3"&gt;&lt;a class="footnote-ref" href="#fn:3"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;div class="footnote"&gt;
 &lt;hr/&gt;
@@ -8126,69 +8097,7 @@ talk&lt;/a&gt; on the subject at OpenStack
 Days Nordic 2019. &lt;a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width &lt; 768) ? "left" : align;
-        indent = (screen.width &lt; 768) ? "0em" : indent;
-        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var configscript = document.createElement('script');
-    configscript.type = 'text/x-mathjax-config';
-    configscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        availableFonts: ['STIX', 'TeX']," +
-        "        preferredFont: 'STIX'," +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;</content><category term="hints-and-kinks"></category><category term="Ceph"></category></entry><entry><title>The Little Bag Of Tricks: 10 Things You Might Not Know You Can Do With OpenStack</title><link href="https://xahteiwi.eu/resources/presentations/the-little-bag-of-tricks-10-things-you-might-not-know-you-can-do-with-openstack/" rel="alternate"></link><published>2019-11-05T00:00:00+00:00</published><updated>2019-11-05T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-11-05:/resources/presentations/the-little-bag-of-tricks-10-things-you-might-not-know-you-can-do-with-openstack/</id><content type="html">&lt;p&gt;My presentation from the Open Infrastructure Summit 2019 in Shanghai.&lt;/p&gt;
+&lt;/div&gt;</content><category term="hints-and-kinks"></category><category term="Ceph"></category></entry><entry><title>The Little Bag Of Tricks: 10 Things You Might Not Know You Can Do With OpenStack</title><link href="https://xahteiwi.eu/resources/presentations/the-little-bag-of-tricks-10-things-you-might-not-know-you-can-do-with-openstack/" rel="alternate"></link><published>2019-11-05T00:00:00+00:00</published><updated>2019-11-05T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-11-05:/resources/presentations/the-little-bag-of-tricks-10-things-you-might-not-know-you-can-do-with-openstack/</id><content type="html">&lt;p&gt;My presentation from the Open Infrastructure Summit 2019 in Shanghai.&lt;/p&gt;
 &lt;!--break--&gt;
 &lt;ul&gt;
 &lt;li&gt;Video: &lt;a href="https://youtu.be/cRqA-eYYOXE"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
@@ -9083,7 +8992,7 @@ in the conference.&lt;/p&gt;
 &lt;p&gt;Nonexisticon’s attendee-visible run-up cycle is 6 months.&lt;/p&gt;
 &lt;p&gt;Assuming a Nonexisticon is scheduled to run from May 15-17, the
 following schedule applies:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Date&lt;/th&gt;
@@ -9545,7 +9454,7 @@ let’s say it’s 1%.&lt;/p&gt;
 &lt;p&gt;So then let’s look at 10,000 interactions that completely random
 people make on the internet.&lt;/p&gt;
 &lt;p&gt;Those would then break down like so:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -9578,7 +9487,7 @@ flags content as infringing when it is not) with a rate of only
 ridiculously low for any automated screening procedure.&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;So that means that out of our 10,000 interactions tracked by our
 “perfect” content filter, the numbers break down like this:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -9621,7 +9530,7 @@ exceedingly rare, automated filters detect it with poor accuracy.&lt;/strong&gt;
 &lt;p&gt;And if you leave all parameters the same, but consider a probably much
 more realistic infringement rate of 1 in 1000, that is, 0.1%, then
 things look like this: &lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;

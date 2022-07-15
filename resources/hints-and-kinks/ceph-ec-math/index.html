@@ -146,43 +146,35 @@ codes</a>,
 but you’re not quite sure of exactly how much extra space you’re going
 to save, and whether or not that’s worth the performance penalty?
 Here’s a simple recipe for calculating that space overhead.</p>
-<p>Suppose a RADOS object has a size of <span class="math">\(S\)</span>, and because it’s in an EC
+<p>Suppose a RADOS object has a size of $S$, and because it’s in an EC
 pool using the
 <a href="https://docs.ceph.com/docs/master/rados/operations/erasure-code-jerasure/"><code>jerasure</code></a>
 or
 <a href="https://docs.ceph.com/docs/master/rados/operations/erasure-code-isa/"><code>isa</code></a>
-plugin,<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> Ceph splits it into <span class="math">\(k\)</span> equally-sized chunks. Then the
-size of any of its <span class="math">\(k\)</span> chunks will be: </p>
-<div class="math">$$S \over k$$</div>
-<p>In addition, we get <span class="math">\(m\)</span> more parity chunks, also of size <span class="math">\(S \over k\)</span>.</p>
-<p>Thus, the total amount of storage taken by an object of size <span class="math">\(S\)</span> is:
-</p>
-<div class="math">$$k \cdot {S \over k} + m \cdot {S \over k}$$</div>
-<p>This of course we can rearrange and reduce to </p>
-<div class="math">$$S + S \cdot {m \over
-k}$$</div>
-<p> or </p>
-<div class="math">$$S \cdot (1 + {m \over k})$$</div>
+plugin,<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> Ceph splits it into $k$ equally-sized chunks. Then the
+size of any of its $k$ chunks will be: $$S \over k$$</p>
+<p>In addition, we get $m$ more parity chunks, also of size $S \over k$.</p>
+<p>Thus, the total amount of storage taken by an object of size $S$ is:
+$$k \cdot {S \over k} + m \cdot {S \over k}$$</p>
+<p>This of course we can rearrange and reduce to $$S + S \cdot {m \over
+k}$$ or $$S \cdot (1 + {m \over k})$$ </p>
 <p>In other words, the overhead (that is, the <strong>additional storage</strong>
-taken up by the EC parity data) is </p>
-<div class="math">$$S \cdot {m \over k}$$</div>
-<p> or when
-expressed as a proportion to <span class="math">\(S\)</span>, simply </p>
-<div class="math">$$m \over k$$</div>
-<p>As an example, an EC profile with <span class="math">\(k = 8, m=3\)</span> comes with a storage
-overhead of <span class="math">\(3 \over 8\)</span> or 37.5%.</p>
-<p>One with <span class="math">\(k=5, m=2\)</span> has an overhead of <span class="math">\(2 \over 5\)</span>, or 40%. </p>
+taken up by the EC parity data) is $$S \cdot {m \over k}$$ or when
+expressed as a proportion to $S$, simply $$m \over k$$</p>
+<p>As an example, an EC profile with $k = 8, m=3$ comes with a storage
+overhead of $3 \over 8$ or 37.5%.</p>
+<p>One with $k=5, m=2$ has an overhead of $2 \over 5$, or 40%. </p>
 <p>And finally, a <em>replicated</em> (conventional, non-EC) pool with 3
 replicas can be thought of as having a degenerate EC profile with
-<span class="math">\(k=1, m=2\)</span>, resulting in an overhead of <span class="math">\(2 \over 1\)</span>, or 200%.</p>
+$k=1, m=2$, resulting in an overhead of $2 \over 1$, or 200%.</p>
 <p>On a parting note, you should realize that the space utilization
 overhead is only one factor by which you should weigh erasure code
 profiles against one another. The other is performance. Here, the
 general (deliberately oversimplified) rule is that the more chunks you
-define — in other words, the higher your <span class="math">\(k\)</span> — the higher the
+define — in other words, the higher your $k$ — the higher the
 performance penalty you suffer, particularly on reads.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> This is due to
 the fact that in order to reconstruct the object and serve it to the
-application, your client must collect data from <span class="math">\(k\)</span> different OSDs and
+application, your client must collect data from $k$ different OSDs and
 assemble it locally.<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></p>
 <div class="footnote">
 <hr/>
@@ -212,68 +204,6 @@ Days Nordic 2019. <a class="footnote-backref" href="#fnref:3" title="Jump back 
 </li>
 </ol>
 </div>
-<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width < 768) ? "left" : align;
-        indent = (screen.width < 768) ? "0em" : indent;
-        linebreak = (screen.width < 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var configscript = document.createElement('script');
-    configscript.type = 'text/x-mathjax-config';
-    configscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        availableFonts: ['STIX', 'TeX']," +
-        "        preferredFont: 'STIX'," +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-</script>
   </div>
   <div class="tag-cloud">
     <p>
