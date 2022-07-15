@@ -2,7 +2,7 @@ Title: Something interesting happened at work the other week...
 Date: 2022-07-16
 Slug: something-interesting
 Tags: Work
-Summary: My company's MD recently put out a well-written email update instead of calling an all-hands meeting. It was excellent.
+Summary: My company's CEO recently put out a well-written email update instead of calling an all-hands meeting. It was excellent.
 
 I am sure that many of you have been summoned to your fair share of
 quarterly, end-of-half-year, or end-of-year updates which were held by
@@ -22,12 +22,12 @@ from a script, with no interactivity whatsoever. Something, I imagine,
 that is approximately as engaging as watching a wannabe investment
 advisor on a YouTube channel with 6 subscribers, 4 of them relatives.
 
-Last week, our Managing Director Jim (who, to his credit, previously
-ran these events in a reasonably engaging fashion) did something
-different. At the end of our second quarter, and a few days before
-going on annual leave, he sat down and wrote an email. As in, he
-actually *sat down* and wrote an email. It had structure, it had a
-format, it had clear messaging, it was to the point.
+Last week, our CEO Jim (who, to his credit, previously ran these
+events in a reasonably engaging fashion) did something different. At
+the end of our second quarter, and a few days before going on annual
+leave, he sat down and wrote an email. As in, he actually *sat down*
+and wrote an email. It had structure, it had a format, it had clear
+messaging, it was to the point.
 
 ## What was in the message?
 
