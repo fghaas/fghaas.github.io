@@ -175,20 +175,20 @@ using this resource. Now switch the victim to Secondary role:</p>
 </code></pre></div>
 <h3>Step 2</h3>
 <p>Disconnect the resource if it's in connection state <code>WFConnection</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">victim</span># <span class="nv">drbdadm</span> <span class="k">disconnect</span> <span class="nv">resource</span>
+<div class="highlight"><pre><span></span><code><span class="nv">victim</span>#<span class="w"> </span><span class="nv">drbdadm</span><span class="w"> </span><span class="k">disconnect</span><span class="w"> </span><span class="nv">resource</span><span class="w"></span>
 </code></pre></div>
 <h3>Step 3</h3>
 <p>Force discard of all modifications on the split brain victim:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">victim</span># <span class="nv">drbdadm</span> <span class="o">--</span> <span class="o">--</span><span class="nv">discard</span><span class="o">-</span><span class="nv">my</span><span class="o">-</span><span class="nv">data</span> <span class="k">connect</span> <span class="nv">resource</span>
+<div class="highlight"><pre><span></span><code><span class="nv">victim</span>#<span class="w"> </span><span class="nv">drbdadm</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="o">--</span><span class="nv">discard</span><span class="o">-</span><span class="nv">my</span><span class="o">-</span><span class="nv">data</span><span class="w"> </span><span class="k">connect</span><span class="w"> </span><span class="nv">resource</span><span class="w"></span>
 </code></pre></div>
 <p>for DRBD 8.4.x:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">victim</span># <span class="nv">drbdadm</span> <span class="k">connect</span> <span class="o">--</span><span class="nv">discard</span><span class="o">-</span><span class="nv">my</span><span class="o">-</span><span class="nv">data</span> <span class="nv">resource</span>
+<div class="highlight"><pre><span></span><code><span class="nv">victim</span>#<span class="w"> </span><span class="nv">drbdadm</span><span class="w"> </span><span class="k">connect</span><span class="w"> </span><span class="o">--</span><span class="nv">discard</span><span class="o">-</span><span class="nv">my</span><span class="o">-</span><span class="nv">data</span><span class="w"> </span><span class="nv">resource</span><span class="w"></span>
 </code></pre></div>
 <h3>Step 4</h3>
 <p>Resync will start automatically if the survivor was in
 <code>WFConnection</code> network state. If the split brain survivor is still in
 <code>Standalone</code> connection state, reconnect it:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">survivor</span># <span class="nv">drbdadm</span> <span class="k">connect</span> <span class="nv">resource</span>
+<div class="highlight"><pre><span></span><code><span class="nv">survivor</span>#<span class="w"> </span><span class="nv">drbdadm</span><span class="w"> </span><span class="k">connect</span><span class="w"> </span><span class="nv">resource</span><span class="w"></span>
 </code></pre></div>
 <p>At the latest now the resynchronization from the survivor
 (<code>SyncSource</code>) to the victim (<code>SyncTarget</code>) starts immediately. There

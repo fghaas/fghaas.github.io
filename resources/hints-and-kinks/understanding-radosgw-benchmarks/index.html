@@ -242,14 +242,14 @@ for concurrency and object sizes:</p>
 rest-bench -t <span class="nv">$CONCURRENCY</span> -b <span class="nv">$SIZE</span> --seconds<span class="o">=</span><span class="nv">$SECS</span> --api-host<span class="o">=</span><span class="nv">$RGW</span> <span class="se">\</span>
 --bucket<span class="o">=</span><span class="nv">$BUCKET</span> --access-key<span class="o">=</span><span class="nv">$KEY</span> --secret<span class="o">=</span><span class="nv">$SECRET</span> --no-cleanup write
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nv">host</span><span class="o">=</span><span class="nv">localhost</span>:<span class="mi">7480</span>
-<span class="nv">Maintaining</span> <span class="mi">16</span> <span class="nv">concurrent</span> <span class="nv">writes</span> <span class="nv">of</span> <span class="mi">4194304</span> <span class="nv">bytes</span> <span class="k">for</span> <span class="nv">up</span> <span class="nv">to</span> <span class="mi">10</span> <span class="nv">seconds</span> <span class="nv">or</span> <span class="mi">0</span> <span class="nv">objects</span>
-[...]
-<span class="nv">Total</span> <span class="nv">time</span> <span class="nv">run</span>:         <span class="mi">10</span>.<span class="mi">312134</span>
-<span class="nv">Total</span> <span class="nv">writes</span> <span class="nv">made</span>:      <span class="mi">399</span>
-<span class="nv">Write</span> <span class="nv">size</span>:             <span class="mi">4194304</span>
-<span class="nv">Bandwidth</span> <span class="ss">(</span><span class="nv">MB</span><span class="o">/</span><span class="nv">sec</span><span class="ss">)</span>:     <span class="mi">154</span>.<span class="mi">769</span> 
-[...]
+<div class="highlight"><pre><span></span><code><span class="nv">host</span><span class="o">=</span><span class="nv">localhost</span>:<span class="mi">7480</span><span class="w"></span>
+<span class="nv">Maintaining</span><span class="w"> </span><span class="mi">16</span><span class="w"> </span><span class="nv">concurrent</span><span class="w"> </span><span class="nv">writes</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="mi">4194304</span><span class="w"> </span><span class="nv">bytes</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">up</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="nv">seconds</span><span class="w"> </span><span class="nv">or</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="nv">objects</span><span class="w"></span>
+[...]<span class="w"></span>
+<span class="nv">Total</span><span class="w"> </span><span class="nv">time</span><span class="w"> </span><span class="nv">run</span>:<span class="w">         </span><span class="mi">10</span>.<span class="mi">312134</span><span class="w"></span>
+<span class="nv">Total</span><span class="w"> </span><span class="nv">writes</span><span class="w"> </span><span class="nv">made</span>:<span class="w">      </span><span class="mi">399</span><span class="w"></span>
+<span class="nv">Write</span><span class="w"> </span><span class="nv">size</span>:<span class="w">             </span><span class="mi">4194304</span><span class="w"></span>
+<span class="nv">Bandwidth</span><span class="w"> </span><span class="ss">(</span><span class="nv">MB</span><span class="o">/</span><span class="nv">sec</span><span class="ss">)</span>:<span class="w">     </span><span class="mi">154</span>.<span class="mi">769</span><span class="w"> </span>
+[...]<span class="w"></span>
 </code></pre></div>
 <p>So that means we achieved a bandwidth of just under 155 MB/s (which is
 near the max RADOS bandwidth this particular cluster is capable of;
@@ -261,13 +261,13 @@ approx. 40 PUTs/s.</p>
 $ rest-bench -t <span class="nv">$CONCURRENCY</span> -b <span class="nv">$SIZE</span> --seconds<span class="o">=</span><span class="nv">$SECS</span> --api-host<span class="o">=</span><span class="nv">$RGW</span> <span class="se">\</span>
 --bucket<span class="o">=</span><span class="nv">$BUCKET</span> --access-key<span class="o">=</span><span class="nv">$KEY</span> --secret<span class="o">=</span><span class="nv">$SECRET</span> --no-cleanup write
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nv">host</span><span class="o">=</span><span class="nv">localhost</span>:<span class="mi">7480</span>
- <span class="nv">Maintaining</span> <span class="mi">16</span> <span class="nv">concurrent</span> <span class="nv">writes</span> <span class="nv">of</span> <span class="mi">67108864</span> <span class="nv">bytes</span> <span class="k">for</span> <span class="nv">up</span> <span class="nv">to</span> <span class="mi">10</span> <span class="nv">seconds</span> <span class="nv">or</span> <span class="mi">0</span> <span class="nv">objects</span>
-[...]
- <span class="nv">Total</span> <span class="nv">time</span> <span class="nv">run</span>:         <span class="mi">13</span>.<span class="mi">959088</span>
-<span class="nv">Total</span> <span class="nv">writes</span> <span class="nv">made</span>:      <span class="mi">35</span>
-<span class="nv">Write</span> <span class="nv">size</span>:             <span class="mi">67108864</span>
-<span class="nv">Bandwidth</span> <span class="ss">(</span><span class="nv">MB</span><span class="o">/</span><span class="nv">sec</span><span class="ss">)</span>:     <span class="mi">160</span>.<span class="mi">469</span>
+<div class="highlight"><pre><span></span><code><span class="nv">host</span><span class="o">=</span><span class="nv">localhost</span>:<span class="mi">7480</span><span class="w"></span>
+<span class="w"> </span><span class="nv">Maintaining</span><span class="w"> </span><span class="mi">16</span><span class="w"> </span><span class="nv">concurrent</span><span class="w"> </span><span class="nv">writes</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="mi">67108864</span><span class="w"> </span><span class="nv">bytes</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">up</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="nv">seconds</span><span class="w"> </span><span class="nv">or</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="nv">objects</span><span class="w"></span>
+[...]<span class="w"></span>
+<span class="w"> </span><span class="nv">Total</span><span class="w"> </span><span class="nv">time</span><span class="w"> </span><span class="nv">run</span>:<span class="w">         </span><span class="mi">13</span>.<span class="mi">959088</span><span class="w"></span>
+<span class="nv">Total</span><span class="w"> </span><span class="nv">writes</span><span class="w"> </span><span class="nv">made</span>:<span class="w">      </span><span class="mi">35</span><span class="w"></span>
+<span class="nv">Write</span><span class="w"> </span><span class="nv">size</span>:<span class="w">             </span><span class="mi">67108864</span><span class="w"></span>
+<span class="nv">Bandwidth</span><span class="w"> </span><span class="ss">(</span><span class="nv">MB</span><span class="o">/</span><span class="nv">sec</span><span class="ss">)</span>:<span class="w">     </span><span class="mi">160</span>.<span class="mi">469</span><span class="w"></span>
 </code></pre></div>
 <p>Perfectly logical. Our bandwidth doesn't change much, but of course
 the number of PUTs we get done per second decreases significantly, to
@@ -281,14 +281,14 @@ application is using a typical object size of 32K.</p>
 rest-bench -t <span class="nv">$CONCURRENCY</span> -b <span class="nv">$SIZE</span> --seconds<span class="o">=</span><span class="nv">$SECS</span> --api-host<span class="o">=</span><span class="nv">$RGW</span> <span class="se">\</span>
 --bucket<span class="o">=</span><span class="nv">$BUCKET</span> --access-key<span class="o">=</span><span class="nv">$KEY</span> --secret<span class="o">=</span><span class="nv">$SECRET</span> --no-cleanup write
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nv">host</span><span class="o">=</span><span class="nv">localhost</span>:<span class="mi">7480</span>
- <span class="nv">Maintaining</span> <span class="mi">16</span> <span class="nv">concurrent</span> <span class="nv">writes</span> <span class="nv">of</span> <span class="mi">32768</span> <span class="nv">bytes</span> <span class="k">for</span> <span class="nv">up</span> <span class="nv">to</span> <span class="mi">10</span> <span class="nv">seconds</span> <span class="nv">or</span> <span class="mi">0</span> <span class="nv">objects</span>
-[...]
- <span class="nv">Total</span> <span class="nv">time</span> <span class="nv">run</span>:         <span class="mi">10</span>.<span class="mi">042325</span>
-<span class="nv">Total</span> <span class="nv">writes</span> <span class="nv">made</span>:      <span class="mi">2965</span>
-<span class="nv">Write</span> <span class="nv">size</span>:             <span class="mi">32768</span>
-<span class="nv">Bandwidth</span> <span class="ss">(</span><span class="nv">MB</span><span class="o">/</span><span class="nv">sec</span><span class="ss">)</span>:     <span class="mi">9</span>.<span class="mi">227</span>
-[...]
+<div class="highlight"><pre><span></span><code><span class="nv">host</span><span class="o">=</span><span class="nv">localhost</span>:<span class="mi">7480</span><span class="w"></span>
+<span class="w"> </span><span class="nv">Maintaining</span><span class="w"> </span><span class="mi">16</span><span class="w"> </span><span class="nv">concurrent</span><span class="w"> </span><span class="nv">writes</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="mi">32768</span><span class="w"> </span><span class="nv">bytes</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">up</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="nv">seconds</span><span class="w"> </span><span class="nv">or</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="nv">objects</span><span class="w"></span>
+[...]<span class="w"></span>
+<span class="w"> </span><span class="nv">Total</span><span class="w"> </span><span class="nv">time</span><span class="w"> </span><span class="nv">run</span>:<span class="w">         </span><span class="mi">10</span>.<span class="mi">042325</span><span class="w"></span>
+<span class="nv">Total</span><span class="w"> </span><span class="nv">writes</span><span class="w"> </span><span class="nv">made</span>:<span class="w">      </span><span class="mi">2965</span><span class="w"></span>
+<span class="nv">Write</span><span class="w"> </span><span class="nv">size</span>:<span class="w">             </span><span class="mi">32768</span><span class="w"></span>
+<span class="nv">Bandwidth</span><span class="w"> </span><span class="ss">(</span><span class="nv">MB</span><span class="o">/</span><span class="nv">sec</span><span class="ss">)</span>:<span class="w">     </span><span class="mi">9</span>.<span class="mi">227</span><span class="w"></span>
+[...]<span class="w"></span>
 </code></pre></div>
 <p>Of course if we looked at our bandwidth alone, this would be an
 abysmal result. But your application is trying to write 32K chunks,
@@ -300,14 +300,14 @@ MB/s to go down. Let's try with 4K objects:</p>
 rest-bench -t <span class="nv">$CONCURRENCY</span> -b <span class="nv">$SIZE</span> --seconds<span class="o">=</span><span class="nv">$SECS</span> --api-host<span class="o">=</span><span class="nv">$RGW</span> <span class="se">\</span>
 --bucket<span class="o">=</span><span class="nv">$BUCKET</span> --access-key<span class="o">=</span><span class="nv">$KEY</span> --secret<span class="o">=</span><span class="nv">$SECRET</span> --no-cleanup write
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nv">host</span><span class="o">=</span><span class="nv">localhost</span>:<span class="mi">7480</span>
- <span class="nv">Maintaining</span> <span class="mi">16</span> <span class="nv">concurrent</span> <span class="nv">writes</span> <span class="nv">of</span> <span class="mi">4096</span> <span class="nv">bytes</span> <span class="k">for</span> <span class="nv">up</span> <span class="nv">to</span> <span class="mi">10</span> <span class="nv">seconds</span> <span class="nv">or</span> <span class="mi">0</span> <span class="nv">objects</span>
-[...]
-<span class="nv">Total</span> <span class="nv">time</span> <span class="nv">run</span>:         <span class="mi">10</span>.<span class="mi">052134</span>
-<span class="nv">Total</span> <span class="nv">writes</span> <span class="nv">made</span>:      <span class="mi">3249</span>
-<span class="nv">Write</span> <span class="nv">size</span>:             <span class="mi">4096</span>
-<span class="nv">Bandwidth</span> <span class="ss">(</span><span class="nv">MB</span><span class="o">/</span><span class="nv">sec</span><span class="ss">)</span>:     <span class="mi">1</span>.<span class="mi">263</span> 
-[...]
+<div class="highlight"><pre><span></span><code><span class="nv">host</span><span class="o">=</span><span class="nv">localhost</span>:<span class="mi">7480</span><span class="w"></span>
+<span class="w"> </span><span class="nv">Maintaining</span><span class="w"> </span><span class="mi">16</span><span class="w"> </span><span class="nv">concurrent</span><span class="w"> </span><span class="nv">writes</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="mi">4096</span><span class="w"> </span><span class="nv">bytes</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">up</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="nv">seconds</span><span class="w"> </span><span class="nv">or</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="nv">objects</span><span class="w"></span>
+[...]<span class="w"></span>
+<span class="nv">Total</span><span class="w"> </span><span class="nv">time</span><span class="w"> </span><span class="nv">run</span>:<span class="w">         </span><span class="mi">10</span>.<span class="mi">052134</span><span class="w"></span>
+<span class="nv">Total</span><span class="w"> </span><span class="nv">writes</span><span class="w"> </span><span class="nv">made</span>:<span class="w">      </span><span class="mi">3249</span><span class="w"></span>
+<span class="nv">Write</span><span class="w"> </span><span class="nv">size</span>:<span class="w">             </span><span class="mi">4096</span><span class="w"></span>
+<span class="nv">Bandwidth</span><span class="w"> </span><span class="ss">(</span><span class="nv">MB</span><span class="o">/</span><span class="nv">sec</span><span class="ss">)</span>:<span class="w">     </span><span class="mi">1</span>.<span class="mi">263</span><span class="w"> </span>
+[...]<span class="w"></span>
 </code></pre></div>
 <p>And sure enough, 325 PUTs/s.</p>
 <p>So in summary, larger object sizes increase your write bandwidth to
@@ -333,26 +333,26 @@ writes-per-second will be lower in aggregate.</p>
 $ rest-bench -t <span class="nv">$CONCURRENCY</span> -b <span class="nv">$SIZE</span> --seconds<span class="o">=</span><span class="nv">$SECS</span> --api-host<span class="o">=</span><span class="nv">$RGW</span> <span class="se">\</span>
 --bucket<span class="o">=</span><span class="nv">$BUCKET</span> --access-key<span class="o">=</span><span class="nv">$KEY</span> --secret<span class="o">=</span><span class="nv">$SECRET</span> --no-cleanup write
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nv">host</span><span class="o">=</span><span class="nv">localhost</span>:<span class="mi">7480</span>
- <span class="nv">Maintaining</span> <span class="mi">16</span> <span class="nv">concurrent</span> <span class="nv">writes</span> <span class="nv">of</span> <span class="mi">4194304</span> <span class="nv">bytes</span> <span class="k">for</span> <span class="nv">up</span> <span class="nv">to</span> <span class="mi">10</span> <span class="nv">seconds</span> <span class="nv">or</span> <span class="mi">0</span> <span class="nv">objects</span>
-[...]
-<span class="nv">Total</span> <span class="nv">time</span> <span class="nv">run</span>:         <span class="mi">10</span>.<span class="mi">294444</span>
-<span class="nv">Total</span> <span class="nv">writes</span> <span class="nv">made</span>:      <span class="mi">394</span>
-<span class="nv">Write</span> <span class="nv">size</span>:             <span class="mi">4194304</span>
-<span class="nv">Bandwidth</span> <span class="ss">(</span><span class="nv">MB</span><span class="o">/</span><span class="nv">sec</span><span class="ss">)</span>:     <span class="mi">153</span>.<span class="mi">092</span> 
-[...]
+<div class="highlight"><pre><span></span><code><span class="nv">host</span><span class="o">=</span><span class="nv">localhost</span>:<span class="mi">7480</span><span class="w"></span>
+<span class="w"> </span><span class="nv">Maintaining</span><span class="w"> </span><span class="mi">16</span><span class="w"> </span><span class="nv">concurrent</span><span class="w"> </span><span class="nv">writes</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="mi">4194304</span><span class="w"> </span><span class="nv">bytes</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">up</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="nv">seconds</span><span class="w"> </span><span class="nv">or</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="nv">objects</span><span class="w"></span>
+[...]<span class="w"></span>
+<span class="nv">Total</span><span class="w"> </span><span class="nv">time</span><span class="w"> </span><span class="nv">run</span>:<span class="w">         </span><span class="mi">10</span>.<span class="mi">294444</span><span class="w"></span>
+<span class="nv">Total</span><span class="w"> </span><span class="nv">writes</span><span class="w"> </span><span class="nv">made</span>:<span class="w">      </span><span class="mi">394</span><span class="w"></span>
+<span class="nv">Write</span><span class="w"> </span><span class="nv">size</span>:<span class="w">             </span><span class="mi">4194304</span><span class="w"></span>
+<span class="nv">Bandwidth</span><span class="w"> </span><span class="ss">(</span><span class="nv">MB</span><span class="o">/</span><span class="nv">sec</span><span class="ss">)</span>:<span class="w">     </span><span class="mi">153</span>.<span class="mi">092</span><span class="w"> </span>
+[...]<span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">CONCURRENCY</span><span class="o">=</span><span class="m">1</span>
 rest-bench -t <span class="nv">$CONCURRENCY</span> -b <span class="nv">$SIZE</span> --seconds<span class="o">=</span><span class="nv">$SECS</span> --api-host<span class="o">=</span><span class="nv">$RGW</span> <span class="se">\</span>
 --bucket<span class="o">=</span><span class="nv">$BUCKET</span> --access-key<span class="o">=</span><span class="nv">$KEY</span> --secret<span class="o">=</span><span class="nv">$SECRET</span> --no-cleanup write
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nv">host</span><span class="o">=</span><span class="nv">localhost</span>:<span class="mi">7480</span>
- <span class="nv">Maintaining</span> <span class="mi">1</span> <span class="nv">concurrent</span> <span class="nv">writes</span> <span class="nv">of</span> <span class="mi">4194304</span> <span class="nv">bytes</span> <span class="k">for</span> <span class="nv">up</span> <span class="nv">to</span> <span class="mi">10</span> <span class="nv">seconds</span> <span class="nv">or</span> <span class="mi">0</span> <span class="nv">objects</span>
-[...]
- <span class="nv">Total</span> <span class="nv">time</span> <span class="nv">run</span>:         <span class="mi">10</span>.<span class="mi">090768</span>
-<span class="nv">Total</span> <span class="nv">writes</span> <span class="nv">made</span>:      <span class="mi">147</span>
-<span class="nv">Write</span> <span class="nv">size</span>:             <span class="mi">4194304</span>
-<span class="nv">Bandwidth</span> <span class="ss">(</span><span class="nv">MB</span><span class="o">/</span><span class="nv">sec</span><span class="ss">)</span>:     <span class="mi">58</span>.<span class="mi">271</span>
+<div class="highlight"><pre><span></span><code><span class="nv">host</span><span class="o">=</span><span class="nv">localhost</span>:<span class="mi">7480</span><span class="w"></span>
+<span class="w"> </span><span class="nv">Maintaining</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="nv">concurrent</span><span class="w"> </span><span class="nv">writes</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="mi">4194304</span><span class="w"> </span><span class="nv">bytes</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">up</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="nv">seconds</span><span class="w"> </span><span class="nv">or</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="nv">objects</span><span class="w"></span>
+[...]<span class="w"></span>
+<span class="w"> </span><span class="nv">Total</span><span class="w"> </span><span class="nv">time</span><span class="w"> </span><span class="nv">run</span>:<span class="w">         </span><span class="mi">10</span>.<span class="mi">090768</span><span class="w"></span>
+<span class="nv">Total</span><span class="w"> </span><span class="nv">writes</span><span class="w"> </span><span class="nv">made</span>:<span class="w">      </span><span class="mi">147</span><span class="w"></span>
+<span class="nv">Write</span><span class="w"> </span><span class="nv">size</span>:<span class="w">             </span><span class="mi">4194304</span><span class="w"></span>
+<span class="nv">Bandwidth</span><span class="w"> </span><span class="ss">(</span><span class="nv">MB</span><span class="o">/</span><span class="nv">sec</span><span class="ss">)</span>:<span class="w">     </span><span class="mi">58</span>.<span class="mi">271</span><span class="w"></span>
 </code></pre></div>
 <p>Logical, right? Rather than allowing 16 threads to interact with the
 cluster in parallel, we now have to wait for every single PUT to
@@ -366,27 +366,27 @@ objects. Compare the two for 4KB objects:</p>
 rest-bench <span class="o">-</span>t <span class="nv">$CONCURRENCY</span> <span class="o">-</span>b <span class="nv">$SIZE</span> <span class="o">--</span><span class="nv">seconds</span><span class="o">=</span><span class="nv">$SECS</span> <span class="o">--</span>api-host<span class="o">=</span><span class="nv">$RGW</span> <span class="se">\</span>
 <span class="o">--</span><span class="nv">bucket</span><span class="o">=</span><span class="nv">$BUCKET</span> <span class="o">--</span>access-key<span class="o">=</span><span class="nv">$KEY</span> <span class="o">--</span><span class="nv">secret</span><span class="o">=</span><span class="nv">$SECRET</span> <span class="o">--</span>no-cleanup write
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nv">host</span><span class="o">=</span><span class="nv">localhost</span>:<span class="mi">7480</span>
- <span class="nv">Maintaining</span> <span class="mi">16</span> <span class="nv">concurrent</span> <span class="nv">writes</span> <span class="nv">of</span> <span class="mi">4096</span> <span class="nv">bytes</span> <span class="k">for</span> <span class="nv">up</span> <span class="nv">to</span> <span class="mi">10</span> <span class="nv">seconds</span> <span class="nv">or</span> <span class="mi">0</span> <span class="nv">objects</span>
-[...]
- <span class="nv">Total</span> <span class="nv">time</span> <span class="nv">run</span>:         <span class="mi">10</span>.<span class="mi">053976</span>
-<span class="nv">Total</span> <span class="nv">writes</span> <span class="nv">made</span>:      <span class="mi">3211</span>
-<span class="nv">Write</span> <span class="nv">size</span>:             <span class="mi">4096</span>
-<span class="nv">Bandwidth</span> <span class="ss">(</span><span class="nv">MB</span><span class="o">/</span><span class="nv">sec</span><span class="ss">)</span>:     <span class="mi">1</span>.<span class="mi">248</span> 
-[...]
+<div class="highlight"><pre><span></span><code><span class="nv">host</span><span class="o">=</span><span class="nv">localhost</span>:<span class="mi">7480</span><span class="w"></span>
+<span class="w"> </span><span class="nv">Maintaining</span><span class="w"> </span><span class="mi">16</span><span class="w"> </span><span class="nv">concurrent</span><span class="w"> </span><span class="nv">writes</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="mi">4096</span><span class="w"> </span><span class="nv">bytes</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">up</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="nv">seconds</span><span class="w"> </span><span class="nv">or</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="nv">objects</span><span class="w"></span>
+[...]<span class="w"></span>
+<span class="w"> </span><span class="nv">Total</span><span class="w"> </span><span class="nv">time</span><span class="w"> </span><span class="nv">run</span>:<span class="w">         </span><span class="mi">10</span>.<span class="mi">053976</span><span class="w"></span>
+<span class="nv">Total</span><span class="w"> </span><span class="nv">writes</span><span class="w"> </span><span class="nv">made</span>:<span class="w">      </span><span class="mi">3211</span><span class="w"></span>
+<span class="nv">Write</span><span class="w"> </span><span class="nv">size</span>:<span class="w">             </span><span class="mi">4096</span><span class="w"></span>
+<span class="nv">Bandwidth</span><span class="w"> </span><span class="ss">(</span><span class="nv">MB</span><span class="o">/</span><span class="nv">sec</span><span class="ss">)</span>:<span class="w">     </span><span class="mi">1</span>.<span class="mi">248</span><span class="w"> </span>
+[...]<span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">CONCURRENCY</span><span class="o">=</span><span class="m">1</span> 
 rest-bench -t <span class="nv">$CONCURRENCY</span> -b <span class="nv">$SIZE</span> --seconds<span class="o">=</span><span class="nv">$SECS</span> --api-host<span class="o">=</span><span class="nv">$RGW</span> <span class="se">\</span>
 --bucket<span class="o">=</span><span class="nv">$BUCKET</span> --access-key<span class="o">=</span><span class="nv">$KEY</span> --secret<span class="o">=</span><span class="nv">$SECRET</span> --no-cleanup write
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nv">host</span><span class="o">=</span><span class="nv">localhost</span>:<span class="mi">7480</span>
- <span class="nv">Maintaining</span> <span class="mi">1</span> <span class="nv">concurrent</span> <span class="nv">writes</span> <span class="nv">of</span> <span class="mi">4096</span> <span class="nv">bytes</span> <span class="k">for</span> <span class="nv">up</span> <span class="nv">to</span> <span class="mi">10</span> <span class="nv">seconds</span> <span class="nv">or</span> <span class="mi">0</span> <span class="nv">objects</span>
-[...]
- <span class="nv">Total</span> <span class="nv">time</span> <span class="nv">run</span>:         <span class="mi">10</span>.<span class="mi">007962</span>
-<span class="nv">Total</span> <span class="nv">writes</span> <span class="nv">made</span>:      <span class="mi">1632</span>
-<span class="nv">Write</span> <span class="nv">size</span>:             <span class="mi">4096</span>
-<span class="nv">Bandwidth</span> <span class="ss">(</span><span class="nv">MB</span><span class="o">/</span><span class="nv">sec</span><span class="ss">)</span>:     <span class="mi">0</span>.<span class="mi">637</span>
-[...]
+<div class="highlight"><pre><span></span><code><span class="nv">host</span><span class="o">=</span><span class="nv">localhost</span>:<span class="mi">7480</span><span class="w"></span>
+<span class="w"> </span><span class="nv">Maintaining</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="nv">concurrent</span><span class="w"> </span><span class="nv">writes</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="mi">4096</span><span class="w"> </span><span class="nv">bytes</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">up</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="nv">seconds</span><span class="w"> </span><span class="nv">or</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="nv">objects</span><span class="w"></span>
+[...]<span class="w"></span>
+<span class="w"> </span><span class="nv">Total</span><span class="w"> </span><span class="nv">time</span><span class="w"> </span><span class="nv">run</span>:<span class="w">         </span><span class="mi">10</span>.<span class="mi">007962</span><span class="w"></span>
+<span class="nv">Total</span><span class="w"> </span><span class="nv">writes</span><span class="w"> </span><span class="nv">made</span>:<span class="w">      </span><span class="mi">1632</span><span class="w"></span>
+<span class="nv">Write</span><span class="w"> </span><span class="nv">size</span>:<span class="w">             </span><span class="mi">4096</span><span class="w"></span>
+<span class="nv">Bandwidth</span><span class="w"> </span><span class="ss">(</span><span class="nv">MB</span><span class="o">/</span><span class="nv">sec</span><span class="ss">)</span>:<span class="w">     </span><span class="mi">0</span>.<span class="mi">637</span><span class="w"></span>
+[...]<span class="w"></span>
 </code></pre></div>
 <p>Both writes-per-second and throughput drop by half.</p>
 <h2>Conclusions</h2>

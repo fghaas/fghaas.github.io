@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Firefox</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/firefox.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-08-19T21:00:00+00:00</updated><entry><title>Jammy, don’t snap at me!</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/jammy-dont-snap/" rel="alternate"></link><published>2022-08-19T21:00:00+00:00</published><updated>2022-08-19T21:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-08-19:/resources/hints-and-kinks/jammy-dont-snap/</id><summary type="html">&lt;p&gt;The current Ubuntu LTS release, 22.04 “Jammy Jellyfish”, tries to force a snap-installed Mozilla Firefox on you. I’m not a fan of that approach.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The current Ubuntu LTS release, 22.04 “Jammy Jellyfish”, does not
+install a Debian package for Mozilla Firefox anymore. Instead, Ubuntu
+now delivers Firefox as a &lt;a href="https://snapcraft.io/"&gt;snap&lt;/a&gt;. I’m not
+particularly enthralled by that idea.&lt;/p&gt;
+&lt;p&gt;Every once in a while I look at the current state of snaps. And every
+time I look them, I find that they don’t solve any problems I am
+having at the time, but do add some. The same, incidentally, happens
+to be true for Wayland, which is why I still use X.org. (I want to
+emphasize that the foregoing is true for &lt;em&gt;me&lt;/em&gt; — your own experience
+may well differ, and that’s perfectly okay.) So I have kept my systems
+free of &lt;code&gt;snapd&lt;/code&gt;, and I intend to keep them that way for the
+foreseeable future.&lt;/p&gt;
+&lt;p&gt;However, if you upgrade an existing Ubuntu Focal or Impish system to
+Jammy in-place, with the customary &lt;code&gt;apt dist-upgrade&lt;/code&gt; command, Ubuntu
+&lt;em&gt;replaces&lt;/em&gt; the pre-existing Debian (&lt;code&gt;.deb&lt;/code&gt;) package with a snap. That
+is to say, &lt;code&gt;firefox&lt;/code&gt; in Ubuntu Jammy is a &lt;a href="https://packages.ubuntu.com/jammy/firefox"&gt;transitional
+package&lt;/a&gt; that would install
+&lt;code&gt;snapd&lt;/code&gt; as a dependency, and then run &lt;code&gt;snap install
+firefox&lt;/code&gt;. Mid-upgrade, it does pause and prompt you about this fact —
+but there’s no yes or no that would give you the option to bail, only
+an “OK” button.&lt;/p&gt;
+&lt;p&gt;What you thus want to do if you’re wired like me, &lt;em&gt;prior&lt;/em&gt; to
+commencing your upgrade, is tell Ubuntu that you want to keep
+installing Firefox from a package. And while you’re at it, you might
+also politely inform your package manager that you have no desire to
+use snaps, at all.&lt;/p&gt;
+&lt;p&gt;To do so, first become &lt;code&gt;root&lt;/code&gt;, and make the necessary changes to
+change the &lt;code&gt;focal&lt;/code&gt; or &lt;code&gt;impish&lt;/code&gt; references in your
+&lt;code&gt;/etc/apt/sources.list&lt;/code&gt; and &lt;code&gt;/etc/apt/sources.list.d&lt;/code&gt; files to &lt;code&gt;jammy&lt;/code&gt;
+as you normally would.&lt;/p&gt;
+&lt;p&gt;Then, make sure that you don’t have the &lt;code&gt;snapd&lt;/code&gt; package installed:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="gp"&gt;# &lt;/span&gt;dpkg -l snapd
+&lt;span class="go"&gt;Desired=Unknown/Install/Remove/Purge/Hold&lt;/span&gt;
+&lt;span class="go"&gt;| Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend&lt;/span&gt;
+&lt;span class="go"&gt;|/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)&lt;/span&gt;
+&lt;span class="go"&gt;||/ Name           Version      Architecture Description&lt;/span&gt;
+&lt;span class="go"&gt;+++-==============-============-============-=================================&lt;/span&gt;
+&lt;span class="go"&gt;un  snapd          &amp;lt;none&amp;gt;       &amp;lt;none&amp;gt;       (no description available)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Next, mark the &lt;code&gt;snapd&lt;/code&gt; package with &lt;code&gt;hold&lt;/code&gt;, so that the current state
+of the package (&lt;code&gt;un&lt;/code&gt;) is made permanent:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt-mark hold snapd
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now, add the &lt;code&gt;mozillateam&lt;/code&gt; PPA:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;add-apt-repository ppa:mozillateam/ppa
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Next, create a file named &lt;code&gt;/etc/apt/preferences.d/mozilla-firefox&lt;/code&gt;,
+containing the following three lines:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;Package&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;*&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nt"&gt;Pin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;release o=LP-PPA-mozillateam&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nt"&gt;Pin-Priority&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;1001&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;At this stage, your system should be set up to (a) not install the
+snap daemon, and (b) conduct the upgrade of the &lt;code&gt;firefox&lt;/code&gt;
+package using the regular Debian package as it appears in the PPA, not
+the distro package that is a wrapper around &lt;code&gt;snap install&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Now, proceed with:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt dist-upgrade
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Happy jamming!&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Ubuntu"></category><category term="Firefox"></category></entry></feed>

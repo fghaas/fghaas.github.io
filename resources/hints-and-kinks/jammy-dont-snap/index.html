@@ -1,0 +1,262 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../../theme/pygments/github.min.css">
+
+    <link rel="stylesheet" href="../../../theme/tipuesearch/tipuesearch.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/solid.css">
+
+    <link rel="stylesheet" type="text/css" href="../../../css/override.css">
+
+    <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+    <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+  
+
+
+ 
+
+<meta name="author" content="Florian Haas" />
+<meta name="description" content="The current Ubuntu LTS release, 22.04 “Jammy Jellyfish”, tries to force a snap-installed Mozilla Firefox on you. I’m not a fan of that approach." />
+<meta name="keywords" content="Ubuntu, Firefox">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="Jammy, don’t snap at me!"/>
+  <meta property="og:description" content="The current Ubuntu LTS release, 22.04 “Jammy Jellyfish”, tries to force a snap-installed Mozilla Firefox on you. I’m not a fan of that approach."/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../../resources/hints-and-kinks/jammy-dont-snap/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2022-08-19 21:00:00+00:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../../author/florian-haas.html">
+  <meta property="article:section" content="hints-and-kinks"/>
+  <meta property="article:tag" content="Ubuntu"/>
+  <meta property="article:tag" content="Firefox"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; Jammy, don’t snap at me!</title>
+
+</head>
+<body >
+  <aside>
+    <div>
+      <a href="../../../">
+        <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="../../../"></a>
+      </h1>
+
+
+        <form class="navbar-search" action="../../../search.html" role="search">
+          <input type="text" name="q" id="tipue_search_input" placeholder="Search...">
+        </form>
+
+
+      <ul class="social">
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/xahteiwi" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="me" class="sc-mastodon" href="https://mastodon.social/@xahteiwi" target="_blank">
+              <i class="fab fa-mastodon"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/fghaas" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-github" href="https://github.com/fghaas" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="../../../">Home</a>
+
+      <a href="/category/hints-and-kinks.html">Tech</a>
+      <a href="/category/presentations.html">Talks</a>
+      <a href="/category/blog.html">Thoughts</a>
+      <a href="">​</a>
+      <a href="/about/">About</a>
+      <a href="/comments/">Comments</a>
+      <a href="/legal/">Legal</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="">​</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="">​</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+      <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="jammy-dont-snap">Jammy, don’t snap at me!</h1>
+    <p>
+      Posted on Fri 19 August 2022 in <a href="../../../category/hints-and-kinks.html">hints-and-kinks</a>
+
+        &#8226; 2 min read
+    </p>
+  </header>
+
+
+  <div>
+    <p>The current Ubuntu LTS release, 22.04 “Jammy Jellyfish”, does not
+install a Debian package for Mozilla Firefox anymore. Instead, Ubuntu
+now delivers Firefox as a <a href="https://snapcraft.io/">snap</a>. I’m not
+particularly enthralled by that idea.</p>
+<p>Every once in a while I look at the current state of snaps. And every
+time I look them, I find that they don’t solve any problems I am
+having at the time, but do add some. The same, incidentally, happens
+to be true for Wayland, which is why I still use X.org. (I want to
+emphasize that the foregoing is true for <em>me</em> — your own experience
+may well differ, and that’s perfectly okay.) So I have kept my systems
+free of <code>snapd</code>, and I intend to keep them that way for the
+foreseeable future.</p>
+<p>However, if you upgrade an existing Ubuntu Focal or Impish system to
+Jammy in-place, with the customary <code>apt dist-upgrade</code> command, Ubuntu
+<em>replaces</em> the pre-existing Debian (<code>.deb</code>) package with a snap. That
+is to say, <code>firefox</code> in Ubuntu Jammy is a <a href="https://packages.ubuntu.com/jammy/firefox">transitional
+package</a> that would install
+<code>snapd</code> as a dependency, and then run <code>snap install
+firefox</code>. Mid-upgrade, it does pause and prompt you about this fact —
+but there’s no yes or no that would give you the option to bail, only
+an “OK” button.</p>
+<p>What you thus want to do if you’re wired like me, <em>prior</em> to
+commencing your upgrade, is tell Ubuntu that you want to keep
+installing Firefox from a package. And while you’re at it, you might
+also politely inform your package manager that you have no desire to
+use snaps, at all.</p>
+<p>To do so, first become <code>root</code>, and make the necessary changes to
+change the <code>focal</code> or <code>impish</code> references in your
+<code>/etc/apt/sources.list</code> and <code>/etc/apt/sources.list.d</code> files to <code>jammy</code>
+as you normally would.</p>
+<p>Then, make sure that you don’t have the <code>snapd</code> package installed:</p>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>dpkg -l snapd
+<span class="go">Desired=Unknown/Install/Remove/Purge/Hold</span>
+<span class="go">| Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend</span>
+<span class="go">|/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)</span>
+<span class="go">||/ Name           Version      Architecture Description</span>
+<span class="go">+++-==============-============-============-=================================</span>
+<span class="go">un  snapd          &lt;none&gt;       &lt;none&gt;       (no description available)</span>
+</code></pre></div>
+<p>Next, mark the <code>snapd</code> package with <code>hold</code>, so that the current state
+of the package (<code>un</code>) is made permanent:</p>
+<div class="highlight"><pre><span></span><code>apt-mark hold snapd
+</code></pre></div>
+<p>Now, add the <code>mozillateam</code> PPA:</p>
+<div class="highlight"><pre><span></span><code>add-apt-repository ppa:mozillateam/ppa
+</code></pre></div>
+<p>Next, create a file named <code>/etc/apt/preferences.d/mozilla-firefox</code>,
+containing the following three lines:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Package</span><span class="p">:</span><span class="w"> </span><span class="err">*</span><span class="w"></span>
+<span class="nt">Pin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">release o=LP-PPA-mozillateam</span><span class="w"></span>
+<span class="nt">Pin-Priority</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1001</span><span class="w"></span>
+</code></pre></div>
+<p>At this stage, your system should be set up to (a) not install the
+snap daemon, and (b) conduct the upgrade of the <code>firefox</code>
+package using the regular Debian package as it appears in the PPA, not
+the distro package that is a wrapper around <code>snap install</code>.</p>
+<p>Now, proceed with:</p>
+<div class="highlight"><pre><span></span><code>apt dist-upgrade
+</code></pre></div>
+<p>Happy jamming!</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../tag/ubuntu.html">Ubuntu</a>
+      <a href="../../../tag/firefox.html">Firefox</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+
+</body>
+</html>
