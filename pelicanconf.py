@@ -20,6 +20,20 @@ USE_GOOGLE_FONTS = False
 
 MAIN_MENU = True
 
+MARKDOWN = {
+    'extension_configs': {
+        'markdown.extensions.extra': {},
+        'markdown.extensions.admonition': {},
+        'markdown.extensions.codehilite': {
+            'css_class': 'highlight'
+        },
+        'markdown.extensions.meta': {},
+        'smarty' : {
+            'smart_angled_quotes' : 'true'
+        },
+    },
+}
+
 ROBOTS = 'index,follow'
 
 OUTPUT_RETENTION = ['.git',
