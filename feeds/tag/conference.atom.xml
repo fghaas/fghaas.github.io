@@ -1,8 +1,648 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Conference</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/conference.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-05-30T00:00:00+00:00</updated><entry><title>Writing Professionally (C!Conf 2022)</title><link href="https://xahteiwi.eu/resources/presentations/c-conf2022/" rel="alternate"></link><published>2022-05-30T00:00:00+00:00</published><updated>2022-05-30T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-05-30:/resources/presentations/c-conf2022/</id><summary type="html">&lt;p&gt;I did a workshop on writing in a professional context at my employer's annual unconference, C!Conf.&lt;/p&gt;</summary><content type="html">&lt;p&gt;At work we have an annual&lt;sup id="fnref:annual"&gt;&lt;a class="footnote-ref" href="#fn:annual"&gt;1&lt;/a&gt;&lt;/sup&gt; conference, &lt;em&gt;C!Conf,&lt;/em&gt; where we pull
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Conference</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/conference.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-09-18T00:00:00+00:00</updated><entry><title>DevOpsDays Berlin 2022</title><link href="https://xahteiwi.eu/resources/presentations/devopsdays-berlin-2022/" rel="alternate"></link><published>2022-09-18T00:00:00+00:00</published><updated>2022-09-18T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-09-18:/resources/presentations/devopsdays-berlin-2022/</id><summary type="html">&lt;p&gt;I couldn&amp;rsquo;t make it do DevOpsDays Berlin, because my Covid status kept me from travelling. Thus, here&amp;rsquo;s a write-up.&lt;/p&gt;</summary><content type="html">&lt;p&gt;At &lt;a href="https://devopsdays.org/events/2022-berlin/program"&gt;DevOpsDays Berlin
+2022&lt;/a&gt;, I was slated
+to give a 30-minute talk titled &lt;em&gt;Writing Professionally.&lt;/em&gt;
+Unfortunately a positive Covid test just three days prior to my
+departure threw a wrench in those plans, and I was unable to travel or
+attend a conference (much less speak at one, unmasked).&lt;/p&gt;
+&lt;p&gt;So, I am converting my talk into a write-up, before any symptoms set
+in.&lt;/p&gt;
+&lt;h1&gt;Writing Professionally (in English)&lt;/h1&gt;
+&lt;p&gt;This is a talk about developing superpowers. Superpowers that will
+help you be better in any role, any industry, any profession —
+&lt;em&gt;particularly&lt;/em&gt; the ones where you work in distributed teams, and use
+an asynchronous and distributed workflow.&lt;/p&gt;
+&lt;p&gt;This is about expressing yourself clearly, succinctly, and
+professionally in writing. I have put this together for the English
+language, though parts of this talk may be applicable to other
+languages as well.&lt;/p&gt;
+&lt;p&gt;This is about &lt;strong&gt;writing well&lt;/strong&gt; in a professional context. That means
+we’re not talking about poetry, or creative writing, or writing a
+message to a friend. We’re talking about writing in the context of
+professional communications.&lt;/p&gt;
+&lt;h2&gt;Being understandable&lt;/h2&gt;
+&lt;p&gt;When you write in a professional context, &lt;strong&gt;your goal&lt;/strong&gt; is the
+&lt;strong&gt;reader&lt;/strong&gt; (or readers) &lt;strong&gt;understanding you.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;That is really the overarching goal, and it’s important to understand
+that we must do everything we possibly can to make it easy for our
+reader to understand what we mean.&lt;/p&gt;
+&lt;p&gt;When you’re writing a novel, you can add plot twists and
+surprises. You can even use a literary device called an unreliable
+narrator, where at the very end of the novel you reveal that
+everything the narrator said (or the protagonist did) was a lie, a
+delusion, or a dream.&lt;/p&gt;
+&lt;p&gt;In professional writing, we don’t have that luxury. We must write in
+such a way that whoever reads our writing, understands us.&lt;/p&gt;
+&lt;p&gt;And that is the overarching goal no matter the mode we use to
+communicate. Writing to be understood extends to&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;email messages,&lt;/li&gt;
+&lt;li&gt;chat messages,&lt;/li&gt;
+&lt;li&gt;issue descriptions and comments (in whatever issue tracker you might be using; this includes Jira tickets, Trello cards, GitHub issues and the like)&lt;/li&gt;
+&lt;li&gt;collaboratively edited documents (like wiki pages or shared Google docs)&lt;/li&gt;
+&lt;li&gt;meeting notes (more on those in a bit), and of course&lt;/li&gt;
+&lt;li&gt;technical documentation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And in writing, your No. 1 priority is &lt;strong&gt;clarity.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Not beauty, elegance, or cleverness. Those all have their place, and
+there is some room for them in professional writing as well, but you
+should never sacrifice clarity for any of them.&lt;/p&gt;
+&lt;p&gt;I would also say that being clear is more important than being
+friendly. If there is something that you need to express, but you
+can’t do it in a friendly manner if you’re being clear, I’d say you
+should be clear, rather than friendly. &lt;strong&gt;However,&lt;/strong&gt; not being
+particularly &lt;em&gt;friendly&lt;/em&gt; doesn’t mean being &lt;em&gt;disrespectful&lt;/em&gt; — even if
+you’re expressing strong disagreement, you can do so in a respectful
+manner.&lt;/p&gt;
+&lt;h2&gt;Clarity takes two forms&lt;/h2&gt;
+&lt;p&gt;Writing clearly can mean one of two things:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Clarity of &lt;em&gt;expression,&lt;/em&gt; that is, caring about how we write each
+  sentence (and word, really) with a view toward maximum clarity.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Clarity of &lt;em&gt;structure,&lt;/em&gt; that is, caring about how we design
+  “documents” (in the broadest sense), so that they are clear and easy
+  to understand, and are useful for communication.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Both of them are equally important, and they depend on each other: a
+beautifully structured document is useless if it’s full of gibberish,
+and splendidly clear words are useless if they end up in an
+unstructured wall of text.&lt;/p&gt;
+&lt;p&gt;So we’ll spend some time on both, starting with clarity of expression.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h1&gt;Orwell’s Six Rules&lt;/h1&gt;
+&lt;p&gt;One of the simplest, most concise, and most useful rulesets for
+writing clearly in the English language comes from &lt;a href="https://en.wikipedia.org/wiki/George_Orwell"&gt;George
+Orwell&lt;/a&gt;‘s 1946 essay,
+&lt;em&gt;&lt;a href="https://en.wikipedia.org/wiki/Politics_and_the_English_Language"&gt;Politics and the English
+Language&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;In it, Orwell suggested six rules for writers to follow:&lt;/p&gt;
+&lt;h2&gt;Rule 1&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Never use a metaphor, simile, or other figure of speech which you
+are used to seeing in print.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;What Orwell means by this is essentially, “don’t try to be clever”. If
+you’re using a metaphor, chances are that it’s not original, that
+somebody else has used it before, and that people may see it as a
+tedious trope.&lt;/p&gt;
+&lt;p&gt;More importantly though, your reader might simply not be familiar with
+the metaphor, depending on their background. As an example, if your
+readers are from Germany, or are medieval scholars from somewhere in
+Western Europe, they will probably understand what you mean by calling
+a salesperson a &lt;a href="https://en.wikipedia.org/wiki/Pied_Piper_of_Hamelin"&gt;Pied
+Piper&lt;/a&gt;. If they
+are not, your readers will be very confused by your reference to a
+13th century rat exterminator (or musician, depending on viewpoint) in
+your writing.&lt;/p&gt;
+&lt;h2&gt;Rule 2&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Never use a long word where a short one will do.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;It’s remarkable how much clearer your writing gets if you ruthlessly
+edit it. English almost always gives you a choice between using a long
+word, and a shorter one with the same meaning. Always opt for the
+short one. Rather than &lt;em&gt;utilise,&lt;/em&gt; write &lt;em&gt;use.&lt;/em&gt; Rather than saying
+&lt;em&gt;methodology,&lt;/em&gt; say &lt;em&gt;method.&lt;/em&gt; Instead of &lt;em&gt;I don’t mean to insinuate,&lt;/em&gt;
+you can write &lt;em&gt;I don’t mean to suggest.&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;Rule 3&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If it is possible to cut a word out, always cut it out.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;When you’re using shorter words instead of longer ones, you cut
+syllables and letters from your writing. Naturally, you can also
+extend that concept to cutting whole words.&lt;/p&gt;
+&lt;p&gt;There’s a famous quote that fits well with this particular rule that
+comes from the French writer, poet, and aviator &lt;a href="https://en.wikipedia.org/wiki/Antoine_de_Saint-Exup%C3%A9ry"&gt;Antoine de
+Saint-Exupéry&lt;/a&gt;
+(best known to English-speaking readers for his novella &lt;em&gt;&lt;a href="https://en.wikipedia.org/wiki/The_Little_Prince"&gt;The Little
+Prince&lt;/a&gt;&lt;/em&gt;).&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;« Il semble que la perfection soit atteinte non quand il n’y a plus
+rien à ajouter, mais quand il n’y a plus rien à retrancher. »&lt;/p&gt;
+&lt;p&gt;(&lt;em&gt;Terre des hommes&lt;/em&gt;, 1939)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In English, that roughly translates to:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;It appears that perfection is achieved not when there is nothing
+left to add, but when there is nothing left to take away.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;(I say roughly because &lt;em&gt;cut away&lt;/em&gt; would be a better translation than
+&lt;em&gt;take away,&lt;/em&gt; but in English the former sounds unnecessarily harsh.)&lt;/p&gt;
+&lt;p&gt;It needs to be said that this quote disagrees with itself a bit,
+because it does contain a phrase that is perfectly okay to edit
+out. If he followed his own advice (and was a little more assertive),
+Saint-Exupéry could have written:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Perfection is achieved not when there is nothing left to add, but
+when there is nothing left to take away.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;But it is a good quote to go by, still. If you make it part of your
+mindset to send an email, or hit the &lt;em&gt;Save&lt;/em&gt; button on an issue comment
+not when you can’t think of anything to add, but when you’ve tried to
+trim all the fat and find nothing else to trim, that will make you a
+better professional communicator.&lt;/p&gt;
+&lt;h2&gt;Rule 4&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Never use the passive where you can use the active.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Orwell’s rule No. 4 states that you should be using the active voice
+whenever you can. There are some exceptions to this, but in general
+the active voice tends to be shorter, more concise, and thus clearer
+than the passive voice.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Passive voice: The system was rebooted.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Active voice: We rebooted the system.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Sometimes, it’s difficult for non-native speakers to even &lt;em&gt;recognize&lt;/em&gt;
+that they are using the passive voice. There’s a neat little trick to
+apply here: if you can take the sentence and append “by dragons” to
+it, then it’s passive voice.&lt;/p&gt;
+&lt;p&gt;Applying this rule, we could edit the Saint-Exupéry quote even more
+radically:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We achieve perfection not when we can’t add anything, but
+when we can’t take anything away.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Now of course, the quote becomes less and less poetic as we edit
+it. I’m not trying to say that Saint-Exupéry ought to be writing any
+differently than he did. What I’m trying to say is that the last
+version is probably the clearest to most people (including those for
+whom English is their second or third language), and that in
+professional communications we shouldn’t strive to be poetic, we
+should strive to be clear.&lt;/p&gt;
+&lt;h2&gt;Rule 5&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Never use a foreign phrase, a scientific word, or a jargon word if
+you can think of an everyday English equivalent.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Orwell’s fifth rule emphasises simplicity and accessibility. If there
+is an uncommon word that means &lt;em&gt;the same thing&lt;/em&gt; as a common one, always
+use the common one.&lt;/p&gt;
+&lt;p&gt;Note that this means that you can — and should — use technical terms
+if they have &lt;em&gt;no&lt;/em&gt; everyday equivalent. That’s simply because using an
+imprecise term would mean &lt;em&gt;losing&lt;/em&gt; clarity, when compared to using a
+precise term. But when we have one that we &lt;em&gt;can&lt;/em&gt; easily replace with a
+common word, we should do so.&lt;/p&gt;
+&lt;p&gt;For example:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;This is a favourable conceptualization.&lt;/li&gt;
+&lt;li&gt;This is a good idea.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Here, we can simply replace the uncommon terms with common ones.&lt;/p&gt;
+&lt;p&gt;Another example in the corporate world is that we can easily replace
+the jargon term “human resources” with “people”, and also replace
+“acquire” with “hire” or “buy”, depending on context.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;For this project we’ll need to acquire more human resources.&lt;/li&gt;
+&lt;li&gt;For this project we’ll need to hire more people.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Rule 6&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Break any of these rules sooner than say anything outright barbarous.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;And finally, Orwell reminds us that while this ruleset is a good
+guideline to follow, it is not absolute.&lt;/p&gt;
+&lt;p&gt;Yes, &lt;em&gt;sometimes&lt;/em&gt; the passive voice is just fine, such as when you want
+to make a point of not assigning blame for something that went wrong,
+to a particular individual or group. Sometimes you can include a witty
+quote unedited, even though it used jargon or a foreign word.&lt;/p&gt;
+&lt;p&gt;But having the rulebook in the back of your mind at all times is
+guaranteed to improve your writing.&lt;/p&gt;
+&lt;h1&gt;Little things&lt;/h1&gt;
+&lt;p&gt;Let’s look at a few other, small things that you can think about to
+make your writing better.&lt;/p&gt;
+&lt;h2&gt;Parallelism&lt;/h2&gt;
+&lt;p&gt;Parallelism (parallel structure) is the simple rule that if you are
+using a particular structure in a sentence, then you keep using that
+structure until the end of the sentence.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;We wanted to know the time, the place, and where we were going.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;We wanted to know the time, the place, and the destination.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;In this example, both sentences are correct English, even though the
+first one may sound a little colloquial.&lt;/p&gt;
+&lt;p&gt;The second sentence is clearer, because the use of “we wanted to know
+the time, the place, and” primes the reader to expect another
+instance of the definite article “the”, followed by a noun. Finishing
+the sentence by “the destination” makes for a more straightforward
+reading experience.&lt;/p&gt;
+&lt;h2&gt;Emphasis goes last&lt;/h2&gt;
+&lt;p&gt;Most English speakers subconsciously read the end of a sentence as
+being more important than its beginning. Thus, whatever you consider
+the more important aspect should go at the end of the sentence for
+emphasis.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The drug is highly effective, but has significant side effects.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The drug has significant side effects, but is highly effective.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The first example emphasises the side effects. Thus, most readers
+would read it as a warning to prescribe the drug with caution. The
+second example emphasises the drug’s effectiveness, and could thus be
+seen as an encouragement to prescribe the drug for treatments.&lt;/p&gt;
+&lt;h2&gt;Effectively using bullets in a sentence&lt;/h2&gt;
+&lt;p&gt;In professional writing, you often have the opportunity to make a long
+sentence much more readable, by simply injecting bullets.&lt;/p&gt;
+&lt;p&gt;Take this example:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;It is important that we listen to the customer’s needs, build a good
+solution that keeps us within the applicable regulatory framework,
+and clearly delineate responsibilities in the proposal and SLA.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This sentence is perfectly correct, and it isn’t even awkwardly
+structured. It is just a long, run-on sentence, which most readers
+will find difficult to grasp at a glance. You probably reread it once
+or twice.&lt;/p&gt;
+&lt;p&gt;Compare this version:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;It is important that we &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;listen to the customers needs, &lt;/li&gt;
+&lt;li&gt;build a good solution that keeps us within the applicable regulatory
+framework, and&lt;/li&gt;
+&lt;li&gt;clearly delineate responsibilities in the proposal and SLA.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In this version, &lt;em&gt;not a single word has changed.&lt;/em&gt; The statement could
+still use further editing. But even at this stage, most people will
+find reading this version much easier than reading the original. That
+is because most readers will be able to grasp the initial part of the
+sentence, “it is important that we”, at a single glance, and will also
+be able to notice at a glance that there are three bullets.&lt;/p&gt;
+&lt;p&gt;That is to say that without even reading it in full, your reader will
+understand that you are about to mention what’s important, and that
+there are three things you suggest to consider.&lt;/p&gt;
+&lt;h2&gt;Writing positively&lt;/h2&gt;
+&lt;p&gt;Writing positively means to write using affirmations, rather than
+negations. In other words, you state &lt;em&gt;what is,&lt;/em&gt; rather than stating
+&lt;em&gt;what is not.&lt;/em&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The project manager may not hire outside contractors except those
+   that have been carefully vetted for reliability.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The project manager must vet all outside contractors for
+   reliability.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Here, we have transformed the negative structure “may not… except” into an affirmative one, and we’ve further cleaned up the
+writing by eliminating an example of passive voice (“carefully vetted
+[by dragons] for reliability”) and replacing it with active voice.&lt;/p&gt;
+&lt;h2&gt;Punctuation&lt;/h2&gt;
+&lt;p&gt;… does matter. Really.&lt;/p&gt;
+&lt;p&gt;People often overlook how important punctuation is to clarity. What
+follows is an example of changing the meaning of a sentence drastically,
+by inserting commas.&lt;/p&gt;
+&lt;p&gt;First, we are dealing with a perfectly normal panda:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The panda eats bamboo shoots and leaves.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;With one comma, the panda becomes a picky eater who takes off after
+eating the bamboo shoots, rather than also eating the bamboo leaves:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The panda eats bamboo shoots, and leaves.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;And with two commas, we’re suddenly dealing with a panda that’s a gun
+nut with an anger management problem:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The panda eats bamboo, shoots, and leaves.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;Whitespace&lt;/h3&gt;
+&lt;p&gt;Whitespace normally goes &lt;em&gt;after&lt;/em&gt; punctuation, not before.&lt;/p&gt;
+&lt;p&gt;In English (in contrast to some other languages), when whitespace
+&lt;em&gt;precedes&lt;/em&gt; punctuation, it’s almost always wrong.  The correct
+sequence at the end of a sentence is full-stop (or exclamation mark,
+or question mark) &lt;em&gt;followed&lt;/em&gt; by whitespace. Likewise, its first comma,
+then whitespace. First semicolon, then whitespace.&lt;/p&gt;
+&lt;p&gt;There are select exceptions to this rule: whitespace does precede the
+en dash (–), opening quotation marks, parentheses, brackets, and
+braces, and optionally the em dash (—). But whitespace preceding
+punctuation &lt;em&gt;at the end of a sentence&lt;/em&gt; is always an error.&lt;/p&gt;
+&lt;h3&gt;Question marks (?)&lt;/h3&gt;
+&lt;p&gt;Questions should end in a question mark, shouldn’t they?&lt;/p&gt;
+&lt;p&gt;Don’t end questions with a full-stop or an exclamation point in
+professional writing. That will likely come across as either
+passive-aggressive or confrontational. End questions, even rhetorical
+ones, with a question mark.&lt;/p&gt;
+&lt;h3&gt;Exclamation marks (!)&lt;/h3&gt;
+&lt;p&gt;Use no more than one explanation mark per paragraph. Zero is fine, too.&lt;/p&gt;
+&lt;p&gt;Exclamation marks are something you want to use sparingly. &lt;em&gt;Never&lt;/em&gt; use
+more than one in immediate succession. Limiting yourself to one per
+paragraph is a good rule of thumb.&lt;/p&gt;
+&lt;h3&gt;Semicolons&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Semicolons are great; splitting the sentence in two is usually better.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Semicolons are great. Splitting the sentence in two is usually better.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;English mandates that on either side of a semicolon, you have what
+constitutes essentially a full sentence with a subject and verb (both
+obligatory) and an object (optional). Thus, they give you the option
+of just splitting the sentence into two — that is to say, replacing
+the semicolon with a full-stop.&lt;/p&gt;
+&lt;h3&gt;Possessive apostrophe&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Oscars: more than one Oscar &lt;/li&gt;
+&lt;li&gt;Oscar’s: of or related to Oscar&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A common mistake that native speakers of German or Swedish often make
+is the omission of the possessive apostrophe. English doesn’t have
+much in the way of
+&lt;a href="https://en.wikipedia.org/wiki/Grammatical_case"&gt;cases&lt;/a&gt;, but does have
+something like a &lt;a href="https://en.wikipedia.org/wiki/Genitive_case"&gt;genitive
+case&lt;/a&gt;. If something is of
+Oscar, or related to Oscar, it is &lt;em&gt;Oscar’s&lt;/em&gt; — such as Oscar’s car,
+Oscar’s job, Oscar’s house. An “Oscars job” is a job for multiple
+people named Oscar, or a job at the &lt;a href="https://en.wikipedia.org/wiki/Oscars"&gt;Academy
+Awards&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;It’s vs. its&lt;/h3&gt;
+&lt;p&gt;Infuriatingly, the possessive apostrophe does not apply when the thing
+that something is related to is simply &lt;em&gt;it&lt;/em&gt;. It would be perfectly
+reasonable to assume that when we refer to the car in “the car’s roof”
+as &lt;em&gt;it&lt;/em&gt;, it becomes “it’s roof”, but alas, things don’t work that way.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;it’s stands for “it is” (or “it has”)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;its means “of it”&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Yes, this is illogical and immensely confusing. English is weird.&lt;/p&gt;
+&lt;h3&gt;Parentheses and brackets&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Parentheses&lt;/em&gt; (like these) are always removable, without taking anything
+(of significant value) away from the statement.&lt;/p&gt;
+&lt;p&gt;You can use &lt;em&gt;square brackets&lt;/em&gt; to shorten quotes.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;To be, or not to be. That is the question. […] To die, to
+sleep. No more!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;Angle brackets&lt;/em&gt; often serve as placeholders, for when the reader must
+replace &amp;lt;important thing&amp;gt; with &amp;lt;other thing&amp;gt;.&lt;/p&gt;
+&lt;h3&gt;Hyphens and dashes&lt;/h3&gt;
+&lt;p&gt;Often, people think of the three principal forms of dashes as being
+interchangeable. They really are not.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;A hyphen, sometimes just called a dash, joins word-pairs together.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;En dashes, that is dashes roughly the width of a lowercase &lt;em&gt;n&lt;/em&gt;,
+  identify things like ranges or dates (March – June, page 47–49).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Em dashes — like these, which have the width of a lowercase &lt;em&gt;m&lt;/em&gt; —
+  can replace parentheses.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Avoiding Germglish (and Poglish, and Ukrainglish, etc.)&lt;/h1&gt;
+&lt;p&gt;As with accents, I personally think that we should celebrate the
+little language quirks that come from influences of our native
+language on English as a second (or third) language. Unfortunately,
+not everyone is so tolerant, and sometimes English monolinguals are
+&lt;em&gt;particularly&lt;/em&gt; pesky about these things.&lt;/p&gt;
+&lt;p&gt;So, what follows are a few little things to think about when it comes
+to typical crossovers from our respective native languages, to
+English.&lt;/p&gt;
+&lt;h2&gt;…, or?&lt;/h2&gt;
+&lt;p&gt;Adding the suffix “…, or?” to a statement that you want to follow up
+with a question that asks for confirmation is very common in German
+and Swedish. But it is a structure that does not exist in English.&lt;/p&gt;
+&lt;p&gt;You must instead use an interrogative phrase, such as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;This is a good idea, &lt;em&gt;right?&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;That is an excellent proposal, &lt;em&gt;isn’t it?&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;I thought we agree on that, &lt;em&gt;don’t we?&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;“Disturbance”&lt;/h2&gt;
+&lt;p&gt;Swedish and German native speakers often mentally translate the nouns
+“störning” or “Störung” into English as “disturbance”. This is a
+natural error because these derive from the verbs “störa” and
+“stören”, respectively, for which the English translation is indeed
+“disturb”.&lt;/p&gt;
+&lt;p&gt;However, in English “disturbance” is usually read as shorthand for
+“civil disturbance”, or “disturbance of the peace”, which are
+euphemisms for a violent riot.&lt;/p&gt;
+&lt;p&gt;Thus, to an English speaking recipient the statement “we have a
+disturbance in our data center” would sound much more dramatic than
+the native German sender probably intended it to be.&lt;/p&gt;
+&lt;h2&gt;Articles&lt;/h2&gt;
+&lt;p&gt;Many Eastern European languages (such as Polish and Ukrainian) don’t
+use articles, and their native speakers frequently omit them when
+speaking English. In standard English however, &lt;em&gt;the&lt;/em&gt; and &lt;em&gt;a&lt;/em&gt; are not
+optional.&lt;/p&gt;
+&lt;p&gt;Applicable exceptions are newspaper headlines (“Congress passes law on
+guns”) and controlled vocabularies (such as troops in combat using
+voice procedure, “gunner, sabot, tank, on my command, &lt;em&gt;fire&lt;/em&gt;”).&lt;/p&gt;
+&lt;p&gt;But in regular spoken and written communications, English speakers use
+both definite and indefinite articles.&lt;/p&gt;
+&lt;h2&gt;Subject&lt;/h2&gt;
+&lt;p&gt;English sentences always mention the subject.&lt;/p&gt;
+&lt;p&gt;English, unlike Spanish and many Slavic languages, is &lt;em&gt;not&lt;/em&gt; a null
+subject language. With very few exceptions, you can never leave out the
+subject in a sentence — even when it would otherwise be clear from
+context.&lt;/p&gt;
+&lt;p&gt;For example, in the English sentence “I am hungry” the “I” is
+redundant, because the form “am” uniquely identifies the verb as being
+first-person singular. Still, the sentence cannot be shortened to “am
+hungry,” because that would simply make it incorrect.&lt;/p&gt;
+&lt;h2&gt;Lowercase “you”&lt;/h2&gt;
+&lt;p&gt;Unlike in German and Polish, English speakers never capitalize &lt;em&gt;you&lt;/em&gt;
+in the middle of a sentence, even when using a polite form of
+address. “Thank You for Your help” would look odd and antiquated to
+them.&lt;/p&gt;
+&lt;p&gt;Now, let’s move on to clarity of structure.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h1&gt;Five paragraphs that matter&lt;/h1&gt;
+&lt;p&gt;Sometimes there are pretty complex things that you want to convey to a
+group of people. This is a where lot of people would be inclined to
+call a meeting but in reality, there’s a much better way to do that,
+in writing. And doing it in writing will help you do it in a much
+clearer, more concise, and more efficient fashion.&lt;/p&gt;
+&lt;p&gt;Whenever you need to thoroughly &lt;strong&gt;brief a group of people on an
+important matter,&lt;/strong&gt; in writing, consider using a &lt;strong&gt;5-paragraph
+format.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;What follows is a format that is being used by many armed forces; in
+NATO parlance it’s called the 5-paragraph field order.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Situation&lt;/li&gt;
+&lt;li&gt;Mission&lt;/li&gt;
+&lt;li&gt;Execution&lt;/li&gt;
+&lt;li&gt;Logistics&lt;/li&gt;
+&lt;li&gt;Command and Signal&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Now I’m generally not a fan of applying military thinking to civilian
+life, but in this case it’s actually something that can very much be
+applied to professional communications, with some rather minor
+modifications:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Situation&lt;/li&gt;
+&lt;li&gt;Objective&lt;/li&gt;
+&lt;li&gt;Plan&lt;/li&gt;
+&lt;li&gt;Logistics&lt;/li&gt;
+&lt;li&gt;Communications&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Let’s break these down in a little detail:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Situation is about what position we’re in, and &lt;strong&gt;why&lt;/strong&gt; we set out
+   to do what we want to do. You can break this down into three
+   sub-points, like the customer’s situation, the situation of your
+   own company, any extra help that is available, and the current
+   market.&lt;/li&gt;
+&lt;li&gt;Objective is &lt;strong&gt;what&lt;/strong&gt; we want to achieve.&lt;/li&gt;
+&lt;li&gt;Plan is &lt;strong&gt;how&lt;/strong&gt; we want to achieve it.&lt;/li&gt;
+&lt;li&gt;Logistics is about what budget and resources are available, and how
+   they are used.&lt;/li&gt;
+&lt;li&gt;Communications is about how you’ll be coordinating among yourselves
+   and with others in order to achieve your goal.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;What if that’s too formal?&lt;/h2&gt;
+&lt;p&gt;Sometimes these headings may look overly formal. People who are not
+used to that format might actually find it off-putting. You can
+totally use more colloquial headings, to make your communication less
+formal. For example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Why am I contacting you?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;What do we want to achieve?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;How are we going to do that?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;What will we need?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;How will we communicate?&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You’ll quickly notice that these map &lt;em&gt;precisely&lt;/em&gt; to the
+concepts of situation, objective, plan, logistics, and
+communications. But they sound much more casual and informal and
+approachable.&lt;/p&gt;
+&lt;h2&gt;Updates&lt;/h2&gt;
+&lt;p&gt;Sometimes you need to convey updates to your plan. Then, it’s often
+not necessary to redo the whole 5 paragraphs. Instead, you just leave
+out the bits that are unchanged, compared to your previous plan.&lt;/p&gt;
+&lt;p&gt;However, it’s &lt;em&gt;always&lt;/em&gt; a good idea to include the following 3 paragraphs:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Current Situation&lt;/li&gt;
+&lt;li&gt;Current Objective&lt;/li&gt;
+&lt;li&gt;Updated Plan&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;And the reason for this is easy to explain. There are really only two
+reasons why you would update your plan: either because the situation
+is different (the circumstances have changed), or the objective has
+been modified. And people should know which of the two it is.&lt;/p&gt;
+&lt;h1&gt;Meeting notes&lt;/h1&gt;
+&lt;p&gt;It’s a very common misconception for people to think that meeting
+notes are for the people that were &lt;em&gt;in&lt;/em&gt; the meeting, so they can
+remember what was said.&lt;/p&gt;
+&lt;p&gt;News flash: if you have people in the meeting that can’t remember what
+was said, maybe they didn’t actually participate and shouldn’t have
+been there in the first place?&lt;/p&gt;
+&lt;p&gt;So, who do we write meeting notes for? For the people that &lt;strong&gt;weren’t&lt;/strong&gt;
+in the meeting.&lt;/p&gt;
+&lt;p&gt;Every meeting needs notes and a summary, and you need to circulate
+these notes not only with everyone who attended the meeting, but with
+everyone who has a need-to-know.&lt;/p&gt;
+&lt;p&gt;And the way you write them is so a person wo &lt;strong&gt;wasn’t&lt;/strong&gt; there, or may
+not have known of the meeting, or perhaps even &lt;em&gt;wasn’t part of the
+organization&lt;/em&gt; at the time of the meeting, can understand what was
+said, what was discussed, and what was decided.&lt;/p&gt;
+&lt;p&gt;There is one person that I can guarantee is never in a meeting you are
+attending today, and that is you, but six months from now. Looking
+back at the notes of a meeting &lt;em&gt;that you participated&lt;/em&gt; in, six months
+after the fact, is a terrible experience if the meeting notes are not
+good. Writing good meeting notes &lt;em&gt;today&lt;/em&gt; means making &lt;em&gt;your&lt;/em&gt; life, six
+months from now, easier.&lt;/p&gt;
+&lt;p&gt;It follows logically, from the requirement that people who were never
+in the meeting must be able to read the meeting notes and understand
+everything that they need to know about the meeting, that &lt;strong&gt;only the
+written word counts.&lt;/strong&gt; What’s not on the written record in a meeting
+&lt;strong&gt;did not happen.&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Who’s responsible for meeting notes? The meeting chair (the person that called the meeting).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Who pulls the meeting notes together? The scribe (the appointed note-taker).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Who writes the meeting notes? &lt;strong&gt;Everyone.&lt;/strong&gt; &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Meeting notes structure&lt;/h2&gt;
+&lt;p&gt;In terms of what you want to include in your meeting notes, here’s a
+reasonably useful structure.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Meeting title&lt;/li&gt;
+&lt;li&gt;Date, time, attendees&lt;/li&gt;
+&lt;li&gt;Summary&lt;/li&gt;
+&lt;li&gt;Discussion points (tabular)&lt;/li&gt;
+&lt;li&gt;Action items&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Section 4 would be the longest, and should indeed list everything that
+was discussed in the meeting. It is usually practical to organise the
+individual points of discussion in a table. If you keep your action
+items in issue tracker references, you may also include those in the
+table together with the corresponding items you discussed. At that
+point, there is no need for a separate section 5.&lt;/p&gt;
+&lt;h1&gt;And now… the No.1 Awesome Writing Superpower&lt;/h1&gt;
+&lt;p&gt;Here it comes, the No.1 superpower that will improve &lt;strong&gt;all&lt;/strong&gt; your
+writing, every time. Are you ready?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Read things out loud.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;For real. I am dead serious about this one. It’s pretty safe to say
+that &lt;strong&gt;nothing&lt;/strong&gt; will improve your writing as much as getting into the
+habit of reading things out loud as you edit.&lt;/p&gt;
+&lt;p&gt;There are a number of reasons for this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;You can read silently at about 250 words per minute, but you can
+  speak at only about 150. Reading things out loud deliberately slows
+  down your reading, and gives you a better chance to spot your own
+  errors.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Forcing yourself to recite what you wrote will make it easy to
+  detect run-on sentences, confusing phrases, and errors in flow. You
+  will naturally want to correct these, and it will make your writing
+  better.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Making time to read what you write simply means your mind will stay
+  on topic longer than when you just bash something out and
+  immediately send or publish it. This additional time gives you the
+  opportunity to spot more mistakes, detect errors in your thinking,
+  and &lt;em&gt;have better ideas&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Do not squander all those opportunities. Read things out loud.&lt;/p&gt;
+&lt;p&gt;Guess what I did with this article.&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category></entry><entry><title>Writing Professionally (C!Conf 2022)</title><link href="https://xahteiwi.eu/resources/presentations/c-conf2022/" rel="alternate"></link><published>2022-05-30T00:00:00+00:00</published><updated>2022-05-30T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-05-30:/resources/presentations/c-conf2022/</id><summary type="html">&lt;p&gt;I did a workshop on writing in a professional context at my employer&amp;rsquo;s annual unconference, C!Conf.&lt;/p&gt;</summary><content type="html">&lt;p&gt;At work we have an annual&lt;sup id="fnref:annual"&gt;&lt;a class="footnote-ref" href="#fn:annual"&gt;1&lt;/a&gt;&lt;/sup&gt; conference, &lt;em&gt;C!Conf,&lt;/em&gt; where we pull
 the whole company together for 3 days of talks and workshops. All
-conference sessions are conducted by employees — we don't bring in any
-external consultants or (deity forbid) "motivational speakers", so it
+conference sessions are conducted by employees — we don’t bring in any
+external consultants or (deity forbid) “motivational speakers”, so it
 tends to be a very productive affair.&lt;/p&gt;
 &lt;p&gt;This year I ran a 45-minute session on writing in a professional
 context. There is no recording, but the whole talk is available with
@@ -14,7 +654,7 @@ license, as usual.&lt;/p&gt;
 &lt;hr/&gt;
 &lt;ol&gt;
 &lt;li id="fn:annual"&gt;
-&lt;p&gt;For obvious reasons, we didn't have this event in 2020 and
+&lt;p&gt;For obvious reasons, we didn’t have this event in 2020 and
 2021, so this was actually the first we did in 3 years. But the
 intention is for it to be an annual occurrence. &lt;a class="footnote-backref" href="#fnref:annual" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
@@ -57,7 +697,7 @@ a non-anonymized CfP process via
 &lt;h2&gt;Elevator Pitch&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;You have 300 characters to sell your talk. This is known as the
-"elevator pitch". Make it as exciting and enticing as possible.&lt;/p&gt;
+“elevator pitch”. Make it as exciting and enticing as possible.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;A contraviction is when a person firmly believes that two objectively
 mutually exclusive standpoints are simultaneously true. Being
@@ -78,11 +718,11 @@ how to spot a contraviction, and what to do about them.&lt;/p&gt;
 &lt;p&gt;The description will be seen by reviewers during the CFP process and
 may eventually be seen by the attendees of the event. You should
 make the description of your talk as compelling and exciting as
-possible. Remember, you're selling both the organizers of the events
+possible. Remember, you’re selling both the organizers of the events
 to select your talk, as well as trying to convince attendees your
 talk is the one they should see.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;"Contraviction" is a term I use for when a person is firmly convinced
+&lt;p&gt;“Contraviction” is a term I use for when a person is firmly convinced
 of two sides of an obvious contradiction. This may sound like it would
 be an unusual and rare occasion, and yet, once you start looking, they
 are all over the place. A few examples:&lt;/p&gt;
@@ -97,8 +737,8 @@ are all over the place. A few examples:&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;At the core of &lt;strong&gt;religious extremism&lt;/strong&gt; is the belief that God is
   all-forgiving and merciful, and also that as long as a portion of
-  humanity ("infidels") displeases God, &lt;em&gt;all&lt;/em&gt; of humanity must suffer
-  God's wrath. We see this in contemporary Islamic extremism, but
+  humanity (“infidels”) displeases God, &lt;em&gt;all&lt;/em&gt; of humanity must suffer
+  God’s wrath. We see this in contemporary Islamic extremism, but
   Catholicism in the 16th century did no better in the conquest of
   Latin America, nor did Western Christianity do much differently
   during the medieval crusades.&lt;/p&gt;
@@ -107,8 +747,8 @@ are all over the place. A few examples:&lt;/p&gt;
 &lt;p&gt;At the core of &lt;strong&gt;Trumpism&lt;/strong&gt; is the notion that the United States of
   America is the greatest nation on Earth and that there is no better
   nation nor will there ever be, but also that America has been ruined
-  by "the liberals" and has slipped into inferiority, so that it is
-  necessary to "make America great again."&lt;/p&gt;
+  by “the liberals” and has slipped into inferiority, so that it is
+  necessary to “make America great again.”&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;In all these examples, both statements can logically be false, or one
@@ -129,24 +769,24 @@ among friends, family, and coworkers.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Notes will only be seen by reviewers during the CFP process. This is
 where you should explain things such as technical requirements, why
-you're the best person to speak on this subject, etc...&lt;/p&gt;
+you’re the best person to speak on this subject, etc…&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Given the fact that the nature of this topic is sensitive and
 emotional — yes I, an Austrian, will be talking about Nazi ideology,
-in Israel, consider me terrified — I'll need to submit this on the
-condition that I'd only want to deliver this talk &lt;em&gt;in person.&lt;/em&gt; If that
+in Israel, consider me terrified — I’ll need to submit this on the
+condition that I’d only want to deliver this talk &lt;em&gt;in person.&lt;/em&gt; If that
 does not permit itself on account of the Covid-19 situation or of
 travel restrictions, and I would have to rely on a streamed talk and
 have no way of reading the room or scanning the audience for body
 language feedback (some more details on this topic
 &lt;a href="https://xahteiwi.eu/blog/2021/08/24/online-conferences-audience-feedback/"&gt;here&lt;/a&gt;),
-then I'd rather not give the talk at all, rather than stream it.&lt;/p&gt;
+then I’d rather not give the talk at all, rather than stream it.&lt;/p&gt;
 &lt;p&gt;If this disqualifies the talk (or if you just consider it too
 controversial to begin with), no hard feelings at all.&lt;/p&gt;
 &lt;h2&gt;Tags&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Tag your talk to make it easier for event organizers to be able to
-find. Examples are "ruby, javascript, rails".&lt;/p&gt;
+find. Examples are “ruby, javascript, rails”.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Culture, Communications&lt;/p&gt;
 &lt;div class="footnote"&gt;
@@ -171,7 +811,7 @@ deployment across development collaboration platforms&lt;/em&gt;&lt;/p&gt;
 &lt;h2&gt;Elevator Pitch&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;You have 300 characters to sell your talk. This is known as the
-"elevator pitch". Make it as exciting and enticing as possible.&lt;/p&gt;
+“elevator pitch”. Make it as exciting and enticing as possible.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;GitHub, GitLab, Gerrit — what should I choose? What’s the best review
 process, the best CI/CD integration, the best deployment facility?
@@ -193,7 +833,7 @@ the run-down.&lt;/p&gt;
 &lt;p&gt;The description will be seen by reviewers during the CFP process and
 may eventually be seen by the attendees of the event. You should
 make the description of your talk as compelling and exciting as
-possible. Remember, you're selling both the organizers of the events
+possible. Remember, you’re selling both the organizers of the events
 to select your talk, as well as trying to convince attendees your
 talk is the one they should see.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -230,17 +870,17 @@ circumstances.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Notes will only be seen by reviewers during the CFP process. This is
 where you should explain things such as technical requirements, why
-you're the best person to speak on this subject, etc...&lt;/p&gt;
+you’re the best person to speak on this subject, etc…&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;My team and I have worked with all tools mentioned in a professional
-capacity, and I believe I've got a very good understanding of the
+capacity, and I believe I’ve got a very good understanding of the
 relative merits of the systems presented. This does not include a
 hard-and-fast recommendation for one particular tool or platform.&lt;/p&gt;
-&lt;p&gt;This is a talk that's suitable for both in-person and on-line events.&lt;/p&gt;
+&lt;p&gt;This is a talk that’s suitable for both in-person and on-line events.&lt;/p&gt;
 &lt;h2&gt;Tags&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Tag your talk to make it easier for event organizers to be able to
-find. Examples are "ruby, javascript, rails".&lt;/p&gt;
+find. Examples are “ruby, javascript, rails”.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;GitHub, GitLab, Gerrit, Zuul, CI/CD, Development, DevOps&lt;/p&gt;
 &lt;div class="footnote"&gt;
@@ -263,32 +903,32 @@ response to this article:&lt;/p&gt;
  think differently about confidentiality. Work goes in public,
  meta-work is often about relationships, and I want my reports to be
  100% confident they can bring any question or concern to me.&lt;/p&gt;
-&lt;p&gt;So "encrypted email" is not the right metaphor or measuring stick in
-my view. DMs are a tool for saying what you aren't comfortable
-saying "out loud", but that shouldn't be about the work
-itself. Never "how do I do this?" But "advice pls about how to work
-with fred?" — yes!&lt;/p&gt;
+&lt;p&gt;So “encrypted email” is not the right metaphor or measuring stick in
+my view. DMs are a tool for saying what you aren’t comfortable
+saying “out loud”, but that shouldn’t be about the work
+itself. Never “how do I do this?” But “advice pls about how to work
+with fred?” — yes!&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;I entirely agree with the sentiments behind this; I still maintain
 that chat DMs are not necessarily a good approach for addressing this,
 for reason that some chat systems give merely an illusion of
 confidentiality. If both participants in a conversation use OTR
 encryption over a protocol like IRC or XMPP, inadvertent disclosure to
-a third party is highly unlikely. Slack DMs? &lt;a href="https://www.nbcnews.com/better/business/slack-updates-privacy-policy-employers-can-read-private-dms-without-ncna862811"&gt;I wouldn't be so
+a third party is highly unlikely. Slack DMs? &lt;a href="https://www.nbcnews.com/better/business/slack-updates-privacy-policy-employers-can-read-private-dms-without-ncna862811"&gt;I wouldn’t be so
 sure&lt;/a&gt;. If
-your report confides in you, you don't want them to have to worry if
+your report confides in you, you don’t want them to have to worry if
 their message is &lt;em&gt;really&lt;/em&gt; just between you and them.&lt;/p&gt;
 &lt;h3&gt;Hacker News, 2021-09-25&lt;/h3&gt;
 &lt;p&gt;On 2021-09-25, &lt;a href="https://news.ycombinator.com/item?id=28636536"&gt;a link to this
 article&lt;/a&gt; ended up being
-the top post on Hacker News for a few hours. You're very welcome to
-read through the 200-odd comments in that thread, but here I'd like to
-respond to just a couple. I'm deliberately only picking out ones where I
+the top post on Hacker News for a few hours. You’re very welcome to
+read through the 200-odd comments in that thread, but here I’d like to
+respond to just a couple. I’m deliberately only picking out ones where I
 feel like &lt;em&gt;clarification&lt;/em&gt; on my part is necessary; as far as
-differences of opinion are concerned I'll be happy to let those stand.&lt;/p&gt;
+differences of opinion are concerned I’ll be happy to let those stand.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;The article also assumes every one is a native speaker who can write
-quickly and clearly in a chat -- in a lot of international projects
+quickly and clearly in a chat – in a lot of international projects
 this is not the case.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;— &lt;a href="https://news.ycombinator.com/item?id=28651678"&gt;comment&lt;/a&gt; from &lt;code&gt;papaf&lt;/code&gt;&lt;/p&gt;
@@ -296,9 +936,9 @@ this is not the case.&lt;/p&gt;
 the original talk nor at the time of writing this update did I work
 with anyone who is a first-language English speaker.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;I have an objection to the author's blanket disregard for "pings" in
+&lt;p&gt;I have an objection to the author’s blanket disregard for “pings” in
 chat - while the request could/should be worded a bit more clearly
-than just "ping", IMHO they're a valid way of requesting if an
+than just “ping”, IMHO they’re a valid way of requesting if an
 opportunity for synchronous communication is available in the (not
 that rare!) cases where asynchronous communication would be
 worthless.&lt;/p&gt;
@@ -307,76 +947,76 @@ worthless.&lt;/p&gt;
 &lt;p&gt;My blanket disregard is for &lt;em&gt;naked&lt;/em&gt; pings, not for pings in general.&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="Communications"></category><category term="Work"></category></entry><entry><title>Audience feedback on online conference platforms: a speaker's view</title><link href="https://xahteiwi.eu/blog/2021/08/24/online-conferences-audience-feedback/" rel="alternate"></link><published>2021-08-24T00:00:00+00:00</published><updated>2021-08-24T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-08-24:/blog/2021/08/24/online-conferences-audience-feedback/</id><summary type="html">&lt;p&gt;As a speaker, I look for something very specific in online conference platforms.&lt;/p&gt;</summary><content type="html">&lt;p&gt;We are in year 2 of the Covid-19 pandemic, and open-source conferences
 are still, for the most part, online-only events. (And I find myself
 questioning the judgment of those that put on large in-person
-conferences.) I have spoken at several of such conferences, and I'd
+conferences.) I have spoken at several of such conferences, and I’d
 like to zero in on one aspect of my &lt;em&gt;personal&lt;/em&gt; experience, &lt;em&gt;as a
 speaker,&lt;/em&gt; on some of the conference platforms I worked with.&lt;/p&gt;
 &lt;p&gt;Now, I should explain one thing up front. As a speaker, the thing I
 care the most about is:&lt;/p&gt;
 &lt;h3&gt;Is this talk useful to you?&lt;/h3&gt;
-&lt;p&gt;That's it. That's the paramount question. I want you to take something
-away from the talk &lt;em&gt;that you find useful.&lt;/em&gt; Whether that's a technical
+&lt;p&gt;That’s it. That’s the paramount question. I want you to take something
+away from the talk &lt;em&gt;that you find useful.&lt;/em&gt; Whether that’s a technical
 insight, or a new angle on a problem, or even just entertainment, I
 want there to be something in the talk &lt;em&gt;for you.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;And it's incredibly important for me to get a sense of that, as I am
+&lt;p&gt;And it’s incredibly important for me to get a sense of that, as I am
 delivering the talk.&lt;/p&gt;
-&lt;p&gt;Now in an in-person event, that's easy: all I need is a look across
+&lt;p&gt;Now in an in-person event, that’s easy: all I need is a look across
 the room, and I &lt;em&gt;permanently&lt;/em&gt; look across the room. I can tell if
-you're making eye contact, or listening intently, or nodding your
-head, or even putting on a face that makes it clear that you're
+you’re making eye contact, or listening intently, or nodding your
+head, or even putting on a face that makes it clear that you’re
 violently disagreeing with me. Sure, if you raise your hand and ask a
 question, or heckle me, or laugh at a joke, that drives the point of
-your engagement home — but I don't need you to become so &lt;em&gt;explicitly&lt;/em&gt;
+your engagement home — but I don’t need you to become so &lt;em&gt;explicitly&lt;/em&gt;
 engaged, to know &lt;em&gt;that&lt;/em&gt; you are engaged.&lt;/p&gt;
 &lt;p&gt;And it is &lt;em&gt;this kind of feedback&lt;/em&gt; (that you might not even realize
-you're giving me!) that makes the difference between delivering a
-talk, and just speaking into the void. It's also the difference
-between delivering a conference talk, even if it's a pre-recorded one,
+you’re giving me!) that makes the difference between delivering a
+talk, and just speaking into the void. It’s also the difference
+between delivering a conference talk, even if it’s a pre-recorded one,
 and just uploading the video on YouTube. If an conference platform
-doesn't give me that kind of feedback channel, the work that I put
+doesn’t give me that kind of feedback channel, the work that I put
 into writing, rehearsing, and recording/streaming the talk is better
 spent with a view toward upload to a video hosting platform, and
 engaging with viewers there.&lt;/p&gt;
 &lt;p&gt;So, I as a speaker am foremost interested in a single thing about the
 conference platform:&lt;/p&gt;
 &lt;h3&gt;Is it easy for you to tell me if my talk is useful to you?&lt;/h3&gt;
-&lt;p&gt;And I'm not talking about you getting into a chat and saying "this is
-useful." That's much too high of a threshold. How often do you sit in
-a talk and then &lt;em&gt;tell&lt;/em&gt; the speaker, "hey, that's useful"? Quite
+&lt;p&gt;And I’m not talking about you getting into a chat and saying “this is
+useful.” That’s much too high of a threshold. How often do you sit in
+a talk and then &lt;em&gt;tell&lt;/em&gt; the speaker, “hey, that’s useful”? Quite
 rarely, and only if you find the content &lt;em&gt;especially&lt;/em&gt; actionable or
-insightful. Because you normally don't &lt;em&gt;have to&lt;/em&gt; tell me explicitly:
-if you're actively listening to me, I can tell. And I know you
-wouldn't be listening to me if I talked useless nonsense.&lt;/p&gt;
+insightful. Because you normally don’t &lt;em&gt;have to&lt;/em&gt; tell me explicitly:
+if you’re actively listening to me, I can tell. And I know you
+wouldn’t be listening to me if I talked useless nonsense.&lt;/p&gt;
 &lt;p&gt;And this is one of the reasons why I like
 &lt;a href="https://venueless.org/en/"&gt;Venueless&lt;/a&gt; so much. Venueless has
 implemented an extremely low-threshold feature of showing audience
 engagement. You get a handful of emoji like ❤️👏🤣👍🤔 that you, as a
 viewer, can click on, and then they appear in the event chat stream
-like "emoji rain" from the top of the screen. Just one click, which
+like “emoji rain” from the top of the screen. Just one click, which
 also gets anonymized and lost in the crowd — this last bit is
-important for people who are shy or reserved, and don't like to stick
+important for people who are shy or reserved, and don’t like to stick
 their head out. And this makes it so much easier for you to engage,
 than having to actually type a sentence (or even a word, or even
 &lt;em&gt;typing&lt;/em&gt; an emoji) into a chat channel.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;I can not tell you enough how much of a difference this makes to the
 speaker experience.&lt;/em&gt; Add to this that the event chat is &lt;em&gt;not&lt;/em&gt; shackled
 to Slack or any other horribly overgrown not-even-really-chat platform
-anymore, and you've got a simple, easy-to-use, no-unnecessary-frills
+anymore, and you’ve got a simple, easy-to-use, no-unnecessary-frills
 experience that puts you &lt;em&gt;directly&lt;/em&gt; in touch with your audience. I
 loved this at &lt;a href="https://2020.pycon.org.au/"&gt;PyCon AU&lt;/a&gt; last year.&lt;/p&gt;
 &lt;p&gt;For comparison, I also saw &lt;a href="https://loudswarm.com/"&gt;LoudSwarm&lt;/a&gt; at
 &lt;a href="https://2021.djangocon.eu/"&gt;DjangoCon Europe&lt;/a&gt;. The way it was used in
 that conference it seemed very tightly tied to Slack, although the
 audience was very nice in using emoji reactions very
-generously. Still, it wasn't the same quality of feedback that
+generously. Still, it wasn’t the same quality of feedback that
 Venueless provided.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/lukas2511/voctoconf"&gt;Voctoconf&lt;/a&gt;, which I saw at
 FrOSCon, allegedly predates Venueless and was excellent in terms of
-streaming, but in terms of audience interaction it's essentially
-&lt;a href="https://bigbluebutton.org/"&gt;BigBlueButton&lt;/a&gt; on steroids, meaning it's
+streaming, but in terms of audience interaction it’s essentially
+&lt;a href="https://bigbluebutton.org/"&gt;BigBlueButton&lt;/a&gt; on steroids, meaning it’s
 about on the same level as the LoudSwarm/Slack combination I saw at
 DjangoCon.&lt;/p&gt;</content><category term="blog"></category><category term="Conference"></category></entry><entry><title>Add Depth! Stereoscopic imagery for everyone</title><link href="https://xahteiwi.eu/resources/presentations/add-depth-stereoscopic-imagery-for-everyone/" rel="alternate"></link><published>2021-08-21T00:00:00+00:00</published><updated>2021-08-21T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-08-21:/resources/presentations/add-depth-stereoscopic-imagery-for-everyone/</id><summary type="html">&lt;p&gt;My talk from FrOSCon 2021, Cloud Edition.&lt;/p&gt;</summary><content type="html">&lt;p&gt;FrOSCon 2021 was again an online event due to the COVID-19 pandemic
 (&lt;a href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;just like the previous year&lt;/a&gt;), and had a
-track named &lt;em&gt;Woodwork instead of IT&lt;/em&gt;, showcasing people's hobbies and
+track named &lt;em&gt;Woodwork instead of IT&lt;/em&gt;, showcasing people’s hobbies and
 interests they had discovered, or rediscovered, during lockdown.&lt;/p&gt;
 &lt;p&gt;So I submitted a talk that has absolutely nothing to do with what I do
 for work, and instead covered stereography: making, and viewing,
@@ -405,7 +1045,7 @@ whitespace preserved&lt;/p&gt;
 &lt;p&gt;Stereoscopic imagery (photography and videography) is a fascinating
 way to create 3-dimensional images of landscapes, unmoving and moving
 objects, and of course, people.&lt;/p&gt;
-&lt;p&gt;In this talk, we'll cover the basics of stereoscopic imagery and
+&lt;p&gt;In this talk, we’ll cover the basics of stereoscopic imagery and
 projection, discover how stereoscopic vision works, and how we can
 trick our brains into perceiving depth from two flat images.&lt;/p&gt;
 &lt;p&gt;We start with the principles of three-dimensional vision in humans:
@@ -421,25 +1061,25 @@ virtual reality goggles) to very low tech (like mechanical
 stereoscopic viewers), but some can deal without any projection
 technology at all: this is called freeviewing, and for most people it
 is a remarkably simple and low-cost way to enjoy stunning
-three-dimensional imagery. We'll cover the parallel-view and crossview
+three-dimensional imagery. We’ll cover the parallel-view and crossview
 freeviewing techniques.&lt;/p&gt;
-&lt;p&gt;We'll then dive into the simple but highly effective steps of making
+&lt;p&gt;We’ll then dive into the simple but highly effective steps of making
 stereoscopic images, using run-of-the-mill cameras (even cell phones),
 and some straightforward image processing in the GIMP.&lt;/p&gt;
 &lt;p&gt;Finally, we talk about some neat little tricks to make stereoscopic
-videos, with minimal cost and investment. We'll look at how we can
+videos, with minimal cost and investment. We’ll look at how we can
 make 3D video with just a GoPro, or a simple drone camera — again
 using a free software tool, namely the OpenShot video editor, for
 processing.&lt;/p&gt;
 &lt;h2&gt;Private Abstract&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;This will only be shown to organisers and reviewers. You should
-provide any details about your proposal that you don't want to be
+provide any details about your proposal that you don’t want to be
 public here. This field is rendered with the monospace font Hack
 with whitespace preserved&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;This talk does not cover a specific software project; the "Project
-URL" below is simply a Flickr album containing a set of stereoscopic
+&lt;p&gt;This talk does not cover a specific software project; the “Project
+URL” below is simply a Flickr album containing a set of stereoscopic
 images created with the technique I am describing.&lt;/p&gt;
 &lt;p&gt;The fact that LCA is an online event this year would suit this talk
 particularly well: when I get to the point of explaining freeviewing
@@ -660,7 +1300,7 @@ people residing anywhere, provided they have internet connectivity.&lt;/p&gt;
 &lt;p&gt;So we now &lt;em&gt;can&lt;/em&gt; work in teams despite being continental distances away
 from each other but we do have to acquire the skills to do that. And
 if we fail to do so, that has a rather grave disadvantage, which is
-that...&lt;/p&gt;
+that…&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Nothing&lt;/strong&gt; has as dire an impact on productivity as &lt;strong&gt;poor
 communications.&lt;/strong&gt;&lt;/p&gt;
@@ -1359,7 +1999,7 @@ efficient as a generic mode of communication across distributed teams.&lt;/p&gt;
 to curb channel sprawl and threading and other things, but’s that’s a
 whole ‘nother talk and indeed a talk for another &lt;em&gt;speaker,&lt;/em&gt; because I
 don’t lead an ops team.&lt;/p&gt;
-&lt;h2&gt;To summarize...&lt;/h2&gt;
+&lt;h2&gt;To summarize…&lt;/h2&gt;
 &lt;p&gt;So to summarize, here are my key points from this talk, in a nutshell
 — please make these your key takeaways.&lt;/p&gt;
 &lt;ul&gt;
@@ -1650,7 +2290,7 @@ platform:&lt;/p&gt;
 &lt;h2&gt;Private Abstract&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;This will only be shown to organisers and reviewers. You should
-provide any details about your proposal that you don't want to be
+provide any details about your proposal that you don’t want to be
 public here. This field is rendered with the monospace font Hack
 with whitespace preserved&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1711,7 +2351,7 @@ OpenStack&lt;/em&gt;&lt;/p&gt;
 &lt;h2&gt;Elevator Pitch&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;You have 300 characters to sell your talk. This is known as the
-"elevator pitch". Make it as exciting and enticing as possible.&lt;/p&gt;
+“elevator pitch”. Make it as exciting and enticing as possible.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;OpenStack’s complexity comes with operational challenges. And in
 situations where OpenStack misbehaves, it is frequently non-trivial to
@@ -1728,7 +2368,7 @@ and avoiding them.&lt;/p&gt;
 reviewers during the CFP process and may eventually be seen by the
 attendees of the event.&lt;/p&gt;
 &lt;p&gt;You should make the description of your talk as compelling and
-exciting as possible. Remember, you're selling both the organizers
+exciting as possible. Remember, you’re selling both the organizers
 of the events to select your talk, as well as trying to convince
 attendees your talk is the one they should see.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1749,14 +2389,14 @@ applications &lt;em&gt;on&lt;/em&gt;  OpenStack. &lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;This field supports Markdown. Notes will only be seen by reviewers
 during the CFP process. This is where you should explain things such
-as technical requirements, why you're the best person to speak on
-this subject, etc...&lt;/p&gt;
+as technical requirements, why you’re the best person to speak on
+this subject, etc…&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;I’ve been working on OpenStack since 2012, have consulted on lots of
 private and public cloud deployments using OpenStack, and I work for
-the operator of a multi-region global OpenStack Cloud. “I've seen
-things you people wouldn't believe. Attack ships on fire off the
-shoulder of Orion...”&lt;/p&gt;
+the operator of a multi-region global OpenStack Cloud. “I’ve seen
+things you people wouldn’t believe. Attack ships on fire off the
+shoulder of Orion…”&lt;/p&gt;
 &lt;p&gt;In addition to what &lt;strong&gt;I&lt;/strong&gt; have seen, others have seen other things,
 which is why I am crowdsourcing the content of this talk. That being
 so, the talk proposal &lt;a href="https://xahteiwi.eu/talk-submissions/oidn-2019-red-herrings/"&gt;is
@@ -1773,7 +2413,7 @@ a quota issue in Neutron, but whose cause is in fact buried deep in
 &lt;h2&gt;Tags&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Tag your talk to make it easier for event organizers to be able to
-find. Examples are "ruby, javascript, rails".&lt;/p&gt;
+find. Examples are “ruby, javascript, rails”.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;OpenStack, Operations&lt;/p&gt;
 &lt;div class="footnote"&gt;
@@ -1793,7 +2433,7 @@ resources&lt;/em&gt;&lt;/p&gt;
 &lt;h2&gt;Elevator Pitch&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;You have 300 characters to sell your talk. This is known as the
-"elevator pitch". Make it as exciting and enticing as possible.&lt;/p&gt;
+“elevator pitch”. Make it as exciting and enticing as possible.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;A hands-on introduction to Terraform in an OpenStack and Kubernetes
 context. Get the basics (of Terraform), then spin up a Kubernetes
@@ -1809,7 +2449,7 @@ resources on it (with Terraform).&lt;/p&gt;
 reviewers during the CFP process and may eventually be seen by the
 attendees of the event.&lt;/p&gt;
 &lt;p&gt;You should make the description of your talk as compelling and
-exciting as possible. Remember, you're selling both the organizers
+exciting as possible. Remember, you’re selling both the organizers
 of the events to select your talk, as well as trying to convince
 attendees your talk is the one they should see.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1829,17 +2469,17 @@ containerized microservice applications, this is for you!&lt;/p&gt;
   &lt;a href="https://www.terraform.io/docs/providers/kubernetes/"&gt;Kubernetes
   provider&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;You'll walk away with a solid understanding of Terraform's
+&lt;p&gt;You’ll walk away with a solid understanding of Terraform’s
 capabilities, enabling you to make an informed decision of whether
 Terraform is a suitable deployment automation facility for your
-organization's needs.&lt;/p&gt;
+organization’s needs.&lt;/p&gt;
 &lt;p&gt;Prior Terraform knowledge is not required.&lt;/p&gt;
 &lt;h2&gt;Notes&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;This field supports Markdown. Notes will only be seen by reviewers
 during the CFP process. This is where you should explain things such
-as technical requirements, why you're the best person to speak on
-this subject, etc...&lt;/p&gt;
+as technical requirements, why you’re the best person to speak on
+this subject, etc…&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;There are no technical requirements other than internet connectivity,
 and a web browser (preferably on a laptop, though a reasonably-sized
@@ -1847,7 +2487,7 @@ tablet with a modern browser should work as well).&lt;/p&gt;
 &lt;h2&gt;Tags&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Tag your talk to make it easier for event organizers to be able to
-find. Examples are "ruby, javascript, rails".&lt;/p&gt;
+find. Examples are “ruby, javascript, rails”.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Terraform, OpenStack, Kubernetes, Magnum&lt;/p&gt;
 &lt;div class="footnote"&gt;
@@ -2157,7 +2797,7 @@ the conference.&lt;/p&gt;
 &lt;p&gt;I also submitted the talk to &lt;a href="https://2019.djangocon.eu"&gt;DjangoCon Europe
 2019&lt;/a&gt;, where it was rejected.&lt;/p&gt;
 &lt;h2&gt;Title&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;No, really, don't chuck everything in Slack: communications for
+&lt;p&gt;&lt;em&gt;No, really, don’t chuck everything in Slack: communications for
 distributed teams&lt;/em&gt;&lt;/p&gt;
 &lt;h2&gt;Target Audience&lt;/h2&gt;
 &lt;p&gt;Business&lt;/p&gt;
@@ -2179,7 +2819,7 @@ exclusively out of a single office. As one would expect, the
 integration was not without friction (they never are), but what
 emerged from the experience was a better understanding of the
 challenges that come with a mixed office/remote work environment, and
-some rules to address them. In this talk, I'll cover:&lt;/p&gt;
+some rules to address them. In this talk, I’ll cover:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Typical misconceptions that remoties have about office-workers, and
@@ -2204,11 +2844,11 @@ some rules to address them. In this talk, I'll cover:&lt;/p&gt;
 &lt;h2&gt;Private Abstract&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;This will only be shown to organisers and reviewers. You should
-provide any details about your proposal that you don't want to be
+provide any details about your proposal that you don’t want to be
 public here. This field is rendered with the monospace font Hack
 with whitespace preserved&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;It's probably good for me to reiterate that this is not a scientific study. :)&lt;/p&gt;
+&lt;p&gt;It’s probably good for me to reiterate that this is not a scientific study. :)&lt;/p&gt;
 &lt;div class="footnote"&gt;
 &lt;hr/&gt;
 &lt;ol&gt;
@@ -2303,7 +2943,7 @@ simple Google Form. The CfP page is
 maintaining self-paced learning resources.&lt;/em&gt;&lt;/p&gt;
 &lt;h2&gt;Talk abstract&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;More information here is better. Submitting a single paragraph won't
+&lt;p&gt;More information here is better. Submitting a single paragraph won’t
 give us much to go on, but please no walls of text.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;This presentation talks about a special kind of tech writing: creating
@@ -2494,20 +3134,20 @@ the experience, read on!&lt;/p&gt;
 &lt;!--break--&gt;
 &lt;p&gt;In order to make the most of this tutorial, you can recreate the
 interactive steps presented. Please note: the process, while simple, is
-extremely bandwidth intensive and you don't want to be …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="http://www.percona.com/live/mysql-conference-2014/sessions/hands-trove-database-service-openstack-mysql"&gt;This
+extremely bandwidth intensive and you don’t want to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="http://www.percona.com/live/mysql-conference-2014/sessions/hands-trove-database-service-openstack-mysql"&gt;This
 tutorial&lt;/a&gt;
 covered OpenStack Trove at Percona Live 2014. If you want to recreate
 the experience, read on!&lt;/p&gt;
 &lt;!--break--&gt;
 &lt;p&gt;In order to make the most of this tutorial, you can recreate the
 interactive steps presented. Please note: the process, while simple, is
-extremely bandwidth intensive and you don't want to be the bandwidth hog
+extremely bandwidth intensive and you don’t want to be the bandwidth hog
 that everyone hates in your hotel, or on a conference wifi. Do so in
 your office (or home) instead.&lt;/p&gt;
 &lt;p&gt;The set-up process is decribed in &lt;a href="https://github.com/fghaas/perconalive2014/blob/master/README.md"&gt;a brief
 README&lt;/a&gt;.
 Effectively, it boils down to cloning a Git repo and then running
-vagrant up, and you'll be good to go. But do pay attention to the system
+vagrant up, and you’ll be good to go. But do pay attention to the system
 requirements.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Slides: &lt;a href="https://www.slideshare.net/slideshow/embed_code/33588994"&gt;SlideShare&lt;/a&gt;&lt;/li&gt;
@@ -2564,20 +3204,20 @@ advance by hitting the spacebar.&lt;/p&gt;
 &lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="Ceph"></category><category term="Conference"></category></entry><entry><title>High Availability Update: You can now vote our talk into the OpenStack summit!</title><link href="https://xahteiwi.eu/blog/2013/02/21/high-availability-update-you-can-now-vote-our-talk-into-the-openstack-summit/" rel="alternate"></link><published>2013-02-21T06:59:00+00:00</published><updated>2013-02-21T06:59:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2013-02-21:/blog/2013/02/21/high-availability-update-you-can-now-vote-our-talk-into-the-openstack-summit/</id><summary type="html">&lt;p&gt;For the upcoming OpenStack Summit in Portland, Syed Armani and I have
 &lt;a href="https://www.openstack.org/summit/portland-2013/vote-for-speakers/presentation/531"&gt;submitted a
 talk&lt;/a&gt;
-on OpenStack high availability. Here's how you can make sure it makes it
+on OpenStack high availability. Here’s how you can make sure it makes it
 into the program.&lt;/p&gt;
 &lt;p&gt;Our talk, &lt;strong&gt;&lt;em&gt;More reliable, more resilient, more redundant: High
-Availability Update for Grizzly and beyond,&lt;/em&gt;&lt;/strong&gt; is an extended overview …&lt;/p&gt;</summary><content type="html">&lt;p&gt;For the upcoming OpenStack Summit in Portland, Syed Armani and I have
+Availability Update for Grizzly and beyond,&lt;/em&gt;&lt;/strong&gt; is an extended …&lt;/p&gt;</summary><content type="html">&lt;p&gt;For the upcoming OpenStack Summit in Portland, Syed Armani and I have
 &lt;a href="https://www.openstack.org/summit/portland-2013/vote-for-speakers/presentation/531"&gt;submitted a
 talk&lt;/a&gt;
-on OpenStack high availability. Here's how you can make sure it makes it
+on OpenStack high availability. Here’s how you can make sure it makes it
 into the program.&lt;/p&gt;
 &lt;p&gt;Our talk, &lt;strong&gt;&lt;em&gt;More reliable, more resilient, more redundant: High
 Availability Update for Grizzly and beyond,&lt;/em&gt;&lt;/strong&gt; is an extended overview
 about current and future high availability features in OpenStack. It
 covers infrastructure high availability, HA features in Nova, Quantum,
 and several other topics.&lt;/p&gt;
-&lt;p&gt;I've given a shorter version of this talk &lt;a href="https://www.hastexo.com/resources/presentations/high-availability-update-grizzly-and-havana"&gt;just this week, at the 2nd
+&lt;p&gt;I’ve given a shorter version of this talk &lt;a href="https://www.hastexo.com/resources/presentations/high-availability-update-grizzly-and-havana"&gt;just this week, at the 2nd
 Swiss OpenStack User Group
 meetup,&lt;/a&gt;
 where apparently &lt;a href="http://www.meetup.com/zhgeeks/events/97648722/"&gt;around 55 people liked it a
@@ -2589,7 +3229,7 @@ and there will also be a video that should be available later this week.&lt;/p&g
 help! Voting for Summit sessions is up, and you can vote for our talk
 &lt;a href="https://www.openstack.org/summit/portland-2013/vote-for-speakers/presentation/531"&gt;here.&lt;/a&gt;
 Please note, you must be an OpenStack Foundation member to vote. If
-you're not, and you're into OpenStack, you can &lt;a href="https://www.openstack.org/join/register/"&gt;join (for free!) as an
+you’re not, and you’re into OpenStack, you can &lt;a href="https://www.openstack.org/join/register/"&gt;join (for free!) as an
 Individual Member.&lt;/a&gt; Then, you
 can immediately &lt;a href="https://www.openstack.org/summit/portland-2013/vote-for-speakers/presentation/531"&gt;proceed to the voting
 page&lt;/a&gt;
@@ -2656,18 +3296,18 @@ version, they have been replaced by placeholders.&lt;/p&gt;
 &lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/lceu2012/ceph.html"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="Ceph"></category><category term="Conference"></category></entry><entry><title>Talking Ceph and GlusterFS at LinuxCon Europe</title><link href="https://xahteiwi.eu/blog/2012/10/24/talking-ceph-and-glusterfs-at-linuxcon-europe/" rel="alternate"></link><published>2012-10-24T12:55:00+00:00</published><updated>2012-10-24T12:55:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2012-10-24:/blog/2012/10/24/talking-ceph-and-glusterfs-at-linuxcon-europe/</id><summary type="html">&lt;p&gt;Early next month, I'll be off to Barcelona for speaking at LinuxCon
-Europe. Here's an overview of my talks.&lt;/p&gt;
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="Ceph"></category><category term="Conference"></category></entry><entry><title>Talking Ceph and GlusterFS at LinuxCon Europe</title><link href="https://xahteiwi.eu/blog/2012/10/24/talking-ceph-and-glusterfs-at-linuxcon-europe/" rel="alternate"></link><published>2012-10-24T12:55:00+00:00</published><updated>2012-10-24T12:55:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2012-10-24:/blog/2012/10/24/talking-ceph-and-glusterfs-at-linuxcon-europe/</id><summary type="html">&lt;p&gt;Early next month, I’ll be off to Barcelona for speaking at LinuxCon
+Europe. Here’s an overview of my talks.&lt;/p&gt;
 &lt;p&gt;November 5-7, the &lt;a href="http://www.linuxfoundation.org/"&gt;Linux Foundation&lt;/a&gt; is
 holding the annual &lt;a href="http://events.linuxfoundation.org/events/linuxcon-europe"&gt;LinuxCon
 Europe&lt;/a&gt; in one
-of Europe's most beautiful cities — some say &lt;em&gt;the&lt;/em&gt; most beautiful —
-Barcelona. I will be attending the full conference …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Early next month, I'll be off to Barcelona for speaking at LinuxCon
-Europe. Here's an overview of my talks.&lt;/p&gt;
+of Europe’s most beautiful cities — some say &lt;em&gt;the&lt;/em&gt; most beautiful —
+Barcelona. I will be attending …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Early next month, I’ll be off to Barcelona for speaking at LinuxCon
+Europe. Here’s an overview of my talks.&lt;/p&gt;
 &lt;p&gt;November 5-7, the &lt;a href="http://www.linuxfoundation.org/"&gt;Linux Foundation&lt;/a&gt; is
 holding the annual &lt;a href="http://events.linuxfoundation.org/events/linuxcon-europe"&gt;LinuxCon
 Europe&lt;/a&gt; in one
-of Europe's most beautiful cities — some say &lt;em&gt;the&lt;/em&gt; most beautiful —
+of Europe’s most beautiful cities — some say &lt;em&gt;the&lt;/em&gt; most beautiful —
 Barcelona. I will be attending the full conference, and presenting two
 talks.&lt;/p&gt;
 &lt;p&gt;Wednesday, November 7, is a day full of tutorials at LinuxCon Europe. I
@@ -2683,12 +3323,12 @@ workshop is complimentary to &lt;a href="http://events.linuxfoundation.org/even
 attendees&lt;/a&gt;,
 but you can also &lt;a href="https://www.regonline.com/Register/Checkin.aspx?EventID=1109147"&gt;register
 separately&lt;/a&gt;
-just for the workshop. In that talk, I'll speak about &lt;a href="http://linuxconeurope2012.sched.org/event/2b898583721726bd6a8d8e15af2084d8"&gt;GlusterFS in High
+just for the workshop. In that talk, I’ll speak about &lt;a href="http://linuxconeurope2012.sched.org/event/2b898583721726bd6a8d8e15af2084d8"&gt;GlusterFS in High
 Availability Clusters: Integration with the Pacemaker HA
 Stack&lt;/a&gt;.
-It's also a 1-hour slot, from 10 - 11am in Vivaldi.&lt;/p&gt;
-&lt;p&gt;I'm pretty excited about this trip: it's close to home, it's a great
-conference, and I've never been to Barcelona before. So, if you're
+It’s also a 1-hour slot, from 10 - 11am in Vivaldi.&lt;/p&gt;
+&lt;p&gt;I’m pretty excited about this trip: it’s close to home, it’s a great
+conference, and I’ve never been to Barcelona before. So, if you’re
 headed there, please &lt;a href="https://www.hastexo.com/users/florian/contact"&gt;drop me a
 note&lt;/a&gt; and let me know so
 we can catch up. Thanks — see you there!&lt;/p&gt;
@@ -2724,7 +3364,7 @@ availability and
 first &lt;a href="http://events.linuxfoundation.org/events/cloudopen-north-america"&gt;CloudOpen&lt;/a&gt;
 conference, colocated with &lt;a href="http://events.linuxfoundation.org/events/linuxcon-north-america"&gt;LinuxCon North
 America&lt;/a&gt;.
-CloudOpen is the &lt;a href="http://www.linuxfoundation.org/"&gt;Linux Foundation&lt;/a&gt;'s
+CloudOpen is the &lt;a href="http://www.linuxfoundation.org/"&gt;Linux Foundation&lt;/a&gt;‘s
 brand new, stack-agnostic cloud …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Next week, I will be speaking at the inaugural CloudOpen conference in
 San Diego. This is your chance to learn about
 &lt;a href="https://www.hastexo.com/knowledge/openstack"&gt;OpenStack&lt;/a&gt; high
@@ -2734,14 +3374,14 @@ availability and
 first &lt;a href="http://events.linuxfoundation.org/events/cloudopen-north-america"&gt;CloudOpen&lt;/a&gt;
 conference, colocated with &lt;a href="http://events.linuxfoundation.org/events/linuxcon-north-america"&gt;LinuxCon North
 America&lt;/a&gt;.
-CloudOpen is the &lt;a href="http://www.linuxfoundation.org/"&gt;Linux Foundation&lt;/a&gt;'s
+CloudOpen is the &lt;a href="http://www.linuxfoundation.org/"&gt;Linux Foundation&lt;/a&gt;‘s
 brand new, stack-agnostic cloud conference where OpenStackers can mingle
 with CloudStackers and Eucalyptus folks to discuss open-source cloud
 solutions.&lt;/p&gt;
-&lt;p&gt;It's also the conference where I will be giving my fourth (and likely
+&lt;p&gt;It’s also the conference where I will be giving my fourth (and likely
 last, at least for the time being) incarnation of the High Availability
 for OpenStack talk I first delivered at the Folsom design summit back in
-April. Since then, we've had a lot of community involvement for HA in
+April. Since then, we’ve had a lot of community involvement for HA in
 OpenStack, and have made some excellent progress, and I will be more
 than happy to report on that. This presentation is on &lt;a href="http://cloudopen2012.sched.org/event/06939ee7fd5fe48bf202525bbd7e506d#.UDIX9hXwh2M"&gt;Thursday,
 2:25-3:10pm in Executsoemive Center Room
@@ -2756,12 +3396,12 @@ talk on Ceph in the main conference
 track&lt;/a&gt;
 as well.&lt;/p&gt;
 &lt;p&gt;The conference organizers do not announce BoF sessions ahead of time on
-the CloudOpen web site, so I've simply &lt;a href="https://plus.google.com/events/cq28o7cvj9dg1ki1om3clfo8700/110443614427234590648"&gt;set up a Google+
+the CloudOpen web site, so I’ve simply &lt;a href="https://plus.google.com/events/cq28o7cvj9dg1ki1om3clfo8700/110443614427234590648"&gt;set up a Google+
 event&lt;/a&gt;
 for you to check in on. The exact location is still TBD (we will be
 assigned a room based on availability), but we will definitely be in the
-conference area at the Sheraton in San Diego. If you're attending
-CloudOpen and you want to learn more about Ceph, you're more than
+conference area at the Sheraton in San Diego. If you’re attending
+CloudOpen and you want to learn more about Ceph, you’re more than
 welcome to join us!&lt;/p&gt;
 &lt;p&gt;My personal CloudOpen schedule is available
 &lt;a href="http://cloudopen2012.sched.org/fghaas"&gt;here&lt;/a&gt;, by the way. Feel free to
@@ -2788,34 +3428,34 @@ development.&lt;/p&gt;
 &lt;li&gt;Slides: &lt;a href='https://prezi.com/embed/p4jstawrfqwh/"&amp;gt;&amp;lt;/'&gt;Prezi&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="OpenStack"></category><category term="Pacemaker"></category></entry><entry><title>A look back at my first OpenStack Design Summit &amp; Conference</title><link href="https://xahteiwi.eu/blog/2012/04/24/a-look-back-at-my-first-openstack-design-summit-conference/" rel="alternate"></link><published>2012-04-24T09:35:00+00:00</published><updated>2012-04-24T09:35:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2012-04-24:/blog/2012/04/24/a-look-back-at-my-first-openstack-design-summit-conference/</id><summary type="html">&lt;p&gt;I've just returned from the &lt;a href="http://www.openstack.org/conference/san-francisco-2012/"&gt;OpenStack Folsom Design Summit and Spring
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="OpenStack"></category><category term="Pacemaker"></category></entry><entry><title>A look back at my first OpenStack Design Summit &amp; Conference</title><link href="https://xahteiwi.eu/blog/2012/04/24/a-look-back-at-my-first-openstack-design-summit-conference/" rel="alternate"></link><published>2012-04-24T09:35:00+00:00</published><updated>2012-04-24T09:35:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2012-04-24:/blog/2012/04/24/a-look-back-at-my-first-openstack-design-summit-conference/</id><summary type="html">&lt;p&gt;I’ve just returned from the &lt;a href="http://www.openstack.org/conference/san-francisco-2012/"&gt;OpenStack Folsom Design Summit and Spring
 2012
 Conference&lt;/a&gt;,
-and am finally getting rid of my jet lag. Here's a summary of what's
+and am finally getting rid of my jet lag. Here’s a summary of what’s
 been a mind-blowing conference experience for me.&lt;/p&gt;
 &lt;!--break--&gt;
 &lt;p&gt;This was my first OpenStack Design Summit and Conference. And as anyone
-who's in open source …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I've just returned from the &lt;a href="http://www.openstack.org/conference/san-francisco-2012/"&gt;OpenStack Folsom Design Summit and Spring
+who …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I’ve just returned from the &lt;a href="http://www.openstack.org/conference/san-francisco-2012/"&gt;OpenStack Folsom Design Summit and Spring
 2012
 Conference&lt;/a&gt;,
-and am finally getting rid of my jet lag. Here's a summary of what's
+and am finally getting rid of my jet lag. Here’s a summary of what’s
 been a mind-blowing conference experience for me.&lt;/p&gt;
 &lt;!--break--&gt;
 &lt;p&gt;This was my first OpenStack Design Summit and Conference. And as anyone
-who's in open source is acutely aware, some communities can be reluctant
+who’s in open source is acutely aware, some communities can be reluctant
 to accept newcomers. Some may even seem outright hostile to the timid.
 Not the &lt;a href="http://www.openstack.org/community"&gt;OpenStack&lt;/a&gt; community.&lt;/p&gt;
 &lt;p&gt;The minute I sat down in the opening session of the Design Summit on
 Monday, I felt instantly welcome and at home. Even as a relative
 OpenStack newbie (who was invited to the Design Summit to provide some
 insights and guidance on high availability), I immediately got the
-impression that I was in the right place at the right time. I've rarely
-seen a developer community on such a positive vibe. Sure, we'll blast
+impression that I was in the right place at the right time. I’ve rarely
+seen a developer community on such a positive vibe. Sure, we’ll blast
 each other on technical disagreements, but all in a good-natured, fun
 way.&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://folsomdesignsummit2012.sched.org/event/fa2a5803a4b4ba857db57c84a1e1d3bc"&gt;My own Design Summit
 session&lt;/a&gt;
-clearly wasn't without such disagreements, and expectedly so. But I
+clearly wasn’t without such disagreements, and expectedly so. But I
 think we came to some excellent conclusions:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Infrastructure high availability will be an overarching design goal
@@ -2832,10 +3472,10 @@ think we came to some excellent conclusions:&lt;/p&gt;
     &lt;a href="https://puppetlabs.com/"&gt;Puppet&lt;/a&gt;) can then build on. We will take a
     lot of responsibility in that effort, as well.&lt;/li&gt;
 &lt;li&gt;Some services still require some work to become fully HA capable.
-    Cinder (the volume service that's being factored out of Nova for
+    Cinder (the volume service that’s being factored out of Nova for
     Folsom) is one example, Quantum is another. This work will be
     tackled.&lt;/li&gt;
-&lt;li&gt;We're currently planning to stop short of providing monitoring and
+&lt;li&gt;We’re currently planning to stop short of providing monitoring and
     HA for Nova instances (a.k.a. &lt;em&gt;guest HA&lt;/em&gt;). This is on the list for
     the next release past Folsom.&lt;/li&gt;
 &lt;/ul&gt;
@@ -2843,29 +3483,29 @@ think we came to some excellent conclusions:&lt;/p&gt;
 of &lt;a href="http://openstackconferencespring2012.sched.org/event/a6d940d2ebd11e37c6ac389f7d4d2125"&gt;presenting them to a larger audience at the main
 conference&lt;/a&gt;.
 It seems to have hit home pretty well, based on feedback from attendees
-given in-person and on Twitter. &lt;span style="text-decoration: line-through;"&gt;I'm hoping the conference
+given in-person and on Twitter. &lt;span style="text-decoration: line-through;"&gt;I’m hoping the conference
 organizers will make a video recording available shortly. Meanwhile, my
 presentation is already available
-&lt;a href="https://prezi.com/gxaohiwl46z2/high-availability-in-openstack/"&gt;here&lt;/a&gt;.&lt;/span&gt; &lt;a href="https://www.hastexo.com/resources/presentations/reliable-redundant-resilient-high-availability-openstack"&gt;It's
+&lt;a href="https://prezi.com/gxaohiwl46z2/high-availability-in-openstack/"&gt;here&lt;/a&gt;.&lt;/span&gt; &lt;a href="https://www.hastexo.com/resources/presentations/reliable-redundant-resilient-high-availability-openstack"&gt;It’s
 now available here in the &lt;em&gt;Presentations&lt;/em&gt;
 section.&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Overall, this has been a wonderful and very well organized conference,
-and I'm very much looking forward to coming back next time around.&lt;/p&gt;
+and I’m very much looking forward to coming back next time around.&lt;/p&gt;
 &lt;hr/&gt;
 &lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;
-&lt;!--break--&gt;</content><category term="blog"></category><category term="Conference"></category><category term="OpenStack"></category></entry><entry><title>Speaking at OSCON 2012</title><link href="https://xahteiwi.eu/blog/2012/04/03/speaking-at-oscon-2012/" rel="alternate"></link><published>2012-04-03T09:24:00+00:00</published><updated>2012-04-03T09:24:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2012-04-03:/blog/2012/04/03/speaking-at-oscon-2012/</id><summary type="html">&lt;p&gt;I'll be speaking at &lt;a href="http://www.oscon.com/oscon2012"&gt;OSCON 2012&lt;/a&gt; in
+&lt;!--break--&gt;</content><category term="blog"></category><category term="Conference"></category><category term="OpenStack"></category></entry><entry><title>Speaking at OSCON 2012</title><link href="https://xahteiwi.eu/blog/2012/04/03/speaking-at-oscon-2012/" rel="alternate"></link><published>2012-04-03T09:24:00+00:00</published><updated>2012-04-03T09:24:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2012-04-03:/blog/2012/04/03/speaking-at-oscon-2012/</id><summary type="html">&lt;p&gt;I’ll be speaking at &lt;a href="http://www.oscon.com/oscon2012"&gt;OSCON 2012&lt;/a&gt; in
 Portland, on high availability in
 &lt;a href="https://www.hastexo.com/knowledge/openstack"&gt;OpenStack&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;I learned from O'Reilly yesterday that my presentation proposal for this
-year's &lt;a href="http://www.oscon.com/oscon2012"&gt;OSCON&lt;/a&gt;, which takes place July
+&lt;p&gt;I learned from O’Reilly yesterday that my presentation proposal for this
+year’s &lt;a href="http://www.oscon.com/oscon2012"&gt;OSCON&lt;/a&gt;, which takes place July
 16-20, 2012 in Portland, Oregon, has been accepted. As this is my first
-OSCON speaking slot (actually, it's my first …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I'll be speaking at &lt;a href="http://www.oscon.com/oscon2012"&gt;OSCON 2012&lt;/a&gt; in
+OSCON speaking slot (actually …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I’ll be speaking at &lt;a href="http://www.oscon.com/oscon2012"&gt;OSCON 2012&lt;/a&gt; in
 Portland, on high availability in
 &lt;a href="https://www.hastexo.com/knowledge/openstack"&gt;OpenStack&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;I learned from O'Reilly yesterday that my presentation proposal for this
-year's &lt;a href="http://www.oscon.com/oscon2012"&gt;OSCON&lt;/a&gt;, which takes place July
+&lt;p&gt;I learned from O’Reilly yesterday that my presentation proposal for this
+year’s &lt;a href="http://www.oscon.com/oscon2012"&gt;OSCON&lt;/a&gt;, which takes place July
 16-20, 2012 in Portland, Oregon, has been accepted. As this is my first
-OSCON speaking slot (actually, it's my first OSCON altogether), this is
+OSCON speaking slot (actually, it’s my first OSCON altogether), this is
 a thrilling speaking opportunity for me.&lt;/p&gt;
 &lt;p&gt;My talk, &lt;em&gt;Highly Available Cloud: OpenStack integration with Pacemaker&lt;/em&gt;
 is currently (tentatively, I suppose) scheduled for 11:30 on July 18.&lt;/p&gt;
@@ -2875,18 +3515,18 @@ Spring 2012
 Conference&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;My presentation, &lt;em&gt;Reliable, Redundant: High Availability in
 OpenStack,&lt;/em&gt; has been accepted for the main conference track. The
-official schedule isn't yet up pending confirmation from all speakers,
-but I've been tentatively informed that it's on …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I just learned that my presentation is going ahead at the &lt;a href="http://www.openstack.org/conference/san-francisco-2012/"&gt;OpenStack
+official schedule isn’t yet up pending confirmation from all speakers,
+but I’ve been tentatively informed that …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I just learned that my presentation is going ahead at the &lt;a href="http://www.openstack.org/conference/san-francisco-2012/"&gt;OpenStack
 Spring 2012
 Conference&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;My presentation, &lt;em&gt;Reliable, Redundant: High Availability in
 OpenStack,&lt;/em&gt; has been accepted for the main conference track. The
-official schedule isn't yet up pending confirmation from all speakers,
-but I've been tentatively informed that it's on at 11:30 am on Friday,
+official schedule isn’t yet up pending confirmation from all speakers,
+but I’ve been tentatively informed that it’s on at 11:30 am on Friday,
 April 20.&lt;/p&gt;
 &lt;p&gt;This of course means that you should totally &lt;a href="http://www.openstack.org/conference/san-francisco-2012/register/"&gt;register for the
 conference&lt;/a&gt;
-if you haven't already done so, and I'll be happy to chat with anyone
+if you haven’t already done so, and I’ll be happy to chat with anyone
 interested in OpenStack HA. See you in San Francisco!&lt;/p&gt;
 &lt;hr/&gt;
 &lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Conference"></category><category term="OpenStack"></category></entry><entry><title>The Zen of Pacemaker</title><link href="https://xahteiwi.eu/resources/presentations/zen-pacemaker/" rel="alternate"></link><published>2012-03-13T13:37:00+00:00</published><updated>2012-03-13T13:37:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-03-13:/resources/presentations/zen-pacemaker/</id><summary type="html">&lt;p&gt;I team up with Tim Serong and Andrew Beekhof for a tutorial at
@@ -2919,25 +3559,24 @@ of high availability.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;hr/&gt;
 &lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="Pacemaker"></category></entry><entry><title>Speaking at the 2012 Percona Live MySQL Conference</title><link href="https://xahteiwi.eu/blog/2012/02/27/speaking-2012-percona-live-mysql-conference/" rel="alternate"></link><published>2012-02-27T13:39:00+00:00</published><updated>2012-02-27T13:39:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2012-02-27:/blog/2012/02/27/speaking-2012-percona-live-mysql-conference/</id><summary type="html">&lt;p&gt;This year, I have the pleasure of returning to the MySQL Conference &amp;amp;
-Expo as a speaker. Percona have picked up the torch that O'Reilly had
-held as the conference organizers, and they're putting together a 3-day
+Expo as a speaker. Percona have picked up the torch that O’Reilly had
+held as the conference organizers, and they’re putting together a 3-day
 conference this year. I am co-presenting a tutorial with Yves Trudeau
-from Percona.&lt;/p&gt;
-&lt;p&gt;Our …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This year, I have the pleasure of returning to the MySQL Conference &amp;amp;
-Expo as a speaker. Percona have picked up the torch that O'Reilly had
-held as the conference organizers, and they're putting together a 3-day
+from …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This year, I have the pleasure of returning to the MySQL Conference &amp;amp;
+Expo as a speaker. Percona have picked up the torch that O’Reilly had
+held as the conference organizers, and they’re putting together a 3-day
 conference this year. I am co-presenting a tutorial with Yves Trudeau
 from Percona.&lt;/p&gt;
 &lt;p&gt;Our tutorial is called &lt;a href="http://www.percona.com/live/mysql-conference-2012/sessions/mysql-high-availability-deep-dive-pacemaker-drbd-mysql-replication-and-more"&gt;High Availability Deep Dive: Pacemaker, DRBD,
 MySQL Replication, and
 more!&lt;/a&gt; and
-it's going to be the only full-day tutorial offered in this year's
+it’s going to be the only full-day tutorial offered in this year’s
 conference. In it, Yves and I are going to cover&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;/p&gt;
-    An overview of the Pacemaker cluster stack (the classic "this is
-    Pacemaker" introduction)
+    An overview of the Pacemaker cluster stack (the classic “this is
+    Pacemaker” introduction)
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;
 -   &lt;/p&gt;
@@ -2953,39 +3592,39 @@ Yves has vastly improved through a big patch set to the MySQL RA).
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Do I expect this talk to be controversial? Definitely. The amount of
-"Pacemaker is terrible" and "Pacemaker is unsuitable for managing highly
-available databases" that has been around the blogosphere lately is
+“Pacemaker is terrible” and “Pacemaker is unsuitable for managing highly
+available databases” that has been around the blogosphere lately is
 pretty mind-boggling.&lt;/p&gt;
 &lt;p&gt;But strangely enough, most of the things brought forward against
 Pacemaker by its detractors seem like a time-warp back to about 2007.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;/p&gt;
-    "We must use XML to manage Pacemaker!" Nonsense. In fact, that was
+    “We must use XML to manage Pacemaker!” Nonsense. In fact, that was
     &lt;em&gt;never&lt;/em&gt; true – the release of Pacemaker as a separate project and
     the release of the crm shell coincided. Ever since, Pacemaker
     configuration has been as text-based as MySQL itself.
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;
 -   &lt;/p&gt;
-"All Pacemaker can do is react to node failure!" Nothing could be
+“All Pacemaker can do is react to node failure!” Nothing could be
 further from the truth. Pacemaker has some of the most sophisticated
 resource monitoring and auto-recovery capabilities under the sun.
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;
 -   &lt;/p&gt;
-"OK. But all it can do to react to &lt;em&gt;resource&lt;/em&gt; failure is kill a
-daemon!" Bogus again. It will happily do whatever the resource agent
+“OK. But all it can do to react to &lt;em&gt;resource&lt;/em&gt; failure is kill a
+daemon!” Bogus again. It will happily do whatever the resource agent
 specifies. Or the admin, through the configuration. 
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;In our tutorial, we're going to dispel a few of these myths. We
+&lt;p&gt;In our tutorial, we’re going to dispel a few of these myths. We
 certainly make no claims as to Pacemaker being the one and only solution
-for MySQL HA, but it's one that serves lots of use cases excellently.&lt;/p&gt;
-&lt;p&gt;Needless to say, I'll also hang around for the conference proper, and
-I'm very much looking forward to seeing lots of familiar faces. I'll
+for MySQL HA, but it’s one that serves lots of use cases excellently.&lt;/p&gt;
+&lt;p&gt;Needless to say, I’ll also hang around for the conference proper, and
+I’m very much looking forward to seeing lots of familiar faces. I’ll
 also remain in the Bay Area for some time after the MySQL conference –
 more on that in a day or two.&lt;/p&gt;
 &lt;hr/&gt;

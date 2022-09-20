@@ -43,13 +43,13 @@
  
 
 <meta name="author" content="Florian Haas" />
-<meta name="description" content="We&#39;ve noticed that there are a few common misconceptions around radosgw performance, and we&#39;re hoping that this post can clear up some of those. radosgw is of course Ceph&#39;s RESTful object gateway. That means that you can use any client that speaks the Amazon S3 or OpenStack Swift protocol to …" />
+<meta name="description" content="We’ve noticed that there are a few common misconceptions around radosgw performance, and we’re hoping that this post can clear up some of those. radosgw is of course Ceph’s RESTful object gateway. That means that you can use any client that speaks the Amazon S3 or OpenStack …" />
 <meta name="keywords" content="Ceph">
 
 
   <meta property="og:site_name" content="xahteiwi.eu"/>
   <meta property="og:title" content="Understanding radosgw benchmarks"/>
-  <meta property="og:description" content="We&#39;ve noticed that there are a few common misconceptions around radosgw performance, and we&#39;re hoping that this post can clear up some of those. radosgw is of course Ceph&#39;s RESTful object gateway. That means that you can use any client that speaks the Amazon S3 or OpenStack Swift protocol to …"/>
+  <meta property="og:description" content="We’ve noticed that there are a few common misconceptions around radosgw performance, and we’re hoping that this post can clear up some of those. radosgw is of course Ceph’s RESTful object gateway. That means that you can use any client that speaks the Amazon S3 or OpenStack …"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:url" content="../../../resources/hints-and-kinks/understanding-radosgw-benchmarks/"/>
   <meta property="og:type" content="article"/>
@@ -140,10 +140,10 @@
 
 
   <div>
-    <p>We've noticed that there are a few common misconceptions around
-radosgw performance, and we're hoping that this post can clear up some
+    <p>We’ve noticed that there are a few common misconceptions around
+radosgw performance, and we’re hoping that this post can clear up some
 of those.</p>
-<p>radosgw is of course Ceph's RESTful object gateway. That means that
+<p>radosgw is of course Ceph’s RESTful object gateway. That means that
 you can use any client that speaks the Amazon S3 or OpenStack Swift
 protocol to interact with your Ceph cluster. Since RESTful object
 access is HTTP based, this also means you can combine radosgw with
@@ -152,7 +152,7 @@ in handy.</p>
 <p>In general, as any RESTful object storage, you would generally store
 data in radosgw that you read and write in one chunk, and where bulk
 storage is more important than online availability (if you need data
-at your fingertips, you'd use RBD or CephFS or even straight-up RADOS
+at your fingertips, you’d use RBD or CephFS or even straight-up RADOS
 instead, but those are for different use cases).</p>
 <p>The performance implications of using radosgw (or any RESTful object
 storage, for that matter) usually apply to one of two different use
@@ -170,18 +170,18 @@ cases:</p>
   S3.</p>
 </li>
 </ul>
-<p>So either you want to write big chunks of data, in which case you're
+<p>So either you want to write big chunks of data, in which case you’re
 interested in throughput (typically measured in amount of data per
 unit time, such as MB/s). Or you want to write small chunks, then
-what's important is completed operations per unit time (typically
+what’s important is completed operations per unit time (typically
 measured in number of writes per second, which in the RESTful case
 would be HTTP PUTs per second).</p>
 <p>Now with radosgw, you can measure this with a handy tool called
 rest-bench. Sadly rest-bench no longer builds with Ceph for Infernalis
-and later, because the Ceph developers now favor Intel's COSbench
+and later, because the Ceph developers now favor Intel’s COSbench
 utility. But rest-bench from older Ceph releases will be around for a
-while and it's handy because unlike COSbench, it doesn't require Java.</p>
-<p>So let's take a look. The general invocation for rest-bench is like
+while and it’s handy because unlike COSbench, it doesn’t require Java.</p>
+<p>So let’s take a look. The general invocation for rest-bench is like
 this:</p>
 <div class="highlight"><pre><span></span><code>rest-bench -t <span class="nv">$CONCURRENCY</span> -b <span class="nv">$SIZE</span> <span class="se">\</span>
   --seconds<span class="o">=</span><span class="nv">$SECS</span> --api-host<span class="o">=</span><span class="nv">$RGW</span> <span class="se">\</span>
@@ -209,7 +209,7 @@ this:</p>
   little as 10 is often sufficient.</p>
 </li>
 <li>
-<p><code>$BUCKET</code> is the scratch bucket where you're creating objects during
+<p><code>$BUCKET</code> is the scratch bucket where you’re creating objects during
   the benchmark run.</p>
 </li>
 <li>
@@ -220,16 +220,16 @@ this:</p>
 <p><code>write</code> specifies a random write benchmark.</p>
 </li>
 <li>
-<p><code>--no-cleanup</code> specifies that you don't want the bucket to be
-    cleaned out after the benchmark run. It's normally fine to run
+<p><code>--no-cleanup</code> specifies that you don’t want the bucket to be
+    cleaned out after the benchmark run. It’s normally fine to run
     several benchmarks in a row and only empty the benchmark bucket
     when done with all.</p>
 </li>
 </ul>
 <h2>Object size</h2>
-<p>First, we'll examine how object size affects radosgw throughput and
+<p>First, we’ll examine how object size affects radosgw throughput and
 latency.</p>
-<p>So let's start out with a benchmark run that uses the default settings
+<p>So let’s start out with a benchmark run that uses the default settings
 for concurrency and object sizes:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">RGW</span><span class="o">=</span>localhost:7480
 <span class="nb">export</span> <span class="nv">SECS</span><span class="o">=</span><span class="m">10</span>
@@ -253,9 +253,9 @@ rest-bench -t <span class="nv">$CONCURRENCY</span> -b <span class="nv">$SIZE</sp
 </code></pre></div>
 <p>So that means we achieved a bandwidth of just under 155 MB/s (which is
 near the max RADOS bandwidth this particular cluster is capable of;
-it's by no means a high-end system) and we managed 399 writes, or
+it’s by no means a high-end system) and we managed 399 writes, or
 approx. 40 PUTs/s.</p>
-<p>Let's see how going even bigger changes things:</p>
+<p>Let’s see how going even bigger changes things:</p>
 <div class="highlight"><pre><span></span><code>$ <span class="nb">export</span> <span class="nv">SIZE</span><span class="o">=</span><span class="k">$((</span><span class="m">1</span>&lt;&lt;<span class="m">26</span><span class="k">))</span> <span class="c1"># 64MB object size</span>
 
 $ rest-bench -t <span class="nv">$CONCURRENCY</span> -b <span class="nv">$SIZE</span> --seconds<span class="o">=</span><span class="nv">$SECS</span> --api-host<span class="o">=</span><span class="nv">$RGW</span> <span class="se">\</span>
@@ -269,13 +269,13 @@ $ rest-bench -t <span class="nv">$CONCURRENCY</span> -b <span class="nv">$SIZE</
 <span class="nv">Write</span><span class="w"> </span><span class="nv">size</span>:<span class="w">             </span><span class="mi">67108864</span><span class="w"></span>
 <span class="nv">Bandwidth</span><span class="w"> </span><span class="ss">(</span><span class="nv">MB</span><span class="o">/</span><span class="nv">sec</span><span class="ss">)</span>:<span class="w">     </span><span class="mi">160</span>.<span class="mi">469</span><span class="w"></span>
 </code></pre></div>
-<p>Perfectly logical. Our bandwidth doesn't change much, but of course
+<p>Perfectly logical. Our bandwidth doesn’t change much, but of course
 the number of PUTs we get done per second decreases significantly, to
 a puny 3 PUTs/s. (Note: radosgw does break down objects into smaller
-chunks when it talks to RADOS. However, this doesn't change the fact
+chunks when it talks to RADOS. However, this doesn’t change the fact
 that a client needs to haul a 64MB object across the network and
 through the radosgw HTTP server.)</p>
-<p>Let's do the opposite now, and go for smaller objects. Suppose your
+<p>Let’s do the opposite now, and go for smaller objects. Suppose your
 application is using a typical object size of 32K.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">SIZE</span><span class="o">=</span><span class="k">$((</span><span class="m">1</span>&lt;&lt;<span class="m">15</span><span class="k">))</span> <span class="c1"># 32KB object size</span>
 rest-bench -t <span class="nv">$CONCURRENCY</span> -b <span class="nv">$SIZE</span> --seconds<span class="o">=</span><span class="nv">$SECS</span> --api-host<span class="o">=</span><span class="nv">$RGW</span> <span class="se">\</span>
@@ -292,10 +292,10 @@ rest-bench -t <span class="nv">$CONCURRENCY</span> -b <span class="nv">$SIZE</sp
 </code></pre></div>
 <p>Of course if we looked at our bandwidth alone, this would be an
 abysmal result. But your application is trying to write 32K chunks,
-and lots of them. And it's succeeding just fine; we're now near 300
+and lots of them. And it’s succeeding just fine; we’re now near 300
 PUTs/s.</p>
-<p>Going even smaller, we'd expect PUTs/s to trend further up and nominal
-MB/s to go down. Let's try with 4K objects:</p>
+<p>Going even smaller, we’d expect PUTs/s to trend further up and nominal
+MB/s to go down. Let’s try with 4K objects:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">SIZE</span><span class="o">=</span><span class="k">$((</span><span class="m">1</span>&lt;&lt;<span class="m">12</span><span class="k">))</span> <span class="c1"># 4KB object size</span>
 rest-bench -t <span class="nv">$CONCURRENCY</span> -b <span class="nv">$SIZE</span> --seconds<span class="o">=</span><span class="nv">$SECS</span> --api-host<span class="o">=</span><span class="nv">$RGW</span> <span class="se">\</span>
 --bucket<span class="o">=</span><span class="nv">$BUCKET</span> --access-key<span class="o">=</span><span class="nv">$KEY</span> --secret<span class="o">=</span><span class="nv">$SECRET</span> --no-cleanup write
@@ -316,7 +316,7 @@ writes-per-second load.</p>
 <h2>Concurrency</h2>
 <p>Another aspect that influences your radosgw performance is
 concurrency. Generally, the principle is simple: if you have multiple
-parallel applications that write to radosgw and that don't have to
+parallel applications that write to radosgw and that don’t have to
 wait for each other, your aggregate throughput will be higher, and
 your writes-per-second will be higher as well. If you have a small
 number (in the worst case, a single one that is single-threaded) and
@@ -390,7 +390,7 @@ rest-bench -t <span class="nv">$CONCURRENCY</span> -b <span class="nv">$SIZE</sp
 </code></pre></div>
 <p>Both writes-per-second and throughput drop by half.</p>
 <h2>Conclusions</h2>
-<p>Note: If you've dealt with storage performance considerations before,
+<p>Note: If you’ve dealt with storage performance considerations before,
 some of these will be blindingly obvious. Apologies for that; it just
 shows that Ceph is generally a well-behaved system that does what you
 would normally expect.</p>
@@ -412,7 +412,7 @@ would normally expect.</p>
 <ul>
 <li>
 <p>Concurrency is good. If your application can fire a bunch of RESTful
-  objects at radosgw, which don't have to wait for each other, great.</p>
+  objects at radosgw, which don’t have to wait for each other, great.</p>
 </li>
 <li>
 <p>If you need to optimize for lots of PUTs per second, make sure that

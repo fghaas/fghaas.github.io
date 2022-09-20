@@ -156,28 +156,28 @@ repo</a>.</p>
 <p>This allows you to run a Ceph cluster on RHEL/CentOS. It does, however
 come with a few limitations:</p>
 <ul>
-<li>You can't use RBD from a kvm/libvirt box that is running RHEL. RHEL
+<li>You can’t use RBD from a kvm/libvirt box that is running RHEL. RHEL
     does not ship with librados support enabled in the qemu-kvm builds,
     and removing this limitation would mean for third parties to provide
     their own libvirt/kvm build. As of today, tough, no RBD-support
     libvirt/kvm lives in <a href="http://wiki.centos.org/AdditionalResources/Repositories/CentOSPlus">CentOS
     Plus</a>.</li>
-<li>You can't use the kernel rbd or ceph modules from a client that is
+<li>You can’t use the kernel rbd or ceph modules from a client that is
     running RHEL. RBD and Ceph filesystem support is absent from RHEL
     kernels.</li>
 </ul>
-<p>I'm curious to see if and when that will change, given Red Hat's <a href="http://www.gluster.org/2013/05/glusterfs-is-ready-for-openstack/">focus
+<p>I’m curious to see if and when that will change, given Red Hat’s <a href="http://www.gluster.org/2013/05/glusterfs-is-ready-for-openstack/">focus
 on
 GlusterFS</a>
 as their preferred distributed storage solution. It will be interesting
 to see what happens there.</p>
 <p>Another neat little new feature is the ability to <strong>set quotas on
-pools,</strong> which is something that we've frequently had customers ask for
+pools,</strong> which is something that we’ve frequently had customers ask for
 in our consulting practice.</p>
 <p>Then there are <strong>incremental snapshots for RBD,</strong> another really handy
 feature for RBD management in cloud solutions like
 <a href="https://www.hastexo.com/knowledge/openstack">OpenStack</a>.</p>
-<p>There's more, and you may head over to the press release and the Inktank
+<p>There’s more, and you may head over to the press release and the Inktank
 blog for more details. And then you might want to mark your calendars
 for one of the following events:</p>
 <ul>
@@ -189,7 +189,7 @@ for one of the following events:</p>
     German, <a href="http://www.eventbrite.com/e/openstack-dach-day-2013-tickets-3206509757">register
     here</a>).</li>
 <li>At <a href="http://www.openstack-israel.org/">OpenStack Israel</a> on May 27,
-    I'll be speaking about Ceph integration with OpenStack (in English,
+    I’ll be speaking about Ceph integration with OpenStack (in English,
     <a href="http://www.meetup.com/IGTCloud/events/99146542/">register here</a>).</li>
 <li>And at <a href="http://openstackceeday.com/">OpenStack CEE</a> on May 29 in
     Budapest, Martin speaks about <em>Scale-out Made Easy: Petabyte Storage
@@ -197,7 +197,7 @@ for one of the following events:</p>
     here</a>).</li>
 </ul>
 <p>All these events are expected to sell out beforehand, and they are only
-a couple of weeks away. So make sure you grab your seat, and we'll see
+a couple of weeks away. So make sure you grab your seat, and we’ll see
 you there!</p>
 <hr/>
 <p>This article originally appeared on my blog on the <code>hastexo.com</code> website (now defunct).</p>

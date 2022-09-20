@@ -43,13 +43,13 @@
  
 
 <meta name="author" content="Florian Haas" />
-<meta name="description" content="It&#39;s not uncommon in Pacemaker clusters to run specific cron jobs only on a node that currently runs a particular resource. The ocf:heartbeat:symlink resource agent can be exceptionally helpful in this situation. Here&#39;s how to use it. Suppose you&#39;ve got a cron job for Postfix whose definition normally …" />
+<meta name="description" content="It’s not uncommon in Pacemaker clusters to run specific cron jobs only on a node that currently runs a particular resource. The ocf:heartbeat:symlink resource agent can be exceptionally helpful in this situation. Here’s how to use it. Suppose you’ve got a cron job for Postfix …" />
 <meta name="keywords" content="Pacemaker">
 
 
   <meta property="og:site_name" content="xahteiwi.eu"/>
   <meta property="og:title" content="Managing cron jobs with Pacemaker"/>
-  <meta property="og:description" content="It&#39;s not uncommon in Pacemaker clusters to run specific cron jobs only on a node that currently runs a particular resource. The ocf:heartbeat:symlink resource agent can be exceptionally helpful in this situation. Here&#39;s how to use it. Suppose you&#39;ve got a cron job for Postfix whose definition normally …"/>
+  <meta property="og:description" content="It’s not uncommon in Pacemaker clusters to run specific cron jobs only on a node that currently runs a particular resource. The ocf:heartbeat:symlink resource agent can be exceptionally helpful in this situation. Here’s how to use it. Suppose you’ve got a cron job for Postfix …"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:url" content="../../../resources/hints-and-kinks/managing-cron-jobs-pacemaker/"/>
   <meta property="og:type" content="article"/>
@@ -140,18 +140,18 @@
 
 
   <div>
-    <p>It's not uncommon in Pacemaker clusters to run specific cron jobs only
+    <p>It’s not uncommon in Pacemaker clusters to run specific cron jobs only
 on a node that currently runs a particular resource. The
 <code>ocf:heartbeat:symlink</code> resource agent can be exceptionally helpful in
-this situation. Here's how to use it.</p>
-<p>Suppose you've got a cron job for Postfix whose definition normally
+this situation. Here’s how to use it.</p>
+<p>Suppose you’ve got a cron job for Postfix whose definition normally
 lives in <code>/etc/cron.d/postfix</code>. All your Postfix related data is in a
 mountpoint <code>/srv/postfix</code> (that filesystem could live on iSCSI, or DRBD,
-or it could be a GlusterFS mount – that's irrelevant for the purposes
-of this discussion). And as such, you've moved your cron definition to
+or it could be a GlusterFS mount – that’s irrelevant for the purposes
+of this discussion). And as such, you’ve moved your cron definition to
 <code>/srv/postfix/cron</code>.</p>
 <p>Now you want that cron job to execute only on the node that also is
-currently the active Postfix host. That's not hard at all:</p>
+currently the active Postfix host. That’s not hard at all:</p>
 <div class="highlight"><pre><span></span><code>primitive p_postfix ocf:heartbeat:postfix \
   params config_dir="/etc/postfix" \
   op monitor interval="10"
@@ -180,7 +180,7 @@ colocation c_symlink_on_postfix inf: p_symlink p_postfix
   <code>/srv/postfix/cron</code></p>
 </li>
 <li>
-<p>Restart <code>cron</code> when it's done.</p>
+<p>Restart <code>cron</code> when it’s done.</p>
 </li>
 </ul>
 <p>The <code>c_symlink_on_postfix</code> colocation ensures that all of this happens

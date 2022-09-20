@@ -208,7 +208,7 @@ the following default entries in Neutron’s <code>policy.json</code>:</p>
 <span class="w">    </span><span class="nt">"update_router:ha"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule:admin_only"</span><span class="p">,</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<p>... and instead set them as follows:</p>
+<p>… and instead set them as follows:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">"create_router:ha"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule:admin_or_owner"</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="nt">"get_router:ha"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule:admin_or_owner"</span><span class="p">,</span><span class="w"></span>
@@ -248,7 +248,7 @@ command line client. You see, this part of the aforementioned policy</p>
 <span class="w">    </span><span class="nt">"get_router:ha"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule:admin_only"</span><span class="p">,</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<p>... means you’re not even allowed to <em>query</em> the <code>ha</code> flag if you’re
+<p>… means you’re not even allowed to <em>query</em> the <code>ha</code> flag if you’re
 not an admin, and when the <code>openstack</code> client is asked to display a
 boolean value that the user is not allowed to even read, then it
 always displays <code>False</code>.</p>

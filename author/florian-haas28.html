@@ -123,6 +123,32 @@
 
 <article>
   <header>
+    <h2><a href="../resources/hints-and-kinks/solve-drbd-split-brain-4-steps/#solve-drbd-split-brain-4-steps">Solve a DRBD split-brain in 4 steps</a></h2>
+    <p>
+      Posted on Tue 06 March 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
+
+          &#8226; Tagged with
+              <a href="../tag/drbd.html">DRBD</a>
+        &#8226; 3 min read
+    </p>
+  </header>
+  <div>
+      <div><p>Whenever a DRBD setup runs into a situation where the replication
+network is disconnected and fencing policy is set to <code>dont-care</code>
+(default), there is the potential risk of a split-brain. Even with
+resource level fencing or STONITH setup, there are corner cases that
+will end up in a split-brain.</p>
+<p>When …</p></div>
+        <br>
+        <a class="btn"
+           href="../resources/hints-and-kinks/solve-drbd-split-brain-4-steps/#solve-drbd-split-brain-4-steps">
+          Continue reading
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="../resources/hints-and-kinks/checking-corosync-cluster-membership/#checking-corosync-cluster-membership">Checking Corosync cluster membership</a></h2>
     <p>
       Posted on Sun 04 March 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
@@ -133,10 +159,10 @@
     </p>
   </header>
   <div>
-      <div><p>It's simple and easy to get Pacemaker's view of the status of members
+      <div><p>It’s simple and easy to get Pacemaker’s view of the status of members
 in a cluster – just invoke <code>crm_mon</code>. But what if you want to check on
 the cluster membership when Pacemaker is not running, or you want to
-make sure whether Corosync's view of the cluster is identical to …</p></div>
+make sure whether Corosync’s view of the cluster …</p></div>
         <br>
         <a class="btn"
            href="../resources/hints-and-kinks/checking-corosync-cluster-membership/#checking-corosync-cluster-membership">
@@ -158,10 +184,10 @@ make sure whether Corosync's view of the cluster is identical to …</p></div>
   </header>
   <div>
       <div><p>Often, people deploy the Pacemaker stack in virtual environments for
-purposes of testing and evaluation. In such environments, it's easy to
-test Pacemaker's fencing capabilities by tying in with the hypervisor.</p>
+purposes of testing and evaluation. In such environments, it’s easy to
+test Pacemaker’s fencing capabilities by tying in with the hypervisor.</p>
 <p>This quick howto illustrates how to configure fencing for two virtual
-cluster nodes hosted on a libvirt/KVM hypervisor …</p></div>
+cluster nodes hosted on a libvirt …</p></div>
         <br>
         <a class="btn"
            href="../resources/hints-and-kinks/fencing-libvirtkvm-virtualized-cluster-nodes/#fencing-libvirtkvm-virtualized-cluster-nodes">
@@ -215,38 +241,12 @@ involved:</p>
 the Pacemaker GFS control daemon, and a GFS2 filesystem itself.</p>
 <h2>Prerequisites</h2>
 <p>GFS2 with Pacemaker integration is supported on Debian
-(<code>squeeze-backports</code> and up) and Ubuntu (10.04 LTS and up). You'll need
+(<code>squeeze-backports</code> and up) and Ubuntu (10.04 LTS and up). You’ll need
 the <code>dlm-pcmk</code>, <code>gfs2-tools</code>, and <code>gfs-pcmk</code> packages.</p>
-<p>Fencing is imperative …</p></div>
+<p>Fencing is …</p></div>
         <br>
         <a class="btn"
            href="../resources/hints-and-kinks/gfs2-pacemaker-debianubuntu/#gfs2-pacemaker-debianubuntu">
-          Continue reading
-        </a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="../resources/hints-and-kinks/interleaving-pacemaker-clones/#interleaving-pacemaker-clones">Interleaving in Pacemaker clones</a></h2>
-    <p>
-      Posted on Sun 26 February 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
-
-          &#8226; Tagged with
-              <a href="../tag/pacemaker.html">Pacemaker</a>
-        &#8226; 2 min read
-    </p>
-  </header>
-  <div>
-      <div><p>Ever wonder what <code>meta interleave</code> really means in a Pacemaker clone
-definition? We'll explain.</p>
-<p>The <code>interleave</code> meta attribute is only valid on Pacemaker clone
-definitions – and their extended version of sorts, master/slave
-sets. It's not available on primitives and groups. Clones are often
-used in configurations involving cluster filesystems …</p></div>
-        <br>
-        <a class="btn"
-           href="../resources/hints-and-kinks/interleaving-pacemaker-clones/#interleaving-pacemaker-clones">
           Continue reading
         </a>
   </div>

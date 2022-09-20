@@ -43,13 +43,13 @@
  
 
 <meta name="author" content="Florian Haas" />
-<meta name="description" content="Ceph and OpenStack are an extremely useful and highly popular combination. Still, new Ceph/OpenStack deployments frequently come with easily avoided shortcomings — we&#39;ll help you fix them!" />
+<meta name="description" content="Ceph and OpenStack are an extremely useful and highly popular combination. Still, new Ceph/OpenStack deployments frequently come with easily avoided shortcomings — we’ll help you fix them!" />
 <meta name="keywords" content="OpenStack, Ceph">
 
 
   <meta property="og:site_name" content="xahteiwi.eu"/>
   <meta property="og:title" content="The Dos and Don&#39;ts for Ceph for OpenStack"/>
-  <meta property="og:description" content="Ceph and OpenStack are an extremely useful and highly popular combination. Still, new Ceph/OpenStack deployments frequently come with easily avoided shortcomings — we&#39;ll help you fix them!"/>
+  <meta property="og:description" content="Ceph and OpenStack are an extremely useful and highly popular combination. Still, new Ceph/OpenStack deployments frequently come with easily avoided shortcomings — we’ll help you fix them!"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:url" content="../../../resources/hints-and-kinks/dos-donts-ceph-openstack/"/>
   <meta property="og:type" content="article"/>
@@ -144,7 +144,7 @@
     <p>Ceph and OpenStack are an extremely useful and
 <a href="https://www.openstack.org/assets/survey/April-2016-User-Survey-Report.pdf">highly popular</a>
 combination. Still, new Ceph/OpenStack deployments frequently come
-with easily avoided shortcomings — we'll help you fix them!</p>
+with easily avoided shortcomings — we’ll help you fix them!</p>
 
 <h2>Do use <code>show_image_direct_url</code> and the Glance v2 API</h2>
 <p>With Ceph RBD (RADOS Block Device), you have the ability to create
@@ -154,17 +154,17 @@ for those parts of your block device which have been modified relative
 to its parent snapshot, and this means two things:</p>
 <ol>
 <li>
-<p>You save space. That's a no-brainer, but in and of itself it's not
+<p>You save space. That’s a no-brainer, but in and of itself it’s not
    a very compelling argument as storage space is one of the cheapest
    things in a distributed system.</p>
 </li>
 <li>
-<p>What's <em>not</em> been modified in the clone can be served from the
+<p>What’s <em>not</em> been modified in the clone can be served from the
    original volume. This is important because, of course, it means you
    are effectively hitting the same RADOS objects — and thus, the
-   same OSDs — no matter which clone you're talking to. And that, in
+   same OSDs — no matter which clone you’re talking to. And that, in
    turn, means, those objects are likely to be served from the
-   respective OSD's page caches, in other words, from RAM. RAM is way
+   respective OSD’s page caches, in other words, from RAM. RAM is way
    faster to access than any persistent storage device, so being able
    to serve lots of reads from the page cache is good. That, in turn,
    means, that serving data from a clone will be faster than serving
@@ -198,7 +198,7 @@ VM, the following events occur:</p>
 </ul>
 <p>This process uses up a fair amount of space on your compute nodes,
 and can quite seriously delay spawning a new VM if it has been
-scheduled to a host that hasn't downloaded the desired image
+scheduled to a host that hasn’t downloaded the desired image
 before. It also makes it impossible for such a VM to be live-migrated
 to another host without downtime.</p>
 <p>Flipping <code>images_type</code> to <code>rbd</code> means the disk lives in the RBD
@@ -208,12 +208,12 @@ of
 clones. <a href="http://docs.ceph.com/docs/jewel/rbd/rbd-openstack/#id2">Use it.</a></p>
 <h2>Do enable RBD caching on Nova compute nodes</h2>
 <p><code>librbd</code>, the library that underpins the Qemu/KVM RBD storage driver,
-can enable a disk cache that uses the hypervisor host's RAM for
+can enable a disk cache that uses the hypervisor host’s RAM for
 caching purposes. You should use this.</p>
-<p>Yes, it's a cache that is safe to use. On the one hand, the
+<p>Yes, it’s a cache that is safe to use. On the one hand, the
 combination of <code>virtio-blk</code> with the Qemu RBD storage driver <strong>will</strong>
 properly honor disk flushes. That is to say, when an application
-inside your VM says "I want this data on disk now," then <code>virtio‑blk</code>,
+inside your VM says “I want this data on disk now,” then <code>virtio‑blk</code>,
 Qemu, and Ceph will all work together to only report the write as
 complete when it has been</p>
 <ul>
@@ -250,35 +250,35 @@ snapshots) in one pool, and its clones in another.</p>
 <li>Separate pools means you can lock down access to those pools
    separately. This is just a standard threat mitigation approach: if
    your <code>nova-compute</code> node gets compromised and the attacker can
-   corrupt or delete ephemeral disks, then that's bad — but it would
+   corrupt or delete ephemeral disks, then that’s bad — but it would
    be <em>worse</em> if they could also corrupt your Glance images.</li>
 <li>Separate pools also means that you can have different pool
    settings, such as the settings for <code>size</code> or <code>pg_num</code>.</li>
 <li>Most importantly, separate pools can use separate <code>crush_ruleset</code>
-   settings. We'll get back to this in a second, it'll come in handy
+   settings. We’ll get back to this in a second, it’ll come in handy
    shortly.</li>
 </ol>
-<p>It's common to have three different pools: one for your Glance images
+<p>It’s common to have three different pools: one for your Glance images
 (usually named <code>glance</code> or <code>images</code>), one for your Cinder volumes
 (<code>cinder</code> or <code>volumes</code>), and one for your VMs (<code>nova-compute</code> or
 <code>vms</code>).</p>
-<h2>Don't necessarily use SSDs for your Ceph OSD journals</h2>
+<h2>Don’t necessarily use SSDs for your Ceph OSD journals</h2>
 <p>Of the recommendations in this article, this one will probably be the
 one that surprises the most people. Of course, conventional wisdom
 holds that you should <em>always</em> put your OSD journals on fast OSDs, and
 that you should deploy SSDs and spinners in a 1:4 to 1:6 ratio, right?</p>
-<p>Let's take a look. Suppose you're following the 1:6 approach, and your
+<p>Let’s take a look. Suppose you’re following the 1:6 approach, and your
 SATA spinners are capable of writing at 100 MB/s. 6 spinners make 6
-OSDs, and each OSD uses a journal device that's on a partition on an
+OSDs, and each OSD uses a journal device that’s on a partition on an
 enterprise SSD. Suppose further that the SSD is capable of writing at
 500 MB/s.</p>
-<p>Congratulations, in that scenario you've just made your SSD your
+<p>Congratulations, in that scenario you’ve just made your SSD your
 bottleneck. While you would be able to hit your OSDs at 600 MB/s on
 aggregate, your SSD limits you to about 83% of that.</p>
 <p>In that scenario you <em>would</em> actually be fine with a 1:4 ratio, but
 make your spindles just a little faster and the SSD advantage goes out
 the window again.</p>
-<p>Now, of course, do consider the alternative: if you're putting your
+<p>Now, of course, do consider the alternative: if you’re putting your
 journals on the same drive as your OSD filestores, then you
 effectively get only half the nominal bandwidth of your drive, on
 average, because you write everything twice, to the same device. So
@@ -287,16 +287,16 @@ only about 50 MB/s, so the <em>total</em> bandwidth you get out of 6 drives
 that way is more like 300 MB/s, against which 500 MB/s is still a
 substantial improvement.</p>
 <p>So you will need to plug your own numbers into this, and make your own
-evaluation for price <em>and</em> performance. Just don't assume that journal
-SSD will be a panacea, or that it's always a good idea to use them.</p>
+evaluation for price <em>and</em> performance. Just don’t assume that journal
+SSD will be a panacea, or that it’s always a good idea to use them.</p>
 <h2>Do create all-flash OSDs</h2>
-<p>One thing your journal SSDs don't help with are reads. So, what can you
+<p>One thing your journal SSDs don’t help with are reads. So, what can you
 do to take advantage of SSDs on reads, too?</p>
 <p>Make them OSDs. That is, not OSD <em>journals,</em> but actual OSDs with a
-filestore <em>and</em> journal. What this will create are OSDs that don't
+filestore <em>and</em> journal. What this will create are OSDs that don’t
 just write fast, but read fast, too.</p>
 <h2>Do put your all-flash OSDs into a separate CRUSH root</h2>
-<p>Assuming you don't run on all-flash hardware, but operate a
+<p>Assuming you don’t run on all-flash hardware, but operate a
 cost-effective mixed cluster where some OSDs are spinners and others
 are SSDs (or NVMe devices or whatever), you obviously want to treat
 those OSDs separately. The simplest and easiest way to do that is to
@@ -363,7 +363,7 @@ means it covers only OSDs in the <code>highperf</code> root.</p>
 whole different set of OSDs) is a matter of issuing a single command:</p>
 <div class="highlight"><pre><span></span><code>ceph osd pool set &lt;name&gt; crush_ruleset &lt;number&gt;
 </code></pre></div>
-<p>... where <code>&lt;name&gt;</code> name of your pool and <code>&lt;number&gt;</code> is the numerical
+<p>… where <code>&lt;name&gt;</code> name of your pool and <code>&lt;number&gt;</code> is the numerical
 ID of your ruleset as per your CRUSH map. You can do this while the
 pool is online, and while clients are accessing its data — although
 of course, there will be a lot of remapping and backfilling so your
@@ -377,7 +377,7 @@ cluster, you can move pools over to all-flash storage one by one.</p>
 <ol>
 <li>Nova ephemeral RBD pools (<code>vms</code>, <code>nova-compute</code>)</li>
 <li>radosgw bucket indexes (<code>.rgw.buckets.index</code> and friends)
-   — if you're using radosgw as your drop-in OpenStack Swift
+   — if you’re using radosgw as your drop-in OpenStack Swift
    replacement</li>
 <li>Cinder volume pools (<code>cinder</code>, <code>volumes</code>)</li>
 <li>radosgw data pools (<code>.rgw.buckets</code> and friends) — if you need
@@ -389,7 +389,7 @@ cluster, you can move pools over to all-flash storage one by one.</p>
 <h2>Do designate some non-Ceph compute hosts with low-latency local storage</h2>
 <p>Now, there will undoubtedly be some applications where Ceph does not
 produce the latency you desire. Or, for that matter, <em>any</em>
-network-based storage. That's just a direct consequence of recent
+network-based storage. That’s just a direct consequence of recent
 developments in storage and network technology.</p>
 <p>Just a few years ago, the average latency of a single-sector uncached
 write to a block device was on the order of a millisecond, or 1,000
@@ -400,18 +400,18 @@ from writing to a device over the network, as opposed to locally, was
 approximately 10%.</p>
 <p>In the interim, a single-sector write for a device of the same price
 is itself about 100 µs, tops, with some reasonably-priced devices down
-to about 40 µs. Network latency, in contrast, hasn't changed all that
+to about 40 µs. Network latency, in contrast, hasn’t changed all that
 much — going down about 20% from Gigabit Ethernet to 10 GbE.</p>
 <p>So even going to a single, un-replicated SSD device over the network
-will now be 40 + 80 = 120 µs latency, vs. just 40 µs locally. That's
-not a 10% overhead anymore, that's a whopping <em>factor</em> of 3.</p>
+will now be 40 + 80 = 120 µs latency, vs. just 40 µs locally. That’s
+not a 10% overhead anymore, that’s a whopping <em>factor</em> of 3.</p>
 <p>With Ceph, that gets worse. Ceph writes data multiple times, first to
 the primary OSD, then (in parallel) to all replicas. So in contrast to
 a single-sector write at 40 µs, we now incur a latency of at least two
-writes, <em>plus</em> two network round-trips, to that's 40 x 2 + 80 x 2 =
+writes, <em>plus</em> two network round-trips, to that’s 40 x 2 + 80 x 2 =
 240 µs, <em>six times</em> the local write latency.</p>
-<p>The good news is, <em>most</em> applications don't care about this sort of
-latency overhead, because they're not latency-critical at all. The bad
+<p>The good news is, <em>most</em> applications don’t care about this sort of
+latency overhead, because they’re not latency-critical at all. The bad
 news is, <em>some</em> will.</p>
 <p>So, should you ditch Ceph because of that? Nope. But do consider
 adding a handful of compute nodes that are <em>not</em> configured with

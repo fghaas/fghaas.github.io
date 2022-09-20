@@ -43,13 +43,13 @@
  
 
 <meta name="author" content="Florian Haas" />
-<meta name="description" content="Note: This article was originally written for SUSE OpenStack Cloud 6, and updated for SUSE OpenStack Cloud 7. It may not apply to later SUSE OpenStack Cloud releases. If you&#39;re using SUSE OpenStack Cloud, you may want to erase and reinstall your cloud deployment a few times during the testing …" />
+<meta name="description" content="Note: This article was originally written for SUSE OpenStack Cloud 6, and updated for SUSE OpenStack Cloud 7. It may not apply to later SUSE OpenStack Cloud releases. If you’re using SUSE OpenStack Cloud, you may want to erase and reinstall your cloud deployment a few times during the …" />
 <meta name="keywords" content="OpenStack, SUSE">
 
 
   <meta property="og:site_name" content="xahteiwi.eu"/>
   <meta property="og:title" content="Wiping and resetting your SUSE OpenStack Cloud Crowbar configuration"/>
-  <meta property="og:description" content="Note: This article was originally written for SUSE OpenStack Cloud 6, and updated for SUSE OpenStack Cloud 7. It may not apply to later SUSE OpenStack Cloud releases. If you&#39;re using SUSE OpenStack Cloud, you may want to erase and reinstall your cloud deployment a few times during the testing …"/>
+  <meta property="og:description" content="Note: This article was originally written for SUSE OpenStack Cloud 6, and updated for SUSE OpenStack Cloud 7. It may not apply to later SUSE OpenStack Cloud releases. If you’re using SUSE OpenStack Cloud, you may want to erase and reinstall your cloud deployment a few times during the …"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:url" content="../../../resources/hints-and-kinks/wipe-suse-openstack-cloud-config/"/>
   <meta property="og:type" content="article"/>
@@ -144,17 +144,17 @@
     <p><strong>Note: This article was originally written for SUSE OpenStack Cloud
 6, and updated for SUSE OpenStack Cloud 7. It may not apply to later
 SUSE OpenStack Cloud releases.</strong></p>
-<p>If you're using <a href="https://www.suse.com/products/suse-openstack-cloud">SUSE OpenStack
+<p>If you’re using <a href="https://www.suse.com/products/suse-openstack-cloud">SUSE OpenStack
 Cloud</a>, you may
 want to erase and reinstall your cloud deployment a few times during
 the testing or proof-of-concept phase. You may also want to experiment
-with a few permutations of Crowbar network configurations. SUSE's
+with a few permutations of Crowbar network configurations. SUSE’s
 (otherwise excellent) <a href="https://www.suse.com/documentation/suse-openstack-cloud-7/book_cloud_deploy/data/book_cloud_deploy.html">Deployment
 Guide</a>
 suggests that the only way to change your Crowbar settings, after
 <code>install-suse-cloud</code> has been run, <a href="https://www.suse.com/documentation/suse-openstack-cloud-7/book_cloud_deploy/data/sec_depl_adm_inst_crowbar_network.html">is to reinstall your entire admin
 node</a>.
-That isn't really true if you know what you're doing.</p>
+That isn’t really true if you know what you’re doing.</p>
 <p>You may be thinking that you could just use
 <a href="http://snapper.io/"><code>snapper</code></a> to
 <a href="https://www.suse.com/documentation/sles-12/book_sle_admin/data/sec_snapper_auto.html">revert to your last Btrfs snapshot</a>
@@ -200,7 +200,7 @@ pre-<code>install-suse-cloud</code> state:</p>
 </ul>
 <p>Then, you can reconfigure Crowbar (<code>yast2 crowbar</code>), run
 <code>install-suse-cloud</code>, and reboot your OpenStack nodes. They should be
-discovered anew, and you're then able to redeploy your OpenStack
+discovered anew, and you’re then able to redeploy your OpenStack
 barclamps to them.</p>
 <hr/>
 <p>This article originally appeared on the <code>hastexo.com</code> website (now defunct).</p>

@@ -12,7 +12,7 @@ capabilities. Here is how you migrate existing virtual machines
 managed by libvirt from block-based storage to a Ceph based storage
 solution.&lt;/p&gt;
 &lt;h2&gt;Prerequisites&lt;/h2&gt;
-&lt;p&gt;What you'll need in order to successfully manage …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Florian Haas</dc:creator><pubDate>Mon, 22 Oct 2012 15:31:23 +0100</pubDate><guid isPermaLink="false">tag:xahteiwi.eu,2012-10-22:/resources/hints-and-kinks/migrating-virtual-machines-block-based-storage-radosceph/</guid><category>hints-and-kinks</category><category>Ceph</category><category>libvirt</category></item><item><title>Roll Your Own Cloud</title><link>https://xahteiwi.eu/resources/presentations/roll-your-own-cloud/</link><description>&lt;p&gt;Tim Serong and I explore the capabilities of KVM, iSCSI, DRBD and Pacemaker to
+&lt;p&gt;What you’ll need in order to successfully …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Florian Haas</dc:creator><pubDate>Mon, 22 Oct 2012 15:31:23 +0100</pubDate><guid isPermaLink="false">tag:xahteiwi.eu,2012-10-22:/resources/hints-and-kinks/migrating-virtual-machines-block-based-storage-radosceph/</guid><category>hints-and-kinks</category><category>Ceph</category><category>libvirt</category></item><item><title>Roll Your Own Cloud</title><link>https://xahteiwi.eu/resources/presentations/roll-your-own-cloud/</link><description>&lt;p&gt;Tim Serong and I explore the capabilities of KVM, iSCSI, DRBD and Pacemaker to
 create a fully open-source enterprise cloud.&lt;/p&gt;
 &lt;p&gt;Shot at linux.conf.au 2011 in Brisbane, this is me babbling, and Tim
 live-cartooning to the delight of the audience.&lt;/p&gt;

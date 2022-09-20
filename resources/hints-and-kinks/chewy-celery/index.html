@@ -171,7 +171,7 @@ codepath. Instead, you can have something like this:</p>
    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
       <span class="c1"># ... lots of interesting things</span>
 </code></pre></div>
-<p>... and then from your view (or management command, or whatever), you
+<p>… and then from your view (or management command, or whatever), you
 can invoke this like so:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">.tasks</span> <span class="kn">import</span> <span class="n">ComplexOperation</span>
 
@@ -269,7 +269,7 @@ OperationalError: (2006, 'MySQL server has gone away')
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">connection</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
-<p>... and then, when I run anything else that requires a database query,
+<p>… and then, when I run anything else that requires a database query,
 Django will happily reconnect for me.</p>
 <div class="highlight"><pre><span></span><code>&gt;&gt;&gt; me.refresh_from_db()
 </code></pre></div>

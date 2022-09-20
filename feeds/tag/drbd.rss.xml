@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>xahteiwi.eu - DRBD</title><link>https://xahteiwi.eu/</link><description></description><lastBuildDate>Tue, 20 Mar 2012 11:01:00 +0000</lastBuildDate><item><title>On my (ex-)maintainership of the DRBD User's Guide</title><link>https://xahteiwi.eu/blog/2012/03/20/on-my-ex-maintainership-of-the-drbd-users-guide/</link><description>&lt;p&gt;Here's a quick summary of my past and current relationship with the DRBD
-User's Guide.&lt;/p&gt;
-&lt;p&gt;As you probably know, I created the original &lt;a href="http://drbd.linbit.com/users-guide/"&gt;DRBD User's
+<rss version="2.0"><channel><title>xahteiwi.eu - DRBD</title><link>https://xahteiwi.eu/</link><description></description><lastBuildDate>Tue, 20 Mar 2012 11:01:00 +0000</lastBuildDate><item><title>On my (ex-)maintainership of the DRBD User's Guide</title><link>https://xahteiwi.eu/blog/2012/03/20/on-my-ex-maintainership-of-the-drbd-users-guide/</link><description>&lt;p&gt;Here’s a quick summary of my past and current relationship with the DRBD
+User’s Guide.&lt;/p&gt;
+&lt;p&gt;As you probably know, I created the original &lt;a href="http://drbd.linbit.com/users-guide/"&gt;DRBD User’s
 Guide&lt;/a&gt; several years back, and I
 maintained it throughout my time at Linbit. &lt;a href="https://fghaas.wordpress.com/2011/09/05/on-to-new-endeavors/"&gt;When I left last
 year&lt;/a&gt;, it
-was originally mutually understood (or so …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">florian</dc:creator><pubDate>Tue, 20 Mar 2012 11:01:00 +0000</pubDate><guid isPermaLink="false">tag:xahteiwi.eu,2012-03-20:/blog/2012/03/20/on-my-ex-maintainership-of-the-drbd-users-guide/</guid><category>blog</category><category>DRBD</category></item><item><title>Storage Replication in High-Performance High-Availability Environments</title><link>https://xahteiwi.eu/resources/presentations/storage-replication-high-performance-high-availability-environments/</link><description>&lt;p&gt;At linux.conf.au 2012, Florian I this presentation on the integration
+was originally mutually …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">florian</dc:creator><pubDate>Tue, 20 Mar 2012 11:01:00 +0000</pubDate><guid isPermaLink="false">tag:xahteiwi.eu,2012-03-20:/blog/2012/03/20/on-my-ex-maintainership-of-the-drbd-users-guide/</guid><category>blog</category><category>DRBD</category></item><item><title>Storage Replication in High-Performance High-Availability Environments</title><link>https://xahteiwi.eu/resources/presentations/storage-replication-high-performance-high-availability-environments/</link><description>&lt;p&gt;At linux.conf.au 2012, Florian I this presentation on the integration
 of &lt;a href="https://www.hastexo.com/drbd"&gt;DRBD&lt;/a&gt;, Flashcache and
 &lt;a href="https://www.hastexo.com/knowledge/high-availability/pacemaker"&gt;Pacemaker&lt;/a&gt;
 in the High Availability and Distributed Storage miniconf.&lt;/p&gt;

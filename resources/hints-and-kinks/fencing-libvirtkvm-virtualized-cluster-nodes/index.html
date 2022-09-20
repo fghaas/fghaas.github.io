@@ -43,13 +43,13 @@
  
 
 <meta name="author" content="Florian Haas" />
-<meta name="description" content="Often, people deploy the Pacemaker stack in virtual environments for purposes of testing and evaluation. In such environments, it&#39;s easy to test Pacemaker&#39;s fencing capabilities by tying in with the hypervisor. This quick howto illustrates how to configure fencing for two virtual cluster nodes hosted on a libvirt/KVM hypervisor …" />
+<meta name="description" content="Often, people deploy the Pacemaker stack in virtual environments for purposes of testing and evaluation. In such environments, it’s easy to test Pacemaker’s fencing capabilities by tying in with the hypervisor. This quick howto illustrates how to configure fencing for two virtual cluster nodes hosted on a libvirt …" />
 <meta name="keywords" content="Pacemaker">
 
 
   <meta property="og:site_name" content="xahteiwi.eu"/>
   <meta property="og:title" content="Fencing in Libvirt/KVM virtualized cluster nodes"/>
-  <meta property="og:description" content="Often, people deploy the Pacemaker stack in virtual environments for purposes of testing and evaluation. In such environments, it&#39;s easy to test Pacemaker&#39;s fencing capabilities by tying in with the hypervisor. This quick howto illustrates how to configure fencing for two virtual cluster nodes hosted on a libvirt/KVM hypervisor …"/>
+  <meta property="og:description" content="Often, people deploy the Pacemaker stack in virtual environments for purposes of testing and evaluation. In such environments, it’s easy to test Pacemaker’s fencing capabilities by tying in with the hypervisor. This quick howto illustrates how to configure fencing for two virtual cluster nodes hosted on a libvirt …"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:url" content="../../../resources/hints-and-kinks/fencing-libvirtkvm-virtualized-cluster-nodes/"/>
   <meta property="og:type" content="article"/>
@@ -141,8 +141,8 @@
 
   <div>
     <p>Often, people deploy the Pacemaker stack in virtual environments for
-purposes of testing and evaluation. In such environments, it's easy to
-test Pacemaker's fencing capabilities by tying in with the hypervisor.</p>
+purposes of testing and evaluation. In such environments, it’s easy to
+test Pacemaker’s fencing capabilities by tying in with the hypervisor.</p>
 <p>This quick howto illustrates how to configure fencing for two virtual
 cluster nodes hosted on a libvirt/KVM hypervisor host.</p>
 <h2>libvirt configuration (hypervisor)</h2>
@@ -153,7 +153,7 @@ unencrypted TCP port. Needless to say, for production use you should
 only use TLS, but for testing and evaluation – and for that purpose
 only – TCP is fine.</p>
 <p>In order for your hypervisor to listen on an unauthenticated,
-insecure, unencrypted network socket (did we mention that's unsuitable
+insecure, unencrypted network socket (did we mention that’s unsuitable
 for production?), add the following lines to your libvirtd
 configuration file:</p>
 <div class="highlight"><pre><span></span><code><span class="na">listen_tls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0</span><span class="w"></span>
@@ -163,27 +163,27 @@ configuration file:</p>
 </code></pre></div>
 <p>You can also set the <code>listen_addr</code> parameter, for example to have
 libvirtd listen only on the network that your virtual machines run
-in. If you don't set listen_addr, libvirtd will simply listen on the
+in. If you don’t set listen_addr, libvirtd will simply listen on the
 wildcard address.</p>
-<p>You'll also have to add the <code>-l</code> or <code>--listen</code> flag to your libvirtd
+<p>You’ll also have to add the <code>-l</code> or <code>--listen</code> flag to your libvirtd
 invocation. On Debian/Ubuntu platforms, you can do so by editing the
 <code>/etc/default/libvirt-bin</code> configuration file.</p>
-<p>Once you've done that, you can use <code>netstat -ltp</code> to check whether
+<p>Once you’ve done that, you can use <code>netstat -ltp</code> to check whether
 libvirtd is in fact listening on its configured port, 16509/tcp. Also,
-make sure that you don't have a firewall blocking that port.</p>
+make sure that you don’t have a firewall blocking that port.</p>
 <h2>libvirt configuration (virtual machines)</h2>
-<p>Inside your virtual machines, you'll also have to install the libvirt
+<p>Inside your virtual machines, you’ll also have to install the libvirt
 client binaries – the fencing mechanism uses the virsh utility under
 the covers. Some platforms provide a <code>libvirt-client</code> package for that
-purpose; for other's, you'll simply have to install the full <code>libvirt</code>
+purpose; for other’s, you’ll simply have to install the full <code>libvirt</code>
 package.</p>
 <p>Once that is set up, you should be able to run this command from
 inside your virtual machines:</p>
 <div class="highlight"><pre><span></span><code>virsh --connect<span class="o">=</span>qemu+tcp://&lt;IP of your hypervisor&gt;/system <span class="se">\</span>
   list --all
 </code></pre></div>
-<p>... and that command should list all the domains running on that host,
-including the one you're connecting from.</p>
+<p>… and that command should list all the domains running on that host,
+including the one you’re connecting from.</p>
 <h2>Pacemaker configuration</h2>
 <p>In one of your virtual machines, you can now set up your fencing
 configuration.</p>

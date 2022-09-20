@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Performance</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/performance.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2013-01-13T20:33:58+01:00</updated><entry><title>Solid-state drives and Ceph OSD journals</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/solid-state-drives-and-ceph-osd-journals/" rel="alternate"></link><published>2013-01-13T20:33:58+01:00</published><updated>2013-01-13T20:33:58+01:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2013-01-13:/resources/hints-and-kinks/solid-state-drives-and-ceph-osd-journals/</id><summary type="html">&lt;p&gt;Considerations for running Ceph OSD journals on SSDs.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Object Storage Daemons
 (&lt;a href="http://ceph.com/docs/master/man/8/ceph-osd/"&gt;OSDs&lt;/a&gt;) are the Ceph
-stack's workhorses for data storage. They're significantly smarter
+stack’s workhorses for data storage. They’re significantly smarter
 than many of their counterparts in distributed block-storage solutions
 (open source or not), and their design is instrumental in securing the
-stack's reliability and scalability.&lt;/p&gt;
+stack’s reliability and scalability.&lt;/p&gt;
 &lt;p&gt;Among other things, OSDs are responsible for the decentralized
 replication — which is highly configurable — of objects in the
 store. They do so in a primary-copy fashion: every Ceph object (more
@@ -15,7 +15,7 @@ a new or updated object guarantees its availability (in the way
 configured by the cluster administrator) before an application is
 notified that the write has completed.&lt;/p&gt;
 &lt;p&gt;More specifically, in order for an OSD to acknowledge a write as
-completed, the new object must have been written to the OSD's
+completed, the new object must have been written to the OSD’s
 journal. OSDs use a write-ahead mode for local operations: a write
 hits the journal first, and from there is then being copied into the
 backing filestore. (Note: if your filestore is using btrfs, the
@@ -34,7 +34,7 @@ that are both fast and cost-effective:&lt;/p&gt;
 &lt;p&gt;Another common design principle is that you create one OSD per
 spinning disk that you have in the system. Many contemporary systems
 come with only two SSD slots, and then as many spinners as you
-want. That is not a problem for journal capacity — a single OSD's
+want. That is not a problem for journal capacity — a single OSD’s
 journal is usually no larger than about 6 GB, so even for a 16-spinner
 system (approx. 96GB journal space) appropriate SSDs are available at
 reasonable expense.&lt;/p&gt;
@@ -48,7 +48,7 @@ non-RAIDed Ceph OSD journals.&lt;/p&gt;
 10-or-so OSDs (the exact number is hard to give). Now you have your OS
 and several OSD journals on the same physical SSD. SSDs are much
 faster than spinners, but they have neither infinite throughput nor
-zero latency. Eventually, you might hit your SSD's physical limits for
+zero latency. Eventually, you might hit your SSD’s physical limits for
 random I/O all over the place. For example, if one of your hosts dies
 and the rest now reshuffles data to restore the desired level of
 redundancy, you may see relatively intensive I/O all over the other
@@ -58,20 +58,20 @@ which host many OSD disks.&lt;/p&gt;
 first. Specifically, Ceph OSDs currently cannot recover from a broken
 SSD journal without reinitializing and recovering the entire
 filestore. This means that as soon as SSD acting as journal backing
-storage burns up, you've effectively lost those OSDs completely and
+storage burns up, you’ve effectively lost those OSDs completely and
 need to recover them from scratch.&lt;sup id="fnref:mkjournal"&gt;&lt;a class="footnote-ref" href="#fn:mkjournal"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;p&gt;Put them in a RAID-1, problem solved?  Well, not quite, because you've
-now duplicated all of your journal writes and you're hitting two SSDs
-all over the place. Thus it's generally a much better idea to put half
+&lt;p&gt;Put them in a RAID-1, problem solved?  Well, not quite, because you’ve
+now duplicated all of your journal writes and you’re hitting two SSDs
+all over the place. Thus it’s generally a much better idea to put half
 of your journals on one SSD, and half on the other. If one of your
-SSDs burns up you'll still lose the OSDs whose journals it hosts — but
-it'll only be half of the OSDs hosted on that node altogether.&lt;/p&gt;
+SSDs burns up you’ll still lose the OSDs whose journals it hosts — but
+it’ll only be half of the OSDs hosted on that node altogether.&lt;/p&gt;
 &lt;p&gt;Any such performance issues get worse if some of your OSDs are also
 MONs: your OSD journals now compete with your operating system and
 your MONs for I/O on the same SSDs. Once your SSDs get hit so hard
-that your MONs can't do I/O, those MONs eventually die. This might not
+that your MONs can’t do I/O, those MONs eventually die. This might not
 harm your operations if you have sufficient backup MONs available, and
-everything will be fine again once your recovery is complete, but it's
+everything will be fine again once your recovery is complete, but it’s
 still a nuisance. This is remarkably common specifically in POCs, by
 the way, where people often try to repurpose three of their old,
 two-SSDs-plus-dozens-of-disks storage servers for a 3-node Ceph
@@ -110,7 +110,7 @@ note of the following general guidelines:&lt;/p&gt;
 &lt;p&gt;Since this article was originally published, a &lt;code&gt;--mkjournal&lt;/code&gt;
 option was added to the &lt;code&gt;ceph-osd&lt;/code&gt; command, allowing you to
 recreate a journal for an existing OSD. This mitigates the issue
-in that you don't need to recreate OSDs from scratch when a
+in that you don’t need to recreate OSDs from scratch when a
 journal device breaks — but the OSDs will still be &lt;strong&gt;temporarily&lt;/strong&gt;
 unavailable. &lt;a class="footnote-backref" href="#fnref:mkjournal" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;

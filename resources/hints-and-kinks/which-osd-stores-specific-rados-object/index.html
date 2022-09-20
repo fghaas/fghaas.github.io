@@ -43,13 +43,13 @@
  
 
 <meta name="author" content="Florian Haas" />
-<meta name="description" content="Ever wanted to know just which of your OSDs a RADOS object is currently stored in? Here&#39;s how. Suppose you&#39;ve got an RBD device, named test. Then you can use the rbd info command to display which name prefix is used by the RADOS objects that make up the RBD …" />
+<meta name="description" content="Ever wanted to know just which of your OSDs a RADOS object is currently stored in? Here’s how. Suppose you’ve got an RBD device, named test. Then you can use the rbd info command to display which name prefix is used by the RADOS objects that make up …" />
 <meta name="keywords" content="Ceph">
 
 
   <meta property="og:site_name" content="xahteiwi.eu"/>
   <meta property="og:title" content="Finding out which OSDs currently store a specific RADOS object"/>
-  <meta property="og:description" content="Ever wanted to know just which of your OSDs a RADOS object is currently stored in? Here&#39;s how. Suppose you&#39;ve got an RBD device, named test. Then you can use the rbd info command to display which name prefix is used by the RADOS objects that make up the RBD …"/>
+  <meta property="og:description" content="Ever wanted to know just which of your OSDs a RADOS object is currently stored in? Here’s how. Suppose you’ve got an RBD device, named test. Then you can use the rbd info command to display which name prefix is used by the RADOS objects that make up …"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:url" content="../../../resources/hints-and-kinks/which-osd-stores-specific-rados-object/"/>
   <meta property="og:type" content="article"/>
@@ -141,8 +141,8 @@
 
   <div>
     <p>Ever wanted to know just which of your OSDs a RADOS object is
-currently stored in? Here's how.</p>
-<p>Suppose you've got an RBD device, named <code>test</code>. Then you can use the
+currently stored in? Here’s how.</p>
+<p>Suppose you’ve got an RBD device, named <code>test</code>. Then you can use the
 <code>rbd info</code> command to display which name prefix is used by the RADOS
 objects that make up the RBD:</p>
 <div class="highlight"><pre><span></span><code>ceph04:~ # rbd info test
@@ -152,8 +152,8 @@ rbd image 'test':
     block_name_prefix: rb.0.0
     parent:  (pool -1)
 </code></pre></div>
-<p>In this example, the prefix we're looking for is <code>rb.0.0</code>.</p>
-<p>What's the RBD currently made of?</p>
+<p>In this example, the prefix we’re looking for is <code>rb.0.0</code>.</p>
+<p>What’s the RBD currently made of?</p>
 <div class="highlight"><pre><span></span><code>ceph04:~ # rados -p rbd ls | grep "^rb.0.0."
 rb.0.0.000000000000
 rb.0.0.000000000020
@@ -179,7 +179,7 @@ rb.0.0.0000000000e0
 rb.0.0.0000000000e7
 rb.0.0.0000000000ff
 </code></pre></div>
-<p>Now suppose you're interested in where <code>rb.0.0.0000000000a5</code> is.</p>
+<p>Now suppose you’re interested in where <code>rb.0.0.0000000000a5</code> is.</p>
 <p>You first grab an OSD map:</p>
 <div class="highlight"><pre><span></span><code><span class="n">ceph04</span><span class="p">:</span><span class="o">~</span><span class="w"> </span><span class="c1"># ceph osd getmap -o /tmp/osdmap</span><span class="w"></span>
 <span class="mi">2012</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">09</span><span class="w"> </span><span class="mi">21</span><span class="p">:</span><span class="mi">31</span><span class="p">:</span><span class="mf">47.055376</span><span class="w"> </span><span class="n">mon</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="p">[</span><span class="n">osd</span><span class="p">,</span><span class="n">getmap</span><span class="p">]</span><span class="w"></span>
@@ -192,9 +192,9 @@ mapfile:</p>
 <span class="n">osdmaptool</span><span class="p">:</span><span class="w"> </span><span class="n">osdmap</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="s1">'/tmp/osdmap'</span><span class="w"></span>
 <span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="s1">'rb.0.0.0000000000a5'</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="mf">0.7</span><span class="n">ea1</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="w"></span>
 </code></pre></div>
-<p>... meaning the object lives in Placement Group <code>0.7ea1</code>, of which
+<p>… meaning the object lives in Placement Group <code>0.7ea1</code>, of which
 replicas currently exist in OSDs 2 and 0.</p>
-<p>Why do you want to know this? Normally, really, you don't. All the
+<p>Why do you want to know this? Normally, really, you don’t. All the
 replication and distribution happens under the covers without your
 intervention. But you can use this rather neatly if you want to watch
 your data being redistributed as you take out OSDs temporarily, and

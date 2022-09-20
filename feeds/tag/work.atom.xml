@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Work</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/work.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-07-16T00:00:00+00:00</updated><entry><title>Something interesting happened at work the other week...</title><link href="https://xahteiwi.eu/blog/2022/07/16/something-interesting/" rel="alternate"></link><published>2022-07-16T00:00:00+00:00</published><updated>2022-07-16T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-07-16:/blog/2022/07/16/something-interesting/</id><summary type="html">&lt;p&gt;My company's CEO recently put out a well-written email update instead of calling an all-hands meeting. It was excellent.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I am sure that many of you have been summoned to your fair share of
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Work</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/work.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-07-16T00:00:00+00:00</updated><entry><title>Something interesting happened at work the other week...</title><link href="https://xahteiwi.eu/blog/2022/07/16/something-interesting/" rel="alternate"></link><published>2022-07-16T00:00:00+00:00</published><updated>2022-07-16T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-07-16:/blog/2022/07/16/something-interesting/</id><summary type="html">&lt;p&gt;My company&amp;rsquo;s CEO recently put out a well-written email update instead of calling an all-hands meeting. It was excellent.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I am sure that many of you have been summoned to your fair share of
 quarterly, end-of-half-year, or end-of-year updates which were held by
-way of a company meeting. You probably didn't like them too much,
+way of a company meeting. You probably didn’t like them too much,
 maybe even dreaded the thought of 45 minutes (or longer! 😱) of Death
-By PowerPoint. But perhaps you didn't mind turning up because hey, at
+By PowerPoint. But perhaps you didn’t mind turning up because hey, at
 least it was free coffee and donuts.&lt;/p&gt;
 &lt;p&gt;When the pandemic rolled around, many organizations turned that
 quarterly all-hands summons into a quarterly all-hands &lt;em&gt;virtual&lt;/em&gt;
 summons, in the shape of a video call. Now you had to supply your own
-self-funded donuts, and probably didn't like the idea of staring into
+self-funded donuts, and probably didn’t like the idea of staring into
 a camera for 45 minutes straight (or longer! 😖🔨). Worse still, I
 hear that some of you might be have been subjected to virtual
 &lt;em&gt;pre-recorded&lt;/em&gt; events, where you could watch an executive pontificate
@@ -22,12 +22,12 @@ leave, he sat down and wrote an email. As in, he actually &lt;em&gt;sat down&lt;
 and wrote an email. It had structure, it had a format, it had clear
 messaging, it was to the point.&lt;/p&gt;
 &lt;h2&gt;What was in the message?&lt;/h2&gt;
-&lt;p&gt;I'm obviously not going to go into the detailed content of the
-email, but here's what stood out:&lt;/p&gt;
+&lt;p&gt;I’m obviously not going to go into the detailed content of the
+email, but here’s what stood out:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;The message started with an intro that clearly settled the reader's
-  expectations: this is what I'm writing about; this is what you'll be
+&lt;p&gt;The message started with an intro that clearly settled the reader’s
+  expectations: this is what I’m writing about; this is what you’ll be
   reading.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -47,7 +47,7 @@ email, but here's what stood out:&lt;/p&gt;
   omniscient narrator.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;It was very evident that Jim hadn't just bashed out the message and
+&lt;p&gt;It was very evident that Jim hadn’t just bashed out the message and
   sent it off in a hurry, but that some careful re-reading and editing
   went into it. I have no idea if he did this by himself or asked
   someone else to go over it with him, but &lt;em&gt;that does not matter:&lt;/em&gt;
@@ -58,7 +58,7 @@ email, but here's what stood out:&lt;/p&gt;
 &lt;h2&gt;What else is good about this?&lt;/h2&gt;
 &lt;p&gt;Best of all, the whole thing was a remarkable exercise in
 efficiency. Jim put his thoughts into &lt;em&gt;precisely&lt;/em&gt; 1,500
-words.&lt;sup id="fnref:precision"&gt;&lt;a class="footnote-ref" href="#fn:precision"&gt;3&lt;/a&gt;&lt;/sup&gt; As I've &lt;a href="https://xahteiwi.eu/blog/2021/10/27/this-meeting-should-have-been-an-email/"&gt;pointed out
+words.&lt;sup id="fnref:precision"&gt;&lt;a class="footnote-ref" href="#fn:precision"&gt;3&lt;/a&gt;&lt;/sup&gt; As I’ve &lt;a href="https://xahteiwi.eu/blog/2021/10/27/this-meeting-should-have-been-an-email/"&gt;pointed out
 elsewhere&lt;/a&gt;,
 information you can express in 1,500 concisely written words is at the
 top end of what you can convey in a 60-minute verbal meeting — but
@@ -82,7 +82,7 @@ when put in writing, it takes a fluent English speaker only about
   of the company.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Makes sense, doesn't it?&lt;/h2&gt;
+&lt;h2&gt;Makes sense, doesn’t it?&lt;/h2&gt;
 &lt;p&gt;Yes it eminently does. So, next time you consider summoning your whole
 company to an all-hands meeting or video call, try to be a little more
 like Jim.&lt;/p&gt;
@@ -93,7 +93,7 @@ like Jim.&lt;/p&gt;
 &lt;p&gt;This is an excellent move on two counts: first,
 readers naturally perceive what comes last as being emphasised. By
 getting the negatives out of the way first, the positives stick in
-people's minds more strongly. Second, it establishes that once you
+people’s minds more strongly. Second, it establishes that once you
 get to the positives, there is no further downer coming to
 sucker-punch you. &lt;a class="footnote-backref" href="#fnref:negatives-first" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
@@ -262,7 +262,7 @@ to this idea. &lt;a class="footnote-backref" href="#fnref:hadfield" title="Jump
 &lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>The Review Review</title><link href="https://xahteiwi.eu/./blog/2022/01/29/review-review/" rel="alternate"></link><published>2022-01-29T00:00:00+00:00</published><updated>2022-01-29T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-01-29:/./blog/2022/01/29/review-review/</id><summary type="html">&lt;p&gt;Musings on source code management, code review, testing, deployment, and collaboration culture.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I wanted to share a few thoughts on something I consider a rather
 important topic in our industry: code review and CI/CD tools, and how
 they relate.&lt;/p&gt;
-&lt;p&gt;This means that I'm talking about&lt;/p&gt;
+&lt;p&gt;This means that I’m talking about&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;source code management:&lt;/strong&gt; where we store our code, and how we
   manage access to it;&lt;/li&gt;
@@ -282,7 +282,7 @@ encompassed in these things.&lt;/p&gt;
 &lt;p&gt;First, whatever tools we use in order to accomplish these four things,
 they simultaneously influence and &lt;em&gt;are&lt;/em&gt; influenced by our
 collaboration culture.&lt;/p&gt;
-&lt;p&gt;It's ludicrous to presume that tools and culture are independent of
+&lt;p&gt;It’s ludicrous to presume that tools and culture are independent of
 each other, or to categorically declare that tools must be made to fit
 processes, not the other way around. That’s not how people
 work. Culture and tools always have an influence on each other.&lt;/p&gt;
@@ -596,7 +596,7 @@ but you do have to either push to upstream public registries, or build
 your own. Zuul does not come bundled with multitenant private
 registries the way GitHub and GitLab do.&lt;/p&gt;
 &lt;h3&gt;Administrative complexity&lt;/h3&gt;
-&lt;p&gt;In view of the above, there's another thing that you might want to
+&lt;p&gt;In view of the above, there’s another thing that you might want to
 consider, which in my humble opinion is an important reason why the
 Gerrit/Zuul combination has less uptake than it deserves on its
 technical merits. And this may sound overly dramatic, but: people like
@@ -752,7 +752,7 @@ simply need to add another power of $x$.&lt;/p&gt;
 single person: the CEO.&lt;/p&gt;
 &lt;p&gt;So we can express the number of people in an organization with a width
 of $x$ and a depth of $y$ as
-$$x^0 + x^1 + x^2 + ... + x^y$$&lt;/p&gt;
+$$x^0 + x^1 + x^2 + … + x^y$$&lt;/p&gt;
 &lt;p&gt;or, more briefly:&lt;sup id="fnref:i"&gt;&lt;a class="footnote-ref" href="#fn:i"&gt;1&lt;/a&gt;&lt;/sup&gt; $$\sum_{i=0}^{y} x^{i}$$&lt;/p&gt;
 &lt;p&gt;And that, in turn, &lt;a href="https://www.wolframalpha.com/input/?i2d=true&amp;amp;i=Sum%5BPower%5Bx%2Cn%5D%2C%7Bn%2C0%2Cy%7D%5D"&gt;happens to work out
 to&lt;/a&gt;&lt;sup id="fnref:indeterminate"&gt;&lt;a class="footnote-ref" href="#fn:indeterminate"&gt;2&lt;/a&gt;&lt;/sup&gt;
@@ -960,7 +960,7 @@ eliminating one hierarchy level, or by two.&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;If we want to reduce depth by 1, we simply go up one row (thus,
   $y=4$) and find the value for $x$ that just accommodates 1,365
-  people or more. Alex sees that that's $x=6$, which can accommodate
+  people or more. Alex sees that that’s $x=6$, which can accommodate
   1,555 people. That is, increase the width by 2: reorganize from
   teams of 5 to teams of 7. Alex could also pick $x=5$, that is
   increase the width by only 1, which would land the company at a
@@ -1173,7 +1173,7 @@ generated.&lt;/p&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;What's handy here is that Alex can look at any one table cell, and the
+&lt;p&gt;What’s handy here is that Alex can look at any one table cell, and the
 cell &lt;em&gt;directly above it&lt;/em&gt; will contain the total number of managers
 (that is, people who have direct reports) for the same width. So,&lt;/p&gt;
 &lt;ul&gt;
@@ -1185,27 +1185,27 @@ cell &lt;em&gt;directly above it&lt;/em&gt; will contain the total number of man
 &lt;li&gt;
 &lt;p&gt;for $x=6$, $y=4$ (the scenario that eliminates one level, and can
   accommodate 1,555 people), Alex’ company will need 259
-  managers. That's 82 fewer managers, or a reduction by about 24%.&lt;/p&gt;
+  managers. That’s 82 fewer managers, or a reduction by about 24%.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;for $x=5$, $y=4$ (the scenario that eliminates one level, but
   accommodates only 781 people), Alex’ company will need 156
-  managers. That's 185 fewer managers, or a reduction by about 54%.&lt;/p&gt;
+  managers. That’s 185 fewer managers, or a reduction by about 54%.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;for $x=11$, $y=3$ (the scenario that eliminates two levels, and can
   accommodate 1,464 people), the company will need 133
-  managers. That's 208 fewer managers, or a reduction by about 61%.&lt;/p&gt;
+  managers. That’s 208 fewer managers, or a reduction by about 61%.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;for $x=10$, $y=3$ (the scenario that eliminates two levels, but
   accommodates only 1,111 people), the company will need 111
-  managers. That's 230 fewer managers, or a reduction by about 67%.&lt;/p&gt;
+  managers. That’s 230 fewer managers, or a reduction by about 67%.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;for $x=9$, $y=3$ (the scenario that eliminates two levels, but
   accommodates only 820 people), the company will need 91
-  managers. That's 250 fewer managers, or a reduction by about 73%.&lt;/p&gt;
+  managers. That’s 250 fewer managers, or a reduction by about 73%.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;A gentle bit of maths, part III: how much of our company will be managers?&lt;/h2&gt;
@@ -1436,12 +1436,12 @@ expression as $y$ goes to infinity:
 $$\lim_{y \to \infty} {{x^y-1} \over {x^{y+1}-1}} = {1 \over x}$$ &lt;a class="footnote-backref" href="#fnref:reciprocal" title="Jump back to footnote 5 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Voice messages</title><link href="https://xahteiwi.eu/blog/2021/12/05/voice-messages/" rel="alternate"></link><published>2021-12-05T00:00:00+00:00</published><updated>2021-12-05T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-12-05:/blog/2021/12/05/voice-messages/</id><summary type="html">&lt;p&gt;Apparently, some people think you should replace professional textual communications with voice messaging. Here’s why I think that that’s a bad idea.&lt;/p&gt;</summary><content type="html">&lt;p&gt;As of late, I've noticed that when people share one of my articles on
+&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Voice messages</title><link href="https://xahteiwi.eu/blog/2021/12/05/voice-messages/" rel="alternate"></link><published>2021-12-05T00:00:00+00:00</published><updated>2021-12-05T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-12-05:/blog/2021/12/05/voice-messages/</id><summary type="html">&lt;p&gt;Apparently, some people think you should replace professional textual communications with voice messaging. Here’s why I think that that’s a bad idea.&lt;/p&gt;</summary><content type="html">&lt;p&gt;As of late, I’ve noticed that when people share one of my articles on
 asynchronous communications on Twitter (particularly any from the
 &lt;a href="https://xahteiwi.eu/blog/2021/09/30/getting-out-of-meeting-hell/"&gt;Getting out of Meeting
 Hell&lt;/a&gt; series, or the one on
 &lt;a href="https://xahteiwi.eu/blog/2021/10/27/this-meeting-should-have-been-an-email/"&gt;meetings that should have been an
-email&lt;/a&gt;), there's
+email&lt;/a&gt;), there’s
 a reply from a brand account that likes to plug/advertise their
 service. That service recommends that synchronous meetings be replaced
 by “asynchronous meetings” based on voice messages.&lt;/p&gt;
@@ -1768,7 +1768,7 @@ some time, because it takes a little while for new ideas to pop into
 our head. And so, Cleese observes:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;The greatest killer of creativity is interruption. It pulls your
-mind away from what you want to be thinking about. [...] It might be
+mind away from what you want to be thinking about. […] It might be
 an interruption from outside, like someone coming over and talking
 to you, or an email popping up in your inbox. Or it may come from
 inside, as when you suddenly remember something you’ve forgotten to
@@ -1874,7 +1874,7 @@ metrics, measurements, and quantifiers. I understand that this is
 frequently done and advocated for in the spirit of making management
 more objective, less arbitrary, more scientific, and perhaps
 fairer. But since they say that the road to hell is often paved with
-good intentions, here's a quick summary of what we know about about
+good intentions, here’s a quick summary of what we know about about
 the undesirable side effects of such an approach.&lt;/p&gt;
 &lt;h2&gt;Goodhart’s Law&lt;/h2&gt;
 &lt;p&gt;British economist &lt;a href="https://en.wikipedia.org/wiki/Charles_Goodhart"&gt;Charles
@@ -1886,7 +1886,7 @@ pressure is placed upon it for control purposes.&lt;/p&gt;
 &lt;p&gt;— Charles Goodhart, “Problems of Monetary Management: the
 U.K. Experience” (1975)&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;That's a mouthful of somewhat niche technical jargon, but let me try
+&lt;p&gt;That’s a mouthful of somewhat niche technical jargon, but let me try
 to paraphrase it like this:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;You collect some data.&lt;/li&gt;
@@ -1900,13 +1900,13 @@ to paraphrase it like this:&lt;/p&gt;
   falling, or above or below a particular threshold.&lt;/li&gt;
 &lt;li&gt;That value now is no longer a useful statistical indicator.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;What you &lt;em&gt;probably&lt;/em&gt; knew as &lt;em&gt;Goodhart's Law&lt;/em&gt; if you'd heard about it
+&lt;p&gt;What you &lt;em&gt;probably&lt;/em&gt; knew as &lt;em&gt;Goodhart’s Law&lt;/em&gt; if you’d heard about it
 prior to reading this article is a generalization by anthropologist
 &lt;a href="https://en.wikipedia.org/wiki/Marilyn_Strathern"&gt;Marilyn Strathern&lt;/a&gt;,
 also from the UK:&lt;sup id="fnref:why-goodhart"&gt;&lt;a class="footnote-ref" href="#fn:why-goodhart"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;When a measure becomes a target, it ceases to be a good measure.&lt;/p&gt;
-&lt;p&gt;— Marilyn Strathern, “&lt;a href="https://archive.org/details/ImprovingRatingsAuditInTheBritishUniversitySystem"&gt;'Improving ratings': audit in the British
+&lt;p&gt;— Marilyn Strathern, “&lt;a href="https://archive.org/details/ImprovingRatingsAuditInTheBritishUniversitySystem"&gt;‘Improving ratings’: audit in the British
 University
 system&lt;/a&gt;”
 (1997)&lt;/p&gt;
@@ -1940,7 +1940,7 @@ identifies based on such statistics, but when it “publishes” the
 patient mortality data. (I use quotes here because this does not
 necessarily mean sharing it with the general public, but perhaps
 sharing it with all of the surgical staff.) At that stage, an
-individual surgeon's &lt;em&gt;rank&lt;/em&gt; in the statistics will become at least a
+individual surgeon’s &lt;em&gt;rank&lt;/em&gt; in the statistics will become at least a
 matter of pride, status, and prestige, even if it’s not otherwise
 rewarded in any way, nor seen as a precondition for continued
 employment.&lt;/p&gt;
@@ -1957,7 +1957,7 @@ cancer patient and such an event would be bad for Dr. Gamow’s ranking,
 then Dr. Gamow might have an incentive to declare that patient
 inoperable — and as a result the patient would &lt;em&gt;certainly&lt;/em&gt; die, just
 not in surgery.&lt;sup id="fnref:tyranny"&gt;&lt;a class="footnote-ref" href="#fn:tyranny"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;h2&gt;Campbell's Law&lt;/h2&gt;
+&lt;h2&gt;Campbell’s Law&lt;/h2&gt;
 &lt;p&gt;Although less well known than Goodhart’s law, Campbell’s law is
 closely related and, in my humble opinion, just as important.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Donald_T._Campbell"&gt;Donald
@@ -1969,7 +1969,7 @@ standardized testing in education:&lt;/p&gt;
 decision-making, the more subject it will be to corruption pressures
 and the more apt it will be to distort and corrupt the social
 processes it is intended to monitor.&lt;/p&gt;
-&lt;p&gt;[...]&lt;/p&gt;
+&lt;p&gt;[…]&lt;/p&gt;
 &lt;p&gt;Achievement tests may well be valuable indicators of general school
 achievement under conditions of normal teaching aimed at general
 competence. But when test scores become the goal of the teaching
@@ -2177,7 +2177,7 @@ opposite&lt;/em&gt; of the popular version of the quote. It’s so wrong that it
 comes close to the corruption of the
 &lt;a href="https://en.wikipedia.org/wiki/Seneca_the_Younger"&gt;Seneca&lt;/a&gt; lament, “non
 vitæ sed scholæ discimus”, “we learn not for life but for school,” of
-which you surely learned the inverse... in school.&lt;/p&gt;
+which you surely learned the inverse… in school.&lt;/p&gt;
 &lt;p&gt;Metrics-obsessed managers often take the misquote for gospel. So much
 so that they frequently see issues where a qualitative approach is
 obviously necessary, and they still try to apply quantification. &lt;/p&gt;
@@ -2413,12 +2413,12 @@ mailing list posts without replies, Bryan wrote:&lt;/p&gt;
 &lt;p&gt;The problem with no response is that there are five possible
 interpretations:&lt;/p&gt;
 &lt;p&gt;1) The post is correct, well-written information that needs no
-follow-up commentary.  There's nothing more to say except "Yeah,
-what he said."&lt;/p&gt;
+follow-up commentary.  There’s nothing more to say except “Yeah,
+what he said.”&lt;/p&gt;
 &lt;p&gt;2) The post is complete and utter nonsense, and no one wants to
 waste the energy or bandwidth to even point this out.&lt;/p&gt;
 &lt;p&gt;3) No one read the post, for whatever reason.&lt;/p&gt;
-&lt;p&gt;4) No one understood the post, but won't ask for clarification, for
+&lt;p&gt;4) No one understood the post, but won’t ask for clarification, for
 whatever reason.&lt;/p&gt;
 &lt;p&gt;5) No one cares about the post, for whatever reason.&lt;/p&gt;
 &lt;p&gt;— Bryan Warnock, “&lt;a href="https://www.nntp.perl.org/group/perl.bootstrap/2000/08/msg1127.html"&gt;Re: RFCs: two proposals for
@@ -2899,30 +2899,30 @@ the specific environments this series talks about.&lt;/p&gt;
 &lt;p&gt;This part of this series is for you if you are a chief executive
 officer, a managing director, executive director, or whatever else the
 top-level role in your organization may be. This means that you have
-people who report to you, but you don't report to anyone in the
+people who report to you, but you don’t report to anyone in the
 day-to-day operations of the company — even though you may, of course,
 be answerable to your board of directors or your investors, or some
 oversight body.&lt;/p&gt;
 &lt;p&gt;So, you realize that&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;a lot of your company spends a lot of time in useless meetings,&lt;/li&gt;
-&lt;li&gt;they're often forced to sit through 90 minutes of staring into
+&lt;li&gt;they’re often forced to sit through 90 minutes of staring into
   cameras when they could instead have spent 5 minutes reading an email,&lt;/li&gt;
-&lt;li&gt;people's productivity suffers badly because they are constantly
+&lt;li&gt;people’s productivity suffers badly because they are constantly
   being interrupted.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;And this is badly affecting you, personally, as well. So for the
 benefit of yourself and everyone else in the organization, you want to
 change things toward being less interrupt-driven, less synchronous,
 more productive, and healthier.&lt;/p&gt;
-&lt;p&gt;Now, I've got &lt;em&gt;some&lt;/em&gt; bad news for you.&lt;/p&gt;
+&lt;p&gt;Now, I’ve got &lt;em&gt;some&lt;/em&gt; bad news for you.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;In contrast to your employees at any level, it is much harder for
    you to pull the &lt;em&gt;Leave&lt;/em&gt; option than it is for them.&lt;/li&gt;
 &lt;li&gt;In contrast to most of your mid-level managers, no matter how hard
    you try, you may &lt;em&gt;never&lt;/em&gt; escape being in a lot of meetings, and
    being in a lot of &lt;em&gt;unpleasant&lt;/em&gt; meetings to boot. Chances are, whenever
-   stuff is exploding, boiling up, or otherwise going bonkers, you'll
+   stuff is exploding, boiling up, or otherwise going bonkers, you’ll
    be roped in to calm things down, make a decision, or soothe a
    high-profile customer who is conniptiously trying to convince you
    that your SLA is akin to the Constitution and that an engineer
@@ -2931,10 +2931,10 @@ more productive, and healthier.&lt;/p&gt;
 &lt;p&gt;But, and this is the good news to balance the bad, if you manage to
 pull the &lt;em&gt;rest&lt;/em&gt; of the company out of meeting hell, life is going to
 get way better for &lt;em&gt;you,&lt;/em&gt; too.&lt;/p&gt;
-&lt;p&gt;So, obviously, there'll be a lot for you to &lt;strong&gt;Learn&lt;/strong&gt;. If you've never
+&lt;p&gt;So, obviously, there’ll be a lot for you to &lt;strong&gt;Learn&lt;/strong&gt;. If you’ve never
 led an organization that was distributed and asynchronous by default,
-there's a lot to unpack, understand, and overcome when it comes to
-turning one that &lt;em&gt;isn't&lt;/em&gt;, into one that is.&lt;/p&gt;
+there’s a lot to unpack, understand, and overcome when it comes to
+turning one that &lt;em&gt;isn’t&lt;/em&gt;, into one that is.&lt;/p&gt;
 &lt;p&gt;But your most important role at the top of the organization is this:&lt;/p&gt;
 &lt;h2&gt;Lead.&lt;/h2&gt;
 &lt;p&gt;And by that I mean lead by example, and also lead by policy.&lt;/p&gt;
@@ -2943,21 +2943,21 @@ turning one that &lt;em&gt;isn't&lt;/em&gt;, into one that is.&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;Write. Particularly when you want to communicate something to the
   whole company. All-hands video streams? &lt;em&gt;[stage whisper]&lt;/em&gt; Everyone
-  hates those. Meeting invites saying "we'll anounce something
-  important"? Just write an email &lt;em&gt;saying the important thing,&lt;/em&gt; and
+  hates those. Meeting invites saying “we’ll anounce something
+  important”? Just write an email &lt;em&gt;saying the important thing,&lt;/em&gt; and
   then ask people to send you questions by a deadline. And publicly
   commit &lt;em&gt;yourself&lt;/em&gt; to a deadline by which they can expect answers.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Take no shortcuts. If you're setting up communications rules for
-  everyone, live by them yourself. &lt;a href="https://xahteiwi.eu/blog/2021/09/16/rules-are-rules/"&gt;There's a bad, hidden cost in
+&lt;p&gt;Take no shortcuts. If you’re setting up communications rules for
+  everyone, live by them yourself. &lt;a href="https://xahteiwi.eu/blog/2021/09/16/rules-are-rules/"&gt;There’s a bad, hidden cost in
   skirting around them.&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Make a point of always giving context when pinging someone in chat.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Quit calling people without warning — you can't convey the &lt;em&gt;context&lt;/em&gt;
+&lt;p&gt;Quit calling people without warning — you can’t convey the &lt;em&gt;context&lt;/em&gt;
   of the call without them answering. A cold call is the ultimate
   &lt;a href="https://fedoraproject.org/wiki/No_naked_pings"&gt;naked ping&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
@@ -2965,7 +2965,7 @@ turning one that &lt;em&gt;isn't&lt;/em&gt;, into one that is.&lt;/p&gt;
 &lt;p&gt;Generally, cut back on synchronous, realtime communications. They
   always interrupt people, and &lt;a href="https://heeris.id.au/2013/this-is-why-you-shouldnt-interrupt-a-programmer/"&gt;interruptions are
   expensive&lt;/a&gt;. Think
-  about how much money you'll lose from someone &lt;em&gt;not&lt;/em&gt; having a
+  about how much money you’ll lose from someone &lt;em&gt;not&lt;/em&gt; having a
   brilliant idea because you pinged them about some technicality in
   the company chat while they were deeply immersed in a complex
   problem. (Also, think about how much money you might &lt;em&gt;have&lt;/em&gt; already
@@ -2979,7 +2979,7 @@ turning one that &lt;em&gt;isn't&lt;/em&gt;, into one that is.&lt;/p&gt;
   different person from the group as a scribe each time. Do not ask a
   person to volunteer. (If you do, chances are that one person in the
   group will be typecast as the scribe for all such meetings. I call
-  such an unfortunate person a &lt;em&gt;scrapegoat.&lt;/em&gt; You don't want
+  such an unfortunate person a &lt;em&gt;scrapegoat.&lt;/em&gt; You don’t want
   scrapegoats.)&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -2992,13 +2992,13 @@ turning one that &lt;em&gt;isn't&lt;/em&gt;, into one that is.&lt;/p&gt;
   your organization forward in efficiency of written expression,
   document organization, and clarity of communications. Make them a
   hiring priority. Pay them handsomely — good tech writers can make
-  good money freelancing; you'll need to make them a pretty compelling
+  good money freelancing; you’ll need to make them a pretty compelling
   offer to consider giving up some of that freedom.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Ram a stake in the ground making clear to everyone you will not
   tolerate corporate surveillance or invasions of privacy. Any attempt
-  to introduce an "always on camera" policy should be grounds for
+  to introduce an “always on camera” policy should be grounds for
   reprimanding the manager that instigated it.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -3006,59 +3006,59 @@ turning one that &lt;em&gt;isn't&lt;/em&gt;, into one that is.&lt;/p&gt;
   asynchronous work into account. A video conferencing system that
   values surveillance over privacy is not one your company should
   throw money at. A hiring platform that requires specifying an
-  "office location" for every role, and has no provisions for remote
-  positions, isn't either. Neither is a chat platform hosted by a
+  “office location” for every role, and has no provisions for remote
+  positions, isn’t either. Neither is a chat platform hosted by a
   company whose sole chance at long-term success is to pull &lt;em&gt;all&lt;/em&gt;
   corporate communications into synchronous chat. Yes, these judgments
-  require technical expertise. If this is something you don't have
-  because you consider yourself a "non-technical" person, &lt;a href="https://xahteiwi.eu/blog/2019/04/21/non-technical/"&gt;I have
+  require technical expertise. If this is something you don’t have
+  because you consider yourself a “non-technical” person, &lt;a href="https://xahteiwi.eu/blog/2019/04/21/non-technical/"&gt;I have
   something to read for you&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;There's another thing that you &lt;em&gt;might&lt;/em&gt; be inclined toward doing:
+&lt;p&gt;There’s another thing that you &lt;em&gt;might&lt;/em&gt; be inclined toward doing:
 declaring meeting-free days, as in making it a policy that no meetings
 are to be scheduled on Wednesdays. I think of that as very much a
-stop-gap measure that's often done out of sheer despair. Sure, you
+stop-gap measure that’s often done out of sheer despair. Sure, you
 want your people to have meeting-free days, but you actually want them
 to have &lt;em&gt;meeting days,&lt;/em&gt; with meetingless days being the norm, rather
-than the exception. I think you're better off gradually replacing your
+than the exception. I think you’re better off gradually replacing your
 meeting-addicted managers with ones that are accustomed to distributed
 and asynchronous work.&lt;/p&gt;
 &lt;p&gt;Finally, and this may be a bitter pill to swallow: getting to
 distributed and asynchronous is infinitely harder if you have built a
-"flat" organization. If every one of your managers has 20-30 direct
+“flat” organization. If every one of your managers has 20-30 direct
 reports, they will feel utterly overwhelmed at the thought of staying
 in asynchronous communication with every one of them, not to mention
-the fact that it's damn near impossible for them to convince that many
+the fact that it’s damn near impossible for them to convince that many
 people at one time to adopt a new way of collaboration.&lt;/p&gt;
 &lt;p&gt;This is one of the many, many ways in which &lt;a href="https://getlighthouse.com/blog/flat-organizational-structure-fails/"&gt;flat organizations fail
 to
 scale&lt;/a&gt;,
 but this gives you the opportunity to fix two issues at the same
-time. If you've got one manager that's actively promoting meeting hell
+time. If you’ve got one manager that’s actively promoting meeting hell
 that is currently making life miserable for 20 people, you can split
 that team up into 4, and hire 3 team leads that know how to work
 asynchronously and distributed (or promote people who have that sort
 of experience and want to step up). Then, in the one remaining team
 with the unreformed meeting addict, things can go three ways:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;The one "traditional" team sees how things go in the other teams,
+&lt;li&gt;The one “traditional” team sees how things go in the other teams,
   and they quickly coax their team lead into doing things the new way, or&lt;/li&gt;
 &lt;li&gt;they all ask to be transferred, or&lt;/li&gt;
 &lt;li&gt;(the worst-case scenario) the one meeting-addicted manager continues
-  to annoy everyone, and they all leave. That's bad, and a failure of
+  to annoy everyone, and they all leave. That’s bad, and a failure of
   judgment (that manager should probably have been let go first), but
   losing 4 good people, as difficult as that might be, is probably
   “better” than losing 20.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;As a final thought, &lt;em&gt;please&lt;/em&gt; take a moment to put yourself in other
-people's shoes, and understand what options &lt;em&gt;they&lt;/em&gt; have with being
-stuck in meeting hell. Whether it's your &lt;a href="https://xahteiwi.eu/blog/2021/10/02/getting-out-of-meeting-hell-managers/"&gt;line
+people’s shoes, and understand what options &lt;em&gt;they&lt;/em&gt; have with being
+stuck in meeting hell. Whether it’s your &lt;a href="https://xahteiwi.eu/blog/2021/10/02/getting-out-of-meeting-hell-managers/"&gt;line
 managers&lt;/a&gt; or your
 regular
 &lt;a href="https://xahteiwi.eu/blog/2021/10/01/getting-out-of-meeting-hell-employees/"&gt;employees&lt;/a&gt;, they
 both have the option to just chuck in their notice and leave, and
-leave they will, if they're sufficiently deep in meeting hell. They
+leave they will, if they’re sufficiently deep in meeting hell. They
 have plenty of opportunities.&lt;/p&gt;
 &lt;p&gt;So lead by example, and lead by policy. Do things right, but more
 importantly do the right things.&lt;/p&gt;
@@ -3104,11 +3104,11 @@ employment contract (or theirs) terminates. That may sound harsh, but
 that’s the breaks of the game, and you shouldn’t let that hold you up,
 if leaving is the objectively most sensible option for you. There’s no
 use burning out over an exaggerated sense of duty.&lt;/p&gt;
-&lt;p&gt;In addition, I'd posit that you &lt;em&gt;should&lt;/em&gt; leave your company if it
-employs or promotes employee surveillance, keeps voodoo "meeting
-engagement metrics", or engages in otherwise harmful or toxic
-behavior. I'd argue that in those cases you should also make sure your
-direct reports know why you're leaving, to the extent that your
+&lt;p&gt;In addition, I’d posit that you &lt;em&gt;should&lt;/em&gt; leave your company if it
+employs or promotes employee surveillance, keeps voodoo “meeting
+engagement metrics”, or engages in otherwise harmful or toxic
+behavior. I’d argue that in those cases you should also make sure your
+direct reports know why you’re leaving, to the extent that your
 contractual obligations allow you to tell them.&lt;sup id="fnref:non-disparagement"&gt;&lt;a class="footnote-ref" href="#fn:non-disparagement"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;However, if you’ve chosen &lt;em&gt;not&lt;/em&gt; to leave your current organization,
 and you want to actually do the hard work for making work
@@ -3179,13 +3179,13 @@ want to drop something like “we did this on one meeting a week.”&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Spend the first 15-20 minutes of the weekly meeting on non-work
-  topics. Ask something like "how was your weekend" or "how are things
-  going in your part of the world" or anything else that you can think
+  topics. Ask something like “how was your weekend” or “how are things
+  going in your part of the world” or anything else that you can think
   of that helps you feel the mood of your team. These things don’t go
-  on the meeting record. Always accept when people don't want to give
+  on the meeting record. Always accept when people don’t want to give
   an answer. They may have many reasons, none of which are necessarily
-  your business. Trust that they'll share whatever they're comfortable
-  sharing, even if some weeks that's nothing.&lt;/p&gt;
+  your business. Trust that they’ll share whatever they’re comfortable
+  sharing, even if some weeks that’s nothing.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Learn to keep each other appraised of your relative progress and
@@ -3198,22 +3198,22 @@ want to drop something like “we did this on one meeting a week.”&lt;/p&gt;
   and encourage your team to do the same.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Do not attempt to get back to people "immediately", and do not
+&lt;p&gt;Do not attempt to get back to people “immediately”, and do not
   expect people to get back to you promptly. A reasonable default
   expectation for reply times is 24 hours. If you need an answer
   faster, you can always send an email (or better still, a comment on
-  a card or ticket) with a request like "if I could get this by 1600
-  UTC today, that'd be excellent." Bonus points if you add &lt;em&gt;why&lt;/em&gt; you
-  need that information quickly, as in "... so I can put this together
-  with Kim's performance data and make a decision on which load
-  balancing strategy we'll use, which Alex needs to know by tomorrow."&lt;/p&gt;
+  a card or ticket) with a request like “if I could get this by 1600
+  UTC today, that’d be excellent.” Bonus points if you add &lt;em&gt;why&lt;/em&gt; you
+  need that information quickly, as in “… so I can put this together
+  with Kim’s performance data and make a decision on which load
+  balancing strategy we’ll use, which Alex needs to know by tomorrow.”&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Establish a convention for marking things as urgent, when
   needed. The word &lt;em&gt;URGENT&lt;/em&gt;, included in capital letters in an email
   subject or a chat message, usually works well. &lt;em&gt;Only&lt;/em&gt; use this if
   things are on fire.&lt;sup id="fnref:not-urgent-by-default"&gt;&lt;a class="footnote-ref" href="#fn:not-urgent-by-default"&gt;2&lt;/a&gt;&lt;/sup&gt; &lt;em&gt;Never&lt;/em&gt; use the urgency
-  marker just by itself. (That's a &lt;a href="https://fedoraproject.org/wiki/No_naked_pings"&gt;naked
+  marker just by itself. (That’s a &lt;a href="https://fedoraproject.org/wiki/No_naked_pings"&gt;naked
   ping&lt;/a&gt; on steroids.)
   Also, when someone legitimately uses the marker in communication
   with &lt;em&gt;you,&lt;/em&gt; honour it. When someone uses it for something other than
@@ -3242,15 +3242,15 @@ want to drop something like “we did this on one meeting a week.”&lt;/p&gt;
   correct others who break them.&lt;sup id="fnref:asshole-filter"&gt;&lt;a class="footnote-ref" href="#fn:asshole-filter"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Importantly, &lt;em&gt;let your team know&lt;/em&gt; that you're working on getting them
-&lt;em&gt;all&lt;/em&gt; out of meeting hell. Don't sugarcoat things if you're struggling
+&lt;p&gt;Importantly, &lt;em&gt;let your team know&lt;/em&gt; that you’re working on getting them
+&lt;em&gt;all&lt;/em&gt; out of meeting hell. Don’t sugarcoat things if you’re struggling
 while swimming against the company tide, at least temporarily. If they
-know you're actively striving to make their work situation better, more
+know you’re actively striving to make their work situation better, more
 productive &lt;em&gt;and healthier&lt;/em&gt; it may well make the difference between
 &lt;a href="https://xahteiwi.eu/blog/2021/10/01/getting-out-of-meeting-hell-employees/"&gt;them leaving&lt;/a&gt; and
 staying on board.&lt;/p&gt;
 &lt;p&gt;Finally, keep an eye on corporate policy and the messages you get from
-company leadership. If they're obviously stuck in 1995, you might as
+company leadership. If they’re obviously stuck in 1995, you might as
 well go and update your CV. If the people at the top do &lt;a href="https://xahteiwi.eu/blog/2021/10/03/getting-out-of-meeting-hell-executives/"&gt;make an
 effort to implement distributed and async friendly
 policies&lt;/a&gt;,
@@ -3261,8 +3261,8 @@ change they will, and your effort will not be for naught.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li id="fn:non-disparagement"&gt;
 &lt;p&gt;By the way: if your non-disparagement clause is
-so harsh that you can't talk about &lt;em&gt;anything&lt;/em&gt; negative in the
-company, then that's probably an awful company to begin with. &lt;a class="footnote-backref" href="#fnref:non-disparagement" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+so harsh that you can’t talk about &lt;em&gt;anything&lt;/em&gt; negative in the
+company, then that’s probably an awful company to begin with. &lt;a class="footnote-backref" href="#fnref:non-disparagement" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:not-urgent-by-default"&gt;
 &lt;p&gt;Note that the convention of the &lt;em&gt;URGENT&lt;/em&gt;
@@ -3273,32 +3273,32 @@ urgent by default. &lt;a class="footnote-backref" href="#fnref:not-urgent-by-de
 &lt;p&gt;Failure to enforce sensible collaboration rules may
   result in the inadvertent creation of an &lt;a href="https://siderea.livejournal.com/1230660.html"&gt;asshole
   filter&lt;/a&gt;. “Oh but I
-  can't enforce that rule on Bob, because Bob thinks rules aren't for
-  him but he's brilliant!” — No. &lt;a href="https://www.brendangregg.com/blog/2017-11-13/brilliant-jerks.html"&gt;Don't tolerate brilliant
+  can’t enforce that rule on Bob, because Bob thinks rules aren’t for
+  him but he’s brilliant!” — No. &lt;a href="https://www.brendangregg.com/blog/2017-11-13/brilliant-jerks.html"&gt;Don’t tolerate brilliant
   jerks&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:asshole-filter" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Getting out of Meeting Hell: As a regular employee</title><link href="https://xahteiwi.eu/blog/2021/10/01/getting-out-of-meeting-hell-employees/" rel="alternate"></link><published>2021-10-01T00:00:00+00:00</published><updated>2021-10-01T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-01:/blog/2021/10/01/getting-out-of-meeting-hell-employees/</id><summary type="html">&lt;p&gt;A short series on transitioning to distributed work and asynchronous collaboration. This article is on what you can do if you are stuck in meeting hell as a regular employee who isn't in a management role.&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Getting out of Meeting Hell: As a regular employee</title><link href="https://xahteiwi.eu/blog/2021/10/01/getting-out-of-meeting-hell-employees/" rel="alternate"></link><published>2021-10-01T00:00:00+00:00</published><updated>2021-10-01T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-01:/blog/2021/10/01/getting-out-of-meeting-hell-employees/</id><summary type="html">&lt;p&gt;A short series on transitioning to distributed work and asynchronous collaboration. This article is on what you can do if you are stuck in meeting hell as a regular employee who isn&amp;rsquo;t in a management role.&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
 &lt;p&gt;Please have a look at the
 &lt;a href="https://xahteiwi.eu/blog/2021/09/30/getting-out-of-meeting-hell/"&gt;introduction&lt;/a&gt; for
 background, for applicable disclaimers, and for information about
 the specific environments this series talks about.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;So, you're a regular employee (sometimes called an &lt;em&gt;Individual
-Contributor&lt;/em&gt; or IC), who doesn't have a team that reports to you. And
+&lt;p&gt;So, you’re a regular employee (sometimes called an &lt;em&gt;Individual
+Contributor&lt;/em&gt; or IC), who doesn’t have a team that reports to you. And
 you are in an organization that, although it does have remote
 employees or may even have switched to an all-distributed mode on
 account of the pandemic, does not adopt basic rules of
 distributed work and asynchronous communications.&lt;/p&gt;
 &lt;p&gt;You spend more time in meetings than is healthy, your productivity is
-severely impacted, you're stressed out from frequent interruptions,
+severely impacted, you’re stressed out from frequent interruptions,
 you have trouble getting into a state of
 &lt;a href="https://en.wikipedia.org/wiki/Flow_(psychology)"&gt;flow&lt;/a&gt;. You may be
 asked to keep your camera on for hours at a time, and you feel that
 this badly encroaches on your privacy or sense of personal space. Your
 manager or your peers like to
 &lt;a href="https://fedoraproject.org/wiki/No_naked_pings"&gt;naked-ping&lt;/a&gt; you or
-send you "hey, I need you for a minute" one-liners that &lt;a href="https://heeris.id.au/2013/this-is-why-you-shouldnt-interrupt-a-programmer/"&gt;disrupt your
+send you “hey, I need you for a minute” one-liners that &lt;a href="https://heeris.id.au/2013/this-is-why-you-shouldnt-interrupt-a-programmer/"&gt;disrupt your
 train of
 thought&lt;/a&gt;
 for half an hour.&lt;/p&gt;
@@ -3317,15 +3317,15 @@ situation, be more productive, and communicate better with your peers:&lt;/p&gt;
   asynchronous collaboration,&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;then the way to do that &lt;em&gt;for yourself&lt;/em&gt; is to leave your current
-organisation behind, and go elsewhere. There's plenty of employment
+organisation behind, and go elsewhere. There’s plenty of employment
 opportunities for you to pick up in this industry at this time, and
 there are a number of organizations that handle distributed work
-better than the one you're currently in.&lt;/p&gt;
+better than the one you’re currently in.&lt;/p&gt;
 &lt;p&gt;Sure, you could consider trying to change the system from within. And
-there is a small (I'd say minute, but nonzero) probability that you'll
+there is a small (I’d say minute, but nonzero) probability that you’ll
 be successful, and drive real change in your organization. However,
-there is an inordinately &lt;em&gt;larger&lt;/em&gt; probability that you'll burn out in
-the process — and endangering your health is never a gamble that's
+there is an inordinately &lt;em&gt;larger&lt;/em&gt; probability that you’ll burn out in
+the process — and endangering your health is never a gamble that’s
 worth taking.&lt;/p&gt;
 &lt;p&gt;You may think that that’s a pessimistic view. I think the opposite is
 true. You’re not “failing” to drive change in an organization that
@@ -3346,7 +3346,7 @@ consider your manager may be in their own
 &lt;a href="https://xahteiwi.eu/blog/2021/10/02/getting-out-of-meeting-hell-managers/"&gt;learning&lt;/a&gt; phase
 about distributed and async collaboration — then things are a lot less
 clean cut, and maybe you’d want to stay on for the ride. Particularly
-so if there's an active, supportive push &lt;a href="https://xahteiwi.eu/blog/2021/10/03/getting-out-of-meeting-hell-executives/"&gt;from the
+so if there’s an active, supportive push &lt;a href="https://xahteiwi.eu/blog/2021/10/03/getting-out-of-meeting-hell-executives/"&gt;from the
 top&lt;/a&gt; of the
 organization.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Even if&lt;/em&gt; your manager and some of your peers are on your side, I can
@@ -3360,7 +3360,7 @@ attain the levels of trust required for a distributed organization to
 function.&lt;/p&gt;
 &lt;p&gt;So: if you’re stuck in meeting hell with nobody on your side, as a
 regular employee with no reports, your best way forward is probably
-the way to the exit. If you're stuck in meeting hell &lt;em&gt;now&lt;/em&gt; but there's
+the way to the exit. If you’re stuck in meeting hell &lt;em&gt;now&lt;/em&gt; but there’s
 a gale blowing the company into async &amp;amp; distributed mode, and/or you
 have a very thick-skinned manager that gets it, and will deflect and
 absorb any pressure from meeting-addicted higher-ups, you may want to
@@ -3394,7 +3394,7 @@ people&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;And after that, I got a fair number of questions along the lines of
 “okay, what you talk about is a spot-on description of how I &lt;em&gt;want&lt;/em&gt; to
 work, but how do I get there?” In other words, &lt;strong&gt;what can you do in
-order to transition from a team that's stuck in meeting hell, to one
+order to transition from a team that’s stuck in meeting hell, to one
 that actually goes fully distributed and embraces asynchronous
 communications?&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
@@ -3466,21 +3466,21 @@ pronouncements of absolute truth.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;For context: it was at the top for like three hours on a
 Saturday morning. So it might have landed there just because
 enough people were simultaneously bored enough to give it a
-read... &lt;a class="footnote-backref" href="#fnref:newsy" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+read… &lt;a class="footnote-backref" href="#fnref:newsy" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:in-person-meeting"&gt;
 &lt;p&gt;Meeting Hell might &lt;em&gt;also&lt;/em&gt; apply to excessive
 in-person meetings in a shared work space, such as an
-office. However, I really don't believe my industry will ever go
+office. However, I really don’t believe my industry will ever go
 back to defaulting to office-based work, now that it has shown for
 nearly two years that it &lt;em&gt;can&lt;/em&gt; function, in principle, in a
-default-distributed mode. Thus, I am using the word "meeting" as
-synonymous with "video meeting" in this series, and I wouldn't be
+default-distributed mode. Thus, I am using the word “meeting” as
+synonymous with “video meeting” in this series, and I wouldn’t be
 surprised if this eventually became the norm.&lt;/p&gt;
 &lt;p&gt;Think of this as
 akin to the transition undergone by the word &lt;em&gt;call:&lt;/em&gt; before
 the advent of the telephone, a &lt;em&gt;call&lt;/em&gt; was a visit you paid to
-someone's house. Then, if you metaphorically "visited" someone by
+someone’s house. Then, if you metaphorically “visited” someone by
 telephone, that was a &lt;em&gt;telephone call&lt;/em&gt;. Now a &lt;em&gt;call&lt;/em&gt; is always a
 phone call, except when explicitly specified as a &lt;em&gt;house call.&lt;/em&gt; &lt;a class="footnote-backref" href="#fnref:in-person-meeting" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
@@ -3497,32 +3497,32 @@ response to this article:&lt;/p&gt;
  think differently about confidentiality. Work goes in public,
  meta-work is often about relationships, and I want my reports to be
  100% confident they can bring any question or concern to me.&lt;/p&gt;
-&lt;p&gt;So "encrypted email" is not the right metaphor or measuring stick in
-my view. DMs are a tool for saying what you aren't comfortable
-saying "out loud", but that shouldn't be about the work
-itself. Never "how do I do this?" But "advice pls about how to work
-with fred?" — yes!&lt;/p&gt;
+&lt;p&gt;So “encrypted email” is not the right metaphor or measuring stick in
+my view. DMs are a tool for saying what you aren’t comfortable
+saying “out loud”, but that shouldn’t be about the work
+itself. Never “how do I do this?” But “advice pls about how to work
+with fred?” — yes!&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;I entirely agree with the sentiments behind this; I still maintain
 that chat DMs are not necessarily a good approach for addressing this,
 for reason that some chat systems give merely an illusion of
 confidentiality. If both participants in a conversation use OTR
 encryption over a protocol like IRC or XMPP, inadvertent disclosure to
-a third party is highly unlikely. Slack DMs? &lt;a href="https://www.nbcnews.com/better/business/slack-updates-privacy-policy-employers-can-read-private-dms-without-ncna862811"&gt;I wouldn't be so
+a third party is highly unlikely. Slack DMs? &lt;a href="https://www.nbcnews.com/better/business/slack-updates-privacy-policy-employers-can-read-private-dms-without-ncna862811"&gt;I wouldn’t be so
 sure&lt;/a&gt;. If
-your report confides in you, you don't want them to have to worry if
+your report confides in you, you don’t want them to have to worry if
 their message is &lt;em&gt;really&lt;/em&gt; just between you and them.&lt;/p&gt;
 &lt;h3&gt;Hacker News, 2021-09-25&lt;/h3&gt;
 &lt;p&gt;On 2021-09-25, &lt;a href="https://news.ycombinator.com/item?id=28636536"&gt;a link to this
 article&lt;/a&gt; ended up being
-the top post on Hacker News for a few hours. You're very welcome to
-read through the 200-odd comments in that thread, but here I'd like to
-respond to just a couple. I'm deliberately only picking out ones where I
+the top post on Hacker News for a few hours. You’re very welcome to
+read through the 200-odd comments in that thread, but here I’d like to
+respond to just a couple. I’m deliberately only picking out ones where I
 feel like &lt;em&gt;clarification&lt;/em&gt; on my part is necessary; as far as
-differences of opinion are concerned I'll be happy to let those stand.&lt;/p&gt;
+differences of opinion are concerned I’ll be happy to let those stand.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;The article also assumes every one is a native speaker who can write
-quickly and clearly in a chat -- in a lot of international projects
+quickly and clearly in a chat – in a lot of international projects
 this is not the case.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;— &lt;a href="https://news.ycombinator.com/item?id=28651678"&gt;comment&lt;/a&gt; from &lt;code&gt;papaf&lt;/code&gt;&lt;/p&gt;
@@ -3530,41 +3530,41 @@ this is not the case.&lt;/p&gt;
 the original talk nor at the time of writing this update did I work
 with anyone who is a first-language English speaker.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;I have an objection to the author's blanket disregard for "pings" in
+&lt;p&gt;I have an objection to the author’s blanket disregard for “pings” in
 chat - while the request could/should be worded a bit more clearly
-than just "ping", IMHO they're a valid way of requesting if an
+than just “ping”, IMHO they’re a valid way of requesting if an
 opportunity for synchronous communication is available in the (not
 that rare!) cases where asynchronous communication would be
 worthless.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;— &lt;a href="https://news.ycombinator.com/item?id=28652633"&gt;comment&lt;/a&gt; from &lt;code&gt;PeterisP&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;My blanket disregard is for &lt;em&gt;naked&lt;/em&gt; pings, not for pings in general.&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="Communications"></category><category term="Work"></category></entry><entry><title>Rules are rules</title><link href="https://xahteiwi.eu/blog/2021/09/16/rules-are-rules/" rel="alternate"></link><published>2021-09-16T00:00:00+00:00</published><updated>2021-09-16T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-09-16:/blog/2021/09/16/rules-are-rules/</id><summary type="html">&lt;p&gt;I have a reputation for being rigid when it comes to communication rules. Here's why I am.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I have a reputation among my colleagues that I am very strict and
+&lt;p&gt;My blanket disregard is for &lt;em&gt;naked&lt;/em&gt; pings, not for pings in general.&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="Communications"></category><category term="Work"></category></entry><entry><title>Rules are rules</title><link href="https://xahteiwi.eu/blog/2021/09/16/rules-are-rules/" rel="alternate"></link><published>2021-09-16T00:00:00+00:00</published><updated>2021-09-16T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-09-16:/blog/2021/09/16/rules-are-rules/</id><summary type="html">&lt;p&gt;I have a reputation for being rigid when it comes to communication rules. Here&amp;rsquo;s why I am.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I have a reputation among my colleagues that I am very strict and
 rigid about the communications rules I follow for myself, and for my
 team. That reputation is entirely deserved, and I am indeed not
 particularly flexible in my strong preference for asynchronous,
 non-interruptive communication methods. I have discussed
 &lt;a href="https://youtu.be/CyzoF7mHEBo"&gt;elsewhere&lt;/a&gt;, and &lt;a href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;at
 length&lt;/a&gt;, what
-those are and &lt;em&gt;why&lt;/em&gt; I have that strong preference. But I haven't
+those are and &lt;em&gt;why&lt;/em&gt; I have that strong preference. But I haven’t
 really outlined why I very rarely allow myself, or others if I can
 help it, to deviate from it.&lt;/p&gt;
-&lt;p&gt;But Florian, the complaint usually goes, can't you occasionally make
-an exception? Sometimes there's something you could easily do to
+&lt;p&gt;But Florian, the complaint usually goes, can’t you occasionally make
+an exception? Sometimes there’s something you could easily do to
 unblock someone else, if they could only quickly chat you up and ask
-you to jump in. You'd be in and out of there in no time.&lt;/p&gt;
-&lt;h2&gt;Let's use an analogy here.&lt;/h2&gt;
-&lt;p&gt;Suppose you're out of an indispensable food product, say milk or flour
+you to jump in. You’d be in and out of there in no time.&lt;/p&gt;
+&lt;h2&gt;Let’s use an analogy here.&lt;/h2&gt;
+&lt;p&gt;Suppose you’re out of an indispensable food product, say milk or flour
 or potatoes or eggs. So you make a quick run to the grocery store, and
-because you don't live in a country with proper cycling infrastructure
+because you don’t live in a country with proper cycling infrastructure
 and the store is out of walking distance, you drive.&lt;/p&gt;
 &lt;p&gt;You arrive at the grocery store parking lot, and for some unfathomable
-reason it's chock full. Completely packed. Not a single spot
+reason it’s chock full. Completely packed. Not a single spot
 available. Except those two spots right near the store entrance that
-are reserved for wheelchair users, which you are not. You don't see a
+are reserved for wheelchair users, which you are not. You don’t see a
 single car around with a wheelchair plaque or decal. Not even one.&lt;/p&gt;
 &lt;p&gt;Now. When you look at the situation, the objectively simplest and most
 practical solution is for you to park in a wheelchair spot. You know
-exactly how long it takes you to buy a carton of eggs; you'd be in and
+exactly how long it takes you to buy a carton of eggs; you’d be in and
 out of that place in two minutes. The chance that one car needing a
 wheelchair spot arrives in exactly that time is minute, and even then
 there would be another one available. The probability of &lt;em&gt;two&lt;/em&gt;
@@ -3572,22 +3572,22 @@ wheelchair users arriving in their cars, simultaneously, in those two
 minutes, is infinitesimal. There is an overwhelming probability that
 you will vacate the spot again, without it ever being needed by one of
 its intended users while you were occupying it. So, why not use it?&lt;/p&gt;
-&lt;p&gt;The answer is that if it's OK for &lt;em&gt;you&lt;/em&gt; to break the rule that that
+&lt;p&gt;The answer is that if it’s OK for &lt;em&gt;you&lt;/em&gt; to break the rule that that
 spot is for wheelchair users only, &lt;em&gt;there is absolutely no reason why
-it shouldn't also be OK for everyone else.&lt;/em&gt; You're not special, the
+it shouldn’t also be OK for everyone else.&lt;/em&gt; You’re not special, the
 same rules apply to you as to everyone else — so if we were to decide
-that this rule &lt;em&gt;doesn't&lt;/em&gt; apply to you this very minute, then it also
-needn't apply to anyone else under similar circumstances.&lt;/p&gt;
-&lt;p&gt;And then, promptly, we're in a situation where everyone flouts the
+that this rule &lt;em&gt;doesn’t&lt;/em&gt; apply to you this very minute, then it also
+needn’t apply to anyone else under similar circumstances.&lt;/p&gt;
+&lt;p&gt;And then, promptly, we’re in a situation where everyone flouts the
 rules, and an actual wheelchair user can no longer do their grocery
-shopping. That's why you, if you are not a wheelchair user, shouldn't
-park there, and nobody else that isn't shouldn't either.&lt;/p&gt;
+shopping. That’s why you, if you are not a wheelchair user, shouldn’t
+park there, and nobody else that isn’t shouldn’t either.&lt;/p&gt;
 &lt;p&gt;And with interruptive communications — such as pinging someone in a
-chat when you could send them an email just the same — it's much the
+chat when you could send them an email just the same — it’s much the
 same way: if you needlessly ping me and I acquiesce, drop the thing
-I'm doing, and focus on your interruption instead, it would be unfair
+I’m doing, and focus on your interruption instead, it would be unfair
 of me to not do the same for somebody else. And I know if &lt;em&gt;everyone&lt;/em&gt;
-does this to me, my work day is purely interrupt driven and that's
+does this to me, my work day is purely interrupt driven and that’s
 awful. The same goes for tolerating interruptive communications
 towards my team — or, worse, engaging in such interruptive
 communications myself.&lt;/p&gt;
@@ -3604,26 +3604,26 @@ the hospital would surely take longer than your two-minute egg
 procurement dash that we discussed earlier.&lt;/p&gt;
 &lt;p&gt;Again, this has a parallel in interruptive communications in a (much
 less dire) regular work situation: stuff is actually on fire? Or
-there's something that for some legitimate reason needs doing &lt;em&gt;right
+there’s something that for some legitimate reason needs doing &lt;em&gt;right
 now&lt;/em&gt; that only I or someone on my team can do, or is most comfortable
 with? Ping me in chat, use the back channel, give me a ring on my
 &lt;em&gt;phone&lt;/em&gt; for cryinoutloud, whatever it takes to get my
 attention. Nobody will hold that against you, least of all me. And in
-this case that's a rule that I can &lt;em&gt;also&lt;/em&gt; easily apply generally,
+this case that’s a rule that I can &lt;em&gt;also&lt;/em&gt; easily apply generally,
 treating everyone around me fairly and equitably: when stuff is urgent
-and seriously overrides the priority of what's currently being worked
+and seriously overrides the priority of what’s currently being worked
 on, you get to interrupt me or, if necessary anyone on my
 team. (Though I would prefer that you interrupt me specifically, and I
 can decide whether we really need to mobilise another person.)&lt;/p&gt;
-&lt;p&gt;Just don't abuse that. If you do, you'll just condition people into
-taking your sense of "urgent" with a big pinch of salt.&lt;/p&gt;
+&lt;p&gt;Just don’t abuse that. If you do, you’ll just condition people into
+taking your sense of “urgent” with a big pinch of salt.&lt;/p&gt;
 &lt;hr/&gt;
 &lt;p&gt;&lt;em&gt;Edit, 2021-09-21:&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;My colleague &lt;a href="https://be.linkedin.com/in/evrardjp"&gt;Jean-Philippe Evrard&lt;/a&gt;
 has suggested that I refer to another, much more elaborate article on
-a similar subject: Siderea's &lt;em&gt;&lt;a href="https://siderea.dreamwidth.org/1209794.html"&gt;The Asshole
+a similar subject: Siderea’s &lt;em&gt;&lt;a href="https://siderea.dreamwidth.org/1209794.html"&gt;The Asshole
 Filter&lt;/a&gt;&lt;/em&gt;. I recommend you
-give it a read if you're inclined.&lt;/p&gt;</content><category term="blog"></category><category term="Communications"></category><category term="Work"></category></entry><entry><title>No, We Won’t Have a Video Call for That!</title><link href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/" rel="alternate"></link><published>2020-08-22T00:00:00+00:00</published><updated>2020-08-22T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2020-08-22:/resources/presentations/no-we-wont-have-a-video-call-for-that/</id><summary type="html">&lt;p&gt;Communications in distributed teams: a write-up of my talk from FrOSCon 2020, Cloud Edition.&lt;/p&gt;</summary><content type="html">&lt;p&gt;FrOSCon 2020 was an online event due to the COVID-19 pandemic, and
+give it a read if you’re inclined.&lt;/p&gt;</content><category term="blog"></category><category term="Communications"></category><category term="Work"></category></entry><entry><title>No, We Won’t Have a Video Call for That!</title><link href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/" rel="alternate"></link><published>2020-08-22T00:00:00+00:00</published><updated>2020-08-22T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2020-08-22:/resources/presentations/no-we-wont-have-a-video-call-for-that/</id><summary type="html">&lt;p&gt;Communications in distributed teams: a write-up of my talk from FrOSCon 2020, Cloud Edition.&lt;/p&gt;</summary><content type="html">&lt;p&gt;FrOSCon 2020 was an online event due to the COVID-19 pandemic, and
 gave me the opportunity to present an extended and heavily updated
 version of my &lt;a href="https://xahteiwi.eu/resources/presentations/devopsdays-tel-aviv-2019/"&gt;DevOpsDays 2019&lt;/a&gt; talk.&lt;/p&gt;
 &lt;hr/&gt;
@@ -3786,7 +3786,7 @@ people residing anywhere, provided they have internet connectivity.&lt;/p&gt;
 &lt;p&gt;So we now &lt;em&gt;can&lt;/em&gt; work in teams despite being continental distances away
 from each other but we do have to acquire the skills to do that. And
 if we fail to do so, that has a rather grave disadvantage, which is
-that...&lt;/p&gt;
+that…&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Nothing&lt;/strong&gt; has as dire an impact on productivity as &lt;strong&gt;poor
 communications.&lt;/strong&gt;&lt;/p&gt;
@@ -4485,7 +4485,7 @@ efficient as a generic mode of communication across distributed teams.&lt;/p&gt;
 to curb channel sprawl and threading and other things, but’s that’s a
 whole ‘nother talk and indeed a talk for another &lt;em&gt;speaker,&lt;/em&gt; because I
 don’t lead an ops team.&lt;/p&gt;
-&lt;h2&gt;To summarize...&lt;/h2&gt;
+&lt;h2&gt;To summarize…&lt;/h2&gt;
 &lt;p&gt;So to summarize, here are my key points from this talk, in a nutshell
 — please make these your key takeaways.&lt;/p&gt;
 &lt;ul&gt;

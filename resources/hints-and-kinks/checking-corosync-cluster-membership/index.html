@@ -43,13 +43,13 @@
  
 
 <meta name="author" content="Florian Haas" />
-<meta name="description" content="It&#39;s simple and easy to get Pacemaker&#39;s view of the status of members in a cluster – just invoke crm_mon. But what if you want to check on the cluster membership when Pacemaker is not running, or you want to make sure whether Corosync&#39;s view of the cluster is identical to …" />
+<meta name="description" content="It’s simple and easy to get Pacemaker’s view of the status of members in a cluster – just invoke crm_mon. But what if you want to check on the cluster membership when Pacemaker is not running, or you want to make sure whether Corosync’s view of the cluster …" />
 <meta name="keywords" content="Corosync">
 
 
   <meta property="og:site_name" content="xahteiwi.eu"/>
   <meta property="og:title" content="Checking Corosync cluster membership"/>
-  <meta property="og:description" content="It&#39;s simple and easy to get Pacemaker&#39;s view of the status of members in a cluster – just invoke crm_mon. But what if you want to check on the cluster membership when Pacemaker is not running, or you want to make sure whether Corosync&#39;s view of the cluster is identical to …"/>
+  <meta property="og:description" content="It’s simple and easy to get Pacemaker’s view of the status of members in a cluster – just invoke crm_mon. But what if you want to check on the cluster membership when Pacemaker is not running, or you want to make sure whether Corosync’s view of the cluster …"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:url" content="../../../resources/hints-and-kinks/checking-corosync-cluster-membership/"/>
   <meta property="og:type" content="article"/>
@@ -140,11 +140,11 @@
 
 
   <div>
-    <p>It's simple and easy to get Pacemaker's view of the status of members
+    <p>It’s simple and easy to get Pacemaker’s view of the status of members
 in a cluster – just invoke <code>crm_mon</code>. But what if you want to check on
 the cluster membership when Pacemaker is not running, or you want to
-make sure whether Corosync's view of the cluster is identical to
-Pacemaker's? Here's how.</p>
+make sure whether Corosync’s view of the cluster is identical to
+Pacemaker’s? Here’s how.</p>
 <h2>Checking ring status with <code>corosync-cfgtool</code></h2>
 <p>The <code>corosync-cfgtool</code> utility displays the cluster connectivity status
 when invoked with the <code>-s</code> flag:</p>
@@ -161,15 +161,15 @@ when invoked with the <code>-s</code> flag:</p>
 <p>The above is the status of two healthy rings; a failed ring (one
 affected by a network interruption, for example) would show a <code>FAULTY</code>
 status.</p>
-<p>There's a catch. In a two-node cluster, if both nodes were to start
+<p>There’s a catch. In a two-node cluster, if both nodes were to start
 while all cluster communication links are down, then Corosync would
 form <em>two</em> memberships with healthy, one-member rings. Both of the
 nodes would show a ring status similar to the above, but your cluster
-still wouldn't be communicating. So, you can't rely on
-<code>corosync-cfgtool -s</code> alone. You must also check Corosync's member
+still wouldn’t be communicating. So, you can’t rely on
+<code>corosync-cfgtool -s</code> alone. You must also check Corosync’s member
 list.</p>
 <h2>Querying the member list with <code>corosync-cmapctl</code></h2>
-<p>We can examine Corosync's cluster member list with the <code>corosync-cmapctl</code> command:</p>
+<p>We can examine Corosync’s cluster member list with the <code>corosync-cmapctl</code> command:</p>
 <div class="highlight"><pre><span></span><code># corosync-cmapctl | grep member
 runtime.totem.pg.mrp.srp.members.303938909.ip=r(0) ip(10.0.1.1) r(1) ip(192.168.42.1) 
 runtime.totem.pg.mrp.srp.members.303938909.join_count=1

@@ -43,13 +43,13 @@
  
 
 <meta name="author" content="florian" />
-<meta name="description" content="The recent CVE-2015-7547 vulnerability in glibc exposed a common antipattern in container management. Here&#39;s what you can do to avoid it, and instead adopt a container management pattern that will preserve your sanity and enable you to react to critical issues in minutes." />
+<meta name="description" content="The recent CVE-2015-7547 vulnerability in glibc exposed a common antipattern in container management. Here’s what you can do to avoid it, and instead adopt a container management pattern that will preserve your sanity and enable you to react to critical issues in minutes." />
 <meta name="keywords" content="LXC, Containers, Ubuntu, Ansible">
 
 
   <meta property="og:site_name" content="xahteiwi.eu"/>
   <meta property="og:title" content="Containers: Just Because Everyone Else is Doing Them Wrong, Doesn&#39;t Mean You Have To"/>
-  <meta property="og:description" content="The recent CVE-2015-7547 vulnerability in glibc exposed a common antipattern in container management. Here&#39;s what you can do to avoid it, and instead adopt a container management pattern that will preserve your sanity and enable you to react to critical issues in minutes."/>
+  <meta property="og:description" content="The recent CVE-2015-7547 vulnerability in glibc exposed a common antipattern in container management. Here’s what you can do to avoid it, and instead adopt a container management pattern that will preserve your sanity and enable you to react to critical issues in minutes."/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:url" content="../../../../../blog/2016/02/21/containers-just-because-everyone-else/"/>
   <meta property="og:type" content="article"/>
@@ -145,27 +145,27 @@
   <div>
     <p>This is a writeup of <a href="http://sched.co/3xVu">a presentation</a> I did at
 LinuxCon Europe in Dublin last year. Since Linux Foundation Events
-<em>still</em> don't come with video recording for all talks (all they do
-record and publish are keynotes), I can't point you to a YouTube link,
-though you're certainly welcome to
+<em>still</em> don’t come with video recording for all talks (all they do
+record and publish are keynotes), I can’t point you to a YouTube link,
+though you’re certainly welcome to
 <a href="../../../../../resources/presentations/manageable-application-containers/">peruse my slides</a>
 from that talk.</p>
 <h2>The problem</h2>
-<p>Suppose you're an operator who, in a massively scaled-out and highly
+<p>Suppose you’re an operator who, in a massively scaled-out and highly
 automated deployment, is responsible for keeping a few hundred or a
 few thousand containers up and running. Your developers put those
 together and then basically throw them over the wall for you to
-manage. It's your job just to keep them alive, available, and secure;
-what's <em>in</em> them is your developers' domain. Sure, you have Git repos
+manage. It’s your job just to keep them alive, available, and secure;
+what’s <em>in</em> them is your developers’ domain. Sure, you have Git repos
 you build your containers from, and a Docker registry, so you can
-always check what's in which container. You don't get to call the
+always check what’s in which container. You don’t get to call the
 shots, though.</p>
 <p>Suppose further that all most of your containers run some form of web
-service. And let's assume, just for the sake of this discussion, that
-they're all running Apache, because that's your reference
+service. And let’s assume, just for the sake of this discussion, that
+they’re all running Apache, because that’s your reference
 platform. Your developers may be writing applications in Python or
 Ruby or (shudder) PHP, but what all your apps have in common is that
-you've settled on Apache as your reference platform. Your developers
+you’ve settled on Apache as your reference platform. Your developers
 can assume that with Apache, you, the ops person, know the boldface
 cold, and you can give them an extremely stable, well-tuned platform
 to build on.</p>
@@ -176,12 +176,12 @@ so.</p>
 <h3>The fix in a non-containerized world</h3>
 <p>OK, so you must now fix OpenSSL or libc on all your systems in record
 time before the anticipated exploit barrage rolls in. In a world
-without containers, you'd rely on your trusted software source
+without containers, you’d rely on your trusted software source
 (normally, your distro vendor) to provide you with a fixed package or
 packages for the affected libraries. You would then roll those out via
 your preferred software management utility, or system automation
 facility, or unattended upgrade scheme.</p>
-<p>In short, you'd have a tense time until updated packages are
+<p>In short, you’d have a tense time until updated packages are
 available, but once they are, things get fixed in a matter of minutes.</p>
 <h3>But what now?</h3>
 <p>With the deployment of containers comes, frequently, the notion that
@@ -197,7 +197,7 @@ containers are efficient and produce little overhead. If they ever
 need to change anything, say go from one MySQL point release to
 another, then they just rebuild the container, you replace the old
 build with the new one, fine.</p>
-<p>But now it's not your developer who wants to change things, it's <em>you</em>
+<p>But now it’s not your developer who wants to change things, it’s <em>you</em>
 who needs to deploy a critical fix.<sup id="fnref:twitter"><a class="footnote-ref" href="#fn:twitter">1</a></sup></p>
 <blockquote>
 <p>so.. using GlibC?</p>
@@ -212,8 +212,8 @@ of thousand, to get the issue fixed. In a perfect environment, you
 have access to every build chain, know about every version of every
 container in your area of responsibility, can pinpoint exactly which
 are affected by the vulnerability, have an automated toolchain to
-build and deploy them, have perfect documentation so you don't need to
-check back with any of your developers, so it doesn't matter whether
+build and deploy them, have perfect documentation so you don’t need to
+check back with any of your developers, so it doesn’t matter whether
 any one is out sick, on vacation, or has left the company since they
 deployed one of their, now potentially affected, services.</p>
 <p>And of course, everyone works in such a perfect environment. Right?</p>
@@ -221,27 +221,27 @@ deployed one of their, now potentially affected, services.</p>
 <em>still</em> need to scramble to get it deployed, and deploying is <em>a lot</em>
 more complicated than in a world without containers.</p>
 <h2>Is this an inherent problem with containers?</h2>
-<p>Of course not. The problem isn't with the fact that you're using
+<p>Of course not. The problem isn’t with the fact that you’re using
 containers, or with the specific container technology. <strong>The problem
 is that everyone is telling you to use containers a certain way, and
-from an operational perspective that way is wrong.</strong> And it's not even
-"wrong but still better than all other options", it's just wrong. I
+from an operational perspective that way is wrong.</strong> And it’s not even
+“wrong but still better than all other options”, it’s just wrong. I
 guess you could call it the Docker Fallacy.</p>
-<p>That's the bad news. The good news is that there is a way that is
+<p>That’s the bad news. The good news is that there is a way that is
 better, saner, and cleaner, and will make your life as an operator
 <em>much</em> easier, while not being too hard on your developer friends.</p>
-<h2>So what's a better way?</h2>
+<h2>So what’s a better way?</h2>
 <p>You can use containers in a simpler, less flashy, less exciting
 — in short, <em>better</em> way.</p>
 <h3>Define a core platform, or platforms</h3>
 <p>Any organization worth its salt will select a handful of distributions
-to build products and services on. Maybe it's even just one, but let's
+to build products and services on. Maybe it’s even just one, but let’s
 assume you have several, say the latest Ubuntu LTS,<sup id="fnref:ubuntu"><a class="footnote-ref" href="#fn:ubuntu">2</a></sup> the
 latest CentOS, and the latest Debian. For each of these, you can
 define an absolute bare-minimal list of packages. I can almost
 guarantee you that none of your developers will care about a single
 item on that list. A C library, a shell, an init system, coreutils,
-NTP... chances are that you'll run up a list of well over 100 core
+NTP… chances are that you’ll run up a list of well over 100 core
 system components that <em>you</em> will be expected to keep secure; your
 developers will take them all for granted.</p>
 <p>What <em>you</em> can take for granted, thanks to the tireless work of
@@ -249,7 +249,7 @@ packagers and distro vendors over years and years, is that you will
 get timely security updates for all of those.</p>
 <h3>Deploy your core platforms as often as you need</h3>
 <p>Deploy these reference systems across your physical hardware. Deploy
-as many as you need for all the containers you're expected to run on
+as many as you need for all the containers you’re expected to run on
 each platform. Do so in an automated fashion, so that you never have
 to log into any of these systems by hand.</p>
 <h3>Use OverlayFS for your containers</h3>
@@ -273,7 +273,7 @@ you can do a few clever things:</p>
 LXC. You define a bunch of overlay directories — one for each of
 your containers —, and they can all share one base filesystem:
 your host root filesystem.<sup id="fnref:automount"><a class="footnote-ref" href="#fn:automount">3</a></sup></p>
-<p>Then, the union mount becomes your LXC container's root. It
+<p>Then, the union mount becomes your LXC container’s root. It
 automatically has read access to everything that is available on the
 host, unless specifically hidden, and whatever it writes goes to the
 overlay. When you discard a container, you delete the overlay.</p>
@@ -301,13 +301,13 @@ shown in the example above.</p>
 <p>What this creates, among other things, is crystal-clear separation of
 concerns: whatever is in the overlay is for your developers to
 decide. They can pull in packages from PyPI, Ruby Gems, NPMs,
-whatever. What's in the host root is your responsibility.</p>
+whatever. What’s in the host root is your responsibility.</p>
 <h3>Automate, automate, automate</h3>
-<p>It's obvious and self-evident, but it doesn't hurt to reiterate: you
-want to automate <em>all</em> of this. You're certainly free to select your
+<p>It’s obvious and self-evident, but it doesn’t hurt to reiterate: you
+want to automate <em>all</em> of this. You’re certainly free to select your
 own tools to do it, but Ansible specifically has very good LXC
 container support so it makes this a breeze.</p>
-<p>Here's a simple Ansible playbook example that creates 100 containers,
+<p>Here’s a simple Ansible playbook example that creates 100 containers,
 all based off your host root.<sup id="fnref:ansible"><a class="footnote-ref" href="#fn:ansible">4</a></sup></p>
 <div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span><span class="w"></span>
 <span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w"></span>
@@ -336,11 +336,11 @@ all based off your host root.<sup id="fnref:ansible"><a class="footnote-ref" hre
 <span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">started</span><span class="w"></span>
 <span class="w">      </span><span class="nt">with_sequence</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">count=100</span><span class="w"></span>
 </code></pre></div>
-<p>Now of course, this will also mean that you'll need to get your
+<p>Now of course, this will also mean that you’ll need to get your
 developers to define their container config in Ansible. However, that
 is fundamentally a <em>good</em> thing, because it means that developers and
 operations people will be reading and writing the same language. Also,
-if your developers can write a Dockerfile, they won't have a hard time
+if your developers can write a Dockerfile, they won’t have a hard time
 with Ansible YAML either.</p>
 <h2>How does this help?</h2>
 <p>With this approach, think of what you now have to do to make hundreds
@@ -349,10 +349,10 @@ of containers running on the same box get a new libc.</p>
 <li>Update your host libc.</li>
 <li>Restart your containers.</li>
 </ol>
-<p>That's it. That is literally all you have to do to update hundreds of
+<p>That’s it. That is literally all you have to do to update hundreds of
 containers in one fell swoop. LXC will remount your OverlayFS on
 container restart, and thus all changes to the host will be
-immediately visible in the container's overlay filesystem.</p>
+immediately visible in the container’s overlay filesystem.</p>
 <p>On an Ubuntu platform, you could even go so far as automating this in
 conjunction with unattended upgrades:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># /etc/apt/apt.conf.d/50unattended-upgrades</span>
@@ -376,11 +376,11 @@ merit, regardless of what the hipster crowd is trying to sell you.</p>
 <p>Edit, 2016-02-22: Added Twitter quote from Josh Long. <a class="footnote-backref" href="#fnref:twitter" title="Jump back to footnote 1 in the text">↩</a></p>
 </li>
 <li id="fn:ubuntu">
-<p>At the time of writing, the latest Ubuntu LTS is 14.04 "Trusty
-Tahr", which is based on a Linux 3.13 kernel. This Ubuntu stock
+<p>At the time of writing, the latest Ubuntu LTS is 14.04 “Trusty
+Tahr”, which is based on a Linux 3.13 kernel. This Ubuntu stock
 kernel ships with a pre-release version of OverlayFS which
 predates the 3.14 mainline merge. I would not recommend using that
-kernel; instead you'll want to run your hosts with a more recent
+kernel; instead you’ll want to run your hosts with a more recent
 kernel from the
 <a href="https://wiki.ubuntu.com/Kernel/LTSEnablementStack">LTS Enablement Stack</a>. Again
 at the time of writing, this is a Linux 4.2 kernel that ships with
@@ -395,9 +395,9 @@ commonly do for directories like <code>/root</code>, <code>/home</code>, <code>/
 others. <a class="footnote-backref" href="#fnref:automount" title="Jump back to footnote 3 in the text">↩</a></p>
 </li>
 <li id="fn:ansible">
-<p>Please note that it's not <em>quite</em> as simple as shown in the
+<p>Please note that it’s not <em>quite</em> as simple as shown in the
 Ansible example. You will want to provide some additional tweaks,
-such as added mounts or opaque directories. I've tried to keep the
+such as added mounts or opaque directories. I’ve tried to keep the
 example brief to illustrate the concept. <a class="footnote-backref" href="#fnref:ansible" title="Jump back to footnote 4 in the text">↩</a></p>
 </li>
 </ol>

@@ -147,16 +147,16 @@ is the only edX service to require Ruby, it depends on a Ruby version
 that is outdated and
 <a href="https://github.com/edx/configuration/issues/3589">no longer receives security updates (although a fix for that is on the way),</a>
 it and generally feels like overkill to many users.</p>
-<p>Thankfully, since the Open edX Eucalyptus release it's been quite easy
+<p>Thankfully, since the Open edX Eucalyptus release it’s been quite easy
 to replace the course forum with an alternative. Here at hastexo,
-we're fans of <a href="//www.disqus.com">Disqus</a> (you may have noticed we also
-use it around out web site), so let's see what we can do to drop the
+we’re fans of <a href="//www.disqus.com">Disqus</a> (you may have noticed we also
+use it around out web site), so let’s see what we can do to drop the
 Open edX Forum and replace it with Disqus.</p>
-<h2>Step 1: Locate your course's <code>policy.json</code> file</h2>
+<h2>Step 1: Locate your course’s <code>policy.json</code> file</h2>
 <p>If you keep your course materials in Git or some other
-version-controlled repository, you'll already be familiar with the
+version-controlled repository, you’ll already be familiar with the
 <a href="http://edx.readthedocs.io/projects/edx-open-learning-xml/en/latest/directory-structure.html#olx-and-directory-file-structures">directory structure of an OLX course tree.</a>
-If you're not,
+If you’re not,
 <a href="http://help.appsembler.com/article/157-how-to-export-and-import-a-course">just use edX Studio</a>
 to export your course into a compressed archive, download it, and
 extract it on your local machine.</p>
@@ -217,7 +217,7 @@ located therein. It might look like this:</p>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>Note the <code>tabs</code> list. It contains the list of course tabs
-(<a href="http://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/course_assets/pages.html">which edX Studio, confusingly, calls "pages"</a>).</p>
+(<a href="http://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/course_assets/pages.html">which edX Studio, confusingly, calls “pages”</a>).</p>
 <h2>Step 2: Remove the default Discussion tab</h2>
 <p>You can now edit <code>policy.json</code>, and drop the <code>Discussion</code> entry from
 the <code>tabs</code> list, to make it look like so:</p>
@@ -245,8 +245,8 @@ the <code>tabs</code> list, to make it look like so:</p>
 <span class="w">    </span><span class="p">]</span><span class="w"></span>
 </code></pre></div>
 <p>Maybe you also want to remove the course wiki. Just keep whichever
-tabs you'd like to keep.</p>
-<h2>Step 3: Add a "static" tab</h2>
+tabs you’d like to keep.</p>
+<h2>Step 3: Add a “static” tab</h2>
 <p>In place of the old <code>Discussion</code> tab (which, you may have noticed, was
 of a special type conspicuously named <code>discussion</code>), you can now put a
 tab of different, simpler type: <code>static_tab</code>. Like so:</p>
@@ -279,7 +279,7 @@ tab of different, simpler type: <code>static_tab</code>. Like so:</p>
 <span class="w">    </span><span class="p">]</span><span class="w"></span>
 </code></pre></div>
 <p>Note that a <code>static_tab</code> type tab also requires a value
-<code>url_slug</code>. What's that one about, you ask?</p>
+<code>url_slug</code>. What’s that one about, you ask?</p>
 <h2>Step 4: add static content</h2>
 <p>Whatever you put into <code>url_slug</code> tells Open edX to go look into the
 <code>tabs</code> subdirectory of your course root, and find a properly named
@@ -304,7 +304,7 @@ then stick it into <code>tabs/discussion.html</code>. Something like this:</p>
 <a href="http://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/course_assets/pages.html">upload to Studio</a>
 or run
 <a href="https://openedx.atlassian.net/wiki/display/OpenOPS/Managing+OpenEdX+Tips+and+Tricks#ManagingOpenEdXTipsandTricks-manage.pycommands"><code>manage.py import</code>,</a>
-and you're done!</p>
+and you’re done!</p>
 <hr/>
 <p>This article originally appeared on the <code>hastexo.com</code> website (now defunct).</p>
   </div>

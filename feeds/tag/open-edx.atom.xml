@@ -25,16 +25,16 @@ is the only edX service to require Ruby, it depends on a Ruby version
 that is outdated and
 &lt;a href="https://github.com/edx/configuration/issues/3589"&gt;no longer receives security updates (although a fix for that is on the way),&lt;/a&gt;
 it and generally feels like overkill to many users.&lt;/p&gt;
-&lt;p&gt;Thankfully, since the Open edX Eucalyptus release it's been quite easy
+&lt;p&gt;Thankfully, since the Open edX Eucalyptus release it’s been quite easy
 to replace the course forum with an alternative. Here at hastexo,
-we're fans of &lt;a href="//www.disqus.com"&gt;Disqus&lt;/a&gt; (you may have noticed we also
-use it around out web site), so let's see what we can do to drop the
+we’re fans of &lt;a href="//www.disqus.com"&gt;Disqus&lt;/a&gt; (you may have noticed we also
+use it around out web site), so let’s see what we can do to drop the
 Open edX Forum and replace it with Disqus.&lt;/p&gt;
-&lt;h2&gt;Step 1: Locate your course's &lt;code&gt;policy.json&lt;/code&gt; file&lt;/h2&gt;
+&lt;h2&gt;Step 1: Locate your course’s &lt;code&gt;policy.json&lt;/code&gt; file&lt;/h2&gt;
 &lt;p&gt;If you keep your course materials in Git or some other
-version-controlled repository, you'll already be familiar with the
+version-controlled repository, you’ll already be familiar with the
 &lt;a href="http://edx.readthedocs.io/projects/edx-open-learning-xml/en/latest/directory-structure.html#olx-and-directory-file-structures"&gt;directory structure of an OLX course tree.&lt;/a&gt;
-If you're not,
+If you’re not,
 &lt;a href="http://help.appsembler.com/article/157-how-to-export-and-import-a-course"&gt;just use edX Studio&lt;/a&gt;
 to export your course into a compressed archive, download it, and
 extract it on your local machine.&lt;/p&gt;
@@ -95,7 +95,7 @@ located therein. It might look like this:&lt;/p&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Note the &lt;code&gt;tabs&lt;/code&gt; list. It contains the list of course tabs
-(&lt;a href="http://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/course_assets/pages.html"&gt;which edX Studio, confusingly, calls "pages"&lt;/a&gt;).&lt;/p&gt;
+(&lt;a href="http://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/course_assets/pages.html"&gt;which edX Studio, confusingly, calls “pages”&lt;/a&gt;).&lt;/p&gt;
 &lt;h2&gt;Step 2: Remove the default Discussion tab&lt;/h2&gt;
 &lt;p&gt;You can now edit &lt;code&gt;policy.json&lt;/code&gt;, and drop the &lt;code&gt;Discussion&lt;/code&gt; entry from
 the &lt;code&gt;tabs&lt;/code&gt; list, to make it look like so:&lt;/p&gt;
@@ -123,8 +123,8 @@ the &lt;code&gt;tabs&lt;/code&gt; list, to make it look like so:&lt;/p&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Maybe you also want to remove the course wiki. Just keep whichever
-tabs you'd like to keep.&lt;/p&gt;
-&lt;h2&gt;Step 3: Add a "static" tab&lt;/h2&gt;
+tabs you’d like to keep.&lt;/p&gt;
+&lt;h2&gt;Step 3: Add a “static” tab&lt;/h2&gt;
 &lt;p&gt;In place of the old &lt;code&gt;Discussion&lt;/code&gt; tab (which, you may have noticed, was
 of a special type conspicuously named &lt;code&gt;discussion&lt;/code&gt;), you can now put a
 tab of different, simpler type: &lt;code&gt;static_tab&lt;/code&gt;. Like so:&lt;/p&gt;
@@ -157,7 +157,7 @@ tab of different, simpler type: &lt;code&gt;static_tab&lt;/code&gt;. Like so:&lt
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Note that a &lt;code&gt;static_tab&lt;/code&gt; type tab also requires a value
-&lt;code&gt;url_slug&lt;/code&gt;. What's that one about, you ask?&lt;/p&gt;
+&lt;code&gt;url_slug&lt;/code&gt;. What’s that one about, you ask?&lt;/p&gt;
 &lt;h2&gt;Step 4: add static content&lt;/h2&gt;
 &lt;p&gt;Whatever you put into &lt;code&gt;url_slug&lt;/code&gt; tells Open edX to go look into the
 &lt;code&gt;tabs&lt;/code&gt; subdirectory of your course root, and find a properly named
@@ -182,13 +182,13 @@ then stick it into &lt;code&gt;tabs/discussion.html&lt;/code&gt;. Something like
 &lt;a href="http://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/course_assets/pages.html"&gt;upload to Studio&lt;/a&gt;
 or run
 &lt;a href="https://openedx.atlassian.net/wiki/display/OpenOPS/Managing+OpenEdX+Tips+and+Tricks#ManagingOpenEdXTipsandTricks-manage.pycommands"&gt;&lt;code&gt;manage.py import&lt;/code&gt;,&lt;/a&gt;
-and you're done!&lt;/p&gt;
+and you’re done!&lt;/p&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Open edX"></category></entry><entry><title>Dogfooding Dogwood</title><link href="https://xahteiwi.eu/blog/2016/02/12/dogfooding-dogwood/" rel="alternate"></link><published>2016-02-12T00:00:00+00:00</published><updated>2016-02-12T00:00:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2016-02-12:/blog/2016/02/12/dogfooding-dogwood/</id><summary type="html">&lt;p&gt;The Open edX "Dogwood" release is out. We've been running its code base in production for several weeks, and can share some first-hand experience.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This week, the &lt;a href="https://open.edx.org"&gt;Open edX&lt;/a&gt; community
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Open edX"></category></entry><entry><title>Dogfooding Dogwood</title><link href="https://xahteiwi.eu/blog/2016/02/12/dogfooding-dogwood/" rel="alternate"></link><published>2016-02-12T00:00:00+00:00</published><updated>2016-02-12T00:00:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2016-02-12:/blog/2016/02/12/dogfooding-dogwood/</id><summary type="html">&lt;p&gt;The Open edX &amp;ldquo;Dogwood&amp;rdquo; release is out. We&amp;rsquo;ve been running its code base in production for several weeks, and can share some first-hand experience.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This week, the &lt;a href="https://open.edx.org"&gt;Open edX&lt;/a&gt; community
 &lt;a href="https://open.edx.org/blog/newest-open-edx-release-dogwood-now-available"&gt;announced&lt;/a&gt;
 its latest release,
 &lt;a href="http://edx.readthedocs.org/projects/open-edx-release-notes/en/latest/dogwood.html"&gt;Open edX Dogwood&lt;/a&gt;. (In
-case you don't follow the Open edX community closely, its releases are
+case you don’t follow the Open edX community closely, its releases are
 alphabetically named after trees, so on the heels of the Birch and
 Cypress releases, we now have
 &lt;a href="https://en.wikipedia.org/wiki/Cornus_(genus)"&gt;Dogwood&lt;/a&gt;, and
@@ -197,25 +197,25 @@ Eucalyptus will be next.)&lt;/p&gt;
 timeframe, and we shifted our OpenStack integration work to track the
 master branch in December, to ensure we would be ready in time for
 Dogwood. &lt;a href="//academy.hastexo.com"&gt;hastexo Academy&lt;/a&gt; also tracks master,
-so if you take one of our self-paced online courses, you'll be running
+so if you take one of our self-paced online courses, you’ll be running
 the latest and greatest from Open edX.&lt;/p&gt;
 &lt;hr/&gt;
 &lt;h2&gt;Checking out the new features&lt;/h2&gt;
 &lt;p&gt;There are several new features in Open edX Dogwood, some of which we
 tested and ran, with somewhat mixed (but generally positive) results.&lt;/p&gt;
 &lt;h3&gt;Platform upgrades&lt;/h3&gt;
-&lt;p&gt;Open edX now builds upon Django 1.8 and Python 2.7.10. It's great to
+&lt;p&gt;Open edX now builds upon Django 1.8 and Python 2.7.10. It’s great to
 see some technical debt pay-down by moving beyond the now-unsupported
 Django 1.4. We hope to see this continue by Eucalyptus
-&lt;a href="https://openedx.slack.com/archives/general/p1455215550000885"&gt;hopefully moving to the next Ubuntu LTS, 16.04 "Xenial Xerus".&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;It would also be great to see a move to Python 3, but we're not
+&lt;a href="https://openedx.slack.com/archives/general/p1455215550000885"&gt;hopefully moving to the next Ubuntu LTS, 16.04 “Xenial Xerus”.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;It would also be great to see a move to Python 3, but we’re not
 holding our breath on that, for various reasons — including the fact
 that Ansible, which Open edX uses for deployment, &lt;a href="https://lwn.net/Articles/661590/"&gt;also still requires
 Python 2.&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;Comprehensive theming&lt;/h3&gt;
 &lt;p&gt;Comprehensive theming is a new and improved way to apply theming and
 branding to Open edX platforms, which will eventually replace the
-current "Stanford" theming engine (named after an Open edX theme
+current “Stanford” theming engine (named after an Open edX theme
 developed at Stanford University, which became a popular basis for
 rebranding the Open edX LMS). In mid-January, we shifted
 &lt;a href="https://github.com/hastexo/edx-theme"&gt;our own Stanford-style Open edX theme&lt;/a&gt;
@@ -224,13 +224,13 @@ still in pre-launch. We ran into a critical bug
 &lt;a href="https://github.com/edx/edx-platform/pull/11319"&gt;that has been fixed for the release,&lt;/a&gt;
 and will come back to redeploying our new Comprehensive theme at a
 later date.&lt;/p&gt;
-&lt;p&gt;We're also waiting for a
+&lt;p&gt;We’re also waiting for a
 &lt;a href="https://github.com/edx/configuration/pull/2676"&gt;patch to the &lt;code&gt;edx-configuration&lt;/code&gt; Ansible repository&lt;/a&gt;
 to land, so we can properly deploy our Comprehensive theme to our Open
 edX instance.&lt;/p&gt;
 &lt;h3&gt;Otto&lt;/h3&gt;
 &lt;p&gt;We also looked extensively at the new Open edX ecommerce framework,
-"Otto", for buying and sellling course seats. Sadly, we found multiple
+“Otto”, for buying and sellling course seats. Sadly, we found multiple
 issues that prevented us from using it in our infrastructure for the
 time being, and we pushed Otto off for our Eucalyptus respin.&lt;/p&gt;
 &lt;p&gt;Otto has no support for tax assessment on course seats; this is a show
@@ -245,7 +245,7 @@ Academy launch by several months, so that was a delay we were
 unwilling to accept. There are other issues with Otto, notably the
 fact that it comes with its own PayPal integration (as if
 &lt;a href="http://django-oscar-paypal.readthedocs.org/en/latest/"&gt;django-oscar-paypal&lt;/a&gt;
-didn't exist), which made us rather uncomfortable.&lt;/p&gt;
+didn’t exist), which made us rather uncomfortable.&lt;/p&gt;
 &lt;p&gt;So we instead integrated hastexo Academy with our own, pure-Oscar web
 store that makes use of upstream community supported features much
 more extensively than Otto, and that also enables us to sell other
@@ -256,18 +256,18 @@ products and services besides hastexo Academy course seats.&lt;/p&gt;
 we do not currently use this XBlock in production, it comes in very
 handy as a good reference for
 &lt;a href="https://github.com/edx/xblock-lti-consumer/tree/master/lti_consumer/tests/unit"&gt;XBlock unit tests&lt;/a&gt;,
-which we'll be using to improve the test coverage in our own XBlock.&lt;/p&gt;
+which we’ll be using to improve the test coverage in our own XBlock.&lt;/p&gt;
 &lt;hr/&gt;
 &lt;h2&gt;Open edX integration with OpenStack&lt;/h2&gt;
 &lt;p&gt;Our OpenStack integration work for Open edX is continuing at its
 regular, steady pace.&lt;/p&gt;
 &lt;h3&gt;Running Open edX Dogwood on OpenStack&lt;/h3&gt;
-&lt;p&gt;You're of course still able to deploy Open edX on OpenStack, using the
-Heat templates we've maintained since Cypress.&lt;/p&gt;
+&lt;p&gt;You’re of course still able to deploy Open edX on OpenStack, using the
+Heat templates we’ve maintained since Cypress.&lt;/p&gt;
 &lt;h3&gt;Running the hastexo XBlock on Open edX Dogwood&lt;/h3&gt;
 &lt;p&gt;The hastexo XBlock, enabling course authors to define arbitrarily
 complex lab environments for courses with OpenStack Heat, is of course
-fully supported for Open edX Dogwood. That's exactly what you're using
+fully supported for Open edX Dogwood. That’s exactly what you’re using
 when speeding through interactive labs on hastexo Academy.&lt;/p&gt;
 &lt;hr/&gt;
 &lt;h2&gt;Congrats, and thanks!&lt;/h2&gt;
@@ -275,7 +275,7 @@ when speeding through interactive labs on hastexo Academy.&lt;/p&gt;
 team at hastexo would like to extend a big thank-you to everyone who
 made a contribution to this release.&lt;/p&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Open edX"></category><category term="OpenStack"></category></entry><entry><title>My first Open edX contribution</title><link href="https://xahteiwi.eu/blog/2016/01/05/my-first-open-edx-contribution/" rel="alternate"></link><published>2016-01-05T00:00:00+00:00</published><updated>2016-01-05T00:00:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2016-01-05:/blog/2016/01/05/my-first-open-edx-contribution/</id><summary type="html">&lt;p&gt;In which I talk about landing my first patch in Open edX.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I've finally submitted my first code contribution to &lt;a href="https://open.edx.org/"&gt;Open
+&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Open edX"></category><category term="OpenStack"></category></entry><entry><title>My first Open edX contribution</title><link href="https://xahteiwi.eu/blog/2016/01/05/my-first-open-edx-contribution/" rel="alternate"></link><published>2016-01-05T00:00:00+00:00</published><updated>2016-01-05T00:00:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2016-01-05:/blog/2016/01/05/my-first-open-edx-contribution/</id><summary type="html">&lt;p&gt;In which I talk about landing my first patch in Open edX.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I’ve finally submitted my first code contribution to &lt;a href="https://open.edx.org/"&gt;Open
 edX&lt;/a&gt;, a trivial patch for an annoying issue in
 the LMS start page. The PR is
 &lt;a href="https://github.com/edx/edx-platform/pull/11138"&gt;here&lt;/a&gt;.&lt;/p&gt;
@@ -286,18 +286,18 @@ immersive learning experience. In our own &lt;a href="//academy.hastexo.com"&gt;
 Academy&lt;/a&gt; environment, it of course also loads
 the &lt;a href="//github.com/hastexo/hastexo-xblock"&gt;hastexo XBlock&lt;/a&gt; to interface
 with arbitrarily complex, on-demand lab environments.&lt;/p&gt;
-&lt;p&gt;If you want to know how the LMS fits into Open edX overall, there's
+&lt;p&gt;If you want to know how the LMS fits into Open edX overall, there’s
 &lt;a href="//open.edx.org/sites/default/files/wysiwyg/open-edx-pages/edX_architecture_CMS_LMS_0.png" title="Open edX architecture diagram"&gt;an overview
 graphic&lt;/a&gt; over at
 &lt;a href="//open.edx.org"&gt;open.edx.org&lt;/a&gt; for your perusal.&lt;/p&gt;
 &lt;p&gt;Being a new contributor to Open edX, this obviously involves jumping
 through &lt;a href="https://github.com/edx/edx-platform/blob/master/CONTRIBUTING.rst"&gt;yet another Contributor Agreement
-process&lt;/a&gt;. Here's
+process&lt;/a&gt;. Here’s
 to hoping this gets resolved quickly.&lt;/p&gt;
 &lt;h3&gt;Update, 2016-02-03&lt;/h3&gt;
 &lt;p&gt;The contributor agreement was &lt;a href="//github.com/edx/edx-platform/pull/11138#issuecomment-168964638"&gt;squared away really
 fast&lt;/a&gt;;
-the patch review did, however, take some time. &lt;a href="//github.com/edx/edx-platform/commit/71a6779dfa44baa27d9c2b509587385edb4380af"&gt;But it's in
+the patch review did, however, take some time. &lt;a href="//github.com/edx/edx-platform/commit/71a6779dfa44baa27d9c2b509587385edb4380af"&gt;But it’s in
 now&lt;/a&gt;.&lt;/p&gt;
 &lt;hr/&gt;
 &lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Open edX"></category></entry><entry><title>OpenStack for Open edX: Inside and Out (SWITCH ICT-Focus 2015)</title><link href="https://xahteiwi.eu/resources/presentations/ictfocus2015/" rel="alternate"></link><published>2015-11-10T00:00:00+00:00</published><updated>2015-11-10T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2015-11-10:/resources/presentations/ictfocus2015/</id><content type="html">&lt;p&gt;My presentation at &lt;a href="https://switch.ch"&gt;SWITCH&lt;/a&gt; ICT-Focus 2015.&lt;/p&gt;
@@ -321,7 +321,7 @@ more than 4 million students. Since 2013, the software running edx.org
 is available under an open source software license, enabling private and
 public organizations to run and operate the same learning platform under
 the Open edX initiative.&lt;/p&gt;
-&lt;p&gt;hastexo's contribution to Open edX is twofold: first, we enabled Open
+&lt;p&gt;hastexo’s contribution to Open edX is twofold: first, we enabled Open
 edX to run in an automated, distributed fashion on the OpenStack
 platform. Then, we taught Open edX the ability to automate the
 orchestration of on-demand OpenStack training environments. Both are now

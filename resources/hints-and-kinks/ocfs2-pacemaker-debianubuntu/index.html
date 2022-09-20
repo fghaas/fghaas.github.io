@@ -43,13 +43,13 @@
  
 
 <meta name="author" content="Florian Haas" />
-<meta name="description" content="Setting up OCFS2 in Pacemaker requires configuring the Pacemaker DLM, the O2CB lock manager for OCFS2, and an OCFS2 filesystem itself. Prerequisites OCFS2 with Pacemaker integration is supported on Debian (squeeze-backports and up) and Ubuntu (10.04 LTS and up). You&#39;ll need the dlm-pcmk, ocfs2-tools, ocfs2-tools-pacemaker and openais packages. Fencing …" />
+<meta name="description" content="Setting up OCFS2 in Pacemaker requires configuring the Pacemaker DLM, the O2CB lock manager for OCFS2, and an OCFS2 filesystem itself. Prerequisites OCFS2 with Pacemaker integration is supported on Debian (squeeze-backports and up) and Ubuntu (10.04 LTS and up). You’ll need the dlm-pcmk, ocfs2-tools, ocfs2-tools-pacemaker and openais packages …" />
 <meta name="keywords" content="Pacemaker">
 
 
   <meta property="og:site_name" content="xahteiwi.eu"/>
   <meta property="og:title" content="OCFS2 in Pacemaker (Debian/Ubuntu)"/>
-  <meta property="og:description" content="Setting up OCFS2 in Pacemaker requires configuring the Pacemaker DLM, the O2CB lock manager for OCFS2, and an OCFS2 filesystem itself. Prerequisites OCFS2 with Pacemaker integration is supported on Debian (squeeze-backports and up) and Ubuntu (10.04 LTS and up). You&#39;ll need the dlm-pcmk, ocfs2-tools, ocfs2-tools-pacemaker and openais packages. Fencing …"/>
+  <meta property="og:description" content="Setting up OCFS2 in Pacemaker requires configuring the Pacemaker DLM, the O2CB lock manager for OCFS2, and an OCFS2 filesystem itself. Prerequisites OCFS2 with Pacemaker integration is supported on Debian (squeeze-backports and up) and Ubuntu (10.04 LTS and up). You’ll need the dlm-pcmk, ocfs2-tools, ocfs2-tools-pacemaker and openais packages …"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:url" content="../../../resources/hints-and-kinks/ocfs2-pacemaker-debianubuntu/"/>
   <meta property="og:type" content="article"/>
@@ -146,7 +146,7 @@ the O2CB lock manager for OCFS2, and an OCFS2 filesystem itself.</p>
 <ul>
 <li>
 <p>OCFS2 with Pacemaker integration is supported on Debian
-  (<code>squeeze-backports</code> and up) and Ubuntu (10.04 LTS and up). You'll
+  (<code>squeeze-backports</code> and up) and Ubuntu (10.04 LTS and up). You’ll
   need the <code>dlm-pcmk</code>, <code>ocfs2-tools</code>, <code>ocfs2-tools-pacemaker</code> and
   <code>openais</code> packages.</p>
 </li>
@@ -185,22 +185,22 @@ clone cl_ocfs2 g_ocfs2 \
   meta interleave="true"
 </code></pre></div>
 <h2>Why keep the filesystem stopped?</h2>
-<p>Because you probably either don't have a configured OCFS2 filesystem
+<p>Because you probably either don’t have a configured OCFS2 filesystem
 on your device yet, or your ran mkfs.ocfs2 when the Pacemaker stack
-wasn't running. In either of those two cases, mount.ocfs2 will refuse
+wasn’t running. In either of those two cases, mount.ocfs2 will refuse
 to mount the filesystem.</p>
 <p>Thus, fire up your DLM and the o2cb process like the above
 configuration does, and then:</p>
 <ul>
 <li>
-<p>If you haven't got a filesystem yet, run <code>mkfs.ocfs2</code> on your device, or</p>
+<p>If you haven’t got a filesystem yet, run <code>mkfs.ocfs2</code> on your device, or</p>
 </li>
 <li>
 <p>If you do already have one, run
   <code>tunefs.ocfs2 --update-cluster-stack &lt;device&gt;</code>.</p>
 </li>
 </ul>
-<p>Then when that's done, run <code>crm resource start p_fs_ocfs2</code> and your
+<p>Then when that’s done, run <code>crm resource start p_fs_ocfs2</code> and your
 filesystem should happily mount on all nodes.</p>
 <hr/>
 <p>This article originally appeared on the <code>hastexo.com</code> website (now defunct).</p>

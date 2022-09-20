@@ -43,13 +43,13 @@
  
 
 <meta name="author" content="Florian Haas" />
-<meta name="description" content="For users of VMware virtualization, it&#39;s becoming increasingly common to deploy Pacemaker clusters within the virtual infrastructure. Doing this requires that you set up fencing via ESX Server or, more commonly, vCenter. Here&#39;s how to do that. The cluster-glue package contains node Pacemaker&#39;s fencing (STONITH) plugins, one of which is …" />
+<meta name="description" content="For users of VMware virtualization, it’s becoming increasingly common to deploy Pacemaker clusters within the virtual infrastructure. Doing this requires that you set up fencing via ESX Server or, more commonly, vCenter. Here’s how to do that. The cluster-glue package contains node Pacemaker’s fencing (STONITH) plugins, one …" />
 <meta name="keywords" content="Pacemaker">
 
 
   <meta property="og:site_name" content="xahteiwi.eu"/>
   <meta property="og:title" content="Fencing in VMware virtualized Pacemaker nodes"/>
-  <meta property="og:description" content="For users of VMware virtualization, it&#39;s becoming increasingly common to deploy Pacemaker clusters within the virtual infrastructure. Doing this requires that you set up fencing via ESX Server or, more commonly, vCenter. Here&#39;s how to do that. The cluster-glue package contains node Pacemaker&#39;s fencing (STONITH) plugins, one of which is …"/>
+  <meta property="og:description" content="For users of VMware virtualization, it’s becoming increasingly common to deploy Pacemaker clusters within the virtual infrastructure. Doing this requires that you set up fencing via ESX Server or, more commonly, vCenter. Here’s how to do that. The cluster-glue package contains node Pacemaker’s fencing (STONITH) plugins, one …"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:url" content="../../../resources/hints-and-kinks/fencing-vmware-virtualized-pacemaker-nodes/"/>
   <meta property="og:type" content="article"/>
@@ -140,11 +140,11 @@
 
 
   <div>
-    <p>For users of VMware virtualization, it's becoming increasingly common
+    <p>For users of VMware virtualization, it’s becoming increasingly common
 to deploy Pacemaker clusters within the virtual infrastructure. Doing
 this requires that you set up fencing via ESX Server or, more
-commonly, vCenter. Here's how to do that.</p>
-<p>The <code>cluster-glue</code> package contains node Pacemaker's fencing (STONITH)
+commonly, vCenter. Here’s how to do that.</p>
+<p>The <code>cluster-glue</code> package contains node Pacemaker’s fencing (STONITH)
 plugins, one of which is the <code>external/vcenter</code> plugin. It enables
 Pacemaker to interface with an ESX Server host or vCenter server. When
 a Pacemaker node needs to be fenced, the fencing node contacts the
@@ -178,7 +178,7 @@ utility that comes bundled with the SDK:</p>
 directory. Copy this file into a location where Pacemaker can find it,
 say <code>/etc/vicredentials.xml</code>, and make sure it gets 0600
 permissions. Also, remember to copy it to all your cluster nodes. Once
-your credentials are properly set up, you can test the STONITH agent's
+your credentials are properly set up, you can test the STONITH agent’s
 functionality by invoking it directly, like so:</p>
 <div class="highlight"><pre><span></span><code>  <span class="nv">VI_SERVER</span><span class="o">=</span>&lt;vCenter server IP or hostname&gt; <span class="se">\</span>
   <span class="nv">VI_CREDSTORE</span><span class="o">=</span>/etc/vicredentials.xml <span class="se">\</span>

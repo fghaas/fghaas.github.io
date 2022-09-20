@@ -262,7 +262,7 @@ codepath. Instead, you can have something like this:&lt;/p&gt;
    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
       &lt;span class="c1"&gt;# ... lots of interesting things&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;... and then from your view (or management command, or whatever), you
+&lt;p&gt;… and then from your view (or management command, or whatever), you
 can invoke this like so:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;.tasks&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;ComplexOperation&lt;/span&gt;
 
@@ -360,7 +360,7 @@ OperationalError: (2006, 'MySQL server has gone away')
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.db&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;connection&lt;/span&gt;
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;connection&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;... and then, when I run anything else that requires a database query,
+&lt;p&gt;… and then, when I run anything else that requires a database query,
 Django will happily reconnect for me.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; me.refresh_from_db()
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -553,20 +553,20 @@ the experience, read on!&lt;/p&gt;
 &lt;!--break--&gt;
 &lt;p&gt;In order to make the most of this tutorial, you can recreate the
 interactive steps presented. Please note: the process, while simple, is
-extremely bandwidth intensive and you don't want to be …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="http://www.percona.com/live/mysql-conference-2014/sessions/hands-trove-database-service-openstack-mysql"&gt;This
+extremely bandwidth intensive and you don’t want to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="http://www.percona.com/live/mysql-conference-2014/sessions/hands-trove-database-service-openstack-mysql"&gt;This
 tutorial&lt;/a&gt;
 covered OpenStack Trove at Percona Live 2014. If you want to recreate
 the experience, read on!&lt;/p&gt;
 &lt;!--break--&gt;
 &lt;p&gt;In order to make the most of this tutorial, you can recreate the
 interactive steps presented. Please note: the process, while simple, is
-extremely bandwidth intensive and you don't want to be the bandwidth hog
+extremely bandwidth intensive and you don’t want to be the bandwidth hog
 that everyone hates in your hotel, or on a conference wifi. Do so in
 your office (or home) instead.&lt;/p&gt;
 &lt;p&gt;The set-up process is decribed in &lt;a href="https://github.com/fghaas/perconalive2014/blob/master/README.md"&gt;a brief
 README&lt;/a&gt;.
 Effectively, it boils down to cloning a Git repo and then running
-vagrant up, and you'll be good to go. But do pay attention to the system
+vagrant up, and you’ll be good to go. But do pay attention to the system
 requirements.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Slides: &lt;a href="https://www.slideshare.net/slideshow/embed_code/33588994"&gt;SlideShare&lt;/a&gt;&lt;/li&gt;
@@ -618,13 +618,13 @@ contents:&lt;/p&gt;
 &lt;/ul&gt;
 &lt;hr/&gt;
 &lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Galera"></category><category term="MySQL"></category><category term="Pacemaker"></category></entry><entry><title>Bootstrapping the Galera cluster</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/mysqlgalera-pacemaker-bootstrapping-galera-cluster/" rel="alternate"></link><published>2012-12-04T10:53:27+01:00</published><updated>2012-12-04T10:53:27+01:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-12-04:/resources/hints-and-kinks/mysqlgalera-pacemaker-bootstrapping-galera-cluster/</id><summary type="html">&lt;p&gt;In order to bootstrap your Galera cluster, manually bring up the
-cluster IP address on the desired interface. In this example, we'll
+cluster IP address on the desired interface. In this example, we’ll
 use 192.168.122.99 and eth1:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ip address add &lt;span class="m"&gt;192&lt;/span&gt;.168.122.99/24 dev eth1 label eth1:galera
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;And initialize the Galera cluster:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mysqld --wsrep_cluster_address&lt;span class="o"&gt;=&lt;/span&gt;gcomm …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;In order to bootstrap your Galera cluster, manually bring up the
-cluster IP address on the desired interface. In this example, we'll
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mysqld --wsrep_cluster_address …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;In order to bootstrap your Galera cluster, manually bring up the
+cluster IP address on the desired interface. In this example, we’ll
 use 192.168.122.99 and eth1:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ip address add &lt;span class="m"&gt;192&lt;/span&gt;.168.122.99/24 dev eth1 label eth1:galera
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -639,7 +639,7 @@ see entries similar to these:&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;At this point, your MySQL/Galera cluster is properly initialized. It
 only has one node, and it is not under cluster management yet, but
-it's already a working Galera installation.&lt;/p&gt;
+it’s already a working Galera installation.&lt;/p&gt;
 &lt;hr/&gt;
 &lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Galera"></category><category term="MySQL"></category><category term="Pacemaker"></category></entry><entry><title>Configuring Corosync</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/mysqlgalera-pacemaker-configuring-corosync/" rel="alternate"></link><published>2012-12-04T10:53:27+01:00</published><updated>2012-12-04T10:53:27+01:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-12-04:/resources/hints-and-kinks/mysqlgalera-pacemaker-configuring-corosync/</id><summary type="html">&lt;p&gt;You now need configure Corosync. The following example configuration
 file assumes that your cluster nodes have two network interfaces,
@@ -837,7 +837,7 @@ box, but the concepts should be equally applicable to other platforms
 with minimal modifications.&lt;/p&gt;
 &lt;p&gt;It also assumes that your Galera cluster will consist of three nodes,
 named alice, bob and charlie. Furthermore, all cluster nodes can
-resolve each other's hostnames.&lt;/p&gt;
+resolve each other’s hostnames.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Please note: All commands in this walkthrough require that you are
 logged into your system as root.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;First, make sure you have the required packages installed. One of the
@@ -878,7 +878,7 @@ squeeze-backports:&lt;/p&gt;
 Transfer (SST) methods for Galera:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt-get install rsync
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Now, all required packages are installed and you're ready to configure
+&lt;p&gt;Now, all required packages are installed and you’re ready to configure
 XtraDB Cluster.&lt;/p&gt;
 &lt;hr/&gt;
 &lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Galera"></category><category term="MySQL"></category><category term="Pacemaker"></category></entry><entry><title>Recovering from full cluster shutdown</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/mysqlgalera-pacemaker-recovering-full-cluster-shutdown/" rel="alternate"></link><published>2012-12-04T10:53:27+01:00</published><updated>2012-12-04T10:53:27+01:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-12-04:/resources/hints-and-kinks/mysqlgalera-pacemaker-recovering-full-cluster-shutdown/</id><summary type="html">&lt;p&gt;If at any time &lt;em&gt;all&lt;/em&gt; of the nodes in your cluster have been taken
@@ -1068,7 +1068,7 @@ of why Pacemaker is
 terrible&lt;/a&gt; and why
 you should never-ever use it. And when that someone is
 &lt;a href="https://github.com/"&gt;GitHub&lt;/a&gt;, which we all know, use and love, then
-that sermon gets a bit of excess attention. Let's take a quick look at
+that sermon gets a bit of excess attention. Let’s take a quick look at
 the facts.&lt;/p&gt;
 &lt;!--break--&gt;
 &lt;p&gt;The week of September 10, GitHub suffered a couple of outages which
@@ -1082,71 +1082,71 @@ incident&lt;/a&gt;
 a few months back), Jesse explains, in a very detailed way, what
 happened on one of their Pacemaker clusters.&lt;/p&gt;
 &lt;p&gt;Now, all of what follows is based exclusively on the information in that
-blog post of Jesse's. I have no inside knowledge of the incident, so my
-picture may be incomplete or skewed. But here's my take on it anyway. I
-do encourage you to read Jesse's post full-length, as the rest of this
-post otherwise won't make much sense. I'll just quote certain pieces of
+blog post of Jesse’s. I have no inside knowledge of the incident, so my
+picture may be incomplete or skewed. But here’s my take on it anyway. I
+do encourage you to read Jesse’s post full-length, as the rest of this
+post otherwise won’t make much sense. I’ll just quote certain pieces of
 it and comment on them here.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;&lt;strong&gt;Please note:&lt;/strong&gt; nothing in this post should be construed as a put-down
-of GitHub's excellent staff. They run a fantastic service and do an
-awesome job. It's just that their post-mortem seems to have created some
+of GitHub’s excellent staff. They run a fantastic service and do an
+awesome job. It’s just that their post-mortem seems to have created some
 misconceptions in the MySQL community about the Pacemaker stack as a
-whole, and those I'd like to help rectify. Also, I'm posting this in the
+whole, and those I’d like to help rectify. Also, I’m posting this in the
 hope that it provides useful insight to both the GitHub folks, and to
 anyone else facing similar issues.&lt;/em&gt;&lt;/p&gt;
 &lt;h2&gt;Enable Maintenance Mode when you should&lt;/h2&gt;
 &lt;p&gt;From the original post:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Monday's migration caused higher load on the database than our
+&lt;p&gt;Monday’s migration caused higher load on the database than our
 operations team has previously seen during these sorts of migrations.
-So high, in fact, that they caused Percona Replication Manager's
+So high, in fact, that they caused Percona Replication Manager’s
 health checks to fail on the master. In response to the failed master
-health check, Percona Replication manager moved the 'active' role and
+health check, Percona Replication manager moved the ‘active’ role and
 the master database to another server in the cluster and stopped MySQL
 on the node it perceived as failed.&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 At the time of this failover, the new database selected for the
-'active' role had a cold InnoDB buffer pool and performed rather
-poorly. The system load generated by the site's query load on a cold
-cache soon caused Percona Replication Manager's health checks to fail
-again, and the 'active' role failed back to the server it was on
+‘active’ role had a cold InnoDB buffer pool and performed rather
+poorly. The system load generated by the site’s query load on a cold
+cache soon caused Percona Replication Manager’s health checks to fail
+again, and the ‘active’ role failed back to the server it was on
 originally.
 &lt;p&gt;&lt;/p&gt;
 At this point, I decided to disable all health checks by enabling
-Pacemaker's &lt;code&gt;maintenance-mode&lt;/code&gt;; an operating mode in which no health
+Pacemaker’s &lt;code&gt;maintenance-mode&lt;/code&gt;; an operating mode in which no health
 checks or automatic failover actions are performed. Performance on the
 site slowly recovered as the buffer pool slowly reached normal levels.
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Now there's actually several issues in there even in this early stage.
+&lt;p&gt;Now there’s actually several issues in there even in this early stage.
 Maintenance mode is generally the right thing to do here, but you enable
 it &lt;em&gt;before&lt;/em&gt; making large changes to the configuration, and you disable
-it when done. If you're uncomfortable with the cluster manager taking
-its hands off the entire cluster, and you know what you're doing, you
+it when done. If you’re uncomfortable with the cluster manager taking
+its hands off the entire cluster, and you know what you’re doing, you
 could also just disable cluster management and monitoring on a specific
 resource. Both approaches are explained
 &lt;a href="https://www.hastexo.com/resources/hints-and-kinks/maintenance-active-pacemaker-clusters"&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Also, as far as "health checks failing" on the master is concerned,
+&lt;p&gt;Also, as far as “health checks failing” on the master is concerned,
 pretty much the only thing that is likely to cause such a failure in
 this instance is a timeout, and you can adjust those even on a
 per-operation basis in Pacemaker. But even that is unnecessary if you
 enable maintenance mode at the right time.&lt;/p&gt;
-&lt;h2&gt;"Maintenance mode" really means maintenance mode&lt;/h2&gt;
+&lt;h2&gt;“Maintenance mode” really means maintenance mode&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;The following morning, our operations team was notified by a developer
 of incorrect query results returning from the node providing the
-'standby' role. I investigated the situation and determined that when
+‘standby’ role. I investigated the situation and determined that when
 the cluster was placed into maintenance-mode the day before, actions
-that should have caused the node elected to serve the 'standby' role
+that should have caused the node elected to serve the ‘standby’ role
 to change its replication master and start replicating were prevented
 from occurring.&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Well, of course. In maintenance mode, Pacemaker takes its hands off your
-resources. If you're enabling maintenance mode right in the middle of a
-failover, then that's not exactly a stellar idea. If you do, then it's
+resources. If you’re enabling maintenance mode right in the middle of a
+failover, then that’s not exactly a stellar idea. If you do, then it’s
 your job to complete those actions manually.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;I determined that the best course of action was to
@@ -1155,7 +1155,7 @@ Replication Manager to rectify the situation.&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;"Best" might be an exaggeration, if I may say so.&lt;/p&gt;
+&lt;p&gt;“Best” might be an exaggeration, if I may say so.&lt;/p&gt;
 &lt;h2&gt;A segfault and rejected cluster messages&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Upon attempting to disable &lt;code&gt;maintenance-mode&lt;/code&gt;, a Pacemaker segfault
@@ -1163,21 +1163,21 @@ occurred that resulted in a cluster state partition.&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;OK, that's bad, but what exactly segfaulted? crmd? attrd? pengine? Or
+&lt;p&gt;OK, that’s bad, but what exactly segfaulted? crmd? attrd? pengine? Or
 the master Heartbeat process? But the next piece of information would
-have me believe that the segfault really isn't the root cause of the
+have me believe that the segfault really isn’t the root cause of the
 cluster partition:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;After this update, two nodes (I'll call them 'a' and 'b') rejected
-most messages from the third node ('c'), while the third node rejected
+&lt;p&gt;After this update, two nodes (I’ll call them ‘a’ and ‘b’) rejected
+most messages from the third node (‘c’), while the third node rejected
 most messages from the other two.&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Now it's a pity that we don't have any version information and logs, but
-this looks very much like the "not in our membership" issue present up
+&lt;p&gt;Now it’s a pity that we don’t have any version information and logs, but
+this looks very much like the “not in our membership” issue present up
 to Pacemaker 1.1.6. This is a known issue, the fix is to update to a
-more recent version (&lt;a href="https://github.com/ClusterLabs/pacemaker/commit/03f6105592281901cc10550b8ad19af4beb5f72f"&gt;here's the
+more recent version (&lt;a href="https://github.com/ClusterLabs/pacemaker/commit/03f6105592281901cc10550b8ad19af4beb5f72f"&gt;here’s the
 commit,&lt;/a&gt; on
 GitHub of course), and the workaround is to just restart the Pacemaker
 services on the affected node(s) while in maintenance mode.&lt;/p&gt;
@@ -1191,19 +1191,19 @@ interrupted by messages from the second cluster and MySQL was stopped.&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Now this is an example of me being tempted to say, "logs or it didn't
-happen." If you've got the default no-quorum-policy of "block", and
-you're getting a non-quorate partition, and you don't have any resources
-with operations &lt;em&gt;explicitly&lt;/em&gt; configured to ignore quorum, then "two
-simultaneous master election decisions" can only refer to the Designated
+&lt;p&gt;Now this is an example of me being tempted to say, “logs or it didn’t
+happen.” If you’ve got the default no-quorum-policy of “block”, and
+you’re getting a non-quorate partition, and you don’t have any resources
+with operations &lt;em&gt;explicitly&lt;/em&gt; configured to ignore quorum, then “two
+simultaneous master election decisions” can only refer to the Designated
 Coordinator (DC) election, which has no bearing whatsoever on MySQL
 master status. Luckily, Pacemaker allows us to take a meaningful
 snapshot of all cluster logs and status after the fact with crm_report.
 It would be quite interesting to see a tarball from that.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;In the second, single-node cluster, node 'c' was elected at 8:19 AM,
+&lt;p&gt;In the second, single-node cluster, node ‘c’ was elected at 8:19 AM,
 and any subsequent messages from the other two-node cluster were
-discarded. As luck would have it, the 'c' node was the node that our
+discarded. As luck would have it, the ‘c’ node was the node that our
 operations team previously determined to be out of date. We detected
 this fact and powered off this out-of-date node at 8:26 AM to end the
 partition and prevent further data drift, taking down all production
@@ -1211,13 +1211,13 @@ database access and thus all access to github.com.&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;That's obviously a bummer, but really, if that partition is non-quorate,
-and Pacemaker hasn't explicitly been configured to ignore that, no
+&lt;p&gt;That’s obviously a bummer, but really, if that partition is non-quorate,
+and Pacemaker hasn’t explicitly been configured to ignore that, no
 cluster resources would start there. Needless to say a working fencing
 configuration would have helped oodles, too.&lt;/p&gt;
 &lt;h2&gt;Your cluster has no crystal ball, but it does have a command line&lt;/h2&gt;
-&lt;p&gt;I'll skip over most of the rest of the GitHub post, because it's an
-explanation of how these backend issues affected GitHub users. I'll just
+&lt;p&gt;I’ll skip over most of the rest of the GitHub post, because it’s an
+explanation of how these backend issues affected GitHub users. I’ll just
 hop on down to this piece:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;The automated failover of our main production database could be
@@ -1229,14 +1229,14 @@ would have been a resounding no.&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Well, you could have told your Pacemaker of that fact beforehand. Enable
-maintenance mode and you're good to go.&lt;/p&gt;
+maintenance mode and you’re good to go.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;There are many situations in which automated failover is an excellent
 strategy for ensuring the availability of a service. After careful
-consideration, we've determined that ensuring the availability of our
+consideration, we’ve determined that ensuring the availability of our
 primary production database is not one of these situations. To this
-end, we've made changes to our Pacemaker configuration to ensure
-failover of the 'active' database role will only occur when initiated
+end, we’ve made changes to our Pacemaker configuration to ensure
+failover of the ‘active’ database role will only occur when initiated
 by a member of our operations team.&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -1249,8 +1249,8 @@ interface to disable it, by changing a single cluster property. Failure
 to do so may result in problems, and in this case it did.&lt;/p&gt;
 &lt;p&gt;When you put a baby seat on the passenger side of your car, you disable
 the air bag to prevent major injury. But if you take that baby seat out
-and an adult passenger rides with you, are you seriously saying you're
-going to manually initiate the air bag in case of a crash? I hope you're
+and an adult passenger rides with you, are you seriously saying you’re
+going to manually initiate the air bag in case of a crash? I hope you’re
 not.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Finally, our operations team is performing a full audit of our
@@ -1259,30 +1259,29 @@ the segfault on Tuesday.&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;That's probably a really good idea. For anyone planning to do the same,
+&lt;p&gt;That’s probably a really good idea. For anyone planning to do the same,
 &lt;a href="https://www.hastexo.com/services/checkup"&gt;we can help.&lt;/a&gt;&lt;/p&gt;
 &lt;hr/&gt;
 &lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;
 &lt;!--break--&gt;</content><category term="blog"></category><category term="MySQL"></category><category term="Pacemaker"></category></entry><entry><title>Speaking at the 2012 Percona Live MySQL Conference</title><link href="https://xahteiwi.eu/blog/2012/02/27/speaking-2012-percona-live-mysql-conference/" rel="alternate"></link><published>2012-02-27T13:39:00+00:00</published><updated>2012-02-27T13:39:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2012-02-27:/blog/2012/02/27/speaking-2012-percona-live-mysql-conference/</id><summary type="html">&lt;p&gt;This year, I have the pleasure of returning to the MySQL Conference &amp;amp;
-Expo as a speaker. Percona have picked up the torch that O'Reilly had
-held as the conference organizers, and they're putting together a 3-day
+Expo as a speaker. Percona have picked up the torch that O’Reilly had
+held as the conference organizers, and they’re putting together a 3-day
 conference this year. I am co-presenting a tutorial with Yves Trudeau
-from Percona.&lt;/p&gt;
-&lt;p&gt;Our …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This year, I have the pleasure of returning to the MySQL Conference &amp;amp;
-Expo as a speaker. Percona have picked up the torch that O'Reilly had
-held as the conference organizers, and they're putting together a 3-day
+from …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This year, I have the pleasure of returning to the MySQL Conference &amp;amp;
+Expo as a speaker. Percona have picked up the torch that O’Reilly had
+held as the conference organizers, and they’re putting together a 3-day
 conference this year. I am co-presenting a tutorial with Yves Trudeau
 from Percona.&lt;/p&gt;
 &lt;p&gt;Our tutorial is called &lt;a href="http://www.percona.com/live/mysql-conference-2012/sessions/mysql-high-availability-deep-dive-pacemaker-drbd-mysql-replication-and-more"&gt;High Availability Deep Dive: Pacemaker, DRBD,
 MySQL Replication, and
 more!&lt;/a&gt; and
-it's going to be the only full-day tutorial offered in this year's
+it’s going to be the only full-day tutorial offered in this year’s
 conference. In it, Yves and I are going to cover&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;/p&gt;
-    An overview of the Pacemaker cluster stack (the classic "this is
-    Pacemaker" introduction)
+    An overview of the Pacemaker cluster stack (the classic “this is
+    Pacemaker” introduction)
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;
 -   &lt;/p&gt;
@@ -1298,39 +1297,39 @@ Yves has vastly improved through a big patch set to the MySQL RA).
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Do I expect this talk to be controversial? Definitely. The amount of
-"Pacemaker is terrible" and "Pacemaker is unsuitable for managing highly
-available databases" that has been around the blogosphere lately is
+“Pacemaker is terrible” and “Pacemaker is unsuitable for managing highly
+available databases” that has been around the blogosphere lately is
 pretty mind-boggling.&lt;/p&gt;
 &lt;p&gt;But strangely enough, most of the things brought forward against
 Pacemaker by its detractors seem like a time-warp back to about 2007.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;/p&gt;
-    "We must use XML to manage Pacemaker!" Nonsense. In fact, that was
+    “We must use XML to manage Pacemaker!” Nonsense. In fact, that was
     &lt;em&gt;never&lt;/em&gt; true – the release of Pacemaker as a separate project and
     the release of the crm shell coincided. Ever since, Pacemaker
     configuration has been as text-based as MySQL itself.
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;
 -   &lt;/p&gt;
-"All Pacemaker can do is react to node failure!" Nothing could be
+“All Pacemaker can do is react to node failure!” Nothing could be
 further from the truth. Pacemaker has some of the most sophisticated
 resource monitoring and auto-recovery capabilities under the sun.
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;
 -   &lt;/p&gt;
-"OK. But all it can do to react to &lt;em&gt;resource&lt;/em&gt; failure is kill a
-daemon!" Bogus again. It will happily do whatever the resource agent
+“OK. But all it can do to react to &lt;em&gt;resource&lt;/em&gt; failure is kill a
+daemon!” Bogus again. It will happily do whatever the resource agent
 specifies. Or the admin, through the configuration. 
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;In our tutorial, we're going to dispel a few of these myths. We
+&lt;p&gt;In our tutorial, we’re going to dispel a few of these myths. We
 certainly make no claims as to Pacemaker being the one and only solution
-for MySQL HA, but it's one that serves lots of use cases excellently.&lt;/p&gt;
-&lt;p&gt;Needless to say, I'll also hang around for the conference proper, and
-I'm very much looking forward to seeing lots of familiar faces. I'll
+for MySQL HA, but it’s one that serves lots of use cases excellently.&lt;/p&gt;
+&lt;p&gt;Needless to say, I’ll also hang around for the conference proper, and
+I’m very much looking forward to seeing lots of familiar faces. I’ll
 also remain in the Bay Area for some time after the MySQL conference –
 more on that in a day or two.&lt;/p&gt;
 &lt;hr/&gt;

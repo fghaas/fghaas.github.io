@@ -226,12 +226,12 @@ Pacemaker cluster configuration.</p>
   </header>
   <div>
       <div><p>In order to bootstrap your Galera cluster, manually bring up the
-cluster IP address on the desired interface. In this example, we'll
+cluster IP address on the desired interface. In this example, we’ll
 use 192.168.122.99 and eth1:</p>
 <div class="highlight"><pre><span></span><code>ip address add <span class="m">192</span>.168.122.99/24 dev eth1 label eth1:galera
 </code></pre></div>
 <p>And initialize the Galera cluster:</p>
-<div class="highlight"><pre><span></span><code>mysqld --wsrep_cluster_address<span class="o">=</span>gcomm …</code></pre></div></div>
+<div class="highlight"><pre><span></span><code>mysqld --wsrep_cluster_address …</code></pre></div></div>
         <br>
         <a class="btn"
            href="../resources/hints-and-kinks/mysqlgalera-pacemaker-bootstrapping-galera-cluster/#mysqlgalera-pacemaker-bootstrapping-galera-cluster">

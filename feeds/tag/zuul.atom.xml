@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Zuul</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/zuul.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-01-29T00:00:00+00:00</updated><entry><title>The Review Review</title><link href="https://xahteiwi.eu/./blog/2022/01/29/review-review/" rel="alternate"></link><published>2022-01-29T00:00:00+00:00</published><updated>2022-01-29T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-01-29:/./blog/2022/01/29/review-review/</id><summary type="html">&lt;p&gt;Musings on source code management, code review, testing, deployment, and collaboration culture.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I wanted to share a few thoughts on something I consider a rather
 important topic in our industry: code review and CI/CD tools, and how
 they relate.&lt;/p&gt;
-&lt;p&gt;This means that I'm talking about&lt;/p&gt;
+&lt;p&gt;This means that I’m talking about&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;source code management:&lt;/strong&gt; where we store our code, and how we
   manage access to it;&lt;/li&gt;
@@ -22,7 +22,7 @@ encompassed in these things.&lt;/p&gt;
 &lt;p&gt;First, whatever tools we use in order to accomplish these four things,
 they simultaneously influence and &lt;em&gt;are&lt;/em&gt; influenced by our
 collaboration culture.&lt;/p&gt;
-&lt;p&gt;It's ludicrous to presume that tools and culture are independent of
+&lt;p&gt;It’s ludicrous to presume that tools and culture are independent of
 each other, or to categorically declare that tools must be made to fit
 processes, not the other way around. That’s not how people
 work. Culture and tools always have an influence on each other.&lt;/p&gt;
@@ -336,7 +336,7 @@ but you do have to either push to upstream public registries, or build
 your own. Zuul does not come bundled with multitenant private
 registries the way GitHub and GitLab do.&lt;/p&gt;
 &lt;h3&gt;Administrative complexity&lt;/h3&gt;
-&lt;p&gt;In view of the above, there's another thing that you might want to
+&lt;p&gt;In view of the above, there’s another thing that you might want to
 consider, which in my humble opinion is an important reason why the
 Gerrit/Zuul combination has less uptake than it deserves on its
 technical merits. And this may sound overly dramatic, but: people like
@@ -422,12 +422,12 @@ repository. Here’s a tiny example:&lt;/p&gt;
   &lt;code&gt;.yml&lt;/code&gt;, &lt;code&gt;.yaml&lt;/code&gt;, and &lt;code&gt;.yamllint&lt;/code&gt; files in the directory where the
   &lt;code&gt;tox.ini&lt;/code&gt; file itself lives.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;What's helpful here is that &lt;code&gt;tox&lt;/code&gt; does a little bit of magic with the
+&lt;p&gt;What’s helpful here is that &lt;code&gt;tox&lt;/code&gt; does a little bit of magic with the
 testenv names. tox
 &lt;a href="https://tox.wiki/en/latest/example/basic.html#a-simple-tox-ini-default-environments"&gt;knows&lt;/a&gt;
 that if you call a testenv &lt;code&gt;py36&lt;/code&gt;, you want to test with Python 3.6
 (more precisely, &lt;a href="https://en.wikipedia.org/wiki/CPython"&gt;CPython&lt;/a&gt;
-3.6). &lt;code&gt;py39&lt;/code&gt;, that's Python 3.9. Just &lt;code&gt;py3&lt;/code&gt; means whatever Python
+3.6). &lt;code&gt;py39&lt;/code&gt;, that’s Python 3.9. Just &lt;code&gt;py3&lt;/code&gt; means whatever Python
 version maps to the &lt;code&gt;python3&lt;/code&gt; binary on your system.&lt;sup id="fnref:python-versions"&gt;&lt;a class="footnote-ref" href="#fn:python-versions"&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;/p&gt;
 &lt;h2&gt;Running &lt;code&gt;tox&lt;/code&gt; on every commit&lt;/h2&gt;
 &lt;p&gt;Now the first thing you might want to do is run &lt;code&gt;tox&lt;/code&gt; on every commit,
@@ -528,7 +528,7 @@ there as well? Easy. Here’s the exact same functionality for your
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;In &lt;a href="https://docs.gitlab.com/ee/ci/"&gt;GitLab CI&lt;/a&gt; I know of no elegant
 &lt;code&gt;matrix&lt;/code&gt; syntax to map the image version to the testenv. But on the
-other hand there's a bunch of things that "just happen" in a GitLab CI
+other hand there’s a bunch of things that “just happen” in a GitLab CI
 pipeline, which you specifically need to define in a GitHub Actions
 workflow definition. So overall your &lt;code&gt;.gitlab-ci.yml&lt;/code&gt; ends up shorter
 than your GitHub Actions &lt;code&gt;tox.yml&lt;/code&gt;.&lt;/p&gt;
@@ -560,7 +560,7 @@ whatever.&lt;/p&gt;
 Python version you want to support, to all your CI definitions. But if
 your project moves from GitHub to GitLab or from GitLab to
 Gerrit/Zuul, or your entire company goes on a great big CI migration,
-then you'll have one less thing to worry about, because your tests
+then you’ll have one less thing to worry about, because your tests
 already run anywhere.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;By the way:&lt;/strong&gt; when you set up your &lt;code&gt;tox.ini&lt;/code&gt; and your CI
@@ -581,16 +581,16 @@ the &lt;code&gt;tox&lt;/code&gt; checks, you may very well be interested in mult
 python versions. &lt;a class="footnote-backref" href="#fnref:python-versions" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:shell-script"&gt;
-&lt;p&gt;If you're being a purist, you could also invoke the
+&lt;p&gt;If you’re being a purist, you could also invoke the
 tox runner from a Python script. I prefer the shell &lt;code&gt;exec&lt;/code&gt;
 one-liner. &lt;a class="footnote-backref" href="#fnref:shell-script" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:py3"&gt;
-&lt;p&gt;In this case, for testing locally, we're not going to care
-about a specific installed Python version. We'll just make sure
-that the commit doesn't obviously break anything. In my humble
-opinion it's OK to catch version-specific issues in CI, but we
-shouldn't feed the CI code that's outright broken. &lt;a class="footnote-backref" href="#fnref:py3" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In this case, for testing locally, we’re not going to care
+about a specific installed Python version. We’ll just make sure
+that the commit doesn’t obviously break anything. In my humble
+opinion it’s OK to catch version-specific issues in CI, but we
+shouldn’t feed the CI code that’s outright broken. &lt;a class="footnote-backref" href="#fnref:py3" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:docker-runners"&gt;
 &lt;p&gt;This example assumes that you’re either using
@@ -612,7 +612,7 @@ deployment across development collaboration platforms&lt;/em&gt;&lt;/p&gt;
 &lt;h2&gt;Elevator Pitch&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;You have 300 characters to sell your talk. This is known as the
-"elevator pitch". Make it as exciting and enticing as possible.&lt;/p&gt;
+“elevator pitch”. Make it as exciting and enticing as possible.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;GitHub, GitLab, Gerrit — what should I choose? What’s the best review
 process, the best CI/CD integration, the best deployment facility?
@@ -634,7 +634,7 @@ the run-down.&lt;/p&gt;
 &lt;p&gt;The description will be seen by reviewers during the CFP process and
 may eventually be seen by the attendees of the event. You should
 make the description of your talk as compelling and exciting as
-possible. Remember, you're selling both the organizers of the events
+possible. Remember, you’re selling both the organizers of the events
 to select your talk, as well as trying to convince attendees your
 talk is the one they should see.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -671,17 +671,17 @@ circumstances.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Notes will only be seen by reviewers during the CFP process. This is
 where you should explain things such as technical requirements, why
-you're the best person to speak on this subject, etc...&lt;/p&gt;
+you’re the best person to speak on this subject, etc…&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;My team and I have worked with all tools mentioned in a professional
-capacity, and I believe I've got a very good understanding of the
+capacity, and I believe I’ve got a very good understanding of the
 relative merits of the systems presented. This does not include a
 hard-and-fast recommendation for one particular tool or platform.&lt;/p&gt;
-&lt;p&gt;This is a talk that's suitable for both in-person and on-line events.&lt;/p&gt;
+&lt;p&gt;This is a talk that’s suitable for both in-person and on-line events.&lt;/p&gt;
 &lt;h2&gt;Tags&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Tag your talk to make it easier for event organizers to be able to
-find. Examples are "ruby, javascript, rails".&lt;/p&gt;
+find. Examples are “ruby, javascript, rails”.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;GitHub, GitLab, Gerrit, Zuul, CI/CD, Development, DevOps&lt;/p&gt;
 &lt;div class="footnote"&gt;

@@ -43,13 +43,13 @@
  
 
 <meta name="author" content="Florian Haas" />
-<meta name="description" content="As an OpenStack/Ceph operator, you may sometimes want to forgo uploading a new image using the Glance API, because the process can be inefficient and time-consuming. Here&#39;s a faster way." />
+<meta name="description" content="As an OpenStack/Ceph operator, you may sometimes want to forgo uploading a new image using the Glance API, because the process can be inefficient and time-consuming. Here’s a faster way." />
 <meta name="keywords" content="Ceph, OpenStack">
 
 
   <meta property="og:site_name" content="xahteiwi.eu"/>
   <meta property="og:title" content="Importing an existing Ceph RBD image into Glance"/>
-  <meta property="og:description" content="As an OpenStack/Ceph operator, you may sometimes want to forgo uploading a new image using the Glance API, because the process can be inefficient and time-consuming. Here&#39;s a faster way."/>
+  <meta property="og:description" content="As an OpenStack/Ceph operator, you may sometimes want to forgo uploading a new image using the Glance API, because the process can be inefficient and time-consuming. Here’s a faster way."/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:url" content="../../../resources/hints-and-kinks/importing-rbd-into-glance/"/>
   <meta property="og:type" content="article"/>
@@ -147,7 +147,7 @@ create</code>, or the Horizon dashboard. Whichever process you choose, you
 select a local file, which you upload into the Glance image store.</p>
 <p>This process can be unpleasantly time-consuming when your Glance
 service is backed with Ceph RBD, for a practical reason. When using
-the <code>rbd</code> image store, you're expected to use <code>raw</code> images, which have
+the <code>rbd</code> image store, you’re expected to use <code>raw</code> images, which have
 interesting characteristics.</p>
 <h2>Raw images and sparse files</h2>
 <p>Most people will take an existing vendor cloud image, which is
@@ -177,7 +177,7 @@ disk size: 1000M
 <p>As you can see, in both cases the virtual image size differs starkly
 from the actual file size. In <code>qcow2</code>, this is due to the
 copy-on-write nature of the file format and zlib compression; for the
-<code>raw</code> image, we're dealing with a sparse file:</p>
+<code>raw</code> image, we’re dealing with a sparse file:</p>
 <div class="highlight"><pre><span></span><code>$ ls -lh ubuntu-xenial.qcow2
 -rw-rw-r-- <span class="m">1</span> florian florian 308M Feb <span class="m">17</span> <span class="m">10</span>:05 ubuntu-xenial.qcow2
 $ du -h  ubuntu-xenial.qcow2
@@ -187,15 +187,15 @@ $ ls -lh info ubuntu-xenial.raw
 $ du -h  ubuntu-xenial.raw
 1000M   ubuntu-xenial.raw
 </code></pre></div>
-<p>So, while the <code>qcow2</code> file's physical and logical sizes match, the
+<p>So, while the <code>qcow2</code> file’s physical and logical sizes match, the
 <code>raw</code> file looks much larger in terms of filesystem metadata, as
-opposed to its actual storage utilization. That's because in a sparse
-file, "holes" (essentially, sequences of null bytes) aren't actually
+opposed to its actual storage utilization. That’s because in a sparse
+file, “holes” (essentially, sequences of null bytes) aren’t actually
 written to the filesystem. Instead, the filesystems just records the
-position and length of each "hole", and when we read from the "holes"
+position and length of each “hole”, and when we read from the “holes”
 in the file, the read would just return null bytes again.</p>
 <p>The trouble with sparse files is that RESTful web services, like
-Glance, don't know too much about them. So, if we were to import that
+Glance, don’t know too much about them. So, if we were to import that
 raw file with <code>openstack image-create --file my_cloud_image.raw</code>, the
 command line client would upload null bytes with happy abandon, which
 would greatly lengthen the process.</p>
@@ -203,8 +203,8 @@ would greatly lengthen the process.</p>
 <p>Luckily for us, <code>qemu-img</code> also allows us to upload <em>directly</em> into
 RBD. All you need to do is make sure the image goes into the correct
 pool, and is reasonably named. Glance names uploaded images by their
-image ID, which is a universally unique identifier (UUID), so let's
-follow Glance's precedent.</p>
+image ID, which is a universally unique identifier (UUID), so let’s
+follow Glance’s precedent.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">IMAGE_ID</span><span class="o">=</span><span class="sb">`</span>uuidgen<span class="sb">`</span>
 <span class="nb">export</span> <span class="nv">POOL</span><span class="o">=</span><span class="s2">"glance-images"</span>  <span class="c1"># replace with your Glance pool name</span>
 
@@ -215,17 +215,17 @@ qemu-img convert <span class="se">\</span>
 </code></pre></div>
 <h2>Creating the clone baseline snapshot</h2>
 <p>Glance expects a snapshot named <code>snap</code> to exist on any image that is
-subsequently cloned by Cinder or Nova, so let's create that as
+subsequently cloned by Cinder or Nova, so let’s create that as
 well:</p>
 <div class="highlight"><pre><span></span><code>rbd snap create <span class="nv">$POOL</span>/<span class="nv">$IMAGE_ID</span>@snap
 rbd snap protect <span class="nv">$POOL</span>/<span class="nv">$IMAGE_ID</span>@snap
 </code></pre></div>
 <h2>Making Glance aware of the image</h2>
-<p>Finally, we can let Glance know about this image. Now, there's a catch
+<p>Finally, we can let Glance know about this image. Now, there’s a catch
 to this: this trick <em>only</em> works with the Glance v1 API, and thus you
 <em>must</em> use the <code>glance</code> client to do it. Your Glance is v2 only?
 Sorry. Insist on using the <code>openstack</code> client? Out of luck.</p>
-<p>What's special about this invocation of the <code>glance</code> client are simply
+<p>What’s special about this invocation of the <code>glance</code> client are simply
 the pre-populated <code>location</code> and <code>id</code> fields. The <code>location</code> is composed of the following segments:</p>
 <ul>
 <li>the fixed string <code>rbd://</code>,</li>
@@ -247,7 +247,7 @@ glance --os-image-api-version <span class="m">1</span> <span class="se">\</span>
 </code></pre></div>
 <p>Of course, you might add other options, like <code>--private</code> or
 <code>--protected</code> or <code>--name</code>, but the above options are the bare minimum.</p>
-<h2>And that's it!</h2>
+<h2>And that’s it!</h2>
 <p>Now you can happily fire up VMs, or clone your image into a volume and
 fire a VM up from that.</p>
 <hr/>

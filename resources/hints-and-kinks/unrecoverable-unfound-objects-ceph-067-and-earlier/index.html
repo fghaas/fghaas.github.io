@@ -43,13 +43,13 @@
  
 
 <meta name="author" content="Florian Haas" />
-<meta name="description" content="As Ceph author Sage Weil points out frequently, distributed storage solutions for all their goodness have a &#34;dirty little secret&#34;: No matter just how redundant and reliable they are by design, a bug in the storage software itself can be a real issue. And occasionally, the bug doesn&#39;t have to …" />
+<meta name="description" content="As Ceph author Sage Weil points out frequently, distributed storage solutions for all their goodness have a “dirty little secret”: No matter just how redundant and reliable they are by design, a bug in the storage software itself can be a real issue. And occasionally, the bug doesn’t have …" />
 <meta name="keywords" content="Ceph">
 
 
   <meta property="og:site_name" content="xahteiwi.eu"/>
   <meta property="og:title" content="Unrecoverable unfound objects in Ceph 0.67 and earlier"/>
-  <meta property="og:description" content="As Ceph author Sage Weil points out frequently, distributed storage solutions for all their goodness have a &#34;dirty little secret&#34;: No matter just how redundant and reliable they are by design, a bug in the storage software itself can be a real issue. And occasionally, the bug doesn&#39;t have to …"/>
+  <meta property="og:description" content="As Ceph author Sage Weil points out frequently, distributed storage solutions for all their goodness have a “dirty little secret”: No matter just how redundant and reliable they are by design, a bug in the storage software itself can be a real issue. And occasionally, the bug doesn’t have …"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:url" content="../../../resources/hints-and-kinks/unrecoverable-unfound-objects-ceph-067-and-earlier/"/>
   <meta property="og:type" content="article"/>
@@ -142,15 +142,15 @@
   <div>
     <p>As <a href="http://ceph.com/">Ceph</a> author <a href="https://twitter.com/Liewegas">Sage
 Weil</a> points out frequently, distributed
-storage solutions for all their goodness <a href="http://youtu.be/JfRqpdgoiRQ?t=36m20s">have a "dirty little
-secret"</a>: No matter just how
+storage solutions for all their goodness <a href="http://youtu.be/JfRqpdgoiRQ?t=36m20s">have a “dirty little
+secret”</a>: No matter just how
 redundant and reliable they are by design, a bug in the storage
 software itself can be a real issue.</p>
-<p>And occasionally, the bug doesn't have to be in the storage software
+<p>And occasionally, the bug doesn’t have to be in the storage software
 itself.</p>
 <p>Every self-respecting Linux file system supports <a href="http://en.wikipedia.org/wiki/Extended_file_attributes">extended file
 attributes
-("xattrs")</a>,
+(“xattrs”)</a>,
 and XFS (commonly used with Ceph OSDs) is no exception. When OSDs
 store RADOS objects in the OSD filestore, they make heavy use of
 key-value pairs. To do so, they can employ two approaches:</p>
@@ -172,7 +172,7 @@ that is <em>not</em> the case (such as ext4), you would generally use omaps.</p>
 if the filestore is determined to be running on ext4. But for the XFS
 and BTRFS filesystem, the general recommendation (and default
 behavior) remained to just use inline xattrs. This is also true for
-the stable Ceph "Dumpling" release (0.67).</p>
+the stable Ceph “Dumpling” release (0.67).</p>
 <p>Since Ceph 0.70, the configuration option
 <a href="https://github.com/ceph/ceph/commit/dc0dfb9e01d593afdd430ca776cf4da2c2240a20">has been dropped</a>
 and Ceph since always behaves as if <code>filestore xattr use omap</code> was set
@@ -202,17 +202,17 @@ objects fails. The affected Placement Group (PG) also remains stuck,
 again being reported as such in ceph health detail.</p>
 <p>If you actually have run into this problem, you should really call
 Inktank for support. (You can also give us a call, of course, and
-we'll be happy to help you confirm the problem. But we will refer you
-to Inktank for the actual fix -- we don't fiddle and mess around with
+we’ll be happy to help you confirm the problem. But we will refer you
+to Inktank for the actual fix – we don’t fiddle and mess around with
 RADOS object internals, and neither should you.)</p>
 <h2>How to avoid this in the first place?</h2>
-<p>If you're on Ceph 0.70 or later, congratulations. You should be safe,
+<p>If you’re on Ceph 0.70 or later, congratulations. You should be safe,
 as omaps are enabled and anything that would overflow your xattrs
 instead gets stored in an omap.</p>
-<p>If you're on any earlier version, including the currently
-stable 0.67.x "Dumpling" series, enable filestore xattr use omap. Do
+<p>If you’re on any earlier version, including the currently
+stable 0.67.x “Dumpling” series, enable filestore xattr use omap. Do
 it now, regardless of what filesystem your OSDs run on. Then restart
-your OSDs one by one; your existing xattrs won't get lost.</p>
+your OSDs one by one; your existing xattrs won’t get lost.</p>
 <hr/>
 <p>This article originally appeared on the <code>hastexo.com</code> website (now defunct).</p>
   </div>

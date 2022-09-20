@@ -43,13 +43,13 @@
  
 
 <meta name="author" content="Florian Haas" />
-<meta name="description" content="If you&#39;ve heard of Ceph, you&#39;ve surely heard of radosgw, a RESTful gateway interface to the RADOS object store. You&#39;ve probably also heard that it provides a front-end interface that is compatible with Amazon&#39;s S3 API. The question remains, if you have an S3 client that always assumes it can …" />
+<meta name="description" content="If you’ve heard of Ceph, you’ve surely heard of radosgw, a RESTful gateway interface to the RADOS object store. You’ve probably also heard that it provides a front-end interface that is compatible with Amazon’s S3 API. The question remains, if you have an S3 client that …" />
 <meta name="keywords" content="Ceph">
 
 
   <meta property="og:site_name" content="xahteiwi.eu"/>
   <meta property="og:title" content="Configuring radosgw to behave like Amazon S3"/>
-  <meta property="og:description" content="If you&#39;ve heard of Ceph, you&#39;ve surely heard of radosgw, a RESTful gateway interface to the RADOS object store. You&#39;ve probably also heard that it provides a front-end interface that is compatible with Amazon&#39;s S3 API. The question remains, if you have an S3 client that always assumes it can …"/>
+  <meta property="og:description" content="If you’ve heard of Ceph, you’ve surely heard of radosgw, a RESTful gateway interface to the RADOS object store. You’ve probably also heard that it provides a front-end interface that is compatible with Amazon’s S3 API. The question remains, if you have an S3 client that …"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:url" content="../../../resources/hints-and-kinks/configuring-radosgw-behave-amazon-s3/"/>
   <meta property="og:type" content="article"/>
@@ -140,10 +140,10 @@
 
 
   <div>
-    <p>If you've heard of Ceph, you've surely heard of radosgw, a RESTful
-gateway interface to the RADOS object store. You've probably also
+    <p>If you’ve heard of Ceph, you’ve surely heard of radosgw, a RESTful
+gateway interface to the RADOS object store. You’ve probably also
 heard that it provides a front-end interface that is compatible with
-Amazon's S3 API.</p>
+Amazon’s S3 API.</p>
 <p>The question remains, if you have an S3 client that always assumes it
 can find objects at http://bucket.s3.amazonaws.com, how can you use
 such a client to interact, unmodified, with your radosgw host (or
@@ -151,7 +151,7 @@ hosts)?</p>
 <p>Pulling this off is actually remarkably simple, if you can control
 what nameserver your clients use to resolve DNS names. Which should be
 a given in the private cloud space.</p>
-<p>First, of course, you'll need an installed and configured Ceph cluster
+<p>First, of course, you’ll need an installed and configured Ceph cluster
 with one or several radosgw nodes. The Ceph documentation is an
 excellent reference for setting up radosgw.</p>
 <h2>Configuring radosgw to support virtual hosts</h2>
@@ -195,9 +195,9 @@ CNAME record.</p>
 <p>And then you just configure your client hosts to resolve DNS names via
 that nameserver, and use your preferred client application to interact
 with it.</p>
-<p>For example, for a user that you've created with radosgw-admin, which
-uses the access key 12345 with a secret of 67890, and Mark Atwood's
-popular <code>Net::Amazon::S3::Tools</code> toolkit, here's how you can interact
+<p>For example, for a user that you’ve created with radosgw-admin, which
+uses the access key 12345 with a secret of 67890, and Mark Atwood’s
+popular <code>Net::Amazon::S3::Tools</code> toolkit, here’s how you can interact
 with your RADOS objects:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># export AWS_ACCESS_KEY_ID=12345</span><span class="w"></span>
 <span class="c1"># export AWS_ACCESS_KEY_SECRET=67890</span><span class="w"></span>
@@ -228,14 +228,14 @@ different host, and then add a second record to your DNS zone:</p>
 @   IN  A   192.168.122.113
 *   IN  CNAME   @
 </code></pre></div>
-<p>Then, as you access more buckets, you'll hit the A records in a
+<p>Then, as you access more buckets, you’ll hit the A records in a
 round-robin fashion, meaning your requests will be balanced across the
 servers. Add as many as you like.</p>
 <h2>HTTPS support</h2>
 <p>Obviously, the above steps will not work for HTTPS connections to the
 REST API. And really, making that work would amount to some pretty
 terrible SSL certificate authority and client trust hackery, so just
-don't do it.</p>
+don’t do it.</p>
 <hr/>
 <p>This article originally appeared on the <code>hastexo.com</code> website (now defunct).</p>
   </div>

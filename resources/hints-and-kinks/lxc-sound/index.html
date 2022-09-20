@@ -171,7 +171,7 @@ doesn’t even require any specific LXC container configuration.</p>
 I load it into my running PulseAudio configuration, like so:</p>
 <div class="highlight"><pre><span></span><code>pactl load-module module-native-protocol-tcp
 </code></pre></div>
-<p>... then a PulseAudio sound server starts listening on a TCP socket on
+<p>… then a PulseAudio sound server starts listening on a TCP socket on
 port 4713.</p>
 <p>I can of course also add this line (minus its <code>pactl</code> prefix) to my
 PulseAudio configuration file, <code>~/config/pulse/default.pa</code>.</p>
@@ -186,7 +186,7 @@ of the host on the <code>lxcbr0</code> bridge), and launch an application.</p>
   sudo -Hu florian env <span class="nv">PULSE_SERVER</span><span class="o">=</span><span class="s2">"10.0.3.1"</span> spotify <span class="o">&amp;&amp;</span> <span class="se">\</span>
   lxc-stop -n focal-spotify
 </code></pre></div>
-<p>... and as long as the application links to any PulseAudio client
+<p>… and as long as the application links to any PulseAudio client
 libraries, it will correctly parse the set <code>PULSE_SERVER</code> environment
 variable as an instruction to connect to the given IP address on its
 default port, and send its audio stream there.</p>

@@ -335,35 +335,35 @@ schedule adjustments were easy at the time.) &lt;a class="footnote-backref" hre
 &lt;a href="http://www.openstack-israel.org"&gt;OpenStack Israel 2016&lt;/a&gt;. The
 paragraph headings below approximately correspond to the content of my
 talk slides; the paragraphs themselves are an approximation of what I
-said. If you're interested in the exact slide content, you can find
+said. If you’re interested in the exact slide content, you can find
 that &lt;a href="//fghaas.github.io/openstackisrael2016-ignite"&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;hr/&gt;
 &lt;h2&gt;Zero flexibility&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;_____&lt;/code&gt;'s roles, artifacts, events, and rules are &lt;em&gt;immutable&lt;/em&gt; and
+&lt;p&gt;&lt;code&gt;_____&lt;/code&gt;‘s roles, artifacts, events, and rules are &lt;em&gt;immutable&lt;/em&gt; and
 although implementing only parts of &lt;code&gt;_____&lt;/code&gt; is possible, &lt;em&gt;the result
 is not&lt;/em&gt; &lt;code&gt;_____&lt;/code&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;When you see a statement like this and wonder what should be filled in
-for the blanks, it's rather quite likely that you would guess either a
+for the blanks, it’s rather quite likely that you would guess either a
 radical political ideology, a very strict religious sect or cult, or
-something to that effect. You couldn't be further from the truth.&lt;/p&gt;
+something to that effect. You couldn’t be further from the truth.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;Scrum&lt;/code&gt;'s roles, artifacts, events, and rules are &lt;em&gt;immutable&lt;/em&gt; and
+&lt;p&gt;&lt;code&gt;Scrum&lt;/code&gt;‘s roles, artifacts, events, and rules are &lt;em&gt;immutable&lt;/em&gt; and
 although implementing only parts of &lt;code&gt;Scrum&lt;/code&gt; is possible, &lt;em&gt;the result
 is not&lt;/em&gt; &lt;code&gt;Scrum&lt;/code&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Yes, that's a
+&lt;p&gt;Yes, that’s a
 &lt;a href="http://www.scrumguides.org/scrum-guide.html#end-note"&gt;direct quote from the Scrum guide.&lt;/a&gt;
 Scrum, by its own definition, can either be implemented completely —
 that is, with all its roles, artifacts, events, and rules &lt;em&gt;unchanged&lt;/em&gt;
 — or not at all. This sounds ludicrous enough as it is, and any sane,
 thinking person should reject or at least resent &lt;em&gt;any&lt;/em&gt; such statement
-outright. But let's give Scrum the benefit of doubt, and let's
+outright. But let’s give Scrum the benefit of doubt, and let’s
 actually start examining some of its postulates.&lt;/p&gt;
 &lt;h2&gt;Teams are self-organizing&lt;/h2&gt;
 &lt;p&gt;Scrum hinges on the idea that teams are comprised of capable
-individuals forming teams, which then self-organize. Now I'm sure
+individuals forming teams, which then self-organize. Now I’m sure
 nobody would argue that self-organizing teams cannot exist, so this
 postulate does not invalidate itself outright.&lt;/p&gt;
 &lt;p&gt;However, it is missing an important prerequisite: teams can
@@ -372,7 +372,7 @@ precondition that almost never exists in the software industry: our
 industry is &lt;em&gt;growth-oriented,&lt;/em&gt; and driven by quickly-growing startups,
 so in a successful organization having a new colleague every other
 month is not unheard of. It is also highly &lt;em&gt;competitive&lt;/em&gt; for talent,
-so having a colleague leave every few months isn't unusual either. The
+so having a colleague leave every few months isn’t unusual either. The
 moment a new person joins or leaves, you have a new team. Team
 stability goes out the window, and with it any reasonable expectation
 of self-organization.&lt;/p&gt;
@@ -381,11 +381,11 @@ of self-organization.&lt;/p&gt;
 one month or less, in which the team completes objectives agreed to
 for the sprint backlog) is &lt;em&gt;immediately followed by the next sprint.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;This is mind-bogglingly ludicrous and outright dangerous to your
-team's mental health. Software development is a marathon, and running
+team’s mental health. Software development is a marathon, and running
 a marathon as an unbroken series of sprints leads to collapse or
-death. In software development, it's likely to cause burnout.&lt;/p&gt;
+death. In software development, it’s likely to cause burnout.&lt;/p&gt;
 &lt;h2&gt;The Daily Scrum&lt;/h2&gt;
-&lt;p&gt;One of Scrum's immutable events is the Daily Scrum. The Scrum Guide
+&lt;p&gt;One of Scrum’s immutable events is the Daily Scrum. The Scrum Guide
 defines this event as a specific, daily occurrence, time-boxed to 15
 minutes and involving the entirety of the development team.&lt;/p&gt;
 &lt;p&gt;This is staggeringly out of place in the modern development team,
@@ -397,17 +397,17 @@ a meeting involving more than 3 people that got anything accomplished
 in 15 minutes?&lt;/p&gt;
 &lt;p&gt;And remember, 15 minutes. Time-boxed, immutable. If you think &lt;em&gt;your&lt;/em&gt;
 Daily Scrum can be 30 or 45 minutes, or you can do it just every other
-day or maybe thrice a week, recall: if you do that, you're no longer
+day or maybe thrice a week, recall: if you do that, you’re no longer
 doing Scrum.&lt;/p&gt;
 &lt;h2&gt;No planning beyond the current sprint&lt;/h2&gt;
 &lt;p&gt;Scrum is quite emphatic that the only thing developers should be
 really concerned about in terms of planning is the next 24 hours (the
 plan for which is ostensibly being laid out in the Daily Scrum), and
 beyond that, the current sprint at a maximum. Now, while the idea of
-freeing people's minds and allowing them to focus on a single task at
+freeing people’s minds and allowing them to focus on a single task at
 hand is certainly laudable, the practical implications of having no
 medium to long-term planning is insane.&lt;/p&gt;
-&lt;p&gt;I'd venture a guess that an approach where no planning is for more
+&lt;p&gt;I’d venture a guess that an approach where no planning is for more
 than a month out is viable, under one condition: having exactly zero
 users and/or customers for the product you are developing. I leave it
 to you to decide how valuable it is, then, to develop the product in
@@ -417,13 +417,13 @@ the first place.&lt;/p&gt;
 emergency situations. In a situation where you need to come up with a
 solution that requires creativity, hustle, and speed, you may well sit
 down, put down a requirements list, elect a coordinator and
-spokesperson for your team, and just start hacking. I'd fully agree
+spokesperson for your team, and just start hacking. I’d fully agree
 that such situations can be extremely challenging, and quite
 satisfying to come out of with flying colors.&lt;/p&gt;
 &lt;p&gt;But if your organization is permanently operating in this mode,
-&lt;strong&gt;quit.&lt;/strong&gt; It doesn't matter which role you're in: as a developer,
-you're headed for burnout. As a manager, you're herding your team into
-burnout. Either way, you shouldn't be doing this job, either in your
+&lt;strong&gt;quit.&lt;/strong&gt; It doesn’t matter which role you’re in: as a developer,
+you’re headed for burnout. As a manager, you’re herding your team into
+burnout. Either way, you shouldn’t be doing this job, either in your
 own interest or in that of others.&lt;/p&gt;
 &lt;h2&gt;Novelty?&lt;/h2&gt;
 &lt;p&gt;Scrum proponents frequently argue in its favor as the antithesis of
@@ -431,81 +431,81 @@ the obsolete waterfall model, where all deliverables are defined from
 the outset and there is no room for deviation, leading to products
 that are either broken, or outdated, or both the moment they are
 completed. If you think we only found out recently that waterfall is
-bad, you've been asleep at the switch for over 30 years. In his
+bad, you’ve been asleep at the switch for over 30 years. In his
 seminal
 &lt;a href="https://en.wikipedia.org/wiki/The_Mythical_Man-Month"&gt;Mythical Man-Month&lt;/a&gt;
 essay collection from 1975, Fred Brooks pointed out some weaknesses of
 this model, and in his 1986 follow-up
 &lt;a href="https://en.wikipedia.org/wiki/No_Silver_Bullet"&gt;No Silver Bullet,&lt;/a&gt; he
 proposes organic, incremental software development as an alternative.&lt;/p&gt;
-&lt;h2&gt;Your team can't work with Scrum?&lt;/h2&gt;
-&lt;p&gt;Scrum advocates frequently argue that if Scrum doesn't work with your
+&lt;h2&gt;Your team can’t work with Scrum?&lt;/h2&gt;
+&lt;p&gt;Scrum advocates frequently argue that if Scrum doesn’t work with your
 team, chances are that your team is the problem. This means that you
 should either replace them, or at least educate them in the ways and
 means of Scrum, so they can become a better-performing team.&lt;/p&gt;
-&lt;p&gt;At this point, it should be fairly obvious that if Scrum doesn't work
+&lt;p&gt;At this point, it should be fairly obvious that if Scrum doesn’t work
 for your team, the problem is not your team. The problem is Scrum.&lt;/p&gt;
-&lt;h2&gt;What if Scrum doesn't deliver?&lt;/h2&gt;
+&lt;h2&gt;What if Scrum doesn’t deliver?&lt;/h2&gt;
 &lt;p&gt;And finally, Scrum proponents usually argue that if Scrum fails to
-deliver adequate results in your organization, it's likely because you
-aren't applying its central tenets correctly. In other words, you must
+deliver adequate results in your organization, it’s likely because you
+aren’t applying its central tenets correctly. In other words, you must
 come to your senses, and implement Scrum as designed, and which point
 results with magically appear, and your team will be in a constant
 state of flow.&lt;/p&gt;
 &lt;p&gt;This is nonsense. &lt;strong&gt;If&lt;/strong&gt; you were able to actually do Scrum (meaning
 in its pure, immutable, One True Way), it would surely lead to
-disaster. But, it's impossible to do so anyway, so go ahead and ditch
+disaster. But, it’s impossible to do so anyway, so go ahead and ditch
 it — stop being a scrumbag.&lt;/p&gt;
 &lt;hr/&gt;
 &lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Philosophy"></category><category term="Development"></category></entry><entry><title>Thoughts on "ecosystems"</title><link href="https://xahteiwi.eu/blog/2012/12/16/thoughts-on-ecosystems/" rel="alternate"></link><published>2012-12-16T14:47:00+00:00</published><updated>2012-12-16T14:47:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2012-12-16:/blog/2012/12/16/thoughts-on-ecosystems/</id><summary type="html">&lt;p&gt;Over the past couple of years, it seems that the term &lt;em&gt;ecosystem&lt;/em&gt; is
 being broadly applied to what we previously called a &lt;em&gt;community.&lt;/em&gt; I
-don't like that, and here's why.&lt;/p&gt;
+don’t like that, and here’s why.&lt;/p&gt;
 &lt;p&gt;The origin of the term &lt;em&gt;ecosystem,&lt;/em&gt; when applied to the environment in
-which a software project is being developed, used …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Over the past couple of years, it seems that the term &lt;em&gt;ecosystem&lt;/em&gt; is
+which a software project is being …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Over the past couple of years, it seems that the term &lt;em&gt;ecosystem&lt;/em&gt; is
 being broadly applied to what we previously called a &lt;em&gt;community.&lt;/em&gt; I
-don't like that, and here's why.&lt;/p&gt;
+don’t like that, and here’s why.&lt;/p&gt;
 &lt;p&gt;The origin of the term &lt;em&gt;ecosystem,&lt;/em&gt; when applied to the environment in
 which a software project is being developed, used and promoted, is
 unknown, at least to the best of my knowledge. Some say that it was
 &lt;a href="http://krow.net/" title="Brian Aker"&gt;Brian Aker&lt;/a&gt; who first spoke of “the
 MySQL ecosystem”, and it seemed rather fitting at the time. Presently
-though, it seems there's ecosystems everywhere: the Linux ecosystem, the
+though, it seems there’s ecosystems everywhere: the Linux ecosystem, the
 OpenStack ecosystem, the Python ecosystem, you name it.&lt;/p&gt;
 &lt;p&gt;And it annoys me.&lt;/p&gt;
 &lt;p&gt;It annoys me not in the way marketing drone babbling annoys me, like
-when someone waxes lyrical about synergies or paradigm shifts — that's
+when someone waxes lyrical about synergies or paradigm shifts — that’s
 the kind of fluff you automatically filter out and disregard, a bit like
 page numbers in the slide decks of presenters stuck in the 20th century.
 But the ecosystem thing is frequently used also by developers and users,
 the actual movers and shakers, in the way we would previously use
 &lt;em&gt;community.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Now let's look for a moment at how a community works. A community is
+&lt;p&gt;Now let’s look for a moment at how a community works. A community is
 governed by rules and morals. Those can be explicit, as written-down
 laws, covenants or contracts. Much more commonly though, they are
 implicit: everybody understands them, everybody is expected to abide by
-them, and if you break them, you're being shunned — but there's no
+them, and if you break them, you’re being shunned — but there’s no
 requirement to write these rules down.&lt;/p&gt;
 &lt;p&gt;When we think about communities, most will naturally associate this with
 a large group of people, like a clan or tribe, maybe a few hundred or
 even a few thousand individuals. Puny, right? We need something grander,
 something that alludes to hundreds or thousands of species with maybe
-millions of individuals playing a part. Let's pick a term: &lt;em&gt;ecosystem.&lt;/em&gt;
+millions of individuals playing a part. Let’s pick a term: &lt;em&gt;ecosystem.&lt;/em&gt;
 Yay! Problem solved. Waaaay bigger than a community. So much more
 awe-inspiring.&lt;/p&gt;
 &lt;p&gt;But guess what: &lt;strong&gt;an ecosystem is fundamentally amoral.&lt;/strong&gt; In an
 ecosystem, there is no right or wrong — other than survival being right,
-and if it happens to be at everyone else's expense, that doesn't make it
+and if it happens to be at everyone else’s expense, that doesn’t make it
 wrong. From the inside perspective of an ecosystem, if an invasive
 species intrudes and steamrolls the entire habitat, so be it: it just
 changed the ecosystem. Nature shrugs. Nature also shrugs at parasites,
 disease, deception, camouflage, poison, and gangs of predators
 collaborating with swift and deadly force to mercilessly kill a
 defenseless herbivore.&lt;/p&gt;
-&lt;p&gt;Now you're welcome to call me out on my naïveté, and point out that it
+&lt;p&gt;Now you’re welcome to call me out on my naïveté, and point out that it
 is precisely those things that happen in business every day. I am
 acutely aware of that. I believe, however, we ought to consider them
 evils, and some may consider them &lt;em&gt;necessary&lt;/em&gt; evils at times. They
-shouldn't the foundations on which we build our &lt;em&gt;communities.&lt;/em&gt;&lt;/p&gt;
+shouldn’t the foundations on which we build our &lt;em&gt;communities.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://en.wikipedia.org/wiki/Speech_acts"&gt;Words matter.&lt;/a&gt; I think we
 should use them wisely.&lt;/p&gt;
 &lt;hr/&gt;
@@ -517,10 +517,10 @@ post about some of the ideas …&lt;/p&gt;</summary><content type="html">&lt;p&g
 brief but excellent conversation with fellow OpenStacker &lt;a href="https://twitter.com/adamspiers"&gt;Adam
 Spiers&lt;/a&gt; from SUSE. Our chat turned to
 the merits of working from home, and he encouraged me to write up a blog
-post about some of the ideas of mine and of my co-founders' which we
+post about some of the ideas of mine and of my co-founders’ which we
 have since made hastexo policy, however informal or unwritten.&lt;/p&gt;
-&lt;p&gt;Note that much of what follows aren't necessarily original ideas of
-ours. Many of my thoughts I owe to some very insightful chats I've had
+&lt;p&gt;Note that much of what follows aren’t necessarily original ideas of
+ours. Many of my thoughts I owe to some very insightful chats I’ve had
 over the past few months with the delightful &lt;a href="http://sarahnovotny.com/"&gt;Sarah
 Novotny&lt;/a&gt;, original co-founder of &lt;a href="http://bluegecko.com/"&gt;Blue
 Gecko&lt;/a&gt;, seasoned
@@ -538,7 +538,7 @@ blacksmith would live upstairs in his shop, so would the bakerman or the
 butcher. The teacher would dwell, with his family, in the local school.
 The farmer, and the farmhands, would live on that farm. In such a
 setting it follows naturally that the work day spans essentially your
-entire waking time: you would start your day's work as soon as you got
+entire waking time: you would start your day’s work as soon as you got
 up, and finished it when you retired for the night. It would be equally
 natural to close the shop and interrupt your work for perhaps an hour at
 a time, in order to consume a meal with your family or run an errand, or
@@ -554,7 +554,7 @@ ten to twelve hours a day, six days a week — until we realized that it
 started messing up our lives, inflicting misery on our families and
 social ties. And we invented a new concept called spare time: time we
 could spend by ourselves, or with our families and friends, something we
-didn't have to ask for in the pre-industrial age when our work and life
+didn’t have to ask for in the pre-industrial age when our work and life
 would naturally have been integrated. And we gradually got to “advances”
 like first the
 &lt;a href="http://en.wikipedia.org/wiki/Buffalo_switchmen%27s_strike"&gt;10-hour&lt;/a&gt;
@@ -569,7 +569,7 @@ concepts to offices that we previously had applied to factories and
 shipyards: we would gather everyone in the same place, removed from home
 and families, and we would get everyone to accept fixed “office hours”
 when all hands would have to be present. Of course, we still needed to
-collaborate, it's just that the tasks differed from the ones we faced in
+collaborate, it’s just that the tasks differed from the ones we faced in
 factories and shipyards.&lt;/p&gt;
 &lt;p&gt;Fast forward to the early 21st century, where we are suddenly endowed
 with an abundance of readily available, cheap technology that allows us
@@ -582,14 +582,14 @@ well-being — that has become a complete anachronism. It is no longer
 vital for the people making up a company to physically be in the same
 place to collaborate, to serve customers, and to be productive and make
 a difference to communities. In fact, I consider it counterproductive.
-We've finally arrived in a position where we can restore the very
+We’ve finally arrived in a position where we can restore the very
 natural way for humans to live and work, namely integrated with our
 families, from home, connected through technology that enables us to
 communicate just as effectively as sitting at the same desk. It also
 enables us to live healthier, better lives.&lt;/p&gt;
-&lt;p&gt;I'm fully aware that this style of work is probably not for everyone.
-But if you're thinking it's not for you (and I was one of those, until a
-little over a year ago) it's worth asking yourself &lt;em&gt;why&lt;/em&gt; you're thinking
+&lt;p&gt;I’m fully aware that this style of work is probably not for everyone.
+But if you’re thinking it’s not for you (and I was one of those, until a
+little over a year ago) it’s worth asking yourself &lt;em&gt;why&lt;/em&gt; you’re thinking
 that. Is it really because you &lt;em&gt;want&lt;/em&gt; to work in an office, or because
 everyone has &lt;em&gt;told you&lt;/em&gt; for most of your career that you want to work in
 an office?&lt;/p&gt;
@@ -602,8 +602,8 @@ and documents shared on &lt;a href="http://drive.google.com"&gt;Google Drive&lt;
 down ideas in Google Docs and sketch architectures in Google Drawings.
 We do our weekly standups that way, and increasingly customer meetings,
 too. We collaboratively draft and edit slide decks for training. And we
-rehearse conference talks via video call. It just works, and it's huge
+rehearse conference talks via video call. It just works, and it’s huge
 fun that way. And it enables us to close our laptops and go read bedtime
-stories to our kids when we're done.&lt;/p&gt;
+stories to our kids when we’re done.&lt;/p&gt;
 &lt;hr/&gt;
 &lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Philosophy"></category></entry></feed>

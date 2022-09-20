@@ -43,13 +43,13 @@
  
 
 <meta name="author" content="Florian Haas" />
-<meta name="description" content="In a Pacemaker cluster, as in a standalone system, operators must complete maintenance tasks such as software upgrades and configuration changes. Here&#39;s what you need to keep Pacemaker&#39;s built-in monitoring features from creating unwanted side effects. Maintenance mode This is quite possibly Pacemaker&#39;s single most useful feature for cluster maintenance …" />
+<meta name="description" content="In a Pacemaker cluster, as in a standalone system, operators must complete maintenance tasks such as software upgrades and configuration changes. Here’s what you need to keep Pacemaker’s built-in monitoring features from creating unwanted side effects. Maintenance mode This is quite possibly Pacemaker’s single most useful feature …" />
 <meta name="keywords" content="Pacemaker">
 
 
   <meta property="og:site_name" content="xahteiwi.eu"/>
   <meta property="og:title" content="Maintenance in active Pacemaker clusters"/>
-  <meta property="og:description" content="In a Pacemaker cluster, as in a standalone system, operators must complete maintenance tasks such as software upgrades and configuration changes. Here&#39;s what you need to keep Pacemaker&#39;s built-in monitoring features from creating unwanted side effects. Maintenance mode This is quite possibly Pacemaker&#39;s single most useful feature for cluster maintenance …"/>
+  <meta property="og:description" content="In a Pacemaker cluster, as in a standalone system, operators must complete maintenance tasks such as software upgrades and configuration changes. Here’s what you need to keep Pacemaker’s built-in monitoring features from creating unwanted side effects. Maintenance mode This is quite possibly Pacemaker’s single most useful feature …"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:url" content="../../../resources/hints-and-kinks/maintenance-active-pacemaker-clusters/"/>
   <meta property="og:type" content="article"/>
@@ -142,12 +142,12 @@
   <div>
     <p>In a Pacemaker cluster, as in a standalone system, operators must
 complete maintenance tasks such as software upgrades and configuration
-changes. Here's what you need to keep Pacemaker's built-in monitoring
+changes. Here’s what you need to keep Pacemaker’s built-in monitoring
 features from creating unwanted side effects.</p>
 <h2>Maintenance mode</h2>
-<p>This is quite possibly Pacemaker's single most useful feature for
+<p>This is quite possibly Pacemaker’s single most useful feature for
 cluster maintenance. In maintenance mode, Pacemaker essentially takes
-a "hands-off" approach to your cluster. Enabling Pacemaker maintenance
+a “hands-off” approach to your cluster. Enabling Pacemaker maintenance
 mode is very easy using the Pacemaker <code>crm</code> shell:</p>
 <div class="highlight"><pre><span></span><code>crm configure property maintenance-mode<span class="o">=</span><span class="nb">true</span>
 </code></pre></div>
@@ -160,21 +160,21 @@ processes originally started as Pacemaker managed cluster resources
 will continue to run.</p>
 <p>You should know that when you start Pacemaker services on a node while
 the cluster in maintenance mode, Pacemaker will initiate a single
-one-shot monitor operation (a "probe") for every resource just so it
+one-shot monitor operation (a “probe”) for every resource just so it
 has an understanding of what resources are currently running on that
 node. It will, however, take no further action other than determining
-the resources' status.</p>
+the resources’ status.</p>
 <p>You disable maintenance mode with the crm shell, as well:</p>
 <div class="highlight"><pre><span></span><code>crm configure property maintenance-mode<span class="o">=</span><span class="nb">false</span>
 </code></pre></div>
 <p>Maintenance mode is something you enable before running other
-maintenance actions, not when you're already half-way through
-them. And unless you're very well versed in the interdependencies of
-resources running on the cluster you're working on, it's usually the
+maintenance actions, not when you’re already half-way through
+them. And unless you’re very well versed in the interdependencies of
+resources running on the cluster you’re working on, it’s usually the
 very safest option.</p>
 <p>In short: when doing maintenance on your Pacemaker cluster, by
 default, enable maintenance mode before you start, and disable it
-after you're done.</p>
+after you’re done.</p>
 <h2>Disabling monitoring and error recovery on specific resources</h2>
 <p>For any configuration changes that take no more than a few minutes,
 involving an admin that is potentially watching a console window the
@@ -193,7 +193,7 @@ operation:</p>
 <div class="highlight"><pre><span></span><code>meta is-managed=false
 op monitor interval=&lt;interval&gt; enabled=false
 </code></pre></div>
-<p>Once you've done that, you'll effectively have enabled something akin
+<p>Once you’ve done that, you’ll effectively have enabled something akin
 to maintenance mode for a single resource. You can reverse this as you
 would expect:</p>
 <div class="highlight"><pre><span></span><code>crm configure edit p_database
@@ -204,9 +204,9 @@ would expect:</p>
 op monitor interval=&lt;interval&gt; enabled=true
 </code></pre></div>
 <p>When using this approach, all other resources will be monitored and
-automatically recovered as they normally would. Thus, you'll have to
+automatically recovered as they normally would. Thus, you’ll have to
 be acutely aware of any side effects your maintenance activities have
-on other resources. If you're unsure, you should use the global
+on other resources. If you’re unsure, you should use the global
 maintenance mode instead.</p>
 <hr/>
 <p>This article originally appeared on the <code>hastexo.com</code> website (now defunct).</p>

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Gerrit</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/gerrit.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-01-29T00:00:00+00:00</updated><entry><title>The Review Review</title><link href="https://xahteiwi.eu/./blog/2022/01/29/review-review/" rel="alternate"></link><published>2022-01-29T00:00:00+00:00</published><updated>2022-01-29T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-01-29:/./blog/2022/01/29/review-review/</id><summary type="html">&lt;p&gt;Musings on source code management, code review, testing, deployment, and collaboration culture.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I wanted to share a few thoughts on something I consider a rather
 important topic in our industry: code review and CI/CD tools, and how
 they relate.&lt;/p&gt;
-&lt;p&gt;This means that I'm talking about&lt;/p&gt;
+&lt;p&gt;This means that I’m talking about&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;source code management:&lt;/strong&gt; where we store our code, and how we
   manage access to it;&lt;/li&gt;
@@ -22,7 +22,7 @@ encompassed in these things.&lt;/p&gt;
 &lt;p&gt;First, whatever tools we use in order to accomplish these four things,
 they simultaneously influence and &lt;em&gt;are&lt;/em&gt; influenced by our
 collaboration culture.&lt;/p&gt;
-&lt;p&gt;It's ludicrous to presume that tools and culture are independent of
+&lt;p&gt;It’s ludicrous to presume that tools and culture are independent of
 each other, or to categorically declare that tools must be made to fit
 processes, not the other way around. That’s not how people
 work. Culture and tools always have an influence on each other.&lt;/p&gt;
@@ -336,7 +336,7 @@ but you do have to either push to upstream public registries, or build
 your own. Zuul does not come bundled with multitenant private
 registries the way GitHub and GitLab do.&lt;/p&gt;
 &lt;h3&gt;Administrative complexity&lt;/h3&gt;
-&lt;p&gt;In view of the above, there's another thing that you might want to
+&lt;p&gt;In view of the above, there’s another thing that you might want to
 consider, which in my humble opinion is an important reason why the
 Gerrit/Zuul combination has less uptake than it deserves on its
 technical merits. And this may sound overly dramatic, but: people like

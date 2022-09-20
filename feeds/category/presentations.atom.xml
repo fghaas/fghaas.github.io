@@ -1,8 +1,648 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - presentations</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/category/presentations.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-05-30T00:00:00+00:00</updated><entry><title>Writing Professionally (C!Conf 2022)</title><link href="https://xahteiwi.eu/resources/presentations/c-conf2022/" rel="alternate"></link><published>2022-05-30T00:00:00+00:00</published><updated>2022-05-30T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-05-30:/resources/presentations/c-conf2022/</id><summary type="html">&lt;p&gt;I did a workshop on writing in a professional context at my employer's annual unconference, C!Conf.&lt;/p&gt;</summary><content type="html">&lt;p&gt;At work we have an annual&lt;sup id="fnref:annual"&gt;&lt;a class="footnote-ref" href="#fn:annual"&gt;1&lt;/a&gt;&lt;/sup&gt; conference, &lt;em&gt;C!Conf,&lt;/em&gt; where we pull
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - presentations</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/category/presentations.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-09-18T00:00:00+00:00</updated><entry><title>DevOpsDays Berlin 2022</title><link href="https://xahteiwi.eu/resources/presentations/devopsdays-berlin-2022/" rel="alternate"></link><published>2022-09-18T00:00:00+00:00</published><updated>2022-09-18T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-09-18:/resources/presentations/devopsdays-berlin-2022/</id><summary type="html">&lt;p&gt;I couldn&amp;rsquo;t make it do DevOpsDays Berlin, because my Covid status kept me from travelling. Thus, here&amp;rsquo;s a write-up.&lt;/p&gt;</summary><content type="html">&lt;p&gt;At &lt;a href="https://devopsdays.org/events/2022-berlin/program"&gt;DevOpsDays Berlin
+2022&lt;/a&gt;, I was slated
+to give a 30-minute talk titled &lt;em&gt;Writing Professionally.&lt;/em&gt;
+Unfortunately a positive Covid test just three days prior to my
+departure threw a wrench in those plans, and I was unable to travel or
+attend a conference (much less speak at one, unmasked).&lt;/p&gt;
+&lt;p&gt;So, I am converting my talk into a write-up, before any symptoms set
+in.&lt;/p&gt;
+&lt;h1&gt;Writing Professionally (in English)&lt;/h1&gt;
+&lt;p&gt;This is a talk about developing superpowers. Superpowers that will
+help you be better in any role, any industry, any profession —
+&lt;em&gt;particularly&lt;/em&gt; the ones where you work in distributed teams, and use
+an asynchronous and distributed workflow.&lt;/p&gt;
+&lt;p&gt;This is about expressing yourself clearly, succinctly, and
+professionally in writing. I have put this together for the English
+language, though parts of this talk may be applicable to other
+languages as well.&lt;/p&gt;
+&lt;p&gt;This is about &lt;strong&gt;writing well&lt;/strong&gt; in a professional context. That means
+we’re not talking about poetry, or creative writing, or writing a
+message to a friend. We’re talking about writing in the context of
+professional communications.&lt;/p&gt;
+&lt;h2&gt;Being understandable&lt;/h2&gt;
+&lt;p&gt;When you write in a professional context, &lt;strong&gt;your goal&lt;/strong&gt; is the
+&lt;strong&gt;reader&lt;/strong&gt; (or readers) &lt;strong&gt;understanding you.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;That is really the overarching goal, and it’s important to understand
+that we must do everything we possibly can to make it easy for our
+reader to understand what we mean.&lt;/p&gt;
+&lt;p&gt;When you’re writing a novel, you can add plot twists and
+surprises. You can even use a literary device called an unreliable
+narrator, where at the very end of the novel you reveal that
+everything the narrator said (or the protagonist did) was a lie, a
+delusion, or a dream.&lt;/p&gt;
+&lt;p&gt;In professional writing, we don’t have that luxury. We must write in
+such a way that whoever reads our writing, understands us.&lt;/p&gt;
+&lt;p&gt;And that is the overarching goal no matter the mode we use to
+communicate. Writing to be understood extends to&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;email messages,&lt;/li&gt;
+&lt;li&gt;chat messages,&lt;/li&gt;
+&lt;li&gt;issue descriptions and comments (in whatever issue tracker you might be using; this includes Jira tickets, Trello cards, GitHub issues and the like)&lt;/li&gt;
+&lt;li&gt;collaboratively edited documents (like wiki pages or shared Google docs)&lt;/li&gt;
+&lt;li&gt;meeting notes (more on those in a bit), and of course&lt;/li&gt;
+&lt;li&gt;technical documentation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And in writing, your No. 1 priority is &lt;strong&gt;clarity.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Not beauty, elegance, or cleverness. Those all have their place, and
+there is some room for them in professional writing as well, but you
+should never sacrifice clarity for any of them.&lt;/p&gt;
+&lt;p&gt;I would also say that being clear is more important than being
+friendly. If there is something that you need to express, but you
+can’t do it in a friendly manner if you’re being clear, I’d say you
+should be clear, rather than friendly. &lt;strong&gt;However,&lt;/strong&gt; not being
+particularly &lt;em&gt;friendly&lt;/em&gt; doesn’t mean being &lt;em&gt;disrespectful&lt;/em&gt; — even if
+you’re expressing strong disagreement, you can do so in a respectful
+manner.&lt;/p&gt;
+&lt;h2&gt;Clarity takes two forms&lt;/h2&gt;
+&lt;p&gt;Writing clearly can mean one of two things:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Clarity of &lt;em&gt;expression,&lt;/em&gt; that is, caring about how we write each
+  sentence (and word, really) with a view toward maximum clarity.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Clarity of &lt;em&gt;structure,&lt;/em&gt; that is, caring about how we design
+  “documents” (in the broadest sense), so that they are clear and easy
+  to understand, and are useful for communication.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Both of them are equally important, and they depend on each other: a
+beautifully structured document is useless if it’s full of gibberish,
+and splendidly clear words are useless if they end up in an
+unstructured wall of text.&lt;/p&gt;
+&lt;p&gt;So we’ll spend some time on both, starting with clarity of expression.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h1&gt;Orwell’s Six Rules&lt;/h1&gt;
+&lt;p&gt;One of the simplest, most concise, and most useful rulesets for
+writing clearly in the English language comes from &lt;a href="https://en.wikipedia.org/wiki/George_Orwell"&gt;George
+Orwell&lt;/a&gt;‘s 1946 essay,
+&lt;em&gt;&lt;a href="https://en.wikipedia.org/wiki/Politics_and_the_English_Language"&gt;Politics and the English
+Language&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;In it, Orwell suggested six rules for writers to follow:&lt;/p&gt;
+&lt;h2&gt;Rule 1&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Never use a metaphor, simile, or other figure of speech which you
+are used to seeing in print.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;What Orwell means by this is essentially, “don’t try to be clever”. If
+you’re using a metaphor, chances are that it’s not original, that
+somebody else has used it before, and that people may see it as a
+tedious trope.&lt;/p&gt;
+&lt;p&gt;More importantly though, your reader might simply not be familiar with
+the metaphor, depending on their background. As an example, if your
+readers are from Germany, or are medieval scholars from somewhere in
+Western Europe, they will probably understand what you mean by calling
+a salesperson a &lt;a href="https://en.wikipedia.org/wiki/Pied_Piper_of_Hamelin"&gt;Pied
+Piper&lt;/a&gt;. If they
+are not, your readers will be very confused by your reference to a
+13th century rat exterminator (or musician, depending on viewpoint) in
+your writing.&lt;/p&gt;
+&lt;h2&gt;Rule 2&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Never use a long word where a short one will do.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;It’s remarkable how much clearer your writing gets if you ruthlessly
+edit it. English almost always gives you a choice between using a long
+word, and a shorter one with the same meaning. Always opt for the
+short one. Rather than &lt;em&gt;utilise,&lt;/em&gt; write &lt;em&gt;use.&lt;/em&gt; Rather than saying
+&lt;em&gt;methodology,&lt;/em&gt; say &lt;em&gt;method.&lt;/em&gt; Instead of &lt;em&gt;I don’t mean to insinuate,&lt;/em&gt;
+you can write &lt;em&gt;I don’t mean to suggest.&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;Rule 3&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If it is possible to cut a word out, always cut it out.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;When you’re using shorter words instead of longer ones, you cut
+syllables and letters from your writing. Naturally, you can also
+extend that concept to cutting whole words.&lt;/p&gt;
+&lt;p&gt;There’s a famous quote that fits well with this particular rule that
+comes from the French writer, poet, and aviator &lt;a href="https://en.wikipedia.org/wiki/Antoine_de_Saint-Exup%C3%A9ry"&gt;Antoine de
+Saint-Exupéry&lt;/a&gt;
+(best known to English-speaking readers for his novella &lt;em&gt;&lt;a href="https://en.wikipedia.org/wiki/The_Little_Prince"&gt;The Little
+Prince&lt;/a&gt;&lt;/em&gt;).&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;« Il semble que la perfection soit atteinte non quand il n’y a plus
+rien à ajouter, mais quand il n’y a plus rien à retrancher. »&lt;/p&gt;
+&lt;p&gt;(&lt;em&gt;Terre des hommes&lt;/em&gt;, 1939)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In English, that roughly translates to:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;It appears that perfection is achieved not when there is nothing
+left to add, but when there is nothing left to take away.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;(I say roughly because &lt;em&gt;cut away&lt;/em&gt; would be a better translation than
+&lt;em&gt;take away,&lt;/em&gt; but in English the former sounds unnecessarily harsh.)&lt;/p&gt;
+&lt;p&gt;It needs to be said that this quote disagrees with itself a bit,
+because it does contain a phrase that is perfectly okay to edit
+out. If he followed his own advice (and was a little more assertive),
+Saint-Exupéry could have written:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Perfection is achieved not when there is nothing left to add, but
+when there is nothing left to take away.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;But it is a good quote to go by, still. If you make it part of your
+mindset to send an email, or hit the &lt;em&gt;Save&lt;/em&gt; button on an issue comment
+not when you can’t think of anything to add, but when you’ve tried to
+trim all the fat and find nothing else to trim, that will make you a
+better professional communicator.&lt;/p&gt;
+&lt;h2&gt;Rule 4&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Never use the passive where you can use the active.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Orwell’s rule No. 4 states that you should be using the active voice
+whenever you can. There are some exceptions to this, but in general
+the active voice tends to be shorter, more concise, and thus clearer
+than the passive voice.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Passive voice: The system was rebooted.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Active voice: We rebooted the system.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Sometimes, it’s difficult for non-native speakers to even &lt;em&gt;recognize&lt;/em&gt;
+that they are using the passive voice. There’s a neat little trick to
+apply here: if you can take the sentence and append “by dragons” to
+it, then it’s passive voice.&lt;/p&gt;
+&lt;p&gt;Applying this rule, we could edit the Saint-Exupéry quote even more
+radically:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We achieve perfection not when we can’t add anything, but
+when we can’t take anything away.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Now of course, the quote becomes less and less poetic as we edit
+it. I’m not trying to say that Saint-Exupéry ought to be writing any
+differently than he did. What I’m trying to say is that the last
+version is probably the clearest to most people (including those for
+whom English is their second or third language), and that in
+professional communications we shouldn’t strive to be poetic, we
+should strive to be clear.&lt;/p&gt;
+&lt;h2&gt;Rule 5&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Never use a foreign phrase, a scientific word, or a jargon word if
+you can think of an everyday English equivalent.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Orwell’s fifth rule emphasises simplicity and accessibility. If there
+is an uncommon word that means &lt;em&gt;the same thing&lt;/em&gt; as a common one, always
+use the common one.&lt;/p&gt;
+&lt;p&gt;Note that this means that you can — and should — use technical terms
+if they have &lt;em&gt;no&lt;/em&gt; everyday equivalent. That’s simply because using an
+imprecise term would mean &lt;em&gt;losing&lt;/em&gt; clarity, when compared to using a
+precise term. But when we have one that we &lt;em&gt;can&lt;/em&gt; easily replace with a
+common word, we should do so.&lt;/p&gt;
+&lt;p&gt;For example:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;This is a favourable conceptualization.&lt;/li&gt;
+&lt;li&gt;This is a good idea.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Here, we can simply replace the uncommon terms with common ones.&lt;/p&gt;
+&lt;p&gt;Another example in the corporate world is that we can easily replace
+the jargon term “human resources” with “people”, and also replace
+“acquire” with “hire” or “buy”, depending on context.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;For this project we’ll need to acquire more human resources.&lt;/li&gt;
+&lt;li&gt;For this project we’ll need to hire more people.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Rule 6&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Break any of these rules sooner than say anything outright barbarous.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;And finally, Orwell reminds us that while this ruleset is a good
+guideline to follow, it is not absolute.&lt;/p&gt;
+&lt;p&gt;Yes, &lt;em&gt;sometimes&lt;/em&gt; the passive voice is just fine, such as when you want
+to make a point of not assigning blame for something that went wrong,
+to a particular individual or group. Sometimes you can include a witty
+quote unedited, even though it used jargon or a foreign word.&lt;/p&gt;
+&lt;p&gt;But having the rulebook in the back of your mind at all times is
+guaranteed to improve your writing.&lt;/p&gt;
+&lt;h1&gt;Little things&lt;/h1&gt;
+&lt;p&gt;Let’s look at a few other, small things that you can think about to
+make your writing better.&lt;/p&gt;
+&lt;h2&gt;Parallelism&lt;/h2&gt;
+&lt;p&gt;Parallelism (parallel structure) is the simple rule that if you are
+using a particular structure in a sentence, then you keep using that
+structure until the end of the sentence.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;We wanted to know the time, the place, and where we were going.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;We wanted to know the time, the place, and the destination.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;In this example, both sentences are correct English, even though the
+first one may sound a little colloquial.&lt;/p&gt;
+&lt;p&gt;The second sentence is clearer, because the use of “we wanted to know
+the time, the place, and” primes the reader to expect another
+instance of the definite article “the”, followed by a noun. Finishing
+the sentence by “the destination” makes for a more straightforward
+reading experience.&lt;/p&gt;
+&lt;h2&gt;Emphasis goes last&lt;/h2&gt;
+&lt;p&gt;Most English speakers subconsciously read the end of a sentence as
+being more important than its beginning. Thus, whatever you consider
+the more important aspect should go at the end of the sentence for
+emphasis.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The drug is highly effective, but has significant side effects.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The drug has significant side effects, but is highly effective.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The first example emphasises the side effects. Thus, most readers
+would read it as a warning to prescribe the drug with caution. The
+second example emphasises the drug’s effectiveness, and could thus be
+seen as an encouragement to prescribe the drug for treatments.&lt;/p&gt;
+&lt;h2&gt;Effectively using bullets in a sentence&lt;/h2&gt;
+&lt;p&gt;In professional writing, you often have the opportunity to make a long
+sentence much more readable, by simply injecting bullets.&lt;/p&gt;
+&lt;p&gt;Take this example:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;It is important that we listen to the customer’s needs, build a good
+solution that keeps us within the applicable regulatory framework,
+and clearly delineate responsibilities in the proposal and SLA.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This sentence is perfectly correct, and it isn’t even awkwardly
+structured. It is just a long, run-on sentence, which most readers
+will find difficult to grasp at a glance. You probably reread it once
+or twice.&lt;/p&gt;
+&lt;p&gt;Compare this version:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;It is important that we &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;listen to the customers needs, &lt;/li&gt;
+&lt;li&gt;build a good solution that keeps us within the applicable regulatory
+framework, and&lt;/li&gt;
+&lt;li&gt;clearly delineate responsibilities in the proposal and SLA.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In this version, &lt;em&gt;not a single word has changed.&lt;/em&gt; The statement could
+still use further editing. But even at this stage, most people will
+find reading this version much easier than reading the original. That
+is because most readers will be able to grasp the initial part of the
+sentence, “it is important that we”, at a single glance, and will also
+be able to notice at a glance that there are three bullets.&lt;/p&gt;
+&lt;p&gt;That is to say that without even reading it in full, your reader will
+understand that you are about to mention what’s important, and that
+there are three things you suggest to consider.&lt;/p&gt;
+&lt;h2&gt;Writing positively&lt;/h2&gt;
+&lt;p&gt;Writing positively means to write using affirmations, rather than
+negations. In other words, you state &lt;em&gt;what is,&lt;/em&gt; rather than stating
+&lt;em&gt;what is not.&lt;/em&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The project manager may not hire outside contractors except those
+   that have been carefully vetted for reliability.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The project manager must vet all outside contractors for
+   reliability.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Here, we have transformed the negative structure “may not… except” into an affirmative one, and we’ve further cleaned up the
+writing by eliminating an example of passive voice (“carefully vetted
+[by dragons] for reliability”) and replacing it with active voice.&lt;/p&gt;
+&lt;h2&gt;Punctuation&lt;/h2&gt;
+&lt;p&gt;… does matter. Really.&lt;/p&gt;
+&lt;p&gt;People often overlook how important punctuation is to clarity. What
+follows is an example of changing the meaning of a sentence drastically,
+by inserting commas.&lt;/p&gt;
+&lt;p&gt;First, we are dealing with a perfectly normal panda:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The panda eats bamboo shoots and leaves.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;With one comma, the panda becomes a picky eater who takes off after
+eating the bamboo shoots, rather than also eating the bamboo leaves:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The panda eats bamboo shoots, and leaves.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;And with two commas, we’re suddenly dealing with a panda that’s a gun
+nut with an anger management problem:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The panda eats bamboo, shoots, and leaves.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;Whitespace&lt;/h3&gt;
+&lt;p&gt;Whitespace normally goes &lt;em&gt;after&lt;/em&gt; punctuation, not before.&lt;/p&gt;
+&lt;p&gt;In English (in contrast to some other languages), when whitespace
+&lt;em&gt;precedes&lt;/em&gt; punctuation, it’s almost always wrong.  The correct
+sequence at the end of a sentence is full-stop (or exclamation mark,
+or question mark) &lt;em&gt;followed&lt;/em&gt; by whitespace. Likewise, its first comma,
+then whitespace. First semicolon, then whitespace.&lt;/p&gt;
+&lt;p&gt;There are select exceptions to this rule: whitespace does precede the
+en dash (–), opening quotation marks, parentheses, brackets, and
+braces, and optionally the em dash (—). But whitespace preceding
+punctuation &lt;em&gt;at the end of a sentence&lt;/em&gt; is always an error.&lt;/p&gt;
+&lt;h3&gt;Question marks (?)&lt;/h3&gt;
+&lt;p&gt;Questions should end in a question mark, shouldn’t they?&lt;/p&gt;
+&lt;p&gt;Don’t end questions with a full-stop or an exclamation point in
+professional writing. That will likely come across as either
+passive-aggressive or confrontational. End questions, even rhetorical
+ones, with a question mark.&lt;/p&gt;
+&lt;h3&gt;Exclamation marks (!)&lt;/h3&gt;
+&lt;p&gt;Use no more than one explanation mark per paragraph. Zero is fine, too.&lt;/p&gt;
+&lt;p&gt;Exclamation marks are something you want to use sparingly. &lt;em&gt;Never&lt;/em&gt; use
+more than one in immediate succession. Limiting yourself to one per
+paragraph is a good rule of thumb.&lt;/p&gt;
+&lt;h3&gt;Semicolons&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Semicolons are great; splitting the sentence in two is usually better.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Semicolons are great. Splitting the sentence in two is usually better.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;English mandates that on either side of a semicolon, you have what
+constitutes essentially a full sentence with a subject and verb (both
+obligatory) and an object (optional). Thus, they give you the option
+of just splitting the sentence into two — that is to say, replacing
+the semicolon with a full-stop.&lt;/p&gt;
+&lt;h3&gt;Possessive apostrophe&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Oscars: more than one Oscar &lt;/li&gt;
+&lt;li&gt;Oscar’s: of or related to Oscar&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A common mistake that native speakers of German or Swedish often make
+is the omission of the possessive apostrophe. English doesn’t have
+much in the way of
+&lt;a href="https://en.wikipedia.org/wiki/Grammatical_case"&gt;cases&lt;/a&gt;, but does have
+something like a &lt;a href="https://en.wikipedia.org/wiki/Genitive_case"&gt;genitive
+case&lt;/a&gt;. If something is of
+Oscar, or related to Oscar, it is &lt;em&gt;Oscar’s&lt;/em&gt; — such as Oscar’s car,
+Oscar’s job, Oscar’s house. An “Oscars job” is a job for multiple
+people named Oscar, or a job at the &lt;a href="https://en.wikipedia.org/wiki/Oscars"&gt;Academy
+Awards&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;It’s vs. its&lt;/h3&gt;
+&lt;p&gt;Infuriatingly, the possessive apostrophe does not apply when the thing
+that something is related to is simply &lt;em&gt;it&lt;/em&gt;. It would be perfectly
+reasonable to assume that when we refer to the car in “the car’s roof”
+as &lt;em&gt;it&lt;/em&gt;, it becomes “it’s roof”, but alas, things don’t work that way.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;it’s stands for “it is” (or “it has”)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;its means “of it”&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Yes, this is illogical and immensely confusing. English is weird.&lt;/p&gt;
+&lt;h3&gt;Parentheses and brackets&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Parentheses&lt;/em&gt; (like these) are always removable, without taking anything
+(of significant value) away from the statement.&lt;/p&gt;
+&lt;p&gt;You can use &lt;em&gt;square brackets&lt;/em&gt; to shorten quotes.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;To be, or not to be. That is the question. […] To die, to
+sleep. No more!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;Angle brackets&lt;/em&gt; often serve as placeholders, for when the reader must
+replace &amp;lt;important thing&amp;gt; with &amp;lt;other thing&amp;gt;.&lt;/p&gt;
+&lt;h3&gt;Hyphens and dashes&lt;/h3&gt;
+&lt;p&gt;Often, people think of the three principal forms of dashes as being
+interchangeable. They really are not.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;A hyphen, sometimes just called a dash, joins word-pairs together.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;En dashes, that is dashes roughly the width of a lowercase &lt;em&gt;n&lt;/em&gt;,
+  identify things like ranges or dates (March – June, page 47–49).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Em dashes — like these, which have the width of a lowercase &lt;em&gt;m&lt;/em&gt; —
+  can replace parentheses.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Avoiding Germglish (and Poglish, and Ukrainglish, etc.)&lt;/h1&gt;
+&lt;p&gt;As with accents, I personally think that we should celebrate the
+little language quirks that come from influences of our native
+language on English as a second (or third) language. Unfortunately,
+not everyone is so tolerant, and sometimes English monolinguals are
+&lt;em&gt;particularly&lt;/em&gt; pesky about these things.&lt;/p&gt;
+&lt;p&gt;So, what follows are a few little things to think about when it comes
+to typical crossovers from our respective native languages, to
+English.&lt;/p&gt;
+&lt;h2&gt;…, or?&lt;/h2&gt;
+&lt;p&gt;Adding the suffix “…, or?” to a statement that you want to follow up
+with a question that asks for confirmation is very common in German
+and Swedish. But it is a structure that does not exist in English.&lt;/p&gt;
+&lt;p&gt;You must instead use an interrogative phrase, such as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;This is a good idea, &lt;em&gt;right?&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;That is an excellent proposal, &lt;em&gt;isn’t it?&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;I thought we agree on that, &lt;em&gt;don’t we?&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;“Disturbance”&lt;/h2&gt;
+&lt;p&gt;Swedish and German native speakers often mentally translate the nouns
+“störning” or “Störung” into English as “disturbance”. This is a
+natural error because these derive from the verbs “störa” and
+“stören”, respectively, for which the English translation is indeed
+“disturb”.&lt;/p&gt;
+&lt;p&gt;However, in English “disturbance” is usually read as shorthand for
+“civil disturbance”, or “disturbance of the peace”, which are
+euphemisms for a violent riot.&lt;/p&gt;
+&lt;p&gt;Thus, to an English speaking recipient the statement “we have a
+disturbance in our data center” would sound much more dramatic than
+the native German sender probably intended it to be.&lt;/p&gt;
+&lt;h2&gt;Articles&lt;/h2&gt;
+&lt;p&gt;Many Eastern European languages (such as Polish and Ukrainian) don’t
+use articles, and their native speakers frequently omit them when
+speaking English. In standard English however, &lt;em&gt;the&lt;/em&gt; and &lt;em&gt;a&lt;/em&gt; are not
+optional.&lt;/p&gt;
+&lt;p&gt;Applicable exceptions are newspaper headlines (“Congress passes law on
+guns”) and controlled vocabularies (such as troops in combat using
+voice procedure, “gunner, sabot, tank, on my command, &lt;em&gt;fire&lt;/em&gt;”).&lt;/p&gt;
+&lt;p&gt;But in regular spoken and written communications, English speakers use
+both definite and indefinite articles.&lt;/p&gt;
+&lt;h2&gt;Subject&lt;/h2&gt;
+&lt;p&gt;English sentences always mention the subject.&lt;/p&gt;
+&lt;p&gt;English, unlike Spanish and many Slavic languages, is &lt;em&gt;not&lt;/em&gt; a null
+subject language. With very few exceptions, you can never leave out the
+subject in a sentence — even when it would otherwise be clear from
+context.&lt;/p&gt;
+&lt;p&gt;For example, in the English sentence “I am hungry” the “I” is
+redundant, because the form “am” uniquely identifies the verb as being
+first-person singular. Still, the sentence cannot be shortened to “am
+hungry,” because that would simply make it incorrect.&lt;/p&gt;
+&lt;h2&gt;Lowercase “you”&lt;/h2&gt;
+&lt;p&gt;Unlike in German and Polish, English speakers never capitalize &lt;em&gt;you&lt;/em&gt;
+in the middle of a sentence, even when using a polite form of
+address. “Thank You for Your help” would look odd and antiquated to
+them.&lt;/p&gt;
+&lt;p&gt;Now, let’s move on to clarity of structure.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h1&gt;Five paragraphs that matter&lt;/h1&gt;
+&lt;p&gt;Sometimes there are pretty complex things that you want to convey to a
+group of people. This is a where lot of people would be inclined to
+call a meeting but in reality, there’s a much better way to do that,
+in writing. And doing it in writing will help you do it in a much
+clearer, more concise, and more efficient fashion.&lt;/p&gt;
+&lt;p&gt;Whenever you need to thoroughly &lt;strong&gt;brief a group of people on an
+important matter,&lt;/strong&gt; in writing, consider using a &lt;strong&gt;5-paragraph
+format.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;What follows is a format that is being used by many armed forces; in
+NATO parlance it’s called the 5-paragraph field order.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Situation&lt;/li&gt;
+&lt;li&gt;Mission&lt;/li&gt;
+&lt;li&gt;Execution&lt;/li&gt;
+&lt;li&gt;Logistics&lt;/li&gt;
+&lt;li&gt;Command and Signal&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Now I’m generally not a fan of applying military thinking to civilian
+life, but in this case it’s actually something that can very much be
+applied to professional communications, with some rather minor
+modifications:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Situation&lt;/li&gt;
+&lt;li&gt;Objective&lt;/li&gt;
+&lt;li&gt;Plan&lt;/li&gt;
+&lt;li&gt;Logistics&lt;/li&gt;
+&lt;li&gt;Communications&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Let’s break these down in a little detail:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Situation is about what position we’re in, and &lt;strong&gt;why&lt;/strong&gt; we set out
+   to do what we want to do. You can break this down into three
+   sub-points, like the customer’s situation, the situation of your
+   own company, any extra help that is available, and the current
+   market.&lt;/li&gt;
+&lt;li&gt;Objective is &lt;strong&gt;what&lt;/strong&gt; we want to achieve.&lt;/li&gt;
+&lt;li&gt;Plan is &lt;strong&gt;how&lt;/strong&gt; we want to achieve it.&lt;/li&gt;
+&lt;li&gt;Logistics is about what budget and resources are available, and how
+   they are used.&lt;/li&gt;
+&lt;li&gt;Communications is about how you’ll be coordinating among yourselves
+   and with others in order to achieve your goal.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;What if that’s too formal?&lt;/h2&gt;
+&lt;p&gt;Sometimes these headings may look overly formal. People who are not
+used to that format might actually find it off-putting. You can
+totally use more colloquial headings, to make your communication less
+formal. For example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Why am I contacting you?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;What do we want to achieve?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;How are we going to do that?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;What will we need?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;How will we communicate?&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You’ll quickly notice that these map &lt;em&gt;precisely&lt;/em&gt; to the
+concepts of situation, objective, plan, logistics, and
+communications. But they sound much more casual and informal and
+approachable.&lt;/p&gt;
+&lt;h2&gt;Updates&lt;/h2&gt;
+&lt;p&gt;Sometimes you need to convey updates to your plan. Then, it’s often
+not necessary to redo the whole 5 paragraphs. Instead, you just leave
+out the bits that are unchanged, compared to your previous plan.&lt;/p&gt;
+&lt;p&gt;However, it’s &lt;em&gt;always&lt;/em&gt; a good idea to include the following 3 paragraphs:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Current Situation&lt;/li&gt;
+&lt;li&gt;Current Objective&lt;/li&gt;
+&lt;li&gt;Updated Plan&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;And the reason for this is easy to explain. There are really only two
+reasons why you would update your plan: either because the situation
+is different (the circumstances have changed), or the objective has
+been modified. And people should know which of the two it is.&lt;/p&gt;
+&lt;h1&gt;Meeting notes&lt;/h1&gt;
+&lt;p&gt;It’s a very common misconception for people to think that meeting
+notes are for the people that were &lt;em&gt;in&lt;/em&gt; the meeting, so they can
+remember what was said.&lt;/p&gt;
+&lt;p&gt;News flash: if you have people in the meeting that can’t remember what
+was said, maybe they didn’t actually participate and shouldn’t have
+been there in the first place?&lt;/p&gt;
+&lt;p&gt;So, who do we write meeting notes for? For the people that &lt;strong&gt;weren’t&lt;/strong&gt;
+in the meeting.&lt;/p&gt;
+&lt;p&gt;Every meeting needs notes and a summary, and you need to circulate
+these notes not only with everyone who attended the meeting, but with
+everyone who has a need-to-know.&lt;/p&gt;
+&lt;p&gt;And the way you write them is so a person wo &lt;strong&gt;wasn’t&lt;/strong&gt; there, or may
+not have known of the meeting, or perhaps even &lt;em&gt;wasn’t part of the
+organization&lt;/em&gt; at the time of the meeting, can understand what was
+said, what was discussed, and what was decided.&lt;/p&gt;
+&lt;p&gt;There is one person that I can guarantee is never in a meeting you are
+attending today, and that is you, but six months from now. Looking
+back at the notes of a meeting &lt;em&gt;that you participated&lt;/em&gt; in, six months
+after the fact, is a terrible experience if the meeting notes are not
+good. Writing good meeting notes &lt;em&gt;today&lt;/em&gt; means making &lt;em&gt;your&lt;/em&gt; life, six
+months from now, easier.&lt;/p&gt;
+&lt;p&gt;It follows logically, from the requirement that people who were never
+in the meeting must be able to read the meeting notes and understand
+everything that they need to know about the meeting, that &lt;strong&gt;only the
+written word counts.&lt;/strong&gt; What’s not on the written record in a meeting
+&lt;strong&gt;did not happen.&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Who’s responsible for meeting notes? The meeting chair (the person that called the meeting).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Who pulls the meeting notes together? The scribe (the appointed note-taker).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Who writes the meeting notes? &lt;strong&gt;Everyone.&lt;/strong&gt; &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Meeting notes structure&lt;/h2&gt;
+&lt;p&gt;In terms of what you want to include in your meeting notes, here’s a
+reasonably useful structure.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Meeting title&lt;/li&gt;
+&lt;li&gt;Date, time, attendees&lt;/li&gt;
+&lt;li&gt;Summary&lt;/li&gt;
+&lt;li&gt;Discussion points (tabular)&lt;/li&gt;
+&lt;li&gt;Action items&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Section 4 would be the longest, and should indeed list everything that
+was discussed in the meeting. It is usually practical to organise the
+individual points of discussion in a table. If you keep your action
+items in issue tracker references, you may also include those in the
+table together with the corresponding items you discussed. At that
+point, there is no need for a separate section 5.&lt;/p&gt;
+&lt;h1&gt;And now… the No.1 Awesome Writing Superpower&lt;/h1&gt;
+&lt;p&gt;Here it comes, the No.1 superpower that will improve &lt;strong&gt;all&lt;/strong&gt; your
+writing, every time. Are you ready?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Read things out loud.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;For real. I am dead serious about this one. It’s pretty safe to say
+that &lt;strong&gt;nothing&lt;/strong&gt; will improve your writing as much as getting into the
+habit of reading things out loud as you edit.&lt;/p&gt;
+&lt;p&gt;There are a number of reasons for this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;You can read silently at about 250 words per minute, but you can
+  speak at only about 150. Reading things out loud deliberately slows
+  down your reading, and gives you a better chance to spot your own
+  errors.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Forcing yourself to recite what you wrote will make it easy to
+  detect run-on sentences, confusing phrases, and errors in flow. You
+  will naturally want to correct these, and it will make your writing
+  better.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Making time to read what you write simply means your mind will stay
+  on topic longer than when you just bash something out and
+  immediately send or publish it. This additional time gives you the
+  opportunity to spot more mistakes, detect errors in your thinking,
+  and &lt;em&gt;have better ideas&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Do not squander all those opportunities. Read things out loud.&lt;/p&gt;
+&lt;p&gt;Guess what I did with this article.&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category></entry><entry><title>Writing Professionally (C!Conf 2022)</title><link href="https://xahteiwi.eu/resources/presentations/c-conf2022/" rel="alternate"></link><published>2022-05-30T00:00:00+00:00</published><updated>2022-05-30T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-05-30:/resources/presentations/c-conf2022/</id><summary type="html">&lt;p&gt;I did a workshop on writing in a professional context at my employer&amp;rsquo;s annual unconference, C!Conf.&lt;/p&gt;</summary><content type="html">&lt;p&gt;At work we have an annual&lt;sup id="fnref:annual"&gt;&lt;a class="footnote-ref" href="#fn:annual"&gt;1&lt;/a&gt;&lt;/sup&gt; conference, &lt;em&gt;C!Conf,&lt;/em&gt; where we pull
 the whole company together for 3 days of talks and workshops. All
-conference sessions are conducted by employees — we don't bring in any
-external consultants or (deity forbid) "motivational speakers", so it
+conference sessions are conducted by employees — we don’t bring in any
+external consultants or (deity forbid) “motivational speakers”, so it
 tends to be a very productive affair.&lt;/p&gt;
 &lt;p&gt;This year I ran a 45-minute session on writing in a professional
 context. There is no recording, but the whole talk is available with
@@ -14,7 +654,7 @@ license, as usual.&lt;/p&gt;
 &lt;hr/&gt;
 &lt;ol&gt;
 &lt;li id="fn:annual"&gt;
-&lt;p&gt;For obvious reasons, we didn't have this event in 2020 and
+&lt;p&gt;For obvious reasons, we didn’t have this event in 2020 and
 2021, so this was actually the first we did in 3 years. But the
 intention is for it to be an annual occurrence. &lt;a class="footnote-backref" href="#fnref:annual" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
@@ -61,32 +701,32 @@ response to this article:&lt;/p&gt;
  think differently about confidentiality. Work goes in public,
  meta-work is often about relationships, and I want my reports to be
  100% confident they can bring any question or concern to me.&lt;/p&gt;
-&lt;p&gt;So "encrypted email" is not the right metaphor or measuring stick in
-my view. DMs are a tool for saying what you aren't comfortable
-saying "out loud", but that shouldn't be about the work
-itself. Never "how do I do this?" But "advice pls about how to work
-with fred?" — yes!&lt;/p&gt;
+&lt;p&gt;So “encrypted email” is not the right metaphor or measuring stick in
+my view. DMs are a tool for saying what you aren’t comfortable
+saying “out loud”, but that shouldn’t be about the work
+itself. Never “how do I do this?” But “advice pls about how to work
+with fred?” — yes!&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;I entirely agree with the sentiments behind this; I still maintain
 that chat DMs are not necessarily a good approach for addressing this,
 for reason that some chat systems give merely an illusion of
 confidentiality. If both participants in a conversation use OTR
 encryption over a protocol like IRC or XMPP, inadvertent disclosure to
-a third party is highly unlikely. Slack DMs? &lt;a href="https://www.nbcnews.com/better/business/slack-updates-privacy-policy-employers-can-read-private-dms-without-ncna862811"&gt;I wouldn't be so
+a third party is highly unlikely. Slack DMs? &lt;a href="https://www.nbcnews.com/better/business/slack-updates-privacy-policy-employers-can-read-private-dms-without-ncna862811"&gt;I wouldn’t be so
 sure&lt;/a&gt;. If
-your report confides in you, you don't want them to have to worry if
+your report confides in you, you don’t want them to have to worry if
 their message is &lt;em&gt;really&lt;/em&gt; just between you and them.&lt;/p&gt;
 &lt;h3&gt;Hacker News, 2021-09-25&lt;/h3&gt;
 &lt;p&gt;On 2021-09-25, &lt;a href="https://news.ycombinator.com/item?id=28636536"&gt;a link to this
 article&lt;/a&gt; ended up being
-the top post on Hacker News for a few hours. You're very welcome to
-read through the 200-odd comments in that thread, but here I'd like to
-respond to just a couple. I'm deliberately only picking out ones where I
+the top post on Hacker News for a few hours. You’re very welcome to
+read through the 200-odd comments in that thread, but here I’d like to
+respond to just a couple. I’m deliberately only picking out ones where I
 feel like &lt;em&gt;clarification&lt;/em&gt; on my part is necessary; as far as
-differences of opinion are concerned I'll be happy to let those stand.&lt;/p&gt;
+differences of opinion are concerned I’ll be happy to let those stand.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;The article also assumes every one is a native speaker who can write
-quickly and clearly in a chat -- in a lot of international projects
+quickly and clearly in a chat – in a lot of international projects
 this is not the case.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;— &lt;a href="https://news.ycombinator.com/item?id=28651678"&gt;comment&lt;/a&gt; from &lt;code&gt;papaf&lt;/code&gt;&lt;/p&gt;
@@ -94,9 +734,9 @@ this is not the case.&lt;/p&gt;
 the original talk nor at the time of writing this update did I work
 with anyone who is a first-language English speaker.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;I have an objection to the author's blanket disregard for "pings" in
+&lt;p&gt;I have an objection to the author’s blanket disregard for “pings” in
 chat - while the request could/should be worded a bit more clearly
-than just "ping", IMHO they're a valid way of requesting if an
+than just “ping”, IMHO they’re a valid way of requesting if an
 opportunity for synchronous communication is available in the (not
 that rare!) cases where asynchronous communication would be
 worthless.&lt;/p&gt;
@@ -104,7 +744,7 @@ worthless.&lt;/p&gt;
 &lt;p&gt;— &lt;a href="https://news.ycombinator.com/item?id=28652633"&gt;comment&lt;/a&gt; from &lt;code&gt;PeterisP&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;My blanket disregard is for &lt;em&gt;naked&lt;/em&gt; pings, not for pings in general.&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="Communications"></category><category term="Work"></category></entry><entry><title>Add Depth! Stereoscopic imagery for everyone</title><link href="https://xahteiwi.eu/resources/presentations/add-depth-stereoscopic-imagery-for-everyone/" rel="alternate"></link><published>2021-08-21T00:00:00+00:00</published><updated>2021-08-21T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-08-21:/resources/presentations/add-depth-stereoscopic-imagery-for-everyone/</id><summary type="html">&lt;p&gt;My talk from FrOSCon 2021, Cloud Edition.&lt;/p&gt;</summary><content type="html">&lt;p&gt;FrOSCon 2021 was again an online event due to the COVID-19 pandemic
 (&lt;a href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;just like the previous year&lt;/a&gt;), and had a
-track named &lt;em&gt;Woodwork instead of IT&lt;/em&gt;, showcasing people's hobbies and
+track named &lt;em&gt;Woodwork instead of IT&lt;/em&gt;, showcasing people’s hobbies and
 interests they had discovered, or rediscovered, during lockdown.&lt;/p&gt;
 &lt;p&gt;So I submitted a talk that has absolutely nothing to do with what I do
 for work, and instead covered stereography: making, and viewing,
@@ -308,7 +948,7 @@ people residing anywhere, provided they have internet connectivity.&lt;/p&gt;
 &lt;p&gt;So we now &lt;em&gt;can&lt;/em&gt; work in teams despite being continental distances away
 from each other but we do have to acquire the skills to do that. And
 if we fail to do so, that has a rather grave disadvantage, which is
-that...&lt;/p&gt;
+that…&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Nothing&lt;/strong&gt; has as dire an impact on productivity as &lt;strong&gt;poor
 communications.&lt;/strong&gt;&lt;/p&gt;
@@ -1007,7 +1647,7 @@ efficient as a generic mode of communication across distributed teams.&lt;/p&gt;
 to curb channel sprawl and threading and other things, but’s that’s a
 whole ‘nother talk and indeed a talk for another &lt;em&gt;speaker,&lt;/em&gt; because I
 don’t lead an ops team.&lt;/p&gt;
-&lt;h2&gt;To summarize...&lt;/h2&gt;
+&lt;h2&gt;To summarize…&lt;/h2&gt;
 &lt;p&gt;So to summarize, here are my key points from this talk, in a nutshell
 — please make these your key takeaways.&lt;/p&gt;
 &lt;ul&gt;
@@ -1147,16 +1787,16 @@ about.&lt;/p&gt;
 &lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
 zoom out for an overview, or just advance by hitting the spacebar.&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="OSDN"></category><category term="OpenStack"></category></entry><entry><title>High Availability and Disaster Recovery in OpenStack</title><link href="https://xahteiwi.eu/resources/presentations/high-availability-and-disaster-recovery-in-openstack/" rel="alternate"></link><published>2016-11-07T00:00:00+00:00</published><updated>2016-11-07T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2016-11-07:/resources/presentations/high-availability-and-disaster-recovery-in-openstack/</id><summary type="html">&lt;p&gt;From the 2016 International Industry-Academia Workshop on Cloud
 Reliability and Resilience in Berlin. An OpenStack primer followed by
-a closer focus on OpenStack's HA &amp;amp; DR feature set.&lt;/p&gt;
+a closer focus on OpenStack’s HA &amp;amp; DR feature set.&lt;/p&gt;
 &lt;p&gt;About 35 minutes.&lt;/p&gt;
 &lt;!--break--&gt;
 &lt;ul&gt;
 &lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/cloud-reliability-workshop/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
-zoom out for an overview, or …&lt;/p&gt;</summary><content type="html">&lt;p&gt;From the 2016 International Industry-Academia Workshop on Cloud
+zoom out for an overview …&lt;/p&gt;</summary><content type="html">&lt;p&gt;From the 2016 International Industry-Academia Workshop on Cloud
 Reliability and Resilience in Berlin. An OpenStack primer followed by
-a closer focus on OpenStack's HA &amp;amp; DR feature set.&lt;/p&gt;
+a closer focus on OpenStack’s HA &amp;amp; DR feature set.&lt;/p&gt;
 &lt;p&gt;About 35 minutes.&lt;/p&gt;
 &lt;!--break--&gt;
 &lt;ul&gt;
@@ -1327,7 +1967,7 @@ more than 4 million students. Since 2013, the software running edx.org
 is available under an open source software license, enabling private and
 public organizations to run and operate the same learning platform under
 the Open edX initiative.&lt;/p&gt;
-&lt;p&gt;hastexo's contribution to Open edX is twofold: first, we enabled Open
+&lt;p&gt;hastexo’s contribution to Open edX is twofold: first, we enabled Open
 edX to run in an automated, distributed fashion on the OpenStack
 platform. Then, we taught Open edX the ability to automate the
 orchestration of on-demand OpenStack training environments. Both are now
@@ -1414,7 +2054,7 @@ in step with the narration.&lt;/p&gt;
 &lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/ceph-intro/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="Ceph"></category></entry><entry><title>Ceph Performance Demystified: Benchmarks, Tools, and the Metrics that Matter</title><link href="https://xahteiwi.eu/resources/presentations/ceph-day-london/" rel="alternate"></link><published>2014-10-22T00:00:00+00:00</published><updated>2014-10-22T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2014-10-22:/resources/presentations/ceph-day-london/</id><content type="html">&lt;p&gt;Mystified about Ceph performance tuning and benchmarking? Don't
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="Ceph"></category></entry><entry><title>Ceph Performance Demystified: Benchmarks, Tools, and the Metrics that Matter</title><link href="https://xahteiwi.eu/resources/presentations/ceph-day-london/" rel="alternate"></link><published>2014-10-22T00:00:00+00:00</published><updated>2014-10-22T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2014-10-22:/resources/presentations/ceph-day-london/</id><content type="html">&lt;p&gt;Mystified about Ceph performance tuning and benchmarking? Don’t
 despair!&lt;/p&gt;
 &lt;p&gt;This presentation was given at Ceph Day London in 2014. &lt;!--break--&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -1442,20 +2082,20 @@ the experience, read on!&lt;/p&gt;
 &lt;!--break--&gt;
 &lt;p&gt;In order to make the most of this tutorial, you can recreate the
 interactive steps presented. Please note: the process, while simple, is
-extremely bandwidth intensive and you don't want to be …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="http://www.percona.com/live/mysql-conference-2014/sessions/hands-trove-database-service-openstack-mysql"&gt;This
+extremely bandwidth intensive and you don’t want to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="http://www.percona.com/live/mysql-conference-2014/sessions/hands-trove-database-service-openstack-mysql"&gt;This
 tutorial&lt;/a&gt;
 covered OpenStack Trove at Percona Live 2014. If you want to recreate
 the experience, read on!&lt;/p&gt;
 &lt;!--break--&gt;
 &lt;p&gt;In order to make the most of this tutorial, you can recreate the
 interactive steps presented. Please note: the process, while simple, is
-extremely bandwidth intensive and you don't want to be the bandwidth hog
+extremely bandwidth intensive and you don’t want to be the bandwidth hog
 that everyone hates in your hotel, or on a conference wifi. Do so in
 your office (or home) instead.&lt;/p&gt;
 &lt;p&gt;The set-up process is decribed in &lt;a href="https://github.com/fghaas/perconalive2014/blob/master/README.md"&gt;a brief
 README&lt;/a&gt;.
 Effectively, it boils down to cloning a Git repo and then running
-vagrant up, and you'll be good to go. But do pay attention to the system
+vagrant up, and you’ll be good to go. But do pay attention to the system
 requirements.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Slides: &lt;a href="https://www.slideshare.net/slideshow/embed_code/33588994"&gt;SlideShare&lt;/a&gt;&lt;/li&gt;
@@ -1509,13 +2149,13 @@ advance by hitting the spacebar.&lt;/p&gt;
 &lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/openstackisrael2013/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="Ceph"></category><category term="Conference"></category></entry><entry><title>More Reliable, More Resilient, More Redundant</title><link href="https://xahteiwi.eu/resources/presentations/more-reliable-more-resilient-more-redundant/" rel="alternate"></link><published>2013-04-17T16:33:00+00:00</published><updated>2013-04-17T16:33:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2013-04-17:/resources/presentations/more-reliable-more-resilient-more-redundant/</id><summary type="html">&lt;p&gt;Another update on OpenStack's progress in high availability, for the
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="Ceph"></category><category term="Conference"></category></entry><entry><title>More Reliable, More Resilient, More Redundant</title><link href="https://xahteiwi.eu/resources/presentations/more-reliable-more-resilient-more-redundant/" rel="alternate"></link><published>2013-04-17T16:33:00+00:00</published><updated>2013-04-17T16:33:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2013-04-17:/resources/presentations/more-reliable-more-resilient-more-redundant/</id><summary type="html">&lt;p&gt;Another update on OpenStack’s progress in high availability, for the
 Grizzly and Havana releases. Presented at the OpenStack Summit in
 Portland, on April 17, 2013.&lt;/p&gt;
 &lt;!--break--&gt;
 &lt;p&gt;I give an overview of infrastructure, compute and networking high
 availability development in the April 2013 OpenStack Grizzly release,
-and an outlook for OpenStack Havana …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Another update on OpenStack's progress in high availability, for the
+and an outlook for OpenStack …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Another update on OpenStack’s progress in high availability, for the
 Grizzly and Havana releases. Presented at the OpenStack Summit in
 Portland, on April 17, 2013.&lt;/p&gt;
 &lt;!--break--&gt;
@@ -1529,14 +2169,14 @@ advance by hitting the spacebar.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;hr/&gt;
 &lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="OpenStack"></category></entry><entry><title>High Availability Update (Grizzly and Havana)</title><link href="https://xahteiwi.eu/resources/presentations/high-availability-update-grizzly-and-havana/" rel="alternate"></link><published>2013-02-20T12:58:00+00:00</published><updated>2013-02-20T12:58:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2013-02-20:/resources/presentations/high-availability-update-grizzly-and-havana/</id><summary type="html">&lt;p&gt;Another update on
-&lt;a href="https://www.hastexo.com/knowledge/openstack"&gt;OpenStack's&lt;/a&gt; progress in
+&lt;a href="https://www.hastexo.com/knowledge/openstack"&gt;OpenStack’s&lt;/a&gt; progress in
 high availability, for the Grizzly and Havana releases. Presented at the
 Swiss OpenStack User Group meetup in Zurich, on February 19, 2013.&lt;/p&gt;
 &lt;!--break--&gt;
 &lt;p&gt;I give an overview of infrastructure, compute and networking high
 availability development in the run-up to the Grizzly feature freeze.&lt;/p&gt;
-&lt;p&gt;Use the …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Another update on
-&lt;a href="https://www.hastexo.com/knowledge/openstack"&gt;OpenStack's&lt;/a&gt; progress in
+&lt;p&gt;Use …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Another update on
+&lt;a href="https://www.hastexo.com/knowledge/openstack"&gt;OpenStack’s&lt;/a&gt; progress in
 high availability, for the Grizzly and Havana releases. Presented at the
 Swiss OpenStack User Group meetup in Zurich, on February 19, 2013.&lt;/p&gt;
 &lt;!--break--&gt;

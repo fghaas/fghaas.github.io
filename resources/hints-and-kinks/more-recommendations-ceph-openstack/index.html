@@ -142,18 +142,18 @@
 
   <div>
     <p>A few months ago, we
-<a href="../../../resources/hints-and-kinks/dos-donts-ceph-openstack/">shared our Dos and Don'ts</a>,
+<a href="../../../resources/hints-and-kinks/dos-donts-ceph-openstack/">shared our Dos and Don’ts</a>,
 as they relate to Ceph and OpenStack. Since that post has proved quite
 popular, here are a few additional considerations for your Ceph-backed
 OpenStack cluster.</p>
 <h2>Do configure your images for VirtIO-SCSI</h2>
 <p>By default, RBD-backed Nova instances use the <code>virtio-blk</code> driver to
-expose RBD images to the guest -- either as ephemeral drives, or as
+expose RBD images to the guest – either as ephemeral drives, or as
 persistent volumes. In this default configuration, VirtIO presents a
 virtual PCI device to the guest that represents the paravirtual I/O
 bus, and devices are named <code>/dev/vda</code>, <code>/dev/vdb</code>, and so
 forth. VirtIO block devices are lightweight and efficient, but they
-come with a drawback: they don't support the <code>discard</code> operation.</p>
+come with a drawback: they don’t support the <code>discard</code> operation.</p>
 <p>Not being able to use <code>discard</code> means the guest cannot mount a
 filesystem with <code>mount -o discard</code>, and it also cannot clean up freed
 blocks on a filesystem with <code>fstrim</code>. This can be a security concern
@@ -162,7 +162,7 @@ data from within the guest (after overwriting it, presumably). It can
 also be an operational concern for you as the cluster operator.</p>
 <p>This is because not supporting <code>discard</code> also means that RADOS objects
 owned by the corresponding RBD image and never <em>removed</em> during the
-image's lifetime -- they persist until the whole image is deleted. So
+image’s lifetime – they persist until the whole image is deleted. So
 your cluster may carry the overhead of perhaps tens of thousands of
 RADOS objects that no-one actually cares about.</p>
 <p>Thankfully, there is an alternative VirtIO disk driver that <em>does</em>
@@ -177,12 +177,12 @@ on your image:</p>
   --property <span class="nv">hw_disk_bus</span><span class="o">=</span>scsi <span class="se">\</span>
   &lt;name or ID of your image&gt;
 </code></pre></div>
-<p>Then, if you boot an instance from this image, you'll see that its
+<p>Then, if you boot an instance from this image, you’ll see that its
 block device names switch from <code>/dev/vdX</code> to <code>/dev/sdX</code>, and you also
-get everything else you expect from a SCSI stack. For example, there's
+get everything else you expect from a SCSI stack. For example, there’s
 <code>/proc/scsi/scsi</code>, you can extract information about your bus,
 controller, and LUs with <code>lsscsi</code> command, and so on.</p>
-<p>It's important to note that this <em>image</em> property is inherited by the
+<p>It’s important to note that this <em>image</em> property is inherited by the
 <em>instance</em> booted from that image, which also passes it on to all
 <em>volumes</em> that you may subsequently attach to that instance. Thus,
 <code>openstack server add volume</code> will now add <code>/dev/sdb</code>, not <code>/dev/vdb</code>,
@@ -248,16 +248,16 @@ openstack volume qos associate <span class="se">\</span>
 </code></pre></div>
 <p>Again, as with Nova flavors, you can make volume types public, but you
 can also limit them to specific tenants.</p>
-<h2>Don't forget about suspend files</h2>
+<h2>Don’t forget about suspend files</h2>
 <p>When you <strong>suspend</strong> a Nova/libvirt/KVM instance, what really happens
-is what libvirt calls a <strong>managed save</strong>: the instance's entire memory
+is what libvirt calls a <strong>managed save</strong>: the instance’s entire memory
 is written to a file, and then KVM process shuts down. This is
 actually quite neat because it means that the VM does not consume any
 CPU cycles nor memory until it restarts, and it will continue right
 where it left off, even if the compute node is rebooted in the
 interim.</p>
 <p>You should understand that these savefiles are not compressed in any
-way: if your instance has 16GB of RAM, that's a 16GB file that
+way: if your instance has 16GB of RAM, that’s a 16GB file that
 instance suspension drops into <code>/var/lib/nova/save</code>. This can add up
 pretty quickly: if a single compute node hosts something like 10
 suspended instances, their combined save file size can easily exceed 
@@ -265,7 +265,7 @@ suspended instances, their combined save file size can easily exceed
 up your <code>/var</code> (or worse, <code>/</code>) filesystem.</p>
 <p>Of course, if you already have a Ceph cluster, you can put it to good
 use here too: just deep-mount a CephFS file system into that
-spot. Here's an Ansible playbook snippet that you may use as
+spot. Here’s an Ansible playbook snippet that you may use as
 inspiration:</p>
 <div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">hosts</span><span class="p">:</span><span class="w"></span>

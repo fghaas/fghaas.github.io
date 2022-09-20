@@ -43,13 +43,13 @@
  
 
 <meta name="author" content="Florian Haas" />
-<meta name="description" content="If you&#39;re familiar with web site hosting on Amazon S3, which is a simple and cheap way to host a static web site, you might be wondering whether or not you can do the same in Ceph radosgw. The short answer is you can&#39;t. Bucket Website is listed as Not …" />
+<meta name="description" content="If you’re familiar with web site hosting on Amazon S3, which is a simple and cheap way to host a static web site, you might be wondering whether or not you can do the same in Ceph radosgw. The short answer is you can’t. Bucket Website is listed …" />
 <meta name="keywords" content="Ceph">
 
 
   <meta property="og:site_name" content="xahteiwi.eu"/>
   <meta property="og:title" content="Hosting a web site in radosgw"/>
-  <meta property="og:description" content="If you&#39;re familiar with web site hosting on Amazon S3, which is a simple and cheap way to host a static web site, you might be wondering whether or not you can do the same in Ceph radosgw. The short answer is you can&#39;t. Bucket Website is listed as Not …"/>
+  <meta property="og:description" content="If you’re familiar with web site hosting on Amazon S3, which is a simple and cheap way to host a static web site, you might be wondering whether or not you can do the same in Ceph radosgw. The short answer is you can’t. Bucket Website is listed …"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:url" content="../../../resources/hints-and-kinks/hosting-website-radosgw/"/>
   <meta property="og:type" content="article"/>
@@ -140,14 +140,14 @@
 
 
   <div>
-    <p>If you're familiar with <a href="//docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">web site hosting on Amazon
+    <p>If you’re familiar with <a href="//docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">web site hosting on Amazon
 S3</a>,
 which is a simple and cheap way to host a static web site, you might
 be wondering whether or not you can do the same in Ceph radosgw.</p>
-<p>The short answer is you can't. Bucket Website is listed as <em>Not
+<p>The short answer is you can’t. Bucket Website is listed as <em>Not
 Supported</em> in the radosgw S3 API
 <a href="http://docs.ceph.com/docs/master/radosgw/s3/">support matrix</a>, and
-radosgw doesn't have
+radosgw doesn’t have
 <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/IndexDocumentSupport.html">index document support</a>
 either.</p>
 <p>But the longer answer is that you can, provided you use radosgw in
@@ -155,9 +155,9 @@ combination with a front-end load-balancer — which, as it happens,
 can add a few more bells and whistles, as well. You could probably do
 the same thing with nginx, Varnish, or Apache in a
 <code>mod_proxy_balancer</code> balancer setup, but in this example
-configuration, we'll use HAProxy.</p>
+configuration, we’ll use HAProxy.</p>
 <h2>Getting started: the radosgw basics</h2>
-<p>Let's take look at a simple radosgw configuration with virtual host
+<p>Let’s take look at a simple radosgw configuration with virtual host
 support, such that you can access your buckets as either
 <code>http://ceph.example.com/bucketname</code> or
 <code>http://bucketname.ceph.example.com</code>:</p>
@@ -189,7 +189,7 @@ browser, or any other HTTP client application (such as <code>curl</code> or
 <span class="na">Date</span><span class="o">:</span> <span class="l">Tue, 26 Jan 2016 18:16:11 GMT</span>
 </code></pre></div>
 <h2>Introducing HAProxy</h2>
-<p>Now let's start out with putting HAproxy in between. Nothing special
+<p>Now let’s start out with putting HAproxy in between. Nothing special
 there: radosgw listens on the conventional 7480 port, and we simply
 hand HAproxy traffic through there, and bind HAProxy itself to
 port 80.</p>
@@ -235,9 +235,9 @@ port 80.</p>
 <span class="w">    </span><span class="s">server</span><span class="w"> </span><span class="s">radosgw01</span><span class="w"> </span><span class="n">127.0.0.1</span><span class="p">:</span><span class="mi">7480</span><span class="w"> </span><span class="s">check</span><span class="w"></span>
 </code></pre></div>
 <h2>Index documents</h2>
-<p>So, the first thing we'll need to add is support for index
-documents. We'd like to make sure that when we retrieve
-<code>https://testwebsite.ceph.example.com/</code>, what's actually fetched from
+<p>So, the first thing we’ll need to add is support for index
+documents. We’d like to make sure that when we retrieve
+<code>https://testwebsite.ceph.example.com/</code>, what’s actually fetched from
 the backend is <code>/index.html</code>. We can do that by adding an HAproxy ACL
 that matches for the trailing slash in the path, and an <code>http-request
 set-path</code> directive that appends the index document name:</p>
@@ -249,7 +249,7 @@ set-path</code> directive that appends the index document name:</p>
 <span class="w">    </span><span class="s">http-request</span><span class="w"> </span><span class="s">set-path</span><span class="w"> </span><span class="s">%[path]index.html</span><span class="w"> </span><span class="s">if</span><span class="w"> </span><span class="s">path_ends_in_slash</span><span class="w"></span>
 <span class="w">    </span><span class="s">default_backend</span><span class="w"> </span><span class="s">ceph_back</span><span class="w"></span>
 </code></pre></div>
-<p>Now, that's fine in terms of <strong>getting</strong> the index document correctly:</p>
+<p>Now, that’s fine in terms of <strong>getting</strong> the index document correctly:</p>
 <div class="highlight"><pre><span></span><code>curl -I http://testwebsite.ceph.example.com/index.html
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
@@ -265,7 +265,7 @@ set-path</code> directive that appends the index document name:</p>
 other words, anything that uses the S3 API. Now you could test for
 some S3-specific headers in the request, but really, you should just
 check whether the request is authorized, and only apply the index
-document logic if it isn't, like so:</p>
+document logic if it isn’t, like so:</p>
 <div class="highlight"><pre><span></span><code><span class="k">frontend</span><span class="w"> </span><span class="s">ceph_front</span><span class="w"></span>
 <span class="w">    </span><span class="s">bind</span><span class="w"> </span><span class="n">0.0.0.0</span><span class="p">:</span><span class="mi">80</span><span class="w"></span>
 <span class="w">    </span><span class="s">acl</span><span class="w"> </span><span class="s">path_ends_in_slash</span><span class="w"> </span><span class="s">path_end</span><span class="w"> </span><span class="s">-i</span><span class="w"> </span><span class="s">/</span><span class="w"></span>
@@ -277,7 +277,7 @@ document logic if it isn't, like so:</p>
 </code></pre></div>
 <p>Great. Now we can upload using full paths without mangling, and on any
 un-authenticated requests, we substitute <code>/index.html</code> for any trailing
-<code>/</code>. In case you're wondering: yes, this works for any path, not just
+<code>/</code>. In case you’re wondering: yes, this works for any path, not just
 the root path.</p>
 <h2>Directory paths</h2>
 <p>However, you may also want something else, which is the ability to
@@ -286,7 +286,7 @@ correctly handle a request like
 course you want the path <code>/my/sub/directory</code> translated into
 <code>/my/sub/directory/index.html</code>, which means we want to append a slash
 <em>and</em> an index document name to the request path.</p>
-<p>So let's do that:</p>
+<p>So let’s do that:</p>
 <div class="highlight"><pre><span></span><code><span class="k">frontend</span><span class="w"> </span><span class="s">ceph_front</span><span class="w"></span>
 <span class="w">    </span><span class="s">bind</span><span class="w"> </span><span class="n">0.0.0.0</span><span class="p">:</span><span class="mi">80</span><span class="w"></span>
 <span class="w">    </span><span class="s">acl</span><span class="w"> </span><span class="s">path_has_dot</span><span class="w"> </span><span class="s">path_sub</span><span class="w"> </span><span class="s">-i</span><span class="w"> </span><span class="s">.</span><span class="w"></span>
@@ -297,12 +297,12 @@ course you want the path <code>/my/sub/directory</code> translated into
 <span class="w">    </span><span class="s">http-request</span><span class="w"> </span><span class="s">set-path</span><span class="w"> </span><span class="s">%[path]/index.html</span><span class="w"> </span><span class="s">if</span><span class="w"> </span><span class="s">!path_has_dot</span><span class="w"> </span><span class="s">!path_ends_in_slash</span><span class="w"> </span><span class="s">!auth_header</span><span class="w"></span>
 <span class="w">    </span><span class="s">default_backend</span><span class="w"> </span><span class="s">ceph_back</span><span class="w"></span>
 </code></pre></div>
-<p>Note that what we're doing here is somewhat crude. We're assuming that
+<p>Note that what we’re doing here is somewhat crude. We’re assuming that
 any actual file that we want to retrieve looks like <code>name.ext</code>,
 meaning it has a dot (period, full stop) character in it. The
 <code>path_sub -i .</code> expression in the <code>path_has_dot</code> ACL simply matches
-any path with <code>.</code> in it, and we're assuming that if a path has a dot
-then it points to a file, if it doesn't then it points to a directory.</p>
+any path with <code>.</code> in it, and we’re assuming that if a path has a dot
+then it points to a file, if it doesn’t then it points to a directory.</p>
 <p>You could be a little more clever here and use <code>path_regex</code> instead of
 <code>path_sub</code> for a full regular expression match. But regex lookups are
 slower than simple substring matches, so if the substring match works
@@ -340,7 +340,7 @@ access to all your content via HAproxy instead, you would add:</p>
 <span class="w">    </span><span class="s">http-request</span><span class="w"> </span><span class="s">set-path</span><span class="w"> </span><span class="s">%[path]/index.html</span><span class="w"> </span><span class="s">if</span><span class="w"> </span><span class="s">!path_has_dot</span><span class="w"> </span><span class="s">!path_ends_in_slash</span><span class="w"> </span><span class="s">!auth_header</span><span class="w"></span>
 <span class="w">    </span><span class="s">default_backend</span><span class="w"> </span><span class="s">ceph_back</span><span class="w"></span>
 </code></pre></div>
-<p>But maybe you'd like to <strong>force,</strong> not merely allow, HTTPS
+<p>But maybe you’d like to <strong>force,</strong> not merely allow, HTTPS
 access. <code>redirect</code> to the rescue:</p>
 <div class="highlight"><pre><span></span><code><span class="k">frontend</span><span class="w"> </span><span class="s">ceph_front</span><span class="w"></span>
 <span class="w">    </span><span class="s">bind</span><span class="w"> </span><span class="n">0.0.0.0</span><span class="p">:</span><span class="mi">80</span><span class="w"></span>
@@ -376,9 +376,9 @@ Content-type: text/html
 Date: Tue, 26 Jan 2016 18:48:59 GMT
 </code></pre></div>
 <h2>Compression</h2>
-<p>And finally, maybe you'd like to speed up access to the stuff on your
-site. Why not add gzip on-the-fly-compression? It's supported by every
-browser worth its salt, and will make your users happier. You'll want
+<p>And finally, maybe you’d like to speed up access to the stuff on your
+site. Why not add gzip on-the-fly-compression? It’s supported by every
+browser worth its salt, and will make your users happier. You’ll want
 to restrict compression to specific MIME types though. In the
 configuration below, we enable compression for plain text, HTML, XML,
 CSS, JavaScript, and SVG images.</p>
@@ -399,9 +399,9 @@ CSS, JavaScript, and SVG images.</p>
 <span class="w">    </span><span class="s">compression</span><span class="w"> </span><span class="s">type</span><span class="w"> </span><span class="s">text/html</span><span class="w"> </span><span class="s">text/xml</span><span class="w"> </span><span class="s">text/plain</span><span class="w"> </span><span class="s">text/css</span><span class="w"> </span><span class="s">application/javascript</span><span class="w"> </span><span class="s">image/svg+xml</span><span class="w"></span>
 <span class="w">    </span><span class="s">default_backend</span><span class="w"> </span><span class="s">ceph_back</span><span class="w"></span>
 </code></pre></div>
-<p>Let's see how that helps us. Do a request without gzip encoding
+<p>Let’s see how that helps us. Do a request without gzip encoding
 support, and observe that its total download size matches the
-document's <code>Content-Length</code>:</p>
+document’s <code>Content-Length</code>:</p>
 <div class="highlight"><pre><span></span><code>curl https://testwebsite.ceph.example.com/my/sub/directory &gt; /dev/null
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>  <span class="c1">% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current</span>
@@ -417,11 +417,11 @@ document's <code>Content-Length</code>:</p>
 </code></pre></div>
 <p>There. Actual download size goes from 24KB down to just 5KB. </p>
 <h2>Where to go from here</h2>
-<p>There's a few additional features to be added here. You
+<p>There’s a few additional features to be added here. You
 could enable CORS or HSTS, for example, and of course you could add
 more backends. But if you read this far, you surely get the idea.</p>
-<p>And you're welcome to examine the headers you can pull from this page
-you're reading, wink wink. :)</p>
+<p>And you’re welcome to examine the headers you can pull from this page
+you’re reading, wink wink. :)</p>
 <hr/>
 <p>This article originally appeared on the <code>hastexo.com</code> website (now defunct).</p>
   </div>

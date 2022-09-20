@@ -45,13 +45,13 @@ contents:&lt;/p&gt;
 &lt;/ul&gt;
 &lt;hr/&gt;
 &lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Galera"></category><category term="MySQL"></category><category term="Pacemaker"></category></entry><entry><title>Bootstrapping the Galera cluster</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/mysqlgalera-pacemaker-bootstrapping-galera-cluster/" rel="alternate"></link><published>2012-12-04T10:53:27+01:00</published><updated>2012-12-04T10:53:27+01:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-12-04:/resources/hints-and-kinks/mysqlgalera-pacemaker-bootstrapping-galera-cluster/</id><summary type="html">&lt;p&gt;In order to bootstrap your Galera cluster, manually bring up the
-cluster IP address on the desired interface. In this example, we'll
+cluster IP address on the desired interface. In this example, we’ll
 use 192.168.122.99 and eth1:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ip address add &lt;span class="m"&gt;192&lt;/span&gt;.168.122.99/24 dev eth1 label eth1:galera
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;And initialize the Galera cluster:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mysqld --wsrep_cluster_address&lt;span class="o"&gt;=&lt;/span&gt;gcomm …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;In order to bootstrap your Galera cluster, manually bring up the
-cluster IP address on the desired interface. In this example, we'll
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mysqld --wsrep_cluster_address …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;In order to bootstrap your Galera cluster, manually bring up the
+cluster IP address on the desired interface. In this example, we’ll
 use 192.168.122.99 and eth1:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ip address add &lt;span class="m"&gt;192&lt;/span&gt;.168.122.99/24 dev eth1 label eth1:galera
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -66,7 +66,7 @@ see entries similar to these:&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;At this point, your MySQL/Galera cluster is properly initialized. It
 only has one node, and it is not under cluster management yet, but
-it's already a working Galera installation.&lt;/p&gt;
+it’s already a working Galera installation.&lt;/p&gt;
 &lt;hr/&gt;
 &lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Galera"></category><category term="MySQL"></category><category term="Pacemaker"></category></entry><entry><title>Configuring Corosync</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/mysqlgalera-pacemaker-configuring-corosync/" rel="alternate"></link><published>2012-12-04T10:53:27+01:00</published><updated>2012-12-04T10:53:27+01:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-12-04:/resources/hints-and-kinks/mysqlgalera-pacemaker-configuring-corosync/</id><summary type="html">&lt;p&gt;You now need configure Corosync. The following example configuration
 file assumes that your cluster nodes have two network interfaces,
@@ -264,7 +264,7 @@ box, but the concepts should be equally applicable to other platforms
 with minimal modifications.&lt;/p&gt;
 &lt;p&gt;It also assumes that your Galera cluster will consist of three nodes,
 named alice, bob and charlie. Furthermore, all cluster nodes can
-resolve each other's hostnames.&lt;/p&gt;
+resolve each other’s hostnames.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Please note: All commands in this walkthrough require that you are
 logged into your system as root.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;First, make sure you have the required packages installed. One of the
@@ -305,7 +305,7 @@ squeeze-backports:&lt;/p&gt;
 Transfer (SST) methods for Galera:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt-get install rsync
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Now, all required packages are installed and you're ready to configure
+&lt;p&gt;Now, all required packages are installed and you’re ready to configure
 XtraDB Cluster.&lt;/p&gt;
 &lt;hr/&gt;
 &lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Galera"></category><category term="MySQL"></category><category term="Pacemaker"></category></entry><entry><title>Recovering from full cluster shutdown</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/mysqlgalera-pacemaker-recovering-full-cluster-shutdown/" rel="alternate"></link><published>2012-12-04T10:53:27+01:00</published><updated>2012-12-04T10:53:27+01:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-12-04:/resources/hints-and-kinks/mysqlgalera-pacemaker-recovering-full-cluster-shutdown/</id><summary type="html">&lt;p&gt;If at any time &lt;em&gt;all&lt;/em&gt; of the nodes in your cluster have been taken

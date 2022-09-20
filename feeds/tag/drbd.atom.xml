@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - DRBD</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/drbd.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2012-03-20T11:01:00+00:00</updated><entry><title>On my (ex-)maintainership of the DRBD User's Guide</title><link href="https://xahteiwi.eu/blog/2012/03/20/on-my-ex-maintainership-of-the-drbd-users-guide/" rel="alternate"></link><published>2012-03-20T11:01:00+00:00</published><updated>2012-03-20T11:01:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2012-03-20:/blog/2012/03/20/on-my-ex-maintainership-of-the-drbd-users-guide/</id><summary type="html">&lt;p&gt;Here's a quick summary of my past and current relationship with the DRBD
-User's Guide.&lt;/p&gt;
-&lt;p&gt;As you probably know, I created the original &lt;a href="http://drbd.linbit.com/users-guide/"&gt;DRBD User's
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - DRBD</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/drbd.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2012-03-20T11:01:00+00:00</updated><entry><title>On my (ex-)maintainership of the DRBD User's Guide</title><link href="https://xahteiwi.eu/blog/2012/03/20/on-my-ex-maintainership-of-the-drbd-users-guide/" rel="alternate"></link><published>2012-03-20T11:01:00+00:00</published><updated>2012-03-20T11:01:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2012-03-20:/blog/2012/03/20/on-my-ex-maintainership-of-the-drbd-users-guide/</id><summary type="html">&lt;p&gt;Here’s a quick summary of my past and current relationship with the DRBD
+User’s Guide.&lt;/p&gt;
+&lt;p&gt;As you probably know, I created the original &lt;a href="http://drbd.linbit.com/users-guide/"&gt;DRBD User’s
 Guide&lt;/a&gt; several years back, and I
 maintained it throughout my time at Linbit. &lt;a href="https://fghaas.wordpress.com/2011/09/05/on-to-new-endeavors/"&gt;When I left last
 year&lt;/a&gt;, it
-was originally mutually understood (or so …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Here's a quick summary of my past and current relationship with the DRBD
-User's Guide.&lt;/p&gt;
-&lt;p&gt;As you probably know, I created the original &lt;a href="http://drbd.linbit.com/users-guide/"&gt;DRBD User's
+was originally mutually …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Here’s a quick summary of my past and current relationship with the DRBD
+User’s Guide.&lt;/p&gt;
+&lt;p&gt;As you probably know, I created the original &lt;a href="http://drbd.linbit.com/users-guide/"&gt;DRBD User’s
 Guide&lt;/a&gt; several years back, and I
 maintained it throughout my time at Linbit. &lt;a href="https://fghaas.wordpress.com/2011/09/05/on-to-new-endeavors/"&gt;When I left last
 year&lt;/a&gt;, it
 was originally mutually understood (or so I thought) that I could
 continue to maintain it – as a non-employee, in a community capacity,
-without compensation, just as it's common in many other open source
+without compensation, just as it’s common in many other open source
 projects. I tend to enjoy technical writing, and it was something I
 certainly was looking forward to. And things got off to a promising
 start, the first (trivial) patch to the documentation which I
@@ -27,34 +27,34 @@ and
 submission to the documentation, the latter of which was a a bit more
 elaborate, things got a bit strange. This was after hastexo went
 operational, although whether that is at all related to the sequence of
-events I don't know. At any rate, I was being served with a
-"Documentation Contributor License Agreement". Which wasn't considered
+events I don’t know. At any rate, I was being served with a
+“Documentation Contributor License Agreement”. Which wasn’t considered
 necessary in my earlier patch. Which involved copyright assignment.
-Which I balked at. I don't necessarily object to copyright assignment if
-I write on a contract, as I occasionally do for technical magazines --
-but what I wrote definitely hadn't been contracted out to me. I had
+Which I balked at. I don’t necessarily object to copyright assignment if
+I write on a contract, as I occasionally do for technical magazines –
+but what I wrote definitely hadn’t been contracted out to me. I had
 simply submitted it unsolicited in the mere hope it was going to be
-useful, and I wasn't interested in contract work, either. In addition,
+useful, and I wasn’t interested in contract work, either. In addition,
 the documentation was (and is) under a &lt;a href="http://creativecommons.org/licenses/by-sa/3.0/"&gt;liberal CC-BY-SA
 license&lt;/a&gt; which made any
 copyright assignment unnecessary for a simple contribution. In my humble
 opinion, that is.&lt;/p&gt;
 &lt;p&gt;So I raised these points, and my concerns were rejected, and my patches
-didn't make it in. Note, I have no quarrel with this at all – it may
-well be a perfectly sane business decision. But that's none of my
+didn’t make it in. Note, I have no quarrel with this at all – it may
+well be a perfectly sane business decision. But that’s none of my
 business anymore, and I respect their decision just fine. They have
 stuck to their decision, and that is just fine too.&lt;/p&gt;
-&lt;p&gt;It only means that I don't maintain the User's Guide anymore, and I'm
+&lt;p&gt;It only means that I don’t maintain the User’s Guide anymore, and I’m
 evidently also unable to contribute patches, corrections or improvements
 unless I consent to copyright assignment, which I disagree with in this
 instance. So unless the policy changes at some point in the future, I
-won't be contributing to the User's Guide any longer.&lt;/p&gt;
+won’t be contributing to the User’s Guide any longer.&lt;/p&gt;
 &lt;p&gt;My name will remain in the authors list pretty much indefinitely (unless
 someone publishes a complete rewrite) as that is required by law, but
 you should interpret that as my being the original author – technically
-a co-author, as I always made a point of crediting Lars' and Phil's
-earlier work that the User's Guide was based on. My co-authorship
-doesn't imply, however, that I'm a currently active author or
+a co-author, as I always made a point of crediting Lars’ and Phil’s
+earlier work that the User’s Guide was based on. My co-authorship
+doesn’t imply, however, that I’m a currently active author or
 maintainer.&lt;/p&gt;
 &lt;hr/&gt;
 &lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="DRBD"></category></entry><entry><title>Storage Replication in High-Performance High-Availability Environments</title><link href="https://xahteiwi.eu/resources/presentations/storage-replication-high-performance-high-availability-environments/" rel="alternate"></link><published>2012-03-19T10:54:00+00:00</published><updated>2012-03-19T10:54:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-03-19:/resources/presentations/storage-replication-high-performance-high-availability-environments/</id><summary type="html">&lt;p&gt;At linux.conf.au 2012, Florian I this presentation on the integration
@@ -108,15 +108,15 @@ network is disconnected and fencing policy is set to &lt;code&gt;dont-care&lt;/c
 (default), there is the potential risk of a split-brain. Even with
 resource level fencing or STONITH setup, there are corner cases that
 will end up in a split-brain.&lt;/p&gt;
-&lt;p&gt;When your DRBD resource is in a split-brain situation, don't panic!
+&lt;p&gt;When your DRBD resource is in a split-brain situation, don’t panic!
 Split-brain means that the contents of the backing devices of your
 DRBD resource on both sides of your cluster started to diverge. At
 some point in time, the DRBD resource on both nodes went into the
 Primary role while the cluster nodes themselves were disconnected from
 each other.&lt;/p&gt;
 &lt;p&gt;Different writes happened to both sides of your cluster
-afterwards. After reconnecting, DRBD doesn't know which set of data is
-"right" and which is "wrong".&lt;/p&gt;
+afterwards. After reconnecting, DRBD doesn’t know which set of data is
+“right” and which is “wrong”.&lt;/p&gt;
 &lt;h2&gt;Indications of a Split-Brain&lt;/h2&gt;
 &lt;p&gt;The symptoms of a split-brain are that the peers will not reconnect on
 DRBD startup but stay in connection state StandAlone or
@@ -129,7 +129,7 @@ kernel logs you will see messages like:&lt;/p&gt;
 &lt;h3&gt;Step 1&lt;/h3&gt;
 &lt;p&gt;Manually choose a node which data modifications will be discarded.&lt;/p&gt;
 &lt;p&gt;We call it the split brain victim. Choose wisely, all modifications
-will be lost! When in doubt run a backup of the victim's data before
+will be lost! When in doubt run a backup of the victim’s data before
 you continue.&lt;/p&gt;
 &lt;p&gt;When running a Pacemaker cluster, you can enable maintenance mode. If
 the split brain victim is in Primary role, bring down all applications
@@ -137,7 +137,7 @@ using this resource. Now switch the victim to Secondary role:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;victim# drbdadm secondary resource
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;Step 2&lt;/h3&gt;
-&lt;p&gt;Disconnect the resource if it's in connection state &lt;code&gt;WFConnection&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;Disconnect the resource if it’s in connection state &lt;code&gt;WFConnection&lt;/code&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;victim&lt;/span&gt;#&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;drbdadm&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;disconnect&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;resource&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;Step 3&lt;/h3&gt;
@@ -156,7 +156,7 @@ using this resource. Now switch the victim to Secondary role:&lt;/p&gt;
 &lt;p&gt;At the latest now the resynchronization from the survivor
 (&lt;code&gt;SyncSource&lt;/code&gt;) to the victim (&lt;code&gt;SyncTarget&lt;/code&gt;) starts immediately. There
 is no full sync initiated but all modifications on the victim will be
-overwritten by the survivor's data and modifications on the survivor
+overwritten by the survivor’s data and modifications on the survivor
 will be applied to the victim.&lt;/p&gt;
 &lt;h2&gt;Background: What happens?&lt;/h2&gt;
 &lt;p&gt;With the default after-split-brain policies of disconnect this will

@@ -43,13 +43,13 @@
  
 
 <meta name="author" content="Florian Haas" />
-<meta name="description" content="Ever wonder what&#39;s the difference between order &lt;name&gt; inf: &lt;first-resource&gt; &lt;second-resource&gt; and a score of something other than inf? We&#39;ll explain. If you specify an order constraint score of INFINITY (inf or the keyword mandatory in crm shell syntax), then the order constraint is considered mandatory. If you specify 0 …" />
+<meta name="description" content="Ever wonder what’s the difference between order &lt;name&gt; inf: &lt;first-resource&gt; &lt;second-resource&gt; and a score of something other than inf? We’ll explain. If you specify an order constraint score of INFINITY (inf or the keyword mandatory in crm shell syntax), then the order constraint is considered mandatory. If you …" />
 <meta name="keywords" content="Pacemaker">
 
 
   <meta property="og:site_name" content="xahteiwi.eu"/>
   <meta property="og:title" content="Mandatory and advisory ordering in Pacemaker"/>
-  <meta property="og:description" content="Ever wonder what&#39;s the difference between order &lt;name&gt; inf: &lt;first-resource&gt; &lt;second-resource&gt; and a score of something other than inf? We&#39;ll explain. If you specify an order constraint score of INFINITY (inf or the keyword mandatory in crm shell syntax), then the order constraint is considered mandatory. If you specify 0 …"/>
+  <meta property="og:description" content="Ever wonder what’s the difference between order &lt;name&gt; inf: &lt;first-resource&gt; &lt;second-resource&gt; and a score of something other than inf? We’ll explain. If you specify an order constraint score of INFINITY (inf or the keyword mandatory in crm shell syntax), then the order constraint is considered mandatory. If you …"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:url" content="../../../resources/hints-and-kinks/mandatory-and-advisory-ordering-pacemaker/"/>
   <meta property="og:type" content="article"/>
@@ -140,21 +140,21 @@
 
 
   <div>
-    <p>Ever wonder what's the difference between <code>order &lt;name&gt; inf:
+    <p>Ever wonder what’s the difference between <code>order &lt;name&gt; inf:
 &lt;first-resource&gt; &lt;second-resource&gt;</code> and a score of something other
-than <code>inf</code>? We'll explain.</p>
+than <code>inf</code>? We’ll explain.</p>
 <p>If you specify an order constraint score of <code>INFINITY</code> (<code>inf</code> or the
 keyword <code>mandatory</code> in crm shell syntax), then the order constraint is
 considered mandatory. If you specify <code>0</code>, or the keyword <code>advisory</code>
-then it's advisory. What does that mean?</p>
+then it’s advisory. What does that mean?</p>
 <p>Firstly, anytime two resources are started in the same cluster
-transition, order constraints do apply regardless of whether they're
+transition, order constraints do apply regardless of whether they’re
 mandatory or advisory. So for the two constraints shown here:</p>
 <div class="highlight"><pre><span></span><code>order o_foo_before_bar inf: foo bar
 order o_foo_before_bar 0: foo bar
 </code></pre></div>
-<p>... if <code>foo</code> and <code>bar</code> are just starting, <code>foo</code> starts first, and
-<code>bar</code> starts only when <code>foo</code>'s start operation is completed. So what's
+<p>… if <code>foo</code> and <code>bar</code> are just starting, <code>foo</code> starts first, and
+<code>bar</code> starts only when <code>foo</code>‘s start operation is completed. So what’s
 the difference, really?</p>
 <h2>Mandatory ordering</h2>
 <p>In a <strong>mandatory</strong> order constraint, the order is enforced under all
@@ -166,7 +166,7 @@ omitted to keep this short):</p>
 <code>bar</code> must also stop. So the sequence of events is:</p>
 <ol>
 <li><code>foo</code> fails</li>
-<li>Pacemaker attempts to stop <code>foo</code> again (to make sure it's cleaned
+<li>Pacemaker attempts to stop <code>foo</code> again (to make sure it’s cleaned
    up).</li>
 <li><code>bar</code> stops.</li>
 <li><code>foo</code> starts</li>
@@ -175,19 +175,19 @@ omitted to keep this short):</p>
 <p>If <code>foo</code> fails to start back up, then <code>bar</code> will remain stopped. Based
 on the start-failure-is-fatal and migration-threshold settings both
 resources can now potentially migrate to other nodes, but if <code>foo</code>
-can't be started anywhere, <code>bar</code> also remains stopped.</p>
+can’t be started anywhere, <code>bar</code> also remains stopped.</p>
 <h2>Advisory ordering</h2>
 <p>In an <strong>advisory</strong> order constraint, the order is enforced only if
-both resources start in the same transition. Otherwise, it's
+both resources start in the same transition. Otherwise, it’s
 ignored. Consider the following example (primitive definitions again
 omitted):</p>
 <div class="highlight"><pre><span></span><code>order o_foo_before_bar 0: foo bar
 </code></pre></div>
 <p>Again, suppose <code>foo</code> fails. <code>foo</code> must be recovered, but now <code>bar</code> can
-keep running as it's not being started in the same transition. Thus:</p>
+keep running as it’s not being started in the same transition. Thus:</p>
 <ol>
 <li><code>foo</code> fails</li>
-<li>Pacemaker attempts to stop <code>foo</code> again (to make sure it's cleaned
+<li>Pacemaker attempts to stop <code>foo</code> again (to make sure it’s cleaned
    up).</li>
 <li><code>foo</code> starts</li>
 </ol>
@@ -199,12 +199,12 @@ migrate to other nodes.</p>
 <h2>So when do I use which?</h2>
 <p>Advisory ordering is good for when your dependent resource can recover
 from a brief interruption in the resource it depends on. For example,
-you'll want to fire up your libvirt daemon before you start your
+you’ll want to fire up your libvirt daemon before you start your
 Pacemaker-managed virtual machines, but if libvirtd were ever to crash
 you can restart it without needing to restart VMs.</p>
 <p>Mandatory ordering is for stricter dependencies. Filesystems mounted
 from an iSCSI device will probably want to be remounted if the iSCSI
-initator has reported an error. Likewise, you'll probably also want to
+initator has reported an error. Likewise, you’ll probably also want to
 restart the applications working with that filesystem.</p>
 <hr/>
 <p>This article originally appeared on the <code>hastexo.com</code> website (now defunct).</p>

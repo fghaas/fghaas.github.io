@@ -43,13 +43,13 @@
  
 
 <meta name="author" content="florian" />
-<meta name="description" content="A few thoughts on high availability features (or the current absence thereof) in OpenStack. I&#39;ve just proposed a session for the OpenStack Folsom design summit which Jay Pipes was nice enough to invite me to (thanks!), and I thought I&#39;d write up a few thoughts of mine ahead of time …" />
+<meta name="description" content="A few thoughts on high availability features (or the current absence thereof) in OpenStack. I’ve just proposed a session for the OpenStack Folsom design summit which Jay Pipes was nice enough to invite me to (thanks!), and I thought I’d write up a few thoughts of mine ahead …" />
 <meta name="keywords" content="">
 
 
   <meta property="og:site_name" content="xahteiwi.eu"/>
   <meta property="og:title" content="High Availability in OpenStack"/>
-  <meta property="og:description" content="A few thoughts on high availability features (or the current absence thereof) in OpenStack. I&#39;ve just proposed a session for the OpenStack Folsom design summit which Jay Pipes was nice enough to invite me to (thanks!), and I thought I&#39;d write up a few thoughts of mine ahead of time …"/>
+  <meta property="og:description" content="A few thoughts on high availability features (or the current absence thereof) in OpenStack. I’ve just proposed a session for the OpenStack Folsom design summit which Jay Pipes was nice enough to invite me to (thanks!), and I thought I’d write up a few thoughts of mine ahead …"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:url" content="../../../../../blog/2012/03/21/high-availability-in-openstack/"/>
   <meta property="og:type" content="article"/>
@@ -141,10 +141,10 @@
   <div>
     <p>A few thoughts on high availability features (or the current absence
 thereof) in OpenStack.</p>
-<p>I've just proposed a session for the <a href="http://wiki.openstack.org/Summit/Folsom">OpenStack Folsom design
+<p>I’ve just proposed a session for the <a href="http://wiki.openstack.org/Summit/Folsom">OpenStack Folsom design
 summit</a> which <a href="http://www.joinfu.com/">Jay
 Pipes</a> was nice enough to invite me to
-(thanks!), and I thought I'd write up a few thoughts of mine ahead of
+(thanks!), and I thought I’d write up a few thoughts of mine ahead of
 time to get the discussion started.</p>
 <p>A little while back, Tristan van Bokkem <a href="http://www.mail-archive.com/openstack@lists.launchpad.net/msg07495.html">started a discussion on high
 availability for
@@ -153,9 +153,9 @@ on the OpenStack mailing list. So in Nova specifically, there are a few
 components where high availability is readily available; you just have
 to use it.</p>
 <ul>
-<li>MySQL. That's a no-brainer. <a href="https://www.hastexo.com/resources/presentations/zen-pacemaker">MySQL HA with
+<li>MySQL. That’s a no-brainer. <a href="https://www.hastexo.com/resources/presentations/zen-pacemaker">MySQL HA with
     Pacemaker</a>
-    has been done so many times that I won't rehash it here. What's nice
+    has been done so many times that I won’t rehash it here. What’s nice
     in this regard is that
     <a href="http://galeracluster.com/products/mysql_galera">Galera</a> (included
     in <a href="http://www.percona.com/software/percona-xtradb-cluster">Percona XtraDB
@@ -164,14 +164,14 @@ to use it.</p>
     <a href="https://www.hastexo.com/drbd">DRBD</a> and traditional <a href="http://dev.mysql.com/doc/refman/5.6/en/replication.html">MySQL
     replication</a>,
     and provide multiple-node, multiple-master <em>synchronous</em> replication
-    for MySQL. As I'm sure you're aware, classic MySQL replication isn't
-    synchronous, and DRBD can't do multi-node master-master, but the
+    for MySQL. As I’m sure you’re aware, classic MySQL replication isn’t
+    synchronous, and DRBD can’t do multi-node master-master, but the
     Galera based solution looks promising, <a href="http://www.percona.com/blog/2012/01/09/announcement-of-percona-xtradb-cluster-alpha-release/">if not as mature as the
     other
     two</a>.
-    Of course, I don't understand why the Galera folks had to reinvent
+    Of course, I don’t understand why the Galera folks had to reinvent
     not only replication (which makes sense) but also cluster membership
-    and management (which doesn't), but that's a different discussion to
+    and management (which doesn’t), but that’s a different discussion to
     be had altogether.</li>
 <li>RabbitMQ. Has somewhat similar HA considerations as MySQL. A
     Pacemaker/DRBD-based solution <a href="http://www.rabbitmq.com/pacemaker.html">exists, but is considered deprecated
@@ -199,7 +199,7 @@ services in Nova proper.</p>
     <a href="https://www.hastexo.com/blogs/florian/2012/03/08/ceph-tickling-my-geek-genes">Ceph</a>)
     which will also take care of redundancy for us, and add seamless
     scaleout and remirroring. That being said, there is currently no
-    real HA provision for the nova-volume service itself, and that's
+    real HA provision for the nova-volume service itself, and that’s
     something that will be required.</li>
 <li>Compute nodes can all run their own instance of nova-api.</li>
 <li>Front-end API servers can all run nova-scheduler, with a load
@@ -210,19 +210,19 @@ services in Nova proper.</p>
 stack has the potential of being a nice fit for most of the above. It
 comes with <a href="http://linux-ha.org/doc/man-pages/re-ra-iSCSITarget.html">iSCSI target
 support</a> (RBD
-doesn't need Pacemaker on the server end, as Ceph takes care of its own
+doesn’t need Pacemaker on the server end, as Ceph takes care of its own
 HA). Pacemaker also ties in directly with upstart, so any upstart job
-can be monitored as a Pacemaker service. And Pacemaker's <a href="http://clusterlabs.org/doc/en-US/Pacemaker/1.1/html/Pacemaker_Explained/s-resource-clone.html" title="Don't balk at the XML! That's Pacemaker's reference documentation; any sane person would use the crm shell to manage Pacemaker resources in real life.">clone
+can be monitored as a Pacemaker service. And Pacemaker’s <a href="http://clusterlabs.org/doc/en-US/Pacemaker/1.1/html/Pacemaker_Explained/s-resource-clone.html" title="Don't balk at the XML! That's Pacemaker's reference documentation; any sane person would use the crm shell to manage Pacemaker resources in real life.">clone
 facility</a>
 makes it easy to run multiple instances of inherently stateless services
-with minimal configuration. What's more, Pacemaker comes with full
+with minimal configuration. What’s more, Pacemaker comes with full
 integration for the <a href="http://horms.net/projects/ldirectord/">ldirectord</a>
 load-balancing service. Of course, Pacemaker adds a reliable
 communications layer
 (<a href="https://www.hastexo.com/knowledge/high-availability/corosync">Corosync</a>)
 and a multi-master, self-replicating configuration facility.</p>
 <p>As for non-Nova Openstack services, Glance could use some Pacemaker
-integration (not hard to do; it's just that someone has to do it).</p>
+integration (not hard to do; it’s just that someone has to do it).</p>
 <p>Ceph, in my opinion, has the very interesting potential of being a
 redundant, scalable storage one-stop shop for OpenStack. It serves the
 purposes of both volume/block storage (with RBD) and object storage

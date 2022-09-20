@@ -249,7 +249,7 @@ out, so I figured it could use a short writeup.&lt;/p&gt;
 &lt;p&gt;In 2020 I purchased a &lt;a href="https://www.pine64.org/pinebook-pro/"&gt;Pinebook
 Pro&lt;/a&gt; laptop. I had wanted a
 low-power ARM laptop for a while, the PBP came in a tolerable size
-(this is a 14" screen; about the top end of acceptable screen sizes
+(this is a 14” screen; about the top end of acceptable screen sizes
 for me), and it was an absolute steal. Including shipping and import
 duty — my device shipped from Hong Kong — I got mine for €277 all
 told.&lt;sup id="fnref:pine64eu"&gt;&lt;a class="footnote-ref" href="#fn:pine64eu"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
@@ -390,12 +390,12 @@ repository. Here’s a tiny example:&lt;/p&gt;
   &lt;code&gt;.yml&lt;/code&gt;, &lt;code&gt;.yaml&lt;/code&gt;, and &lt;code&gt;.yamllint&lt;/code&gt; files in the directory where the
   &lt;code&gt;tox.ini&lt;/code&gt; file itself lives.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;What's helpful here is that &lt;code&gt;tox&lt;/code&gt; does a little bit of magic with the
+&lt;p&gt;What’s helpful here is that &lt;code&gt;tox&lt;/code&gt; does a little bit of magic with the
 testenv names. tox
 &lt;a href="https://tox.wiki/en/latest/example/basic.html#a-simple-tox-ini-default-environments"&gt;knows&lt;/a&gt;
 that if you call a testenv &lt;code&gt;py36&lt;/code&gt;, you want to test with Python 3.6
 (more precisely, &lt;a href="https://en.wikipedia.org/wiki/CPython"&gt;CPython&lt;/a&gt;
-3.6). &lt;code&gt;py39&lt;/code&gt;, that's Python 3.9. Just &lt;code&gt;py3&lt;/code&gt; means whatever Python
+3.6). &lt;code&gt;py39&lt;/code&gt;, that’s Python 3.9. Just &lt;code&gt;py3&lt;/code&gt; means whatever Python
 version maps to the &lt;code&gt;python3&lt;/code&gt; binary on your system.&lt;sup id="fnref:python-versions"&gt;&lt;a class="footnote-ref" href="#fn:python-versions"&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;/p&gt;
 &lt;h2&gt;Running &lt;code&gt;tox&lt;/code&gt; on every commit&lt;/h2&gt;
 &lt;p&gt;Now the first thing you might want to do is run &lt;code&gt;tox&lt;/code&gt; on every commit,
@@ -496,7 +496,7 @@ there as well? Easy. Here’s the exact same functionality for your
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;In &lt;a href="https://docs.gitlab.com/ee/ci/"&gt;GitLab CI&lt;/a&gt; I know of no elegant
 &lt;code&gt;matrix&lt;/code&gt; syntax to map the image version to the testenv. But on the
-other hand there's a bunch of things that "just happen" in a GitLab CI
+other hand there’s a bunch of things that “just happen” in a GitLab CI
 pipeline, which you specifically need to define in a GitHub Actions
 workflow definition. So overall your &lt;code&gt;.gitlab-ci.yml&lt;/code&gt; ends up shorter
 than your GitHub Actions &lt;code&gt;tox.yml&lt;/code&gt;.&lt;/p&gt;
@@ -528,7 +528,7 @@ whatever.&lt;/p&gt;
 Python version you want to support, to all your CI definitions. But if
 your project moves from GitHub to GitLab or from GitLab to
 Gerrit/Zuul, or your entire company goes on a great big CI migration,
-then you'll have one less thing to worry about, because your tests
+then you’ll have one less thing to worry about, because your tests
 already run anywhere.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;By the way:&lt;/strong&gt; when you set up your &lt;code&gt;tox.ini&lt;/code&gt; and your CI
@@ -549,16 +549,16 @@ the &lt;code&gt;tox&lt;/code&gt; checks, you may very well be interested in mult
 python versions. &lt;a class="footnote-backref" href="#fnref:python-versions" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:shell-script"&gt;
-&lt;p&gt;If you're being a purist, you could also invoke the
+&lt;p&gt;If you’re being a purist, you could also invoke the
 tox runner from a Python script. I prefer the shell &lt;code&gt;exec&lt;/code&gt;
 one-liner. &lt;a class="footnote-backref" href="#fnref:shell-script" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:py3"&gt;
-&lt;p&gt;In this case, for testing locally, we're not going to care
-about a specific installed Python version. We'll just make sure
-that the commit doesn't obviously break anything. In my humble
-opinion it's OK to catch version-specific issues in CI, but we
-shouldn't feed the CI code that's outright broken. &lt;a class="footnote-backref" href="#fnref:py3" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In this case, for testing locally, we’re not going to care
+about a specific installed Python version. We’ll just make sure
+that the commit doesn’t obviously break anything. In my humble
+opinion it’s OK to catch version-specific issues in CI, but we
+shouldn’t feed the CI code that’s outright broken. &lt;a class="footnote-backref" href="#fnref:py3" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:docker-runners"&gt;
 &lt;p&gt;This example assumes that you’re either using
@@ -774,7 +774,7 @@ doesn’t even require any specific LXC container configuration.&lt;/p&gt;
 I load it into my running PulseAudio configuration, like so:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pactl load-module module-native-protocol-tcp
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;... then a PulseAudio sound server starts listening on a TCP socket on
+&lt;p&gt;… then a PulseAudio sound server starts listening on a TCP socket on
 port 4713.&lt;/p&gt;
 &lt;p&gt;I can of course also add this line (minus its &lt;code&gt;pactl&lt;/code&gt; prefix) to my
 PulseAudio configuration file, &lt;code&gt;~/config/pulse/default.pa&lt;/code&gt;.&lt;/p&gt;
@@ -789,7 +789,7 @@ of the host on the &lt;code&gt;lxcbr0&lt;/code&gt; bridge), and launch an applic
   sudo -Hu florian env &lt;span class="nv"&gt;PULSE_SERVER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"10.0.3.1"&lt;/span&gt; spotify &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
   lxc-stop -n focal-spotify
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;... and as long as the application links to any PulseAudio client
+&lt;p&gt;… and as long as the application links to any PulseAudio client
 libraries, it will correctly parse the set &lt;code&gt;PULSE_SERVER&lt;/code&gt; environment
 variable as an instruction to connect to the given IP address on its
 default port, and send its audio stream there.&lt;/p&gt;
@@ -1041,7 +1041,7 @@ codepath. Instead, you can have something like this:&lt;/p&gt;
    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
       &lt;span class="c1"&gt;# ... lots of interesting things&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;... and then from your view (or management command, or whatever), you
+&lt;p&gt;… and then from your view (or management command, or whatever), you
 can invoke this like so:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;.tasks&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;ComplexOperation&lt;/span&gt;
 
@@ -1139,7 +1139,7 @@ OperationalError: (2006, 'MySQL server has gone away')
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.db&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;connection&lt;/span&gt;
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;connection&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;... and then, when I run anything else that requires a database query,
+&lt;p&gt;… and then, when I run anything else that requires a database query,
 Django will happily reconnect for me.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; me.refresh_from_db()
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -1987,7 +1987,7 @@ the following default entries in Neutron’s &lt;code&gt;policy.json&lt;/code&gt
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;"update_router:ha"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"rule:admin_only"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;... and instead set them as follows:&lt;/p&gt;
+&lt;p&gt;… and instead set them as follows:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;"create_router:ha"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"rule:admin_or_owner"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;"get_router:ha"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"rule:admin_or_owner"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
@@ -2027,7 +2027,7 @@ command line client. You see, this part of the aforementioned policy&lt;/p&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;"get_router:ha"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"rule:admin_only"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;... means you’re not even allowed to &lt;em&gt;query&lt;/em&gt; the &lt;code&gt;ha&lt;/code&gt; flag if you’re
+&lt;p&gt;… means you’re not even allowed to &lt;em&gt;query&lt;/em&gt; the &lt;code&gt;ha&lt;/code&gt; flag if you’re
 not an admin, and when the &lt;code&gt;openstack&lt;/code&gt; client is asked to display a
 boolean value that the user is not allowed to even read, then it
 always displays &lt;code&gt;False&lt;/code&gt;.&lt;/p&gt;
@@ -2043,18 +2043,18 @@ multiprojectcy. &lt;a class="footnote-backref" href="#fnref:1" title="Jump back
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;</content><category term="hints-and-kinks"></category><category term="OpenStack"></category></entry><entry><title>More recommendations for Ceph and OpenStack</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/more-recommendations-ceph-openstack/" rel="alternate"></link><published>2017-08-03T00:00:00+00:00</published><updated>2017-08-03T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2017-08-03:/resources/hints-and-kinks/more-recommendations-ceph-openstack/</id><summary type="html">&lt;p&gt;Our series on best practices for Ceph and OpenStack continues.&lt;/p&gt;</summary><content type="html">&lt;p&gt;A few months ago, we
-&lt;a href="https://xahteiwi.eu/resources/hints-and-kinks/dos-donts-ceph-openstack/"&gt;shared our Dos and Don'ts&lt;/a&gt;,
+&lt;a href="https://xahteiwi.eu/resources/hints-and-kinks/dos-donts-ceph-openstack/"&gt;shared our Dos and Don’ts&lt;/a&gt;,
 as they relate to Ceph and OpenStack. Since that post has proved quite
 popular, here are a few additional considerations for your Ceph-backed
 OpenStack cluster.&lt;/p&gt;
 &lt;h2&gt;Do configure your images for VirtIO-SCSI&lt;/h2&gt;
 &lt;p&gt;By default, RBD-backed Nova instances use the &lt;code&gt;virtio-blk&lt;/code&gt; driver to
-expose RBD images to the guest -- either as ephemeral drives, or as
+expose RBD images to the guest – either as ephemeral drives, or as
 persistent volumes. In this default configuration, VirtIO presents a
 virtual PCI device to the guest that represents the paravirtual I/O
 bus, and devices are named &lt;code&gt;/dev/vda&lt;/code&gt;, &lt;code&gt;/dev/vdb&lt;/code&gt;, and so
 forth. VirtIO block devices are lightweight and efficient, but they
-come with a drawback: they don't support the &lt;code&gt;discard&lt;/code&gt; operation.&lt;/p&gt;
+come with a drawback: they don’t support the &lt;code&gt;discard&lt;/code&gt; operation.&lt;/p&gt;
 &lt;p&gt;Not being able to use &lt;code&gt;discard&lt;/code&gt; means the guest cannot mount a
 filesystem with &lt;code&gt;mount -o discard&lt;/code&gt;, and it also cannot clean up freed
 blocks on a filesystem with &lt;code&gt;fstrim&lt;/code&gt;. This can be a security concern
@@ -2063,7 +2063,7 @@ data from within the guest (after overwriting it, presumably). It can
 also be an operational concern for you as the cluster operator.&lt;/p&gt;
 &lt;p&gt;This is because not supporting &lt;code&gt;discard&lt;/code&gt; also means that RADOS objects
 owned by the corresponding RBD image and never &lt;em&gt;removed&lt;/em&gt; during the
-image's lifetime -- they persist until the whole image is deleted. So
+image’s lifetime – they persist until the whole image is deleted. So
 your cluster may carry the overhead of perhaps tens of thousands of
 RADOS objects that no-one actually cares about.&lt;/p&gt;
 &lt;p&gt;Thankfully, there is an alternative VirtIO disk driver that &lt;em&gt;does&lt;/em&gt;
@@ -2078,12 +2078,12 @@ on your image:&lt;/p&gt;
   --property &lt;span class="nv"&gt;hw_disk_bus&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;scsi &lt;span class="se"&gt;\&lt;/span&gt;
   &amp;lt;name or ID of your image&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Then, if you boot an instance from this image, you'll see that its
+&lt;p&gt;Then, if you boot an instance from this image, you’ll see that its
 block device names switch from &lt;code&gt;/dev/vdX&lt;/code&gt; to &lt;code&gt;/dev/sdX&lt;/code&gt;, and you also
-get everything else you expect from a SCSI stack. For example, there's
+get everything else you expect from a SCSI stack. For example, there’s
 &lt;code&gt;/proc/scsi/scsi&lt;/code&gt;, you can extract information about your bus,
 controller, and LUs with &lt;code&gt;lsscsi&lt;/code&gt; command, and so on.&lt;/p&gt;
-&lt;p&gt;It's important to note that this &lt;em&gt;image&lt;/em&gt; property is inherited by the
+&lt;p&gt;It’s important to note that this &lt;em&gt;image&lt;/em&gt; property is inherited by the
 &lt;em&gt;instance&lt;/em&gt; booted from that image, which also passes it on to all
 &lt;em&gt;volumes&lt;/em&gt; that you may subsequently attach to that instance. Thus,
 &lt;code&gt;openstack server add volume&lt;/code&gt; will now add &lt;code&gt;/dev/sdb&lt;/code&gt;, not &lt;code&gt;/dev/vdb&lt;/code&gt;,
@@ -2149,16 +2149,16 @@ openstack volume qos associate &lt;span class="se"&gt;\&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Again, as with Nova flavors, you can make volume types public, but you
 can also limit them to specific tenants.&lt;/p&gt;
-&lt;h2&gt;Don't forget about suspend files&lt;/h2&gt;
+&lt;h2&gt;Don’t forget about suspend files&lt;/h2&gt;
 &lt;p&gt;When you &lt;strong&gt;suspend&lt;/strong&gt; a Nova/libvirt/KVM instance, what really happens
-is what libvirt calls a &lt;strong&gt;managed save&lt;/strong&gt;: the instance's entire memory
+is what libvirt calls a &lt;strong&gt;managed save&lt;/strong&gt;: the instance’s entire memory
 is written to a file, and then KVM process shuts down. This is
 actually quite neat because it means that the VM does not consume any
 CPU cycles nor memory until it restarts, and it will continue right
 where it left off, even if the compute node is rebooted in the
 interim.&lt;/p&gt;
 &lt;p&gt;You should understand that these savefiles are not compressed in any
-way: if your instance has 16GB of RAM, that's a 16GB file that
+way: if your instance has 16GB of RAM, that’s a 16GB file that
 instance suspension drops into &lt;code&gt;/var/lib/nova/save&lt;/code&gt;. This can add up
 pretty quickly: if a single compute node hosts something like 10
 suspended instances, their combined save file size can easily exceed 
@@ -2166,7 +2166,7 @@ suspended instances, their combined save file size can easily exceed
 up your &lt;code&gt;/var&lt;/code&gt; (or worse, &lt;code&gt;/&lt;/code&gt;) filesystem.&lt;/p&gt;
 &lt;p&gt;Of course, if you already have a Ceph cluster, you can put it to good
 use here too: just deep-mount a CephFS file system into that
-spot. Here's an Ansible playbook snippet that you may use as
+spot. Here’s an Ansible playbook snippet that you may use as
 inspiration:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nn"&gt;---&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;hosts&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
@@ -2223,13 +2223,13 @@ inspiration:&lt;/p&gt;
 &lt;p&gt;Do you have Ceph/OpenStack hints of your own? Leave them in the
 comments below and we’ll include them in the next installment.&lt;/p&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="OpenStack"></category><category term="Ceph"></category></entry><entry><title>Importing an existing Ceph RBD image into Glance</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/importing-rbd-into-glance/" rel="alternate"></link><published>2017-02-17T00:00:00+00:00</published><updated>2017-02-17T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2017-02-17:/resources/hints-and-kinks/importing-rbd-into-glance/</id><summary type="html">&lt;p&gt;As an OpenStack/Ceph operator, you may sometimes want to forgo uploading a new image using the Glance API, because the process can be inefficient and time-consuming. Here's a faster way.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The normal process of uploading an image into Glance is
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="OpenStack"></category><category term="Ceph"></category></entry><entry><title>Importing an existing Ceph RBD image into Glance</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/importing-rbd-into-glance/" rel="alternate"></link><published>2017-02-17T00:00:00+00:00</published><updated>2017-02-17T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2017-02-17:/resources/hints-and-kinks/importing-rbd-into-glance/</id><summary type="html">&lt;p&gt;As an OpenStack/Ceph operator, you may sometimes want to forgo uploading a new image using the Glance API, because the process can be inefficient and time-consuming. Here&amp;rsquo;s a faster way.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The normal process of uploading an image into Glance is
 straightforward: you use &lt;code&gt;glance image-create&lt;/code&gt; or &lt;code&gt;openstack image
 create&lt;/code&gt;, or the Horizon dashboard. Whichever process you choose, you
 select a local file, which you upload into the Glance image store.&lt;/p&gt;
 &lt;p&gt;This process can be unpleasantly time-consuming when your Glance
 service is backed with Ceph RBD, for a practical reason. When using
-the &lt;code&gt;rbd&lt;/code&gt; image store, you're expected to use &lt;code&gt;raw&lt;/code&gt; images, which have
+the &lt;code&gt;rbd&lt;/code&gt; image store, you’re expected to use &lt;code&gt;raw&lt;/code&gt; images, which have
 interesting characteristics.&lt;/p&gt;
 &lt;h2&gt;Raw images and sparse files&lt;/h2&gt;
 &lt;p&gt;Most people will take an existing vendor cloud image, which is
@@ -2259,7 +2259,7 @@ disk size: 1000M
 &lt;p&gt;As you can see, in both cases the virtual image size differs starkly
 from the actual file size. In &lt;code&gt;qcow2&lt;/code&gt;, this is due to the
 copy-on-write nature of the file format and zlib compression; for the
-&lt;code&gt;raw&lt;/code&gt; image, we're dealing with a sparse file:&lt;/p&gt;
+&lt;code&gt;raw&lt;/code&gt; image, we’re dealing with a sparse file:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ ls -lh ubuntu-xenial.qcow2
 -rw-rw-r-- &lt;span class="m"&gt;1&lt;/span&gt; florian florian 308M Feb &lt;span class="m"&gt;17&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;:05 ubuntu-xenial.qcow2
 $ du -h  ubuntu-xenial.qcow2
@@ -2269,15 +2269,15 @@ $ ls -lh info ubuntu-xenial.raw
 $ du -h  ubuntu-xenial.raw
 1000M   ubuntu-xenial.raw
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;So, while the &lt;code&gt;qcow2&lt;/code&gt; file's physical and logical sizes match, the
+&lt;p&gt;So, while the &lt;code&gt;qcow2&lt;/code&gt; file’s physical and logical sizes match, the
 &lt;code&gt;raw&lt;/code&gt; file looks much larger in terms of filesystem metadata, as
-opposed to its actual storage utilization. That's because in a sparse
-file, "holes" (essentially, sequences of null bytes) aren't actually
+opposed to its actual storage utilization. That’s because in a sparse
+file, “holes” (essentially, sequences of null bytes) aren’t actually
 written to the filesystem. Instead, the filesystems just records the
-position and length of each "hole", and when we read from the "holes"
+position and length of each “hole”, and when we read from the “holes”
 in the file, the read would just return null bytes again.&lt;/p&gt;
 &lt;p&gt;The trouble with sparse files is that RESTful web services, like
-Glance, don't know too much about them. So, if we were to import that
+Glance, don’t know too much about them. So, if we were to import that
 raw file with &lt;code&gt;openstack image-create --file my_cloud_image.raw&lt;/code&gt;, the
 command line client would upload null bytes with happy abandon, which
 would greatly lengthen the process.&lt;/p&gt;
@@ -2285,8 +2285,8 @@ would greatly lengthen the process.&lt;/p&gt;
 &lt;p&gt;Luckily for us, &lt;code&gt;qemu-img&lt;/code&gt; also allows us to upload &lt;em&gt;directly&lt;/em&gt; into
 RBD. All you need to do is make sure the image goes into the correct
 pool, and is reasonably named. Glance names uploaded images by their
-image ID, which is a universally unique identifier (UUID), so let's
-follow Glance's precedent.&lt;/p&gt;
+image ID, which is a universally unique identifier (UUID), so let’s
+follow Glance’s precedent.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;IMAGE_ID&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;uuidgen&lt;span class="sb"&gt;`&lt;/span&gt;
 &lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;POOL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"glance-images"&lt;/span&gt;  &lt;span class="c1"&gt;# replace with your Glance pool name&lt;/span&gt;
 
@@ -2297,17 +2297,17 @@ qemu-img convert &lt;span class="se"&gt;\&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;Creating the clone baseline snapshot&lt;/h2&gt;
 &lt;p&gt;Glance expects a snapshot named &lt;code&gt;snap&lt;/code&gt; to exist on any image that is
-subsequently cloned by Cinder or Nova, so let's create that as
+subsequently cloned by Cinder or Nova, so let’s create that as
 well:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;rbd snap create &lt;span class="nv"&gt;$POOL&lt;/span&gt;/&lt;span class="nv"&gt;$IMAGE_ID&lt;/span&gt;@snap
 rbd snap protect &lt;span class="nv"&gt;$POOL&lt;/span&gt;/&lt;span class="nv"&gt;$IMAGE_ID&lt;/span&gt;@snap
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;Making Glance aware of the image&lt;/h2&gt;
-&lt;p&gt;Finally, we can let Glance know about this image. Now, there's a catch
+&lt;p&gt;Finally, we can let Glance know about this image. Now, there’s a catch
 to this: this trick &lt;em&gt;only&lt;/em&gt; works with the Glance v1 API, and thus you
 &lt;em&gt;must&lt;/em&gt; use the &lt;code&gt;glance&lt;/code&gt; client to do it. Your Glance is v2 only?
 Sorry. Insist on using the &lt;code&gt;openstack&lt;/code&gt; client? Out of luck.&lt;/p&gt;
-&lt;p&gt;What's special about this invocation of the &lt;code&gt;glance&lt;/code&gt; client are simply
+&lt;p&gt;What’s special about this invocation of the &lt;code&gt;glance&lt;/code&gt; client are simply
 the pre-populated &lt;code&gt;location&lt;/code&gt; and &lt;code&gt;id&lt;/code&gt; fields. The &lt;code&gt;location&lt;/code&gt; is composed of the following segments:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;the fixed string &lt;code&gt;rbd://&lt;/code&gt;,&lt;/li&gt;
@@ -2329,7 +2329,7 @@ glance --os-image-api-version &lt;span class="m"&gt;1&lt;/span&gt; &lt;span clas
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Of course, you might add other options, like &lt;code&gt;--private&lt;/code&gt; or
 &lt;code&gt;--protected&lt;/code&gt; or &lt;code&gt;--name&lt;/code&gt;, but the above options are the bare minimum.&lt;/p&gt;
-&lt;h2&gt;And that's it!&lt;/h2&gt;
+&lt;h2&gt;And that’s it!&lt;/h2&gt;
 &lt;p&gt;Now you can happily fire up VMs, or clone your image into a volume and
 fire a VM up from that.&lt;/p&gt;
 &lt;hr/&gt;
@@ -2345,16 +2345,16 @@ is the only edX service to require Ruby, it depends on a Ruby version
 that is outdated and
 &lt;a href="https://github.com/edx/configuration/issues/3589"&gt;no longer receives security updates (although a fix for that is on the way),&lt;/a&gt;
 it and generally feels like overkill to many users.&lt;/p&gt;
-&lt;p&gt;Thankfully, since the Open edX Eucalyptus release it's been quite easy
+&lt;p&gt;Thankfully, since the Open edX Eucalyptus release it’s been quite easy
 to replace the course forum with an alternative. Here at hastexo,
-we're fans of &lt;a href="//www.disqus.com"&gt;Disqus&lt;/a&gt; (you may have noticed we also
-use it around out web site), so let's see what we can do to drop the
+we’re fans of &lt;a href="//www.disqus.com"&gt;Disqus&lt;/a&gt; (you may have noticed we also
+use it around out web site), so let’s see what we can do to drop the
 Open edX Forum and replace it with Disqus.&lt;/p&gt;
-&lt;h2&gt;Step 1: Locate your course's &lt;code&gt;policy.json&lt;/code&gt; file&lt;/h2&gt;
+&lt;h2&gt;Step 1: Locate your course’s &lt;code&gt;policy.json&lt;/code&gt; file&lt;/h2&gt;
 &lt;p&gt;If you keep your course materials in Git or some other
-version-controlled repository, you'll already be familiar with the
+version-controlled repository, you’ll already be familiar with the
 &lt;a href="http://edx.readthedocs.io/projects/edx-open-learning-xml/en/latest/directory-structure.html#olx-and-directory-file-structures"&gt;directory structure of an OLX course tree.&lt;/a&gt;
-If you're not,
+If you’re not,
 &lt;a href="http://help.appsembler.com/article/157-how-to-export-and-import-a-course"&gt;just use edX Studio&lt;/a&gt;
 to export your course into a compressed archive, download it, and
 extract it on your local machine.&lt;/p&gt;
@@ -2415,7 +2415,7 @@ located therein. It might look like this:&lt;/p&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Note the &lt;code&gt;tabs&lt;/code&gt; list. It contains the list of course tabs
-(&lt;a href="http://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/course_assets/pages.html"&gt;which edX Studio, confusingly, calls "pages"&lt;/a&gt;).&lt;/p&gt;
+(&lt;a href="http://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/course_assets/pages.html"&gt;which edX Studio, confusingly, calls “pages”&lt;/a&gt;).&lt;/p&gt;
 &lt;h2&gt;Step 2: Remove the default Discussion tab&lt;/h2&gt;
 &lt;p&gt;You can now edit &lt;code&gt;policy.json&lt;/code&gt;, and drop the &lt;code&gt;Discussion&lt;/code&gt; entry from
 the &lt;code&gt;tabs&lt;/code&gt; list, to make it look like so:&lt;/p&gt;
@@ -2443,8 +2443,8 @@ the &lt;code&gt;tabs&lt;/code&gt; list, to make it look like so:&lt;/p&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Maybe you also want to remove the course wiki. Just keep whichever
-tabs you'd like to keep.&lt;/p&gt;
-&lt;h2&gt;Step 3: Add a "static" tab&lt;/h2&gt;
+tabs you’d like to keep.&lt;/p&gt;
+&lt;h2&gt;Step 3: Add a “static” tab&lt;/h2&gt;
 &lt;p&gt;In place of the old &lt;code&gt;Discussion&lt;/code&gt; tab (which, you may have noticed, was
 of a special type conspicuously named &lt;code&gt;discussion&lt;/code&gt;), you can now put a
 tab of different, simpler type: &lt;code&gt;static_tab&lt;/code&gt;. Like so:&lt;/p&gt;
@@ -2477,7 +2477,7 @@ tab of different, simpler type: &lt;code&gt;static_tab&lt;/code&gt;. Like so:&lt
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Note that a &lt;code&gt;static_tab&lt;/code&gt; type tab also requires a value
-&lt;code&gt;url_slug&lt;/code&gt;. What's that one about, you ask?&lt;/p&gt;
+&lt;code&gt;url_slug&lt;/code&gt;. What’s that one about, you ask?&lt;/p&gt;
 &lt;h2&gt;Step 4: add static content&lt;/h2&gt;
 &lt;p&gt;Whatever you put into &lt;code&gt;url_slug&lt;/code&gt; tells Open edX to go look into the
 &lt;code&gt;tabs&lt;/code&gt; subdirectory of your course root, and find a properly named
@@ -2502,19 +2502,19 @@ then stick it into &lt;code&gt;tabs/discussion.html&lt;/code&gt;. Something like
 &lt;a href="http://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/course_assets/pages.html"&gt;upload to Studio&lt;/a&gt;
 or run
 &lt;a href="https://openedx.atlassian.net/wiki/display/OpenOPS/Managing+OpenEdX+Tips+and+Tricks#ManagingOpenEdXTipsandTricks-manage.pycommands"&gt;&lt;code&gt;manage.py import&lt;/code&gt;,&lt;/a&gt;
-and you're done!&lt;/p&gt;
+and you’re done!&lt;/p&gt;
 &lt;hr/&gt;
 &lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Open edX"></category></entry><entry><title>The Dos and Don'ts for Ceph for OpenStack</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/dos-donts-ceph-openstack/" rel="alternate"></link><published>2016-11-28T00:00:00+00:00</published><updated>2016-11-28T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2016-11-28:/resources/hints-and-kinks/dos-donts-ceph-openstack/</id><summary type="html">&lt;p&gt;Ceph and OpenStack are an extremely useful and
 &lt;a href="https://www.openstack.org/assets/survey/April-2016-User-Survey-Report.pdf"&gt;highly popular&lt;/a&gt;
 combination. Still, new Ceph/OpenStack deployments frequently come
-with easily avoided shortcomings — we'll help you fix them!&lt;/p&gt;
+with easily avoided shortcomings — we’ll help you fix them!&lt;/p&gt;
 &lt;!--break--&gt;
 &lt;h2&gt;Do use &lt;code&gt;show_image_direct_url&lt;/code&gt; and the Glance v2 API&lt;/h2&gt;
 &lt;p&gt;With Ceph RBD (RADOS Block Device), you have the ability to create
-&lt;strong&gt;clones.&lt;/strong&gt; You can …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ceph and OpenStack are an extremely useful and
+&lt;strong&gt;clones.&lt;/strong&gt; You …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ceph and OpenStack are an extremely useful and
 &lt;a href="https://www.openstack.org/assets/survey/April-2016-User-Survey-Report.pdf"&gt;highly popular&lt;/a&gt;
 combination. Still, new Ceph/OpenStack deployments frequently come
-with easily avoided shortcomings — we'll help you fix them!&lt;/p&gt;
+with easily avoided shortcomings — we’ll help you fix them!&lt;/p&gt;
 &lt;!--break--&gt;
 &lt;h2&gt;Do use &lt;code&gt;show_image_direct_url&lt;/code&gt; and the Glance v2 API&lt;/h2&gt;
 &lt;p&gt;With Ceph RBD (RADOS Block Device), you have the ability to create
@@ -2524,17 +2524,17 @@ for those parts of your block device which have been modified relative
 to its parent snapshot, and this means two things:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;You save space. That's a no-brainer, but in and of itself it's not
+&lt;p&gt;You save space. That’s a no-brainer, but in and of itself it’s not
    a very compelling argument as storage space is one of the cheapest
    things in a distributed system.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;What's &lt;em&gt;not&lt;/em&gt; been modified in the clone can be served from the
+&lt;p&gt;What’s &lt;em&gt;not&lt;/em&gt; been modified in the clone can be served from the
    original volume. This is important because, of course, it means you
    are effectively hitting the same RADOS objects — and thus, the
-   same OSDs — no matter which clone you're talking to. And that, in
+   same OSDs — no matter which clone you’re talking to. And that, in
    turn, means, those objects are likely to be served from the
-   respective OSD's page caches, in other words, from RAM. RAM is way
+   respective OSD’s page caches, in other words, from RAM. RAM is way
    faster to access than any persistent storage device, so being able
    to serve lots of reads from the page cache is good. That, in turn,
    means, that serving data from a clone will be faster than serving
@@ -2568,7 +2568,7 @@ VM, the following events occur:&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;This process uses up a fair amount of space on your compute nodes,
 and can quite seriously delay spawning a new VM if it has been
-scheduled to a host that hasn't downloaded the desired image
+scheduled to a host that hasn’t downloaded the desired image
 before. It also makes it impossible for such a VM to be live-migrated
 to another host without downtime.&lt;/p&gt;
 &lt;p&gt;Flipping &lt;code&gt;images_type&lt;/code&gt; to &lt;code&gt;rbd&lt;/code&gt; means the disk lives in the RBD
@@ -2578,12 +2578,12 @@ of
 clones. &lt;a href="http://docs.ceph.com/docs/jewel/rbd/rbd-openstack/#id2"&gt;Use it.&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Do enable RBD caching on Nova compute nodes&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;librbd&lt;/code&gt;, the library that underpins the Qemu/KVM RBD storage driver,
-can enable a disk cache that uses the hypervisor host's RAM for
+can enable a disk cache that uses the hypervisor host’s RAM for
 caching purposes. You should use this.&lt;/p&gt;
-&lt;p&gt;Yes, it's a cache that is safe to use. On the one hand, the
+&lt;p&gt;Yes, it’s a cache that is safe to use. On the one hand, the
 combination of &lt;code&gt;virtio-blk&lt;/code&gt; with the Qemu RBD storage driver &lt;strong&gt;will&lt;/strong&gt;
 properly honor disk flushes. That is to say, when an application
-inside your VM says "I want this data on disk now," then &lt;code&gt;virtio‑blk&lt;/code&gt;,
+inside your VM says “I want this data on disk now,” then &lt;code&gt;virtio‑blk&lt;/code&gt;,
 Qemu, and Ceph will all work together to only report the write as
 complete when it has been&lt;/p&gt;
 &lt;ul&gt;
@@ -2620,35 +2620,35 @@ snapshots) in one pool, and its clones in another.&lt;/p&gt;
 &lt;li&gt;Separate pools means you can lock down access to those pools
    separately. This is just a standard threat mitigation approach: if
    your &lt;code&gt;nova-compute&lt;/code&gt; node gets compromised and the attacker can
-   corrupt or delete ephemeral disks, then that's bad — but it would
+   corrupt or delete ephemeral disks, then that’s bad — but it would
    be &lt;em&gt;worse&lt;/em&gt; if they could also corrupt your Glance images.&lt;/li&gt;
 &lt;li&gt;Separate pools also means that you can have different pool
    settings, such as the settings for &lt;code&gt;size&lt;/code&gt; or &lt;code&gt;pg_num&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Most importantly, separate pools can use separate &lt;code&gt;crush_ruleset&lt;/code&gt;
-   settings. We'll get back to this in a second, it'll come in handy
+   settings. We’ll get back to this in a second, it’ll come in handy
    shortly.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;It's common to have three different pools: one for your Glance images
+&lt;p&gt;It’s common to have three different pools: one for your Glance images
 (usually named &lt;code&gt;glance&lt;/code&gt; or &lt;code&gt;images&lt;/code&gt;), one for your Cinder volumes
 (&lt;code&gt;cinder&lt;/code&gt; or &lt;code&gt;volumes&lt;/code&gt;), and one for your VMs (&lt;code&gt;nova-compute&lt;/code&gt; or
 &lt;code&gt;vms&lt;/code&gt;).&lt;/p&gt;
-&lt;h2&gt;Don't necessarily use SSDs for your Ceph OSD journals&lt;/h2&gt;
+&lt;h2&gt;Don’t necessarily use SSDs for your Ceph OSD journals&lt;/h2&gt;
 &lt;p&gt;Of the recommendations in this article, this one will probably be the
 one that surprises the most people. Of course, conventional wisdom
 holds that you should &lt;em&gt;always&lt;/em&gt; put your OSD journals on fast OSDs, and
 that you should deploy SSDs and spinners in a 1:4 to 1:6 ratio, right?&lt;/p&gt;
-&lt;p&gt;Let's take a look. Suppose you're following the 1:6 approach, and your
+&lt;p&gt;Let’s take a look. Suppose you’re following the 1:6 approach, and your
 SATA spinners are capable of writing at 100 MB/s. 6 spinners make 6
-OSDs, and each OSD uses a journal device that's on a partition on an
+OSDs, and each OSD uses a journal device that’s on a partition on an
 enterprise SSD. Suppose further that the SSD is capable of writing at
 500 MB/s.&lt;/p&gt;
-&lt;p&gt;Congratulations, in that scenario you've just made your SSD your
+&lt;p&gt;Congratulations, in that scenario you’ve just made your SSD your
 bottleneck. While you would be able to hit your OSDs at 600 MB/s on
 aggregate, your SSD limits you to about 83% of that.&lt;/p&gt;
 &lt;p&gt;In that scenario you &lt;em&gt;would&lt;/em&gt; actually be fine with a 1:4 ratio, but
 make your spindles just a little faster and the SSD advantage goes out
 the window again.&lt;/p&gt;
-&lt;p&gt;Now, of course, do consider the alternative: if you're putting your
+&lt;p&gt;Now, of course, do consider the alternative: if you’re putting your
 journals on the same drive as your OSD filestores, then you
 effectively get only half the nominal bandwidth of your drive, on
 average, because you write everything twice, to the same device. So
@@ -2657,16 +2657,16 @@ only about 50 MB/s, so the &lt;em&gt;total&lt;/em&gt; bandwidth you get out of 6
 that way is more like 300 MB/s, against which 500 MB/s is still a
 substantial improvement.&lt;/p&gt;
 &lt;p&gt;So you will need to plug your own numbers into this, and make your own
-evaluation for price &lt;em&gt;and&lt;/em&gt; performance. Just don't assume that journal
-SSD will be a panacea, or that it's always a good idea to use them.&lt;/p&gt;
+evaluation for price &lt;em&gt;and&lt;/em&gt; performance. Just don’t assume that journal
+SSD will be a panacea, or that it’s always a good idea to use them.&lt;/p&gt;
 &lt;h2&gt;Do create all-flash OSDs&lt;/h2&gt;
-&lt;p&gt;One thing your journal SSDs don't help with are reads. So, what can you
+&lt;p&gt;One thing your journal SSDs don’t help with are reads. So, what can you
 do to take advantage of SSDs on reads, too?&lt;/p&gt;
 &lt;p&gt;Make them OSDs. That is, not OSD &lt;em&gt;journals,&lt;/em&gt; but actual OSDs with a
-filestore &lt;em&gt;and&lt;/em&gt; journal. What this will create are OSDs that don't
+filestore &lt;em&gt;and&lt;/em&gt; journal. What this will create are OSDs that don’t
 just write fast, but read fast, too.&lt;/p&gt;
 &lt;h2&gt;Do put your all-flash OSDs into a separate CRUSH root&lt;/h2&gt;
-&lt;p&gt;Assuming you don't run on all-flash hardware, but operate a
+&lt;p&gt;Assuming you don’t run on all-flash hardware, but operate a
 cost-effective mixed cluster where some OSDs are spinners and others
 are SSDs (or NVMe devices or whatever), you obviously want to treat
 those OSDs separately. The simplest and easiest way to do that is to
@@ -2733,7 +2733,7 @@ means it covers only OSDs in the &lt;code&gt;highperf&lt;/code&gt; root.&lt;/p&g
 whole different set of OSDs) is a matter of issuing a single command:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ceph osd pool set &amp;lt;name&amp;gt; crush_ruleset &amp;lt;number&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;... where &lt;code&gt;&amp;lt;name&amp;gt;&lt;/code&gt; name of your pool and &lt;code&gt;&amp;lt;number&amp;gt;&lt;/code&gt; is the numerical
+&lt;p&gt;… where &lt;code&gt;&amp;lt;name&amp;gt;&lt;/code&gt; name of your pool and &lt;code&gt;&amp;lt;number&amp;gt;&lt;/code&gt; is the numerical
 ID of your ruleset as per your CRUSH map. You can do this while the
 pool is online, and while clients are accessing its data — although
 of course, there will be a lot of remapping and backfilling so your
@@ -2747,7 +2747,7 @@ cluster, you can move pools over to all-flash storage one by one.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Nova ephemeral RBD pools (&lt;code&gt;vms&lt;/code&gt;, &lt;code&gt;nova-compute&lt;/code&gt;)&lt;/li&gt;
 &lt;li&gt;radosgw bucket indexes (&lt;code&gt;.rgw.buckets.index&lt;/code&gt; and friends)
-   — if you're using radosgw as your drop-in OpenStack Swift
+   — if you’re using radosgw as your drop-in OpenStack Swift
    replacement&lt;/li&gt;
 &lt;li&gt;Cinder volume pools (&lt;code&gt;cinder&lt;/code&gt;, &lt;code&gt;volumes&lt;/code&gt;)&lt;/li&gt;
 &lt;li&gt;radosgw data pools (&lt;code&gt;.rgw.buckets&lt;/code&gt; and friends) — if you need
@@ -2759,7 +2759,7 @@ cluster, you can move pools over to all-flash storage one by one.&lt;/p&gt;
 &lt;h2&gt;Do designate some non-Ceph compute hosts with low-latency local storage&lt;/h2&gt;
 &lt;p&gt;Now, there will undoubtedly be some applications where Ceph does not
 produce the latency you desire. Or, for that matter, &lt;em&gt;any&lt;/em&gt;
-network-based storage. That's just a direct consequence of recent
+network-based storage. That’s just a direct consequence of recent
 developments in storage and network technology.&lt;/p&gt;
 &lt;p&gt;Just a few years ago, the average latency of a single-sector uncached
 write to a block device was on the order of a millisecond, or 1,000
@@ -2770,18 +2770,18 @@ from writing to a device over the network, as opposed to locally, was
 approximately 10%.&lt;/p&gt;
 &lt;p&gt;In the interim, a single-sector write for a device of the same price
 is itself about 100 µs, tops, with some reasonably-priced devices down
-to about 40 µs. Network latency, in contrast, hasn't changed all that
+to about 40 µs. Network latency, in contrast, hasn’t changed all that
 much — going down about 20% from Gigabit Ethernet to 10 GbE.&lt;/p&gt;
 &lt;p&gt;So even going to a single, un-replicated SSD device over the network
-will now be 40 + 80 = 120 µs latency, vs. just 40 µs locally. That's
-not a 10% overhead anymore, that's a whopping &lt;em&gt;factor&lt;/em&gt; of 3.&lt;/p&gt;
+will now be 40 + 80 = 120 µs latency, vs. just 40 µs locally. That’s
+not a 10% overhead anymore, that’s a whopping &lt;em&gt;factor&lt;/em&gt; of 3.&lt;/p&gt;
 &lt;p&gt;With Ceph, that gets worse. Ceph writes data multiple times, first to
 the primary OSD, then (in parallel) to all replicas. So in contrast to
 a single-sector write at 40 µs, we now incur a latency of at least two
-writes, &lt;em&gt;plus&lt;/em&gt; two network round-trips, to that's 40 x 2 + 80 x 2 =
+writes, &lt;em&gt;plus&lt;/em&gt; two network round-trips, to that’s 40 x 2 + 80 x 2 =
 240 µs, &lt;em&gt;six times&lt;/em&gt; the local write latency.&lt;/p&gt;
-&lt;p&gt;The good news is, &lt;em&gt;most&lt;/em&gt; applications don't care about this sort of
-latency overhead, because they're not latency-critical at all. The bad
+&lt;p&gt;The good news is, &lt;em&gt;most&lt;/em&gt; applications don’t care about this sort of
+latency overhead, because they’re not latency-critical at all. The bad
 news is, &lt;em&gt;some&lt;/em&gt; will.&lt;/p&gt;
 &lt;p&gt;So, should you ditch Ceph because of that? Nope. But do consider
 adding a handful of compute nodes that are &lt;em&gt;not&lt;/em&gt; configured with
@@ -2794,23 +2794,23 @@ use that flavor for low-latency applications.&lt;/p&gt;
 &lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="OpenStack"></category><category term="Ceph"></category></entry><entry><title>Wiping and resetting your SUSE OpenStack Cloud Crowbar configuration</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/wipe-suse-openstack-cloud-config/" rel="alternate"></link><published>2016-07-05T00:00:00+00:00</published><updated>2016-07-05T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2016-07-05:/resources/hints-and-kinks/wipe-suse-openstack-cloud-config/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Note: This article was originally written for SUSE OpenStack Cloud
 6, and updated for SUSE OpenStack Cloud 7. It may not apply to later
 SUSE OpenStack Cloud releases.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;If you're using &lt;a href="https://www.suse.com/products/suse-openstack-cloud"&gt;SUSE OpenStack
+&lt;p&gt;If you’re using &lt;a href="https://www.suse.com/products/suse-openstack-cloud"&gt;SUSE OpenStack
 Cloud&lt;/a&gt;, you may
 want to erase and reinstall your cloud deployment a few times during
-the testing …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;Note: This article was originally written for SUSE OpenStack Cloud
+the …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;Note: This article was originally written for SUSE OpenStack Cloud
 6, and updated for SUSE OpenStack Cloud 7. It may not apply to later
 SUSE OpenStack Cloud releases.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;If you're using &lt;a href="https://www.suse.com/products/suse-openstack-cloud"&gt;SUSE OpenStack
+&lt;p&gt;If you’re using &lt;a href="https://www.suse.com/products/suse-openstack-cloud"&gt;SUSE OpenStack
 Cloud&lt;/a&gt;, you may
 want to erase and reinstall your cloud deployment a few times during
 the testing or proof-of-concept phase. You may also want to experiment
-with a few permutations of Crowbar network configurations. SUSE's
+with a few permutations of Crowbar network configurations. SUSE’s
 (otherwise excellent) &lt;a href="https://www.suse.com/documentation/suse-openstack-cloud-7/book_cloud_deploy/data/book_cloud_deploy.html"&gt;Deployment
 Guide&lt;/a&gt;
 suggests that the only way to change your Crowbar settings, after
 &lt;code&gt;install-suse-cloud&lt;/code&gt; has been run, &lt;a href="https://www.suse.com/documentation/suse-openstack-cloud-7/book_cloud_deploy/data/sec_depl_adm_inst_crowbar_network.html"&gt;is to reinstall your entire admin
 node&lt;/a&gt;.
-That isn't really true if you know what you're doing.&lt;/p&gt;
+That isn’t really true if you know what you’re doing.&lt;/p&gt;
 &lt;p&gt;You may be thinking that you could just use
 &lt;a href="http://snapper.io/"&gt;&lt;code&gt;snapper&lt;/code&gt;&lt;/a&gt; to
 &lt;a href="https://www.suse.com/documentation/sles-12/book_sle_admin/data/sec_snapper_auto.html"&gt;revert to your last Btrfs snapshot&lt;/a&gt;
@@ -2856,26 +2856,26 @@ pre-&lt;code&gt;install-suse-cloud&lt;/code&gt; state:&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;Then, you can reconfigure Crowbar (&lt;code&gt;yast2 crowbar&lt;/code&gt;), run
 &lt;code&gt;install-suse-cloud&lt;/code&gt;, and reboot your OpenStack nodes. They should be
-discovered anew, and you're then able to redeploy your OpenStack
+discovered anew, and you’re then able to redeploy your OpenStack
 barclamps to them.&lt;/p&gt;
 &lt;hr/&gt;
 &lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="OpenStack"></category><category term="SUSE"></category></entry><entry><title>Pacemaker's best-kept secret: crm_report</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/pacemakers-best-kept-secret/" rel="alternate"></link><published>2016-01-30T00:00:00+00:00</published><updated>2016-02-03T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2016-01-30:/resources/hints-and-kinks/pacemakers-best-kept-secret/</id><summary type="html">&lt;p&gt;Pacemaker has an excellent, but little-known, error reporting facility: crm_report.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Whenever things in Pacemaker go wrong (say, for example, resource
-failover doesn't work as expected, or your cluster didn't properly
-recover after a node shutdown), you'll want to find out just exactly
+failover doesn’t work as expected, or your cluster didn’t properly
+recover after a node shutdown), you’ll want to find out just exactly
 &lt;em&gt;why&lt;/em&gt; that happened. Of course, the actual reason for the malfunction
 may be buried somewhere deep in your cluster configuration or setup,
 and so you might need to look at quite a few different sources to pin
 it down.&lt;/p&gt;
 &lt;p&gt;Sometimes, too, you want to enlist the help of a colleague, &lt;a href="/contact"&gt;or maybe
 &lt;strong&gt;our&lt;/strong&gt; help even&lt;/a&gt;, to get to the bottom of the issue. And
-sometimes it's not practical to let someone access to system to just
+sometimes it’s not practical to let someone access to system to just
 trigger the problem and watch what breaks.&lt;/p&gt;
 &lt;p&gt;Thankfully, Pacemaker ships with a utility that helps you collect
 everything you or someone else might need to look at, in a simple,
 compact format. Unfortunately few people, including even long-time
-Pacemaker users, know that it exists: it's called &lt;code&gt;crm_report&lt;/code&gt;.&lt;/p&gt;
+Pacemaker users, know that it exists: it’s called &lt;code&gt;crm_report&lt;/code&gt;.&lt;/p&gt;
 &lt;h2&gt;Running &lt;code&gt;crm_report&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;crm_report&lt;/code&gt;'s command syntax is rather quite simple. You just tell it
+&lt;p&gt;&lt;code&gt;crm_report&lt;/code&gt;‘s command syntax is rather quite simple. You just tell it
 how far in the past you want the report to start, and which directory
 you want to collect data in:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;crm_report -f &lt;span class="s2"&gt;"2016-01-25 00:00:00"&lt;/span&gt; /tmp/crm_report
@@ -2888,8 +2888,8 @@ report data.&lt;/p&gt;
 reproduce the problem.&lt;/strong&gt; All you need is a rough idea when the issue
 occurred, and then you give &lt;code&gt;crm_report&lt;/code&gt; a timestamp a little earlier
 than that as its start date.&lt;/p&gt;
-&lt;p&gt;You can also specify the &lt;em&gt;end&lt;/em&gt; of the period you're interested
-in. Suppose you're exactly aware of a 10-minute time window in which
+&lt;p&gt;You can also specify the &lt;em&gt;end&lt;/em&gt; of the period you’re interested
+in. Suppose you’re exactly aware of a 10-minute time window in which
 the problem occurred. In that case, you could run:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;crm_report -f &lt;span class="s2"&gt;"2016-01-25 01:15:00"&lt;/span&gt; -t &lt;span class="s2"&gt;"2016-01-25 01:25:00"&lt;/span&gt; /tmp/crm_report
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -2897,15 +2897,15 @@ the problem occurred. In that case, you could run:&lt;/p&gt;
 specified time window on the host it is run on, and then connect to
 the other cluster nodes (via &lt;code&gt;ssh&lt;/code&gt;) and do the same there. The latter
 behavior can be disabled by adding the &lt;code&gt;-S&lt;/code&gt; or &lt;code&gt;--single-node&lt;/code&gt; option,
-but there usually isn't a good reason to do that. In the end,
+but there usually isn’t a good reason to do that. In the end,
 everything will be rolled into one tarball at
 &lt;code&gt;/tmp/crm_report.tar.bz2&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;You can then pull the report tarball off the node (with &lt;code&gt;scp&lt;/code&gt;,
 &lt;code&gt;rsync&lt;/code&gt;, whatever you prefer), and then share it with whom you need
 to. &lt;strong&gt;Note that the tarball can contain sensitive information such as
 passwords, so be careful whom you share it with.&lt;/strong&gt;&lt;/p&gt;
-&lt;h2&gt;What's in a &lt;code&gt;crm_report&lt;/code&gt; tarball?&lt;/h2&gt;
-&lt;p&gt;There's a bunch of truly helpful information in a &lt;code&gt;crm_report&lt;/code&gt;
+&lt;h2&gt;What’s in a &lt;code&gt;crm_report&lt;/code&gt; tarball?&lt;/h2&gt;
+&lt;p&gt;There’s a bunch of truly helpful information in a &lt;code&gt;crm_report&lt;/code&gt;
 generated tarball. Depending on how your cluster is configured and
 what problems were detected, it will contain, among other things:&lt;/p&gt;
 &lt;ul&gt;
@@ -2939,28 +2939,28 @@ what problems were detected, it will contain, among other things:&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;In other words, it contains pretty much everything that needs to be
 shared in a critical troubleshooting situation.&lt;/p&gt;
-&lt;h2&gt;Why isn't this more widely known?&lt;/h2&gt;
+&lt;h2&gt;Why isn’t this more widely known?&lt;/h2&gt;
 &lt;p&gt;To be perfectly honest, we have no idea. &lt;code&gt;crm_report&lt;/code&gt; has been in
 Pacemaker for years, and even prior to its existence, there was a
-predecessor named &lt;code&gt;hb_report&lt;/code&gt;. It's an extraordinarily useful utility,
+predecessor named &lt;code&gt;hb_report&lt;/code&gt;. It’s an extraordinarily useful utility,
 yet when we ask customers to send a &lt;code&gt;crm_report&lt;/code&gt; tarball during a
 Pacemaker troubleshooting engagement, the usual response is, “a
 what?”&lt;/p&gt;
 &lt;p&gt;We hope this post makes &lt;code&gt;crm_report&lt;/code&gt; known to a wider audience, so it
 gets the love it deserves. &lt;i class="fa fa-smile-o"&gt;&lt;/i&gt;&lt;/p&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Pacemaker"></category></entry><entry><title>Hosting a web site in radosgw</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/hosting-website-radosgw/" rel="alternate"></link><published>2016-01-26T00:00:00+00:00</published><updated>2016-01-26T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2016-01-26:/resources/hints-and-kinks/hosting-website-radosgw/</id><summary type="html">&lt;p&gt;If you're familiar with &lt;a href="//docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html"&gt;web site hosting on Amazon
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Pacemaker"></category></entry><entry><title>Hosting a web site in radosgw</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/hosting-website-radosgw/" rel="alternate"></link><published>2016-01-26T00:00:00+00:00</published><updated>2016-01-26T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2016-01-26:/resources/hints-and-kinks/hosting-website-radosgw/</id><summary type="html">&lt;p&gt;If you’re familiar with &lt;a href="//docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html"&gt;web site hosting on Amazon
 S3&lt;/a&gt;,
 which is a simple and cheap way to host a static web site, you might
 be wondering whether or not you can do the same in Ceph radosgw.&lt;/p&gt;
-&lt;p&gt;The short answer is you can't. Bucket Website is listed as &lt;em&gt;Not …&lt;/em&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;If you're familiar with &lt;a href="//docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html"&gt;web site hosting on Amazon
+&lt;p&gt;The short answer is you can’t. Bucket Website is listed …&lt;/p&gt;</summary><content type="html">&lt;p&gt;If you’re familiar with &lt;a href="//docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html"&gt;web site hosting on Amazon
 S3&lt;/a&gt;,
 which is a simple and cheap way to host a static web site, you might
 be wondering whether or not you can do the same in Ceph radosgw.&lt;/p&gt;
-&lt;p&gt;The short answer is you can't. Bucket Website is listed as &lt;em&gt;Not
+&lt;p&gt;The short answer is you can’t. Bucket Website is listed as &lt;em&gt;Not
 Supported&lt;/em&gt; in the radosgw S3 API
 &lt;a href="http://docs.ceph.com/docs/master/radosgw/s3/"&gt;support matrix&lt;/a&gt;, and
-radosgw doesn't have
+radosgw doesn’t have
 &lt;a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/IndexDocumentSupport.html"&gt;index document support&lt;/a&gt;
 either.&lt;/p&gt;
 &lt;p&gt;But the longer answer is that you can, provided you use radosgw in
@@ -2968,9 +2968,9 @@ combination with a front-end load-balancer — which, as it happens,
 can add a few more bells and whistles, as well. You could probably do
 the same thing with nginx, Varnish, or Apache in a
 &lt;code&gt;mod_proxy_balancer&lt;/code&gt; balancer setup, but in this example
-configuration, we'll use HAProxy.&lt;/p&gt;
+configuration, we’ll use HAProxy.&lt;/p&gt;
 &lt;h2&gt;Getting started: the radosgw basics&lt;/h2&gt;
-&lt;p&gt;Let's take look at a simple radosgw configuration with virtual host
+&lt;p&gt;Let’s take look at a simple radosgw configuration with virtual host
 support, such that you can access your buckets as either
 &lt;code&gt;http://ceph.example.com/bucketname&lt;/code&gt; or
 &lt;code&gt;http://bucketname.ceph.example.com&lt;/code&gt;:&lt;/p&gt;
@@ -3002,7 +3002,7 @@ browser, or any other HTTP client application (such as &lt;code&gt;curl&lt;/code
 &lt;span class="na"&gt;Date&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="l"&gt;Tue, 26 Jan 2016 18:16:11 GMT&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;Introducing HAProxy&lt;/h2&gt;
-&lt;p&gt;Now let's start out with putting HAproxy in between. Nothing special
+&lt;p&gt;Now let’s start out with putting HAproxy in between. Nothing special
 there: radosgw listens on the conventional 7480 port, and we simply
 hand HAproxy traffic through there, and bind HAProxy itself to
 port 80.&lt;/p&gt;
@@ -3048,9 +3048,9 @@ port 80.&lt;/p&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s"&gt;server&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;radosgw01&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;127.0.0.1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;7480&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;check&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;Index documents&lt;/h2&gt;
-&lt;p&gt;So, the first thing we'll need to add is support for index
-documents. We'd like to make sure that when we retrieve
-&lt;code&gt;https://testwebsite.ceph.example.com/&lt;/code&gt;, what's actually fetched from
+&lt;p&gt;So, the first thing we’ll need to add is support for index
+documents. We’d like to make sure that when we retrieve
+&lt;code&gt;https://testwebsite.ceph.example.com/&lt;/code&gt;, what’s actually fetched from
 the backend is &lt;code&gt;/index.html&lt;/code&gt;. We can do that by adding an HAproxy ACL
 that matches for the trailing slash in the path, and an &lt;code&gt;http-request
 set-path&lt;/code&gt; directive that appends the index document name:&lt;/p&gt;
@@ -3062,7 +3062,7 @@ set-path&lt;/code&gt; directive that appends the index document name:&lt;/p&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s"&gt;http-request&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;set-path&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;%[path]index.html&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;path_ends_in_slash&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s"&gt;default_backend&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;ceph_back&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Now, that's fine in terms of &lt;strong&gt;getting&lt;/strong&gt; the index document correctly:&lt;/p&gt;
+&lt;p&gt;Now, that’s fine in terms of &lt;strong&gt;getting&lt;/strong&gt; the index document correctly:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;curl -I http://testwebsite.ceph.example.com/index.html
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kr"&gt;HTTP&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;1.1&lt;/span&gt; &lt;span class="m"&gt;200&lt;/span&gt; &lt;span class="ne"&gt;OK&lt;/span&gt;
@@ -3078,7 +3078,7 @@ set-path&lt;/code&gt; directive that appends the index document name:&lt;/p&gt;
 other words, anything that uses the S3 API. Now you could test for
 some S3-specific headers in the request, but really, you should just
 check whether the request is authorized, and only apply the index
-document logic if it isn't, like so:&lt;/p&gt;
+document logic if it isn’t, like so:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;frontend&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;ceph_front&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s"&gt;bind&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;0.0.0.0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;80&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s"&gt;acl&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;path_ends_in_slash&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;path_end&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;-i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;/&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
@@ -3090,7 +3090,7 @@ document logic if it isn't, like so:&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Great. Now we can upload using full paths without mangling, and on any
 un-authenticated requests, we substitute &lt;code&gt;/index.html&lt;/code&gt; for any trailing
-&lt;code&gt;/&lt;/code&gt;. In case you're wondering: yes, this works for any path, not just
+&lt;code&gt;/&lt;/code&gt;. In case you’re wondering: yes, this works for any path, not just
 the root path.&lt;/p&gt;
 &lt;h2&gt;Directory paths&lt;/h2&gt;
 &lt;p&gt;However, you may also want something else, which is the ability to
@@ -3099,7 +3099,7 @@ correctly handle a request like
 course you want the path &lt;code&gt;/my/sub/directory&lt;/code&gt; translated into
 &lt;code&gt;/my/sub/directory/index.html&lt;/code&gt;, which means we want to append a slash
 &lt;em&gt;and&lt;/em&gt; an index document name to the request path.&lt;/p&gt;
-&lt;p&gt;So let's do that:&lt;/p&gt;
+&lt;p&gt;So let’s do that:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;frontend&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;ceph_front&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s"&gt;bind&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;0.0.0.0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;80&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s"&gt;acl&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;path_has_dot&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;path_sub&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;-i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;.&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
@@ -3110,12 +3110,12 @@ course you want the path &lt;code&gt;/my/sub/directory&lt;/code&gt; translated i
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s"&gt;http-request&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;set-path&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;%[path]/index.html&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;!path_has_dot&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;!path_ends_in_slash&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;!auth_header&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s"&gt;default_backend&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;ceph_back&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Note that what we're doing here is somewhat crude. We're assuming that
+&lt;p&gt;Note that what we’re doing here is somewhat crude. We’re assuming that
 any actual file that we want to retrieve looks like &lt;code&gt;name.ext&lt;/code&gt;,
 meaning it has a dot (period, full stop) character in it. The
 &lt;code&gt;path_sub -i .&lt;/code&gt; expression in the &lt;code&gt;path_has_dot&lt;/code&gt; ACL simply matches
-any path with &lt;code&gt;.&lt;/code&gt; in it, and we're assuming that if a path has a dot
-then it points to a file, if it doesn't then it points to a directory.&lt;/p&gt;
+any path with &lt;code&gt;.&lt;/code&gt; in it, and we’re assuming that if a path has a dot
+then it points to a file, if it doesn’t then it points to a directory.&lt;/p&gt;
 &lt;p&gt;You could be a little more clever here and use &lt;code&gt;path_regex&lt;/code&gt; instead of
 &lt;code&gt;path_sub&lt;/code&gt; for a full regular expression match. But regex lookups are
 slower than simple substring matches, so if the substring match works
@@ -3153,7 +3153,7 @@ access to all your content via HAproxy instead, you would add:&lt;/p&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s"&gt;http-request&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;set-path&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;%[path]/index.html&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;!path_has_dot&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;!path_ends_in_slash&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;!auth_header&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s"&gt;default_backend&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;ceph_back&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;But maybe you'd like to &lt;strong&gt;force,&lt;/strong&gt; not merely allow, HTTPS
+&lt;p&gt;But maybe you’d like to &lt;strong&gt;force,&lt;/strong&gt; not merely allow, HTTPS
 access. &lt;code&gt;redirect&lt;/code&gt; to the rescue:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;frontend&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;ceph_front&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s"&gt;bind&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;0.0.0.0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;80&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
@@ -3189,9 +3189,9 @@ Content-type: text/html
 Date: Tue, 26 Jan 2016 18:48:59 GMT
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;Compression&lt;/h2&gt;
-&lt;p&gt;And finally, maybe you'd like to speed up access to the stuff on your
-site. Why not add gzip on-the-fly-compression? It's supported by every
-browser worth its salt, and will make your users happier. You'll want
+&lt;p&gt;And finally, maybe you’d like to speed up access to the stuff on your
+site. Why not add gzip on-the-fly-compression? It’s supported by every
+browser worth its salt, and will make your users happier. You’ll want
 to restrict compression to specific MIME types though. In the
 configuration below, we enable compression for plain text, HTML, XML,
 CSS, JavaScript, and SVG images.&lt;/p&gt;
@@ -3212,9 +3212,9 @@ CSS, JavaScript, and SVG images.&lt;/p&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s"&gt;compression&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;text/html&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;text/xml&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;text/plain&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;text/css&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;application/javascript&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;image/svg+xml&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s"&gt;default_backend&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;ceph_back&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Let's see how that helps us. Do a request without gzip encoding
+&lt;p&gt;Let’s see how that helps us. Do a request without gzip encoding
 support, and observe that its total download size matches the
-document's &lt;code&gt;Content-Length&lt;/code&gt;:&lt;/p&gt;
+document’s &lt;code&gt;Content-Length&lt;/code&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;curl https://testwebsite.ceph.example.com/my/sub/directory &amp;gt; /dev/null
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;  &lt;span class="c1"&gt;% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current&lt;/span&gt;
@@ -3230,19 +3230,19 @@ document's &lt;code&gt;Content-Length&lt;/code&gt;:&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;There. Actual download size goes from 24KB down to just 5KB. &lt;/p&gt;
 &lt;h2&gt;Where to go from here&lt;/h2&gt;
-&lt;p&gt;There's a few additional features to be added here. You
+&lt;p&gt;There’s a few additional features to be added here. You
 could enable CORS or HSTS, for example, and of course you could add
 more backends. But if you read this far, you surely get the idea.&lt;/p&gt;
-&lt;p&gt;And you're welcome to examine the headers you can pull from this page
-you're reading, wink wink. :)&lt;/p&gt;
+&lt;p&gt;And you’re welcome to examine the headers you can pull from this page
+you’re reading, wink wink. :)&lt;/p&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Ceph"></category></entry><entry><title>Removing buckets in radosgw (and their contents)</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/removing-buckets-in-radosgw-and-their-contents/" rel="alternate"></link><published>2015-12-23T11:34:34+01:00</published><updated>2015-12-23T11:34:34+01:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2015-12-23:/resources/hints-and-kinks/removing-buckets-in-radosgw-and-their-contents/</id><summary type="html">&lt;p&gt;Every once in a while you'll want to remove a bucket in radosgw,
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Ceph"></category></entry><entry><title>Removing buckets in radosgw (and their contents)</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/removing-buckets-in-radosgw-and-their-contents/" rel="alternate"></link><published>2015-12-23T11:34:34+01:00</published><updated>2015-12-23T11:34:34+01:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2015-12-23:/resources/hints-and-kinks/removing-buckets-in-radosgw-and-their-contents/</id><summary type="html">&lt;p&gt;Every once in a while you’ll want to remove a bucket in radosgw,
 including all the objects contained in that bucket.&lt;/p&gt;
 &lt;p&gt;Now you might use a utility like &lt;a href="http://s3tools.org/s3cmd"&gt;&lt;code&gt;s3cmd&lt;/code&gt;&lt;/a&gt;
 for that purpose:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;s3cmd rb --recursive s3://mybucket
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;The advantage to this approach is that your users can do it, using …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Every once in a while you'll want to remove a bucket in radosgw,
+&lt;p&gt;The advantage to this approach is that your users can do it …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Every once in a while you’ll want to remove a bucket in radosgw,
 including all the objects contained in that bucket.&lt;/p&gt;
 &lt;p&gt;Now you might use a utility like &lt;a href="http://s3tools.org/s3cmd"&gt;&lt;code&gt;s3cmd&lt;/code&gt;&lt;/a&gt;
 for that purpose:&lt;/p&gt;
@@ -3262,11 +3262,11 @@ user, there is a command for that, as well. Use this one with care:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;radosgw&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;admin&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;user&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;rm&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;--uid=[username] --purge-data&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Ceph"></category></entry><entry><title>A minimal Ubuntu OpenStack Juju configuration in just four nodes</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/ubuntu-openstack-juju-4-nodes/" rel="alternate"></link><published>2015-12-23T00:00:00+00:00</published><updated>2015-12-23T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2015-12-23:/resources/hints-and-kinks/ubuntu-openstack-juju-4-nodes/</id><summary type="html">&lt;p&gt;Juju is Ubuntu's supported and preferred means of deployment
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Ceph"></category></entry><entry><title>A minimal Ubuntu OpenStack Juju configuration in just four nodes</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/ubuntu-openstack-juju-4-nodes/" rel="alternate"></link><published>2015-12-23T00:00:00+00:00</published><updated>2015-12-23T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2015-12-23:/resources/hints-and-kinks/ubuntu-openstack-juju-4-nodes/</id><summary type="html">&lt;p&gt;Juju is Ubuntu’s supported and preferred means of deployment
 automation for an OpenStack cloud. While in Juju, a deployment unit (a
 &lt;em&gt;Juju charm&lt;/em&gt;) generally expects to fully own the filesystem it is
 being deployed on, Juju allows you to co-deploy charms on the same
-physical machines, by way of using …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Juju is Ubuntu's supported and preferred means of deployment
+physical machines, by way of …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Juju is Ubuntu’s supported and preferred means of deployment
 automation for an OpenStack cloud. While in Juju, a deployment unit (a
 &lt;em&gt;Juju charm&lt;/em&gt;) generally expects to fully own the filesystem it is
 being deployed on, Juju allows you to co-deploy charms on the same
@@ -3408,7 +3408,7 @@ juju add-relation heat:amqp rabbitmq-server:amqp
 juju add-relation heat:identity-service keystone:identity-service
 juju add-relation heat:shared-db mysql:shared-db
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;And you're done! The whole process should give you an OpenStack cloud
+&lt;p&gt;And you’re done! The whole process should give you an OpenStack cloud
 in about 20-30 minutes.&lt;/p&gt;
 &lt;p&gt;By the way, an exceedingly useful command to watch the installation progress of your Juju environment is:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;watch "juju stat --format=tabular"
@@ -3440,18 +3440,17 @@ paste, here are the Python bits in a slightly more legible format:&lt;/p&gt;
                  &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;
                  &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;isinstance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;dict&lt;/span&gt;&lt;span class="p"&gt;)])&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Of course, you'll need to substitute &lt;code&gt;print()&lt;/code&gt; for &lt;code&gt;print&lt;/code&gt; if your
+&lt;p&gt;Of course, you’ll need to substitute &lt;code&gt;print()&lt;/code&gt; for &lt;code&gt;print&lt;/code&gt; if your
 system runs only Python 3.&lt;/p&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Ceph"></category><category term="Python"></category></entry><entry><title>Understanding radosgw benchmarks</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/understanding-radosgw-benchmarks/" rel="alternate"></link><published>2015-11-18T14:01:42+01:00</published><updated>2015-11-18T14:01:42+01:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2015-11-18:/resources/hints-and-kinks/understanding-radosgw-benchmarks/</id><summary type="html">&lt;p&gt;We've noticed that there are a few common misconceptions around
-radosgw performance, and we're hoping that this post can clear up some
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Ceph"></category><category term="Python"></category></entry><entry><title>Understanding radosgw benchmarks</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/understanding-radosgw-benchmarks/" rel="alternate"></link><published>2015-11-18T14:01:42+01:00</published><updated>2015-11-18T14:01:42+01:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2015-11-18:/resources/hints-and-kinks/understanding-radosgw-benchmarks/</id><summary type="html">&lt;p&gt;We’ve noticed that there are a few common misconceptions around
+radosgw performance, and we’re hoping that this post can clear up some
 of those.&lt;/p&gt;
-&lt;p&gt;radosgw is of course Ceph's RESTful object gateway. That means that
-you can use any client that speaks the Amazon S3 or OpenStack Swift
-protocol to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;We've noticed that there are a few common misconceptions around
-radosgw performance, and we're hoping that this post can clear up some
+&lt;p&gt;radosgw is of course Ceph’s RESTful object gateway. That means that
+you can use any client that speaks the Amazon S3 or OpenStack …&lt;/p&gt;</summary><content type="html">&lt;p&gt;We’ve noticed that there are a few common misconceptions around
+radosgw performance, and we’re hoping that this post can clear up some
 of those.&lt;/p&gt;
-&lt;p&gt;radosgw is of course Ceph's RESTful object gateway. That means that
+&lt;p&gt;radosgw is of course Ceph’s RESTful object gateway. That means that
 you can use any client that speaks the Amazon S3 or OpenStack Swift
 protocol to interact with your Ceph cluster. Since RESTful object
 access is HTTP based, this also means you can combine radosgw with
@@ -3460,7 +3459,7 @@ in handy.&lt;/p&gt;
 &lt;p&gt;In general, as any RESTful object storage, you would generally store
 data in radosgw that you read and write in one chunk, and where bulk
 storage is more important than online availability (if you need data
-at your fingertips, you'd use RBD or CephFS or even straight-up RADOS
+at your fingertips, you’d use RBD or CephFS or even straight-up RADOS
 instead, but those are for different use cases).&lt;/p&gt;
 &lt;p&gt;The performance implications of using radosgw (or any RESTful object
 storage, for that matter) usually apply to one of two different use
@@ -3478,18 +3477,18 @@ cases:&lt;/p&gt;
   S3.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;So either you want to write big chunks of data, in which case you're
+&lt;p&gt;So either you want to write big chunks of data, in which case you’re
 interested in throughput (typically measured in amount of data per
 unit time, such as MB/s). Or you want to write small chunks, then
-what's important is completed operations per unit time (typically
+what’s important is completed operations per unit time (typically
 measured in number of writes per second, which in the RESTful case
 would be HTTP PUTs per second).&lt;/p&gt;
 &lt;p&gt;Now with radosgw, you can measure this with a handy tool called
 rest-bench. Sadly rest-bench no longer builds with Ceph for Infernalis
-and later, because the Ceph developers now favor Intel's COSbench
+and later, because the Ceph developers now favor Intel’s COSbench
 utility. But rest-bench from older Ceph releases will be around for a
-while and it's handy because unlike COSbench, it doesn't require Java.&lt;/p&gt;
-&lt;p&gt;So let's take a look. The general invocation for rest-bench is like
+while and it’s handy because unlike COSbench, it doesn’t require Java.&lt;/p&gt;
+&lt;p&gt;So let’s take a look. The general invocation for rest-bench is like
 this:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;rest-bench -t &lt;span class="nv"&gt;$CONCURRENCY&lt;/span&gt; -b &lt;span class="nv"&gt;$SIZE&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
   --seconds&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$SECS&lt;/span&gt; --api-host&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$RGW&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
@@ -3517,7 +3516,7 @@ this:&lt;/p&gt;
   little as 10 is often sufficient.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;code&gt;$BUCKET&lt;/code&gt; is the scratch bucket where you're creating objects during
+&lt;p&gt;&lt;code&gt;$BUCKET&lt;/code&gt; is the scratch bucket where you’re creating objects during
   the benchmark run.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -3528,16 +3527,16 @@ this:&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;write&lt;/code&gt; specifies a random write benchmark.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;code&gt;--no-cleanup&lt;/code&gt; specifies that you don't want the bucket to be
-    cleaned out after the benchmark run. It's normally fine to run
+&lt;p&gt;&lt;code&gt;--no-cleanup&lt;/code&gt; specifies that you don’t want the bucket to be
+    cleaned out after the benchmark run. It’s normally fine to run
     several benchmarks in a row and only empty the benchmark bucket
     when done with all.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Object size&lt;/h2&gt;
-&lt;p&gt;First, we'll examine how object size affects radosgw throughput and
+&lt;p&gt;First, we’ll examine how object size affects radosgw throughput and
 latency.&lt;/p&gt;
-&lt;p&gt;So let's start out with a benchmark run that uses the default settings
+&lt;p&gt;So let’s start out with a benchmark run that uses the default settings
 for concurrency and object sizes:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;RGW&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;localhost:7480
 &lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;SECS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;
@@ -3561,9 +3560,9 @@ rest-bench -t &lt;span class="nv"&gt;$CONCURRENCY&lt;/span&gt; -b &lt;span class
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;So that means we achieved a bandwidth of just under 155 MB/s (which is
 near the max RADOS bandwidth this particular cluster is capable of;
-it's by no means a high-end system) and we managed 399 writes, or
+it’s by no means a high-end system) and we managed 399 writes, or
 approx. 40 PUTs/s.&lt;/p&gt;
-&lt;p&gt;Let's see how going even bigger changes things:&lt;/p&gt;
+&lt;p&gt;Let’s see how going even bigger changes things:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ &lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;SIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class="m"&gt;26&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt; &lt;span class="c1"&gt;# 64MB object size&lt;/span&gt;
 
 $ rest-bench -t &lt;span class="nv"&gt;$CONCURRENCY&lt;/span&gt; -b &lt;span class="nv"&gt;$SIZE&lt;/span&gt; --seconds&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$SECS&lt;/span&gt; --api-host&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$RGW&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
@@ -3577,13 +3576,13 @@ $ rest-bench -t &lt;span class="nv"&gt;$CONCURRENCY&lt;/span&gt; -b &lt;span cla
 &lt;span class="nv"&gt;Write&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;size&lt;/span&gt;:&lt;span class="w"&gt;             &lt;/span&gt;&lt;span class="mi"&gt;67108864&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="nv"&gt;Bandwidth&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;MB&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;sec&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;:&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="mi"&gt;160&lt;/span&gt;.&lt;span class="mi"&gt;469&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Perfectly logical. Our bandwidth doesn't change much, but of course
+&lt;p&gt;Perfectly logical. Our bandwidth doesn’t change much, but of course
 the number of PUTs we get done per second decreases significantly, to
 a puny 3 PUTs/s. (Note: radosgw does break down objects into smaller
-chunks when it talks to RADOS. However, this doesn't change the fact
+chunks when it talks to RADOS. However, this doesn’t change the fact
 that a client needs to haul a 64MB object across the network and
 through the radosgw HTTP server.)&lt;/p&gt;
-&lt;p&gt;Let's do the opposite now, and go for smaller objects. Suppose your
+&lt;p&gt;Let’s do the opposite now, and go for smaller objects. Suppose your
 application is using a typical object size of 32K.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;SIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class="m"&gt;15&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt; &lt;span class="c1"&gt;# 32KB object size&lt;/span&gt;
 rest-bench -t &lt;span class="nv"&gt;$CONCURRENCY&lt;/span&gt; -b &lt;span class="nv"&gt;$SIZE&lt;/span&gt; --seconds&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$SECS&lt;/span&gt; --api-host&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$RGW&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
@@ -3600,10 +3599,10 @@ rest-bench -t &lt;span class="nv"&gt;$CONCURRENCY&lt;/span&gt; -b &lt;span class
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Of course if we looked at our bandwidth alone, this would be an
 abysmal result. But your application is trying to write 32K chunks,
-and lots of them. And it's succeeding just fine; we're now near 300
+and lots of them. And it’s succeeding just fine; we’re now near 300
 PUTs/s.&lt;/p&gt;
-&lt;p&gt;Going even smaller, we'd expect PUTs/s to trend further up and nominal
-MB/s to go down. Let's try with 4K objects:&lt;/p&gt;
+&lt;p&gt;Going even smaller, we’d expect PUTs/s to trend further up and nominal
+MB/s to go down. Let’s try with 4K objects:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;SIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class="m"&gt;12&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt; &lt;span class="c1"&gt;# 4KB object size&lt;/span&gt;
 rest-bench -t &lt;span class="nv"&gt;$CONCURRENCY&lt;/span&gt; -b &lt;span class="nv"&gt;$SIZE&lt;/span&gt; --seconds&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$SECS&lt;/span&gt; --api-host&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$RGW&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
 --bucket&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$BUCKET&lt;/span&gt; --access-key&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$KEY&lt;/span&gt; --secret&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$SECRET&lt;/span&gt; --no-cleanup write
@@ -3624,7 +3623,7 @@ writes-per-second load.&lt;/p&gt;
 &lt;h2&gt;Concurrency&lt;/h2&gt;
 &lt;p&gt;Another aspect that influences your radosgw performance is
 concurrency. Generally, the principle is simple: if you have multiple
-parallel applications that write to radosgw and that don't have to
+parallel applications that write to radosgw and that don’t have to
 wait for each other, your aggregate throughput will be higher, and
 your writes-per-second will be higher as well. If you have a small
 number (in the worst case, a single one that is single-threaded) and
@@ -3698,7 +3697,7 @@ rest-bench -t &lt;span class="nv"&gt;$CONCURRENCY&lt;/span&gt; -b &lt;span class
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Both writes-per-second and throughput drop by half.&lt;/p&gt;
 &lt;h2&gt;Conclusions&lt;/h2&gt;
-&lt;p&gt;Note: If you've dealt with storage performance considerations before,
+&lt;p&gt;Note: If you’ve dealt with storage performance considerations before,
 some of these will be blindingly obvious. Apologies for that; it just
 shows that Ceph is generally a well-behaved system that does what you
 would normally expect.&lt;/p&gt;
@@ -3720,7 +3719,7 @@ would normally expect.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Concurrency is good. If your application can fire a bunch of RESTful
-  objects at radosgw, which don't have to wait for each other, great.&lt;/p&gt;
+  objects at radosgw, which don’t have to wait for each other, great.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;If you need to optimize for lots of PUTs per second, make sure that
@@ -3730,11 +3729,11 @@ would normally expect.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;If you need to optimize for throughput instead, make sure that your application coalesces data into large objects. There is a big difference between sending one object of 10MB, and 10 objects of 1 MB.&lt;/p&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Ceph"></category></entry><entry><title>Fun with extended attributes in Ceph Dumpling</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/fun-extended-attributes-ceph-dumpling/" rel="alternate"></link><published>2014-02-24T16:50:17+01:00</published><updated>2014-02-24T16:50:17+01:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2014-02-24:/resources/hints-and-kinks/fun-extended-attributes-ceph-dumpling/</id><summary type="html">&lt;p&gt;This is a rather nasty bug in Ceph OSD, affecting 0.67 "Dumpling" and
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Ceph"></category></entry><entry><title>Fun with extended attributes in Ceph Dumpling</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/fun-extended-attributes-ceph-dumpling/" rel="alternate"></link><published>2014-02-24T16:50:17+01:00</published><updated>2014-02-24T16:50:17+01:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2014-02-24:/resources/hints-and-kinks/fun-extended-attributes-ceph-dumpling/</id><summary type="html">&lt;p&gt;This is a rather nasty bug in Ceph OSD, affecting 0.67 “Dumpling” and
 earlier releases. It is fixed in versions later than 0.70, and a
 simple workaround is available, but when it hits, this issue can be
 pretty painful.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Please read this post to the end.&lt;/strong&gt; This is …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a rather nasty bug in Ceph OSD, affecting 0.67 "Dumpling" and
+&lt;p&gt;&lt;strong&gt;Please read this post to the end.&lt;/strong&gt; This is …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a rather nasty bug in Ceph OSD, affecting 0.67 “Dumpling” and
 earlier releases. It is fixed in versions later than 0.70, and a
 simple workaround is available, but when it hits, this issue can be
 pretty painful.&lt;/p&gt;
@@ -3746,7 +3745,7 @@ an interesting read in data integrity in distributed systems anyway.&lt;/p&gt;
 &lt;h2&gt;Too much of a good thing: large extended attributes&lt;/h2&gt;
 &lt;p&gt;Here is how to reproduce the problem in a very simple bit of Python
 code, against Ceph Dumpling.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Do not run this on a production system. Don't. Ever.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Do not run this on a production system. Don’t. Ever.&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/usr/bin/python&lt;/span&gt;
 
 &lt;span class="c1"&gt;# import rados&lt;/span&gt;
@@ -3775,13 +3774,13 @@ code, against Ceph Dumpling.&lt;/p&gt;
 &lt;p&gt;Removing the disabling comment character is left as an exercise for
 the daring reader, just in case your cut &amp;amp; paste trigger finger is
 itchy. &lt;strong&gt;Do not run this against a production system.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;So what are we doing here? We're creating a single RADOS object named
+&lt;p&gt;So what are we doing here? We’re creating a single RADOS object named
 &lt;code&gt;onebyte&lt;/code&gt; in a pool called &lt;code&gt;test&lt;/code&gt;. It is, as the name implies, only
 one byte long (it contains just the letter a), but it has a very long
-attribute named &lt;code&gt;val&lt;/code&gt;, which is 8 Megabytes' worth of &lt;code&gt;a&lt;/code&gt;'s.&lt;/p&gt;
-&lt;p&gt;(In case you're wondering: yes, there are applications that set very
+attribute named &lt;code&gt;val&lt;/code&gt;, which is 8 Megabytes’ worth of &lt;code&gt;a&lt;/code&gt;‘s.&lt;/p&gt;
+&lt;p&gt;(In case you’re wondering: yes, there are applications that set very
 large attributes on RADOS objects. radosgw is one of them.)&lt;/p&gt;
-&lt;p&gt;Since you've been able to set the attribute, you can also retrieve it,
+&lt;p&gt;Since you’ve been able to set the attribute, you can also retrieve it,
 which is why the call to &lt;code&gt;get_xattr('val')&lt;/code&gt; succeeds just fine. But if
 you fetch the entire attribute &lt;em&gt;list&lt;/em&gt; (with &lt;code&gt;get_xattrs&lt;/code&gt;), then you
 run into an &lt;code&gt;E2BIG&lt;/code&gt; error.&lt;/p&gt;
@@ -3794,20 +3793,20 @@ a
 $ sudo rados -p &lt;span class="nb"&gt;test&lt;/span&gt; getxattr onebyte val - &lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;  &lt;span class="p"&gt;|&lt;/span&gt; head -c &lt;span class="m"&gt;50&lt;/span&gt;
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Obviously, you're welcome to omit the head redirection if you prefer
+&lt;p&gt;Obviously, you’re welcome to omit the head redirection if you prefer
 to flood your screen. But for proving we can still retrieve the
 attribute value, 50 characters is quite sufficient.&lt;/p&gt;
-&lt;p&gt;Let's try &lt;em&gt;listing&lt;/em&gt; the attributes, though:&lt;/p&gt;
+&lt;p&gt;Let’s try &lt;em&gt;listing&lt;/em&gt; the attributes, though:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ sudo rados -p &lt;span class="nb"&gt;test&lt;/span&gt; listxattr onebyte 
 error getting xattr &lt;span class="nb"&gt;set&lt;/span&gt; test/onebyte: Argument list too long
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Oops. &lt;code&gt;Argument list too long&lt;/code&gt; is bash's way of translating the
-&lt;code&gt;E2BIG&lt;/code&gt; error for you, because that's what it usually means. In this
-case, though, it's actually what we get from the rados utility, and
-that gets it from the OSD it's talking to, and that gets it from the
+&lt;p&gt;Oops. &lt;code&gt;Argument list too long&lt;/code&gt; is bash’s way of translating the
+&lt;code&gt;E2BIG&lt;/code&gt; error for you, because that’s what it usually means. In this
+case, though, it’s actually what we get from the rados utility, and
+that gets it from the OSD it’s talking to, and that gets it from the
 filesystem.&lt;/p&gt;
 &lt;h2&gt;Digging deeper&lt;/h2&gt;
-&lt;p&gt;Now let's take a look where this object is stored.&lt;/p&gt;
+&lt;p&gt;Now let’s take a look where this object is stored.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ sudo ceph osd map &lt;span class="nb"&gt;test&lt;/span&gt; onebyte
 $ osdmap e191 pool &lt;span class="s1"&gt;'test'&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; object &lt;span class="s1"&gt;'onebyte'&lt;/span&gt; -&amp;gt; pg &lt;span class="m"&gt;3&lt;/span&gt;.ed47d009 &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;.1&lt;span class="o"&gt;)&lt;/span&gt; -&amp;gt; up &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;,2&lt;span class="o"&gt;]&lt;/span&gt; acting &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;,2&lt;span class="o"&gt;]&lt;/span&gt;
 So it&lt;span class="s1"&gt;'s PG 3.1, currently mapped to OSDs 0 (primary) and 2 (replica). We happen to be on the very host where OSD 0 is running, so let'&lt;/span&gt;s take a closer look:
@@ -3815,11 +3814,11 @@ So it&lt;span class="s1"&gt;'s PG 3.1, currently mapped to OSDs 0 (primary) and 
 $ sudo getfattr -d /var/lib/ceph/osd/ceph-0/current/3.1_head/onebyte__head_ED47D009__3 
 /var/lib/ceph/osd/ceph-0/current/3.1_head/onebyte__head_ED47D009__3: Argument list too long
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Same thing, E2BIG. Sure, if we can't enumerate the attributes
-ourselves, the OSD can't either. But it's still fairly benign, because
+&lt;p&gt;Same thing, E2BIG. Sure, if we can’t enumerate the attributes
+ourselves, the OSD can’t either. But it’s still fairly benign, because
 we can still retrieve the object, right?&lt;/p&gt;
 &lt;h2&gt;Adding daemon failure&lt;/h2&gt;
-&lt;p&gt;Well, not so much. Let's see what happens if one of our OSDs gets
+&lt;p&gt;Well, not so much. Let’s see what happens if one of our OSDs gets
 restarted. This is a perfectly benign operation that Ceph is expected
 to (and does) handle very gracefully.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ sudo restart ceph-osd &lt;span class="nv"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;
@@ -3834,7 +3833,7 @@ ceph-osd &lt;span class="o"&gt;(&lt;/span&gt;ceph/2&lt;span class="o"&gt;)&lt;/s
 $ sudo ceph osd out &lt;span class="m"&gt;2&lt;/span&gt;
 marked out osd.2.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Remember, &lt;em&gt;"at scale, something always fails"&lt;/em&gt;. Ceph is built for
+&lt;p&gt;Remember, &lt;em&gt;“at scale, something always fails”&lt;/em&gt;. Ceph is built for
 exactly that, and its algorithms deal with this type of failure in
 stride. So at this point, we would expect Ceph to remap the PGs that
 were previously on OSD 2 to OSD 1, and synchronize with OSD 0. And a
@@ -3851,7 +3850,7 @@ few minutes later, all hell breaks loose:&lt;/p&gt;
 &lt;p&gt;Wow. We shut down only one OSD (OSD 2), the other one (OSD 0) was
 merely restarted, but it has crashed in the interim. Its mon osd down
 out interval has also expired, so it has been marked out as well. All
-of our PGs are stuck degraded, one has an unfound object (that's the
+of our PGs are stuck degraded, one has an unfound object (that’s the
 one whose xattrs can no longer be enumerated). Yikes.&lt;/p&gt;
 &lt;p&gt;We scramble to bring our just-shutdown OSD back in.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ sudo start ceph-osd &lt;span class="nv"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;
@@ -3886,16 +3885,16 @@ marked &lt;span class="k"&gt;in&lt;/span&gt; osd.2.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Hardly. OSDs flapping right and left. Ouch ouch ouch.&lt;/p&gt;
 &lt;h2&gt;Desperation: not your friend&lt;/h2&gt;
-&lt;p&gt;OK, let's try to do something really terrible and get rid of that file manually.&lt;/p&gt;
+&lt;p&gt;OK, let’s try to do something really terrible and get rid of that file manually.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ sudo ceph osd map &lt;span class="nb"&gt;test&lt;/span&gt; onebyte
 osdmap e254 pool &lt;span class="s1"&gt;'test'&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; object &lt;span class="s1"&gt;'onebyte'&lt;/span&gt; -&amp;gt; pg &lt;span class="m"&gt;3&lt;/span&gt;.ed47d009 &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;.1&lt;span class="o"&gt;)&lt;/span&gt; -&amp;gt; up &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; acting &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;So it's mapped to OSD 1 now, which is expected. Let's take a look and see if we can find and remove it.&lt;/p&gt;
+&lt;p&gt;So it’s mapped to OSD 1 now, which is expected. Let’s take a look and see if we can find and remove it.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;ceph&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;ubuntu&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ceph2&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;~$&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ls&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;var&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;lib&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ceph&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;osd&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ceph&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;current&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mf"&gt;3.1&lt;/span&gt;&lt;span class="n"&gt;_head&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="n"&gt;ceph&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;ubuntu&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ceph2&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;~$&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;An empty directory. Well of course, they could never actually peer, so
-the data never got synchronized. So there's pretty much one thing
+the data never got synchronized. So there’s pretty much one thing
 left.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;ceph&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;ubuntu&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ceph3&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;~$&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sudo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;stop&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ceph&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;osd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="n"&gt;stop&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Unknown&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;instance&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ceph&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
@@ -3927,7 +3926,7 @@ error getting test/onebyte: No such file or directory
 &lt;p&gt;Now obviously the offending object is gone, which is ugly and we could
 have manually recreated that file and set some magic user.ceph
 attributes enabling us to keep the object, but in this case we just
-didn't care and wanted our cluster back up and running as soon as
+didn’t care and wanted our cluster back up and running as soon as
 possible.&lt;/p&gt;
 &lt;h2&gt;Prevention&lt;/h2&gt;
 &lt;p&gt;So we have a brutal cure for this problem that is roughly akin to
@@ -3935,9 +3934,9 @@ performing brain surgery with a fork and spoon. What could we have
 done better?&lt;/p&gt;
 &lt;p&gt;LevelDB to the rescue. Ceph optionally (and in later versions, by
 default) stores attributes that would overflow the filesystem xattr
-store in a separate database called an omap, using Google's embedded
+store in a separate database called an omap, using Google’s embedded
 LevelDB database. And in Dumpling, this feature is disabled by default
--- with an exception for ext3/4, which have interesting attribute
+– with an exception for ext3/4, which have interesting attribute
 limitations themselves.&lt;/p&gt;
 &lt;p&gt;This is the all-important option that needs to go in your ceph.conf:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="na"&gt;filestore xattr use omap&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;true&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
@@ -3945,7 +3944,7 @@ limitations themselves.&lt;/p&gt;
 &lt;p&gt;You can enable this on a running cluster and this will retain and
 preserve any xattrs previously set on RADOS objects. Attributes mapped
 to file xattrs will simply be moved to the omap database (note however
-that the opposite is not true, but you'll never want to disable this
+that the opposite is not true, but you’ll never want to disable this
 option anymore, anyway).&lt;/p&gt;
 &lt;p&gt;As of
 &lt;a href="https://github.com/ceph/ceph/commit/dc0dfb9e01d593afdd430ca776cf4da2c2240a20"&gt;this Ceph commit&lt;/a&gt;
@@ -3955,21 +3954,21 @@ by the issue described in this post.&lt;/p&gt;
 &lt;hr/&gt;
 &lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Ceph"></category></entry><entry><title>Unrecoverable unfound objects in Ceph 0.67 and earlier</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/unrecoverable-unfound-objects-ceph-067-and-earlier/" rel="alternate"></link><published>2014-01-28T18:52:02+01:00</published><updated>2014-01-28T18:52:02+01:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2014-01-28:/resources/hints-and-kinks/unrecoverable-unfound-objects-ceph-067-and-earlier/</id><summary type="html">&lt;p&gt;As &lt;a href="http://ceph.com/"&gt;Ceph&lt;/a&gt; author &lt;a href="https://twitter.com/Liewegas"&gt;Sage
 Weil&lt;/a&gt; points out frequently, distributed
-storage solutions for all their goodness &lt;a href="http://youtu.be/JfRqpdgoiRQ?t=36m20s"&gt;have a "dirty little
-secret"&lt;/a&gt;: No matter just how
+storage solutions for all their goodness &lt;a href="http://youtu.be/JfRqpdgoiRQ?t=36m20s"&gt;have a “dirty little
+secret”&lt;/a&gt;: No matter just how
 redundant and reliable they are by design, a bug in the storage
 software itself can be a real issue.&lt;/p&gt;
-&lt;p&gt;And occasionally, the bug doesn't have to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;As &lt;a href="http://ceph.com/"&gt;Ceph&lt;/a&gt; author &lt;a href="https://twitter.com/Liewegas"&gt;Sage
+&lt;p&gt;And occasionally, the bug doesn’t have …&lt;/p&gt;</summary><content type="html">&lt;p&gt;As &lt;a href="http://ceph.com/"&gt;Ceph&lt;/a&gt; author &lt;a href="https://twitter.com/Liewegas"&gt;Sage
 Weil&lt;/a&gt; points out frequently, distributed
-storage solutions for all their goodness &lt;a href="http://youtu.be/JfRqpdgoiRQ?t=36m20s"&gt;have a "dirty little
-secret"&lt;/a&gt;: No matter just how
+storage solutions for all their goodness &lt;a href="http://youtu.be/JfRqpdgoiRQ?t=36m20s"&gt;have a “dirty little
+secret”&lt;/a&gt;: No matter just how
 redundant and reliable they are by design, a bug in the storage
 software itself can be a real issue.&lt;/p&gt;
-&lt;p&gt;And occasionally, the bug doesn't have to be in the storage software
+&lt;p&gt;And occasionally, the bug doesn’t have to be in the storage software
 itself.&lt;/p&gt;
 &lt;p&gt;Every self-respecting Linux file system supports &lt;a href="http://en.wikipedia.org/wiki/Extended_file_attributes"&gt;extended file
 attributes
-("xattrs")&lt;/a&gt;,
+(“xattrs”)&lt;/a&gt;,
 and XFS (commonly used with Ceph OSDs) is no exception. When OSDs
 store RADOS objects in the OSD filestore, they make heavy use of
 key-value pairs. To do so, they can employ two approaches:&lt;/p&gt;
@@ -3991,7 +3990,7 @@ that is &lt;em&gt;not&lt;/em&gt; the case (such as ext4), you would generally us
 if the filestore is determined to be running on ext4. But for the XFS
 and BTRFS filesystem, the general recommendation (and default
 behavior) remained to just use inline xattrs. This is also true for
-the stable Ceph "Dumpling" release (0.67).&lt;/p&gt;
+the stable Ceph “Dumpling” release (0.67).&lt;/p&gt;
 &lt;p&gt;Since Ceph 0.70, the configuration option
 &lt;a href="https://github.com/ceph/ceph/commit/dc0dfb9e01d593afdd430ca776cf4da2c2240a20"&gt;has been dropped&lt;/a&gt;
 and Ceph since always behaves as if &lt;code&gt;filestore xattr use omap&lt;/code&gt; was set
@@ -4021,24 +4020,24 @@ objects fails. The affected Placement Group (PG) also remains stuck,
 again being reported as such in ceph health detail.&lt;/p&gt;
 &lt;p&gt;If you actually have run into this problem, you should really call
 Inktank for support. (You can also give us a call, of course, and
-we'll be happy to help you confirm the problem. But we will refer you
-to Inktank for the actual fix -- we don't fiddle and mess around with
+we’ll be happy to help you confirm the problem. But we will refer you
+to Inktank for the actual fix – we don’t fiddle and mess around with
 RADOS object internals, and neither should you.)&lt;/p&gt;
 &lt;h2&gt;How to avoid this in the first place?&lt;/h2&gt;
-&lt;p&gt;If you're on Ceph 0.70 or later, congratulations. You should be safe,
+&lt;p&gt;If you’re on Ceph 0.70 or later, congratulations. You should be safe,
 as omaps are enabled and anything that would overflow your xattrs
 instead gets stored in an omap.&lt;/p&gt;
-&lt;p&gt;If you're on any earlier version, including the currently
-stable 0.67.x "Dumpling" series, enable filestore xattr use omap. Do
+&lt;p&gt;If you’re on any earlier version, including the currently
+stable 0.67.x “Dumpling” series, enable filestore xattr use omap. Do
 it now, regardless of what filesystem your OSDs run on. Then restart
-your OSDs one by one; your existing xattrs won't get lost.&lt;/p&gt;
+your OSDs one by one; your existing xattrs won’t get lost.&lt;/p&gt;
 &lt;hr/&gt;
 &lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Ceph"></category></entry><entry><title>Solid-state drives and Ceph OSD journals</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/solid-state-drives-and-ceph-osd-journals/" rel="alternate"></link><published>2013-01-13T20:33:58+01:00</published><updated>2013-01-13T20:33:58+01:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2013-01-13:/resources/hints-and-kinks/solid-state-drives-and-ceph-osd-journals/</id><summary type="html">&lt;p&gt;Considerations for running Ceph OSD journals on SSDs.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Object Storage Daemons
 (&lt;a href="http://ceph.com/docs/master/man/8/ceph-osd/"&gt;OSDs&lt;/a&gt;) are the Ceph
-stack's workhorses for data storage. They're significantly smarter
+stack’s workhorses for data storage. They’re significantly smarter
 than many of their counterparts in distributed block-storage solutions
 (open source or not), and their design is instrumental in securing the
-stack's reliability and scalability.&lt;/p&gt;
+stack’s reliability and scalability.&lt;/p&gt;
 &lt;p&gt;Among other things, OSDs are responsible for the decentralized
 replication — which is highly configurable — of objects in the
 store. They do so in a primary-copy fashion: every Ceph object (more
@@ -4049,7 +4048,7 @@ a new or updated object guarantees its availability (in the way
 configured by the cluster administrator) before an application is
 notified that the write has completed.&lt;/p&gt;
 &lt;p&gt;More specifically, in order for an OSD to acknowledge a write as
-completed, the new object must have been written to the OSD's
+completed, the new object must have been written to the OSD’s
 journal. OSDs use a write-ahead mode for local operations: a write
 hits the journal first, and from there is then being copied into the
 backing filestore. (Note: if your filestore is using btrfs, the
@@ -4068,7 +4067,7 @@ that are both fast and cost-effective:&lt;/p&gt;
 &lt;p&gt;Another common design principle is that you create one OSD per
 spinning disk that you have in the system. Many contemporary systems
 come with only two SSD slots, and then as many spinners as you
-want. That is not a problem for journal capacity — a single OSD's
+want. That is not a problem for journal capacity — a single OSD’s
 journal is usually no larger than about 6 GB, so even for a 16-spinner
 system (approx. 96GB journal space) appropriate SSDs are available at
 reasonable expense.&lt;/p&gt;
@@ -4082,7 +4081,7 @@ non-RAIDed Ceph OSD journals.&lt;/p&gt;
 10-or-so OSDs (the exact number is hard to give). Now you have your OS
 and several OSD journals on the same physical SSD. SSDs are much
 faster than spinners, but they have neither infinite throughput nor
-zero latency. Eventually, you might hit your SSD's physical limits for
+zero latency. Eventually, you might hit your SSD’s physical limits for
 random I/O all over the place. For example, if one of your hosts dies
 and the rest now reshuffles data to restore the desired level of
 redundancy, you may see relatively intensive I/O all over the other
@@ -4092,20 +4091,20 @@ which host many OSD disks.&lt;/p&gt;
 first. Specifically, Ceph OSDs currently cannot recover from a broken
 SSD journal without reinitializing and recovering the entire
 filestore. This means that as soon as SSD acting as journal backing
-storage burns up, you've effectively lost those OSDs completely and
+storage burns up, you’ve effectively lost those OSDs completely and
 need to recover them from scratch.&lt;sup id="fnref:mkjournal"&gt;&lt;a class="footnote-ref" href="#fn:mkjournal"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;p&gt;Put them in a RAID-1, problem solved?  Well, not quite, because you've
-now duplicated all of your journal writes and you're hitting two SSDs
-all over the place. Thus it's generally a much better idea to put half
+&lt;p&gt;Put them in a RAID-1, problem solved?  Well, not quite, because you’ve
+now duplicated all of your journal writes and you’re hitting two SSDs
+all over the place. Thus it’s generally a much better idea to put half
 of your journals on one SSD, and half on the other. If one of your
-SSDs burns up you'll still lose the OSDs whose journals it hosts — but
-it'll only be half of the OSDs hosted on that node altogether.&lt;/p&gt;
+SSDs burns up you’ll still lose the OSDs whose journals it hosts — but
+it’ll only be half of the OSDs hosted on that node altogether.&lt;/p&gt;
 &lt;p&gt;Any such performance issues get worse if some of your OSDs are also
 MONs: your OSD journals now compete with your operating system and
 your MONs for I/O on the same SSDs. Once your SSDs get hit so hard
-that your MONs can't do I/O, those MONs eventually die. This might not
+that your MONs can’t do I/O, those MONs eventually die. This might not
 harm your operations if you have sufficient backup MONs available, and
-everything will be fine again once your recovery is complete, but it's
+everything will be fine again once your recovery is complete, but it’s
 still a nuisance. This is remarkably common specifically in POCs, by
 the way, where people often try to repurpose three of their old,
 two-SSDs-plus-dozens-of-disks storage servers for a 3-node Ceph
@@ -4144,7 +4143,7 @@ note of the following general guidelines:&lt;/p&gt;
 &lt;p&gt;Since this article was originally published, a &lt;code&gt;--mkjournal&lt;/code&gt;
 option was added to the &lt;code&gt;ceph-osd&lt;/code&gt; command, allowing you to
 recreate a journal for an existing OSD. This mitigates the issue
-in that you don't need to recreate OSDs from scratch when a
+in that you don’t need to recreate OSDs from scratch when a
 journal device breaks — but the OSDs will still be &lt;strong&gt;temporarily&lt;/strong&gt;
 unavailable. &lt;a class="footnote-backref" href="#fnref:mkjournal" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
@@ -4195,13 +4194,13 @@ contents:&lt;/p&gt;
 &lt;/ul&gt;
 &lt;hr/&gt;
 &lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Galera"></category><category term="MySQL"></category><category term="Pacemaker"></category></entry><entry><title>Bootstrapping the Galera cluster</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/mysqlgalera-pacemaker-bootstrapping-galera-cluster/" rel="alternate"></link><published>2012-12-04T10:53:27+01:00</published><updated>2012-12-04T10:53:27+01:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-12-04:/resources/hints-and-kinks/mysqlgalera-pacemaker-bootstrapping-galera-cluster/</id><summary type="html">&lt;p&gt;In order to bootstrap your Galera cluster, manually bring up the
-cluster IP address on the desired interface. In this example, we'll
+cluster IP address on the desired interface. In this example, we’ll
 use 192.168.122.99 and eth1:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ip address add &lt;span class="m"&gt;192&lt;/span&gt;.168.122.99/24 dev eth1 label eth1:galera
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;And initialize the Galera cluster:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mysqld --wsrep_cluster_address&lt;span class="o"&gt;=&lt;/span&gt;gcomm …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;In order to bootstrap your Galera cluster, manually bring up the
-cluster IP address on the desired interface. In this example, we'll
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mysqld --wsrep_cluster_address …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;In order to bootstrap your Galera cluster, manually bring up the
+cluster IP address on the desired interface. In this example, we’ll
 use 192.168.122.99 and eth1:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ip address add &lt;span class="m"&gt;192&lt;/span&gt;.168.122.99/24 dev eth1 label eth1:galera
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -4216,7 +4215,7 @@ see entries similar to these:&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;At this point, your MySQL/Galera cluster is properly initialized. It
 only has one node, and it is not under cluster management yet, but
-it's already a working Galera installation.&lt;/p&gt;
+it’s already a working Galera installation.&lt;/p&gt;
 &lt;hr/&gt;
 &lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Galera"></category><category term="MySQL"></category><category term="Pacemaker"></category></entry><entry><title>Configuring Corosync</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/mysqlgalera-pacemaker-configuring-corosync/" rel="alternate"></link><published>2012-12-04T10:53:27+01:00</published><updated>2012-12-04T10:53:27+01:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-12-04:/resources/hints-and-kinks/mysqlgalera-pacemaker-configuring-corosync/</id><summary type="html">&lt;p&gt;You now need configure Corosync. The following example configuration
 file assumes that your cluster nodes have two network interfaces,
@@ -4414,7 +4413,7 @@ box, but the concepts should be equally applicable to other platforms
 with minimal modifications.&lt;/p&gt;
 &lt;p&gt;It also assumes that your Galera cluster will consist of three nodes,
 named alice, bob and charlie. Furthermore, all cluster nodes can
-resolve each other's hostnames.&lt;/p&gt;
+resolve each other’s hostnames.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Please note: All commands in this walkthrough require that you are
 logged into your system as root.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;First, make sure you have the required packages installed. One of the
@@ -4455,7 +4454,7 @@ squeeze-backports:&lt;/p&gt;
 Transfer (SST) methods for Galera:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt-get install rsync
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Now, all required packages are installed and you're ready to configure
+&lt;p&gt;Now, all required packages are installed and you’re ready to configure
 XtraDB Cluster.&lt;/p&gt;
 &lt;hr/&gt;
 &lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Galera"></category><category term="MySQL"></category><category term="Pacemaker"></category></entry><entry><title>Recovering from full cluster shutdown</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/mysqlgalera-pacemaker-recovering-full-cluster-shutdown/" rel="alternate"></link><published>2012-12-04T10:53:27+01:00</published><updated>2012-12-04T10:53:27+01:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-12-04:/resources/hints-and-kinks/mysqlgalera-pacemaker-recovering-full-cluster-shutdown/</id><summary type="html">&lt;p&gt;If at any time &lt;em&gt;all&lt;/em&gt; of the nodes in your cluster have been taken
@@ -4631,13 +4630,13 @@ capabilities. Here is how you migrate existing virtual machines
 managed by libvirt from block-based storage to a Ceph based storage
 solution.&lt;/p&gt;
 &lt;h2&gt;Prerequisites&lt;/h2&gt;
-&lt;p&gt;What you'll need in order to successfully manage …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ceph allows you to replace existing SAN storage (or SAN drop-in
+&lt;p&gt;What you’ll need in order to successfully …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ceph allows you to replace existing SAN storage (or SAN drop-in
 substitutes) with a flexible storage solution with real scale-out
 capabilities. Here is how you migrate existing virtual machines
 managed by libvirt from block-based storage to a Ceph based storage
 solution.&lt;/p&gt;
 &lt;h2&gt;Prerequisites&lt;/h2&gt;
-&lt;p&gt;What you'll need in order to successfully manage the migration from
+&lt;p&gt;What you’ll need in order to successfully manage the migration from
 block-based storage to a working Ceph cluster is this:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;A working Ceph cluster. You probably guessed this one. More
@@ -4646,7 +4645,7 @@ block-based storage to a working Ceph cluster is this:&lt;/p&gt;
     installation. Usually, the key will be stored in /etc/ceph/keyring
     on nodes running RADOS.&lt;/li&gt;
 &lt;li&gt;a RADOS pool in which you can create RBD images. You can either
-    use the standard rbd pool or create your own pool. We'll use the
+    use the standard rbd pool or create your own pool. We’ll use the
     libvirt pool throughout the following example.&lt;/li&gt;
 &lt;li&gt;a set of credentials for a client to connect to the cluster and
     create and use RBD devices. If you use a libvirt version &amp;lt; 0.9.7,
@@ -4659,12 +4658,12 @@ block-based storage to a working Ceph cluster is this:&lt;/p&gt;
 &lt;li&gt;qemu in version 0.14 or higher&lt;/li&gt;
 &lt;li&gt;libvirt in version 0.8.7 or higher (0.9.7 or higher if you want to
   use a separate user for this)&lt;/li&gt;
-&lt;li&gt;Ceph 0.48 ("argonaut") or higher&lt;/li&gt;
+&lt;li&gt;Ceph 0.48 (“argonaut”) or higher&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Getting Started&lt;/h2&gt;
 &lt;p&gt;When migrating a VM from block-based storage to a Ceph cluster, you
-unfortunately can't avoid a period of downtime (after all, you won't
-be able to reliably copy a filesystem from place A to B while it's
+unfortunately can’t avoid a period of downtime (after all, you won’t
+be able to reliably copy a filesystem from place A to B while it’s
 still changing on the go). So the first thing to do is shut down a
 currently running virtual machine, like we will do with the
 ubuntu-amd64-alice VM in this example:&lt;/p&gt;
@@ -4672,30 +4671,30 @@ ubuntu-amd64-alice VM in this example:&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Then you need to create an RBD image within that pool. Suppose you
 would like to create one that is 100GB in size (recall, all RBD images
-are thin-provisioned, so it won't actually use 100GB in the Ceph
+are thin-provisioned, so it won’t actually use 100GB in the Ceph
 cluster right from the start).&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;qemu-img create -f rbd rbd:libvirt/ubuntu-amd64-alice 100G
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This means you are connecting to the Ceph mon servers (defined in the
 default configuration file, /etc/ceph/ceph.conf) using the
 client.admin identity, whose authentication key should be stored in
-/etc/ceph/keyring. The nominal image size is 102400MB, it's part of
+/etc/ceph/keyring. The nominal image size is 102400MB, it’s part of
 the libvirt pool and its name is a hardly creative ubuntu-amd64-alice.&lt;/p&gt;
 &lt;p&gt;You can run this command from any node inside or outside your Ceph
 cluster, as long as the configuration file and authentication
 credentials are stored in the appropriate location. The next step,
 however, is one that you must complete on the node where you can
 currently access your block-based storage. This could either be the
-machine that you have your VM's device currently connected to via
+machine that you have your VM’s device currently connected to via
 iSCSI or - if you are using a SAN drop-in replacement based on DRBD -
-the machine that currently has the VM's DRBD resource in Primary mode.&lt;/p&gt;
-&lt;p&gt;If you are unsure what your VM's block device is, take a look at the
-VM's configuration with&lt;/p&gt;
+the machine that currently has the VM’s DRBD resource in Primary mode.&lt;/p&gt;
+&lt;p&gt;If you are unsure what your VM’s block device is, take a look at the
+VM’s configuration with&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;virsh dumpxml ubuntu-amd64-alice
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;to find out the actual device name (look out for paragraphs including
 a &lt;disk&gt; statement). In our case, the actual device is
-/dev/drbd/by-res/vm-ubuntu-amd64-alice. Now let's go ahead and do the
+/dev/drbd/by-res/vm-ubuntu-amd64-alice. Now let’s go ahead and do the
 actual conversion. Please note: For the following command to work, you
 need a properly populated /etc/ceph directory because that is where
 qemu-img gets its information from. This is the command that initiates
@@ -4705,9 +4704,9 @@ the conversion:&lt;/disk&gt;&lt;/p&gt;
   rbd:libvirt/ubuntu-amd64-alice
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Once the qemu-img command has completed, the actual conversion of your
-data is already done. That was easy, wasn't it? The final step is to
+data is already done. That was easy, wasn’t it? The final step is to
 change your libvirt VM configuration file to reflect the changes.&lt;/p&gt;
-&lt;h2&gt;Adapting the VM's libvirt configuration (libvirt &amp;lt; 0.9.7)&lt;/h2&gt;
+&lt;h2&gt;Adapting the VM’s libvirt configuration (libvirt &amp;lt; 0.9.7)&lt;/h2&gt;
 &lt;p&gt;If we want our VM to run on top of a Ceph object store, we need to
 tell libvirt how to start the VM appropriately. Luckily, current
 versions of libvirt support Ceph-based RBD backing devices out of the
@@ -4715,10 +4714,10 @@ box. Please note: All following steps assume that you have your
 /etc/ceph set up properly. This means that a working ceph.conf and a
 keyring file containing the authentication key for client.admin is
 present.&lt;/p&gt;
-&lt;p&gt;Open up your VM's configuration for editing with&lt;/p&gt;
+&lt;p&gt;Open up your VM’s configuration for editing with&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;virsh edit ubuntu-amd64-alice
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;and scroll down to the VM's disk definition. In our example, that part of the configuration looks like this:&lt;/p&gt;
+&lt;p&gt;and scroll down to the VM’s disk definition. In our example, that part of the configuration looks like this:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;&amp;lt;disk&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;'block'&lt;/span&gt; &lt;span class="na"&gt;device=&lt;/span&gt;&lt;span class="s"&gt;'disk'&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
   &lt;span class="nt"&gt;&amp;lt;driver&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;'qemu'&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;'raw'&lt;/span&gt; &lt;span class="na"&gt;cache=&lt;/span&gt;&lt;span class="s"&gt;'none'&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
   &lt;span class="nt"&gt;&amp;lt;source&lt;/span&gt; &lt;span class="na"&gt;dev=&lt;/span&gt;&lt;span class="s"&gt;'/dev/drbd/by-res/vm-ubuntu-amd64-alice'&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
@@ -4743,15 +4742,15 @@ IPs of your MON servers.&lt;/p&gt;
 &lt;p&gt;Finally, start your virtual machine:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;virsh start ubuntu-amd64-alice
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;Adapting the VM's libvirt configuration (libvirt &amp;gt;= 0.9.7)&lt;/h2&gt;
+&lt;h2&gt;Adapting the VM’s libvirt configuration (libvirt &amp;gt;= 0.9.7)&lt;/h2&gt;
 &lt;p&gt;Starting with libvirt 0.9.7, you can use a user other than
 client.admin to access RBD images via libvirt. We recommend to do
 this. Creating such a setup works very similar to the one without a
 separate user; the main difference is that it requires you to define a
 secret in libvirt for the VM. First of all, figure out what user you
-will be using from within libvirt and where that user's authentication
+will be using from within libvirt and where that user’s authentication
 key is stored. For this example, we will assume that the user is
-called client.rbd and that this user's key is stored in
+called client.rbd and that this user’s key is stored in
 /etc/ceph/keyring.client.rbd. Now, create a new UUID by calling&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;uuidgen
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -4766,12 +4765,12 @@ in there:&lt;/p&gt;
 &lt;span class="nt"&gt;&amp;lt;/usage&amp;gt;&lt;/span&gt;
 &lt;span class="nt"&gt;&amp;lt;/secret&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Be sure to replace the example's UUID with your own, self-generated
+&lt;p&gt;Be sure to replace the example’s UUID with your own, self-generated
 value. Make libvirt add this secret to its internal keyring:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;virsh secret-define \
   /etc/libvirt/secrets/ubuntu-amd64-alice.xml
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Now find out your user's secret key. Do&lt;/p&gt;
+&lt;p&gt;Now find out your user’s secret key. Do&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ceph auth get-or-create client.rbd
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;and take note of the key. In our example,
@@ -4788,7 +4787,7 @@ key. Finally, go ahead and adapt your VM settings. Open your VM
 configuration with&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;virsh edit ubuntu-amd64-alice
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;and scroll down to the VM's disk definition. In our example, that part of the configuration looks like this:&lt;/p&gt;
+&lt;p&gt;and scroll down to the VM’s disk definition. In our example, that part of the configuration looks like this:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;&amp;lt;disk&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;'block'&lt;/span&gt; &lt;span class="na"&gt;device=&lt;/span&gt;&lt;span class="s"&gt;'disk'&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
   &lt;span class="nt"&gt;&amp;lt;driver&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;'qemu'&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;'raw'&lt;/span&gt; &lt;span class="na"&gt;cache=&lt;/span&gt;&lt;span class="s"&gt;'none'&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
   &lt;span class="nt"&gt;&amp;lt;source&lt;/span&gt; &lt;span class="na"&gt;dev=&lt;/span&gt;&lt;span class="s"&gt;'/dev/drbd/by-res/vm-ubuntu-amd64-alice'&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
@@ -4816,23 +4815,22 @@ IPs of your MON servers.&lt;/p&gt;
 &lt;p&gt;Finally, start your virtual machine:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;virsh start ubuntu-amd64-alice
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;That's it. Your VM should now boot up and use its RBD image from Ceph
+&lt;p&gt;That’s it. Your VM should now boot up and use its RBD image from Ceph
 instead of its original block-based storage backing device.&lt;/p&gt;
 &lt;hr/&gt;
 &lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Ceph"></category><category term="libvirt"></category></entry><entry><title>Maintenance in active Pacemaker clusters</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/maintenance-active-pacemaker-clusters/" rel="alternate"></link><published>2012-09-24T19:49:31+01:00</published><updated>2012-09-24T19:49:31+01:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-09-24:/resources/hints-and-kinks/maintenance-active-pacemaker-clusters/</id><summary type="html">&lt;p&gt;In a Pacemaker cluster, as in a standalone system, operators must
 complete maintenance tasks such as software upgrades and configuration
-changes. Here's what you need to keep Pacemaker's built-in monitoring
+changes. Here’s what you need to keep Pacemaker’s built-in monitoring
 features from creating unwanted side effects.&lt;/p&gt;
 &lt;h2&gt;Maintenance mode&lt;/h2&gt;
-&lt;p&gt;This is quite possibly Pacemaker's single most useful feature for
-cluster maintenance …&lt;/p&gt;</summary><content type="html">&lt;p&gt;In a Pacemaker cluster, as in a standalone system, operators must
+&lt;p&gt;This is quite possibly Pacemaker’s single most useful feature …&lt;/p&gt;</summary><content type="html">&lt;p&gt;In a Pacemaker cluster, as in a standalone system, operators must
 complete maintenance tasks such as software upgrades and configuration
-changes. Here's what you need to keep Pacemaker's built-in monitoring
+changes. Here’s what you need to keep Pacemaker’s built-in monitoring
 features from creating unwanted side effects.&lt;/p&gt;
 &lt;h2&gt;Maintenance mode&lt;/h2&gt;
-&lt;p&gt;This is quite possibly Pacemaker's single most useful feature for
+&lt;p&gt;This is quite possibly Pacemaker’s single most useful feature for
 cluster maintenance. In maintenance mode, Pacemaker essentially takes
-a "hands-off" approach to your cluster. Enabling Pacemaker maintenance
+a “hands-off” approach to your cluster. Enabling Pacemaker maintenance
 mode is very easy using the Pacemaker &lt;code&gt;crm&lt;/code&gt; shell:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;crm configure property maintenance-mode&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -4845,21 +4843,21 @@ processes originally started as Pacemaker managed cluster resources
 will continue to run.&lt;/p&gt;
 &lt;p&gt;You should know that when you start Pacemaker services on a node while
 the cluster in maintenance mode, Pacemaker will initiate a single
-one-shot monitor operation (a "probe") for every resource just so it
+one-shot monitor operation (a “probe”) for every resource just so it
 has an understanding of what resources are currently running on that
 node. It will, however, take no further action other than determining
-the resources' status.&lt;/p&gt;
+the resources’ status.&lt;/p&gt;
 &lt;p&gt;You disable maintenance mode with the crm shell, as well:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;crm configure property maintenance-mode&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;false&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Maintenance mode is something you enable before running other
-maintenance actions, not when you're already half-way through
-them. And unless you're very well versed in the interdependencies of
-resources running on the cluster you're working on, it's usually the
+maintenance actions, not when you’re already half-way through
+them. And unless you’re very well versed in the interdependencies of
+resources running on the cluster you’re working on, it’s usually the
 very safest option.&lt;/p&gt;
 &lt;p&gt;In short: when doing maintenance on your Pacemaker cluster, by
 default, enable maintenance mode before you start, and disable it
-after you're done.&lt;/p&gt;
+after you’re done.&lt;/p&gt;
 &lt;h2&gt;Disabling monitoring and error recovery on specific resources&lt;/h2&gt;
 &lt;p&gt;For any configuration changes that take no more than a few minutes,
 involving an admin that is potentially watching a console window the
@@ -4878,7 +4876,7 @@ operation:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;meta is-managed=false
 op monitor interval=&amp;lt;interval&amp;gt; enabled=false
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Once you've done that, you'll effectively have enabled something akin
+&lt;p&gt;Once you’ve done that, you’ll effectively have enabled something akin
 to maintenance mode for a single resource. You can reverse this as you
 would expect:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;crm configure edit p_database
@@ -4889,20 +4887,19 @@ would expect:&lt;/p&gt;
 op monitor interval=&amp;lt;interval&amp;gt; enabled=true
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;When using this approach, all other resources will be monitored and
-automatically recovered as they normally would. Thus, you'll have to
+automatically recovered as they normally would. Thus, you’ll have to
 be acutely aware of any side effects your maintenance activities have
-on other resources. If you're unsure, you should use the global
+on other resources. If you’re unsure, you should use the global
 maintenance mode instead.&lt;/p&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Pacemaker"></category></entry><entry><title>Configuring radosgw to behave like Amazon S3</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/configuring-radosgw-behave-amazon-s3/" rel="alternate"></link><published>2012-07-09T08:15:57+01:00</published><updated>2012-07-09T08:15:57+01:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-07-09:/resources/hints-and-kinks/configuring-radosgw-behave-amazon-s3/</id><summary type="html">&lt;p&gt;If you've heard of Ceph, you've surely heard of radosgw, a RESTful
-gateway interface to the RADOS object store. You've probably also
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Pacemaker"></category></entry><entry><title>Configuring radosgw to behave like Amazon S3</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/configuring-radosgw-behave-amazon-s3/" rel="alternate"></link><published>2012-07-09T08:15:57+01:00</published><updated>2012-07-09T08:15:57+01:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-07-09:/resources/hints-and-kinks/configuring-radosgw-behave-amazon-s3/</id><summary type="html">&lt;p&gt;If you’ve heard of Ceph, you’ve surely heard of radosgw, a RESTful
+gateway interface to the RADOS object store. You’ve probably also
 heard that it provides a front-end interface that is compatible with
-Amazon's S3 API.&lt;/p&gt;
-&lt;p&gt;The question remains, if you have an S3 client that always assumes it
-can …&lt;/p&gt;</summary><content type="html">&lt;p&gt;If you've heard of Ceph, you've surely heard of radosgw, a RESTful
-gateway interface to the RADOS object store. You've probably also
+Amazon’s S3 API.&lt;/p&gt;
+&lt;p&gt;The question remains, if you have an S3 client that …&lt;/p&gt;</summary><content type="html">&lt;p&gt;If you’ve heard of Ceph, you’ve surely heard of radosgw, a RESTful
+gateway interface to the RADOS object store. You’ve probably also
 heard that it provides a front-end interface that is compatible with
-Amazon's S3 API.&lt;/p&gt;
+Amazon’s S3 API.&lt;/p&gt;
 &lt;p&gt;The question remains, if you have an S3 client that always assumes it
 can find objects at http://bucket.s3.amazonaws.com, how can you use
 such a client to interact, unmodified, with your radosgw host (or
@@ -4910,7 +4907,7 @@ hosts)?&lt;/p&gt;
 &lt;p&gt;Pulling this off is actually remarkably simple, if you can control
 what nameserver your clients use to resolve DNS names. Which should be
 a given in the private cloud space.&lt;/p&gt;
-&lt;p&gt;First, of course, you'll need an installed and configured Ceph cluster
+&lt;p&gt;First, of course, you’ll need an installed and configured Ceph cluster
 with one or several radosgw nodes. The Ceph documentation is an
 excellent reference for setting up radosgw.&lt;/p&gt;
 &lt;h2&gt;Configuring radosgw to support virtual hosts&lt;/h2&gt;
@@ -4954,9 +4951,9 @@ CNAME record.&lt;/p&gt;
 &lt;p&gt;And then you just configure your client hosts to resolve DNS names via
 that nameserver, and use your preferred client application to interact
 with it.&lt;/p&gt;
-&lt;p&gt;For example, for a user that you've created with radosgw-admin, which
-uses the access key 12345 with a secret of 67890, and Mark Atwood's
-popular &lt;code&gt;Net::Amazon::S3::Tools&lt;/code&gt; toolkit, here's how you can interact
+&lt;p&gt;For example, for a user that you’ve created with radosgw-admin, which
+uses the access key 12345 with a secret of 67890, and Mark Atwood’s
+popular &lt;code&gt;Net::Amazon::S3::Tools&lt;/code&gt; toolkit, here’s how you can interact
 with your RADOS objects:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# export AWS_ACCESS_KEY_ID=12345&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="c1"&gt;# export AWS_ACCESS_KEY_SECRET=67890&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
@@ -4987,25 +4984,25 @@ different host, and then add a second record to your DNS zone:&lt;/p&gt;
 @   IN  A   192.168.122.113
 *   IN  CNAME   @
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Then, as you access more buckets, you'll hit the A records in a
+&lt;p&gt;Then, as you access more buckets, you’ll hit the A records in a
 round-robin fashion, meaning your requests will be balanced across the
 servers. Add as many as you like.&lt;/p&gt;
 &lt;h2&gt;HTTPS support&lt;/h2&gt;
 &lt;p&gt;Obviously, the above steps will not work for HTTPS connections to the
 REST API. And really, making that work would amount to some pretty
 terrible SSL certificate authority and client trust hackery, so just
-don't do it.&lt;/p&gt;
+don’t do it.&lt;/p&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Ceph"></category></entry><entry><title>Fencing in VMware virtualized Pacemaker nodes</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/fencing-vmware-virtualized-pacemaker-nodes/" rel="alternate"></link><published>2012-05-18T09:43:28+01:00</published><updated>2012-05-18T09:43:28+01:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-05-18:/resources/hints-and-kinks/fencing-vmware-virtualized-pacemaker-nodes/</id><summary type="html">&lt;p&gt;For users of VMware virtualization, it's becoming increasingly common
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Ceph"></category></entry><entry><title>Fencing in VMware virtualized Pacemaker nodes</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/fencing-vmware-virtualized-pacemaker-nodes/" rel="alternate"></link><published>2012-05-18T09:43:28+01:00</published><updated>2012-05-18T09:43:28+01:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-05-18:/resources/hints-and-kinks/fencing-vmware-virtualized-pacemaker-nodes/</id><summary type="html">&lt;p&gt;For users of VMware virtualization, it’s becoming increasingly common
 to deploy Pacemaker clusters within the virtual infrastructure. Doing
 this requires that you set up fencing via ESX Server or, more
-commonly, vCenter. Here's how to do that.&lt;/p&gt;
-&lt;p&gt;The &lt;code&gt;cluster-glue&lt;/code&gt; package contains node Pacemaker's fencing (STONITH)
-plugins, one of which is …&lt;/p&gt;</summary><content type="html">&lt;p&gt;For users of VMware virtualization, it's becoming increasingly common
+commonly, vCenter. Here’s how to do that.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;cluster-glue&lt;/code&gt; package contains node Pacemaker’s fencing (STONITH)
+plugins, one …&lt;/p&gt;</summary><content type="html">&lt;p&gt;For users of VMware virtualization, it’s becoming increasingly common
 to deploy Pacemaker clusters within the virtual infrastructure. Doing
 this requires that you set up fencing via ESX Server or, more
-commonly, vCenter. Here's how to do that.&lt;/p&gt;
-&lt;p&gt;The &lt;code&gt;cluster-glue&lt;/code&gt; package contains node Pacemaker's fencing (STONITH)
+commonly, vCenter. Here’s how to do that.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;cluster-glue&lt;/code&gt; package contains node Pacemaker’s fencing (STONITH)
 plugins, one of which is the &lt;code&gt;external/vcenter&lt;/code&gt; plugin. It enables
 Pacemaker to interface with an ESX Server host or vCenter server. When
 a Pacemaker node needs to be fenced, the fencing node contacts the
@@ -5039,7 +5036,7 @@ utility that comes bundled with the SDK:&lt;/p&gt;
 directory. Copy this file into a location where Pacemaker can find it,
 say &lt;code&gt;/etc/vicredentials.xml&lt;/code&gt;, and make sure it gets 0600
 permissions. Also, remember to copy it to all your cluster nodes. Once
-your credentials are properly set up, you can test the STONITH agent's
+your credentials are properly set up, you can test the STONITH agent’s
 functionality by invoking it directly, like so:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;  &lt;span class="nv"&gt;VI_SERVER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&amp;lt;vCenter server IP or hostname&amp;gt; &lt;span class="se"&gt;\&lt;/span&gt;
   &lt;span class="nv"&gt;VI_CREDSTORE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/etc/vicredentials.xml &lt;span class="se"&gt;\&lt;/span&gt;
@@ -5081,26 +5078,26 @@ corosync&lt;/code&gt;.&lt;/p&gt;
 plugin in the first place, and for providing an excellent and
 straightforward README file for it.&lt;/p&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Pacemaker"></category></entry><entry><title>Mandatory and advisory ordering in Pacemaker</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/mandatory-and-advisory-ordering-pacemaker/" rel="alternate"></link><published>2012-03-22T15:02:14+01:00</published><updated>2012-03-22T15:02:14+01:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-03-22:/resources/hints-and-kinks/mandatory-and-advisory-ordering-pacemaker/</id><summary type="html">&lt;p&gt;Ever wonder what's the difference between &lt;code&gt;order &amp;lt;name&amp;gt; inf:
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Pacemaker"></category></entry><entry><title>Mandatory and advisory ordering in Pacemaker</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/mandatory-and-advisory-ordering-pacemaker/" rel="alternate"></link><published>2012-03-22T15:02:14+01:00</published><updated>2012-03-22T15:02:14+01:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-03-22:/resources/hints-and-kinks/mandatory-and-advisory-ordering-pacemaker/</id><summary type="html">&lt;p&gt;Ever wonder what’s the difference between &lt;code&gt;order &amp;lt;name&amp;gt; inf:
 &amp;lt;first-resource&amp;gt; &amp;lt;second-resource&amp;gt;&lt;/code&gt; and a score of something other
-than &lt;code&gt;inf&lt;/code&gt;? We'll explain.&lt;/p&gt;
+than &lt;code&gt;inf&lt;/code&gt;? We’ll explain.&lt;/p&gt;
 &lt;p&gt;If you specify an order constraint score of &lt;code&gt;INFINITY&lt;/code&gt; (&lt;code&gt;inf&lt;/code&gt; or the
 keyword &lt;code&gt;mandatory&lt;/code&gt; in crm shell syntax), then the order constraint is
-considered mandatory. If you specify &lt;code&gt;0 …&lt;/code&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ever wonder what's the difference between &lt;code&gt;order &amp;lt;name&amp;gt; inf:
+considered mandatory. If you …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ever wonder what’s the difference between &lt;code&gt;order &amp;lt;name&amp;gt; inf:
 &amp;lt;first-resource&amp;gt; &amp;lt;second-resource&amp;gt;&lt;/code&gt; and a score of something other
-than &lt;code&gt;inf&lt;/code&gt;? We'll explain.&lt;/p&gt;
+than &lt;code&gt;inf&lt;/code&gt;? We’ll explain.&lt;/p&gt;
 &lt;p&gt;If you specify an order constraint score of &lt;code&gt;INFINITY&lt;/code&gt; (&lt;code&gt;inf&lt;/code&gt; or the
 keyword &lt;code&gt;mandatory&lt;/code&gt; in crm shell syntax), then the order constraint is
 considered mandatory. If you specify &lt;code&gt;0&lt;/code&gt;, or the keyword &lt;code&gt;advisory&lt;/code&gt;
-then it's advisory. What does that mean?&lt;/p&gt;
+then it’s advisory. What does that mean?&lt;/p&gt;
 &lt;p&gt;Firstly, anytime two resources are started in the same cluster
-transition, order constraints do apply regardless of whether they're
+transition, order constraints do apply regardless of whether they’re
 mandatory or advisory. So for the two constraints shown here:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;order o_foo_before_bar inf: foo bar
 order o_foo_before_bar 0: foo bar
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;... if &lt;code&gt;foo&lt;/code&gt; and &lt;code&gt;bar&lt;/code&gt; are just starting, &lt;code&gt;foo&lt;/code&gt; starts first, and
-&lt;code&gt;bar&lt;/code&gt; starts only when &lt;code&gt;foo&lt;/code&gt;'s start operation is completed. So what's
+&lt;p&gt;… if &lt;code&gt;foo&lt;/code&gt; and &lt;code&gt;bar&lt;/code&gt; are just starting, &lt;code&gt;foo&lt;/code&gt; starts first, and
+&lt;code&gt;bar&lt;/code&gt; starts only when &lt;code&gt;foo&lt;/code&gt;‘s start operation is completed. So what’s
 the difference, really?&lt;/p&gt;
 &lt;h2&gt;Mandatory ordering&lt;/h2&gt;
 &lt;p&gt;In a &lt;strong&gt;mandatory&lt;/strong&gt; order constraint, the order is enforced under all
@@ -5112,7 +5109,7 @@ omitted to keep this short):&lt;/p&gt;
 &lt;code&gt;bar&lt;/code&gt; must also stop. So the sequence of events is:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;foo&lt;/code&gt; fails&lt;/li&gt;
-&lt;li&gt;Pacemaker attempts to stop &lt;code&gt;foo&lt;/code&gt; again (to make sure it's cleaned
+&lt;li&gt;Pacemaker attempts to stop &lt;code&gt;foo&lt;/code&gt; again (to make sure it’s cleaned
    up).&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;bar&lt;/code&gt; stops.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;foo&lt;/code&gt; starts&lt;/li&gt;
@@ -5121,19 +5118,19 @@ omitted to keep this short):&lt;/p&gt;
 &lt;p&gt;If &lt;code&gt;foo&lt;/code&gt; fails to start back up, then &lt;code&gt;bar&lt;/code&gt; will remain stopped. Based
 on the start-failure-is-fatal and migration-threshold settings both
 resources can now potentially migrate to other nodes, but if &lt;code&gt;foo&lt;/code&gt;
-can't be started anywhere, &lt;code&gt;bar&lt;/code&gt; also remains stopped.&lt;/p&gt;
+can’t be started anywhere, &lt;code&gt;bar&lt;/code&gt; also remains stopped.&lt;/p&gt;
 &lt;h2&gt;Advisory ordering&lt;/h2&gt;
 &lt;p&gt;In an &lt;strong&gt;advisory&lt;/strong&gt; order constraint, the order is enforced only if
-both resources start in the same transition. Otherwise, it's
+both resources start in the same transition. Otherwise, it’s
 ignored. Consider the following example (primitive definitions again
 omitted):&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;order o_foo_before_bar 0: foo bar
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Again, suppose &lt;code&gt;foo&lt;/code&gt; fails. &lt;code&gt;foo&lt;/code&gt; must be recovered, but now &lt;code&gt;bar&lt;/code&gt; can
-keep running as it's not being started in the same transition. Thus:&lt;/p&gt;
+keep running as it’s not being started in the same transition. Thus:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;foo&lt;/code&gt; fails&lt;/li&gt;
-&lt;li&gt;Pacemaker attempts to stop &lt;code&gt;foo&lt;/code&gt; again (to make sure it's cleaned
+&lt;li&gt;Pacemaker attempts to stop &lt;code&gt;foo&lt;/code&gt; again (to make sure it’s cleaned
    up).&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;foo&lt;/code&gt; starts&lt;/li&gt;
 &lt;/ol&gt;
@@ -5145,30 +5142,30 @@ migrate to other nodes.&lt;/p&gt;
 &lt;h2&gt;So when do I use which?&lt;/h2&gt;
 &lt;p&gt;Advisory ordering is good for when your dependent resource can recover
 from a brief interruption in the resource it depends on. For example,
-you'll want to fire up your libvirt daemon before you start your
+you’ll want to fire up your libvirt daemon before you start your
 Pacemaker-managed virtual machines, but if libvirtd were ever to crash
 you can restart it without needing to restart VMs.&lt;/p&gt;
 &lt;p&gt;Mandatory ordering is for stricter dependencies. Filesystems mounted
 from an iSCSI device will probably want to be remounted if the iSCSI
-initator has reported an error. Likewise, you'll probably also want to
+initator has reported an error. Likewise, you’ll probably also want to
 restart the applications working with that filesystem.&lt;/p&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Pacemaker"></category></entry><entry><title>Managing cron jobs with Pacemaker</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/managing-cron-jobs-pacemaker/" rel="alternate"></link><published>2012-03-19T16:42:40+01:00</published><updated>2012-03-19T16:42:40+01:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-03-19:/resources/hints-and-kinks/managing-cron-jobs-pacemaker/</id><summary type="html">&lt;p&gt;It's not uncommon in Pacemaker clusters to run specific cron jobs only
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Pacemaker"></category></entry><entry><title>Managing cron jobs with Pacemaker</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/managing-cron-jobs-pacemaker/" rel="alternate"></link><published>2012-03-19T16:42:40+01:00</published><updated>2012-03-19T16:42:40+01:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-03-19:/resources/hints-and-kinks/managing-cron-jobs-pacemaker/</id><summary type="html">&lt;p&gt;It’s not uncommon in Pacemaker clusters to run specific cron jobs only
 on a node that currently runs a particular resource. The
 &lt;code&gt;ocf:heartbeat:symlink&lt;/code&gt; resource agent can be exceptionally helpful in
-this situation. Here's how to use it.&lt;/p&gt;
-&lt;p&gt;Suppose you've got a cron job for Postfix whose definition normally …&lt;/p&gt;</summary><content type="html">&lt;p&gt;It's not uncommon in Pacemaker clusters to run specific cron jobs only
+this situation. Here’s how to use it.&lt;/p&gt;
+&lt;p&gt;Suppose you’ve got a cron job for Postfix …&lt;/p&gt;</summary><content type="html">&lt;p&gt;It’s not uncommon in Pacemaker clusters to run specific cron jobs only
 on a node that currently runs a particular resource. The
 &lt;code&gt;ocf:heartbeat:symlink&lt;/code&gt; resource agent can be exceptionally helpful in
-this situation. Here's how to use it.&lt;/p&gt;
-&lt;p&gt;Suppose you've got a cron job for Postfix whose definition normally
+this situation. Here’s how to use it.&lt;/p&gt;
+&lt;p&gt;Suppose you’ve got a cron job for Postfix whose definition normally
 lives in &lt;code&gt;/etc/cron.d/postfix&lt;/code&gt;. All your Postfix related data is in a
 mountpoint &lt;code&gt;/srv/postfix&lt;/code&gt; (that filesystem could live on iSCSI, or DRBD,
-or it could be a GlusterFS mount – that's irrelevant for the purposes
-of this discussion). And as such, you've moved your cron definition to
+or it could be a GlusterFS mount – that’s irrelevant for the purposes
+of this discussion). And as such, you’ve moved your cron definition to
 &lt;code&gt;/srv/postfix/cron&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Now you want that cron job to execute only on the node that also is
-currently the active Postfix host. That's not hard at all:&lt;/p&gt;
+currently the active Postfix host. That’s not hard at all:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;primitive p_postfix ocf:heartbeat:postfix \
   params config_dir="/etc/postfix" \
   op monitor interval="10"
@@ -5197,7 +5194,7 @@ colocation c_symlink_on_postfix inf: p_symlink p_postfix
   &lt;code&gt;/srv/postfix/cron&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Restart &lt;code&gt;cron&lt;/code&gt; when it's done.&lt;/p&gt;
+&lt;p&gt;Restart &lt;code&gt;cron&lt;/code&gt; when it’s done.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The &lt;code&gt;c_symlink_on_postfix&lt;/code&gt; colocation ensures that all of this happens
@@ -5206,25 +5203,25 @@ on the node where the &lt;code&gt;p_postfix&lt;/code&gt; resource is also active
 &lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Pacemaker"></category></entry><entry><title>What's a Totem "Retransmit List" all about in Corosync?</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/whats-totem-retransmit-list-all-about-corosync/" rel="alternate"></link><published>2012-03-15T09:11:34+01:00</published><updated>2012-03-15T09:11:34+01:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-03-15:/resources/hints-and-kinks/whats-totem-retransmit-list-all-about-corosync/</id><summary type="html">&lt;p&gt;Occasionally, you may see errors similar to this in your system logs:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;corosync [TOTEM ] Retransmit List: e4 e5 e7 e8 ea eb ed ee
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Here's what causes them, and what you can do to fix the issue.&lt;/p&gt;
+&lt;p&gt;Here’s what causes them, and what you can do to fix the issue.&lt;/p&gt;
 &lt;p&gt;Corosync, more specifically its Totem protocol implementation, defines
-a maximum number of cluster …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Occasionally, you may see errors similar to this in your system logs:&lt;/p&gt;
+a maximum number of …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Occasionally, you may see errors similar to this in your system logs:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;corosync [TOTEM ] Retransmit List: e4 e5 e7 e8 ea eb ed ee
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Here's what causes them, and what you can do to fix the issue.&lt;/p&gt;
+&lt;p&gt;Here’s what causes them, and what you can do to fix the issue.&lt;/p&gt;
 &lt;p&gt;Corosync, more specifically its Totem protocol implementation, defines
 a maximum number of cluster messages that can be sent during one token
 rotation. By default, that number is 50, but you may modify this value
 by setting the &lt;code&gt;window_size&lt;/code&gt; parameter in your &lt;code&gt;corosync.conf&lt;/code&gt;
 configuration file.&lt;/p&gt;
-&lt;p&gt;When among several fast cluster nodes ("processors" in Totem speak)
-there are one or few slow ones, the kernel receive buffers can't cope,
+&lt;p&gt;When among several fast cluster nodes (“processors” in Totem speak)
+there are one or few slow ones, the kernel receive buffers can’t cope,
 messages get lost, and they then need to be retransmitted. This is
 what causes the Retransmit List notifications in the syslogs. This
-doesn't mean you're losing any messages or data. But it does mean that
+doesn’t mean you’re losing any messages or data. But it does mean that
 your cluster performance degrades when this happens, and thus you
 should really fix that problem.&lt;/p&gt;
-&lt;p&gt;There are a few considerations that apply to tuning Corosync's
+&lt;p&gt;There are a few considerations that apply to tuning Corosync’s
 &lt;code&gt;window_size&lt;/code&gt;:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -5235,13 +5232,13 @@ should really fix that problem.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;If your cluster is rather heterogeneous, then you should probably
-  stick with the default of 50. Definitely don't go higher than
+  stick with the default of 50. Definitely don’t go higher than
   256000/MTU, where MTU is that of the network interface(s) Corosync
   communicates over. For a standard Ethernet interface the default MTU
   is 1500, which would make for a maximum &lt;code&gt;window_size&lt;/code&gt; of 170.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;If you're running on the generally safe default of 50, and you're
+&lt;p&gt;If you’re running on the generally safe default of 50, and you’re
   still getting Retransmit List notifications, then one of your nodes
   is most likely significantly slower than the others, and you had
   better find the cause of that and fix it. The node could be under
@@ -5251,12 +5248,12 @@ should really fix that problem.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;hr/&gt;
 &lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Corosync"></category></entry><entry><title>Finding out which OSDs currently store a specific RADOS object</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/which-osd-stores-specific-rados-object/" rel="alternate"></link><published>2012-03-09T22:55:06+01:00</published><updated>2012-03-09T22:55:06+01:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-03-09:/resources/hints-and-kinks/which-osd-stores-specific-rados-object/</id><summary type="html">&lt;p&gt;Ever wanted to know just which of your OSDs a RADOS object is
-currently stored in? Here's how.&lt;/p&gt;
-&lt;p&gt;Suppose you've got an RBD device, named &lt;code&gt;test&lt;/code&gt;. Then you can use the
+currently stored in? Here’s how.&lt;/p&gt;
+&lt;p&gt;Suppose you’ve got an RBD device, named &lt;code&gt;test&lt;/code&gt;. Then you can use the
 &lt;code&gt;rbd info&lt;/code&gt; command to display which name prefix is used by the RADOS
-objects that make up the RBD …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ever wanted to know just which of your OSDs a RADOS object is
-currently stored in? Here's how.&lt;/p&gt;
-&lt;p&gt;Suppose you've got an RBD device, named &lt;code&gt;test&lt;/code&gt;. Then you can use the
+objects that make up …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ever wanted to know just which of your OSDs a RADOS object is
+currently stored in? Here’s how.&lt;/p&gt;
+&lt;p&gt;Suppose you’ve got an RBD device, named &lt;code&gt;test&lt;/code&gt;. Then you can use the
 &lt;code&gt;rbd info&lt;/code&gt; command to display which name prefix is used by the RADOS
 objects that make up the RBD:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ceph04:~ # rbd info test
@@ -5266,8 +5263,8 @@ rbd image 'test':
     block_name_prefix: rb.0.0
     parent:  (pool -1)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;In this example, the prefix we're looking for is &lt;code&gt;rb.0.0&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;What's the RBD currently made of?&lt;/p&gt;
+&lt;p&gt;In this example, the prefix we’re looking for is &lt;code&gt;rb.0.0&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;What’s the RBD currently made of?&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ceph04:~ # rados -p rbd ls | grep "^rb.0.0."
 rb.0.0.000000000000
 rb.0.0.000000000020
@@ -5293,7 +5290,7 @@ rb.0.0.0000000000e0
 rb.0.0.0000000000e7
 rb.0.0.0000000000ff
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Now suppose you're interested in where &lt;code&gt;rb.0.0.0000000000a5&lt;/code&gt; is.&lt;/p&gt;
+&lt;p&gt;Now suppose you’re interested in where &lt;code&gt;rb.0.0.0000000000a5&lt;/code&gt; is.&lt;/p&gt;
 &lt;p&gt;You first grab an OSD map:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;ceph04&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;~&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# ceph osd getmap -o /tmp/osdmap&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="mi"&gt;2012&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;03&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;09&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;21&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;31&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mf"&gt;47.055376&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;mon&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;osd&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;getmap&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
@@ -5306,9 +5303,9 @@ mapfile:&lt;/p&gt;
 &lt;span class="n"&gt;osdmaptool&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;osdmap&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;file&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'/tmp/osdmap'&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;object&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'rb.0.0.0000000000a5'&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;0.7&lt;/span&gt;&lt;span class="n"&gt;ea1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;... meaning the object lives in Placement Group &lt;code&gt;0.7ea1&lt;/code&gt;, of which
+&lt;p&gt;… meaning the object lives in Placement Group &lt;code&gt;0.7ea1&lt;/code&gt;, of which
 replicas currently exist in OSDs 2 and 0.&lt;/p&gt;
-&lt;p&gt;Why do you want to know this? Normally, really, you don't. All the
+&lt;p&gt;Why do you want to know this? Normally, really, you don’t. All the
 replication and distribution happens under the covers without your
 intervention. But you can use this rather neatly if you want to watch
 your data being redistributed as you take out OSDs temporarily, and
@@ -5324,15 +5321,15 @@ network is disconnected and fencing policy is set to &lt;code&gt;dont-care&lt;/c
 (default), there is the potential risk of a split-brain. Even with
 resource level fencing or STONITH setup, there are corner cases that
 will end up in a split-brain.&lt;/p&gt;
-&lt;p&gt;When your DRBD resource is in a split-brain situation, don't panic!
+&lt;p&gt;When your DRBD resource is in a split-brain situation, don’t panic!
 Split-brain means that the contents of the backing devices of your
 DRBD resource on both sides of your cluster started to diverge. At
 some point in time, the DRBD resource on both nodes went into the
 Primary role while the cluster nodes themselves were disconnected from
 each other.&lt;/p&gt;
 &lt;p&gt;Different writes happened to both sides of your cluster
-afterwards. After reconnecting, DRBD doesn't know which set of data is
-"right" and which is "wrong".&lt;/p&gt;
+afterwards. After reconnecting, DRBD doesn’t know which set of data is
+“right” and which is “wrong”.&lt;/p&gt;
 &lt;h2&gt;Indications of a Split-Brain&lt;/h2&gt;
 &lt;p&gt;The symptoms of a split-brain are that the peers will not reconnect on
 DRBD startup but stay in connection state StandAlone or
@@ -5345,7 +5342,7 @@ kernel logs you will see messages like:&lt;/p&gt;
 &lt;h3&gt;Step 1&lt;/h3&gt;
 &lt;p&gt;Manually choose a node which data modifications will be discarded.&lt;/p&gt;
 &lt;p&gt;We call it the split brain victim. Choose wisely, all modifications
-will be lost! When in doubt run a backup of the victim's data before
+will be lost! When in doubt run a backup of the victim’s data before
 you continue.&lt;/p&gt;
 &lt;p&gt;When running a Pacemaker cluster, you can enable maintenance mode. If
 the split brain victim is in Primary role, bring down all applications
@@ -5353,7 +5350,7 @@ using this resource. Now switch the victim to Secondary role:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;victim# drbdadm secondary resource
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;Step 2&lt;/h3&gt;
-&lt;p&gt;Disconnect the resource if it's in connection state &lt;code&gt;WFConnection&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;Disconnect the resource if it’s in connection state &lt;code&gt;WFConnection&lt;/code&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;victim&lt;/span&gt;#&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;drbdadm&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;disconnect&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;resource&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;Step 3&lt;/h3&gt;
@@ -5372,7 +5369,7 @@ using this resource. Now switch the victim to Secondary role:&lt;/p&gt;
 &lt;p&gt;At the latest now the resynchronization from the survivor
 (&lt;code&gt;SyncSource&lt;/code&gt;) to the victim (&lt;code&gt;SyncTarget&lt;/code&gt;) starts immediately. There
 is no full sync initiated but all modifications on the victim will be
-overwritten by the survivor's data and modifications on the survivor
+overwritten by the survivor’s data and modifications on the survivor
 will be applied to the victim.&lt;/p&gt;
 &lt;h2&gt;Background: What happens?&lt;/h2&gt;
 &lt;p&gt;With the default after-split-brain policies of disconnect this will
@@ -5388,14 +5385,14 @@ can occur.&lt;/p&gt;
 protocol handshake which also includes exchanging of the Generation
 Identifiers (GIs).&lt;/p&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="DRBD"></category></entry><entry><title>Checking Corosync cluster membership</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/checking-corosync-cluster-membership/" rel="alternate"></link><published>2012-03-04T23:42:35+01:00</published><updated>2012-03-04T23:42:35+01:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-03-04:/resources/hints-and-kinks/checking-corosync-cluster-membership/</id><summary type="html">&lt;p&gt;It's simple and easy to get Pacemaker's view of the status of members
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="DRBD"></category></entry><entry><title>Checking Corosync cluster membership</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/checking-corosync-cluster-membership/" rel="alternate"></link><published>2012-03-04T23:42:35+01:00</published><updated>2012-03-04T23:42:35+01:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-03-04:/resources/hints-and-kinks/checking-corosync-cluster-membership/</id><summary type="html">&lt;p&gt;It’s simple and easy to get Pacemaker’s view of the status of members
 in a cluster – just invoke &lt;code&gt;crm_mon&lt;/code&gt;. But what if you want to check on
 the cluster membership when Pacemaker is not running, or you want to
-make sure whether Corosync's view of the cluster is identical to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;It's simple and easy to get Pacemaker's view of the status of members
+make sure whether Corosync’s view of the cluster …&lt;/p&gt;</summary><content type="html">&lt;p&gt;It’s simple and easy to get Pacemaker’s view of the status of members
 in a cluster – just invoke &lt;code&gt;crm_mon&lt;/code&gt;. But what if you want to check on
 the cluster membership when Pacemaker is not running, or you want to
-make sure whether Corosync's view of the cluster is identical to
-Pacemaker's? Here's how.&lt;/p&gt;
+make sure whether Corosync’s view of the cluster is identical to
+Pacemaker’s? Here’s how.&lt;/p&gt;
 &lt;h2&gt;Checking ring status with &lt;code&gt;corosync-cfgtool&lt;/code&gt;&lt;/h2&gt;
 &lt;p&gt;The &lt;code&gt;corosync-cfgtool&lt;/code&gt; utility displays the cluster connectivity status
 when invoked with the &lt;code&gt;-s&lt;/code&gt; flag:&lt;/p&gt;
@@ -5412,15 +5409,15 @@ when invoked with the &lt;code&gt;-s&lt;/code&gt; flag:&lt;/p&gt;
 &lt;p&gt;The above is the status of two healthy rings; a failed ring (one
 affected by a network interruption, for example) would show a &lt;code&gt;FAULTY&lt;/code&gt;
 status.&lt;/p&gt;
-&lt;p&gt;There's a catch. In a two-node cluster, if both nodes were to start
+&lt;p&gt;There’s a catch. In a two-node cluster, if both nodes were to start
 while all cluster communication links are down, then Corosync would
 form &lt;em&gt;two&lt;/em&gt; memberships with healthy, one-member rings. Both of the
 nodes would show a ring status similar to the above, but your cluster
-still wouldn't be communicating. So, you can't rely on
-&lt;code&gt;corosync-cfgtool -s&lt;/code&gt; alone. You must also check Corosync's member
+still wouldn’t be communicating. So, you can’t rely on
+&lt;code&gt;corosync-cfgtool -s&lt;/code&gt; alone. You must also check Corosync’s member
 list.&lt;/p&gt;
 &lt;h2&gt;Querying the member list with &lt;code&gt;corosync-cmapctl&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;We can examine Corosync's cluster member list with the &lt;code&gt;corosync-cmapctl&lt;/code&gt; command:&lt;/p&gt;
+&lt;p&gt;We can examine Corosync’s cluster member list with the &lt;code&gt;corosync-cmapctl&lt;/code&gt; command:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;# corosync-cmapctl | grep member
 runtime.totem.pg.mrp.srp.members.303938909.ip=r(0) ip(10.0.1.1) r(1) ip(192.168.42.1) 
 runtime.totem.pg.mrp.srp.members.303938909.join_count=1
@@ -5438,12 +5435,12 @@ cluster.&lt;/p&gt;
 syntax for querying the member list was identical.&lt;/p&gt;
 &lt;hr/&gt;
 &lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Corosync"></category></entry><entry><title>Fencing in Libvirt/KVM virtualized cluster nodes</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/fencing-libvirtkvm-virtualized-cluster-nodes/" rel="alternate"></link><published>2012-02-29T13:56:42+01:00</published><updated>2012-02-29T13:56:42+01:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-02-29:/resources/hints-and-kinks/fencing-libvirtkvm-virtualized-cluster-nodes/</id><summary type="html">&lt;p&gt;Often, people deploy the Pacemaker stack in virtual environments for
-purposes of testing and evaluation. In such environments, it's easy to
-test Pacemaker's fencing capabilities by tying in with the hypervisor.&lt;/p&gt;
+purposes of testing and evaluation. In such environments, it’s easy to
+test Pacemaker’s fencing capabilities by tying in with the hypervisor.&lt;/p&gt;
 &lt;p&gt;This quick howto illustrates how to configure fencing for two virtual
-cluster nodes hosted on a libvirt/KVM hypervisor …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Often, people deploy the Pacemaker stack in virtual environments for
-purposes of testing and evaluation. In such environments, it's easy to
-test Pacemaker's fencing capabilities by tying in with the hypervisor.&lt;/p&gt;
+cluster nodes hosted on a libvirt …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Often, people deploy the Pacemaker stack in virtual environments for
+purposes of testing and evaluation. In such environments, it’s easy to
+test Pacemaker’s fencing capabilities by tying in with the hypervisor.&lt;/p&gt;
 &lt;p&gt;This quick howto illustrates how to configure fencing for two virtual
 cluster nodes hosted on a libvirt/KVM hypervisor host.&lt;/p&gt;
 &lt;h2&gt;libvirt configuration (hypervisor)&lt;/h2&gt;
@@ -5454,7 +5451,7 @@ unencrypted TCP port. Needless to say, for production use you should
 only use TLS, but for testing and evaluation – and for that purpose
 only – TCP is fine.&lt;/p&gt;
 &lt;p&gt;In order for your hypervisor to listen on an unauthenticated,
-insecure, unencrypted network socket (did we mention that's unsuitable
+insecure, unencrypted network socket (did we mention that’s unsuitable
 for production?), add the following lines to your libvirtd
 configuration file:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="na"&gt;listen_tls&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;0&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
@@ -5464,27 +5461,27 @@ configuration file:&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;You can also set the &lt;code&gt;listen_addr&lt;/code&gt; parameter, for example to have
 libvirtd listen only on the network that your virtual machines run
-in. If you don't set listen_addr, libvirtd will simply listen on the
+in. If you don’t set listen_addr, libvirtd will simply listen on the
 wildcard address.&lt;/p&gt;
-&lt;p&gt;You'll also have to add the &lt;code&gt;-l&lt;/code&gt; or &lt;code&gt;--listen&lt;/code&gt; flag to your libvirtd
+&lt;p&gt;You’ll also have to add the &lt;code&gt;-l&lt;/code&gt; or &lt;code&gt;--listen&lt;/code&gt; flag to your libvirtd
 invocation. On Debian/Ubuntu platforms, you can do so by editing the
 &lt;code&gt;/etc/default/libvirt-bin&lt;/code&gt; configuration file.&lt;/p&gt;
-&lt;p&gt;Once you've done that, you can use &lt;code&gt;netstat -ltp&lt;/code&gt; to check whether
+&lt;p&gt;Once you’ve done that, you can use &lt;code&gt;netstat -ltp&lt;/code&gt; to check whether
 libvirtd is in fact listening on its configured port, 16509/tcp. Also,
-make sure that you don't have a firewall blocking that port.&lt;/p&gt;
+make sure that you don’t have a firewall blocking that port.&lt;/p&gt;
 &lt;h2&gt;libvirt configuration (virtual machines)&lt;/h2&gt;
-&lt;p&gt;Inside your virtual machines, you'll also have to install the libvirt
+&lt;p&gt;Inside your virtual machines, you’ll also have to install the libvirt
 client binaries – the fencing mechanism uses the virsh utility under
 the covers. Some platforms provide a &lt;code&gt;libvirt-client&lt;/code&gt; package for that
-purpose; for other's, you'll simply have to install the full &lt;code&gt;libvirt&lt;/code&gt;
+purpose; for other’s, you’ll simply have to install the full &lt;code&gt;libvirt&lt;/code&gt;
 package.&lt;/p&gt;
 &lt;p&gt;Once that is set up, you should be able to run this command from
 inside your virtual machines:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;virsh --connect&lt;span class="o"&gt;=&lt;/span&gt;qemu+tcp://&amp;lt;IP of your hypervisor&amp;gt;/system &lt;span class="se"&gt;\&lt;/span&gt;
   list --all
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;... and that command should list all the domains running on that host,
-including the one you're connecting from.&lt;/p&gt;
+&lt;p&gt;… and that command should list all the domains running on that host,
+including the one you’re connecting from.&lt;/p&gt;
 &lt;h2&gt;Pacemaker configuration&lt;/h2&gt;
 &lt;p&gt;In one of your virtual machines, you can now set up your fencing
 configuration.&lt;/p&gt;
@@ -5551,13 +5548,13 @@ location l_dummy2_likes_best_connectivity p_dummy2 \
 the Pacemaker GFS control daemon, and a GFS2 filesystem itself.&lt;/p&gt;
 &lt;h2&gt;Prerequisites&lt;/h2&gt;
 &lt;p&gt;GFS2 with Pacemaker integration is supported on Debian
-(&lt;code&gt;squeeze-backports&lt;/code&gt; and up) and Ubuntu (10.04 LTS and up). You'll need
+(&lt;code&gt;squeeze-backports&lt;/code&gt; and up) and Ubuntu (10.04 LTS and up). You’ll need
 the &lt;code&gt;dlm-pcmk&lt;/code&gt;, &lt;code&gt;gfs2-tools&lt;/code&gt;, and &lt;code&gt;gfs-pcmk&lt;/code&gt; packages.&lt;/p&gt;
-&lt;p&gt;Fencing is imperative …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Setting up GFS2 in Pacemaker requires configuring the Pacemaker DLM,
+&lt;p&gt;Fencing is …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Setting up GFS2 in Pacemaker requires configuring the Pacemaker DLM,
 the Pacemaker GFS control daemon, and a GFS2 filesystem itself.&lt;/p&gt;
 &lt;h2&gt;Prerequisites&lt;/h2&gt;
 &lt;p&gt;GFS2 with Pacemaker integration is supported on Debian
-(&lt;code&gt;squeeze-backports&lt;/code&gt; and up) and Ubuntu (10.04 LTS and up). You'll need
+(&lt;code&gt;squeeze-backports&lt;/code&gt; and up) and Ubuntu (10.04 LTS and up). You’ll need
 the &lt;code&gt;dlm-pcmk&lt;/code&gt;, &lt;code&gt;gfs2-tools&lt;/code&gt;, and &lt;code&gt;gfs-pcmk&lt;/code&gt; packages.&lt;/p&gt;
 &lt;p&gt;Fencing is imperative. Get a proper fencing/STONITH configuration set
 up and test it thoroughly.&lt;/p&gt;
@@ -5584,20 +5581,20 @@ group g_gfs2 p_dlm_controld p_gfs_controld p_fs_gfs2
 clone cl_gfs2 g_gfs2 \
   meta interleave="true"
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Then when that's done, your filesystem should happily mount on all nodes.&lt;/p&gt;
+&lt;p&gt;Then when that’s done, your filesystem should happily mount on all nodes.&lt;/p&gt;
 &lt;hr/&gt;
 &lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Pacemaker"></category></entry><entry><title>Interleaving in Pacemaker clones</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/interleaving-pacemaker-clones/" rel="alternate"></link><published>2012-02-26T20:34:08+01:00</published><updated>2012-02-26T20:34:08+01:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-02-26:/resources/hints-and-kinks/interleaving-pacemaker-clones/</id><summary type="html">&lt;p&gt;Ever wonder what &lt;code&gt;meta interleave&lt;/code&gt; really means in a Pacemaker clone
-definition? We'll explain.&lt;/p&gt;
+definition? We’ll explain.&lt;/p&gt;
 &lt;p&gt;The &lt;code&gt;interleave&lt;/code&gt; meta attribute is only valid on Pacemaker clone
 definitions – and their extended version of sorts, master/slave
-sets. It's not available on primitives and groups. Clones are often
-used in configurations involving cluster filesystems …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ever wonder what &lt;code&gt;meta interleave&lt;/code&gt; really means in a Pacemaker clone
-definition? We'll explain.&lt;/p&gt;
+sets. It’s not available on primitives and groups. Clones are often
+used in configurations involving …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ever wonder what &lt;code&gt;meta interleave&lt;/code&gt; really means in a Pacemaker clone
+definition? We’ll explain.&lt;/p&gt;
 &lt;p&gt;The &lt;code&gt;interleave&lt;/code&gt; meta attribute is only valid on Pacemaker clone
 definitions – and their extended version of sorts, master/slave
-sets. It's not available on primitives and groups. Clones are often
+sets. It’s not available on primitives and groups. Clones are often
 used in configurations involving cluster filesystems, such as GFS2
-(&lt;a href="https://xahteiwi.eu/resources/hints-and-kinks/gfs2-pacemaker-debianubuntu/"&gt;here's an example&lt;/a&gt;).&lt;/p&gt;
+(&lt;a href="https://xahteiwi.eu/resources/hints-and-kinks/gfs2-pacemaker-debianubuntu/"&gt;here’s an example&lt;/a&gt;).&lt;/p&gt;
 &lt;p&gt;Consider the following example (primitive definitions omitted to keep
 this short):&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;clone cl_foo p_foo meta interleave=false
@@ -5606,7 +5603,7 @@ order o_foo_before_bar inf: cl_foo cl_bar
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;What this means is for the &lt;code&gt;order&lt;/code&gt; constraint to be fulfilled, &lt;em&gt;all&lt;/em&gt;
 instances of &lt;code&gt;cl_foo&lt;/code&gt; must start before &lt;em&gt;any&lt;/em&gt; instance of &lt;code&gt;cl_bar&lt;/code&gt;
-can. Often, that's not what you want.&lt;/p&gt;
+can. Often, that’s not what you want.&lt;/p&gt;
 &lt;p&gt;In contrast, consider this:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;clone cl_foo p_foo meta interleave=true
 clone cl_bar p_bar meta interleave=true
@@ -5614,7 +5611,7 @@ order o_foo_before_bar inf: cl_foo cl_bar
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Here, for each node, as soon as the &lt;em&gt;local&lt;/em&gt; instance of &lt;code&gt;cl_foo&lt;/code&gt; has
 started, the corresponding local instance of &lt;code&gt;cl_bar&lt;/code&gt; can, too. &lt;strong&gt;This
-is what's usually desired – when in doubt, allow interleaving.&lt;/strong&gt;&lt;/p&gt;
+is what’s usually desired – when in doubt, allow interleaving.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;One thing that often throws people is that interleaving only works
 when Pacemaker is configured to run the same number of instances of
 two clones on the same node. Thus,&lt;/p&gt;
@@ -5624,7 +5621,7 @@ two clones on the same node. Thus,&lt;/p&gt;
 clone cl_bar p_bar meta interleave=false
 order o_foo_before_bar inf: cl_foo cl_bar
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;... won't work, as Pacemaker is allowed to run 2 instances of &lt;code&gt;cl_foo&lt;/code&gt;
+&lt;p&gt;… won’t work, as Pacemaker is allowed to run 2 instances of &lt;code&gt;cl_foo&lt;/code&gt;
 on the same node, but only one of &lt;code&gt;cl_bar&lt;/code&gt; (the default for
 &lt;code&gt;clone-node-max&lt;/code&gt; is 1).&lt;/p&gt;
 &lt;p&gt;Also, &lt;code&gt;globally-unique=true&lt;/code&gt; is a requirement for any
@@ -5637,18 +5634,15 @@ the O2CB lock manager for OCFS2, and an OCFS2 filesystem itself.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;OCFS2 with Pacemaker integration is supported on Debian
-  (&lt;code&gt;squeeze-backports&lt;/code&gt; and up) and Ubuntu (10.04 LTS and up). You'll
+  (&lt;code&gt;squeeze-backports&lt;/code&gt; and up) and Ubuntu (10.04 LTS and up). You’ll
   need the &lt;code&gt;dlm-pcmk&lt;/code&gt;, &lt;code&gt;ocfs2-tools&lt;/code&gt;, &lt;code&gt;ocfs2-tools-pacemaker&lt;/code&gt; and
-  &lt;code&gt;openais&lt;/code&gt; packages.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Fencing …&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;Setting up OCFS2 in Pacemaker requires configuring the Pacemaker DLM,
+  &lt;code&gt;openais&lt;/code&gt; packages …&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;Setting up OCFS2 in Pacemaker requires configuring the Pacemaker DLM,
 the O2CB lock manager for OCFS2, and an OCFS2 filesystem itself.&lt;/p&gt;
 &lt;h2&gt;Prerequisites&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;OCFS2 with Pacemaker integration is supported on Debian
-  (&lt;code&gt;squeeze-backports&lt;/code&gt; and up) and Ubuntu (10.04 LTS and up). You'll
+  (&lt;code&gt;squeeze-backports&lt;/code&gt; and up) and Ubuntu (10.04 LTS and up). You’ll
   need the &lt;code&gt;dlm-pcmk&lt;/code&gt;, &lt;code&gt;ocfs2-tools&lt;/code&gt;, &lt;code&gt;ocfs2-tools-pacemaker&lt;/code&gt; and
   &lt;code&gt;openais&lt;/code&gt; packages.&lt;/p&gt;
 &lt;/li&gt;
@@ -5687,22 +5681,22 @@ clone cl_ocfs2 g_ocfs2 \
   meta interleave="true"
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;Why keep the filesystem stopped?&lt;/h2&gt;
-&lt;p&gt;Because you probably either don't have a configured OCFS2 filesystem
+&lt;p&gt;Because you probably either don’t have a configured OCFS2 filesystem
 on your device yet, or your ran mkfs.ocfs2 when the Pacemaker stack
-wasn't running. In either of those two cases, mount.ocfs2 will refuse
+wasn’t running. In either of those two cases, mount.ocfs2 will refuse
 to mount the filesystem.&lt;/p&gt;
 &lt;p&gt;Thus, fire up your DLM and the o2cb process like the above
 configuration does, and then:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;If you haven't got a filesystem yet, run &lt;code&gt;mkfs.ocfs2&lt;/code&gt; on your device, or&lt;/p&gt;
+&lt;p&gt;If you haven’t got a filesystem yet, run &lt;code&gt;mkfs.ocfs2&lt;/code&gt; on your device, or&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;If you do already have one, run
   &lt;code&gt;tunefs.ocfs2 --update-cluster-stack &amp;lt;device&amp;gt;&lt;/code&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Then when that's done, run &lt;code&gt;crm resource start p_fs_ocfs2&lt;/code&gt; and your
+&lt;p&gt;Then when that’s done, run &lt;code&gt;crm resource start p_fs_ocfs2&lt;/code&gt; and your
 filesystem should happily mount on all nodes.&lt;/p&gt;
 &lt;hr/&gt;
 &lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Pacemaker"></category></entry></feed>

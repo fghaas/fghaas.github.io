@@ -43,13 +43,13 @@
  
 
 <meta name="author" content="Florian Haas" />
-<meta name="description" content="Ever wonder what meta interleave really means in a Pacemaker clone definition? We&#39;ll explain. The interleave meta attribute is only valid on Pacemaker clone definitions – and their extended version of sorts, master/slave sets. It&#39;s not available on primitives and groups. Clones are often used in configurations involving cluster filesystems …" />
+<meta name="description" content="Ever wonder what meta interleave really means in a Pacemaker clone definition? We’ll explain. The interleave meta attribute is only valid on Pacemaker clone definitions – and their extended version of sorts, master/slave sets. It’s not available on primitives and groups. Clones are often used in configurations involving …" />
 <meta name="keywords" content="Pacemaker">
 
 
   <meta property="og:site_name" content="xahteiwi.eu"/>
   <meta property="og:title" content="Interleaving in Pacemaker clones"/>
-  <meta property="og:description" content="Ever wonder what meta interleave really means in a Pacemaker clone definition? We&#39;ll explain. The interleave meta attribute is only valid on Pacemaker clone definitions – and their extended version of sorts, master/slave sets. It&#39;s not available on primitives and groups. Clones are often used in configurations involving cluster filesystems …"/>
+  <meta property="og:description" content="Ever wonder what meta interleave really means in a Pacemaker clone definition? We’ll explain. The interleave meta attribute is only valid on Pacemaker clone definitions – and their extended version of sorts, master/slave sets. It’s not available on primitives and groups. Clones are often used in configurations involving …"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:url" content="../../../resources/hints-and-kinks/interleaving-pacemaker-clones/"/>
   <meta property="og:type" content="article"/>
@@ -141,12 +141,12 @@
 
   <div>
     <p>Ever wonder what <code>meta interleave</code> really means in a Pacemaker clone
-definition? We'll explain.</p>
+definition? We’ll explain.</p>
 <p>The <code>interleave</code> meta attribute is only valid on Pacemaker clone
 definitions – and their extended version of sorts, master/slave
-sets. It's not available on primitives and groups. Clones are often
+sets. It’s not available on primitives and groups. Clones are often
 used in configurations involving cluster filesystems, such as GFS2
-(<a href="../../../resources/hints-and-kinks/gfs2-pacemaker-debianubuntu/">here's an example</a>).</p>
+(<a href="../../../resources/hints-and-kinks/gfs2-pacemaker-debianubuntu/">here’s an example</a>).</p>
 <p>Consider the following example (primitive definitions omitted to keep
 this short):</p>
 <div class="highlight"><pre><span></span><code>clone cl_foo p_foo meta interleave=false
@@ -155,7 +155,7 @@ order o_foo_before_bar inf: cl_foo cl_bar
 </code></pre></div>
 <p>What this means is for the <code>order</code> constraint to be fulfilled, <em>all</em>
 instances of <code>cl_foo</code> must start before <em>any</em> instance of <code>cl_bar</code>
-can. Often, that's not what you want.</p>
+can. Often, that’s not what you want.</p>
 <p>In contrast, consider this:</p>
 <div class="highlight"><pre><span></span><code>clone cl_foo p_foo meta interleave=true
 clone cl_bar p_bar meta interleave=true
@@ -163,7 +163,7 @@ order o_foo_before_bar inf: cl_foo cl_bar
 </code></pre></div>
 <p>Here, for each node, as soon as the <em>local</em> instance of <code>cl_foo</code> has
 started, the corresponding local instance of <code>cl_bar</code> can, too. <strong>This
-is what's usually desired – when in doubt, allow interleaving.</strong></p>
+is what’s usually desired – when in doubt, allow interleaving.</strong></p>
 <p>One thing that often throws people is that interleaving only works
 when Pacemaker is configured to run the same number of instances of
 two clones on the same node. Thus,</p>
@@ -173,7 +173,7 @@ two clones on the same node. Thus,</p>
 clone cl_bar p_bar meta interleave=false
 order o_foo_before_bar inf: cl_foo cl_bar
 </code></pre></div>
-<p>... won't work, as Pacemaker is allowed to run 2 instances of <code>cl_foo</code>
+<p>… won’t work, as Pacemaker is allowed to run 2 instances of <code>cl_foo</code>
 on the same node, but only one of <code>cl_bar</code> (the default for
 <code>clone-node-max</code> is 1).</p>
 <p>Also, <code>globally-unique=true</code> is a requirement for any

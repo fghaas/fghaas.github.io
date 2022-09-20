@@ -43,13 +43,13 @@
  
 
 <meta name="author" content="Florian Haas" />
-<meta name="description" content="Occasionally, you may see errors similar to this in your system logs: corosync [TOTEM ] Retransmit List: e4 e5 e7 e8 ea eb ed ee Here&#39;s what causes them, and what you can do to fix the issue. Corosync, more specifically its Totem protocol implementation, defines a maximum number of cluster …" />
+<meta name="description" content="Occasionally, you may see errors similar to this in your system logs: corosync [TOTEM ] Retransmit List: e4 e5 e7 e8 ea eb ed ee Here’s what causes them, and what you can do to fix the issue. Corosync, more specifically its Totem protocol implementation, defines a maximum number of …" />
 <meta name="keywords" content="Corosync">
 
 
   <meta property="og:site_name" content="xahteiwi.eu"/>
   <meta property="og:title" content="What&#39;s a Totem &#34;Retransmit List&#34; all about in Corosync?"/>
-  <meta property="og:description" content="Occasionally, you may see errors similar to this in your system logs: corosync [TOTEM ] Retransmit List: e4 e5 e7 e8 ea eb ed ee Here&#39;s what causes them, and what you can do to fix the issue. Corosync, more specifically its Totem protocol implementation, defines a maximum number of cluster …"/>
+  <meta property="og:description" content="Occasionally, you may see errors similar to this in your system logs: corosync [TOTEM ] Retransmit List: e4 e5 e7 e8 ea eb ed ee Here’s what causes them, and what you can do to fix the issue. Corosync, more specifically its Totem protocol implementation, defines a maximum number of …"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:url" content="../../../resources/hints-and-kinks/whats-totem-retransmit-list-all-about-corosync/"/>
   <meta property="og:type" content="article"/>
@@ -143,20 +143,20 @@
     <p>Occasionally, you may see errors similar to this in your system logs:</p>
 <div class="highlight"><pre><span></span><code>corosync [TOTEM ] Retransmit List: e4 e5 e7 e8 ea eb ed ee
 </code></pre></div>
-<p>Here's what causes them, and what you can do to fix the issue.</p>
+<p>Here’s what causes them, and what you can do to fix the issue.</p>
 <p>Corosync, more specifically its Totem protocol implementation, defines
 a maximum number of cluster messages that can be sent during one token
 rotation. By default, that number is 50, but you may modify this value
 by setting the <code>window_size</code> parameter in your <code>corosync.conf</code>
 configuration file.</p>
-<p>When among several fast cluster nodes ("processors" in Totem speak)
-there are one or few slow ones, the kernel receive buffers can't cope,
+<p>When among several fast cluster nodes (“processors” in Totem speak)
+there are one or few slow ones, the kernel receive buffers can’t cope,
 messages get lost, and they then need to be retransmitted. This is
 what causes the Retransmit List notifications in the syslogs. This
-doesn't mean you're losing any messages or data. But it does mean that
+doesn’t mean you’re losing any messages or data. But it does mean that
 your cluster performance degrades when this happens, and thus you
 should really fix that problem.</p>
-<p>There are a few considerations that apply to tuning Corosync's
+<p>There are a few considerations that apply to tuning Corosync’s
 <code>window_size</code>:</p>
 <ul>
 <li>
@@ -167,13 +167,13 @@ should really fix that problem.</p>
 </li>
 <li>
 <p>If your cluster is rather heterogeneous, then you should probably
-  stick with the default of 50. Definitely don't go higher than
+  stick with the default of 50. Definitely don’t go higher than
   256000/MTU, where MTU is that of the network interface(s) Corosync
   communicates over. For a standard Ethernet interface the default MTU
   is 1500, which would make for a maximum <code>window_size</code> of 170.</p>
 </li>
 <li>
-<p>If you're running on the generally safe default of 50, and you're
+<p>If you’re running on the generally safe default of 50, and you’re
   still getting Retransmit List notifications, then one of your nodes
   is most likely significantly slower than the others, and you had
   better find the cause of that and fix it. The node could be under

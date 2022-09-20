@@ -141,22 +141,22 @@
 
   <div>
     <p>Whenever things in Pacemaker go wrong (say, for example, resource
-failover doesn't work as expected, or your cluster didn't properly
-recover after a node shutdown), you'll want to find out just exactly
+failover doesn’t work as expected, or your cluster didn’t properly
+recover after a node shutdown), you’ll want to find out just exactly
 <em>why</em> that happened. Of course, the actual reason for the malfunction
 may be buried somewhere deep in your cluster configuration or setup,
 and so you might need to look at quite a few different sources to pin
 it down.</p>
 <p>Sometimes, too, you want to enlist the help of a colleague, <a href="/contact">or maybe
 <strong>our</strong> help even</a>, to get to the bottom of the issue. And
-sometimes it's not practical to let someone access to system to just
+sometimes it’s not practical to let someone access to system to just
 trigger the problem and watch what breaks.</p>
 <p>Thankfully, Pacemaker ships with a utility that helps you collect
 everything you or someone else might need to look at, in a simple,
 compact format. Unfortunately few people, including even long-time
-Pacemaker users, know that it exists: it's called <code>crm_report</code>.</p>
+Pacemaker users, know that it exists: it’s called <code>crm_report</code>.</p>
 <h2>Running <code>crm_report</code></h2>
-<p><code>crm_report</code>'s command syntax is rather quite simple. You just tell it
+<p><code>crm_report</code>‘s command syntax is rather quite simple. You just tell it
 how far in the past you want the report to start, and which directory
 you want to collect data in:</p>
 <div class="highlight"><pre><span></span><code>crm_report -f <span class="s2">"2016-01-25 00:00:00"</span> /tmp/crm_report
@@ -169,8 +169,8 @@ report data.</p>
 reproduce the problem.</strong> All you need is a rough idea when the issue
 occurred, and then you give <code>crm_report</code> a timestamp a little earlier
 than that as its start date.</p>
-<p>You can also specify the <em>end</em> of the period you're interested
-in. Suppose you're exactly aware of a 10-minute time window in which
+<p>You can also specify the <em>end</em> of the period you’re interested
+in. Suppose you’re exactly aware of a 10-minute time window in which
 the problem occurred. In that case, you could run:</p>
 <div class="highlight"><pre><span></span><code>crm_report -f <span class="s2">"2016-01-25 01:15:00"</span> -t <span class="s2">"2016-01-25 01:25:00"</span> /tmp/crm_report
 </code></pre></div>
@@ -178,15 +178,15 @@ the problem occurred. In that case, you could run:</p>
 specified time window on the host it is run on, and then connect to
 the other cluster nodes (via <code>ssh</code>) and do the same there. The latter
 behavior can be disabled by adding the <code>-S</code> or <code>--single-node</code> option,
-but there usually isn't a good reason to do that. In the end,
+but there usually isn’t a good reason to do that. In the end,
 everything will be rolled into one tarball at
 <code>/tmp/crm_report.tar.bz2</code></p>
 <p>You can then pull the report tarball off the node (with <code>scp</code>,
 <code>rsync</code>, whatever you prefer), and then share it with whom you need
 to. <strong>Note that the tarball can contain sensitive information such as
 passwords, so be careful whom you share it with.</strong></p>
-<h2>What's in a <code>crm_report</code> tarball?</h2>
-<p>There's a bunch of truly helpful information in a <code>crm_report</code>
+<h2>What’s in a <code>crm_report</code> tarball?</h2>
+<p>There’s a bunch of truly helpful information in a <code>crm_report</code>
 generated tarball. Depending on how your cluster is configured and
 what problems were detected, it will contain, among other things:</p>
 <ul>
@@ -220,10 +220,10 @@ what problems were detected, it will contain, among other things:</p>
 </ul>
 <p>In other words, it contains pretty much everything that needs to be
 shared in a critical troubleshooting situation.</p>
-<h2>Why isn't this more widely known?</h2>
+<h2>Why isn’t this more widely known?</h2>
 <p>To be perfectly honest, we have no idea. <code>crm_report</code> has been in
 Pacemaker for years, and even prior to its existence, there was a
-predecessor named <code>hb_report</code>. It's an extraordinarily useful utility,
+predecessor named <code>hb_report</code>. It’s an extraordinarily useful utility,
 yet when we ask customers to send a <code>crm_report</code> tarball during a
 Pacemaker troubleshooting engagement, the usual response is, “a
 what?”</p>

@@ -184,12 +184,12 @@ repository. Here’s a tiny example:</p>
   <code>.yml</code>, <code>.yaml</code>, and <code>.yamllint</code> files in the directory where the
   <code>tox.ini</code> file itself lives.</li>
 </ul>
-<p>What's helpful here is that <code>tox</code> does a little bit of magic with the
+<p>What’s helpful here is that <code>tox</code> does a little bit of magic with the
 testenv names. tox
 <a href="https://tox.wiki/en/latest/example/basic.html#a-simple-tox-ini-default-environments">knows</a>
 that if you call a testenv <code>py36</code>, you want to test with Python 3.6
 (more precisely, <a href="https://en.wikipedia.org/wiki/CPython">CPython</a>
-3.6). <code>py39</code>, that's Python 3.9. Just <code>py3</code> means whatever Python
+3.6). <code>py39</code>, that’s Python 3.9. Just <code>py3</code> means whatever Python
 version maps to the <code>python3</code> binary on your system.<sup id="fnref:python-versions"><a class="footnote-ref" href="#fn:python-versions">1</a></sup> </p>
 <h2>Running <code>tox</code> on every commit</h2>
 <p>Now the first thing you might want to do is run <code>tox</code> on every commit,
@@ -290,7 +290,7 @@ there as well? Easy. Here’s the exact same functionality for your
 </code></pre></div>
 <p>In <a href="https://docs.gitlab.com/ee/ci/">GitLab CI</a> I know of no elegant
 <code>matrix</code> syntax to map the image version to the testenv. But on the
-other hand there's a bunch of things that "just happen" in a GitLab CI
+other hand there’s a bunch of things that “just happen” in a GitLab CI
 pipeline, which you specifically need to define in a GitHub Actions
 workflow definition. So overall your <code>.gitlab-ci.yml</code> ends up shorter
 than your GitHub Actions <code>tox.yml</code>.</p>
@@ -322,7 +322,7 @@ whatever.</p>
 Python version you want to support, to all your CI definitions. But if
 your project moves from GitHub to GitLab or from GitLab to
 Gerrit/Zuul, or your entire company goes on a great big CI migration,
-then you'll have one less thing to worry about, because your tests
+then you’ll have one less thing to worry about, because your tests
 already run anywhere.</p>
 <blockquote>
 <p><strong>By the way:</strong> when you set up your <code>tox.ini</code> and your CI
@@ -343,16 +343,16 @@ the <code>tox</code> checks, you may very well be interested in multiple
 python versions. <a class="footnote-backref" href="#fnref:python-versions" title="Jump back to footnote 1 in the text">↩</a></p>
 </li>
 <li id="fn:shell-script">
-<p>If you're being a purist, you could also invoke the
+<p>If you’re being a purist, you could also invoke the
 tox runner from a Python script. I prefer the shell <code>exec</code>
 one-liner. <a class="footnote-backref" href="#fnref:shell-script" title="Jump back to footnote 2 in the text">↩</a></p>
 </li>
 <li id="fn:py3">
-<p>In this case, for testing locally, we're not going to care
-about a specific installed Python version. We'll just make sure
-that the commit doesn't obviously break anything. In my humble
-opinion it's OK to catch version-specific issues in CI, but we
-shouldn't feed the CI code that's outright broken. <a class="footnote-backref" href="#fnref:py3" title="Jump back to footnote 3 in the text">↩</a></p>
+<p>In this case, for testing locally, we’re not going to care
+about a specific installed Python version. We’ll just make sure
+that the commit doesn’t obviously break anything. In my humble
+opinion it’s OK to catch version-specific issues in CI, but we
+shouldn’t feed the CI code that’s outright broken. <a class="footnote-backref" href="#fnref:py3" title="Jump back to footnote 3 in the text">↩</a></p>
 </li>
 <li id="fn:docker-runners">
 <p>This example assumes that you’re either using

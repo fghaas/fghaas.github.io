@@ -145,15 +145,15 @@ network is disconnected and fencing policy is set to <code>dont-care</code>
 (default), there is the potential risk of a split-brain. Even with
 resource level fencing or STONITH setup, there are corner cases that
 will end up in a split-brain.</p>
-<p>When your DRBD resource is in a split-brain situation, don't panic!
+<p>When your DRBD resource is in a split-brain situation, don’t panic!
 Split-brain means that the contents of the backing devices of your
 DRBD resource on both sides of your cluster started to diverge. At
 some point in time, the DRBD resource on both nodes went into the
 Primary role while the cluster nodes themselves were disconnected from
 each other.</p>
 <p>Different writes happened to both sides of your cluster
-afterwards. After reconnecting, DRBD doesn't know which set of data is
-"right" and which is "wrong".</p>
+afterwards. After reconnecting, DRBD doesn’t know which set of data is
+“right” and which is “wrong”.</p>
 <h2>Indications of a Split-Brain</h2>
 <p>The symptoms of a split-brain are that the peers will not reconnect on
 DRBD startup but stay in connection state StandAlone or
@@ -166,7 +166,7 @@ kernel logs you will see messages like:</p>
 <h3>Step 1</h3>
 <p>Manually choose a node which data modifications will be discarded.</p>
 <p>We call it the split brain victim. Choose wisely, all modifications
-will be lost! When in doubt run a backup of the victim's data before
+will be lost! When in doubt run a backup of the victim’s data before
 you continue.</p>
 <p>When running a Pacemaker cluster, you can enable maintenance mode. If
 the split brain victim is in Primary role, bring down all applications
@@ -174,7 +174,7 @@ using this resource. Now switch the victim to Secondary role:</p>
 <div class="highlight"><pre><span></span><code>victim# drbdadm secondary resource
 </code></pre></div>
 <h3>Step 2</h3>
-<p>Disconnect the resource if it's in connection state <code>WFConnection</code>:</p>
+<p>Disconnect the resource if it’s in connection state <code>WFConnection</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">victim</span>#<span class="w"> </span><span class="nv">drbdadm</span><span class="w"> </span><span class="k">disconnect</span><span class="w"> </span><span class="nv">resource</span><span class="w"></span>
 </code></pre></div>
 <h3>Step 3</h3>
@@ -193,7 +193,7 @@ using this resource. Now switch the victim to Secondary role:</p>
 <p>At the latest now the resynchronization from the survivor
 (<code>SyncSource</code>) to the victim (<code>SyncTarget</code>) starts immediately. There
 is no full sync initiated but all modifications on the victim will be
-overwritten by the survivor's data and modifications on the survivor
+overwritten by the survivor’s data and modifications on the survivor
 will be applied to the victim.</p>
 <h2>Background: What happens?</h2>
 <p>With the default after-split-brain policies of disconnect this will
