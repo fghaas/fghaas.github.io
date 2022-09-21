@@ -1,7 +1,7 @@
 Title: DevOpsDays Berlin 2022
 Date: 2022-09-18
 Tags: Conference
-Summary: I couldn't make it do DevOpsDays Berlin, because my Covid status kept me from travelling. Thus, here's a write-up.
+Summary: I couldn't make it to DevOpsDays Berlin, because my Covid status kept me from travelling. Thus, here's a write-up.
 
 At [DevOpsDays Berlin
 2022](https://devopsdays.org/events/2022-berlin/program), I was slated
