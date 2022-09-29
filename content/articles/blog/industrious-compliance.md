@@ -9,7 +9,7 @@ today's headlines to read, you would probably have dismissed me as a
 lunatic. And you'd probably say the same to someone who dropped in on
 you today and read you the headlines from six months out. And if
 conversely you tried to sit down tonight and write the headlines for
-May 29, 2023, you'll probably notice on the day that your predictions
+March 29, 2023, you'll probably notice on the day that your predictions
 were nowhere near actual events.
 
 You have no idea what the world, or even your life, will look like
