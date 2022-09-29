@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Communications</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/communications.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-09-28T20:00:00+00:00</updated><entry><title>Uncertainty, industrious compliance, and the illusion of control</title><link href="https://xahteiwi.eu/blog/2022/09/28/industrious-compliance/" rel="alternate"></link><published>2022-09-28T20:00:00+00:00</published><updated>2022-09-28T20:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-09-28:/blog/2022/09/28/industrious-compliance/</id><summary type="html">&lt;p&gt;Why are so many managers obsessed with faux certainty in situations when objectively, there can&amp;rsquo;t be any?&lt;/p&gt;</summary><content type="html">&lt;p&gt;If I had visited you from the future six months ago, and given you
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Communications</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/communications.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-09-29T20:00:00+00:00</updated><entry><title>Uncertainty, industrious compliance, and the illusion of control</title><link href="https://xahteiwi.eu/blog/2022/09/29/industrious-compliance/" rel="alternate"></link><published>2022-09-29T20:00:00+00:00</published><updated>2022-09-29T20:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-09-29:/blog/2022/09/29/industrious-compliance/</id><summary type="html">&lt;p&gt;Why are so many managers obsessed with faux certainty in situations when objectively, there can&amp;rsquo;t be any?&lt;/p&gt;</summary><content type="html">&lt;p&gt;If I had visited you from the future six months ago, and given you
 today’s headlines to read, you would probably have dismissed me as a
 lunatic. And you’d probably say the same to someone who dropped in on
 you today and read you the headlines from six months out. And if
 conversely you tried to sit down tonight and write the headlines for
-May 28, 2023, you’ll probably notice on the day that your predictions
+May 29, 2023, you’ll probably notice on the day that your predictions
 were nowhere near actual events.&lt;/p&gt;
 &lt;p&gt;You have no idea what the world, or even your life, will look like
 just six months from now. Make it five years or ten, and you won’t have
@@ -442,7 +442,7 @@ planned.&lt;/p&gt;
 &lt;p&gt;So Alex, being a good CEO, opens some spread sheet software and
 creates this handy table that simply plugs in values for $x$ and $y$,
 with $x$ (width) in columns and $y$ (depth) in rows.&lt;sup id="fnref:table"&gt;&lt;a class="footnote-ref" href="#fn:table"&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -664,7 +664,7 @@ interjects that Alex is missing a point, namely all the managers that
 the company will now no longer need, and the cost savings thus
 generated.&lt;/p&gt;
 &lt;p&gt;So Alex looks at the table again (width in columns, depth in rows):&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -853,7 +853,7 @@ cell &lt;em&gt;directly above it&lt;/em&gt; will contain the total number of man
 again, but considers the number of managers proportional to the number
 of people in the company, a pattern quickly emerges (again, width
 is in columns, depth is in rows):&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -3464,7 +3464,7 @@ It’s being lazy.&lt;/p&gt;
 &lt;p&gt;It’s a symptom of the worst kind of laziness &lt;em&gt;(not malice!)&lt;/em&gt;: in an
 attempt to communicate quickly and easily, for yourself, you are really
 making things harder for everyone, including yourself.&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -3492,7 +3492,7 @@ ago”, you’ll agree with me here.&lt;/p&gt;
 is to say in relation to &lt;em&gt;other&lt;/em&gt; discussions on the same topic, days
 or weeks earlier or later.&lt;/p&gt;
 &lt;p&gt;Let’s compare that to other communication modes:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -3523,7 +3523,7 @@ or weeks earlier or later.&lt;/p&gt;
   as with chat, and it’s marginally better at contextualizing
   information than chat (because you get proper threading).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -3570,7 +3570,7 @@ or weeks earlier or later.&lt;/p&gt;
   Likewise, “issue tracker” can mean RT, OTRS, Jira, Taiga, Bugzilla,
   whatever works for you.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
