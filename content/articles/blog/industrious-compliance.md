@@ -64,7 +64,7 @@ out](https://www.morebeyond.co.za/how-organisational-ocd-is-stamping-out-innovat
 suffocates the creativity that's *really* needed to address a
 constantly changing environment. The idea is that if you collect all
 the metrics and do all the statistics and measure everything (in other
-ways, that you follow some "process" perfectly), you'll succeed.
+words, if you follow some "process" perfectly), you'll succeed.
 
 That is so obviously non-sensical that the question becomes, *why the
 hell does anyone think that this works?*
