@@ -318,7 +318,7 @@ Compare this version:
 
 > It is important that we 
 > 
-> * listen to the customers needs, 
+> * listen to the customer's needs,
 > * build a good solution that keeps us within the applicable regulatory
 > framework, and
 > * clearly delineate responsibilities in the proposal and SLA.
@@ -384,7 +384,7 @@ Whitespace normally goes *after* punctuation, not before.
 In English (in contrast to some other languages), when whitespace
 *precedes* punctuation, it's almost always wrong.  The correct
 sequence at the end of a sentence is full-stop (or exclamation mark,
-or question mark) *followed* by whitespace. Likewise, its first comma,
+or question mark) *followed* by whitespace. Likewise, it's first comma,
 then whitespace. First semicolon, then whitespace.
 
 There are select exceptions to this rule: whitespace does precede the
@@ -572,9 +572,9 @@ Now, let's move on to clarity of structure.
 
 Sometimes there are pretty complex things that you want to convey to a
 group of people. This is a where lot of people would be inclined to
-call a meeting but in reality, there's a much better way to do that,
-in writing. And doing it in writing will help you do it in a much
-clearer, more concise, and more efficient fashion.
+call a meeting --- but in reality, there's a much better way to do
+that, in writing. And doing it in writing will help you do it in a
+much clearer, more concise, and more efficient fashion.
 
 Whenever you need to thoroughly **brief a group of people on an
 important matter,** in writing, consider using a **5-paragraph
@@ -694,12 +694,13 @@ everything that they need to know about the meeting, that **only the
 written word counts.** What's not on the written record in a meeting
 **did not happen.**
 
+Who's responsible for meeting notes? The meeting chair (the person
+that called the meeting).
 
-* Who's responsible for meeting notes? The meeting chair (the person that called the meeting).
+Who pulls the meeting notes together? The scribe (the appointed
+note-taker).
 
-* Who pulls the meeting notes together? The scribe (the appointed note-taker).
-
-* Who writes the meeting notes? **Everyone.** 
+Who writes the meeting notes? **Everyone.**
 
 
 ## Meeting notes structure
