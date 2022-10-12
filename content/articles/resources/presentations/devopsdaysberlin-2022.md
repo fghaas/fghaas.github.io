@@ -390,7 +390,19 @@ then whitespace. First semicolon, then whitespace.
 There are select exceptions to this rule: whitespace does precede the
 en dash (–), opening quotation marks, parentheses, brackets, and
 braces, and optionally the em dash (—). But whitespace preceding
-punctuation *at the end of a sentence* is always an error.
+punctuation *at the end of a sentence* is always an error.[^ellipsis]
+
+[^ellipsis]: [Frederic Hemberger](https://frederic-hemberger.de/) has
+  [pointed
+  out](https://twitter.com/fhemberger/status/1580079646640525313) that
+  there is one exception to the "no whitespace before punctuation at
+  the end of a sentence" rule, which is that whitespace does precede a
+  trailing ellipsis (…). That is entirely correct, however I'd argue
+  that an ellipsis at the end of a sentence is almost always bad form
+  in professional communications. When you would use it for an
+  open-ended enumeration, it's clearer to instead write "and so on",
+  "and others", or "etc."  --- and if you want to illustrate trailing
+  off in thought, finish that thought!
 
 
 ### Question marks (?)
