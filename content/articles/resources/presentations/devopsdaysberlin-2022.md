@@ -1,6 +1,7 @@
 Title: Writing Professionally (DevOpsDays Berlin 2022)
 Date: 2022-09-18
 Tags: Conference
+Slug: devopsdays-berlin-2022
 Summary: I couldn't make it to DevOpsDays Berlin, because my Covid status kept me from travelling. Thus, here's a write-up.
 
 At [DevOpsDays Berlin
