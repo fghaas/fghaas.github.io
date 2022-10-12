@@ -333,7 +333,7 @@ then whitespace. First semicolon, then whitespace.&lt;/p&gt;
 &lt;p&gt;There are select exceptions to this rule: whitespace does precede the
 en dash (–), opening quotation marks, parentheses, brackets, and
 braces, and optionally the em dash (—). But whitespace preceding
-punctuation &lt;em&gt;at the end of a sentence&lt;/em&gt; is always an error.&lt;/p&gt;
+punctuation &lt;em&gt;at the end of a sentence&lt;/em&gt; is always an error.&lt;sup id="fnref:ellipsis"&gt;&lt;a class="footnote-ref" href="#fn:ellipsis"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;h3&gt;Question marks (?)&lt;/h3&gt;
 &lt;p&gt;Questions should end in a question mark, shouldn’t they?&lt;/p&gt;
 &lt;p&gt;Don’t end questions with a full-stop or an exclamation point in
@@ -633,7 +633,25 @@ habit of reading things out loud as you edit.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Do not squander all those opportunities. Read things out loud.&lt;/p&gt;
-&lt;p&gt;Guess what I did with this article.&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category></entry><entry><title>Writing Professionally (C!Conf 2022)</title><link href="https://xahteiwi.eu/resources/presentations/c-conf2022/" rel="alternate"></link><published>2022-05-30T00:00:00+00:00</published><updated>2022-05-30T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-05-30:/resources/presentations/c-conf2022/</id><summary type="html">&lt;p&gt;I did a workshop on writing in a professional context at my employer&amp;rsquo;s annual unconference, C!Conf.&lt;/p&gt;</summary><content type="html">&lt;p&gt;At work we have an annual&lt;sup id="fnref:annual"&gt;&lt;a class="footnote-ref" href="#fn:annual"&gt;1&lt;/a&gt;&lt;/sup&gt; conference, &lt;em&gt;C!Conf,&lt;/em&gt; where we pull
+&lt;p&gt;Guess what I did with this article.&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr/&gt;
+&lt;ol&gt;
+&lt;li id="fn:ellipsis"&gt;
+&lt;p&gt;&lt;a href="https://frederic-hemberger.de/"&gt;Frederic Hemberger&lt;/a&gt; has
+  &lt;a href="https://twitter.com/fhemberger/status/1580079646640525313"&gt;pointed
+  out&lt;/a&gt; that
+  there is one exception to the “no whitespace before punctuation at
+  the end of a sentence” rule, which is that whitespace does precede a
+  trailing ellipsis (…). That is entirely correct, however I’d argue
+  that an ellipsis at the end of a sentence is almost always bad form
+  in professional communications. When you would use it for an
+  open-ended enumeration, it’s clearer to instead write “and so on”,
+  “and others”, or “etc.”  — and if you want to illustrate trailing
+  off in thought, finish that thought! &lt;a class="footnote-backref" href="#fnref:ellipsis" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content><category term="presentations"></category><category term="Conference"></category></entry><entry><title>Writing Professionally (C!Conf 2022)</title><link href="https://xahteiwi.eu/resources/presentations/c-conf2022/" rel="alternate"></link><published>2022-05-30T00:00:00+00:00</published><updated>2022-05-30T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-05-30:/resources/presentations/c-conf2022/</id><summary type="html">&lt;p&gt;I did a workshop on writing in a professional context at my employer&amp;rsquo;s annual unconference, C!Conf.&lt;/p&gt;</summary><content type="html">&lt;p&gt;At work we have an annual&lt;sup id="fnref:annual"&gt;&lt;a class="footnote-ref" href="#fn:annual"&gt;1&lt;/a&gt;&lt;/sup&gt; conference, &lt;em&gt;C!Conf,&lt;/em&gt; where we pull
 the whole company together for 3 days of talks and workshops. All
 conference sessions are conducted by employees — we don’t bring in any
 external consultants or (deity forbid) “motivational speakers”, so it
@@ -980,7 +998,7 @@ It’s being lazy.&lt;/p&gt;
 &lt;p&gt;It’s a symptom of the worst kind of laziness &lt;em&gt;(not malice!)&lt;/em&gt;: in an
 attempt to communicate quickly and easily, for yourself, you are really
 making things harder for everyone, including yourself.&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -1008,7 +1026,7 @@ ago”, you’ll agree with me here.&lt;/p&gt;
 is to say in relation to &lt;em&gt;other&lt;/em&gt; discussions on the same topic, days
 or weeks earlier or later.&lt;/p&gt;
 &lt;p&gt;Let’s compare that to other communication modes:&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -1039,7 +1057,7 @@ or weeks earlier or later.&lt;/p&gt;
   as with chat, and it’s marginally better at contextualizing
   information than chat (because you get proper threading).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -1086,7 +1104,7 @@ or weeks earlier or later.&lt;/p&gt;
   Likewise, “issue tracker” can mean RT, OTRS, Jira, Taiga, Bugzilla,
   whatever works for you.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
