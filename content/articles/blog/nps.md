@@ -253,5 +253,5 @@ agree with all their findings and suggestions.
 
 I should mention that I particularly disagree with the notion of
 "replacing" the NPS with something else. See [my thoughts on
-metrics](({filename}meaningless-metrics-treacherous-targets.md)) for
+metrics]({filename}meaningless-metrics-treacherous-targets.md) for
 background.
