@@ -1,5 +1,222 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Work</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/work.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-09-29T20:00:00+00:00</updated><entry><title>Uncertainty, industrious compliance, and the illusion of control</title><link href="https://xahteiwi.eu/blog/2022/09/29/industrious-compliance/" rel="alternate"></link><published>2022-09-29T20:00:00+00:00</published><updated>2022-09-29T20:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-09-29:/blog/2022/09/29/industrious-compliance/</id><summary type="html">&lt;p&gt;Why are so many managers obsessed with faux certainty in situations when objectively, there can&amp;rsquo;t be any?&lt;/p&gt;</summary><content type="html">&lt;p&gt;If I had visited you from the future six months ago, and given you
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Work</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/work.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-10-15T15:00:00+00:00</updated><entry><title>Nebulous Percentage Shenanigans</title><link href="https://xahteiwi.eu/blog/2022/10/15/nps/" rel="alternate"></link><published>2022-10-15T15:00:00+00:00</published><updated>2022-10-15T15:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-10-15:/blog/2022/10/15/nps/</id><summary type="html">&lt;p&gt;I recently learned that I am a &amp;ldquo;detractor&amp;rdquo; of things I actually quite like. Here are a few related things I also learned about in the process.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Surely you’ve seen a question similar to the following in a survey or
+request for feedback.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;How likely is it that you’ll recommend X to a colleague or friend?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In this question, X is either a product or service, or a brand, or
+&lt;em&gt;all&lt;/em&gt; of a company’s products or services. Answers are given on a
+scale of 0 to 10, with 0 being “not at all likely” and 10 being
+“extremely likely”. It is frequently the last question in a survey,
+or even the only one.&lt;/p&gt;
+&lt;p&gt;The reason this question is so frequent is that it drives a metric
+that is popular with marketingfolk and management: the &lt;a href="https://en.wikipedia.org/wiki/Net_promoter_score"&gt;net promoter
+score&lt;/a&gt;, or NPS.&lt;/p&gt;
+&lt;p&gt;To work out the NPS, what you do is deduct the percentage of
+“detractors” of your product from that of the “promoters”. If the net
+result is above zero, per the lore, you are generally doing well. If
+you hit above 30, your product or service or brand or company is
+allegedly performing excellently.&lt;/p&gt;
+&lt;h2&gt;What’s a promoter? What’s a detractor?&lt;/h2&gt;
+&lt;p&gt;Now, what defines your promoters and detractors, according to the NPS
+metric? Clearly we’ll have to slot the possible responses into
+categories.&lt;/p&gt;
+&lt;p&gt;And here’s where you’ll notice something peculiar about the scale. It
+consists of discrete values going from 0 to 10 inclusive, not from 0
+to 9 or 1 to 10. That means it’s an 11-point scale. What do we notice
+about the number 11?  Exactly, it’s prime. It’s thus impossible to
+sort the scale items into evenly sized categories, no matter how many
+or few.&lt;/p&gt;
+&lt;p&gt;But okay, let’s say it’s not a law that the categories need to be
+evenly sized. So you might think that answering anything from 0 to 3
+makes someone a “detractor”, and anything between 7 and 10 a
+“promoter”, with the middle ground (4 to 6) being somewhat neutral.&lt;/p&gt;
+&lt;p&gt;But that’s not what NPS uses. The actual NPS scale looks like this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;0 to 6: detractor&lt;/li&gt;
+&lt;li&gt;7 to 8: “passive”&lt;/li&gt;
+&lt;li&gt;9 to 10: promoter&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now, recall that NPS ignores the “passive” respondents altogether, and
+only looks at the percentage of “promoters” minus that of
+“detractors”. If a majority of respondents answer 7 or 8 (intuitively
+a solidly positive score, if you ask me), those do not factor into the
+result at all. Only being inclined to &lt;em&gt;rather enthusiasically&lt;/em&gt;
+recommend a product or service makes you a promoter. And answering 6,
+clearly north of the scale’s middle mark, makes you a detractor.&lt;/p&gt;
+&lt;p&gt;Obviously, this oddly warped scale in combination with ignoring part
+of the sample altogether makes the deduction of one percentage from
+another rather agony-inducing for any secondary school maths
+teacher. That’s eminently not how these things work; on its face it’s
+one of those results that Wolfgang Pauli &lt;a href="https://en.wikiquote.org/wiki/Wolfgang_Pauli"&gt;would have
+called&lt;/a&gt; “not only not
+right, but not even wrong.”&lt;/p&gt;
+&lt;h2&gt;Would you recommend a rental car company to someone who doesn’t need a rental car?&lt;/h2&gt;
+&lt;p&gt;But in addition to a warped scale and off-label use of percentages,
+NPS also uses an inherently biased premise.&lt;/p&gt;
+&lt;p&gt;Suppose I rent a car from a fictitious company we’ll call My Local
+Public Transit Sucks, or MyLoPTS. And after I return my vehicle, I am
+asked how likely I am to recommend renting a car from MyLoPTS to “a
+friend,” which I would presume to mean any randomly selected one of my
+friends.&lt;/p&gt;
+&lt;p&gt;Now I would not recommend &lt;em&gt;any&lt;/em&gt; rental car company to someone I know
+to not be in need of a rental car. And I would assume that a &lt;em&gt;maximum&lt;/em&gt;
+of 10% of my friends, acquaintances, and colleagues are in need of a
+rental car at any one time (considering that &lt;em&gt;my&lt;/em&gt; locally available
+public transport very much does &lt;em&gt;not&lt;/em&gt; suck, so the demand for rental
+cars is quite low). So even if I was &lt;em&gt;certain&lt;/em&gt; to recommend MyLoPTS to
+anyone &lt;em&gt;needing&lt;/em&gt; a rental car, the correct answer for the question as
+asked — the likelihood of recommending MyLoPTS to &lt;em&gt;a friend,&lt;/em&gt;
+regardless of circumstances — on a scale of 1 to 10 would be 1. My
+answer to the question as stated thus has little to no relation to how
+happy I am with MyLoPTS’ service.&lt;/p&gt;
+&lt;p&gt;So, it’s a misguided question with a warped scale that makes implicit
+assumptions and then does creative maths with the result. Why do so
+many people believe that this makes any sense?&lt;/p&gt;
+&lt;h2&gt;Greetings from Harvard&lt;/h2&gt;
+&lt;p&gt;The answer, apparently, is in &lt;a href="https://hbr.org/2003/12/the-one-number-you-need-to-grow"&gt;a single article in the Harvard
+Business
+Review&lt;/a&gt;. That
+article will be old enough to drink in two years’ time in its USian
+habitat, so whether its 2003 findings are still valid in 2022 is
+debatable. But let’s assume for the time being that they are.&lt;/p&gt;
+&lt;p&gt;On the subject of the scale in question, here’s a quote from that
+article:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[We] settled on a scale where ten means “extremely likely” to
+recommend, five means neutral, and zero means “not at all likely.”
+When we examined customer referral and repurchase behaviors along
+this scale, we found three logical clusters. “Promoters,” the
+customers with the highest rates of repurchase and referral, gave
+ratings of nine or ten to the question. The “passively satisfied”
+logged a seven or an eight, and “detractors” scored from zero to
+six.&lt;/p&gt;
+&lt;p&gt;— Frederick F. Reichheld, &lt;a href="https://hbr.org/2003/12/the-one-number-you-need-to-grow"&gt;The One Number You Need to
+Grow&lt;/a&gt;,
+Harvard Business Review (2003)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;So, this confirms that the scale itself isn’t meant to be warped by
+default. Anything under 5 means unlikely to recommend, 5 is neutral,
+and anything above 5 is likely to recommend. (Since the respondents
+would presumably be required to select discrete values, that fact
+still warps the scale and places the “neutral” value off-centre —
+but let’s assume the creators of the scale did think of it as a
+continuum, which does not have this problem.)&lt;/p&gt;
+&lt;p&gt;Rather than being baked into the scale from the get-go, the
+categorization into “promoters” comes from an actual correlation of
+responses to repurchase and referral behavior.  Or at least the
+article claims so — the research data it’s based on does not appear
+to be publicly available. We can only assume that similar correlations
+with actual customer behavior were drawn for the “passively satisfied”
+and “detractor” categories, though I am not quite sure how they would
+have identified the former, separating them from promoters. I suppose
+a “passively satisfied” person could perhaps have been one that did
+come back to make another purchase, but never made a referral? It
+would be interesting to see how they tracked that in 2003.&lt;/p&gt;
+&lt;p&gt;At any rate, the HBR article then asserts that NPS was a predictor of
+company growth when comparing to its competition: in other words, that
+companies with a higher NPS than their competitors also experienced
+higher revenue growth than them — across multiple industries (the
+article specifically mentions airlines, ISPs, and rental car
+companies).&lt;/p&gt;
+&lt;p&gt;The article also says this:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The “would recommend” question wasn’t the best predictor of growth
+in every case. In a few situations, it was simply irrelevant. In
+database software or computer systems, for instance, senior
+executives select vendors, and top managers typically didn’t appear
+on the public e-mail lists we used to sample customers. Asking users
+of the system whether they would recommend the system to a friend or
+colleague seemed a little abstract, as they had no choice in the
+matter. […]&lt;/p&gt;
+&lt;p&gt;Not surprisingly, “would recommend” also didn’t
+predict relative growth in industries dominated by monopolies and
+near monopolies, where consumers have little choice. For example, in
+the local telephone and cable TV businesses, population growth and
+economic expansion in the region determine growth rates, not how
+well customers are treated by their suppliers.&lt;/p&gt;
+&lt;p&gt;— Frederick F. Reichheld, &lt;a href="https://hbr.org/2003/12/the-one-number-you-need-to-grow"&gt;The One Number You Need to
+Grow&lt;/a&gt;,
+Harvard Business Review (2003)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;That sounds quite reasonable. Obviously, recommending a product to a
+friend or colleague doesn’t help the company selling it, if the friend
+or colleague has no say in the purchase decision.&lt;/p&gt;
+&lt;h2&gt;Cultural bias, and Goodhart et al.&lt;/h2&gt;
+&lt;p&gt;But there’s another thing that the article &lt;em&gt;doesn’t&lt;/em&gt; say, apparently
+because it’s obviously implied: all companies covered in the research,
+and presumably the vast majority of the customers surveyed, were from
+the United States.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://measuringu.com/scales-cultural-effects/"&gt;It’s rather well
+understood&lt;/a&gt; that
+scales are read differently by people from different cultures. So
+while the correlation of a certain response score with a certain
+behaviour is likely to work fine when you’re surveying U.S. customers
+of U.S. companies, it’s likely to fall apart when you’re trying to
+make similar predictions from answers from non-U.S. respondents, or
+to compare responses internationally.&lt;/p&gt;
+&lt;p&gt;Note further that the article describes NPS as a &lt;em&gt;predictor&lt;/em&gt; of
+growth, meaning &lt;em&gt;the underlying conditions&lt;/em&gt; that cause a company to
+have a high NPS &lt;em&gt;also&lt;/em&gt; give it a competitive advantage and thus
+facilitate growth. Trying to tweak the measure itself — for example,
+by &lt;a href="https://twitter.com/larsmb/status/1579137943750385665"&gt;coaching
+people&lt;/a&gt; to
+respond 9 or 10 when they would intuitively select 7 or 8 — is a
+great example of collapsing a statistical regularity by placing
+pressure on it for control purposes, i.e. &lt;a href="https://xahteiwi.eu/blog/2021/11/14/meaningless-metrics-treacherous-targets/"&gt;Goodhart’s
+Law&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;And, of course, NPS is subject to &lt;a href="https://xahteiwi.eu/blog/2021/11/14/meaningless-metrics-treacherous-targets/"&gt;Campbell’s
+Law&lt;/a&gt; as much as
+any other metric. When a score becomes the goal of a process, it both
+loses its value as an indicator, and distorts the process itself in
+undesirable ways. You could argue that this effect of NPS is a
+regrettable, but natural aftereffect of its enduring popularity over
+nearly 20 years — but no, &lt;em&gt;it’s right there in the same HBR
+article:&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Branch scores were not improving quickly enough, and a big gap
+continued to separate the worst- and best-performing regions. […]
+So the management team decided that field managers would not be
+eligible for promotion unless their branch or group of branches
+matched or exceeded the company’s average scores. That’s a pretty
+radical idea when you think about it: giving customers, in effect,
+veto power over managerial pay raises and promotions.&lt;/p&gt;
+&lt;p&gt;— Frederick F. Reichheld, &lt;a href="https://hbr.org/2003/12/the-one-number-you-need-to-grow"&gt;The One Number You Need to
+Grow&lt;/a&gt;,
+Harvard Business Review (2003)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;“Radical” strikes me as a rather charitable assessment for what
+Goodhart and Campbell (and &lt;a href="https://en.wikipedia.org/wiki/Marilyn_Strathern"&gt;Marilyn
+Strathern&lt;/a&gt;) would
+call completely messing up the measure, by making it a career-defining
+target.&lt;/p&gt;
+&lt;h2&gt;In summary&lt;/h2&gt;
+&lt;p&gt;NPS strikes me as Not Particularly Sensible.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h3&gt;Further reading&lt;/h3&gt;
+&lt;p&gt;These are provided for additional reference only; I do not necessarily
+agree with all their findings and suggestions.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Kim Witten, &lt;a href="https://uxdesign.cc/this-popular-business-metric-is-hurting-you-55ed535e9a59"&gt;10 reasons why NPS is BS (and what you can do about
+  it)&lt;/a&gt;
+  (2022)&lt;/li&gt;
+&lt;li&gt;Khadeeja Safdar and Inti Pacheco, &lt;a href="https://www.wsj.com/articles/the-dubious-management-fad-sweeping-corporate-america-11557932084"&gt;The Dubious Management Fad
+  Sweeping Corporate
+  America&lt;/a&gt;
+  (Wall Street Journal, 2019) (paywalled)&lt;/li&gt;
+&lt;li&gt;Ron Shevlin, &lt;a href="https://www.forbes.com/sites/ronshevlin/2019/05/21/its-time-to-retire-the-net-promoter-score/"&gt;It’s Time To Retire The Net Promoter Score (And Here’s
+  What To Replace It
+  With)&lt;/a&gt;
+  (Forbes, 2019)&lt;/li&gt;
+&lt;li&gt;Jared Spool, &lt;a href="https://articles.uie.com/net-promoter-score-considered-harmful-and-what-ux-professionals-can-do-about-it/"&gt;Net Promoter Score Considered Harmful (and What UX
+  Professionals Can Do About
+  It)&lt;/a&gt;
+  (2017)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I should mention that I particularly disagree with the notion of
+“replacing” the NPS with something else. See &lt;a href="({filename}meaningless-metrics-treacherous-targets.md)"&gt;my thoughts on
+metrics&lt;/a&gt; for
+background.&lt;/p&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Uncertainty, industrious compliance, and the illusion of control</title><link href="https://xahteiwi.eu/blog/2022/09/29/industrious-compliance/" rel="alternate"></link><published>2022-09-29T20:00:00+00:00</published><updated>2022-09-29T20:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-09-29:/blog/2022/09/29/industrious-compliance/</id><summary type="html">&lt;p&gt;Why are so many managers obsessed with faux certainty in situations when objectively, there can&amp;rsquo;t be any?&lt;/p&gt;</summary><content type="html">&lt;p&gt;If I had visited you from the future six months ago, and given you
 today’s headlines to read, you would probably have dismissed me as a
 lunatic. And you’d probably say the same to someone who dropped in on
 you today and read you the headlines from six months out. And if
