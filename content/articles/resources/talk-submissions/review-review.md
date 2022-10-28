@@ -1,7 +1,7 @@
 Title: The Review Review
 Date: 2021-10-07
 Tags: Conference, GitLab, GitHub, Zuul
-Slug: review-review
+Slug: the-review-review
 Summary: A talk I submitted to DevOpsDays Tel Aviv 2021 and DevConf.CZ 2022
 
 This is a talk I submitted[^1] to
