@@ -1,5 +1,5 @@
-pelican>4,<4.5
-jinja2<3.0.1
+pelican
+pelican-render-math
 markdown
 bs4
 ghp-import
