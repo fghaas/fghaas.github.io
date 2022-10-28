@@ -5,35 +5,43 @@ codes&lt;/a&gt;,
 but you’re not quite sure of exactly how much extra space you’re going
 to save, and whether or not that’s worth the performance penalty?
 Here’s a simple recipe for calculating that space overhead.&lt;/p&gt;
-&lt;p&gt;Suppose a RADOS object has a size of $S$, and because it’s in an EC
+&lt;p&gt;Suppose a RADOS object has a size of &lt;span class="math"&gt;\(S\)&lt;/span&gt;, and because it’s in an EC
 pool using the
 &lt;a href="https://docs.ceph.com/docs/master/rados/operations/erasure-code-jerasure/"&gt;&lt;code&gt;jerasure&lt;/code&gt;&lt;/a&gt;
 or
 &lt;a href="https://docs.ceph.com/docs/master/rados/operations/erasure-code-isa/"&gt;&lt;code&gt;isa&lt;/code&gt;&lt;/a&gt;
-plugin,&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt; Ceph splits it into $k$ equally-sized chunks. Then the
-size of any of its $k$ chunks will be: $$S \over k$$&lt;/p&gt;
-&lt;p&gt;In addition, we get $m$ more parity chunks, also of size $S \over k$.&lt;/p&gt;
-&lt;p&gt;Thus, the total amount of storage taken by an object of size $S$ is:
-$$k \cdot {S \over k} + m \cdot {S \over k}$$&lt;/p&gt;
-&lt;p&gt;This of course we can rearrange and reduce to $$S + S \cdot {m \over
-k}$$ or $$S \cdot (1 + {m \over k})$$ &lt;/p&gt;
+plugin,&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt; Ceph splits it into &lt;span class="math"&gt;\(k\)&lt;/span&gt; equally-sized chunks. Then the
+size of any of its &lt;span class="math"&gt;\(k\)&lt;/span&gt; chunks will be: &lt;/p&gt;
+&lt;div class="math"&gt;$$S \over k$$&lt;/div&gt;
+&lt;p&gt;In addition, we get &lt;span class="math"&gt;\(m\)&lt;/span&gt; more parity chunks, also of size &lt;span class="math"&gt;\(S \over k\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Thus, the total amount of storage taken by an object of size &lt;span class="math"&gt;\(S\)&lt;/span&gt; is:
+&lt;/p&gt;
+&lt;div class="math"&gt;$$k \cdot {S \over k} + m \cdot {S \over k}$$&lt;/div&gt;
+&lt;p&gt;This of course we can rearrange and reduce to &lt;/p&gt;
+&lt;div class="math"&gt;$$S + S \cdot {m \over
+k}$$&lt;/div&gt;
+&lt;p&gt; or &lt;/p&gt;
+&lt;div class="math"&gt;$$S \cdot (1 + {m \over k})$$&lt;/div&gt;
 &lt;p&gt;In other words, the overhead (that is, the &lt;strong&gt;additional storage&lt;/strong&gt;
-taken up by the EC parity data) is $$S \cdot {m \over k}$$ or when
-expressed as a proportion to $S$, simply $$m \over k$$&lt;/p&gt;
-&lt;p&gt;As an example, an EC profile with $k = 8, m=3$ comes with a storage
-overhead of $3 \over 8$ or 37.5%.&lt;/p&gt;
-&lt;p&gt;One with $k=5, m=2$ has an overhead of $2 \over 5$, or 40%. &lt;/p&gt;
+taken up by the EC parity data) is &lt;/p&gt;
+&lt;div class="math"&gt;$$S \cdot {m \over k}$$&lt;/div&gt;
+&lt;p&gt; or when
+expressed as a proportion to &lt;span class="math"&gt;\(S\)&lt;/span&gt;, simply &lt;/p&gt;
+&lt;div class="math"&gt;$$m \over k$$&lt;/div&gt;
+&lt;p&gt;As an example, an EC profile with &lt;span class="math"&gt;\(k = 8, m=3\)&lt;/span&gt; comes with a storage
+overhead of &lt;span class="math"&gt;\(3 \over 8\)&lt;/span&gt; or 37.5%.&lt;/p&gt;
+&lt;p&gt;One with &lt;span class="math"&gt;\(k=5, m=2\)&lt;/span&gt; has an overhead of &lt;span class="math"&gt;\(2 \over 5\)&lt;/span&gt;, or 40%. &lt;/p&gt;
 &lt;p&gt;And finally, a &lt;em&gt;replicated&lt;/em&gt; (conventional, non-EC) pool with 3
 replicas can be thought of as having a degenerate EC profile with
-$k=1, m=2$, resulting in an overhead of $2 \over 1$, or 200%.&lt;/p&gt;
+&lt;span class="math"&gt;\(k=1, m=2\)&lt;/span&gt;, resulting in an overhead of &lt;span class="math"&gt;\(2 \over 1\)&lt;/span&gt;, or 200%.&lt;/p&gt;
 &lt;p&gt;On a parting note, you should realize that the space utilization
 overhead is only one factor by which you should weigh erasure code
 profiles against one another. The other is performance. Here, the
 general (deliberately oversimplified) rule is that the more chunks you
-define — in other words, the higher your $k$ — the higher the
+define — in other words, the higher your &lt;span class="math"&gt;\(k\)&lt;/span&gt; — the higher the
 performance penalty you suffer, particularly on reads.&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2"&gt;2&lt;/a&gt;&lt;/sup&gt; This is due to
 the fact that in order to reconstruct the object and serve it to the
-application, your client must collect data from $k$ different OSDs and
+application, your client must collect data from &lt;span class="math"&gt;\(k\)&lt;/span&gt; different OSDs and
 assemble it locally.&lt;sup id="fnref:3"&gt;&lt;a class="footnote-ref" href="#fn:3"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;div class="footnote"&gt;
 &lt;hr/&gt;
@@ -62,7 +70,69 @@ talk&lt;/a&gt; on the subject at OpenStack
 Days Nordic 2019. &lt;a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="hints-and-kinks"></category><category term="Ceph"></category></entry><entry><title>Learn Ceph — For Fun, For Real, For Free!</title><link href="https://xahteiwi.eu/resources/presentations/learn-ceph-for-fun-for-real-for-free/" rel="alternate"></link><published>2019-05-25T00:00:00+00:00</published><updated>2019-05-25T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-05-25:/resources/presentations/learn-ceph-for-fun-for-real-for-free/</id><content type="html">&lt;p&gt;My lightning talk from Cephalocon 2019.&lt;/p&gt;
+&lt;/div&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="hints-and-kinks"></category><category term="Ceph"></category></entry><entry><title>Learn Ceph — For Fun, For Real, For Free!</title><link href="https://xahteiwi.eu/resources/presentations/learn-ceph-for-fun-for-real-for-free/" rel="alternate"></link><published>2019-05-25T00:00:00+00:00</published><updated>2019-05-25T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-05-25:/resources/presentations/learn-ceph-for-fun-for-real-for-free/</id><content type="html">&lt;p&gt;My lightning talk from Cephalocon 2019.&lt;/p&gt;
 &lt;!--break--&gt;
 &lt;ul&gt;
 &lt;li&gt;Video:

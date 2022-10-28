@@ -215,7 +215,7 @@ staying <em>narrow</em>, or should it grow <em>wider</em> while staying <em>shal
 <h2>Fast-forward five years</h2>
 <p>To look at that, Alex mentally fast-forwards five years under the
 currently assumed growth model. After five years of doubling in
-headcount, the company now has $21 \cdot 2^5 = 672$ employees.</p>
+headcount, the company now has <span class="math">\(21 \cdot 2^5 = 672\)</span> employees.</p>
 <p>In this scenario, everyone in the company works still works in a
 5-person team, out of which one person is the leader. So every leader
 has 4 people that report to them. Let’s look at one employee, Sam. Sam
@@ -237,26 +237,29 @@ what’s the maximum company size this model can handle?</p>
 <p>Let’s quickly break that down and see how we can plug other numbers in.</p>
 <h2>A gentle bit of maths, part I: team size and hierarchy levels</h2>
 <p>Say we take company’s <em>width</em>, that is the number of people working
-together in any group, <em>excluding</em> the leader, as $x$. In our example,
-that’s $4$.</p>
-<p>Then, any team’s size (which we’ll call $n$, for reasons we’ll get to
-in a jiffy) is of course $x+1=5$.</p>
-<p>The number of people any Senior Manager is reponsible for is $(x+1)x +
-1 = x^2+x+1 = 21$ (that is, their Manager’s teams, and themselves).</p>
-<p>The number of people any Director is responsible for is $((x+1)x+1)x+1
-= x^3+x^2+x+1 = 85$.</p>
+together in any group, <em>excluding</em> the leader, as <span class="math">\(x\)</span>. In our example,
+that’s <span class="math">\(4\)</span>.</p>
+<p>Then, any team’s size (which we’ll call <span class="math">\(n\)</span>, for reasons we’ll get to
+in a jiffy) is of course <span class="math">\(x+1=5\)</span>.</p>
+<p>The number of people any Senior Manager is reponsible for is <span class="math">\((x+1)x +
+1 = x^2+x+1 = 21\)</span> (that is, their Manager’s teams, and themselves).</p>
+<p>The number of people any Director is responsible for is <span class="math">\(((x+1)x+1)x+1
+= x^3+x^2+x+1 = 85\)</span>.</p>
 <p>You see where this is going. For any additional level of <em>depth</em>, we
-simply need to add another power of $x$.</p>
-<p>And of course $1 = x^0$ — at the zeroth depth level there’s one
+simply need to add another power of <span class="math">\(x\)</span>.</p>
+<p>And of course <span class="math">\(1 = x^0\)</span> — at the zeroth depth level there’s one
 single person: the CEO.</p>
 <p>So we can express the number of people in an organization with a width
-of $x$ and a depth of $y$ as
-$$x^0 + x^1 + x^2 + … + x^y$$</p>
-<p>or, more briefly:<sup id="fnref:i"><a class="footnote-ref" href="#fn:i">1</a></sup> $$\sum_{i=0}^{y} x^{i}$$</p>
+of <span class="math">\(x\)</span> and a depth of <span class="math">\(y\)</span> as
+</p>
+<div class="math">$$x^0 + x^1 + x^2 + ... + x^y$$</div>
+<p>or, more briefly:<sup id="fnref:i"><a class="footnote-ref" href="#fn:i">1</a></sup> </p>
+<div class="math">$$\sum_{i=0}^{y} x^{i}$$</div>
 <p>And that, in turn, <a href="https://www.wolframalpha.com/input/?i2d=true&amp;i=Sum%5BPower%5Bx%2Cn%5D%2C%7Bn%2C0%2Cy%7D%5D">happens to work out
 to</a><sup id="fnref:indeterminate"><a class="footnote-ref" href="#fn:indeterminate">2</a></sup>
-$${x^{y+1}-1} \over {x-1}$$</p>
-<p>Plug in the numbers for $x=4$ and $y=5$, and we get 1,365. </p>
+</p>
+<div class="math">$${x^{y+1}-1} \over {x-1}$$</div>
+<p>Plug in the numbers for <span class="math">\(x=4\)</span> and <span class="math">\(y=5\)</span>, and we get 1,365. </p>
 <h2>A gentle bit of maths, part II: communications in complete graphs</h2>
 <p>Now, what’s our scaling constraint in a knowledge organization? The
 number of people you need to constantly be in touch with in order to
@@ -271,11 +274,13 @@ Joe, and how Joe and Harry are coordinating their latest change
 (etc.).</p>
 <p>That means that <strong>within a team, communications are a <a href="https://en.wikipedia.org/wiki/Complete_graph">complete
 graph</a></strong>. And for a
-complete graph, the number of <em>edges</em> is given by $${n(n-1)}\over 2$$</p>
-<p>In our case, $n$ is our team size (including the leader), thus
-$x+1$ (the reports plus the leader). </p>
+complete graph, the number of <em>edges</em> is given by </p>
+<div class="math">$${n(n-1)}\over 2$$</div>
+<p>In our case, <span class="math">\(n\)</span> is our team size (including the leader), thus
+<span class="math">\(x+1\)</span> (the reports plus the leader). </p>
 <p>So we can rewrite the complete-graph formula as: 
-$${{(x+1)(x+1-1)} \over 2} = {{x(x+1)} \over 2}$$</p>
+</p>
+<div class="math">$${{(x+1)(x+1-1)} \over 2} = {{x(x+1)} \over 2}$$</div>
 <p>So in order for the team to be well informed of everyone’s
 actions at all times, a 5-person team must keep track of 10
 communications links between people. That’s absolutely doable, though
@@ -299,8 +304,8 @@ manage the same headcount growth is to make the company wider — in
 other words, have more people report to one manager than previously
 planned.</p>
 <p>So Alex, being a good CEO, opens some spread sheet software and
-creates this handy table that simply plugs in values for $x$ and $y$,
-with $x$ (width) in columns and $y$ (depth) in rows.<sup id="fnref:table"><a class="footnote-ref" href="#fn:table">4</a></sup></p>
+creates this handy table that simply plugs in values for <span class="math">\(x\)</span> and <span class="math">\(y\)</span>,
+with <span class="math">\(x\)</span> (width) in columns and <span class="math">\(y\)</span> (depth) in rows.<sup id="fnref:table"><a class="footnote-ref" href="#fn:table">4</a></sup></p>
 <table class="table-striped table">
 <thead>
 <tr>
@@ -451,48 +456,50 @@ with $x$ (width) in columns and $y$ (depth) in rows.<sup id="fnref:table"><a cla
 </tbody>
 </table>
 <p>For our previous five-year plan, Alex can just look up the cell
-matching $x=4$, $y=5$ and finds our known outcome, a maximum head
+matching <span class="math">\(x=4\)</span>, <span class="math">\(y=5\)</span> and finds our known outcome, a maximum head
 count of 1,365.</p>
 <p>Now, Alex looks at what it takes to flatten the organization by
 eliminating one hierarchy level, or by two.</p>
 <ul>
 <li>
 <p>If we want to reduce depth by 1, we simply go up one row (thus,
-  $y=4$) and find the value for $x$ that just accommodates 1,365
-  people or more. Alex sees that that’s $x=6$, which can accommodate
+  <span class="math">\(y=4\)</span>) and find the value for <span class="math">\(x\)</span> that just accommodates 1,365
+  people or more. Alex sees that that’s <span class="math">\(x=6\)</span>, which can accommodate
   1,555 people. That is, increase the width by 2: reorganize from
-  teams of 5 to teams of 7. Alex could also pick $x=5$, that is
+  teams of 5 to teams of 7. Alex could also pick <span class="math">\(x=5\)</span>, that is
   increase the width by only 1, which would land the company at a
-  maximum head count of 781. That is well below what $x=4$ can handle,
+  maximum head count of 781. That is well below what <span class="math">\(x=4\)</span> can handle,
   but it still lands Alex north of the original growth target of 672.</p>
 </li>
 <li>
-<p>If we want to reduce depth by 2, we go up two rows ($y=3$) and do
-  the same. We end up at $x=11$, which means to increase width by 7:
+<p>If we want to reduce depth by 2, we go up two rows (<span class="math">\(y=3\)</span>) and do
+  the same. We end up at <span class="math">\(x=11\)</span>, which means to increase width by 7:
   reorganize from teams of 5 to teams of 12. Thus, we land at a
   maximum of 1,464 people, slightly exceeding the headcount we’re able
   to accommodate if we keep growing with the current structure. We
-  could also do $x=10$ or $x=9$, landing us at maxima well below that
+  could also do <span class="math">\(x=10\)</span> or <span class="math">\(x=9\)</span>, landing us at maxima well below that
   (1,111 or 820), but still north of 672.</p>
 </li>
 </ul>
 <p>Now what does that mean in terms of communication channels each person
 has to maintain?</p>
 <p>Again, what we want to keep in mind is the number of edges in a
-complete graph connecting $n$ (that is, $x+1$) points. For regular
-employees, we know that that’s $${x(x+1)}\over 2$$</p>
-<p>And for any manager, who is effectively on two teams of size $x+1$
-simultaneously, that’s $$2 \cdot {{x(x+1)}\over 2} = x(x+1)$$</p>
+complete graph connecting <span class="math">\(n\)</span> (that is, <span class="math">\(x+1\)</span>) points. For regular
+employees, we know that that’s </p>
+<div class="math">$${x(x+1)}\over 2$$</div>
+<p>And for any manager, who is effectively on two teams of size <span class="math">\(x+1\)</span>
+simultaneously, that’s </p>
+<div class="math">$$2 \cdot {{x(x+1)}\over 2} = x(x+1)$$</div>
 <p>Which means:</p>
 <ul>
 <li>
-<p>If we want to reduce depth by 1 and go from $x=4$ to
-  $x=5$, every non-manager employee now needs to be aware of 15
+<p>If we want to reduce depth by 1 and go from <span class="math">\(x=4\)</span> to
+  <span class="math">\(x=5\)</span>, every non-manager employee now needs to be aware of 15
   communications links (instead of 10), every manager, of 30 (instead
   of 20).</p>
 </li>
 <li>
-<p>If instead we go from $x=4$ to $x=6$, every non-manager employee now
+<p>If instead we go from <span class="math">\(x=4\)</span> to <span class="math">\(x=6\)</span>, every non-manager employee now
   needs to be aware of 21 communications links, every manager, of 42.</p>
 </li>
 </ul>
@@ -501,16 +508,16 @@ communications complexity.</p>
 <ul>
 <li>
 <p>For the elimination of two hierarchy levels (a depth reduction by
-  2), we’ll need to move from $x=4$ to at least $x=8$. At that point,
+  2), we’ll need to move from <span class="math">\(x=4\)</span> to at least <span class="math">\(x=8\)</span>. At that point,
   every regular employee has at least 36 communications links on their
   teams to deal with; every manager deals with 72.</p>
 </li>
 <li>
-<p>If instead we go to $x=9$, every non-manager employee now needs to
+<p>If instead we go to <span class="math">\(x=9\)</span>, every non-manager employee now needs to
   be aware of 45 communications links, every manager, of 90.</p>
 </li>
 <li>
-<p>And for $x=10$, every non-manager employee now needs to
+<p>And for <span class="math">\(x=10\)</span>, every non-manager employee now needs to
   be aware of 55 communications links, every manager, of 110.</p>
 </li>
 </ul>
@@ -677,32 +684,32 @@ cell <em>directly above it</em> will contain the total number of managers
 (that is, people who have direct reports) for the same width. So,</p>
 <ul>
 <li>
-<p>for $x=4$, $y=5$ (our original scenario allowing the company to grow
+<p>for <span class="math">\(x=4\)</span>, <span class="math">\(y=5\)</span> (our original scenario allowing the company to grow
   to 1,365 people), Alex would have to hire and pay a total of 341
   managers.</p>
 </li>
 <li>
-<p>for $x=6$, $y=4$ (the scenario that eliminates one level, and can
+<p>for <span class="math">\(x=6\)</span>, <span class="math">\(y=4\)</span> (the scenario that eliminates one level, and can
   accommodate 1,555 people), Alex’ company will need 259
   managers. That’s 82 fewer managers, or a reduction by about 24%.</p>
 </li>
 <li>
-<p>for $x=5$, $y=4$ (the scenario that eliminates one level, but
+<p>for <span class="math">\(x=5\)</span>, <span class="math">\(y=4\)</span> (the scenario that eliminates one level, but
   accommodates only 781 people), Alex’ company will need 156
   managers. That’s 185 fewer managers, or a reduction by about 54%.</p>
 </li>
 <li>
-<p>for $x=11$, $y=3$ (the scenario that eliminates two levels, and can
+<p>for <span class="math">\(x=11\)</span>, <span class="math">\(y=3\)</span> (the scenario that eliminates two levels, and can
   accommodate 1,464 people), the company will need 133
   managers. That’s 208 fewer managers, or a reduction by about 61%.</p>
 </li>
 <li>
-<p>for $x=10$, $y=3$ (the scenario that eliminates two levels, but
+<p>for <span class="math">\(x=10\)</span>, <span class="math">\(y=3\)</span> (the scenario that eliminates two levels, but
   accommodates only 1,111 people), the company will need 111
   managers. That’s 230 fewer managers, or a reduction by about 67%.</p>
 </li>
 <li>
-<p>for $x=9$, $y=3$ (the scenario that eliminates two levels, but
+<p>for <span class="math">\(x=9\)</span>, <span class="math">\(y=3\)</span> (the scenario that eliminates two levels, but
   accommodates only 820 people), the company will need 91
   managers. That’s 250 fewer managers, or a reduction by about 73%.</p>
 </li>
@@ -861,9 +868,10 @@ is in columns, depth is in rows):</p>
 </tr>
 </tbody>
 </table>
-<p>You’ll see that at a depth of 1, the share of managers is obviously $1
-\over {x+1}$, but then as we increase in depth it quickly trends
-toward:<sup id="fnref:reciprocal"><a class="footnote-ref" href="#fn:reciprocal">5</a></sup>  $$1 \over x$$</p>
+<p>You’ll see that at a depth of 1, the share of managers is obviously <span class="math">\(1
+\over {x+1}\)</span>, but then as we increase in depth it quickly trends
+toward:<sup id="fnref:reciprocal"><a class="footnote-ref" href="#fn:reciprocal">5</a></sup> </p>
+<div class="math">$$1 \over x$$</div>
 <p>The number of managers in Alex’ company is roughly the reciprocal of
 the company’s width. In other words, the number of managers is
 inversely proportional to width.</p>
@@ -885,21 +893,21 @@ scales progressively worse, the “flatter” (wider) it gets.</p>
 <li id="fn:i">
 <p>In this <a href="https://en.wikipedia.org/wiki/Summation#Capital-sigma_notation">capital-sigma summation
 formula</a>,
-$i$ doesn’t mean anything other than it being a counter. The
-formula is pronounced, in English, as “sum of $x$ to the $i$, from
-$i$ equals zero to $y$” (in other words, add up all whole-number
-powers of $x$, from $x^0$ to $x^y$). <a class="footnote-backref" href="#fnref:i" title="Jump back to footnote 1 in the text">↩</a></p>
+<span class="math">\(i\)</span> doesn’t mean anything other than it being a counter. The
+formula is pronounced, in English, as “sum of <span class="math">\(x\)</span> to the <span class="math">\(i\)</span>, from
+<span class="math">\(i\)</span> equals zero to <span class="math">\(y\)</span>” (in other words, add up all whole-number
+powers of <span class="math">\(x\)</span>, from <span class="math">\(x^0\)</span> to <span class="math">\(x^y\)</span>). <a class="footnote-backref" href="#fnref:i" title="Jump back to footnote 1 in the text">↩</a></p>
 </li>
 <li id="fn:indeterminate">
 <p>You might notice that this expression is
 <a href="https://en.wikipedia.org/wiki/Indeterminate_form">indeterminate</a>
-for $x = 1$. Now I’d say the idea of a hierarchical company made
+for <span class="math">\(x = 1\)</span>. Now I’d say the idea of a hierarchical company made
 up of one-on-one teams (every manager has one report, who in turn
 is the manager of one report, and so on) is extremely unrealistic.
 But just for completeness’ sake, we can apply <a href="https://www.wolframalpha.com/input/?i2d=true&amp;i=Limit%5BDivide%5BPower%5Bx%2Cy%2B1%5D-1%2Cx-1%5D%2Cx-%3E1%5D">a
 limit</a>
 to show that 
-$$\lim_{x \to 1} {{x^{y+1}-1} \over {x-1}} = {y + 1}$$ 
+<div class="math">$$\lim_{x \to 1} {{x^{y+1}-1} \over {x-1}} = {y + 1}$$</div> 
 In other words, such an organization could accommodate a
 number of people that is equal to its depth plus 1. <a class="footnote-backref" href="#fnref:indeterminate" title="Jump back to footnote 2 in the text">↩</a></p>
 </li>
@@ -921,21 +929,83 @@ employers</a>. <a class="footnote-backref" href="#fnref:table" title="Jump back
 <p>If you’re curious, that is because the share of
 managers in relation to the total number of people in the company
 is 
-$${\sum_{i=0}^{y-1} x^{i}} \over {\sum_{i=0}^{y} x^{i}}$$
-That works out to be $${x^y-1} \over {x^{y+1}-1}$$
-Which, for $y=1$, is
-$${{x-1} \over {x^2-1}} = {{x-1} \over {(x+1)\cdot(x-1)}} = {1 \over {x+1}}$$
-And for larger values of $y$, both $x^y$ and
-$x^{y+1}$ become so large that the $-1$ part barely matters, so
+<div class="math">$${\sum_{i=0}^{y-1} x^{i}} \over {\sum_{i=0}^{y} x^{i}}$$</div>
+That works out to be <div class="math">$${x^y-1} \over {x^{y+1}-1}$$</div>
+Which, for <span class="math">\(y=1\)</span>, is
+<div class="math">$${{x-1} \over {x^2-1}} = {{x-1} \over {(x+1)\cdot(x-1)}} = {1 \over {x+1}}$$</div>
+And for larger values of <span class="math">\(y\)</span>, both <span class="math">\(x^y\)</span> and
+<span class="math">\(x^{y+1}\)</span> become so large that the <span class="math">\(-1\)</span> part barely matters, so
 it’s effectively: 
-$${{x^y-1} \over {x^{y+1}-1}} \approx {x^y \over x^{y+1}} = {1 \over x}$$
-In slightly more formal terms, we can consider $1 \over x$ the 
+<div class="math">$${{x^y-1} \over {x^{y+1}-1}} \approx {x^y \over x^{y+1}} = {1 \over x}$$</div>
+In slightly more formal terms, we can consider <span class="math">\(1 \over x\)</span> the 
 <em><a href="https://en.wikipedia.org/wiki/Limit_(mathematics)">limit</a></em> of the
-expression as $y$ goes to infinity:
-$$\lim_{y \to \infty} {{x^y-1} \over {x^{y+1}-1}} = {1 \over x}$$ <a class="footnote-backref" href="#fnref:reciprocal" title="Jump back to footnote 5 in the text">↩</a></p>
+expression as <span class="math">\(y\)</span> goes to infinity:
+<div class="math">$$\lim_{y \to \infty} {{x^y-1} \over {x^{y+1}-1}} = {1 \over x}$$</div> <a class="footnote-backref" href="#fnref:reciprocal" title="Jump back to footnote 5 in the text">↩</a></p>
 </li>
 </ol>
 </div>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
   </div>
   <div class="tag-cloud">
     <p>

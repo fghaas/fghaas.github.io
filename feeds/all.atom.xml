@@ -2012,7 +2012,7 @@ your organization’s entropy decelerator.&lt;/p&gt;
 &lt;p&gt;Somebody wants to “open up team communications”, or “flatten the
   organization”, so that everyone’s &lt;a href="https://xahteiwi.eu/blog/2022/01/16/flat-org-scaling/"&gt;complete
   graph&lt;/a&gt; has way more edges?
-  That’s when you educate them about ${n(n-1)}\over 2$, and what
+  That’s when you educate them about &lt;span class="math"&gt;\({n(n-1)}\over 2\)&lt;/span&gt;, and what
   quadratic growth means.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -2051,7 +2051,69 @@ Earth&lt;/a&gt;
 to this idea. &lt;a class="footnote-backref" href="#fnref:hadfield" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>An experiment</title><link href="https://xahteiwi.eu/blog/2022/05/06/experiment/" rel="alternate"></link><published>2022-05-06T00:00:00+00:00</published><updated>2022-05-06T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-05-06:/blog/2022/05/06/experiment/</id><summary type="html">&lt;p&gt;I am launching a small experiment. Would you like to help?&lt;/p&gt;</summary><content type="html">&lt;p&gt;A little while back, I posted on my Twitter and Mastodon feeds&lt;sup id="fnref:crossposter"&gt;&lt;a class="footnote-ref" href="#fn:crossposter"&gt;1&lt;/a&gt;&lt;/sup&gt;
+&lt;/div&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>An experiment</title><link href="https://xahteiwi.eu/blog/2022/05/06/experiment/" rel="alternate"></link><published>2022-05-06T00:00:00+00:00</published><updated>2022-05-06T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-05-06:/blog/2022/05/06/experiment/</id><summary type="html">&lt;p&gt;I am launching a small experiment. Would you like to help?&lt;/p&gt;</summary><content type="html">&lt;p&gt;A little while back, I posted on my Twitter and Mastodon feeds&lt;sup id="fnref:crossposter"&gt;&lt;a class="footnote-ref" href="#fn:crossposter"&gt;1&lt;/a&gt;&lt;/sup&gt;
 asking people who kept a personal blog to post their RSS or Atom feed
 URLs. A surprising number of people responded — many more on Mastodon
 than on Twitter, incidentally, though I have about 15 times as many
@@ -2136,390 +2198,7 @@ to after all, I’ll happily rehome the site elsewhere.&lt;/p&gt;
 editorial control of all content. If you’re sending me a PR, please do
 so with the understanding that I might decline to merge or publish it,
 for any reason at all. If that’s not for you, please use your own
-platform.&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>The Review Review</title><link href="https://xahteiwi.eu/./blog/2022/01/29/review-review/" rel="alternate"></link><published>2022-01-29T00:00:00+00:00</published><updated>2022-01-29T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-01-29:/./blog/2022/01/29/review-review/</id><summary type="html">&lt;p&gt;Musings on source code management, code review, testing, deployment, and collaboration culture.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I wanted to share a few thoughts on something I consider a rather
-important topic in our industry: code review and CI/CD tools, and how
-they relate.&lt;/p&gt;
-&lt;p&gt;This means that I’m talking about&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;source code management:&lt;/strong&gt; where we store our code, and how we
-  manage access to it;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;code review:&lt;/strong&gt; how we coordinate changes to our code;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;testing and gating:&lt;/strong&gt; how we make sure that those changes don’t
-  break anything;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;deployment:&lt;/strong&gt; how we push changes and updates out to the consumers
-  of our code.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;In case it’s not obvious, that means I’m talking about a large
-fraction of the software engineering cycle. Not all of it; the part
-involving “fooling around” (&lt;a href="https://xahteiwi.eu/blog/2021/11/21/creativity/"&gt;creative play&lt;/a&gt;)
-is perhaps excluded — but substantially everything where people can be
-said to be “developing” in a software engineering organization is
-encompassed in these things.&lt;/p&gt;
-&lt;p&gt;And there’s a few things that follow from that:&lt;/p&gt;
-&lt;p&gt;First, whatever tools we use in order to accomplish these four things,
-they simultaneously influence and &lt;em&gt;are&lt;/em&gt; influenced by our
-collaboration culture.&lt;/p&gt;
-&lt;p&gt;It’s ludicrous to presume that tools and culture are independent of
-each other, or to categorically declare that tools must be made to fit
-processes, not the other way around. That’s not how people
-work. Culture and tools always have an influence on each other.&lt;/p&gt;
-&lt;p&gt;Second, the scope of these things is continually expanding as the
-field evolves. To illustrate, a few years ago a CI/CD platform could
-get away with supporting automated unit tests and kicking off an
-Ansible playbook to deploy things to VMs. Today, what we expect out of
-a continuous deployment pipeline includes support for&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;a package registry (for Python packages or Node.js modules, to give
-  just two examples),&lt;/li&gt;
-&lt;li&gt;a container image registry (for Docker/Podman/OCI containers),&lt;/li&gt;
-&lt;li&gt;a secret store,&lt;/li&gt;
-&lt;li&gt;the ability to deploy to a Kubernetes cluster.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;And that’s just a few examples. I might be forgetting others.&lt;/p&gt;
-&lt;p&gt;Third, this is a classic example of where we must apply &lt;em&gt;&lt;a href="https://youtu.be/EbLh7rZ3rhU"&gt;systems
-thinking&lt;/a&gt;:&lt;/em&gt; since substantially
-everything the organization does is connected to the toolchain, we
-&lt;strong&gt;cannot make changes to one part of the system without considering
-the consequences for the system as a whole.&lt;/strong&gt; That is not to say that
-we cannot make incremental changes, just that we can’t pretend that
-anything in the system stands alone.&lt;/p&gt;
-&lt;p&gt;To illustrate what I mean, consider the example of an automotive
-engineer implementing a design change for an engine. If the design
-change makes the engine so much more efficient that it means a range
-extension by 10% then that’s excellent. But if in the process the
-designer has made it impossible to connect the engine to its battery
-(or the fuel line, if we’re talking about obsolescent technology),
-then installing the new engine doesn’t just not improve anything — it
-renders the vehicle immobile.&lt;/p&gt;
-&lt;h2&gt;Responsibility&lt;/h2&gt;
-&lt;!-- Note --&gt;
-&lt;p&gt;Now, what does that mean about responsibility? Who is ultimately in
-charge of the system consisting of source code management and review
-tools, and your CI/CD pipeline? The answer is hopefully a no-brainer:
-since everything I talk about &lt;em&gt;including&lt;/em&gt; your organizational culture
-encompasses substantially all of your engineering organization, the
-responsibility rests with whoever is in charge of your engineering
-organization (in most companies, that’s often the CTO). And if you’re
-a software technology company so your &lt;em&gt;entire&lt;/em&gt; enterprise is
-substantially a software engineering organization, it’s your CEO’s or
-MD’s responsibility.&lt;/p&gt;
-&lt;p&gt;Of course, that person may delegate some of the &lt;em&gt;tasks&lt;/em&gt; and details of
-running your source code management and code review and CI/CD
-platform, but &lt;em&gt;responsibility&lt;/em&gt; stays with them.&lt;/p&gt;
-&lt;p&gt;And that responsibility requires both an understanding &lt;a href="https://xahteiwi.eu/blog/2019/04/21/non-technical/"&gt;of the
-technology itself&lt;/a&gt;, &lt;em&gt;and&lt;/em&gt; an understanding
-of how it interacts with your engineering culture. A &lt;em&gt;profound&lt;/em&gt;
-understanding. &lt;/p&gt;
-&lt;p&gt;And I’d go so far as to say if you head up a software engineering
-organization and you &lt;em&gt;don’t&lt;/em&gt; have a profound understanding of this
-toolchain and its mutual influence on your culture, you should find
-another job.&lt;/p&gt;
-&lt;p&gt;And if you work &lt;em&gt;in&lt;/em&gt; a software engineering organization and the
-person in charge lacks precisely that profound understanding, you
-should &lt;em&gt;also&lt;/em&gt; find another job, because you deserve better.&lt;/p&gt;
-&lt;p&gt;So having said all that, we can start talking about tools.&lt;/p&gt;
-&lt;p&gt;And I’m going to talk about three of them, all of which I use in some
-professional capacity on an at-least-weekly basis.&lt;/p&gt;
-&lt;!-- .slide: data-timing="20" --&gt;
-&lt;h1&gt;GitHub&lt;/h1&gt;
-&lt;p&gt;The first one is the toolchain that — I think — a majority of open
-source developers will be most familiar with: GitHub, whose
-collaboration model is based on the &lt;em&gt;Pull Request&lt;/em&gt; (PR).&lt;/p&gt;
-&lt;p&gt;Now the GitHub PR model was strongly influenced by the distributed
-development model of the Linux kernel. The kernel project is what Git
-was originally written for, so naturally it is also where the original
-convention for pull requests emerged.&lt;/p&gt;
-&lt;p&gt;In kernel development, during a kernel merge window, subsystem
-maintainers fix up a publicly accessible Git tree for Linus to pull
-from. They then send a message that follows a conventional format to
-the &lt;code&gt;linux-kernel&lt;/code&gt; mailing list (the LKML) outlining the purpose of
-the changes they want merged. This email contains a summary of the
-changes, and then an enumeration of each commit to be merged. (There’s
-a &lt;code&gt;git&lt;/code&gt; subcommand, &lt;code&gt;git request-pull&lt;/code&gt;, to format such a message.)&lt;/p&gt;
-&lt;p&gt;The review then proceeds in an email exchange on LKML. Once Linus is
-happy with the change, he pulls from the subsystem maintainer’s branch
-and informs them that their changes have merged.&lt;/p&gt;
-&lt;p&gt;Individual subsystem maintainers replicate this model, perhaps with
-small modifications, for contributions to the subsystems they are
-responsible for.&lt;/p&gt;
-&lt;h2&gt;GitHub Pull Requests (PRs)&lt;/h2&gt;
-&lt;p&gt;GitHub replicates some features of the kernel’s model:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The collaboration model is generally, “fork and pull”. Individuals
-  maintain their own forks of an upstream codebase, and then send pull
-  requests when they are ready to review. (However, the review process
-  then uses a web interface, rather than a mailing list — in
-  principle, a GitHub reviewer can do a complete review within the
-  GitHub web interface and source code browser and would never even
-  need to check out the repository locally.)&lt;/li&gt;
-&lt;li&gt;Each PR generally consists of &lt;em&gt;multiple&lt;/em&gt; commits, which however are
-  expected to closely relate and serve a common purpose.&lt;/li&gt;
-&lt;li&gt;That common purpose is enumerated in a summary at the top of the
-  pull request. GitHub calls this the PR description.&lt;/li&gt;
-&lt;li&gt;Submitters can mark a PR as a draft, with which they indicate that
-  the PR is not ready to be merged yet. When drafts &lt;a href="https://github.blog/2019-02-14-introducing-draft-pull-requests/"&gt;became
-  available&lt;/a&gt;
-  in 2019, they replaced an emerging convention in which PR
-  descriptions would be prefixed by &lt;code&gt;WIP&lt;/code&gt; &lt;em&gt;(work in progress)&lt;/em&gt; or
-  &lt;code&gt;DNM&lt;/code&gt; &lt;em&gt;(do not merge)&lt;/em&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;GitHub PRs can be &lt;em&gt;approved,&lt;/em&gt; &lt;em&gt;rejected&lt;/em&gt; or &lt;em&gt;commented on&lt;/em&gt; by
-maintainers or other contributors, and an approval can be made a
-mandatory requirement for merging, but by default GitHub will let
-anyone merge the PR who has write permissions to the repository that
-the PR targets. This includes the possibility for a maintainer to
-merge the contributor’s remote branch to their own local checkout, and
-then pushing the merged branch to he target repo of the PR. Such an
-event will automatically close the PR and mark it as merged.&lt;/p&gt;
-&lt;h2&gt;GitHub Actions&lt;/h2&gt;
-&lt;p&gt;GitHub has, for a long time, allowed maintainers to require that PRs
-pass automated testing. However, until rather recently, it relied on
-them to run (or interface with) a separate testing infrastructure
-outside of GitHub to do that. Typical examples for this included
-CircleCI, or Travis, or Jenkins. It was only &lt;a href="https://github.blog/2019-08-08-github-actions-now-supports-ci-cd/"&gt;in
-2019&lt;/a&gt;
-that GitHub announced automated testing via GitHub Actions.&lt;/p&gt;
-&lt;p&gt;At the time of writing however, GitHub Actions workflows are in
-widespread use for CI/CD, &lt;em&gt;but&lt;/em&gt; it is still quite common for
-GitHub-hosted projects to allow maintainers to circumvent CI/CD tests
-and merge directly. When this happens, it often creates a rather
-unpleasant situation in which CI/CD testing is only run for
-contributions by “outsiders” or “newbies”, whereas maintainers get to
-break things with impunity. This means that issues are often not
-detected until a casual contributor sends a PR, at which point the
-test breaks and leave the contributor confused (and sometimes lead to
-the change not even being considered because, well, “it makes the
-tests break.”)&lt;/p&gt;
-&lt;p&gt;Another thing that comes bundled with GitHub (and GitHub workflow
-actions) is the ability to maintain your own package registry &lt;a href="https://docs.github.com/en/packages/managing-github-packages-using-github-actions-workflows/publishing-and-installing-a-package-with-github-actions"&gt;and
-push artifacts to it from your
-workflow&lt;/a&gt;. Interestingly,
-at the time of writing, GitHub’s definition of “packages” includes
-container images, Ruby gems, and npm modules &lt;a href="https://docs.github.com/en/packages/working-with-a-github-packages-registry"&gt;among
-others&lt;/a&gt;,
-but presently does not include Python modules — although you do, of
-course, have the option to &lt;a href="https://github.com/marketplace/actions/pypi-publish"&gt;push your packages to PyPI from your
-workflow&lt;/a&gt;.&lt;/p&gt;
-&lt;h1&gt;GitLab&lt;/h1&gt;
-&lt;p&gt;The equivalent to the GitHub &lt;em&gt;pull request (PR)&lt;/em&gt; is the GitLab &lt;em&gt;merge
-request (MR)&lt;/em&gt;. In principle, a GitLab MR is quite similar to a GitHub
-PR, albeit with a few noticeable differences:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The “fork and pull” model is less prevalent on GitLab. Instead, it
-  is far more common for collaborators to work on one project, and
-  then create topic branches within that project for each set of
-  changes.&lt;/li&gt;
-&lt;li&gt;Since the project repo is shared, this facilitates collaboration on
-  a single changeset by multiple people: if two or more people wish to
-  collaborate on a change, they simply push additional squash or fixup
-  commits on the topic branch. They can &lt;em&gt;also&lt;/em&gt; agree to force-push
-  amended commits to the topic branch, in which the GitLab web
-  interface will helpfully point out differences between individual
-  &lt;em&gt;versions&lt;/em&gt; of a commit (something that GitHub presently cannot do in
-  a PR).&lt;/li&gt;
-&lt;li&gt;As in a GitHub PR, a GitLab MR is generally expected to include one
-  or more commits.&lt;/li&gt;
-&lt;li&gt;Also as in a GitHub PR, an MR is expected to contain a summary that
-  outlines its purpose.&lt;/li&gt;
-&lt;li&gt;GitLab MRs have a Draft status just like GitHub PRs do, and they
-  were introduced about the same time in both products, but GitLab had
-  a preceding feature called work-in-progress MRs (WIP MRs). GitLab
-  has the handy feature that MRs are &lt;em&gt;automatically&lt;/em&gt; marked as drafts
-  once any commit with &lt;code&gt;squash:&lt;/code&gt; or &lt;code&gt;fixup:&lt;/code&gt; in the commit message
-  ends up in the topic branch — GitLab rightfully infers that the
-  branch still needs a squash rebase prior to merge.&lt;/li&gt;
-&lt;li&gt;GitLab MRs can be reviewed in full using the web interface alone:
-  the review interface and the source code browser are closely
-  integrated, just like in GitHub.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;GitLab CI&lt;/h2&gt;
-&lt;p&gt;CI/CD has been an intrinsic part of the GitLab review
-experience for years, since GitLab includes full CI integration via
-the &lt;code&gt;.gitlab-ci.yml&lt;/code&gt; configuration file.&lt;/p&gt;
-&lt;p&gt;Since GitLab CI has been around for quite a while, and it has a
-multitude of ways to be used, it “feels” more intrinsic to the review
-process than GitHub Actions do, which to me still leave an impression
-of being bolted on. In addition, GitLab CI comes with multiple options
-of using the CI &lt;em&gt;runner:&lt;/em&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;You can use &lt;em&gt;shared runners,&lt;/em&gt; which GitLab operates for you. These
-  are Docker containers that GitLab spins up on your behalf in the
-  cloud, and which you share with other GitLab subscription customers.&lt;/li&gt;
-&lt;li&gt;You can also host your own runners. You can do that in Docker
-  containers, in Kubernetes clusters, in virtual machines, and even on
-  bare metal. The runners need no incoming network connectivity; they
-  simply connect to a service on your GitLab host and then poll
-  whether jobs wait for them.&lt;/li&gt;
-&lt;li&gt;You can also specify runners that are exclusive to a project, or to
-  a group or subgroup of projects.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;GitLab also comes with a &lt;a href="https://docs.gitlab.com/ee/user/packages/package_registry/"&gt;package
-registry&lt;/a&gt;,
-to which you can push packages from CI pipelines. This differs from
-GitHub in such a way that it &lt;a href="https://docs.gitlab.com/ee/user/packages/package_registry/#supported-package-managers"&gt;includes more package different
-formats&lt;/a&gt;,
-including a private PyPI workalike for Python packages. In addition,
-there’s also a separate &lt;a href="https://docs.gitlab.com/ee/user/packages/container_registry/"&gt;container
-registry&lt;/a&gt;
-for container images.&lt;/p&gt;
-&lt;h1&gt;Gerrit/Zuul&lt;/h1&gt;
-&lt;p&gt;Now, it feels a bit awkward to call this one “Gerrit/Zuul” when I’ve
-called the others just “GitHub” and “GitLab” respectively, and tacitly
-included the corresponding CI integrations (GitHub Actions and GitLab
-CI, respectively) in them. There are a couple of reasons for that:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Zuul is a CI/CD framework that is, in principle, not tied to Gerrit,
-  whereas GitHub Actions only apply to GitHub, and GitLab CI only to
-  GitLab. Gerrit/Zuul is a particular combination that was largely
-  popularized by the OpenStack community, which is why a lot of people
-  who are or were part of that community intuitively associate Gerrit
-  with Zuul and vice versa.
-  &lt;!-- It should be noted that Zuul was not the original CI/CD framework in
-  the OpenStack community. It was *developed* (and adopted) by that
-  community when it found that it was outgrowing the boundaries of its
-  original CI/CD platform (Jenkins). --&gt;
-&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Likewise, Gerrit is not tied to a specific CI/CD framework. It’s
-  perfectly feasible to run code reviews in Gerrit and use a different
-  CI/CD pipeline (or even none at all).&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;And Gerrit/Zuul does differ quite notably from GitHub and GitLab,
-whose features often map quite closely to each other, and I’d like to
-highlight some of those differences.&lt;/p&gt;
-&lt;h2&gt;Gerrit reviews&lt;/h2&gt;
-&lt;p&gt;The Gerrit review process differs in a few crucial points from the one
-we know from GitHub and GitLab:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;You don’t ask someone to pull from a branch or a fork or
-  yours. Instead, you run &lt;code&gt;git review&lt;/code&gt; and Gerrit will &lt;em&gt;make a branch
-  for you.&lt;/em&gt; Everything else flows from there.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Unlike a GitHub PR and GitLab MR, which both typically contain a
-  series of commits to be taken as a whole, a Gerrit &lt;em&gt;change&lt;/em&gt; is
-  really just that: one change. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Which, of course, also means that we don’t need a separate summary
-  for the change: the summary is the commit message.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;It’s still possible to submit a series of commits in the course of a
-  Gerrit review. However, Gerrit simply sees those as a series of
-  changes that all depend on one another.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Dependencies between changes can also be expressed explicitly, by
-  including appropriate keywords in commit messages. Crucially, these
-  dependencies &lt;em&gt;can cross project boundaries.&lt;/em&gt; That is to say, a
-  change in one Git repository can depend on a change in &lt;em&gt;another&lt;/em&gt; Git
-  repository, so long as they both use the same Gerrit instance for
-  review.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;And we also have the equivalent of a Draft PR/MR; in Gerrit that’s
-  called a work-in-progress change.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Because of this, when used in combination with CI such as Zuul, a
-Gerrit-reviewed project generally expects CI tests to pass &lt;em&gt;on every
-commit,&lt;/em&gt; without exceptions. This is in contrast to many GitHub or
-GitLab managed projects, which typically only expect the head commit
-of the topic branch associated with a PR/MR to pass CI.&lt;/p&gt;
-&lt;p&gt;In Gerrit/Zuul managed projects, it’s also Zuul that merges the
-commit. This is also in contrast to projects that live in GitHub or
-GitLab: in those, the pipeline run results are generally advisory in
-nature, and a successful pipeline run must still be confirmed by a
-human clicking a &lt;em&gt;Merge&lt;/em&gt; button (or running a &lt;code&gt;git merge&lt;/code&gt; command
-locally, and then pushing to the repository). In addition, even a
-failing CI run can generally be overridden by a “core committer” who
-has the ability to merge the PR/MR anyway.&lt;/p&gt;
-&lt;p&gt;A Gerrit/Zuul project typically has no such shortcuts, meaning the
-&lt;em&gt;only&lt;/em&gt; way to get changes into the repo is to pass both peer review,
-and the CI pipeline. In my experience, this tends to create a climate
-of leadership by example, which has a beneficial effect on both
-experienced developers (“seniors” in a corporate setting) and
-newcomers (“juniors”).&lt;/p&gt;
-&lt;h3&gt;Speculative merging&lt;/h3&gt;
-&lt;p&gt;There is one other property that Gerrit/Zuul has that sets it apart
-from other review/CI toolchains: &lt;em&gt;speculative merging.&lt;/em&gt; This involves
-the &lt;a href="https://zuul-ci.org/docs/zuul/3.10.2/user/gating.html#testing-in-parallel"&gt;parallel execution of CI jobs for interdependent
-changes&lt;/a&gt;. With
-speculative merging, even complex, long-running CI/CD pipelines don’t
-hold up the development process — and this massively enhances project
-scalability.&lt;/p&gt;
-&lt;h3&gt;No direct repo browser integration&lt;/h3&gt;
-&lt;p&gt;Notably, in Gerrit/Zuul there is no close integration with repository
-browsing. Gerrit does include the
-&lt;a href="https://gerrit.googlesource.com/gitiles/"&gt;Gitiles&lt;/a&gt; plugin for the
-purpose, but its user experience is rudimentary at best. A popular
-alternative is to deploy Gerrit with &lt;a href="https://gitea.io/en-us/"&gt;Gitea&lt;/a&gt;,
-but again, that’s not built-in and your trusted Gerrit/Zuul admin has
-to set it up for you. In addition, while source code browsing in
-GitHub and GitLab is tightly integrated with project permissions, and
-that is also true for Gitiles, there is a certain amount of
-administrative duplication to make your Gerrit repository and project
-permissions apply to Gitea.&lt;/p&gt;
-&lt;h3&gt;No built-in package registries&lt;/h3&gt;
-&lt;p&gt;There’s another difference in the Gerrit/Zuul stack when compared to
-GitHub and GitLab, and that is its absence of built-in package
-registries. Zuul has ready-to-use &lt;em&gt;jobs&lt;/em&gt; for &lt;a href="https://zuul-ci.org/docs/zuul-jobs/docker-image.html"&gt;pushing to a container
-registry&lt;/a&gt;, or to
-&lt;a href="https://zuul-ci.org/docs/zuul-jobs/python-jobs.html#job-python-upload-pypi"&gt;PyPI&lt;/a&gt;,
-but you do have to either push to upstream public registries, or build
-your own. Zuul does not come bundled with multitenant private
-registries the way GitHub and GitLab do.&lt;/p&gt;
-&lt;h3&gt;Administrative complexity&lt;/h3&gt;
-&lt;p&gt;In view of the above, there’s another thing that you might want to
-consider, which in my humble opinion is an important reason why the
-Gerrit/Zuul combination has less uptake than it deserves on its
-technical merits. And this may sound overly dramatic, but: people like
-to be in charge of their own actions, and software developers are
-people. And here’s an issue with Zuul: there are quite a few things a
-developer can do on their own in GitHub Actions or GitLab CI that
-they’d need to ask an admin’s help for in Zuul.&lt;/p&gt;
-&lt;p&gt;Creating a relatively standard workflow of building a private
-container image, pushing it to your own registry, and then rolling out
-that image to a Kubernetes deployment, is something you can do in
-GitHub or GitLab as a project owner. With Zuul, you’ll need an admin
-at least to set up and manage your container registry. Rerunning a
-pipeline, a simple click of a button or API call in GitHub or GitLab,
-is something you trigger via a Gerrit keyword (typically &lt;code&gt;recheck&lt;/code&gt;)
-for Zuul — but only on the pipelines where &lt;a href="https://zuul-ci.org/docs/zuul/3.11.0/admin/drivers/gerrit.html#reference-pipelines-configuration"&gt;your admin has defined
-that
-trigger&lt;/a&gt;.&lt;/p&gt;
-&lt;h1&gt;So, which one’s best?&lt;/h1&gt;
-&lt;p&gt;So you want to know which one of these &lt;em&gt;you&lt;/em&gt; should choose (or
-advocate for)? That’s surprisingly difficult to answer, and greatly
-depends on your priorities. And I’ll give you this from four angles.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;When it comes to &lt;em&gt;scalability&lt;/em&gt; — the ability to adapt to massive
-  organizational sizes, and/or rapid project growth, or an obscenely
-  large number or projects within an organization — the Gerrit/Zuul
-  combination wins hands down &lt;strong&gt;if&lt;/strong&gt; you have a competent, responsive,
-  and dedicated crew to manage it.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;When it’s about &lt;em&gt;getting started quickly&lt;/em&gt; — helping a project get
-  off the ground with a good, usable, easily manageable review and
-  fully integrated CI/CD structure — you can’t beat GitLab.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;In terms of &lt;em&gt;beneficial effect on your development culture,&lt;/em&gt;
-  Gerrit/Zuul again probably scores best. If you have a team that’s
-  great at reviews and commit and CI and doesn’t cut corners, or you
-  want to build a team like that, Gerrit/Zuul can really help.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;And when it’s about &lt;em&gt;giving developers the lowest barrier to entry&lt;/em&gt;
-  — meaning using tools that they’re most likely already familiar with
-  — GitHub is your platform of choice.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</content><category term="blog"></category><category term="Work"></category><category term="CI"></category><category term="Gerrit"></category><category term="GitLab"></category><category term="GitHub"></category><category term="Zuul"></category></entry><entry><title>The Review Review</title><link href="https://xahteiwi.eu/./blog/2022/01/29/review-review/" rel="alternate"></link><published>2022-01-29T00:00:00+00:00</published><updated>2022-01-29T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-01-29:/./blog/2022/01/29/review-review/</id><summary type="html">&lt;p&gt;Musings on source code management, code review, testing, deployment, and collaboration culture.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I wanted to share a few thoughts on something I consider a rather
+platform.&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>The Review Review</title><link href="https://xahteiwi.eu/blog/2022/01/29/review-review/" rel="alternate"></link><published>2022-01-29T00:00:00+00:00</published><updated>2022-01-29T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-01-29:/blog/2022/01/29/review-review/</id><summary type="html">&lt;p&gt;Musings on source code management, code review, testing, deployment, and collaboration culture.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I wanted to share a few thoughts on something I consider a rather
 important topic in our industry: code review and CI/CD tools, and how
 they relate.&lt;/p&gt;
 &lt;p&gt;This means that I’m talking about&lt;/p&gt;
@@ -2976,7 +2655,7 @@ staying &lt;em&gt;narrow&lt;/em&gt;, or should it grow &lt;em&gt;wider&lt;/em&gt
 &lt;h2&gt;Fast-forward five years&lt;/h2&gt;
 &lt;p&gt;To look at that, Alex mentally fast-forwards five years under the
 currently assumed growth model. After five years of doubling in
-headcount, the company now has $21 \cdot 2^5 = 672$ employees.&lt;/p&gt;
+headcount, the company now has &lt;span class="math"&gt;\(21 \cdot 2^5 = 672\)&lt;/span&gt; employees.&lt;/p&gt;
 &lt;p&gt;In this scenario, everyone in the company works still works in a
 5-person team, out of which one person is the leader. So every leader
 has 4 people that report to them. Let’s look at one employee, Sam. Sam
@@ -2998,26 +2677,29 @@ what’s the maximum company size this model can handle?&lt;/p&gt;
 &lt;p&gt;Let’s quickly break that down and see how we can plug other numbers in.&lt;/p&gt;
 &lt;h2&gt;A gentle bit of maths, part I: team size and hierarchy levels&lt;/h2&gt;
 &lt;p&gt;Say we take company’s &lt;em&gt;width&lt;/em&gt;, that is the number of people working
-together in any group, &lt;em&gt;excluding&lt;/em&gt; the leader, as $x$. In our example,
-that’s $4$.&lt;/p&gt;
-&lt;p&gt;Then, any team’s size (which we’ll call $n$, for reasons we’ll get to
-in a jiffy) is of course $x+1=5$.&lt;/p&gt;
-&lt;p&gt;The number of people any Senior Manager is reponsible for is $(x+1)x +
-1 = x^2+x+1 = 21$ (that is, their Manager’s teams, and themselves).&lt;/p&gt;
-&lt;p&gt;The number of people any Director is responsible for is $((x+1)x+1)x+1
-= x^3+x^2+x+1 = 85$.&lt;/p&gt;
+together in any group, &lt;em&gt;excluding&lt;/em&gt; the leader, as &lt;span class="math"&gt;\(x\)&lt;/span&gt;. In our example,
+that’s &lt;span class="math"&gt;\(4\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Then, any team’s size (which we’ll call &lt;span class="math"&gt;\(n\)&lt;/span&gt;, for reasons we’ll get to
+in a jiffy) is of course &lt;span class="math"&gt;\(x+1=5\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;The number of people any Senior Manager is reponsible for is &lt;span class="math"&gt;\((x+1)x +
+1 = x^2+x+1 = 21\)&lt;/span&gt; (that is, their Manager’s teams, and themselves).&lt;/p&gt;
+&lt;p&gt;The number of people any Director is responsible for is &lt;span class="math"&gt;\(((x+1)x+1)x+1
+= x^3+x^2+x+1 = 85\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;You see where this is going. For any additional level of &lt;em&gt;depth&lt;/em&gt;, we
-simply need to add another power of $x$.&lt;/p&gt;
-&lt;p&gt;And of course $1 = x^0$ — at the zeroth depth level there’s one
+simply need to add another power of &lt;span class="math"&gt;\(x\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;And of course &lt;span class="math"&gt;\(1 = x^0\)&lt;/span&gt; — at the zeroth depth level there’s one
 single person: the CEO.&lt;/p&gt;
 &lt;p&gt;So we can express the number of people in an organization with a width
-of $x$ and a depth of $y$ as
-$$x^0 + x^1 + x^2 + … + x^y$$&lt;/p&gt;
-&lt;p&gt;or, more briefly:&lt;sup id="fnref:i"&gt;&lt;a class="footnote-ref" href="#fn:i"&gt;1&lt;/a&gt;&lt;/sup&gt; $$\sum_{i=0}^{y} x^{i}$$&lt;/p&gt;
+of &lt;span class="math"&gt;\(x\)&lt;/span&gt; and a depth of &lt;span class="math"&gt;\(y\)&lt;/span&gt; as
+&lt;/p&gt;
+&lt;div class="math"&gt;$$x^0 + x^1 + x^2 + ... + x^y$$&lt;/div&gt;
+&lt;p&gt;or, more briefly:&lt;sup id="fnref:i"&gt;&lt;a class="footnote-ref" href="#fn:i"&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;/p&gt;
+&lt;div class="math"&gt;$$\sum_{i=0}^{y} x^{i}$$&lt;/div&gt;
 &lt;p&gt;And that, in turn, &lt;a href="https://www.wolframalpha.com/input/?i2d=true&amp;amp;i=Sum%5BPower%5Bx%2Cn%5D%2C%7Bn%2C0%2Cy%7D%5D"&gt;happens to work out
 to&lt;/a&gt;&lt;sup id="fnref:indeterminate"&gt;&lt;a class="footnote-ref" href="#fn:indeterminate"&gt;2&lt;/a&gt;&lt;/sup&gt;
-$${x^{y+1}-1} \over {x-1}$$&lt;/p&gt;
-&lt;p&gt;Plug in the numbers for $x=4$ and $y=5$, and we get 1,365. &lt;/p&gt;
+&lt;/p&gt;
+&lt;div class="math"&gt;$${x^{y+1}-1} \over {x-1}$$&lt;/div&gt;
+&lt;p&gt;Plug in the numbers for &lt;span class="math"&gt;\(x=4\)&lt;/span&gt; and &lt;span class="math"&gt;\(y=5\)&lt;/span&gt;, and we get 1,365. &lt;/p&gt;
 &lt;h2&gt;A gentle bit of maths, part II: communications in complete graphs&lt;/h2&gt;
 &lt;p&gt;Now, what’s our scaling constraint in a knowledge organization? The
 number of people you need to constantly be in touch with in order to
@@ -3032,11 +2714,13 @@ Joe, and how Joe and Harry are coordinating their latest change
 (etc.).&lt;/p&gt;
 &lt;p&gt;That means that &lt;strong&gt;within a team, communications are a &lt;a href="https://en.wikipedia.org/wiki/Complete_graph"&gt;complete
 graph&lt;/a&gt;&lt;/strong&gt;. And for a
-complete graph, the number of &lt;em&gt;edges&lt;/em&gt; is given by $${n(n-1)}\over 2$$&lt;/p&gt;
-&lt;p&gt;In our case, $n$ is our team size (including the leader), thus
-$x+1$ (the reports plus the leader). &lt;/p&gt;
+complete graph, the number of &lt;em&gt;edges&lt;/em&gt; is given by &lt;/p&gt;
+&lt;div class="math"&gt;$${n(n-1)}\over 2$$&lt;/div&gt;
+&lt;p&gt;In our case, &lt;span class="math"&gt;\(n\)&lt;/span&gt; is our team size (including the leader), thus
+&lt;span class="math"&gt;\(x+1\)&lt;/span&gt; (the reports plus the leader). &lt;/p&gt;
 &lt;p&gt;So we can rewrite the complete-graph formula as: 
-$${{(x+1)(x+1-1)} \over 2} = {{x(x+1)} \over 2}$$&lt;/p&gt;
+&lt;/p&gt;
+&lt;div class="math"&gt;$${{(x+1)(x+1-1)} \over 2} = {{x(x+1)} \over 2}$$&lt;/div&gt;
 &lt;p&gt;So in order for the team to be well informed of everyone’s
 actions at all times, a 5-person team must keep track of 10
 communications links between people. That’s absolutely doable, though
@@ -3060,8 +2744,8 @@ manage the same headcount growth is to make the company wider — in
 other words, have more people report to one manager than previously
 planned.&lt;/p&gt;
 &lt;p&gt;So Alex, being a good CEO, opens some spread sheet software and
-creates this handy table that simply plugs in values for $x$ and $y$,
-with $x$ (width) in columns and $y$ (depth) in rows.&lt;sup id="fnref:table"&gt;&lt;a class="footnote-ref" href="#fn:table"&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+creates this handy table that simply plugs in values for &lt;span class="math"&gt;\(x\)&lt;/span&gt; and &lt;span class="math"&gt;\(y\)&lt;/span&gt;,
+with &lt;span class="math"&gt;\(x\)&lt;/span&gt; (width) in columns and &lt;span class="math"&gt;\(y\)&lt;/span&gt; (depth) in rows.&lt;sup id="fnref:table"&gt;&lt;a class="footnote-ref" href="#fn:table"&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -3212,48 +2896,50 @@ with $x$ (width) in columns and $y$ (depth) in rows.&lt;sup id="fnref:table"&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;For our previous five-year plan, Alex can just look up the cell
-matching $x=4$, $y=5$ and finds our known outcome, a maximum head
+matching &lt;span class="math"&gt;\(x=4\)&lt;/span&gt;, &lt;span class="math"&gt;\(y=5\)&lt;/span&gt; and finds our known outcome, a maximum head
 count of 1,365.&lt;/p&gt;
 &lt;p&gt;Now, Alex looks at what it takes to flatten the organization by
 eliminating one hierarchy level, or by two.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;If we want to reduce depth by 1, we simply go up one row (thus,
-  $y=4$) and find the value for $x$ that just accommodates 1,365
-  people or more. Alex sees that that’s $x=6$, which can accommodate
+  &lt;span class="math"&gt;\(y=4\)&lt;/span&gt;) and find the value for &lt;span class="math"&gt;\(x\)&lt;/span&gt; that just accommodates 1,365
+  people or more. Alex sees that that’s &lt;span class="math"&gt;\(x=6\)&lt;/span&gt;, which can accommodate
   1,555 people. That is, increase the width by 2: reorganize from
-  teams of 5 to teams of 7. Alex could also pick $x=5$, that is
+  teams of 5 to teams of 7. Alex could also pick &lt;span class="math"&gt;\(x=5\)&lt;/span&gt;, that is
   increase the width by only 1, which would land the company at a
-  maximum head count of 781. That is well below what $x=4$ can handle,
+  maximum head count of 781. That is well below what &lt;span class="math"&gt;\(x=4\)&lt;/span&gt; can handle,
   but it still lands Alex north of the original growth target of 672.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;If we want to reduce depth by 2, we go up two rows ($y=3$) and do
-  the same. We end up at $x=11$, which means to increase width by 7:
+&lt;p&gt;If we want to reduce depth by 2, we go up two rows (&lt;span class="math"&gt;\(y=3\)&lt;/span&gt;) and do
+  the same. We end up at &lt;span class="math"&gt;\(x=11\)&lt;/span&gt;, which means to increase width by 7:
   reorganize from teams of 5 to teams of 12. Thus, we land at a
   maximum of 1,464 people, slightly exceeding the headcount we’re able
   to accommodate if we keep growing with the current structure. We
-  could also do $x=10$ or $x=9$, landing us at maxima well below that
+  could also do &lt;span class="math"&gt;\(x=10\)&lt;/span&gt; or &lt;span class="math"&gt;\(x=9\)&lt;/span&gt;, landing us at maxima well below that
   (1,111 or 820), but still north of 672.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Now what does that mean in terms of communication channels each person
 has to maintain?&lt;/p&gt;
 &lt;p&gt;Again, what we want to keep in mind is the number of edges in a
-complete graph connecting $n$ (that is, $x+1$) points. For regular
-employees, we know that that’s $${x(x+1)}\over 2$$&lt;/p&gt;
-&lt;p&gt;And for any manager, who is effectively on two teams of size $x+1$
-simultaneously, that’s $$2 \cdot {{x(x+1)}\over 2} = x(x+1)$$&lt;/p&gt;
+complete graph connecting &lt;span class="math"&gt;\(n\)&lt;/span&gt; (that is, &lt;span class="math"&gt;\(x+1\)&lt;/span&gt;) points. For regular
+employees, we know that that’s &lt;/p&gt;
+&lt;div class="math"&gt;$${x(x+1)}\over 2$$&lt;/div&gt;
+&lt;p&gt;And for any manager, who is effectively on two teams of size &lt;span class="math"&gt;\(x+1\)&lt;/span&gt;
+simultaneously, that’s &lt;/p&gt;
+&lt;div class="math"&gt;$$2 \cdot {{x(x+1)}\over 2} = x(x+1)$$&lt;/div&gt;
 &lt;p&gt;Which means:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;If we want to reduce depth by 1 and go from $x=4$ to
-  $x=5$, every non-manager employee now needs to be aware of 15
+&lt;p&gt;If we want to reduce depth by 1 and go from &lt;span class="math"&gt;\(x=4\)&lt;/span&gt; to
+  &lt;span class="math"&gt;\(x=5\)&lt;/span&gt;, every non-manager employee now needs to be aware of 15
   communications links (instead of 10), every manager, of 30 (instead
   of 20).&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;If instead we go from $x=4$ to $x=6$, every non-manager employee now
+&lt;p&gt;If instead we go from &lt;span class="math"&gt;\(x=4\)&lt;/span&gt; to &lt;span class="math"&gt;\(x=6\)&lt;/span&gt;, every non-manager employee now
   needs to be aware of 21 communications links, every manager, of 42.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -3262,16 +2948,16 @@ communications complexity.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;For the elimination of two hierarchy levels (a depth reduction by
-  2), we’ll need to move from $x=4$ to at least $x=8$. At that point,
+  2), we’ll need to move from &lt;span class="math"&gt;\(x=4\)&lt;/span&gt; to at least &lt;span class="math"&gt;\(x=8\)&lt;/span&gt;. At that point,
   every regular employee has at least 36 communications links on their
   teams to deal with; every manager deals with 72.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;If instead we go to $x=9$, every non-manager employee now needs to
+&lt;p&gt;If instead we go to &lt;span class="math"&gt;\(x=9\)&lt;/span&gt;, every non-manager employee now needs to
   be aware of 45 communications links, every manager, of 90.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;And for $x=10$, every non-manager employee now needs to
+&lt;p&gt;And for &lt;span class="math"&gt;\(x=10\)&lt;/span&gt;, every non-manager employee now needs to
   be aware of 55 communications links, every manager, of 110.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -3438,32 +3124,32 @@ cell &lt;em&gt;directly above it&lt;/em&gt; will contain the total number of man
 (that is, people who have direct reports) for the same width. So,&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;for $x=4$, $y=5$ (our original scenario allowing the company to grow
+&lt;p&gt;for &lt;span class="math"&gt;\(x=4\)&lt;/span&gt;, &lt;span class="math"&gt;\(y=5\)&lt;/span&gt; (our original scenario allowing the company to grow
   to 1,365 people), Alex would have to hire and pay a total of 341
   managers.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;for $x=6$, $y=4$ (the scenario that eliminates one level, and can
+&lt;p&gt;for &lt;span class="math"&gt;\(x=6\)&lt;/span&gt;, &lt;span class="math"&gt;\(y=4\)&lt;/span&gt; (the scenario that eliminates one level, and can
   accommodate 1,555 people), Alex’ company will need 259
   managers. That’s 82 fewer managers, or a reduction by about 24%.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;for $x=5$, $y=4$ (the scenario that eliminates one level, but
+&lt;p&gt;for &lt;span class="math"&gt;\(x=5\)&lt;/span&gt;, &lt;span class="math"&gt;\(y=4\)&lt;/span&gt; (the scenario that eliminates one level, but
   accommodates only 781 people), Alex’ company will need 156
   managers. That’s 185 fewer managers, or a reduction by about 54%.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;for $x=11$, $y=3$ (the scenario that eliminates two levels, and can
+&lt;p&gt;for &lt;span class="math"&gt;\(x=11\)&lt;/span&gt;, &lt;span class="math"&gt;\(y=3\)&lt;/span&gt; (the scenario that eliminates two levels, and can
   accommodate 1,464 people), the company will need 133
   managers. That’s 208 fewer managers, or a reduction by about 61%.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;for $x=10$, $y=3$ (the scenario that eliminates two levels, but
+&lt;p&gt;for &lt;span class="math"&gt;\(x=10\)&lt;/span&gt;, &lt;span class="math"&gt;\(y=3\)&lt;/span&gt; (the scenario that eliminates two levels, but
   accommodates only 1,111 people), the company will need 111
   managers. That’s 230 fewer managers, or a reduction by about 67%.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;for $x=9$, $y=3$ (the scenario that eliminates two levels, but
+&lt;p&gt;for &lt;span class="math"&gt;\(x=9\)&lt;/span&gt;, &lt;span class="math"&gt;\(y=3\)&lt;/span&gt; (the scenario that eliminates two levels, but
   accommodates only 820 people), the company will need 91
   managers. That’s 250 fewer managers, or a reduction by about 73%.&lt;/p&gt;
 &lt;/li&gt;
@@ -3622,9 +3308,10 @@ is in columns, depth is in rows):&lt;/p&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;You’ll see that at a depth of 1, the share of managers is obviously $1
-\over {x+1}$, but then as we increase in depth it quickly trends
-toward:&lt;sup id="fnref:reciprocal"&gt;&lt;a class="footnote-ref" href="#fn:reciprocal"&gt;5&lt;/a&gt;&lt;/sup&gt;  $$1 \over x$$&lt;/p&gt;
+&lt;p&gt;You’ll see that at a depth of 1, the share of managers is obviously &lt;span class="math"&gt;\(1
+\over {x+1}\)&lt;/span&gt;, but then as we increase in depth it quickly trends
+toward:&lt;sup id="fnref:reciprocal"&gt;&lt;a class="footnote-ref" href="#fn:reciprocal"&gt;5&lt;/a&gt;&lt;/sup&gt; &lt;/p&gt;
+&lt;div class="math"&gt;$$1 \over x$$&lt;/div&gt;
 &lt;p&gt;The number of managers in Alex’ company is roughly the reciprocal of
 the company’s width. In other words, the number of managers is
 inversely proportional to width.&lt;/p&gt;
@@ -3646,21 +3333,21 @@ scales progressively worse, the “flatter” (wider) it gets.&lt;/p&gt;
 &lt;li id="fn:i"&gt;
 &lt;p&gt;In this &lt;a href="https://en.wikipedia.org/wiki/Summation#Capital-sigma_notation"&gt;capital-sigma summation
 formula&lt;/a&gt;,
-$i$ doesn’t mean anything other than it being a counter. The
-formula is pronounced, in English, as “sum of $x$ to the $i$, from
-$i$ equals zero to $y$” (in other words, add up all whole-number
-powers of $x$, from $x^0$ to $x^y$). &lt;a class="footnote-backref" href="#fnref:i" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;span class="math"&gt;\(i\)&lt;/span&gt; doesn’t mean anything other than it being a counter. The
+formula is pronounced, in English, as “sum of &lt;span class="math"&gt;\(x\)&lt;/span&gt; to the &lt;span class="math"&gt;\(i\)&lt;/span&gt;, from
+&lt;span class="math"&gt;\(i\)&lt;/span&gt; equals zero to &lt;span class="math"&gt;\(y\)&lt;/span&gt;” (in other words, add up all whole-number
+powers of &lt;span class="math"&gt;\(x\)&lt;/span&gt;, from &lt;span class="math"&gt;\(x^0\)&lt;/span&gt; to &lt;span class="math"&gt;\(x^y\)&lt;/span&gt;). &lt;a class="footnote-backref" href="#fnref:i" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:indeterminate"&gt;
 &lt;p&gt;You might notice that this expression is
 &lt;a href="https://en.wikipedia.org/wiki/Indeterminate_form"&gt;indeterminate&lt;/a&gt;
-for $x = 1$. Now I’d say the idea of a hierarchical company made
+for &lt;span class="math"&gt;\(x = 1\)&lt;/span&gt;. Now I’d say the idea of a hierarchical company made
 up of one-on-one teams (every manager has one report, who in turn
 is the manager of one report, and so on) is extremely unrealistic.
 But just for completeness’ sake, we can apply &lt;a href="https://www.wolframalpha.com/input/?i2d=true&amp;amp;i=Limit%5BDivide%5BPower%5Bx%2Cy%2B1%5D-1%2Cx-1%5D%2Cx-%3E1%5D"&gt;a
 limit&lt;/a&gt;
 to show that 
-$$\lim_{x \to 1} {{x^{y+1}-1} \over {x-1}} = {y + 1}$$ 
+&lt;div class="math"&gt;$$\lim_{x \to 1} {{x^{y+1}-1} \over {x-1}} = {y + 1}$$&lt;/div&gt; 
 In other words, such an organization could accommodate a
 number of people that is equal to its depth plus 1. &lt;a class="footnote-backref" href="#fnref:indeterminate" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
@@ -3682,21 +3369,83 @@ employers&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:table" title="
 &lt;p&gt;If you’re curious, that is because the share of
 managers in relation to the total number of people in the company
 is 
-$${\sum_{i=0}^{y-1} x^{i}} \over {\sum_{i=0}^{y} x^{i}}$$
-That works out to be $${x^y-1} \over {x^{y+1}-1}$$
-Which, for $y=1$, is
-$${{x-1} \over {x^2-1}} = {{x-1} \over {(x+1)\cdot(x-1)}} = {1 \over {x+1}}$$
-And for larger values of $y$, both $x^y$ and
-$x^{y+1}$ become so large that the $-1$ part barely matters, so
+&lt;div class="math"&gt;$${\sum_{i=0}^{y-1} x^{i}} \over {\sum_{i=0}^{y} x^{i}}$$&lt;/div&gt;
+That works out to be &lt;div class="math"&gt;$${x^y-1} \over {x^{y+1}-1}$$&lt;/div&gt;
+Which, for &lt;span class="math"&gt;\(y=1\)&lt;/span&gt;, is
+&lt;div class="math"&gt;$${{x-1} \over {x^2-1}} = {{x-1} \over {(x+1)\cdot(x-1)}} = {1 \over {x+1}}$$&lt;/div&gt;
+And for larger values of &lt;span class="math"&gt;\(y\)&lt;/span&gt;, both &lt;span class="math"&gt;\(x^y\)&lt;/span&gt; and
+&lt;span class="math"&gt;\(x^{y+1}\)&lt;/span&gt; become so large that the &lt;span class="math"&gt;\(-1\)&lt;/span&gt; part barely matters, so
 it’s effectively: 
-$${{x^y-1} \over {x^{y+1}-1}} \approx {x^y \over x^{y+1}} = {1 \over x}$$
-In slightly more formal terms, we can consider $1 \over x$ the 
+&lt;div class="math"&gt;$${{x^y-1} \over {x^{y+1}-1}} \approx {x^y \over x^{y+1}} = {1 \over x}$$&lt;/div&gt;
+In slightly more formal terms, we can consider &lt;span class="math"&gt;\(1 \over x\)&lt;/span&gt; the 
 &lt;em&gt;&lt;a href="https://en.wikipedia.org/wiki/Limit_(mathematics)"&gt;limit&lt;/a&gt;&lt;/em&gt; of the
-expression as $y$ goes to infinity:
-$$\lim_{y \to \infty} {{x^y-1} \over {x^{y+1}-1}} = {1 \over x}$$ &lt;a class="footnote-backref" href="#fnref:reciprocal" title="Jump back to footnote 5 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+expression as &lt;span class="math"&gt;\(y\)&lt;/span&gt; goes to infinity:
+&lt;div class="math"&gt;$$\lim_{y \to \infty} {{x^y-1} \over {x^{y+1}-1}} = {1 \over x}$$&lt;/div&gt; &lt;a class="footnote-backref" href="#fnref:reciprocal" title="Jump back to footnote 5 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Voice messages</title><link href="https://xahteiwi.eu/blog/2021/12/05/voice-messages/" rel="alternate"></link><published>2021-12-05T00:00:00+00:00</published><updated>2021-12-05T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-12-05:/blog/2021/12/05/voice-messages/</id><summary type="html">&lt;p&gt;Apparently, some people think you should replace professional textual communications with voice messaging. Here’s why I think that that’s a bad idea.&lt;/p&gt;</summary><content type="html">&lt;p&gt;As of late, I’ve noticed that when people share one of my articles on
+&lt;/div&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Voice messages</title><link href="https://xahteiwi.eu/blog/2021/12/05/voice-messages/" rel="alternate"></link><published>2021-12-05T00:00:00+00:00</published><updated>2021-12-05T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-12-05:/blog/2021/12/05/voice-messages/</id><summary type="html">&lt;p&gt;Apparently, some people think you should replace professional textual communications with voice messaging. Here’s why I think that that’s a bad idea.&lt;/p&gt;</summary><content type="html">&lt;p&gt;As of late, I’ve noticed that when people share one of my articles on
 asynchronous communications on Twitter (particularly any from the
 &lt;a href="https://xahteiwi.eu/blog/2021/09/30/getting-out-of-meeting-hell/"&gt;Getting out of Meeting
 Hell&lt;/a&gt; series, or the one on
@@ -5474,101 +5223,7 @@ find. Examples are “ruby, javascript, rails”.&lt;/p&gt;
 &lt;a href="https://xahteiwi.eu/blog/2019/04/23/talk-submissions/"&gt;this&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="talk-submissions"></category><category term="Conference"></category></entry><entry><title>The Review Review</title><link href="https://xahteiwi.eu/./talk-submissions/review-review/" rel="alternate"></link><published>2021-10-07T00:00:00+00:00</published><updated>2021-10-07T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-07:/./talk-submissions/review-review/</id><summary type="html">&lt;p&gt;A talk I submitted to DevOpsDays Tel Aviv 2021 and DevConf.CZ 2022&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a talk I submitted&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt; to
-&lt;a href="https://www.devconf.info/cz/"&gt;DevConf.CZ&lt;/a&gt; 2022, which used a
-non-anonymized CfP process via &lt;a href="https://cfp.devconf.info"&gt;Red Hat’s CfP
-website&lt;/a&gt;. For that conference, it was
-selected as the lead talk in the Modern Software Development track.  I
-had previously submitted this talk to DevOpsDays Tel Aviv 2021, which
-used a non-anonymized CfP process via
-&lt;a href="https://www.papercall.io/"&gt;PaperCall&lt;/a&gt;. That submission was rejected.&lt;/p&gt;
-&lt;h2&gt;Title&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;The Review Review: comparing code review, testing, staging and
-deployment across development collaboration platforms&lt;/em&gt;&lt;/p&gt;
-&lt;h2&gt;Elevator Pitch&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;You have 300 characters to sell your talk. This is known as the
-“elevator pitch”. Make it as exciting and enticing as possible.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;GitHub, GitLab, Gerrit — what should I choose? What’s the best review
-process, the best CI/CD integration, the best deployment facility?
-Which should I select for my startup, or consider migrating to? Which
-supports good collaboration practices, which bad ones? This talk gives
-the run-down.&lt;/p&gt;
-&lt;h2&gt;Talk Format&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;What format is this talk best suited for?&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Talk (~25-40 minutes)&lt;/p&gt;
-&lt;h2&gt;Audience Level&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Who is the best target audience for this talk?&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Intermediate&lt;/p&gt;
-&lt;h2&gt;Description&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;The description will be seen by reviewers during the CFP process and
-may eventually be seen by the attendees of the event. You should
-make the description of your talk as compelling and exciting as
-possible. Remember, you’re selling both the organizers of the events
-to select your talk, as well as trying to convince attendees your
-talk is the one they should see.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;In DevOps, the process of collaborative review, testing, staging, and
-deployment to production constitutes a core element of the work we
-do. And we generally strive to make this process as effective,
-efficient, smooth, and transparent as possible. Achieving that partly
-comes from the work culture we shape and inhabit, partly from our
-selection of tools — and of course, work culture and work tools
-permanently and closely influence each other. This goes for both the
-tools that drive review, and the tools that drive CI/CD:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;the &lt;strong&gt;GitHub Pull Request&lt;/strong&gt; process in combination with &lt;strong&gt;GitHub
-  Actions&lt;/strong&gt;;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;the &lt;strong&gt;GitLab Merge Request&lt;/strong&gt; process in combination with &lt;strong&gt;GitLab
-  CI&lt;/strong&gt;;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;the &lt;strong&gt;Gerrit Review&lt;/strong&gt; process in combination with &lt;strong&gt;Zuul&lt;/strong&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;None of these is perfect, all of them have their advantages and
-disadvantages under particular circumstances. Some are meant to be
-used principally as a service, some are fine to self-host. Some are
-adamant about enforcing specific deployment practices, some follow a
-more relaxed approach.&lt;/p&gt;
-&lt;p&gt;This talk is a summary of the current state of affairs with all these
-tools, and contains recommendations on what to use under which
-circumstances.&lt;/p&gt;
-&lt;h2&gt;Notes&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Notes will only be seen by reviewers during the CFP process. This is
-where you should explain things such as technical requirements, why
-you’re the best person to speak on this subject, etc…&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;My team and I have worked with all tools mentioned in a professional
-capacity, and I believe I’ve got a very good understanding of the
-relative merits of the systems presented. This does not include a
-hard-and-fast recommendation for one particular tool or platform.&lt;/p&gt;
-&lt;p&gt;This is a talk that’s suitable for both in-person and on-line events.&lt;/p&gt;
-&lt;h2&gt;Tags&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Tag your talk to make it easier for event organizers to be able to
-find. Examples are “ruby, javascript, rails”.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;GitHub, GitLab, Gerrit, Zuul, CI/CD, Development, DevOps&lt;/p&gt;
-&lt;div class="footnote"&gt;
-&lt;hr/&gt;
-&lt;ol&gt;
-&lt;li id="fn:1"&gt;
-&lt;p&gt;If you’re curious why this is here, please read
-&lt;a href="https://xahteiwi.eu/blog/2019/04/23/talk-submissions/"&gt;this&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;</content><category term="talk-submissions"></category><category term="Conference"></category><category term="GitLab"></category><category term="GitHub"></category><category term="Zuul"></category></entry><entry><title>The Review Review</title><link href="https://xahteiwi.eu/./talk-submissions/review-review/" rel="alternate"></link><published>2021-10-07T00:00:00+00:00</published><updated>2021-10-07T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-07:/./talk-submissions/review-review/</id><summary type="html">&lt;p&gt;A talk I submitted to DevOpsDays Tel Aviv 2021 and DevConf.CZ 2022&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a talk I submitted&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt; to
+&lt;/div&gt;</content><category term="talk-submissions"></category><category term="Conference"></category></entry><entry><title>The Review Review</title><link href="https://xahteiwi.eu/talk-submissions/the-review-review/" rel="alternate"></link><published>2021-10-07T00:00:00+00:00</published><updated>2021-10-07T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-07:/talk-submissions/the-review-review/</id><summary type="html">&lt;p&gt;A talk I submitted to DevOpsDays Tel Aviv 2021 and DevConf.CZ 2022&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a talk I submitted&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt; to
 &lt;a href="https://www.devconf.info/cz/"&gt;DevConf.CZ&lt;/a&gt; 2022, which used a
 non-anonymized CfP process via &lt;a href="https://cfp.devconf.info"&gt;Red Hat’s CfP
 website&lt;/a&gt;. For that conference, it was
@@ -9102,35 +8757,43 @@ codes&lt;/a&gt;,
 but you’re not quite sure of exactly how much extra space you’re going
 to save, and whether or not that’s worth the performance penalty?
 Here’s a simple recipe for calculating that space overhead.&lt;/p&gt;
-&lt;p&gt;Suppose a RADOS object has a size of $S$, and because it’s in an EC
+&lt;p&gt;Suppose a RADOS object has a size of &lt;span class="math"&gt;\(S\)&lt;/span&gt;, and because it’s in an EC
 pool using the
 &lt;a href="https://docs.ceph.com/docs/master/rados/operations/erasure-code-jerasure/"&gt;&lt;code&gt;jerasure&lt;/code&gt;&lt;/a&gt;
 or
 &lt;a href="https://docs.ceph.com/docs/master/rados/operations/erasure-code-isa/"&gt;&lt;code&gt;isa&lt;/code&gt;&lt;/a&gt;
-plugin,&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt; Ceph splits it into $k$ equally-sized chunks. Then the
-size of any of its $k$ chunks will be: $$S \over k$$&lt;/p&gt;
-&lt;p&gt;In addition, we get $m$ more parity chunks, also of size $S \over k$.&lt;/p&gt;
-&lt;p&gt;Thus, the total amount of storage taken by an object of size $S$ is:
-$$k \cdot {S \over k} + m \cdot {S \over k}$$&lt;/p&gt;
-&lt;p&gt;This of course we can rearrange and reduce to $$S + S \cdot {m \over
-k}$$ or $$S \cdot (1 + {m \over k})$$ &lt;/p&gt;
+plugin,&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt; Ceph splits it into &lt;span class="math"&gt;\(k\)&lt;/span&gt; equally-sized chunks. Then the
+size of any of its &lt;span class="math"&gt;\(k\)&lt;/span&gt; chunks will be: &lt;/p&gt;
+&lt;div class="math"&gt;$$S \over k$$&lt;/div&gt;
+&lt;p&gt;In addition, we get &lt;span class="math"&gt;\(m\)&lt;/span&gt; more parity chunks, also of size &lt;span class="math"&gt;\(S \over k\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Thus, the total amount of storage taken by an object of size &lt;span class="math"&gt;\(S\)&lt;/span&gt; is:
+&lt;/p&gt;
+&lt;div class="math"&gt;$$k \cdot {S \over k} + m \cdot {S \over k}$$&lt;/div&gt;
+&lt;p&gt;This of course we can rearrange and reduce to &lt;/p&gt;
+&lt;div class="math"&gt;$$S + S \cdot {m \over
+k}$$&lt;/div&gt;
+&lt;p&gt; or &lt;/p&gt;
+&lt;div class="math"&gt;$$S \cdot (1 + {m \over k})$$&lt;/div&gt;
 &lt;p&gt;In other words, the overhead (that is, the &lt;strong&gt;additional storage&lt;/strong&gt;
-taken up by the EC parity data) is $$S \cdot {m \over k}$$ or when
-expressed as a proportion to $S$, simply $$m \over k$$&lt;/p&gt;
-&lt;p&gt;As an example, an EC profile with $k = 8, m=3$ comes with a storage
-overhead of $3 \over 8$ or 37.5%.&lt;/p&gt;
-&lt;p&gt;One with $k=5, m=2$ has an overhead of $2 \over 5$, or 40%. &lt;/p&gt;
+taken up by the EC parity data) is &lt;/p&gt;
+&lt;div class="math"&gt;$$S \cdot {m \over k}$$&lt;/div&gt;
+&lt;p&gt; or when
+expressed as a proportion to &lt;span class="math"&gt;\(S\)&lt;/span&gt;, simply &lt;/p&gt;
+&lt;div class="math"&gt;$$m \over k$$&lt;/div&gt;
+&lt;p&gt;As an example, an EC profile with &lt;span class="math"&gt;\(k = 8, m=3\)&lt;/span&gt; comes with a storage
+overhead of &lt;span class="math"&gt;\(3 \over 8\)&lt;/span&gt; or 37.5%.&lt;/p&gt;
+&lt;p&gt;One with &lt;span class="math"&gt;\(k=5, m=2\)&lt;/span&gt; has an overhead of &lt;span class="math"&gt;\(2 \over 5\)&lt;/span&gt;, or 40%. &lt;/p&gt;
 &lt;p&gt;And finally, a &lt;em&gt;replicated&lt;/em&gt; (conventional, non-EC) pool with 3
 replicas can be thought of as having a degenerate EC profile with
-$k=1, m=2$, resulting in an overhead of $2 \over 1$, or 200%.&lt;/p&gt;
+&lt;span class="math"&gt;\(k=1, m=2\)&lt;/span&gt;, resulting in an overhead of &lt;span class="math"&gt;\(2 \over 1\)&lt;/span&gt;, or 200%.&lt;/p&gt;
 &lt;p&gt;On a parting note, you should realize that the space utilization
 overhead is only one factor by which you should weigh erasure code
 profiles against one another. The other is performance. Here, the
 general (deliberately oversimplified) rule is that the more chunks you
-define — in other words, the higher your $k$ — the higher the
+define — in other words, the higher your &lt;span class="math"&gt;\(k\)&lt;/span&gt; — the higher the
 performance penalty you suffer, particularly on reads.&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2"&gt;2&lt;/a&gt;&lt;/sup&gt; This is due to
 the fact that in order to reconstruct the object and serve it to the
-application, your client must collect data from $k$ different OSDs and
+application, your client must collect data from &lt;span class="math"&gt;\(k\)&lt;/span&gt; different OSDs and
 assemble it locally.&lt;sup id="fnref:3"&gt;&lt;a class="footnote-ref" href="#fn:3"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;div class="footnote"&gt;
 &lt;hr/&gt;
@@ -9159,7 +8822,69 @@ talk&lt;/a&gt; on the subject at OpenStack
 Days Nordic 2019. &lt;a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="hints-and-kinks"></category><category term="Ceph"></category></entry><entry><title>The Little Bag Of Tricks: 10 Things You Might Not Know You Can Do With OpenStack</title><link href="https://xahteiwi.eu/resources/presentations/the-little-bag-of-tricks-10-things-you-might-not-know-you-can-do-with-openstack/" rel="alternate"></link><published>2019-11-05T00:00:00+00:00</published><updated>2019-11-05T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-11-05:/resources/presentations/the-little-bag-of-tricks-10-things-you-might-not-know-you-can-do-with-openstack/</id><content type="html">&lt;p&gt;My presentation from the Open Infrastructure Summit 2019 in Shanghai.&lt;/p&gt;
+&lt;/div&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="hints-and-kinks"></category><category term="Ceph"></category></entry><entry><title>The Little Bag Of Tricks: 10 Things You Might Not Know You Can Do With OpenStack</title><link href="https://xahteiwi.eu/resources/presentations/the-little-bag-of-tricks-10-things-you-might-not-know-you-can-do-with-openstack/" rel="alternate"></link><published>2019-11-05T00:00:00+00:00</published><updated>2019-11-05T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-11-05:/resources/presentations/the-little-bag-of-tricks-10-things-you-might-not-know-you-can-do-with-openstack/</id><content type="html">&lt;p&gt;My presentation from the Open Infrastructure Summit 2019 in Shanghai.&lt;/p&gt;
 &lt;!--break--&gt;
 &lt;ul&gt;
 &lt;li&gt;Video: &lt;a href="https://youtu.be/cRqA-eYYOXE"&gt;YouTube&lt;/a&gt;&lt;/li&gt;

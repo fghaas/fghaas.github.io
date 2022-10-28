@@ -460,7 +460,7 @@ your organization’s entropy decelerator.&lt;/p&gt;
 &lt;p&gt;Somebody wants to “open up team communications”, or “flatten the
   organization”, so that everyone’s &lt;a href="https://xahteiwi.eu/blog/2022/01/16/flat-org-scaling/"&gt;complete
   graph&lt;/a&gt; has way more edges?
-  That’s when you educate them about ${n(n-1)}\over 2$, and what
+  That’s when you educate them about &lt;span class="math"&gt;\({n(n-1)}\over 2\)&lt;/span&gt;, and what
   quadratic growth means.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -499,7 +499,69 @@ Earth&lt;/a&gt;
 to this idea. &lt;a class="footnote-backref" href="#fnref:hadfield" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Scaling the flat organization</title><link href="https://xahteiwi.eu/blog/2022/01/16/flat-org-scaling/" rel="alternate"></link><published>2022-01-16T00:00:00+00:00</published><updated>2022-01-16T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-01-16:/blog/2022/01/16/flat-org-scaling/</id><summary type="html">&lt;p&gt;“We need a flat organizational structure in order to scale.” Or do we, really?&lt;/p&gt;</summary><content type="html">&lt;p&gt;There’s a common trope in management that goes something like “in
+&lt;/div&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Scaling the flat organization</title><link href="https://xahteiwi.eu/blog/2022/01/16/flat-org-scaling/" rel="alternate"></link><published>2022-01-16T00:00:00+00:00</published><updated>2022-01-16T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-01-16:/blog/2022/01/16/flat-org-scaling/</id><summary type="html">&lt;p&gt;“We need a flat organizational structure in order to scale.” Or do we, really?&lt;/p&gt;</summary><content type="html">&lt;p&gt;There’s a common trope in management that goes something like “in
 order to better scale the organization as we grow, we need to keep it
 flat.” The thrust of the argument is that as the organization grows to
 meet customer and demand growth (and with it, growth in head count),
@@ -573,7 +635,7 @@ staying &lt;em&gt;narrow&lt;/em&gt;, or should it grow &lt;em&gt;wider&lt;/em&gt
 &lt;h2&gt;Fast-forward five years&lt;/h2&gt;
 &lt;p&gt;To look at that, Alex mentally fast-forwards five years under the
 currently assumed growth model. After five years of doubling in
-headcount, the company now has $21 \cdot 2^5 = 672$ employees.&lt;/p&gt;
+headcount, the company now has &lt;span class="math"&gt;\(21 \cdot 2^5 = 672\)&lt;/span&gt; employees.&lt;/p&gt;
 &lt;p&gt;In this scenario, everyone in the company works still works in a
 5-person team, out of which one person is the leader. So every leader
 has 4 people that report to them. Let’s look at one employee, Sam. Sam
@@ -595,26 +657,29 @@ what’s the maximum company size this model can handle?&lt;/p&gt;
 &lt;p&gt;Let’s quickly break that down and see how we can plug other numbers in.&lt;/p&gt;
 &lt;h2&gt;A gentle bit of maths, part I: team size and hierarchy levels&lt;/h2&gt;
 &lt;p&gt;Say we take company’s &lt;em&gt;width&lt;/em&gt;, that is the number of people working
-together in any group, &lt;em&gt;excluding&lt;/em&gt; the leader, as $x$. In our example,
-that’s $4$.&lt;/p&gt;
-&lt;p&gt;Then, any team’s size (which we’ll call $n$, for reasons we’ll get to
-in a jiffy) is of course $x+1=5$.&lt;/p&gt;
-&lt;p&gt;The number of people any Senior Manager is reponsible for is $(x+1)x +
-1 = x^2+x+1 = 21$ (that is, their Manager’s teams, and themselves).&lt;/p&gt;
-&lt;p&gt;The number of people any Director is responsible for is $((x+1)x+1)x+1
-= x^3+x^2+x+1 = 85$.&lt;/p&gt;
+together in any group, &lt;em&gt;excluding&lt;/em&gt; the leader, as &lt;span class="math"&gt;\(x\)&lt;/span&gt;. In our example,
+that’s &lt;span class="math"&gt;\(4\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Then, any team’s size (which we’ll call &lt;span class="math"&gt;\(n\)&lt;/span&gt;, for reasons we’ll get to
+in a jiffy) is of course &lt;span class="math"&gt;\(x+1=5\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;The number of people any Senior Manager is reponsible for is &lt;span class="math"&gt;\((x+1)x +
+1 = x^2+x+1 = 21\)&lt;/span&gt; (that is, their Manager’s teams, and themselves).&lt;/p&gt;
+&lt;p&gt;The number of people any Director is responsible for is &lt;span class="math"&gt;\(((x+1)x+1)x+1
+= x^3+x^2+x+1 = 85\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;You see where this is going. For any additional level of &lt;em&gt;depth&lt;/em&gt;, we
-simply need to add another power of $x$.&lt;/p&gt;
-&lt;p&gt;And of course $1 = x^0$ — at the zeroth depth level there’s one
+simply need to add another power of &lt;span class="math"&gt;\(x\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;And of course &lt;span class="math"&gt;\(1 = x^0\)&lt;/span&gt; — at the zeroth depth level there’s one
 single person: the CEO.&lt;/p&gt;
 &lt;p&gt;So we can express the number of people in an organization with a width
-of $x$ and a depth of $y$ as
-$$x^0 + x^1 + x^2 + … + x^y$$&lt;/p&gt;
-&lt;p&gt;or, more briefly:&lt;sup id="fnref:i"&gt;&lt;a class="footnote-ref" href="#fn:i"&gt;1&lt;/a&gt;&lt;/sup&gt; $$\sum_{i=0}^{y} x^{i}$$&lt;/p&gt;
+of &lt;span class="math"&gt;\(x\)&lt;/span&gt; and a depth of &lt;span class="math"&gt;\(y\)&lt;/span&gt; as
+&lt;/p&gt;
+&lt;div class="math"&gt;$$x^0 + x^1 + x^2 + ... + x^y$$&lt;/div&gt;
+&lt;p&gt;or, more briefly:&lt;sup id="fnref:i"&gt;&lt;a class="footnote-ref" href="#fn:i"&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;/p&gt;
+&lt;div class="math"&gt;$$\sum_{i=0}^{y} x^{i}$$&lt;/div&gt;
 &lt;p&gt;And that, in turn, &lt;a href="https://www.wolframalpha.com/input/?i2d=true&amp;amp;i=Sum%5BPower%5Bx%2Cn%5D%2C%7Bn%2C0%2Cy%7D%5D"&gt;happens to work out
 to&lt;/a&gt;&lt;sup id="fnref:indeterminate"&gt;&lt;a class="footnote-ref" href="#fn:indeterminate"&gt;2&lt;/a&gt;&lt;/sup&gt;
-$${x^{y+1}-1} \over {x-1}$$&lt;/p&gt;
-&lt;p&gt;Plug in the numbers for $x=4$ and $y=5$, and we get 1,365. &lt;/p&gt;
+&lt;/p&gt;
+&lt;div class="math"&gt;$${x^{y+1}-1} \over {x-1}$$&lt;/div&gt;
+&lt;p&gt;Plug in the numbers for &lt;span class="math"&gt;\(x=4\)&lt;/span&gt; and &lt;span class="math"&gt;\(y=5\)&lt;/span&gt;, and we get 1,365. &lt;/p&gt;
 &lt;h2&gt;A gentle bit of maths, part II: communications in complete graphs&lt;/h2&gt;
 &lt;p&gt;Now, what’s our scaling constraint in a knowledge organization? The
 number of people you need to constantly be in touch with in order to
@@ -629,11 +694,13 @@ Joe, and how Joe and Harry are coordinating their latest change
 (etc.).&lt;/p&gt;
 &lt;p&gt;That means that &lt;strong&gt;within a team, communications are a &lt;a href="https://en.wikipedia.org/wiki/Complete_graph"&gt;complete
 graph&lt;/a&gt;&lt;/strong&gt;. And for a
-complete graph, the number of &lt;em&gt;edges&lt;/em&gt; is given by $${n(n-1)}\over 2$$&lt;/p&gt;
-&lt;p&gt;In our case, $n$ is our team size (including the leader), thus
-$x+1$ (the reports plus the leader). &lt;/p&gt;
+complete graph, the number of &lt;em&gt;edges&lt;/em&gt; is given by &lt;/p&gt;
+&lt;div class="math"&gt;$${n(n-1)}\over 2$$&lt;/div&gt;
+&lt;p&gt;In our case, &lt;span class="math"&gt;\(n\)&lt;/span&gt; is our team size (including the leader), thus
+&lt;span class="math"&gt;\(x+1\)&lt;/span&gt; (the reports plus the leader). &lt;/p&gt;
 &lt;p&gt;So we can rewrite the complete-graph formula as: 
-$${{(x+1)(x+1-1)} \over 2} = {{x(x+1)} \over 2}$$&lt;/p&gt;
+&lt;/p&gt;
+&lt;div class="math"&gt;$${{(x+1)(x+1-1)} \over 2} = {{x(x+1)} \over 2}$$&lt;/div&gt;
 &lt;p&gt;So in order for the team to be well informed of everyone’s
 actions at all times, a 5-person team must keep track of 10
 communications links between people. That’s absolutely doable, though
@@ -657,8 +724,8 @@ manage the same headcount growth is to make the company wider — in
 other words, have more people report to one manager than previously
 planned.&lt;/p&gt;
 &lt;p&gt;So Alex, being a good CEO, opens some spread sheet software and
-creates this handy table that simply plugs in values for $x$ and $y$,
-with $x$ (width) in columns and $y$ (depth) in rows.&lt;sup id="fnref:table"&gt;&lt;a class="footnote-ref" href="#fn:table"&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+creates this handy table that simply plugs in values for &lt;span class="math"&gt;\(x\)&lt;/span&gt; and &lt;span class="math"&gt;\(y\)&lt;/span&gt;,
+with &lt;span class="math"&gt;\(x\)&lt;/span&gt; (width) in columns and &lt;span class="math"&gt;\(y\)&lt;/span&gt; (depth) in rows.&lt;sup id="fnref:table"&gt;&lt;a class="footnote-ref" href="#fn:table"&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -809,48 +876,50 @@ with $x$ (width) in columns and $y$ (depth) in rows.&lt;sup id="fnref:table"&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;For our previous five-year plan, Alex can just look up the cell
-matching $x=4$, $y=5$ and finds our known outcome, a maximum head
+matching &lt;span class="math"&gt;\(x=4\)&lt;/span&gt;, &lt;span class="math"&gt;\(y=5\)&lt;/span&gt; and finds our known outcome, a maximum head
 count of 1,365.&lt;/p&gt;
 &lt;p&gt;Now, Alex looks at what it takes to flatten the organization by
 eliminating one hierarchy level, or by two.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;If we want to reduce depth by 1, we simply go up one row (thus,
-  $y=4$) and find the value for $x$ that just accommodates 1,365
-  people or more. Alex sees that that’s $x=6$, which can accommodate
+  &lt;span class="math"&gt;\(y=4\)&lt;/span&gt;) and find the value for &lt;span class="math"&gt;\(x\)&lt;/span&gt; that just accommodates 1,365
+  people or more. Alex sees that that’s &lt;span class="math"&gt;\(x=6\)&lt;/span&gt;, which can accommodate
   1,555 people. That is, increase the width by 2: reorganize from
-  teams of 5 to teams of 7. Alex could also pick $x=5$, that is
+  teams of 5 to teams of 7. Alex could also pick &lt;span class="math"&gt;\(x=5\)&lt;/span&gt;, that is
   increase the width by only 1, which would land the company at a
-  maximum head count of 781. That is well below what $x=4$ can handle,
+  maximum head count of 781. That is well below what &lt;span class="math"&gt;\(x=4\)&lt;/span&gt; can handle,
   but it still lands Alex north of the original growth target of 672.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;If we want to reduce depth by 2, we go up two rows ($y=3$) and do
-  the same. We end up at $x=11$, which means to increase width by 7:
+&lt;p&gt;If we want to reduce depth by 2, we go up two rows (&lt;span class="math"&gt;\(y=3\)&lt;/span&gt;) and do
+  the same. We end up at &lt;span class="math"&gt;\(x=11\)&lt;/span&gt;, which means to increase width by 7:
   reorganize from teams of 5 to teams of 12. Thus, we land at a
   maximum of 1,464 people, slightly exceeding the headcount we’re able
   to accommodate if we keep growing with the current structure. We
-  could also do $x=10$ or $x=9$, landing us at maxima well below that
+  could also do &lt;span class="math"&gt;\(x=10\)&lt;/span&gt; or &lt;span class="math"&gt;\(x=9\)&lt;/span&gt;, landing us at maxima well below that
   (1,111 or 820), but still north of 672.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Now what does that mean in terms of communication channels each person
 has to maintain?&lt;/p&gt;
 &lt;p&gt;Again, what we want to keep in mind is the number of edges in a
-complete graph connecting $n$ (that is, $x+1$) points. For regular
-employees, we know that that’s $${x(x+1)}\over 2$$&lt;/p&gt;
-&lt;p&gt;And for any manager, who is effectively on two teams of size $x+1$
-simultaneously, that’s $$2 \cdot {{x(x+1)}\over 2} = x(x+1)$$&lt;/p&gt;
+complete graph connecting &lt;span class="math"&gt;\(n\)&lt;/span&gt; (that is, &lt;span class="math"&gt;\(x+1\)&lt;/span&gt;) points. For regular
+employees, we know that that’s &lt;/p&gt;
+&lt;div class="math"&gt;$${x(x+1)}\over 2$$&lt;/div&gt;
+&lt;p&gt;And for any manager, who is effectively on two teams of size &lt;span class="math"&gt;\(x+1\)&lt;/span&gt;
+simultaneously, that’s &lt;/p&gt;
+&lt;div class="math"&gt;$$2 \cdot {{x(x+1)}\over 2} = x(x+1)$$&lt;/div&gt;
 &lt;p&gt;Which means:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;If we want to reduce depth by 1 and go from $x=4$ to
-  $x=5$, every non-manager employee now needs to be aware of 15
+&lt;p&gt;If we want to reduce depth by 1 and go from &lt;span class="math"&gt;\(x=4\)&lt;/span&gt; to
+  &lt;span class="math"&gt;\(x=5\)&lt;/span&gt;, every non-manager employee now needs to be aware of 15
   communications links (instead of 10), every manager, of 30 (instead
   of 20).&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;If instead we go from $x=4$ to $x=6$, every non-manager employee now
+&lt;p&gt;If instead we go from &lt;span class="math"&gt;\(x=4\)&lt;/span&gt; to &lt;span class="math"&gt;\(x=6\)&lt;/span&gt;, every non-manager employee now
   needs to be aware of 21 communications links, every manager, of 42.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -859,16 +928,16 @@ communications complexity.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;For the elimination of two hierarchy levels (a depth reduction by
-  2), we’ll need to move from $x=4$ to at least $x=8$. At that point,
+  2), we’ll need to move from &lt;span class="math"&gt;\(x=4\)&lt;/span&gt; to at least &lt;span class="math"&gt;\(x=8\)&lt;/span&gt;. At that point,
   every regular employee has at least 36 communications links on their
   teams to deal with; every manager deals with 72.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;If instead we go to $x=9$, every non-manager employee now needs to
+&lt;p&gt;If instead we go to &lt;span class="math"&gt;\(x=9\)&lt;/span&gt;, every non-manager employee now needs to
   be aware of 45 communications links, every manager, of 90.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;And for $x=10$, every non-manager employee now needs to
+&lt;p&gt;And for &lt;span class="math"&gt;\(x=10\)&lt;/span&gt;, every non-manager employee now needs to
   be aware of 55 communications links, every manager, of 110.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -1035,32 +1104,32 @@ cell &lt;em&gt;directly above it&lt;/em&gt; will contain the total number of man
 (that is, people who have direct reports) for the same width. So,&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;for $x=4$, $y=5$ (our original scenario allowing the company to grow
+&lt;p&gt;for &lt;span class="math"&gt;\(x=4\)&lt;/span&gt;, &lt;span class="math"&gt;\(y=5\)&lt;/span&gt; (our original scenario allowing the company to grow
   to 1,365 people), Alex would have to hire and pay a total of 341
   managers.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;for $x=6$, $y=4$ (the scenario that eliminates one level, and can
+&lt;p&gt;for &lt;span class="math"&gt;\(x=6\)&lt;/span&gt;, &lt;span class="math"&gt;\(y=4\)&lt;/span&gt; (the scenario that eliminates one level, and can
   accommodate 1,555 people), Alex’ company will need 259
   managers. That’s 82 fewer managers, or a reduction by about 24%.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;for $x=5$, $y=4$ (the scenario that eliminates one level, but
+&lt;p&gt;for &lt;span class="math"&gt;\(x=5\)&lt;/span&gt;, &lt;span class="math"&gt;\(y=4\)&lt;/span&gt; (the scenario that eliminates one level, but
   accommodates only 781 people), Alex’ company will need 156
   managers. That’s 185 fewer managers, or a reduction by about 54%.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;for $x=11$, $y=3$ (the scenario that eliminates two levels, and can
+&lt;p&gt;for &lt;span class="math"&gt;\(x=11\)&lt;/span&gt;, &lt;span class="math"&gt;\(y=3\)&lt;/span&gt; (the scenario that eliminates two levels, and can
   accommodate 1,464 people), the company will need 133
   managers. That’s 208 fewer managers, or a reduction by about 61%.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;for $x=10$, $y=3$ (the scenario that eliminates two levels, but
+&lt;p&gt;for &lt;span class="math"&gt;\(x=10\)&lt;/span&gt;, &lt;span class="math"&gt;\(y=3\)&lt;/span&gt; (the scenario that eliminates two levels, but
   accommodates only 1,111 people), the company will need 111
   managers. That’s 230 fewer managers, or a reduction by about 67%.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;for $x=9$, $y=3$ (the scenario that eliminates two levels, but
+&lt;p&gt;for &lt;span class="math"&gt;\(x=9\)&lt;/span&gt;, &lt;span class="math"&gt;\(y=3\)&lt;/span&gt; (the scenario that eliminates two levels, but
   accommodates only 820 people), the company will need 91
   managers. That’s 250 fewer managers, or a reduction by about 73%.&lt;/p&gt;
 &lt;/li&gt;
@@ -1219,9 +1288,10 @@ is in columns, depth is in rows):&lt;/p&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;You’ll see that at a depth of 1, the share of managers is obviously $1
-\over {x+1}$, but then as we increase in depth it quickly trends
-toward:&lt;sup id="fnref:reciprocal"&gt;&lt;a class="footnote-ref" href="#fn:reciprocal"&gt;5&lt;/a&gt;&lt;/sup&gt;  $$1 \over x$$&lt;/p&gt;
+&lt;p&gt;You’ll see that at a depth of 1, the share of managers is obviously &lt;span class="math"&gt;\(1
+\over {x+1}\)&lt;/span&gt;, but then as we increase in depth it quickly trends
+toward:&lt;sup id="fnref:reciprocal"&gt;&lt;a class="footnote-ref" href="#fn:reciprocal"&gt;5&lt;/a&gt;&lt;/sup&gt; &lt;/p&gt;
+&lt;div class="math"&gt;$$1 \over x$$&lt;/div&gt;
 &lt;p&gt;The number of managers in Alex’ company is roughly the reciprocal of
 the company’s width. In other words, the number of managers is
 inversely proportional to width.&lt;/p&gt;
@@ -1243,21 +1313,21 @@ scales progressively worse, the “flatter” (wider) it gets.&lt;/p&gt;
 &lt;li id="fn:i"&gt;
 &lt;p&gt;In this &lt;a href="https://en.wikipedia.org/wiki/Summation#Capital-sigma_notation"&gt;capital-sigma summation
 formula&lt;/a&gt;,
-$i$ doesn’t mean anything other than it being a counter. The
-formula is pronounced, in English, as “sum of $x$ to the $i$, from
-$i$ equals zero to $y$” (in other words, add up all whole-number
-powers of $x$, from $x^0$ to $x^y$). &lt;a class="footnote-backref" href="#fnref:i" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;span class="math"&gt;\(i\)&lt;/span&gt; doesn’t mean anything other than it being a counter. The
+formula is pronounced, in English, as “sum of &lt;span class="math"&gt;\(x\)&lt;/span&gt; to the &lt;span class="math"&gt;\(i\)&lt;/span&gt;, from
+&lt;span class="math"&gt;\(i\)&lt;/span&gt; equals zero to &lt;span class="math"&gt;\(y\)&lt;/span&gt;” (in other words, add up all whole-number
+powers of &lt;span class="math"&gt;\(x\)&lt;/span&gt;, from &lt;span class="math"&gt;\(x^0\)&lt;/span&gt; to &lt;span class="math"&gt;\(x^y\)&lt;/span&gt;). &lt;a class="footnote-backref" href="#fnref:i" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:indeterminate"&gt;
 &lt;p&gt;You might notice that this expression is
 &lt;a href="https://en.wikipedia.org/wiki/Indeterminate_form"&gt;indeterminate&lt;/a&gt;
-for $x = 1$. Now I’d say the idea of a hierarchical company made
+for &lt;span class="math"&gt;\(x = 1\)&lt;/span&gt;. Now I’d say the idea of a hierarchical company made
 up of one-on-one teams (every manager has one report, who in turn
 is the manager of one report, and so on) is extremely unrealistic.
 But just for completeness’ sake, we can apply &lt;a href="https://www.wolframalpha.com/input/?i2d=true&amp;amp;i=Limit%5BDivide%5BPower%5Bx%2Cy%2B1%5D-1%2Cx-1%5D%2Cx-%3E1%5D"&gt;a
 limit&lt;/a&gt;
 to show that 
-$$\lim_{x \to 1} {{x^{y+1}-1} \over {x-1}} = {y + 1}$$ 
+&lt;div class="math"&gt;$$\lim_{x \to 1} {{x^{y+1}-1} \over {x-1}} = {y + 1}$$&lt;/div&gt; 
 In other words, such an organization could accommodate a
 number of people that is equal to its depth plus 1. &lt;a class="footnote-backref" href="#fnref:indeterminate" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
@@ -1279,21 +1349,83 @@ employers&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:table" title="
 &lt;p&gt;If you’re curious, that is because the share of
 managers in relation to the total number of people in the company
 is 
-$${\sum_{i=0}^{y-1} x^{i}} \over {\sum_{i=0}^{y} x^{i}}$$
-That works out to be $${x^y-1} \over {x^{y+1}-1}$$
-Which, for $y=1$, is
-$${{x-1} \over {x^2-1}} = {{x-1} \over {(x+1)\cdot(x-1)}} = {1 \over {x+1}}$$
-And for larger values of $y$, both $x^y$ and
-$x^{y+1}$ become so large that the $-1$ part barely matters, so
+&lt;div class="math"&gt;$${\sum_{i=0}^{y-1} x^{i}} \over {\sum_{i=0}^{y} x^{i}}$$&lt;/div&gt;
+That works out to be &lt;div class="math"&gt;$${x^y-1} \over {x^{y+1}-1}$$&lt;/div&gt;
+Which, for &lt;span class="math"&gt;\(y=1\)&lt;/span&gt;, is
+&lt;div class="math"&gt;$${{x-1} \over {x^2-1}} = {{x-1} \over {(x+1)\cdot(x-1)}} = {1 \over {x+1}}$$&lt;/div&gt;
+And for larger values of &lt;span class="math"&gt;\(y\)&lt;/span&gt;, both &lt;span class="math"&gt;\(x^y\)&lt;/span&gt; and
+&lt;span class="math"&gt;\(x^{y+1}\)&lt;/span&gt; become so large that the &lt;span class="math"&gt;\(-1\)&lt;/span&gt; part barely matters, so
 it’s effectively: 
-$${{x^y-1} \over {x^{y+1}-1}} \approx {x^y \over x^{y+1}} = {1 \over x}$$
-In slightly more formal terms, we can consider $1 \over x$ the 
+&lt;div class="math"&gt;$${{x^y-1} \over {x^{y+1}-1}} \approx {x^y \over x^{y+1}} = {1 \over x}$$&lt;/div&gt;
+In slightly more formal terms, we can consider &lt;span class="math"&gt;\(1 \over x\)&lt;/span&gt; the 
 &lt;em&gt;&lt;a href="https://en.wikipedia.org/wiki/Limit_(mathematics)"&gt;limit&lt;/a&gt;&lt;/em&gt; of the
-expression as $y$ goes to infinity:
-$$\lim_{y \to \infty} {{x^y-1} \over {x^{y+1}-1}} = {1 \over x}$$ &lt;a class="footnote-backref" href="#fnref:reciprocal" title="Jump back to footnote 5 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+expression as &lt;span class="math"&gt;\(y\)&lt;/span&gt; goes to infinity:
+&lt;div class="math"&gt;$$\lim_{y \to \infty} {{x^y-1} \over {x^{y+1}-1}} = {1 \over x}$$&lt;/div&gt; &lt;a class="footnote-backref" href="#fnref:reciprocal" title="Jump back to footnote 5 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Voice messages</title><link href="https://xahteiwi.eu/blog/2021/12/05/voice-messages/" rel="alternate"></link><published>2021-12-05T00:00:00+00:00</published><updated>2021-12-05T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-12-05:/blog/2021/12/05/voice-messages/</id><summary type="html">&lt;p&gt;Apparently, some people think you should replace professional textual communications with voice messaging. Here’s why I think that that’s a bad idea.&lt;/p&gt;</summary><content type="html">&lt;p&gt;As of late, I’ve noticed that when people share one of my articles on
+&lt;/div&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Voice messages</title><link href="https://xahteiwi.eu/blog/2021/12/05/voice-messages/" rel="alternate"></link><published>2021-12-05T00:00:00+00:00</published><updated>2021-12-05T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-12-05:/blog/2021/12/05/voice-messages/</id><summary type="html">&lt;p&gt;Apparently, some people think you should replace professional textual communications with voice messaging. Here’s why I think that that’s a bad idea.&lt;/p&gt;</summary><content type="html">&lt;p&gt;As of late, I’ve noticed that when people share one of my articles on
 asynchronous communications on Twitter (particularly any from the
 &lt;a href="https://xahteiwi.eu/blog/2021/09/30/getting-out-of-meeting-hell/"&gt;Getting out of Meeting
 Hell&lt;/a&gt; series, or the one on
