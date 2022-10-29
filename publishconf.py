@@ -21,6 +21,8 @@ except FileNotFoundError:
 SITEURL = "https://%s" % cname
 SITELOGO = SITEURL + '/' + AVATAR
 
+PLAUSIBLE_DOMAIN = cname
+
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
 TAG_FEED_ATOM = 'feeds/tag/{slug}.atom.xml'
 CATEGORY_FEED_ATOM = 'feeds/category/{slug}.atom.xml'
@@ -29,8 +31,3 @@ TAG_FEED_RSS = 'feeds/tag/{slug}.rss.xml'
 CATEGORY_FEED_RSS = 'feeds/category/{slug}.rss.xml'
 
 DELETE_OUTPUT_DIRECTORY = True
-
-# Following items are often useful when publishing
-
-#DISQUS_SITENAME = ""
-#GOOGLE_ANALYTICS = ""
