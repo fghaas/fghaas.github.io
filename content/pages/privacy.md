@@ -22,7 +22,10 @@ This web site uses anonymous analytics via
 [Plausible](https://plausible.io). Plausible does not set cookies, and
 does not collect personal data. You can read up on Plausible's
 privacy-focused analytics approach on [their web
-site](https://plausible.io/privacy-focused-web-analytics).
+site](https://plausible.io/privacy-focused-web-analytics). If you want
+to review the statistics Plausible has generated for this site, you
+are welcome to [visit the Plausible
+dashboard](https://plausible.io/xahteiwi.eu/).
 
 The Plausible Analytics JavaScript code is open source, and is
 licensed under the [Affero
@@ -47,4 +50,8 @@ externally, from the following sources:
 | [Prezi](https://prezi.com) | `prezi.com` | [Privacy Policy](https://prezi.com/privacy-policy/) |
 | [YouTube](https://youtube.com) | `youtube.com`, `youtu.be` | [Privacy Policy](https://policies.google.com/privacy) |
 
+* * *
+
+*This policy was last updated on 2022-10-29. The most recent addition
+was the "Site Analytics" section.*
 
