@@ -138,8 +138,7 @@ MENUITEMS = [
 LINKS = []
 
 # Social links, also displayed on the sidebar.
-SOCIAL = (('twitter', 'https://twitter.com/xahteiwi'),
-          ('mastodon', 'https://mastodon.social/@xahteiwi'),
+SOCIAL = (('mastodon', 'https://mastodon.social/@xahteiwi'),
           ('linkedin', 'https://www.linkedin.com/in/fghaas'),
           ('github', 'https://github.com/fghaas'))
 
