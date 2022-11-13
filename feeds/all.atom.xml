@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/all.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-11-12T10:30:00+00:00</updated><entry><title>Bye, Birdsite</title><link href="https://xahteiwi.eu/blog/2022/11/12/bye-birdsite/" rel="alternate"></link><published>2022-11-12T10:30:00+00:00</published><updated>2022-11-12T10:30:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-11-12:/blog/2022/11/12/bye-birdsite/</id><summary type="html">&lt;p&gt;Find me on the Fediverse.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is just to let people know that as of today, I am no longer
-active on &lt;a href="https://twitter.com/xahteiwi"&gt;the birdsite&lt;/a&gt;.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/all.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-11-12T10:30:00+00:00</updated><entry><title>Bye, Birdsite</title><link href="https://xahteiwi.eu/blog/2022/11/12/bye-birdsite/" rel="alternate"></link><published>2022-11-12T10:30:00+00:00</published><updated>2022-11-12T10:30:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-11-12:/blog/2022/11/12/bye-birdsite/</id><summary type="html">&lt;p&gt;Find me on the Fediverse.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is just to let you know that as of today, I am no longer active
+on &lt;a href="https://twitter.com/xahteiwi"&gt;the birdsite&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I have deleted my 15,227 tweets (going back to 2015-08-25, just over 7
 years) using &lt;a href="https://tweetdelete.net/"&gt;TweetDelete&lt;/a&gt;, and am leaving
-just a single one up to let people know where I went.&lt;/p&gt;
+just &lt;a href="https://twitter.com/xahteiwi/status/1591384758663409664"&gt;a single
+one&lt;/a&gt; up to
+let people know where I went.&lt;/p&gt;
 &lt;p&gt;At this point, I have no intention to resume my activity there. You
 can find me on the Fediverse, and I’d be delighted to connect with you
 there. My primary Fediverse account is currently
 &lt;a href="https://mastodon.social/@xahteiwi"&gt;@xahteiwi@mastodon.social&lt;/a&gt;; if I
 ever move to a different instance I’ll be sure to set up a
-&lt;a href="https://docs.joinmastodon.org/user/moving/#migration"&gt;redirect&lt;/a&gt;.&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>Nebulous Percentage Shenanigans</title><link href="https://xahteiwi.eu/blog/2022/10/15/nps/" rel="alternate"></link><published>2022-10-15T15:00:00+00:00</published><updated>2022-10-15T15:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-10-15:/blog/2022/10/15/nps/</id><summary type="html">&lt;p&gt;I recently learned that I am a &amp;ldquo;detractor&amp;rdquo; of things I actually quite like. Here are a few related things I also learned about in the process.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Surely you’ve seen a question similar to the following in a survey or
+&lt;a href="https://docs.joinmastodon.org/user/moving/#migration"&gt;redirect&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I might still occasionally re-run
+&lt;a href="https://fedifinder.glitch.me/"&gt;Fedifinder&lt;/a&gt; to find people that I’d
+been following, or that I had added to lists, and then follow their
+Fediverse identities. So, if you’re also moving, please consider
+adding your Fediverse handle (or a link to your profile) to your bio.&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>Nebulous Percentage Shenanigans</title><link href="https://xahteiwi.eu/blog/2022/10/15/nps/" rel="alternate"></link><published>2022-10-15T15:00:00+00:00</published><updated>2022-10-15T15:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-10-15:/blog/2022/10/15/nps/</id><summary type="html">&lt;p&gt;I recently learned that I am a &amp;ldquo;detractor&amp;rdquo; of things I actually quite like. Here are a few related things I also learned about in the process.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Surely you’ve seen a question similar to the following in a survey or
 request for feedback.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;How likely is it that you’ll recommend X to a colleague or friend?&lt;/p&gt;
