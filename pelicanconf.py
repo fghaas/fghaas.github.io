@@ -48,6 +48,7 @@ STATIC_PATHS = [
     'favicon.ico',
     'fonts',
     'images',
+    '_config.yml',
     '.well-known',
     'keybase.txt',
     'robots.txt',
