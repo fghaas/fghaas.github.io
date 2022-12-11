@@ -80,7 +80,7 @@ your!) audience:
   beneficial to people with attention issues, and also greatly
   facilitates hallway track conversations — because people can always
   refer back to something I said, without having to try to remember
-  and discern it from the slides' context.
+  and discern it from the slides' contents.
 
 You get all this for the small price of opening one more browser tab
 on your presentation and A/V production laptop. It might add a small
