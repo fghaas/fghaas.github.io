@@ -1,5 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Conference</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/conference.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-09-18T00:00:00+00:00</updated><entry><title>Writing Professionally (DevOpsDays Berlin 2022)</title><link href="https://xahteiwi.eu/resources/presentations/devopsdays-berlin-2022/" rel="alternate"></link><published>2022-09-18T00:00:00+00:00</published><updated>2022-09-18T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-09-18:/resources/presentations/devopsdays-berlin-2022/</id><summary type="html">&lt;p&gt;I couldn&amp;rsquo;t make it to DevOpsDays Berlin, because my Covid status kept me from travelling. Thus, here&amp;rsquo;s a write-up.&lt;/p&gt;</summary><content type="html">&lt;p&gt;At &lt;a href="https://devopsdays.org/events/2022-berlin/program"&gt;DevOpsDays Berlin
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Conference</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/conference.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-12-11T00:00:00+00:00</updated><entry><title>No, you won't get a PowerPoint from me!</title><link href="https://xahteiwi.eu/blog/2022/12/11/no-you-wont-get-a-powerpoint/" rel="alternate"></link><published>2022-12-11T00:00:00+00:00</published><updated>2022-12-11T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-12-11:/blog/2022/12/11/no-you-wont-get-a-powerpoint/</id><summary type="html">&lt;p&gt;Dear conference organizers, I use my preferred slide deck framework for a reason. Please don&amp;rsquo;t try to second-guess me.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Dear conference organizer,&lt;/p&gt;
+&lt;p&gt;Please do not attempt to foist a slide deck format on me. Please stop
+asking for a PowerPoint, or a Google Slides link, or a PDF. And if
+these are the only formats you are willing to accept, please that
+state that clearly and up front in the CFP, because it means I won’t
+be submitting a proposal to your conference.&lt;/p&gt;
+&lt;p&gt;I am not doing this to annoy you, or make your life harder. It’s just
+that the presentation stack I have chosen is far superior to the ones
+you are suggesting, and I am disinclined to compromise on quality.&lt;/p&gt;
+&lt;p&gt;I use the &lt;a href="https://revealjs.com/"&gt;reveal.js&lt;/a&gt; presentation framework,
+and publish my slide decks using &lt;a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site"&gt;GitHub
+Pages&lt;/a&gt;. I
+provide a public URL to my slides ahead of time — always at the
+beginning of the talk, and also ahead of time if requested, in case
+you want to put the link in your conference programme.&lt;/p&gt;
+&lt;p&gt;This approach allows me to do things that — to the best of my
+knowledge — neither PowerPoint, nor Google Slides, nor a PDF allow me
+to do, which I consider essential in the interest of my (that is,
+your!) audience:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;I always encourage people who sit at the back of the room, or who
+  have vision acuity issues, to open my slides as I start the talk (I
+  provide a full-size QR code for that purpose; &lt;a href="https://fghaas.github.io/writing-professionally/#/0/1"&gt;here is an
+  example&lt;/a&gt;). reveal.js
+  &lt;a href="https://revealjs.com/multiplex/"&gt;Multiplex&lt;/a&gt; then allows me to
+  advance my slides on the big screen or projector, and the slides on
+  people’s personal devices will advance in lockstep. This enables
+  everyone to follow along without having to crane their neck or
+  squint their eyes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;My slides always use the reveal.js black-on-white theme (which works
+  best even if lighting conditions in the presentation room are
+  unhelpful), and I include the reveal.js &lt;a href="https://denehyg.github.io/reveal.js-menu/"&gt;menu
+  plugin&lt;/a&gt; with a theme
+  switcher. This enables people who cannot look at bright screens for
+  a long time (migraine patients come to mind) to switch to the dark,
+  white-on-black theme, which tends to make their talk experience more
+  pleasant. To see what this looks like, open &lt;a href="https://fghaas.github.io/writing-professionally"&gt;this
+  deck&lt;/a&gt;, then click
+  the ☰ icon or hit the &lt;code&gt;m&lt;/code&gt; key, and go to &lt;em&gt;Themes → Black&lt;/em&gt;.&lt;br/&gt;
+  On a related note, please don’t prescribe a slide template or colour
+  scheme either, &lt;em&gt;unless&lt;/em&gt; your template designers have made better
+  accessibility accomodations than I have (at which point I will be
+  more than happy to work those into my slide deck design).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;reveal.js comes with a magnificently useful and highly flexible
+  &lt;a href="https://revealjs.com/speaker-view/#speaker-notes-clock-and-timers"&gt;pacing
+  timer&lt;/a&gt;,
+  which enables me in my delivery to keep time very precisely, and
+  even allows me to make timing changes in a hurry. For example, if my
+  50-minute talk talk starts 5 minutes late because of a scheduling
+  issue, I can make a quick change to make up that time without
+  compromising talk quality, and without the talk getting rushed at
+  the end. Good schedule-keeping enhances the quality of your
+  conference, and reduces your stress level as an organizer.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The fact that my slides live on GitHub, and are automatically
+  published with a &lt;code&gt;git push&lt;/code&gt; command, enables me to make last-minute
+  modifications in relation to other talks previously seen in the
+  conference. This keeps me from sharing information that is outdated,
+  lets me add new information from your conference that is useful, and
+  will thus make my talk (and your conference!) more practically
+  relevant.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Immediately after my talk is done, I re-push my slides with inline
+  speaker notes enabled. (To see what this looks like, &lt;a href="https://fghaas.github.io/devopsdaystlv-2019/"&gt;look at this
+  example&lt;/a&gt;.) You
+  &lt;em&gt;always&lt;/em&gt; get my talk with my full speaker notes, meaning every
+  single one of my talks comes with a full transcript. This is
+  beneficial to people with attention issues, and also greatly
+  facilitates hallway track conversations — because people can always
+  refer back to something I said, without having to try to remember
+  and discern it from the slides’ context.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You get all this for the small price of opening one more browser tab
+on your presentation and A/V production laptop. It might add a small
+amount of extra work for the people who run your A/V production; I
+acknowledge that and ask you and them to please accept that extra
+burden. But I promise you it’ll be a net win for our audience.&lt;/p&gt;</content><category term="blog"></category><category term="Conference"></category></entry><entry><title>Writing Professionally (DevOpsDays Berlin 2022)</title><link href="https://xahteiwi.eu/resources/presentations/devopsdays-berlin-2022/" rel="alternate"></link><published>2022-09-18T00:00:00+00:00</published><updated>2022-09-18T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-09-18:/resources/presentations/devopsdays-berlin-2022/</id><summary type="html">&lt;p&gt;I couldn&amp;rsquo;t make it to DevOpsDays Berlin, because my Covid status kept me from travelling. Thus, here&amp;rsquo;s a write-up.&lt;/p&gt;</summary><content type="html">&lt;p&gt;At &lt;a href="https://devopsdays.org/events/2022-berlin/program"&gt;DevOpsDays Berlin
 2022&lt;/a&gt;, I was slated
 to give a 30-minute talk titled &lt;em&gt;Writing Professionally.&lt;/em&gt;
 Unfortunately a positive Covid test just three days prior to my
@@ -1350,7 +1434,7 @@ It’s being lazy.&lt;/p&gt;
 &lt;p&gt;It’s a symptom of the worst kind of laziness &lt;em&gt;(not malice!)&lt;/em&gt;: in an
 attempt to communicate quickly and easily, for yourself, you are really
 making things harder for everyone, including yourself.&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -1378,7 +1462,7 @@ ago”, you’ll agree with me here.&lt;/p&gt;
 is to say in relation to &lt;em&gt;other&lt;/em&gt; discussions on the same topic, days
 or weeks earlier or later.&lt;/p&gt;
 &lt;p&gt;Let’s compare that to other communication modes:&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -1409,7 +1493,7 @@ or weeks earlier or later.&lt;/p&gt;
   as with chat, and it’s marginally better at contextualizing
   information than chat (because you get proper threading).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -1456,7 +1540,7 @@ or weeks earlier or later.&lt;/p&gt;
   Likewise, “issue tracker” can mean RT, OTRS, Jira, Taiga, Bugzilla,
   whatever works for you.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -2681,7 +2765,7 @@ in the conference.&lt;/p&gt;
 &lt;p&gt;Nonexisticon’s attendee-visible run-up cycle is 6 months.&lt;/p&gt;
 &lt;p&gt;Assuming a Nonexisticon is scheduled to run from May 15-17, the
 following schedule applies:&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Date&lt;/th&gt;
