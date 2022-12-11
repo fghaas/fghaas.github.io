@@ -8,7 +8,7 @@ Dear conference organizer,
 
 Please do not attempt to foist a slide deck format on me. Please stop
 asking for a PowerPoint, or a Google Slides link, or a PDF. And if
-these are the only formats you are willing to accept, please that
+these are the only formats you are willing to accept, please do
 state that clearly and up front in the CFP, because it means I won't
 be submitting a proposal to your conference.
 
