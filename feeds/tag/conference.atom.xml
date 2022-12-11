@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Conference</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/conference.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-12-11T00:00:00+00:00</updated><entry><title>No, you won't get a PowerPoint from me!</title><link href="https://xahteiwi.eu/blog/2022/12/11/no-you-wont-get-a-powerpoint/" rel="alternate"></link><published>2022-12-11T00:00:00+00:00</published><updated>2022-12-11T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-12-11:/blog/2022/12/11/no-you-wont-get-a-powerpoint/</id><summary type="html">&lt;p&gt;Dear conference organizers, I use my preferred slide deck framework for a reason. Please don&amp;rsquo;t try to second-guess me.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Dear conference organizer,&lt;/p&gt;
 &lt;p&gt;Please do not attempt to foist a slide deck format on me. Please stop
 asking for a PowerPoint, or a Google Slides link, or a PDF. And if
-these are the only formats you are willing to accept, please that
+these are the only formats you are willing to accept, please do
 state that clearly and up front in the CFP, because it means I won’t
 be submitting a proposal to your conference.&lt;/p&gt;
 &lt;p&gt;I am not doing this to annoy you, or make your life harder. It’s just
@@ -1434,7 +1434,7 @@ It’s being lazy.&lt;/p&gt;
 &lt;p&gt;It’s a symptom of the worst kind of laziness &lt;em&gt;(not malice!)&lt;/em&gt;: in an
 attempt to communicate quickly and easily, for yourself, you are really
 making things harder for everyone, including yourself.&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -1462,7 +1462,7 @@ ago”, you’ll agree with me here.&lt;/p&gt;
 is to say in relation to &lt;em&gt;other&lt;/em&gt; discussions on the same topic, days
 or weeks earlier or later.&lt;/p&gt;
 &lt;p&gt;Let’s compare that to other communication modes:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -1493,7 +1493,7 @@ or weeks earlier or later.&lt;/p&gt;
   as with chat, and it’s marginally better at contextualizing
   information than chat (because you get proper threading).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -1540,7 +1540,7 @@ or weeks earlier or later.&lt;/p&gt;
   Likewise, “issue tracker” can mean RT, OTRS, Jira, Taiga, Bugzilla,
   whatever works for you.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -2765,7 +2765,7 @@ in the conference.&lt;/p&gt;
 &lt;p&gt;Nonexisticon’s attendee-visible run-up cycle is 6 months.&lt;/p&gt;
 &lt;p&gt;Assuming a Nonexisticon is scheduled to run from May 15-17, the
 following schedule applies:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Date&lt;/th&gt;
