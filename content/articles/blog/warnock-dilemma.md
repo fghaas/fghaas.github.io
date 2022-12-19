@@ -5,7 +5,7 @@ Tags: Work, Communications
 Summary: “Warnock’s Dilemma” is a classic feature of distributed, asynchronous, online communications. You can’t avoid it, you can’t work around it, but you can deal with it with two simple changes to your communicative behavior.
 
 People skeptical of distributed, asynchronous, written communications
-sometimes make they understandable objection that it is often
+sometimes make the understandable objection that it is often
 difficult to interpret the reactions, specifically the *absence of*
 reactions, to written online communications. 
 
