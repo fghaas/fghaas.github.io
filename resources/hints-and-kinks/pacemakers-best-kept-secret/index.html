@@ -164,7 +164,7 @@ Pacemaker users, know that it exists: it’s called <code>crm_report</code>.</p>
 <p><code>crm_report</code>‘s command syntax is rather quite simple. You just tell it
 how far in the past you want the report to start, and which directory
 you want to collect data in:</p>
-<div class="highlight"><pre><span></span><code>crm_report -f <span class="s2">"2016-01-25 00:00:00"</span> /tmp/crm_report
+<div class="highlight"><pre><span></span><code>crm_report<span class="w"> </span>-f<span class="w"> </span><span class="s2">"2016-01-25 00:00:00"</span><span class="w"> </span>/tmp/crm_report
 </code></pre></div>
 <p>The directory you specify must not exist. If it does, <code>crm_report</code>
 will refuse to run, rather than clobber or mess up your existing
@@ -177,7 +177,7 @@ than that as its start date.</p>
 <p>You can also specify the <em>end</em> of the period you’re interested
 in. Suppose you’re exactly aware of a 10-minute time window in which
 the problem occurred. In that case, you could run:</p>
-<div class="highlight"><pre><span></span><code>crm_report -f <span class="s2">"2016-01-25 01:15:00"</span> -t <span class="s2">"2016-01-25 01:25:00"</span> /tmp/crm_report
+<div class="highlight"><pre><span></span><code>crm_report<span class="w"> </span>-f<span class="w"> </span><span class="s2">"2016-01-25 01:15:00"</span><span class="w"> </span>-t<span class="w"> </span><span class="s2">"2016-01-25 01:25:00"</span><span class="w"> </span>/tmp/crm_report
 </code></pre></div>
 <p>Either way, <code>crm_report</code> will collect relevant log data for the
 specified time window on the host it is run on, and then connect to
@@ -252,7 +252,7 @@ gets the love it deserves. <i class="fa fa-smile-o"></i></p>
 
 <footer>
 <p>
-  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+  &copy; 2023  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
 </p>
 <p>
 Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme

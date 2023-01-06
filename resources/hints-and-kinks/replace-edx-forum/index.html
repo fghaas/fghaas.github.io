@@ -167,87 +167,87 @@ to export your course into a compressed archive, download it, and
 extract it on your local machine.</p>
 <p>Locate the <code>policies/_base</code> directory. Find the <code>policy.json</code> file
 located therein. It might look like this:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="s2">"course/201702"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="s2">"language"</span><span class="o">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">"invitation_only"</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">"start"</span><span class="o">:</span><span class="w"> </span><span class="s2">"2017-02-01T00:00:00Z"</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">"advertised_start"</span><span class="o">:</span><span class="w"> </span><span class="s2">"2017-02-01T00:00:00Z"</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">"end"</span><span class="o">:</span><span class="w"> </span><span class="s2">"2017-02-28T23:59:59Z"</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">"is_new"</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">"catalog_visibility"</span><span class="o">:</span><span class="w"> </span><span class="s2">"both"</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">"max_student_enrollments_allowed"</span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">"due"</span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">"giturl"</span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">"course_image"</span><span class="o">:</span><span class="w"> </span><span class="s2">"images_course_image.jpg"</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">"advanced_modules"</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"hastexo"</span><span class="p">],</span><span class="w"></span>
-<span class="w">    </span><span class="s2">"hide_from_toc"</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">"ispublic"</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">"rerandomize"</span><span class="o">:</span><span class="w"> </span><span class="s2">"never"</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">"show_calculator"</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">"showanswer"</span><span class="o">:</span><span class="w"> </span><span class="s2">"attempted"</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">"days_early_for_beta"</span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">"discussion_topics"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="s2">"General"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="s2">"id"</span><span class="o">:</span><span class="w"> </span><span class="s2">"i4x-hastexo-hx212-course-201702"</span><span class="w"></span>
-<span class="w">      </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="s2">"tabs"</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">      </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="s2">"name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Courseware"</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"courseware"</span><span class="w"></span>
-<span class="w">      </span><span class="p">},</span><span class="w"></span>
-<span class="w">      </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="s2">"name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Course Info"</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"course_info"</span><span class="w"></span>
-<span class="w">      </span><span class="p">},</span><span class="w"></span>
-<span class="w">      </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="s2">"name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Textbooks"</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"textbooks"</span><span class="w"></span>
-<span class="w">      </span><span class="p">},</span><span class="w"></span>
-<span class="w">      </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="s2">"name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Discussion"</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"discussion"</span><span class="w"></span>
-<span class="w">      </span><span class="p">},</span><span class="w"></span>
-<span class="w">      </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="s2">"name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Wiki"</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"wiki"</span><span class="w"></span>
-<span class="w">      </span><span class="p">},</span><span class="w"></span>
-<span class="w">      </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="s2">"name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Progress"</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"progress"</span><span class="w"></span>
-<span class="w">      </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">]</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="s2">"course/201702"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">"language"</span><span class="o">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"invitation_only"</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"start"</span><span class="o">:</span><span class="w"> </span><span class="s2">"2017-02-01T00:00:00Z"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"advertised_start"</span><span class="o">:</span><span class="w"> </span><span class="s2">"2017-02-01T00:00:00Z"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"end"</span><span class="o">:</span><span class="w"> </span><span class="s2">"2017-02-28T23:59:59Z"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"is_new"</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"catalog_visibility"</span><span class="o">:</span><span class="w"> </span><span class="s2">"both"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"max_student_enrollments_allowed"</span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"due"</span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"giturl"</span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"course_image"</span><span class="o">:</span><span class="w"> </span><span class="s2">"images_course_image.jpg"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"advanced_modules"</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"hastexo"</span><span class="p">],</span>
+<span class="w">    </span><span class="s2">"hide_from_toc"</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"ispublic"</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"rerandomize"</span><span class="o">:</span><span class="w"> </span><span class="s2">"never"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"show_calculator"</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"showanswer"</span><span class="o">:</span><span class="w"> </span><span class="s2">"attempted"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"days_early_for_beta"</span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"discussion_topics"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="s2">"General"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">"id"</span><span class="o">:</span><span class="w"> </span><span class="s2">"i4x-hastexo-hx212-course-201702"</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="s2">"tabs"</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">"name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Courseware"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"courseware"</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">"name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Course Info"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"course_info"</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">"name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Textbooks"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"textbooks"</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">"name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Discussion"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"discussion"</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">"name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Wiki"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"wiki"</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">"name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Progress"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"progress"</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>Note the <code>tabs</code> list. It contains the list of course tabs
 (<a href="http://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/course_assets/pages.html">which edX Studio, confusingly, calls “pages”</a>).</p>
 <h2>Step 2: Remove the default Discussion tab</h2>
 <p>You can now edit <code>policy.json</code>, and drop the <code>Discussion</code> entry from
 the <code>tabs</code> list, to make it look like so:</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="s2">"tabs"</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">      </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="s2">"name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Courseware"</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"courseware"</span><span class="w"></span>
-<span class="w">      </span><span class="p">},</span><span class="w"></span>
-<span class="w">      </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="s2">"name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Course Info"</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"course_info"</span><span class="w"></span>
-<span class="w">      </span><span class="p">},</span><span class="w"></span>
-<span class="w">      </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="s2">"name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Textbooks"</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"textbooks"</span><span class="w"></span>
-<span class="w">      </span><span class="p">},</span><span class="w"></span>
-<span class="w">      </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="s2">"name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Wiki"</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"wiki"</span><span class="w"></span>
-<span class="w">      </span><span class="p">},</span><span class="w"></span>
-<span class="w">      </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="s2">"name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Progress"</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"progress"</span><span class="w"></span>
-<span class="w">      </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">]</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="s2">"tabs"</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">"name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Courseware"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"courseware"</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">"name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Course Info"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"course_info"</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">"name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Textbooks"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"textbooks"</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">"name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Wiki"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"wiki"</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">"name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Progress"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"progress"</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
 </code></pre></div>
 <p>Maybe you also want to remove the course wiki. Just keep whichever
 tabs you’d like to keep.</p>
@@ -255,33 +255,33 @@ tabs you’d like to keep.</p>
 <p>In place of the old <code>Discussion</code> tab (which, you may have noticed, was
 of a special type conspicuously named <code>discussion</code>), you can now put a
 tab of different, simpler type: <code>static_tab</code>. Like so:</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="s2">"tabs"</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">      </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="s2">"name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Courseware"</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"courseware"</span><span class="w"></span>
-<span class="w">      </span><span class="p">},</span><span class="w"></span>
-<span class="w">      </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="s2">"name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Course Info"</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"course_info"</span><span class="w"></span>
-<span class="w">      </span><span class="p">},</span><span class="w"></span>
-<span class="w">      </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="s2">"name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Textbooks"</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"textbooks"</span><span class="w"></span>
-<span class="w">      </span><span class="p">},</span><span class="w"></span>
-<span class="w">      </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="s2">"name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Discussion"</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"static_tab"</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="s2">"url_slug"</span><span class="o">:</span><span class="w"> </span><span class="s2">"discussion"</span><span class="w"></span>
-<span class="w">      </span><span class="p">},</span><span class="w"></span>
-<span class="w">      </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="s2">"name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Wiki"</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"wiki"</span><span class="w"></span>
-<span class="w">      </span><span class="p">},</span><span class="w"></span>
-<span class="w">      </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="s2">"name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Progress"</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"progress"</span><span class="w"></span>
-<span class="w">      </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">]</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="s2">"tabs"</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">"name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Courseware"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"courseware"</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">"name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Course Info"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"course_info"</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">"name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Textbooks"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"textbooks"</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">"name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Discussion"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"static_tab"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"url_slug"</span><span class="o">:</span><span class="w"> </span><span class="s2">"discussion"</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">"name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Wiki"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"wiki"</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">"name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Progress"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"progress"</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
 </code></pre></div>
 <p>Note that a <code>static_tab</code> type tab also requires a value
 <code>url_slug</code>. What’s that one about, you ask?</p>
@@ -293,13 +293,13 @@ file there. In our case, that file needs to be named
 <p>So, head over to Disqus and grab the generated code from there, and
 then stick it into <code>tabs/discussion.html</code>. Something like this:</p>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"disqus_thread"</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="c1">// &lt;![CDATA[</span><span class="w"></span>
-<span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// DON'T EDIT BELOW THIS LINE</span><span class="w"></span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">,</span><span class="w"> </span><span class="nx">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">d</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'script'</span><span class="p">);</span><span class="w"></span>
-<span class="nx">s</span><span class="p">.</span><span class="nx">src</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'//&lt;your Disqus site domain name&gt;/embed.js'</span><span class="p">;</span><span class="w"></span>
-<span class="nx">s</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'data-timestamp'</span><span class="p">,</span><span class="w"> </span><span class="o">+</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">());</span><span class="w"></span>
-<span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">head</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">d</span><span class="p">.</span><span class="nx">body</span><span class="p">).</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span><span class="w"></span>
-<span class="p">})();</span><span class="w"></span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="c1">// &lt;![CDATA[</span>
+<span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// DON'T EDIT BELOW THIS LINE</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">,</span><span class="w"> </span><span class="nx">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">d</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'script'</span><span class="p">);</span>
+<span class="nx">s</span><span class="p">.</span><span class="nx">src</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'//&lt;your Disqus site domain name&gt;/embed.js'</span><span class="p">;</span>
+<span class="nx">s</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'data-timestamp'</span><span class="p">,</span><span class="w"> </span><span class="o">+</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">());</span>
+<span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">head</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">d</span><span class="p">.</span><span class="nx">body</span><span class="p">).</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
+<span class="p">})();</span>
 <span class="c1">// ]]&gt;</span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">noscript</span><span class="p">&gt;</span>Please enable JavaScript to view the <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://disqus.com/?ref_noscript"</span><span class="p">&gt;</span>comments powered by Disqus.<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">noscript</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
@@ -328,7 +328,7 @@ and you’re done!</p>
 
 <footer>
 <p>
-  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+  &copy; 2023  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
 </p>
 <p>
 Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme

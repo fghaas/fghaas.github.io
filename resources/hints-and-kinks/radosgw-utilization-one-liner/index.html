@@ -155,8 +155,8 @@ a bunch of statistics for <em>all</em> your radosgw buckets, in a somewhat
 convoluted JSON format. If you only want a simple list of all your
 buckets and the number of objects they contain, you can use the
 following bit of Python list comprehension magic:</p>
-<div class="highlight"><pre><span></span><code>radosgw-admin bucket stats <span class="p">|</span> <span class="se">\</span>
-  python -c <span class="s1">'import json; import sys; print "\n".join(["%s: %s" % (str(x["bucket"]), ", ".join(["%s: %s" % (k, v["num_objects"]) for k,v in x["usage"].iteritems()])) for x in json.load(sys.stdin) if isinstance(x,dict)])'</span>
+<div class="highlight"><pre><span></span><code>radosgw-admin<span class="w"> </span>bucket<span class="w"> </span>stats<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>python<span class="w"> </span>-c<span class="w"> </span><span class="s1">'import json; import sys; print "\n".join(["%s: %s" % (str(x["bucket"]), ", ".join(["%s: %s" % (k, v["num_objects"]) for k,v in x["usage"].iteritems()])) for x in json.load(sys.stdin) if isinstance(x,dict)])'</span>
 </code></pre></div>
 <p>And while the above is all on one line so you can easily copy and
 paste, here are the Python bits in a slightly more legible format:</p>
@@ -193,7 +193,7 @@ system runs only Python 3.</p>
 
 <footer>
 <p>
-  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+  &copy; 2023  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
 </p>
 <p>
 Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme

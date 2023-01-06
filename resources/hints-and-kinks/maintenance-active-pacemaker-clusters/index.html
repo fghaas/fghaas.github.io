@@ -154,7 +154,7 @@ features from creating unwanted side effects.</p>
 cluster maintenance. In maintenance mode, Pacemaker essentially takes
 a “hands-off” approach to your cluster. Enabling Pacemaker maintenance
 mode is very easy using the Pacemaker <code>crm</code> shell:</p>
-<div class="highlight"><pre><span></span><code>crm configure property maintenance-mode<span class="o">=</span><span class="nb">true</span>
+<div class="highlight"><pre><span></span><code>crm<span class="w"> </span>configure<span class="w"> </span>property<span class="w"> </span>maintenance-mode<span class="o">=</span><span class="nb">true</span>
 </code></pre></div>
 <p>In maintenance mode, you can stop or restart cluster resources at
 will. Pacemaker will not attempt to restart them. All resources
@@ -170,7 +170,7 @@ has an understanding of what resources are currently running on that
 node. It will, however, take no further action other than determining
 the resources’ status.</p>
 <p>You disable maintenance mode with the crm shell, as well:</p>
-<div class="highlight"><pre><span></span><code>crm configure property maintenance-mode<span class="o">=</span><span class="nb">false</span>
+<div class="highlight"><pre><span></span><code>crm<span class="w"> </span>configure<span class="w"> </span>property<span class="w"> </span>maintenance-mode<span class="o">=</span><span class="nb">false</span>
 </code></pre></div>
 <p>Maintenance mode is something you enable before running other
 maintenance actions, not when you’re already half-way through
@@ -191,7 +191,7 @@ database resource in something like maintenance mode, and have
 Pacemaker continue to monitor other resources like normal.</p>
 <p>You can do so by switching the resource to unmanaged mode and disable
 its monitor operation:</p>
-<div class="highlight"><pre><span></span><code>crm configure edit p_database
+<div class="highlight"><pre><span></span><code>crm<span class="w"> </span>configure<span class="w"> </span>edit<span class="w"> </span>p_database
 </code></pre></div>
 <p>Then change the <code>is-managed</code> meta  attribute and disable the <code>monitor</code>
 operation:</p>
@@ -201,7 +201,7 @@ op monitor interval=&lt;interval&gt; enabled=false
 <p>Once you’ve done that, you’ll effectively have enabled something akin
 to maintenance mode for a single resource. You can reverse this as you
 would expect:</p>
-<div class="highlight"><pre><span></span><code>crm configure edit p_database
+<div class="highlight"><pre><span></span><code>crm<span class="w"> </span>configure<span class="w"> </span>edit<span class="w"> </span>p_database
 </code></pre></div>
 <p>Then change the <code>is-managed</code> meta attribute and re-enable the
 <code>monitor</code> operation:</p>
@@ -231,7 +231,7 @@ maintenance mode instead.</p>
 
 <footer>
 <p>
-  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+  &copy; 2023  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
 </p>
 <p>
 Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme

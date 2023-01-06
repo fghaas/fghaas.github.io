@@ -162,18 +162,18 @@ Percona XtraDB Cluster, which our friends at Percona make available in
 their public software repository.</p>
 <p>Create <code>/etc/apt/sources.list.d/percona.list</code> with the following
 content:</p>
-<div class="highlight"><pre><span></span><code><span class="k">deb</span><span class="w"> </span><span class="s">http://repo.percona.com/apt</span><span class="w"> </span><span class="kp">squeeze</span><span class="w"> </span><span class="kp">main</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">deb</span><span class="w"> </span><span class="s">http://repo.percona.com/apt</span><span class="w"> </span><span class="kp">squeeze</span><span class="w"> </span><span class="kp">main</span>
 </code></pre></div>
 <p>Fetch the Percona repository signing key:</p>
-<div class="highlight"><pre><span></span><code>apt-key adv --keyserver hkp://keys.gnupg.net --recv-keys 1C4CBDCDCD2EFD2A
+<div class="highlight"><pre><span></span><code>apt-key<span class="w"> </span>adv<span class="w"> </span>--keyserver<span class="w"> </span>hkp://keys.gnupg.net<span class="w"> </span>--recv-keys<span class="w"> </span>1C4CBDCDCD2EFD2A
 </code></pre></div>
 <p>You also require Pacemaker packages from the Debian backports
 repository. Do do so, create <code>/etc/apt/sources.list.d/backports.list</code>
 with the following content:</p>
-<div class="highlight"><pre><span></span><code><span class="k">deb</span><span class="w"> </span><span class="s">http://backports.debian.org/debian-backports</span><span class="w"> </span><span class="kp">squeeze-backports</span><span class="w"> </span><span class="kp">main</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">deb</span><span class="w"> </span><span class="s">http://backports.debian.org/debian-backports</span><span class="w"> </span><span class="kp">squeeze-backports</span><span class="w"> </span><span class="kp">main</span>
 </code></pre></div>
 <p>Now, update your package lists:</p>
-<div class="highlight"><pre><span></span><code>apt-get update
+<div class="highlight"><pre><span></span><code>apt-get<span class="w"> </span>update
 </code></pre></div>
 <p>Once that is completed, you are able to install the
 <code>percona-xtradb-cluster-server-5.5</code> package:</p>
@@ -184,15 +184,15 @@ standard Debian <code>mysql-server</code> packages, so if you have any of those
 installed, they will be removed in the process of installing XtraDB
 Cluster.</p>
 <p>Stop the MySQL server services for the time being:</p>
-<div class="highlight"><pre><span></span><code>service mysql stop
+<div class="highlight"><pre><span></span><code>service<span class="w"> </span>mysql<span class="w"> </span>stop
 </code></pre></div>
 <p>Also required is the pacemaker package (and its dependencies) from
 squeeze-backports:</p>
-<div class="highlight"><pre><span></span><code>apt-get -t squeeze-backports install pacemaker
+<div class="highlight"><pre><span></span><code>apt-get<span class="w"> </span>-t<span class="w"> </span>squeeze-backports<span class="w"> </span>install<span class="w"> </span>pacemaker
 </code></pre></div>
 <p>And finally rsync is required for one of the supported Snapshot State
 Transfer (SST) methods for Galera:</p>
-<div class="highlight"><pre><span></span><code>apt-get install rsync
+<div class="highlight"><pre><span></span><code>apt-get<span class="w"> </span>install<span class="w"> </span>rsync
 </code></pre></div>
 <p>Now, all required packages are installed and you’re ready to configure
 XtraDB Cluster.</p>
@@ -230,7 +230,7 @@ XtraDB Cluster.</p>
 
 <footer>
 <p>
-  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+  &copy; 2023  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
 </p>
 <p>
 Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme

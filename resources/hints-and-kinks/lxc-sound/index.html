@@ -174,7 +174,7 @@ approach, because there is a much simpler way to do this — and it
 doesn’t even require any specific LXC container configuration.</p>
 <p>The trick is to use the PulseAudio <code>native-protocol-tcp</code> module. When
 I load it into my running PulseAudio configuration, like so:</p>
-<div class="highlight"><pre><span></span><code>pactl load-module module-native-protocol-tcp
+<div class="highlight"><pre><span></span><code>pactl<span class="w"> </span>load-module<span class="w"> </span>module-native-protocol-tcp
 </code></pre></div>
 <p>… then a PulseAudio sound server starts listening on a TCP socket on
 port 4713.</p>
@@ -184,12 +184,12 @@ PulseAudio configuration file, <code>~/config/pulse/default.pa</code>.</p>
 <code>PULSE_SERVER</code> environment variable set to <code>10.0.3.1</code> (my IPv4 address
 of the host on the <code>lxcbr0</code> bridge), and launch an application.</p>
 <p>I can do this all in one go, like so (using the Spotify client as an example):</p>
-<div class="highlight"><pre><span></span><code>pactl load-module module-native-protocol-tcp <span class="o">&amp;&amp;</span> <span class="se">\</span>
-  lxc-start -n focal-spotify <span class="o">&amp;&amp;</span> <span class="se">\</span>
-  sleep <span class="m">1</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
-  lxc-attach -n focal-spotify -- <span class="se">\</span>
-  sudo -Hu florian env <span class="nv">PULSE_SERVER</span><span class="o">=</span><span class="s2">"10.0.3.1"</span> spotify <span class="o">&amp;&amp;</span> <span class="se">\</span>
-  lxc-stop -n focal-spotify
+<div class="highlight"><pre><span></span><code>pactl<span class="w"> </span>load-module<span class="w"> </span>module-native-protocol-tcp<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>lxc-start<span class="w"> </span>-n<span class="w"> </span>focal-spotify<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>sleep<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>lxc-attach<span class="w"> </span>-n<span class="w"> </span>focal-spotify<span class="w"> </span>--<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>sudo<span class="w"> </span>-Hu<span class="w"> </span>florian<span class="w"> </span>env<span class="w"> </span><span class="nv">PULSE_SERVER</span><span class="o">=</span><span class="s2">"10.0.3.1"</span><span class="w"> </span>spotify<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>lxc-stop<span class="w"> </span>-n<span class="w"> </span>focal-spotify
 </code></pre></div>
 <p>… and as long as the application links to any PulseAudio client
 libraries, it will correctly parse the set <code>PULSE_SERVER</code> environment
@@ -213,14 +213,14 @@ PulseAudio server because your firewall blocks them, you won’t get
 sound. Here’s what I do:</p>
 <p>First, I create <code>/etc/ufw/applications.d/pulseaudio</code>, with this
 content:</p>
-<div class="highlight"><pre><span></span><code><span class="k">[pulseaudio]</span><span class="w"></span>
-<span class="na">title</span><span class="o">=</span><span class="s">PulseAudio Native Protocol TCP</span><span class="w"></span>
-<span class="na">description</span><span class="o">=</span><span class="s">PulseAudio Sound Server </span><span class="w"></span>
-<span class="na">ports</span><span class="o">=</span><span class="s">4713/tcp</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">[pulseaudio]</span>
+<span class="na">title</span><span class="o">=</span><span class="s">PulseAudio Native Protocol TCP</span>
+<span class="na">description</span><span class="o">=</span><span class="s">PulseAudio Sound Server</span><span class="w"> </span>
+<span class="na">ports</span><span class="o">=</span><span class="s">4713/tcp</span>
 </code></pre></div>
 <p>Then, I allow traffic incoming via the LXC bridge to connect to that
 server:</p>
-<div class="highlight"><pre><span></span><code>sudo ufw allow <span class="k">in</span> on lxcbr0 to any app pulseaudio
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="k">in</span><span class="w"> </span>on<span class="w"> </span>lxcbr0<span class="w"> </span>to<span class="w"> </span>any<span class="w"> </span>app<span class="w"> </span>pulseaudio
 </code></pre></div>
 <p>Also do consider, of course, that once your system is set up in this
 way, not only will your LXC applications be able to play sound through
@@ -260,7 +260,7 @@ containerized app use host video input.</p>
 
 <footer>
 <p>
-  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+  &copy; 2023  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
 </p>
 <p>
 Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme

@@ -207,36 +207,36 @@ router to admins only.</strong></p>
 <p>So <em>if</em> you want to be able to disable a router’s HA capability,
 you’ll first need to convince your cloud service provider to override
 the following default entries in Neutron’s <code>policy.json</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">"create_router:ha"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule:admin_only"</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">"get_router:ha"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule:admin_only"</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">"update_router:ha"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule:admin_only"</span><span class="p">,</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">"create_router:ha"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule:admin_only"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"get_router:ha"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule:admin_only"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"update_router:ha"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule:admin_only"</span><span class="p">,</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>… and instead set them as follows:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">"create_router:ha"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule:admin_or_owner"</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">"get_router:ha"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule:admin_or_owner"</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">"update_router:ha"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule:admin_or_owner"</span><span class="p">,</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">"create_router:ha"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule:admin_or_owner"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"get_router:ha"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule:admin_or_owner"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"update_router:ha"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule:admin_or_owner"</span><span class="p">,</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>If your cloud service provider deploys Neutron with
 <a href="https://docs.openstack.org/openstack-ansible/latest/">OpenStack-Ansible</a>,
 they can define this in the <a href="https://docs.openstack.org/openstack-ansible-os_neutron/latest/">following
 variable</a>:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">neutron_policy_overrides</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="s">"create_router:ha"</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">"rule:admin_or_owner"</span><span class="w"></span>
-<span class="w">    </span><span class="s">"get_router:ha"</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">"rule:admin_or_owner"</span><span class="w"></span>
-<span class="w">    </span><span class="s">"update_router:ha"</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">"rule:admin_or_owner"</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nt">neutron_policy_overrides</span><span class="p">:</span>
+<span class="w">    </span><span class="s">"create_router:ha"</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">"rule:admin_or_owner"</span>
+<span class="w">    </span><span class="s">"get_router:ha"</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">"rule:admin_or_owner"</span>
+<span class="w">    </span><span class="s">"update_router:ha"</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">"rule:admin_or_owner"</span>
 </code></pre></div>
 <p>Once the policy has been overridden in this manner, you should be able
 to create a new router with:</p>
-<div class="highlight"><pre><span></span><code>openstack router create --no-ha &lt;name&gt;
+<div class="highlight"><pre><span></span><code>openstack<span class="w"> </span>router<span class="w"> </span>create<span class="w"> </span>--no-ha<span class="w"> </span>&lt;name&gt;
 </code></pre></div>
 <p>And modify an existing router’s high-availability flag with:</p>
-<div class="highlight"><pre><span></span><code>openstack router <span class="nb">set</span> --disable &lt;name&gt;
-openstack router <span class="nb">set</span> --no-ha &lt;name&gt;
-openstack router <span class="nb">set</span> --enable &lt;name&gt;
+<div class="highlight"><pre><span></span><code>openstack<span class="w"> </span>router<span class="w"> </span><span class="nb">set</span><span class="w"> </span>--disable<span class="w"> </span>&lt;name&gt;
+openstack<span class="w"> </span>router<span class="w"> </span><span class="nb">set</span><span class="w"> </span>--no-ha<span class="w"> </span>&lt;name&gt;
+openstack<span class="w"> </span>router<span class="w"> </span><span class="nb">set</span><span class="w"> </span>--enable<span class="w"> </span>&lt;name&gt;
 </code></pre></div>
 <h2><em>Is</em> my router HA, really?</h2>
 <p>In relation to what I described above, you may want to <em>find out</em>
@@ -249,9 +249,9 @@ router, <strong>so why does it clearly report its <code>ha</code> flag as being
 <p>Well, that’s another consequence of that default Neutron policy, in
 combination with rather unintuitive behavior by the <code>openstack</code>
 command line client. You see, this part of the aforementioned policy</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">"get_router:ha"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule:admin_only"</span><span class="p">,</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">"get_router:ha"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule:admin_only"</span><span class="p">,</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>… means you’re not even allowed to <em>query</em> the <code>ha</code> flag if you’re
 not an admin, and when the <code>openstack</code> client is asked to display a
@@ -285,7 +285,7 @@ multiprojectcy. <a class="footnote-backref" href="#fnref:1" title="Jump back to
 
 <footer>
 <p>
-  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+  &copy; 2023  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
 </p>
 <p>
 Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme

@@ -234,23 +234,23 @@ present.</p>
 <div class="highlight"><pre><span></span><code>virsh edit ubuntu-amd64-alice
 </code></pre></div>
 <p>and scroll down to the VM’s disk definition. In our example, that part of the configuration looks like this:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;disk</span> <span class="na">type=</span><span class="s">'block'</span> <span class="na">device=</span><span class="s">'disk'</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;driver</span> <span class="na">name=</span><span class="s">'qemu'</span> <span class="na">type=</span><span class="s">'raw'</span> <span class="na">cache=</span><span class="s">'none'</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;source</span> <span class="na">dev=</span><span class="s">'/dev/drbd/by-res/vm-ubuntu-amd64-alice'</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;target</span> <span class="na">dev=</span><span class="s">'vda'</span> <span class="na">bus=</span><span class="s">'virtio'</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;address</span> <span class="na">type=</span><span class="s">'pci'</span> <span class="na">domain=</span><span class="s">'0x0000'</span> <span class="na">bus=</span><span class="s">'0x00'</span> <span class="na">slot=</span><span class="s">'0x05'</span> <span class="na">function=</span><span class="s">'0x0'</span><span class="nt">/&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;disk</span><span class="w"> </span><span class="na">type=</span><span class="s">'block'</span><span class="w"> </span><span class="na">device=</span><span class="s">'disk'</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;driver</span><span class="w"> </span><span class="na">name=</span><span class="s">'qemu'</span><span class="w"> </span><span class="na">type=</span><span class="s">'raw'</span><span class="w"> </span><span class="na">cache=</span><span class="s">'none'</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;source</span><span class="w"> </span><span class="na">dev=</span><span class="s">'/dev/drbd/by-res/vm-ubuntu-amd64-alice'</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;target</span><span class="w"> </span><span class="na">dev=</span><span class="s">'vda'</span><span class="w"> </span><span class="na">bus=</span><span class="s">'virtio'</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;address</span><span class="w"> </span><span class="na">type=</span><span class="s">'pci'</span><span class="w"> </span><span class="na">domain=</span><span class="s">'0x0000'</span><span class="w"> </span><span class="na">bus=</span><span class="s">'0x00'</span><span class="w"> </span><span class="na">slot=</span><span class="s">'0x05'</span><span class="w"> </span><span class="na">function=</span><span class="s">'0x0'</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/disk&gt;</span>
 </code></pre></div>
 <p>Replace it with an entry using our RBD image:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;disk</span> <span class="na">type=</span><span class="s">'network'</span> <span class="na">device=</span><span class="s">'disk'</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;driver</span> <span class="na">name=</span><span class="s">'qemu'</span> <span class="na">type=</span><span class="s">'raw'</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;source</span> <span class="na">protocol=</span><span class="s">'rbd'</span> <span class="na">name=</span><span class="s">'libvirt/ubuntu-amd64-alice'</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;host</span> <span class="na">name=</span><span class="s">'192.168.133.111'</span> <span class="na">port=</span><span class="s">'6789'</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;host</span> <span class="na">name=</span><span class="s">'192.168.133.112'</span> <span class="na">port=</span><span class="s">'6789'</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;host</span> <span class="na">name=</span><span class="s">'192.168.133.113'</span> <span class="na">port=</span><span class="s">'6789'</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;/source&gt;</span>
-  <span class="nt">&lt;target</span> <span class="na">dev=</span><span class="s">'vda'</span> <span class="na">bus=</span><span class="s">'virtio'</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;address</span> <span class="na">type=</span><span class="s">'pci'</span> <span class="na">domain=</span><span class="s">'0x0000'</span> <span class="na">bus=</span><span class="s">'0x00'</span> <span class="na">slot=</span><span class="s">'0x05'</span> <span class="na">function=</span><span class="s">'0x0'</span><span class="nt">/&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;disk</span><span class="w"> </span><span class="na">type=</span><span class="s">'network'</span><span class="w"> </span><span class="na">device=</span><span class="s">'disk'</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;driver</span><span class="w"> </span><span class="na">name=</span><span class="s">'qemu'</span><span class="w"> </span><span class="na">type=</span><span class="s">'raw'</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;source</span><span class="w"> </span><span class="na">protocol=</span><span class="s">'rbd'</span><span class="w"> </span><span class="na">name=</span><span class="s">'libvirt/ubuntu-amd64-alice'</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;host</span><span class="w"> </span><span class="na">name=</span><span class="s">'192.168.133.111'</span><span class="w"> </span><span class="na">port=</span><span class="s">'6789'</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;host</span><span class="w"> </span><span class="na">name=</span><span class="s">'192.168.133.112'</span><span class="w"> </span><span class="na">port=</span><span class="s">'6789'</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;host</span><span class="w"> </span><span class="na">name=</span><span class="s">'192.168.133.113'</span><span class="w"> </span><span class="na">port=</span><span class="s">'6789'</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/source&gt;</span>
+<span class="w">  </span><span class="nt">&lt;target</span><span class="w"> </span><span class="na">dev=</span><span class="s">'vda'</span><span class="w"> </span><span class="na">bus=</span><span class="s">'virtio'</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;address</span><span class="w"> </span><span class="na">type=</span><span class="s">'pci'</span><span class="w"> </span><span class="na">domain=</span><span class="s">'0x0000'</span><span class="w"> </span><span class="na">bus=</span><span class="s">'0x00'</span><span class="w"> </span><span class="na">slot=</span><span class="s">'0x05'</span><span class="w"> </span><span class="na">function=</span><span class="s">'0x0'</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/disk&gt;</span>
 </code></pre></div>
 <p>Be sure to replace the three IPs in the above example with the actual
@@ -274,17 +274,17 @@ called client.rbd and that this user’s key is stored in
 5cddc503-9c29-4aa8-943a-c097f87677cf.  Then, open
 /etc/libvirt/secrets/ubuntu-amd64-alice.xml and define a secret block
 in there:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;secret</span> <span class="na">ephemeral=</span><span class="s">"no"</span> <span class="na">private=</span><span class="s">"no"</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;secret</span><span class="w"> </span><span class="na">ephemeral=</span><span class="s">"no"</span><span class="w"> </span><span class="na">private=</span><span class="s">"no"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;uuid&gt;</span>5cddc503-9c29-4aa8-943a-c097f87677cf<span class="nt">&lt;/uuid&gt;</span>
-<span class="nt">&lt;usage</span> <span class="na">type=</span><span class="s">"ceph"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;name&gt;</span>client.rbd secret<span class="nt">&lt;/name&gt;</span>
+<span class="nt">&lt;usage</span><span class="w"> </span><span class="na">type=</span><span class="s">"ceph"</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;name&gt;</span>client.rbd<span class="w"> </span>secret<span class="nt">&lt;/name&gt;</span>
 <span class="nt">&lt;/usage&gt;</span>
 <span class="nt">&lt;/secret&gt;</span>
 </code></pre></div>
 <p>Be sure to replace the example’s UUID with your own, self-generated
 value. Make libvirt add this secret to its internal keyring:</p>
-<div class="highlight"><pre><span></span><code>virsh secret-define \
-  /etc/libvirt/secrets/ubuntu-amd64-alice.xml
+<div class="highlight"><pre><span></span><code><span class="n">virsh secret-define \</span>
+<span class="n">  /etc/libvirt/secrets/ubuntu-amd64-alice.xml</span>
 </code></pre></div>
 <p>Now find out your user’s secret key. Do</p>
 <div class="highlight"><pre><span></span><code>ceph auth get-or-create client.rbd
@@ -304,26 +304,26 @@ configuration with</p>
 <div class="highlight"><pre><span></span><code>virsh edit ubuntu-amd64-alice
 </code></pre></div>
 <p>and scroll down to the VM’s disk definition. In our example, that part of the configuration looks like this:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;disk</span> <span class="na">type=</span><span class="s">'block'</span> <span class="na">device=</span><span class="s">'disk'</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;driver</span> <span class="na">name=</span><span class="s">'qemu'</span> <span class="na">type=</span><span class="s">'raw'</span> <span class="na">cache=</span><span class="s">'none'</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;source</span> <span class="na">dev=</span><span class="s">'/dev/drbd/by-res/vm-ubuntu-amd64-alice'</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;target</span> <span class="na">dev=</span><span class="s">'vda'</span> <span class="na">bus=</span><span class="s">'virtio'</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;address</span> <span class="na">type=</span><span class="s">'pci'</span> <span class="na">domain=</span><span class="s">'0x0000'</span> <span class="na">bus=</span><span class="s">'0x00'</span> <span class="na">slot=</span><span class="s">'0x05'</span> <span class="na">function=</span><span class="s">'0x0'</span><span class="nt">/&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;disk</span><span class="w"> </span><span class="na">type=</span><span class="s">'block'</span><span class="w"> </span><span class="na">device=</span><span class="s">'disk'</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;driver</span><span class="w"> </span><span class="na">name=</span><span class="s">'qemu'</span><span class="w"> </span><span class="na">type=</span><span class="s">'raw'</span><span class="w"> </span><span class="na">cache=</span><span class="s">'none'</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;source</span><span class="w"> </span><span class="na">dev=</span><span class="s">'/dev/drbd/by-res/vm-ubuntu-amd64-alice'</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;target</span><span class="w"> </span><span class="na">dev=</span><span class="s">'vda'</span><span class="w"> </span><span class="na">bus=</span><span class="s">'virtio'</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;address</span><span class="w"> </span><span class="na">type=</span><span class="s">'pci'</span><span class="w"> </span><span class="na">domain=</span><span class="s">'0x0000'</span><span class="w"> </span><span class="na">bus=</span><span class="s">'0x00'</span><span class="w"> </span><span class="na">slot=</span><span class="s">'0x05'</span><span class="w"> </span><span class="na">function=</span><span class="s">'0x0'</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/disk&gt;</span>
 </code></pre></div>
 <p>Replace it with an entry using our RBD image:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;disk</span> <span class="na">type=</span><span class="s">'network'</span> <span class="na">device=</span><span class="s">'disk'</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;driver</span> <span class="na">name=</span><span class="s">'qemu'</span> <span class="na">type=</span><span class="s">'raw'</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;auth</span> <span class="na">username=</span><span class="s">'rbd'</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;secret</span> <span class="na">type=</span><span class="s">'ceph'</span> <span class="na">usage=</span><span class="s">'client.rbd secret'</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;/auth&gt;</span>
-  <span class="nt">&lt;source</span> <span class="na">protocol=</span><span class="s">'rbd'</span> <span class="na">name=</span><span class="s">'libvirt/ubuntu-amd64-alice'</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;host</span> <span class="na">name=</span><span class="s">'192.168.133.111'</span> <span class="na">port=</span><span class="s">'6789'</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;host</span> <span class="na">name=</span><span class="s">'192.168.133.112'</span> <span class="na">port=</span><span class="s">'6789'</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;host</span> <span class="na">name=</span><span class="s">'192.168.133.113'</span> <span class="na">port=</span><span class="s">'6789'</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;/source&gt;</span>
-  <span class="nt">&lt;target</span> <span class="na">dev=</span><span class="s">'vda'</span> <span class="na">bus=</span><span class="s">'virtio'</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;address</span> <span class="na">type=</span><span class="s">'pci'</span> <span class="na">domain=</span><span class="s">'0x0000'</span> <span class="na">bus=</span><span class="s">'0x00'</span> <span class="na">slot=</span><span class="s">'0x05'</span> <span class="na">function=</span><span class="s">'0x0'</span><span class="nt">/&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;disk</span><span class="w"> </span><span class="na">type=</span><span class="s">'network'</span><span class="w"> </span><span class="na">device=</span><span class="s">'disk'</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;driver</span><span class="w"> </span><span class="na">name=</span><span class="s">'qemu'</span><span class="w"> </span><span class="na">type=</span><span class="s">'raw'</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;auth</span><span class="w"> </span><span class="na">username=</span><span class="s">'rbd'</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;secret</span><span class="w"> </span><span class="na">type=</span><span class="s">'ceph'</span><span class="w"> </span><span class="na">usage=</span><span class="s">'client.rbd secret'</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/auth&gt;</span>
+<span class="w">  </span><span class="nt">&lt;source</span><span class="w"> </span><span class="na">protocol=</span><span class="s">'rbd'</span><span class="w"> </span><span class="na">name=</span><span class="s">'libvirt/ubuntu-amd64-alice'</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;host</span><span class="w"> </span><span class="na">name=</span><span class="s">'192.168.133.111'</span><span class="w"> </span><span class="na">port=</span><span class="s">'6789'</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;host</span><span class="w"> </span><span class="na">name=</span><span class="s">'192.168.133.112'</span><span class="w"> </span><span class="na">port=</span><span class="s">'6789'</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;host</span><span class="w"> </span><span class="na">name=</span><span class="s">'192.168.133.113'</span><span class="w"> </span><span class="na">port=</span><span class="s">'6789'</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/source&gt;</span>
+<span class="w">  </span><span class="nt">&lt;target</span><span class="w"> </span><span class="na">dev=</span><span class="s">'vda'</span><span class="w"> </span><span class="na">bus=</span><span class="s">'virtio'</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;address</span><span class="w"> </span><span class="na">type=</span><span class="s">'pci'</span><span class="w"> </span><span class="na">domain=</span><span class="s">'0x0000'</span><span class="w"> </span><span class="na">bus=</span><span class="s">'0x00'</span><span class="w"> </span><span class="na">slot=</span><span class="s">'0x05'</span><span class="w"> </span><span class="na">function=</span><span class="s">'0x0'</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/disk&gt;</span>
 </code></pre></div>
 <p>Be sure to replace the three IPs in the above example with the actual
@@ -352,7 +352,7 @@ instead of its original block-based storage backing device.</p>
 
 <footer>
 <p>
-  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+  &copy; 2023  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
 </p>
 <p>
 Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme

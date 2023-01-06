@@ -172,13 +172,13 @@ is always consistent.</p>
 <p>There first thing you’ll do is create <code>tox.ini</code>, the central tox
 configuration file, in the top level directory of your
 repository. Here’s a tiny example:</p>
-<div class="highlight"><pre><span></span><code><span class="k">[tox]</span><span class="w"></span>
-<span class="na">envlist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">py{3,36,39}</span><span class="w"></span>
-<span class="na">skipsdist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">True</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">[tox]</span>
+<span class="na">envlist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">py{3,36,39}</span>
+<span class="na">skipsdist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">True</span>
 
-<span class="k">[testenv]</span><span class="w"></span>
-<span class="na">deps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yamllint</span><span class="w"></span>
-<span class="na">commands</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yamllint {toxinidir}</span><span class="w"></span>
+<span class="k">[testenv]</span>
+<span class="na">deps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yamllint</span>
+<span class="na">commands</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yamllint {toxinidir}</span>
 </code></pre></div>
 <p>That’s it. What this’ll do, when invoked as simply <code>tox</code>, is</p>
 <ul>
@@ -203,12 +203,12 @@ that by dropping this tiny shell script<sup id="fnref:shell-script"><a class="fo
 as a file named <code>pre-commit</code> in the <code>.githooks</code> directory:</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/sh</span>
 
-<span class="nb">exec</span> tox -e py3
+<span class="nb">exec</span><span class="w"> </span>tox<span class="w"> </span>-e<span class="w"> </span>py3
 </code></pre></div>
 <p>Add that file to your repository as <code>.githooks/pre-commit</code>, and make
 it executable. Also, add a little note to your README explaining that,
 to enable the pre-commit hook, all your collaborators can simply run</p>
-<div class="highlight"><pre><span></span><code>git config core.hooksPath .githooks
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>core.hooksPath<span class="w"> </span>.githooks
 </code></pre></div>
 <p>Easy, right? And once you’ve run that command, every <code>git commit</code> will
 kick off a <code>tox</code> run and you’ll never commit borked YAML again.<sup id="fnref:py3"><a class="footnote-ref" href="#fn:py3">3</a></sup></p>
@@ -221,48 +221,48 @@ your CI comes in.</p>
 simple <a href="https://docs.github.com/en/actions">GitHub Actions</a>
 workflow. To use it, you’ll need a small addition to your <code>tox.ini</code>
 file:</p>
-<div class="highlight"><pre><span></span><code><span class="k">[tox]</span><span class="w"></span>
-<span class="na">envlist: py{3,36,39}</span><span class="w"></span>
-<span class="na">skipsdist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">True</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">[tox]</span>
+<span class="na">envlist</span><span class="o">:</span><span class="w"> </span><span class="s">py{3,36,39}</span>
+<span class="na">skipsdist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">True</span>
 
-<span class="k">[gh-actions]</span><span class="w"></span>
-<span class="na">python</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
-<span class="w">    </span><span class="na">3.6: py36</span><span class="w"></span>
-<span class="w">    </span><span class="na">3.9: py39</span><span class="w"></span>
+<span class="k">[gh-actions]</span>
+<span class="na">python</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="na">3.6</span><span class="o">:</span><span class="w"> </span><span class="s">py36</span>
+<span class="w">    </span><span class="na">3.9</span><span class="o">:</span><span class="w"> </span><span class="s">py39</span>
 
-<span class="k">[testenv]</span><span class="w"></span>
-<span class="na">deps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yamllint</span><span class="w"></span>
-<span class="na">commands</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yamllint {toxinidir}</span><span class="w"></span>
+<span class="k">[testenv]</span>
+<span class="na">deps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yamllint</span>
+<span class="na">commands</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yamllint {toxinidir}</span>
 </code></pre></div>
 <p>And then, you add a workflow to <code>.github/workflows</code>, say
 <code>.github/workflows/tox.yml</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
-<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Test with tox</span><span class="w"></span>
-<span class="s">'on'</span><span class="p p-Indicator">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">push</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pull_request</span><span class="w"></span>
-<span class="nt">jobs</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">build</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span><span class="w"></span>
-<span class="w">    </span><span class="nt">strategy</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">matrix</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="nt">python-version</span><span class="p">:</span><span class="w"></span>
-<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.6</span><span class="w"></span>
-<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.9</span><span class="w"></span>
-<span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checkout</span><span class="w"></span>
-<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v2</span><span class="w"></span>
-<span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w"></span>
-<span class="w">          </span><span class="nt">submodules</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set up Python ${{ matrix.python-version }}</span><span class="w"></span>
-<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v2</span><span class="w"></span>
-<span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w"></span>
-<span class="w">          </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ matrix.python-version }}</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install dependencies</span><span class="w"></span>
-<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"></span>
-<span class="w">          </span><span class="no">pip install tox tox-gh-actions</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Test with tox</span><span class="w"></span>
-<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tox</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Test with tox</span>
+<span class="s">'on'</span><span class="p p-Indicator">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">push</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pull_request</span>
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">build</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">strategy</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">matrix</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">python-version</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.6</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.9</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checkout</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v2</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">submodules</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set up Python ${{ matrix.python-version }}</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v2</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ matrix.python-version }}</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install dependencies</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">          </span><span class="no">pip install tox tox-gh-actions</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Test with tox</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tox</span>
 </code></pre></div>
 <p>So that sets up your workflow so that it tests with two different
 Python versions that you care about, and then runs a test with each of
@@ -278,20 +278,20 @@ or default branch), and also on every pull request.</p>
 a GitHub repo to a self-hosted GitLab and want to run your pipelines
 there as well? Easy. Here’s the exact same functionality for your
 <code>.gitlab-ci.yml</code> file:<sup id="fnref:docker-runners"><a class="footnote-ref" href="#fn:docker-runners">4</a></sup></p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
-<span class="nt">py36</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python:3.6</span><span class="w"></span>
-<span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="w"></span>
-<span class="w">  </span><span class="nt">script</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install tox</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tox -e py36</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span>
+<span class="nt">py36</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python:3.6</span>
+<span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install tox</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tox -e py36</span>
 
-<span class="nt">py39</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python:3.9</span><span class="w"></span>
-<span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="w"></span>
-<span class="w">  </span><span class="nt">script</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install tox</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tox -e py39</span><span class="w"></span>
+<span class="nt">py39</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python:3.9</span>
+<span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install tox</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tox -e py39</span>
 </code></pre></div>
 <p>In <a href="https://docs.gitlab.com/ee/ci/">GitLab CI</a> I know of no elegant
 <code>matrix</code> syntax to map the image version to the testenv. But on the
@@ -303,16 +303,16 @@ than your GitHub Actions <code>tox.yml</code>.</p>
 <p>If you’re running a <code>tox</code> testenv from <a href="https://zuul-ci.org/">Zuul</a>,
 you would use the built-in tox jobs in your pipeline, as referenced in
 <code>.zuul.yaml</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">project</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">check</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">jobs</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tox-py36</span><span class="w"></span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tox-py39</span><span class="w"></span>
-<span class="w">    </span><span class="nt">gate</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">jobs</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tox-py36</span><span class="w"></span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tox-py39</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">project</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">check</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">jobs</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tox-py36</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tox-py39</span>
+<span class="w">    </span><span class="nt">gate</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">jobs</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tox-py36</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tox-py39</span>
 </code></pre></div>
 <p>Here, the <code>tox-py36</code> and <code>tox-py39</code> environments are both derivatives
 of the base
@@ -386,7 +386,7 @@ Kubernetes. <a class="footnote-backref" href="#fnref:docker-runners" title="Jum
 
 <footer>
 <p>
-  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+  &copy; 2023  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
 </p>
 <p>
 Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme

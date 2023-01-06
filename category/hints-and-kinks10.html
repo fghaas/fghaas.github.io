@@ -128,6 +128,32 @@ rel="me"           href="https://mastodon.social/@xahteiwi"
 
 <article>
   <header>
+    <h2><a href="../resources/hints-and-kinks/mandatory-and-advisory-ordering-pacemaker/#mandatory-and-advisory-ordering-pacemaker">Mandatory and advisory ordering in Pacemaker</a></h2>
+    <p>
+      Posted on Thu 22 March 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
+
+          &#8226; Tagged with
+              <a href="../tag/pacemaker.html">Pacemaker</a>
+        &#8226; 2 min read
+    </p>
+  </header>
+  <div>
+      <div><p>Ever wonder what’s the difference between <code>order &lt;name&gt; inf:
+&lt;first-resource&gt; &lt;second-resource&gt;</code> and a score of something other
+than <code>inf</code>? We’ll explain.</p>
+<p>If you specify an order constraint score of <code>INFINITY</code> (<code>inf</code> or the
+keyword <code>mandatory</code> in crm shell syntax), then the order constraint is
+considered mandatory. If you …</p></div>
+        <br>
+        <a class="btn"
+           href="../resources/hints-and-kinks/mandatory-and-advisory-ordering-pacemaker/#mandatory-and-advisory-ordering-pacemaker">
+          Continue reading
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="../resources/hints-and-kinks/managing-cron-jobs-pacemaker/#managing-cron-jobs-pacemaker">Managing cron jobs with Pacemaker</a></h2>
     <p>
       Posted on Mon 19 March 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
@@ -226,30 +252,6 @@ will end up in a split-brain.</p>
           Continue reading
         </a>
   </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="../resources/hints-and-kinks/checking-corosync-cluster-membership/#checking-corosync-cluster-membership">Checking Corosync cluster membership</a></h2>
-    <p>
-      Posted on Sun 04 March 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
-
-          &#8226; Tagged with
-              <a href="../tag/corosync.html">Corosync</a>
-        &#8226; 2 min read
-    </p>
-  </header>
-  <div>
-      <div><p>It’s simple and easy to get Pacemaker’s view of the status of members
-in a cluster – just invoke <code>crm_mon</code>. But what if you want to check on
-the cluster membership when Pacemaker is not running, or you want to
-make sure whether Corosync’s view of the cluster …</p></div>
-        <br>
-        <a class="btn"
-           href="../resources/hints-and-kinks/checking-corosync-cluster-membership/#checking-corosync-cluster-membership">
-          Continue reading
-        </a>
-  </div>
 </article>
 
   <div class="pagination">
@@ -265,7 +267,7 @@ make sure whether Corosync’s view of the cluster …</p></div>
 
 <footer>
 <p>
-  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+  &copy; 2023  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
 </p>
 <p>
 Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme

@@ -177,7 +177,7 @@ change the <code>focal</code> or <code>impish</code> references in your
 <code>/etc/apt/sources.list</code> and <code>/etc/apt/sources.list.d</code> files to <code>jammy</code>
 as you normally would.</p>
 <p>Then, make sure that you don’t have the <code>snapd</code> package installed:</p>
-<div class="highlight"><pre><span></span><code><span class="gp"># </span>dpkg -l snapd
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>dpkg<span class="w"> </span>-l<span class="w"> </span>snapd
 <span class="go">Desired=Unknown/Install/Remove/Purge/Hold</span>
 <span class="go">| Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend</span>
 <span class="go">|/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)</span>
@@ -187,23 +187,23 @@ as you normally would.</p>
 </code></pre></div>
 <p>Next, mark the <code>snapd</code> package with <code>hold</code>, so that the current state
 of the package (<code>un</code>) is made permanent:</p>
-<div class="highlight"><pre><span></span><code>apt-mark hold snapd
+<div class="highlight"><pre><span></span><code>apt-mark<span class="w"> </span>hold<span class="w"> </span>snapd
 </code></pre></div>
 <p>Now, add the <code>mozillateam</code> PPA:</p>
-<div class="highlight"><pre><span></span><code>add-apt-repository ppa:mozillateam/ppa
+<div class="highlight"><pre><span></span><code>add-apt-repository<span class="w"> </span>ppa:mozillateam/ppa
 </code></pre></div>
 <p>Next, create a file named <code>/etc/apt/preferences.d/mozilla-firefox</code>,
 containing the following three lines:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">Package</span><span class="p">:</span><span class="w"> </span><span class="err">*</span><span class="w"></span>
-<span class="nt">Pin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">release o=LP-PPA-mozillateam</span><span class="w"></span>
-<span class="nt">Pin-Priority</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1001</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nt">Package</span><span class="p">:</span><span class="w"> </span><span class="err">*</span>
+<span class="nt">Pin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">release o=LP-PPA-mozillateam</span>
+<span class="nt">Pin-Priority</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1001</span>
 </code></pre></div>
 <p>At this stage, your system should be set up to (a) not install the
 snap daemon, and (b) conduct the upgrade of the <code>firefox</code>
 package using the regular Debian package as it appears in the PPA, not
 the distro package that is a wrapper around <code>snap install</code>.</p>
 <p>Now, proceed with:</p>
-<div class="highlight"><pre><span></span><code>apt dist-upgrade
+<div class="highlight"><pre><span></span><code>apt<span class="w"> </span>dist-upgrade
 </code></pre></div>
 <p>Happy jamming!</p>
   </div>
@@ -223,7 +223,7 @@ the distro package that is a wrapper around <code>snap install</code>.</p>
 
 <footer>
 <p>
-  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+  &copy; 2023  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
 </p>
 <p>
 Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme

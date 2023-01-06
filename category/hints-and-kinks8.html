@@ -128,6 +128,30 @@ rel="me"           href="https://mastodon.social/@xahteiwi"
 
 <article>
   <header>
+    <h2><a href="../resources/hints-and-kinks/mysqlgalera-pacemaker-dealing-node-failure/#mysqlgalera-pacemaker-dealing-node-failure">Dealing with node failure</a></h2>
+    <p>
+      Posted on Tue 04 December 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
+
+          &#8226; Tagged with
+              <a href="../tag/galera.html">Galera</a>,              <a href="../tag/mysql.html">MySQL</a>,              <a href="../tag/pacemaker.html">Pacemaker</a>
+        &#8226; 2 min read
+    </p>
+  </header>
+  <div>
+      <div><p>If an entire node happens to get killed, and that node currently does
+not hold the Galera IP (192.168.122.99 in our example), then the other
+nodes simply continue to function normally, and you can connect to and
+use them without interruption. In the example below, <code>alice</code> has …</p></div>
+        <br>
+        <a class="btn"
+           href="../resources/hints-and-kinks/mysqlgalera-pacemaker-dealing-node-failure/#mysqlgalera-pacemaker-dealing-node-failure">
+          Continue reading
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="../resources/hints-and-kinks/mysqlgalera-pacemaker-high-availability-clusters/#mysqlgalera-pacemaker-high-availability-clusters">MySQL/Galera in Pacemaker High Availability Clusters</a></h2>
     <p>
       Posted on Tue 04 December 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
@@ -167,7 +191,7 @@ with minimal modifications.</p>
 down, it is necessary to re-initialize the Galera replication
 state. In effect, this is identical to bootstrapping the cluster.</p>
 <p>Start by manually bringing up the cluster IP on one of your nodes:</p>
-<div class="highlight"><pre><span></span><code>ip address add <span class="m">192 …</span></code></pre></div></div>
+<div class="highlight"><pre><span></span><code>ip<span class="w"> </span>address<span class="w"> </span>add<span class="w"> </span><span class="m">192 …</span></code></pre></div></div>
         <br>
         <a class="btn"
            href="../resources/hints-and-kinks/mysqlgalera-pacemaker-recovering-full-cluster-shutdown/#mysqlgalera-pacemaker-recovering-full-cluster-shutdown">
@@ -192,12 +216,12 @@ state. In effect, this is identical to bootstrapping the cluster.</p>
 configurations.</p>
 <p>Create a configuration file, <strong>identical on all cluster nodes,</strong> named
 <code>/etc/mysql/conf.d/galera.cnf</code> with the following content:</p>
-<div class="highlight"><pre><span></span><code><span class="k">[mysqld]</span><span class="w"></span>
-<span class="na">bind_address</span><span class="o">=</span><span class="s">0.0.0.0</span><span class="w"></span>
-<span class="na">binlog_format</span><span class="o">=</span><span class="s">ROW</span><span class="w"></span>
-<span class="na">default_storage_engine</span><span class="o">=</span><span class="s">InnoDB</span><span class="w"></span>
-<span class="na">innodb_autoinc_lock_mode</span><span class="o">=</span><span class="s">2</span><span class="w"></span>
-<span class="na">innodb_locks_unsafe_for_binlog</span><span class="o">=</span><span class="s">1</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">[mysqld]</span>
+<span class="na">bind_address</span><span class="o">=</span><span class="s">0.0.0.0</span>
+<span class="na">binlog_format</span><span class="o">=</span><span class="s">ROW</span>
+<span class="na">default_storage_engine</span><span class="o">=</span><span class="s">InnoDB</span>
+<span class="na">innodb_autoinc_lock_mode</span><span class="o">=</span><span class="s">2</span>
+<span class="na">innodb_locks_unsafe_for_binlog</span><span class="o">=</span><span class="s">1</span>
 </code></pre></div>
 <p>Create another configuration file …</p></div>
         <br>
@@ -222,7 +246,7 @@ configurations.</p>
   <div>
       <div><p>Once Corosync is running, you are able to start the Pacemaker cluster
 resource manager on all cluster nodes:</p>
-<div class="highlight"><pre><span></span><code>service pacemaker start
+<div class="highlight"><pre><span></span><code>service<span class="w"> </span>pacemaker<span class="w"> </span>start
 </code></pre></div>
 <p>Once cluster startup is completed, you should see output similar to
 the following when invoking the <code>crm_mon</code> utility:</p>
@@ -232,33 +256,6 @@ Last change …</code></pre></div></div>
         <br>
         <a class="btn"
            href="../resources/hints-and-kinks/mysqlgalera-pacemaker-starting-pacemaker/#mysqlgalera-pacemaker-starting-pacemaker">
-          Continue reading
-        </a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="../resources/hints-and-kinks/mysqlgalera-pacemaker-testing-resource-recovery/#mysqlgalera-pacemaker-testing-resource-recovery">Testing resource recovery</a></h2>
-    <p>
-      Posted on Tue 04 December 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
-
-          &#8226; Tagged with
-              <a href="../tag/galera.html">Galera</a>,              <a href="../tag/mysql.html">MySQL</a>,              <a href="../tag/pacemaker.html">Pacemaker</a>
-        &#8226; 2 min read
-    </p>
-  </header>
-  <div>
-      <div><p>If MySQL happens to die in your cluster, Pacemaker will automatically
-recover the service in place. To test this, select any node on your
-cluster and send the <code>mysqld</code> process a <code>KILL</code> signal:</p>
-<div class="highlight"><pre><span></span><code>killall -KILL mysqld
-</code></pre></div>
-<p>Then, monitor your cluster status with <code>crm_mon -rf</code>. After a few
-seconds, you should …</p></div>
-        <br>
-        <a class="btn"
-           href="../resources/hints-and-kinks/mysqlgalera-pacemaker-testing-resource-recovery/#mysqlgalera-pacemaker-testing-resource-recovery">
           Continue reading
         </a>
   </div>
@@ -277,7 +274,7 @@ seconds, you should …</p></div>
 
 <footer>
 <p>
-  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+  &copy; 2023  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
 </p>
 <p>
 Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme

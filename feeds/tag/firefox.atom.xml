@@ -30,7 +30,7 @@ change the &lt;code&gt;focal&lt;/code&gt; or &lt;code&gt;impish&lt;/code&gt; ref
 &lt;code&gt;/etc/apt/sources.list&lt;/code&gt; and &lt;code&gt;/etc/apt/sources.list.d&lt;/code&gt; files to &lt;code&gt;jammy&lt;/code&gt;
 as you normally would.&lt;/p&gt;
 &lt;p&gt;Then, make sure that you don’t have the &lt;code&gt;snapd&lt;/code&gt; package installed:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="gp"&gt;# &lt;/span&gt;dpkg -l snapd
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="gp"&gt;# &lt;/span&gt;dpkg&lt;span class="w"&gt; &lt;/span&gt;-l&lt;span class="w"&gt; &lt;/span&gt;snapd
 &lt;span class="go"&gt;Desired=Unknown/Install/Remove/Purge/Hold&lt;/span&gt;
 &lt;span class="go"&gt;| Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend&lt;/span&gt;
 &lt;span class="go"&gt;|/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)&lt;/span&gt;
@@ -40,22 +40,22 @@ as you normally would.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Next, mark the &lt;code&gt;snapd&lt;/code&gt; package with &lt;code&gt;hold&lt;/code&gt;, so that the current state
 of the package (&lt;code&gt;un&lt;/code&gt;) is made permanent:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt-mark hold snapd
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt-mark&lt;span class="w"&gt; &lt;/span&gt;hold&lt;span class="w"&gt; &lt;/span&gt;snapd
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Now, add the &lt;code&gt;mozillateam&lt;/code&gt; PPA:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;add-apt-repository ppa:mozillateam/ppa
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;add-apt-repository&lt;span class="w"&gt; &lt;/span&gt;ppa:mozillateam/ppa
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Next, create a file named &lt;code&gt;/etc/apt/preferences.d/mozilla-firefox&lt;/code&gt;,
 containing the following three lines:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;Package&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;*&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="nt"&gt;Pin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;release o=LP-PPA-mozillateam&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="nt"&gt;Pin-Priority&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;1001&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;Package&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;*&lt;/span&gt;
+&lt;span class="nt"&gt;Pin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;release o=LP-PPA-mozillateam&lt;/span&gt;
+&lt;span class="nt"&gt;Pin-Priority&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;1001&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;At this stage, your system should be set up to (a) not install the
 snap daemon, and (b) conduct the upgrade of the &lt;code&gt;firefox&lt;/code&gt;
 package using the regular Debian package as it appears in the PPA, not
 the distro package that is a wrapper around &lt;code&gt;snap install&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Now, proceed with:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt dist-upgrade
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt&lt;span class="w"&gt; &lt;/span&gt;dist-upgrade
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Happy jamming!&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Ubuntu"></category><category term="Firefox"></category></entry></feed>

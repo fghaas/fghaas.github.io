@@ -161,7 +161,7 @@ Wayland, either. So I run GNOME on X by default, anyway.</p>
 <p>Compared to the <a href="../../../resources/hints-and-kinks/lxc-basics/">basic LXC configuration that I have described
 before</a>, there’s only one line that you’ll
 need to add:</p>
-<div class="highlight"><pre><span></span><code><span class="na">lxc.mount.entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/tmp/.X11-unix tmp/.X11-unix none bind,optional,create=dir,ro</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="na">lxc.mount.entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/tmp/.X11-unix tmp/.X11-unix none bind,optional,create=dir,ro</span>
 </code></pre></div>
 <p>Now let me explain what this does. <code>/tmp/.X11-unix</code> is where your X
 display sockets will live, and I map it to the same path in the
@@ -253,7 +253,7 @@ the X server socket in the host.</p>
 
 <footer>
 <p>
-  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+  &copy; 2023  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
 </p>
 <p>
 Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme

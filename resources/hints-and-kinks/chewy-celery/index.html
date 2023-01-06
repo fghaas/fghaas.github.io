@@ -171,7 +171,7 @@ codepath. Instead, you can have something like this:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">celery</span> <span class="kn">import</span> <span class="n">Task</span>
 
 <span class="k">class</span> <span class="nc">ComplexOperation</span><span class="p">(</span><span class="n">Task</span><span class="p">)</span>
-   <span class="sd">"""Task that does very complex things"""</span>
+<span class="w">   </span><span class="sd">"""Task that does very complex things"""</span>
 
    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
       <span class="c1"># ... lots of interesting things</span>
@@ -181,7 +181,7 @@ can invoke this like so:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">.tasks</span> <span class="kn">import</span> <span class="n">ComplexOperation</span>
 
 <span class="k">def</span> <span class="nf">some_path</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
-   <span class="sd">"""/some_path URL that receives a request for an asynchronous ComplexOperation"""</span>
+<span class="w">   </span><span class="sd">"""/some_path URL that receives a request for an asynchronous ComplexOperation"""</span>
    <span class="c1"># ...</span>
 
    <span class="c1"># Asynchronously process ComplexOperation</span>
@@ -286,7 +286,7 @@ beginning and end of something complicated, like so:</p>
 <span class="kn">from</span> <span class="nn">model</span> <span class="kn">import</span> <span class="n">Thing</span>
 
 <span class="k">class</span> <span class="nc">ComplexOperation</span><span class="p">(</span><span class="n">Task</span><span class="p">)</span>
-   <span class="sd">"""Task that does very complex things"""</span>
+<span class="w">   </span><span class="sd">"""Task that does very complex things"""</span>
 
    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
      <span class="n">thing</span> <span class="o">=</span> <span class="n">Thing</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">'pk'</span><span class="p">])</span>
@@ -330,7 +330,7 @@ two <code>OperationalError</code> instances:</p>
 <span class="kn">from</span> <span class="nn">model</span> <span class="kn">import</span> <span class="n">Thing</span>
 
 <span class="k">class</span> <span class="nc">ComplexOperation</span><span class="p">(</span><span class="n">Task</span><span class="p">)</span>
-   <span class="sd">"""Task that does very complex things"""</span>
+<span class="w">   </span><span class="sd">"""Task that does very complex things"""</span>
 
    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
      <span class="n">thing</span> <span class="o">=</span> <span class="n">Thing</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">'pk'</span><span class="p">])</span>
@@ -376,7 +376,7 @@ example:</p>
 <span class="kn">from</span> <span class="nn">model</span> <span class="kn">import</span> <span class="n">Thing</span>
 
 <span class="k">class</span> <span class="nc">ComplexOperation</span><span class="p">(</span><span class="n">Task</span><span class="p">)</span>
-   <span class="sd">"""Task that does very complex things"""</span>
+<span class="w">   </span><span class="sd">"""Task that does very complex things"""</span>
 
    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
      <span class="n">thing</span> <span class="o">=</span> <span class="n">Thing</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">'pk'</span><span class="p">])</span>
@@ -397,7 +397,7 @@ deliberately overtrivialized example:</p>
 <span class="kn">from</span> <span class="nn">model</span> <span class="kn">import</span> <span class="n">Thing</span>
 
 <span class="k">class</span> <span class="nc">ComplexOperation</span><span class="p">(</span><span class="n">Task</span><span class="p">)</span>
-   <span class="sd">"""Task that does very complex things"""</span>
+<span class="w">   </span><span class="sd">"""Task that does very complex things"""</span>
 
    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
      <span class="n">thing</span> <span class="o">=</span> <span class="n">Thing</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">'pk'</span><span class="p">])</span>
@@ -481,7 +481,7 @@ suggesting to clarify the supported time formats in HAProxy.</p>
 
 <footer>
 <p>
-  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+  &copy; 2023  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
 </p>
 <p>
 Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme

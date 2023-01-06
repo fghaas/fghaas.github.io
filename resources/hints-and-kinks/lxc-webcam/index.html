@@ -167,10 +167,10 @@ creates POSIX ACL entries for the user currently logged in on the X
 console.</p>
 <p>All I thus need to do is <em>mount</em> these files into the container (yes,
 LXC lets you “mount” individual files), like so:</p>
-<div class="highlight"><pre><span></span><code><span class="na">lxc.mount.entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/dev/video0 dev/video0 none bind,optional,create=file</span><span class="w"></span>
-<span class="na">lxc.mount.entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/dev/video1 dev/video0 none bind,optional,create=file</span><span class="w"></span>
-<span class="na">lxc.mount.entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/dev/video2 dev/video2 none bind,optional,create=file</span><span class="w"></span>
-<span class="na">lxc.mount.entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/dev/video3 dev/video2 none bind,optional,create=file</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="na">lxc.mount.entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/dev/video0 dev/video0 none bind,optional,create=file</span>
+<span class="na">lxc.mount.entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/dev/video1 dev/video0 none bind,optional,create=file</span>
+<span class="na">lxc.mount.entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/dev/video2 dev/video2 none bind,optional,create=file</span>
+<span class="na">lxc.mount.entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/dev/video3 dev/video2 none bind,optional,create=file</span>
 </code></pre></div>
 <p>Here, the <code>optional</code> bit of course means that the container will start
 even in case a particular file does not exist in the host at the time
@@ -186,18 +186,18 @@ is a metadata device node. You can easily tell which is which, with
 <code>v4l2-ctl</code>: only a video capture device will have a non-empty list of
 supported formats.</p>
 <p>This is a video capture device:</p>
-<div class="highlight"><pre><span></span><code>$ v4l2-ctl --list-formats --device /dev/video0
-ioctl: VIDIOC_ENUM_FMT
-    Type: Video Capture
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>v4l2-ctl<span class="w"> </span>--list-formats<span class="w"> </span>--device<span class="w"> </span>/dev/video0
+ioctl:<span class="w"> </span>VIDIOC_ENUM_FMT
+<span class="w">    </span>Type:<span class="w"> </span>Video<span class="w"> </span>Capture
 
-    <span class="o">[</span><span class="m">0</span><span class="o">]</span>: <span class="s1">'MJPG'</span> <span class="o">(</span>Motion-JPEG, compressed<span class="o">)</span>
-    <span class="o">[</span><span class="m">1</span><span class="o">]</span>: <span class="s1">'YUYV'</span> <span class="o">(</span>YUYV <span class="m">4</span>:2:2<span class="o">)</span>
-    <span class="o">[</span><span class="m">2</span><span class="o">]</span>: <span class="s1">'H264'</span> <span class="o">(</span>H.264, compressed<span class="o">)</span>
+<span class="w">    </span><span class="o">[</span><span class="m">0</span><span class="o">]</span>:<span class="w"> </span><span class="s1">'MJPG'</span><span class="w"> </span><span class="o">(</span>Motion-JPEG,<span class="w"> </span>compressed<span class="o">)</span>
+<span class="w">    </span><span class="o">[</span><span class="m">1</span><span class="o">]</span>:<span class="w"> </span><span class="s1">'YUYV'</span><span class="w"> </span><span class="o">(</span>YUYV<span class="w"> </span><span class="m">4</span>:2:2<span class="o">)</span>
+<span class="w">    </span><span class="o">[</span><span class="m">2</span><span class="o">]</span>:<span class="w"> </span><span class="s1">'H264'</span><span class="w"> </span><span class="o">(</span>H.264,<span class="w"> </span>compressed<span class="o">)</span>
 </code></pre></div>
 <p>And this is the metadata device; note that it lists no video codecs:</p>
-<div class="highlight"><pre><span></span><code>$ v4l2-ctl --list-formats --device /dev/video1
-ioctl: VIDIOC_ENUM_FMT
-    Type: Video Capture
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>v4l2-ctl<span class="w"> </span>--list-formats<span class="w"> </span>--device<span class="w"> </span>/dev/video1
+ioctl:<span class="w"> </span>VIDIOC_ENUM_FMT
+<span class="w">    </span>Type:<span class="w"> </span>Video<span class="w"> </span>Capture
 </code></pre></div>
 <p>Normally, device nodes <code>/dev/video0</code> and <code>/dev/video1</code> will be
 occupied by a built-in webcam, your USB webcam will use <code>/dev/video2</code>
@@ -207,7 +207,7 @@ that will be <code>/dev/video4</code> and <code>/dev/video5</code>.</p>
 <em>and</em> you don’t care about the metadata device. In that case, instead
 of the four <code>lxc.mount.entry</code> lines I gave above, you might use just
 one:</p>
-<div class="highlight"><pre><span></span><code><span class="na">lxc.mount.entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/dev/video2 dev/video2 none bind,optional,create=file</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="na">lxc.mount.entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/dev/video2 dev/video2 none bind,optional,create=file</span>
 </code></pre></div>
 <p>Also, the bind mounts occur at the time you <em>start</em> the container. Thus,
 if you plug in a USB webcam while the container is already running, it
@@ -256,7 +256,7 @@ have to restart your container.</p>
 
 <footer>
 <p>
-  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+  &copy; 2023  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
 </p>
 <p>
 Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme

@@ -150,16 +150,16 @@ rel="me"           href="https://mastodon.social/@xahteiwi"
     <p>In order to bootstrap your Galera cluster, manually bring up the
 cluster IP address on the desired interface. In this example, we’ll
 use 192.168.122.99 and eth1:</p>
-<div class="highlight"><pre><span></span><code>ip address add <span class="m">192</span>.168.122.99/24 dev eth1 label eth1:galera
+<div class="highlight"><pre><span></span><code>ip<span class="w"> </span>address<span class="w"> </span>add<span class="w"> </span><span class="m">192</span>.168.122.99/24<span class="w"> </span>dev<span class="w"> </span>eth1<span class="w"> </span>label<span class="w"> </span>eth1:galera
 </code></pre></div>
 <p>And initialize the Galera cluster:</p>
-<div class="highlight"><pre><span></span><code>mysqld --wsrep_cluster_address<span class="o">=</span>gcomm:// <span class="p">&amp;</span>
+<div class="highlight"><pre><span></span><code>mysqld<span class="w"> </span>--wsrep_cluster_address<span class="o">=</span>gcomm://<span class="w"> </span><span class="p">&amp;</span>
 </code></pre></div>
 <p>Note the empty <code>gcomm://</code> address.</p>
 <p>An avalanche of output is likely to follow. Near the end, you should
 see entries similar to these:</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span><span class="n">Note</span><span class="o">]</span><span class="w"> </span><span class="nl">WSREP</span><span class="p">:</span><span class="w"> </span><span class="n">Synchronized</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="k">group</span><span class="p">,</span><span class="w"> </span><span class="n">ready</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">connections</span><span class="w"></span>
-<span class="o">[</span><span class="n">Note</span><span class="o">]</span><span class="w"> </span><span class="nl">mysqld</span><span class="p">:</span><span class="w"> </span><span class="n">ready</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">connections</span><span class="p">.</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="o">[</span><span class="n">Note</span><span class="o">]</span><span class="w"> </span><span class="nl">WSREP</span><span class="p">:</span><span class="w"> </span><span class="n">Synchronized</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="k">group</span><span class="p">,</span><span class="w"> </span><span class="n">ready</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">connections</span>
+<span class="o">[</span><span class="n">Note</span><span class="o">]</span><span class="w"> </span><span class="nl">mysqld</span><span class="p">:</span><span class="w"> </span><span class="n">ready</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">connections</span><span class="p">.</span>
 </code></pre></div>
 <p>At this point, your MySQL/Galera cluster is properly initialized. It
 only has one node, and it is not under cluster management yet, but
@@ -201,7 +201,7 @@ it’s already a working Galera installation.</p>
 
 <footer>
 <p>
-  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+  &copy; 2023  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
 </p>
 <p>
 Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme

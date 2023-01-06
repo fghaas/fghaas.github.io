@@ -140,7 +140,7 @@ rel="me"           href="https://mastodon.social/@xahteiwi"
   <div>
       <div><p>Once Corosync is running, you are able to start the Pacemaker cluster
 resource manager on all cluster nodes:</p>
-<div class="highlight"><pre><span></span><code>service pacemaker start
+<div class="highlight"><pre><span></span><code>service<span class="w"> </span>pacemaker<span class="w"> </span>start
 </code></pre></div>
 <p>Once cluster startup is completed, you should see output similar to
 the following when invoking the <code>crm_mon</code> utility:</p>
@@ -170,7 +170,7 @@ Last change …</code></pre></div></div>
       <div><p>If MySQL happens to die in your cluster, Pacemaker will automatically
 recover the service in place. To test this, select any node on your
 cluster and send the <code>mysqld</code> process a <code>KILL</code> signal:</p>
-<div class="highlight"><pre><span></span><code>killall -KILL mysqld
+<div class="highlight"><pre><span></span><code>killall<span class="w"> </span>-KILL<span class="w"> </span>mysqld
 </code></pre></div>
 <p>Then, monitor your cluster status with <code>crm_mon -rf</code>. After a few
 seconds, you should …</p></div>
@@ -273,7 +273,7 @@ from …</p></div>
 
 <footer>
 <p>
-  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+  &copy; 2023  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
 </p>
 <p>
 Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme

@@ -188,8 +188,8 @@ options of storing ephemeral disk images, that is, storage for any VM
 that is <em>not</em> booted from a Cinder volume. You do so by setting the
 <code>images_type</code> option in the <code>[libvirt]</code> section in
 <code>nova‑compute.conf</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="k">[libvirt]</span><span class="w"></span>
-<span class="na">images_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&lt;type&gt;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">[libvirt]</span>
+<span class="na">images_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&lt;type&gt;</span>
 </code></pre></div>
 <p>The default type is <code>disk</code>, which means that when you fire up a new
 VM, the following events occur:</p>
@@ -237,10 +237,10 @@ any writes. The corresponding RBD option is called
 it defaults to <code>true</code> and you should never disable it.</p>
 <p>You can enable writeback caching for Ceph by setting the following
 <code>nova-compute</code> configuration option:</p>
-<div class="highlight"><pre><span></span><code><span class="k">[libvirt]</span><span class="w"></span>
-<span class="na">images_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">rbd</span><span class="w"></span>
-<span class="na">...</span><span class="w"></span>
-<span class="na">disk_cachemodes</span><span class="o">=</span><span class="s">"network=writeback"</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">[libvirt]</span>
+<span class="na">images_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">rbd</span>
+<span class="na">...</span>
+<span class="na">disk_cachemodes</span><span class="o">=</span><span class="s">"network=writeback"</span>
 </code></pre></div>
 <p>And you just should.</p>
 <h2>Do use separate pools for images, volumes, and ephemeral disks</h2>
@@ -452,7 +452,7 @@ use that flavor for low-latency applications.</p>
 
 <footer>
 <p>
-  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+  &copy; 2023  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
 </p>
 <p>
 Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme

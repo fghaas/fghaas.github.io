@@ -169,8 +169,8 @@ key-value pairs. To do so, they can employ two approaches:</p>
 practically unlimited, so if your filestore is on a filesystem where
 that is <em>not</em> the case (such as ext4), you would generally use omaps.</p>
 <p>Enabling the use of omaps is easy enough. This goes in your ceph.conf:</p>
-<div class="highlight"><pre><span></span><code><span class="k">[osd]</span><span class="w"></span>
-<span class="na">filestore xattr use omap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">[osd]</span>
+<span class="na">filestore xattr use omap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span>
 </code></pre></div>
 <p>Ceph releases since 0.66 will
 <a href="https://github.com/ceph/ceph/commit/6d90dad45e089447562e9a01fd9ca0f7a2aaf2b1">enable this automatically</a>
@@ -236,7 +236,7 @@ your OSDs one by one; your existing xattrs won’t get lost.</p>
 
 <footer>
 <p>
-  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+  &copy; 2023  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
 </p>
 <p>
 Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme

@@ -158,39 +158,39 @@ interesting characteristics.</p>
 <p>Most people will take an existing vendor cloud image, which is
 typically available in the <code>qcow2</code> format, and convert it using the
 <code>qemu-img</code> utility, like so:</p>
-<div class="highlight"><pre><span></span><code>$ wget -O ubuntu-xenial.qcow2 <span class="se">\</span>
-  https://cloud-images.ubuntu.com/xenial/current/xenial-server-cloudimg-amd64-disk1.img
-$ qemu-img convert -p -f qcow2 -O raw ubuntu-xenial.qcow2 ubuntu-xenial.raw
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>wget<span class="w"> </span>-O<span class="w"> </span>ubuntu-xenial.qcow2<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>https://cloud-images.ubuntu.com/xenial/current/xenial-server-cloudimg-amd64-disk1.img
+$<span class="w"> </span>qemu-img<span class="w"> </span>convert<span class="w"> </span>-p<span class="w"> </span>-f<span class="w"> </span>qcow2<span class="w"> </span>-O<span class="w"> </span>raw<span class="w"> </span>ubuntu-xenial.qcow2<span class="w"> </span>ubuntu-xenial.raw
 </code></pre></div>
 <p>On face value, the result looks innocuous enough:</p>
-<div class="highlight"><pre><span></span><code>$ qemu-img info ubuntu-xenial.qcow2 
-image: ubuntu-xenial.qcow2
-file format: qcow2
-virtual size: <span class="m">2</span>.2G <span class="o">(</span><span class="m">2361393152</span> bytes<span class="o">)</span>
-disk size: 308M
-cluster_size: <span class="m">65536</span>
-Format specific information:
-    compat: <span class="m">0</span>.10
-    refcount bits: <span class="m">16</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>qemu-img<span class="w"> </span>info<span class="w"> </span>ubuntu-xenial.qcow2<span class="w"> </span>
+image:<span class="w"> </span>ubuntu-xenial.qcow2
+file<span class="w"> </span>format:<span class="w"> </span>qcow2
+virtual<span class="w"> </span>size:<span class="w"> </span><span class="m">2</span>.2G<span class="w"> </span><span class="o">(</span><span class="m">2361393152</span><span class="w"> </span>bytes<span class="o">)</span>
+disk<span class="w"> </span>size:<span class="w"> </span>308M
+cluster_size:<span class="w"> </span><span class="m">65536</span>
+Format<span class="w"> </span>specific<span class="w"> </span>information:
+<span class="w">    </span>compat:<span class="w"> </span><span class="m">0</span>.10
+<span class="w">    </span>refcount<span class="w"> </span>bits:<span class="w"> </span><span class="m">16</span>
 
-$ qemu-img info ubuntu-xenial.raw
-image: ubuntu-xenial.raw
-file format: raw
-virtual size: <span class="m">2</span>.2G <span class="o">(</span><span class="m">2361393152</span> bytes<span class="o">)</span>
-disk size: 1000M
+$<span class="w"> </span>qemu-img<span class="w"> </span>info<span class="w"> </span>ubuntu-xenial.raw
+image:<span class="w"> </span>ubuntu-xenial.raw
+file<span class="w"> </span>format:<span class="w"> </span>raw
+virtual<span class="w"> </span>size:<span class="w"> </span><span class="m">2</span>.2G<span class="w"> </span><span class="o">(</span><span class="m">2361393152</span><span class="w"> </span>bytes<span class="o">)</span>
+disk<span class="w"> </span>size:<span class="w"> </span>1000M
 </code></pre></div>
 <p>As you can see, in both cases the virtual image size differs starkly
 from the actual file size. In <code>qcow2</code>, this is due to the
 copy-on-write nature of the file format and zlib compression; for the
 <code>raw</code> image, we’re dealing with a sparse file:</p>
-<div class="highlight"><pre><span></span><code>$ ls -lh ubuntu-xenial.qcow2
--rw-rw-r-- <span class="m">1</span> florian florian 308M Feb <span class="m">17</span> <span class="m">10</span>:05 ubuntu-xenial.qcow2
-$ du -h  ubuntu-xenial.qcow2
-308M    ubuntu-xenial.qcow2
-$ ls -lh info ubuntu-xenial.raw
--rw-r--r-- <span class="m">1</span> florian florian <span class="m">2</span>.2G Feb <span class="m">17</span> <span class="m">10</span>:16 ubuntu-xenial.raw
-$ du -h  ubuntu-xenial.raw
-1000M   ubuntu-xenial.raw
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-lh<span class="w"> </span>ubuntu-xenial.qcow2
+-rw-rw-r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>florian<span class="w"> </span>florian<span class="w"> </span>308M<span class="w"> </span>Feb<span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">10</span>:05<span class="w"> </span>ubuntu-xenial.qcow2
+$<span class="w"> </span>du<span class="w"> </span>-h<span class="w">  </span>ubuntu-xenial.qcow2
+308M<span class="w">    </span>ubuntu-xenial.qcow2
+$<span class="w"> </span>ls<span class="w"> </span>-lh<span class="w"> </span>info<span class="w"> </span>ubuntu-xenial.raw
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>florian<span class="w"> </span>florian<span class="w"> </span><span class="m">2</span>.2G<span class="w"> </span>Feb<span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">10</span>:16<span class="w"> </span>ubuntu-xenial.raw
+$<span class="w"> </span>du<span class="w"> </span>-h<span class="w">  </span>ubuntu-xenial.raw
+1000M<span class="w">   </span>ubuntu-xenial.raw
 </code></pre></div>
 <p>So, while the <code>qcow2</code> file’s physical and logical sizes match, the
 <code>raw</code> file looks much larger in terms of filesystem metadata, as
@@ -210,20 +210,20 @@ RBD. All you need to do is make sure the image goes into the correct
 pool, and is reasonably named. Glance names uploaded images by their
 image ID, which is a universally unique identifier (UUID), so let’s
 follow Glance’s precedent.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">IMAGE_ID</span><span class="o">=</span><span class="sb">`</span>uuidgen<span class="sb">`</span>
-<span class="nb">export</span> <span class="nv">POOL</span><span class="o">=</span><span class="s2">"glance-images"</span>  <span class="c1"># replace with your Glance pool name</span>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">IMAGE_ID</span><span class="o">=</span><span class="sb">`</span>uuidgen<span class="sb">`</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">POOL</span><span class="o">=</span><span class="s2">"glance-images"</span><span class="w">  </span><span class="c1"># replace with your Glance pool name</span>
 
-qemu-img convert <span class="se">\</span>
-  -f qcow2 -O raw <span class="se">\</span>
-  my_cloud_image.raw <span class="se">\</span>
-  rbd:<span class="nv">$POOL</span>/<span class="nv">$IMAGE_ID</span>
+qemu-img<span class="w"> </span>convert<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-f<span class="w"> </span>qcow2<span class="w"> </span>-O<span class="w"> </span>raw<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>my_cloud_image.raw<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>rbd:<span class="nv">$POOL</span>/<span class="nv">$IMAGE_ID</span>
 </code></pre></div>
 <h2>Creating the clone baseline snapshot</h2>
 <p>Glance expects a snapshot named <code>snap</code> to exist on any image that is
 subsequently cloned by Cinder or Nova, so let’s create that as
 well:</p>
-<div class="highlight"><pre><span></span><code>rbd snap create <span class="nv">$POOL</span>/<span class="nv">$IMAGE_ID</span>@snap
-rbd snap protect <span class="nv">$POOL</span>/<span class="nv">$IMAGE_ID</span>@snap
+<div class="highlight"><pre><span></span><code>rbd<span class="w"> </span>snap<span class="w"> </span>create<span class="w"> </span><span class="nv">$POOL</span>/<span class="nv">$IMAGE_ID</span>@snap
+rbd<span class="w"> </span>snap<span class="w"> </span>protect<span class="w"> </span><span class="nv">$POOL</span>/<span class="nv">$IMAGE_ID</span>@snap
 </code></pre></div>
 <h2>Making Glance aware of the image</h2>
 <p>Finally, we can let Glance know about this image. Now, there’s a catch
@@ -243,12 +243,12 @@ the pre-populated <code>location</code> and <code>id</code> fields. The <code>lo
 </ul>
 <p>Other than that, the <code>glance</code> client invocation is pretty
 straightforward for a v1 API call:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">CLUSTER_ID</span><span class="o">=</span><span class="sb">`</span>ceph fsid<span class="sb">`</span>
-glance --os-image-api-version <span class="m">1</span> <span class="se">\</span>
-  image-create <span class="se">\</span>
-  --disk-format raw <span class="se">\</span>
-  --id <span class="nv">$IMAGE_ID</span> <span class="se">\</span>
-  --location rbd://<span class="nv">$CLUSTER_ID</span>/<span class="nv">$POOL</span>/<span class="nv">$IMAGE_ID</span>/snap
+<div class="highlight"><pre><span></span><code><span class="nv">CLUSTER_ID</span><span class="o">=</span><span class="sb">`</span>ceph<span class="w"> </span>fsid<span class="sb">`</span>
+glance<span class="w"> </span>--os-image-api-version<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>image-create<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--disk-format<span class="w"> </span>raw<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--id<span class="w"> </span><span class="nv">$IMAGE_ID</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--location<span class="w"> </span>rbd://<span class="nv">$CLUSTER_ID</span>/<span class="nv">$POOL</span>/<span class="nv">$IMAGE_ID</span>/snap
 </code></pre></div>
 <p>Of course, you might add other options, like <code>--private</code> or
 <code>--protected</code> or <code>--name</code>, but the above options are the bare minimum.</p>
@@ -285,7 +285,7 @@ fire a VM up from that.</p>
 
 <footer>
 <p>
-  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+  &copy; 2023  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
 </p>
 <p>
 Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme

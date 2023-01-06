@@ -185,11 +185,11 @@ say <code>/etc/vicredentials.xml</code>, and make sure it gets 0600
 permissions. Also, remember to copy it to all your cluster nodes. Once
 your credentials are properly set up, you can test the STONITH agent’s
 functionality by invoking it directly, like so:</p>
-<div class="highlight"><pre><span></span><code>  <span class="nv">VI_SERVER</span><span class="o">=</span>&lt;vCenter server IP or hostname&gt; <span class="se">\</span>
-  <span class="nv">VI_CREDSTORE</span><span class="o">=</span>/etc/vicredentials.xml <span class="se">\</span>
-  <span class="nv">HOSTLIST</span><span class="o">=</span><span class="s2">"&lt;pacemaker hostname&gt;=&lt;vCenter virtual machine name&gt;"</span> <span class="se">\</span>
-  <span class="nv">RESETPOWERON</span><span class="o">=</span><span class="m">0</span> <span class="se">\</span>
-  /usr/lib/stonith/plugins/external/vcenter gethosts
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nv">VI_SERVER</span><span class="o">=</span>&lt;vCenter<span class="w"> </span>server<span class="w"> </span>IP<span class="w"> </span>or<span class="w"> </span>hostname&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="nv">VI_CREDSTORE</span><span class="o">=</span>/etc/vicredentials.xml<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="nv">HOSTLIST</span><span class="o">=</span><span class="s2">"&lt;pacemaker hostname&gt;=&lt;vCenter virtual machine name&gt;"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="nv">RESETPOWERON</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>/usr/lib/stonith/plugins/external/vcenter<span class="w"> </span>gethosts
 </code></pre></div>
 <p><pacemaker hostname=""> is the name of one of your cluster nodes as per
 uname -n, and <vcenter machine="" name="" virtual=""> is the corresponding
@@ -198,25 +198,25 @@ the gethosts command should return the Pacemaker hostname again.</vcenter></pace
 <p>Now, on to adding this to the Pacemaker configuration. The example
 below is for two hosts named alice and bob, which in the inventory
 happen to be listed by their FQDN in the example.com domain:</p>
-<div class="highlight"><pre><span></span><code>primitive p_fence_alice stonith:external/vcenter \
-  params VI_SERVER="vcenter.example.com" \
-    VI_CREDSTORE="/etc/vicredentials.xml" \
-    HOSTLIST="alice=alice.example.com" \
-    RESETPOWERON="0" \
-    pcmk_host_check="static-list" \
-    pcmk_host_list="alice" \
-  op monitor interval="60"
-primitive p_fence_bob stonith:external/vcenter \
-  params VI_SERVER="vcenter.example.com" \
-    VI_CREDSTORE="/etc/vicredentials.xml" \
-    HOSTLIST="bob=bob.example.com" \
-    RESETPOWERON="0" \
-    pcmk_host_check="static-list" \
-    pcmk_host_list="bob" \
-  op monitor interval="60"
-location l_fence_alice p_fence_alice -inf: alice
-location l_fence_bob p_fence_bob -inf: bob
-property stonith-enabled="true"
+<div class="highlight"><pre><span></span><code><span class="n">primitive p_fence_alice stonith:external/vcenter \</span>
+<span class="n">  params VI_SERVER="vcenter.example.com" \</span>
+<span class="n">    VI_CREDSTORE="/etc/vicredentials.xml" \</span>
+<span class="n">    HOSTLIST="alice=alice.example.com" \</span>
+<span class="n">    RESETPOWERON="0" \</span>
+<span class="n">    pcmk_host_check="static-list" \</span>
+<span class="n">    pcmk_host_list="alice" \</span>
+<span class="n">  op monitor interval="60"</span>
+<span class="n">primitive p_fence_bob stonith:external/vcenter \</span>
+<span class="n">  params VI_SERVER="vcenter.example.com" \</span>
+<span class="n">    VI_CREDSTORE="/etc/vicredentials.xml" \</span>
+<span class="n">    HOSTLIST="bob=bob.example.com" \</span>
+<span class="n">    RESETPOWERON="0" \</span>
+<span class="n">    pcmk_host_check="static-list" \</span>
+<span class="n">    pcmk_host_list="bob" \</span>
+<span class="n">  op monitor interval="60"</span>
+<span class="n">location l_fence_alice p_fence_alice -inf: alice</span>
+<span class="n">location l_fence_bob p_fence_bob -inf: bob</span>
+<span class="n">property stonith-enabled="true"</span>
 </code></pre></div>
 <p>At this point you should be able to test fencing with <code>stonith_admin
 -F</code> or <code>crm node fence</code>. Or simulate a node problem with <code>killall -9
@@ -242,7 +242,7 @@ straightforward README file for it.</p>
 
 <footer>
 <p>
-  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+  &copy; 2023  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
 </p>
 <p>
 Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme

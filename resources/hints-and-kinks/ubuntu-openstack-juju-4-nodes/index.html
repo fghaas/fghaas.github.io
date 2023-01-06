@@ -174,51 +174,51 @@ nodes as you want.</p>
 <h2>Juju configuration</h2>
 <p>Consider the following Juju configuration YAML example, which you
 might put into your home directory as <code>juju-config.yaml</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">keystone</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">openstack-origin</span><span class="p">:</span><span class="w"> </span><span class="s">'cloud:trusty-liberty'</span><span class="w"></span>
-<span class="w">  </span><span class="nt">admin-password</span><span class="p">:</span><span class="w"> </span><span class="s">'my</span><span class="nv"> </span><span class="s">very</span><span class="nv"> </span><span class="s">secret</span><span class="nv"> </span><span class="s">password'</span><span class="w"></span>
-<span class="nt">nova-cloud-controller</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">openstack-origin</span><span class="p">:</span><span class="w"> </span><span class="s">'cloud:trusty-liberty'</span><span class="w"></span>
-<span class="w">  </span><span class="nt">network-manager</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Neutron</span><span class="w"></span>
-<span class="nt">neutron-gateway</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">openstack-origin</span><span class="p">:</span><span class="w"> </span><span class="s">'cloud:trusty-liberty'</span><span class="w"></span>
-<span class="w">  </span><span class="nt">ext-port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eth2</span><span class="w"></span>
-<span class="w">  </span><span class="nt">bridge-mappings</span><span class="p">:</span><span class="w"> </span><span class="s">'external:br-ex'</span><span class="w"></span>
-<span class="w">  </span><span class="nt">os-data-network</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.133.0/24</span><span class="w"></span>
-<span class="w">  </span><span class="nt">instance-mtu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1400</span><span class="w"></span>
-<span class="nt">neutron-api</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">openstack-origin</span><span class="p">:</span><span class="w"> </span><span class="s">'cloud:trusty-liberty'</span><span class="w"></span>
-<span class="w">  </span><span class="nt">network-device-mtu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1400</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># Always make sure you enable security groups</span><span class="w"></span>
-<span class="w">  </span><span class="nt">neutron-security-groups</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
-<span class="w">  </span><span class="nt">overlay-network-type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vxlan</span><span class="w"></span>
-<span class="nt">rabbitmq-server</span><span class="p">:</span><span class="w"></span>
-<span class="c1"># Cinder is deployed in two parts: one for the API and scheduler</span><span class="w"></span>
-<span class="c1"># (which can live in a container), one for the volume service (which</span><span class="w"></span>
-<span class="c1"># cannot, at least not for the LVM/iSCSI backend)</span><span class="w"></span>
-<span class="nt">cinder-api</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">openstack-origin</span><span class="p">:</span><span class="w"> </span><span class="s">'cloud:trusty-liberty'</span><span class="w"></span>
-<span class="w">  </span><span class="nt">enabled-services</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api,scheduler</span><span class="w"></span>
-<span class="nt">cinder-volume</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">openstack-origin</span><span class="p">:</span><span class="w"> </span><span class="s">'cloud:trusty-liberty'</span><span class="w"></span>
-<span class="w">  </span><span class="nt">enabled-services</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">volume</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># Adjust this to match the block device on your volume host</span><span class="w"></span>
-<span class="w">  </span><span class="nt">block-device</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vdb</span><span class="w"></span>
-<span class="nt">glance</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">openstack-origin</span><span class="p">:</span><span class="w"> </span><span class="s">'cloud:trusty-liberty'</span><span class="w"></span>
-<span class="nt">heat</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">openstack-origin</span><span class="p">:</span><span class="w"> </span><span class="s">'cloud:trusty-liberty'</span><span class="w"></span>
-<span class="nt">mysql</span><span class="p">:</span><span class="w"></span>
-<span class="nt">openstack-dashboard</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">openstack-origin</span><span class="p">:</span><span class="w"> </span><span class="s">'cloud:trusty-liberty'</span><span class="w"></span>
-<span class="w">  </span><span class="nt">webroot</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/</span><span class="w"></span>
-<span class="nt">nova-compute</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">openstack-origin</span><span class="p">:</span><span class="w"> </span><span class="s">'cloud:trusty-liberty'</span><span class="w"></span>
-<span class="w">  </span><span class="nt">manage-neutron-plugin-legacy-mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># Change to qemu if in a nested cloud environment</span><span class="w"></span>
-<span class="w">  </span><span class="nt">virt-type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kvm</span><span class="w"></span>
-<span class="nt">neutron-openvswitch</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">os-data-network</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.133.0/24</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nt">keystone</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">openstack-origin</span><span class="p">:</span><span class="w"> </span><span class="s">'cloud:trusty-liberty'</span>
+<span class="w">  </span><span class="nt">admin-password</span><span class="p">:</span><span class="w"> </span><span class="s">'my</span><span class="nv"> </span><span class="s">very</span><span class="nv"> </span><span class="s">secret</span><span class="nv"> </span><span class="s">password'</span>
+<span class="nt">nova-cloud-controller</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">openstack-origin</span><span class="p">:</span><span class="w"> </span><span class="s">'cloud:trusty-liberty'</span>
+<span class="w">  </span><span class="nt">network-manager</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Neutron</span>
+<span class="nt">neutron-gateway</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">openstack-origin</span><span class="p">:</span><span class="w"> </span><span class="s">'cloud:trusty-liberty'</span>
+<span class="w">  </span><span class="nt">ext-port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eth2</span>
+<span class="w">  </span><span class="nt">bridge-mappings</span><span class="p">:</span><span class="w"> </span><span class="s">'external:br-ex'</span>
+<span class="w">  </span><span class="nt">os-data-network</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.133.0/24</span>
+<span class="w">  </span><span class="nt">instance-mtu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1400</span>
+<span class="nt">neutron-api</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">openstack-origin</span><span class="p">:</span><span class="w"> </span><span class="s">'cloud:trusty-liberty'</span>
+<span class="w">  </span><span class="nt">network-device-mtu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1400</span>
+<span class="w">  </span><span class="c1"># Always make sure you enable security groups</span>
+<span class="w">  </span><span class="nt">neutron-security-groups</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">overlay-network-type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vxlan</span>
+<span class="nt">rabbitmq-server</span><span class="p">:</span>
+<span class="c1"># Cinder is deployed in two parts: one for the API and scheduler</span>
+<span class="c1"># (which can live in a container), one for the volume service (which</span>
+<span class="c1"># cannot, at least not for the LVM/iSCSI backend)</span>
+<span class="nt">cinder-api</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">openstack-origin</span><span class="p">:</span><span class="w"> </span><span class="s">'cloud:trusty-liberty'</span>
+<span class="w">  </span><span class="nt">enabled-services</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api,scheduler</span>
+<span class="nt">cinder-volume</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">openstack-origin</span><span class="p">:</span><span class="w"> </span><span class="s">'cloud:trusty-liberty'</span>
+<span class="w">  </span><span class="nt">enabled-services</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">volume</span>
+<span class="w">  </span><span class="c1"># Adjust this to match the block device on your volume host</span>
+<span class="w">  </span><span class="nt">block-device</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vdb</span>
+<span class="nt">glance</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">openstack-origin</span><span class="p">:</span><span class="w"> </span><span class="s">'cloud:trusty-liberty'</span>
+<span class="nt">heat</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">openstack-origin</span><span class="p">:</span><span class="w"> </span><span class="s">'cloud:trusty-liberty'</span>
+<span class="nt">mysql</span><span class="p">:</span>
+<span class="nt">openstack-dashboard</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">openstack-origin</span><span class="p">:</span><span class="w"> </span><span class="s">'cloud:trusty-liberty'</span>
+<span class="w">  </span><span class="nt">webroot</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/</span>
+<span class="nt">nova-compute</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">openstack-origin</span><span class="p">:</span><span class="w"> </span><span class="s">'cloud:trusty-liberty'</span>
+<span class="w">  </span><span class="nt">manage-neutron-plugin-legacy-mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="c1"># Change to qemu if in a nested cloud environment</span>
+<span class="w">  </span><span class="nt">virt-type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kvm</span>
+<span class="nt">neutron-openvswitch</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">os-data-network</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.133.0/24</span>
 </code></pre></div>
 <h2>Deployment</h2>
 <p>Then, you can run the following shell script to deploy your control
@@ -229,64 +229,64 @@ subordinate charm, <code>neutron-openvswitch</code>) to machine 2,
 
 <span class="nv">CONFIG</span><span class="o">=</span>~/juju-config.yaml
 
-juju deploy --config<span class="o">=</span><span class="nv">$CONFIG</span> mysql --to lxc:1
-juju deploy --config<span class="o">=</span><span class="nv">$CONFIG</span> rabbitmq-server --to lxc:1
+juju<span class="w"> </span>deploy<span class="w"> </span>--config<span class="o">=</span><span class="nv">$CONFIG</span><span class="w"> </span>mysql<span class="w"> </span>--to<span class="w"> </span>lxc:1
+juju<span class="w"> </span>deploy<span class="w"> </span>--config<span class="o">=</span><span class="nv">$CONFIG</span><span class="w"> </span>rabbitmq-server<span class="w"> </span>--to<span class="w"> </span>lxc:1
 
-sleep 120s
+sleep<span class="w"> </span>120s
 
-juju deploy --config<span class="o">=</span><span class="nv">$CONFIG</span> keystone --to lxc:1
-juju add-relation keystone:shared-db mysql:shared-db
+juju<span class="w"> </span>deploy<span class="w"> </span>--config<span class="o">=</span><span class="nv">$CONFIG</span><span class="w"> </span>keystone<span class="w"> </span>--to<span class="w"> </span>lxc:1
+juju<span class="w"> </span>add-relation<span class="w"> </span>keystone:shared-db<span class="w"> </span>mysql:shared-db
 
-juju deploy --config<span class="o">=</span><span class="nv">$CONFIG</span> glance --to lxc:1
-juju add-relation glance:identity-service keystone:identity-service
-juju add-relation glance:shared-db mysql:shared-db
+juju<span class="w"> </span>deploy<span class="w"> </span>--config<span class="o">=</span><span class="nv">$CONFIG</span><span class="w"> </span>glance<span class="w"> </span>--to<span class="w"> </span>lxc:1
+juju<span class="w"> </span>add-relation<span class="w"> </span>glance:identity-service<span class="w"> </span>keystone:identity-service
+juju<span class="w"> </span>add-relation<span class="w"> </span>glance:shared-db<span class="w"> </span>mysql:shared-db
 
-juju deploy --config<span class="o">=</span><span class="nv">$CONFIG</span> neutron-api --to lxc:1
-juju add-relation neutron-api:amqp rabbitmq-server:amqp
-juju add-relation neutron-api:identity-service keystone:identity-service
-juju add-relation neutron-api:shared-db mysql:shared-db
+juju<span class="w"> </span>deploy<span class="w"> </span>--config<span class="o">=</span><span class="nv">$CONFIG</span><span class="w"> </span>neutron-api<span class="w"> </span>--to<span class="w"> </span>lxc:1
+juju<span class="w"> </span>add-relation<span class="w"> </span>neutron-api:amqp<span class="w"> </span>rabbitmq-server:amqp
+juju<span class="w"> </span>add-relation<span class="w"> </span>neutron-api:identity-service<span class="w"> </span>keystone:identity-service
+juju<span class="w"> </span>add-relation<span class="w"> </span>neutron-api:shared-db<span class="w"> </span>mysql:shared-db
 
-juju deploy --config<span class="o">=</span><span class="nv">$CONFIG</span> neutron-gateway --to <span class="m">3</span>
-juju add-relation neutron-gateway:amqp rabbitmq-server:amqp
-juju add-relation neutron-gateway:neutron-plugin-api neutron-api:neutron-plugin-api
-juju add-relation neutron-gateway:shared-db mysql:shared-db
+juju<span class="w"> </span>deploy<span class="w"> </span>--config<span class="o">=</span><span class="nv">$CONFIG</span><span class="w"> </span>neutron-gateway<span class="w"> </span>--to<span class="w"> </span><span class="m">3</span>
+juju<span class="w"> </span>add-relation<span class="w"> </span>neutron-gateway:amqp<span class="w"> </span>rabbitmq-server:amqp
+juju<span class="w"> </span>add-relation<span class="w"> </span>neutron-gateway:neutron-plugin-api<span class="w"> </span>neutron-api:neutron-plugin-api
+juju<span class="w"> </span>add-relation<span class="w"> </span>neutron-gateway:shared-db<span class="w"> </span>mysql:shared-db
 
-juju deploy --config<span class="o">=</span><span class="nv">$CONFIG</span> nova-cloud-controller --to lxc:1
-juju add-relation nova-cloud-controller:amqp rabbitmq-server:amqp
-juju add-relation nova-cloud-controller:identity-service keystone:identity-service
-juju add-relation nova-cloud-controller:image-service glance:image-service
-juju add-relation nova-cloud-controller:neutron-api neutron-api:neutron-api
-juju add-relation nova-cloud-controller:shared-db mysql:shared-db
+juju<span class="w"> </span>deploy<span class="w"> </span>--config<span class="o">=</span><span class="nv">$CONFIG</span><span class="w"> </span>nova-cloud-controller<span class="w"> </span>--to<span class="w"> </span>lxc:1
+juju<span class="w"> </span>add-relation<span class="w"> </span>nova-cloud-controller:amqp<span class="w"> </span>rabbitmq-server:amqp
+juju<span class="w"> </span>add-relation<span class="w"> </span>nova-cloud-controller:identity-service<span class="w"> </span>keystone:identity-service
+juju<span class="w"> </span>add-relation<span class="w"> </span>nova-cloud-controller:image-service<span class="w"> </span>glance:image-service
+juju<span class="w"> </span>add-relation<span class="w"> </span>nova-cloud-controller:neutron-api<span class="w"> </span>neutron-api:neutron-api
+juju<span class="w"> </span>add-relation<span class="w"> </span>nova-cloud-controller:shared-db<span class="w"> </span>mysql:shared-db
 
-juju deploy --config<span class="o">=</span><span class="nv">$CONFIG</span> nova-compute --to <span class="m">2</span>
-juju add-relation nova-compute:amqp rabbitmq-server:amqp
-juju add-relation nova-compute:cloud-compute nova-cloud-controller:cloud-compute
-juju add-relation nova-compute:image-service glance:image-service
-juju add-relation nova-compute:shared-db mysql:shared-db
+juju<span class="w"> </span>deploy<span class="w"> </span>--config<span class="o">=</span><span class="nv">$CONFIG</span><span class="w"> </span>nova-compute<span class="w"> </span>--to<span class="w"> </span><span class="m">2</span>
+juju<span class="w"> </span>add-relation<span class="w"> </span>nova-compute:amqp<span class="w"> </span>rabbitmq-server:amqp
+juju<span class="w"> </span>add-relation<span class="w"> </span>nova-compute:cloud-compute<span class="w"> </span>nova-cloud-controller:cloud-compute
+juju<span class="w"> </span>add-relation<span class="w"> </span>nova-compute:image-service<span class="w"> </span>glance:image-service
+juju<span class="w"> </span>add-relation<span class="w"> </span>nova-compute:shared-db<span class="w"> </span>mysql:shared-db
 
-juju deploy --config<span class="o">=</span><span class="nv">$CONFIG</span> neutron-openvswitch
-juju add-relation neutron-openvswitch:amqp rabbitmq-server:amqp
-juju add-relation neutron-openvswitch:neutron-plugin-api neutron-api:neutron-plugin-api
-juju add-relation neutron-openvswitch:neutron-plugin nova-compute:neutron-plugin 
-juju deploy --config<span class="o">=</span><span class="nv">$CONFIG</span> cinder cinder-api --to lxc:1
-juju add-relation cinder-api:amqp rabbitmq-server:amqp
-juju add-relation cinder-api:cinder-volume-service nova-cloud-controller:cinder-volume-service
-juju add-relation cinder-api:identity-service keystone:identity-service
-juju add-relation cinder-api:image-service glance:image-service
-juju add-relation cinder-api:shared-db mysql:shared-db
+juju<span class="w"> </span>deploy<span class="w"> </span>--config<span class="o">=</span><span class="nv">$CONFIG</span><span class="w"> </span>neutron-openvswitch
+juju<span class="w"> </span>add-relation<span class="w"> </span>neutron-openvswitch:amqp<span class="w"> </span>rabbitmq-server:amqp
+juju<span class="w"> </span>add-relation<span class="w"> </span>neutron-openvswitch:neutron-plugin-api<span class="w"> </span>neutron-api:neutron-plugin-api
+juju<span class="w"> </span>add-relation<span class="w"> </span>neutron-openvswitch:neutron-plugin<span class="w"> </span>nova-compute:neutron-plugin<span class="w"> </span>
+juju<span class="w"> </span>deploy<span class="w"> </span>--config<span class="o">=</span><span class="nv">$CONFIG</span><span class="w"> </span>cinder<span class="w"> </span>cinder-api<span class="w"> </span>--to<span class="w"> </span>lxc:1
+juju<span class="w"> </span>add-relation<span class="w"> </span>cinder-api:amqp<span class="w"> </span>rabbitmq-server:amqp
+juju<span class="w"> </span>add-relation<span class="w"> </span>cinder-api:cinder-volume-service<span class="w"> </span>nova-cloud-controller:cinder-volume-service
+juju<span class="w"> </span>add-relation<span class="w"> </span>cinder-api:identity-service<span class="w"> </span>keystone:identity-service
+juju<span class="w"> </span>add-relation<span class="w"> </span>cinder-api:image-service<span class="w"> </span>glance:image-service
+juju<span class="w"> </span>add-relation<span class="w"> </span>cinder-api:shared-db<span class="w"> </span>mysql:shared-db
 
-juju deploy --config<span class="o">=</span><span class="nv">$CONFIG</span> cinder cinder-volume --to <span class="m">4</span>
-juju add-relation cinder-volume:amqp rabbitmq-server:amqp
-juju add-relation cinder-volume:shared-db mysql:shared-db
-juju add-relation cinder-volume:image-service glance:image-service
+juju<span class="w"> </span>deploy<span class="w"> </span>--config<span class="o">=</span><span class="nv">$CONFIG</span><span class="w"> </span>cinder<span class="w"> </span>cinder-volume<span class="w"> </span>--to<span class="w"> </span><span class="m">4</span>
+juju<span class="w"> </span>add-relation<span class="w"> </span>cinder-volume:amqp<span class="w"> </span>rabbitmq-server:amqp
+juju<span class="w"> </span>add-relation<span class="w"> </span>cinder-volume:shared-db<span class="w"> </span>mysql:shared-db
+juju<span class="w"> </span>add-relation<span class="w"> </span>cinder-volume:image-service<span class="w"> </span>glance:image-service
 
-juju deploy --config<span class="o">=</span><span class="nv">$CONFIG</span> openstack-dashboard --to <span class="m">1</span>
-juju add-relation openstack-dashboard:identity-service keystone:identity-service
+juju<span class="w"> </span>deploy<span class="w"> </span>--config<span class="o">=</span><span class="nv">$CONFIG</span><span class="w"> </span>openstack-dashboard<span class="w"> </span>--to<span class="w"> </span><span class="m">1</span>
+juju<span class="w"> </span>add-relation<span class="w"> </span>openstack-dashboard:identity-service<span class="w"> </span>keystone:identity-service
 
-juju deploy --config<span class="o">=</span><span class="nv">$CONFIG</span> heat --to lxc:1
-juju add-relation heat:amqp rabbitmq-server:amqp
-juju add-relation heat:identity-service keystone:identity-service
-juju add-relation heat:shared-db mysql:shared-db
+juju<span class="w"> </span>deploy<span class="w"> </span>--config<span class="o">=</span><span class="nv">$CONFIG</span><span class="w"> </span>heat<span class="w"> </span>--to<span class="w"> </span>lxc:1
+juju<span class="w"> </span>add-relation<span class="w"> </span>heat:amqp<span class="w"> </span>rabbitmq-server:amqp
+juju<span class="w"> </span>add-relation<span class="w"> </span>heat:identity-service<span class="w"> </span>keystone:identity-service
+juju<span class="w"> </span>add-relation<span class="w"> </span>heat:shared-db<span class="w"> </span>mysql:shared-db
 </code></pre></div>
 <p>And you’re done! The whole process should give you an OpenStack cloud
 in about 20-30 minutes.</p>
@@ -312,7 +312,7 @@ in about 20-30 minutes.</p>
 
 <footer>
 <p>
-  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+  &copy; 2023  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
 </p>
 <p>
 Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme

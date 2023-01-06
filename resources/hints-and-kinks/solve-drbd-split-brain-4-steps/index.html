@@ -165,7 +165,7 @@ DRBD startup but stay in connection state StandAlone or
 WFConnection. The latter will be shown if the remote peer detected the
 split-brain earlier and was faster at shutdown its connection. In your
 kernel logs you will see messages like:</p>
-<div class="highlight"><pre><span></span><code><span class="n">kernel</span><span class="o">:</span><span class="w"> </span><span class="n">block</span><span class="w"> </span><span class="n">drbd0</span><span class="o">:</span><span class="w"> </span><span class="n">Split</span><span class="o">-</span><span class="n">Brain</span><span class="w"> </span><span class="n">detected</span><span class="o">,</span><span class="w"> </span><span class="n">dropping</span><span class="w"> </span><span class="n">connection</span><span class="o">!</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">kernel</span><span class="o">:</span><span class="w"> </span><span class="n">block</span><span class="w"> </span><span class="n">drbd0</span><span class="o">:</span><span class="w"> </span><span class="n">Split</span><span class="o">-</span><span class="n">Brain</span><span class="w"> </span><span class="n">detected</span><span class="o">,</span><span class="w"> </span><span class="n">dropping</span><span class="w"> </span><span class="n">connection</span><span class="o">!</span>
 </code></pre></div>
 <h2>4 Steps to solve the Split-Brain</h2>
 <h3>Step 1</h3>
@@ -180,20 +180,20 @@ using this resource. Now switch the victim to Secondary role:</p>
 </code></pre></div>
 <h3>Step 2</h3>
 <p>Disconnect the resource if it’s in connection state <code>WFConnection</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">victim</span>#<span class="w"> </span><span class="nv">drbdadm</span><span class="w"> </span><span class="k">disconnect</span><span class="w"> </span><span class="nv">resource</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nv">victim</span>#<span class="w"> </span><span class="nv">drbdadm</span><span class="w"> </span><span class="k">disconnect</span><span class="w"> </span><span class="nv">resource</span>
 </code></pre></div>
 <h3>Step 3</h3>
 <p>Force discard of all modifications on the split brain victim:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">victim</span>#<span class="w"> </span><span class="nv">drbdadm</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="o">--</span><span class="nv">discard</span><span class="o">-</span><span class="nv">my</span><span class="o">-</span><span class="nv">data</span><span class="w"> </span><span class="k">connect</span><span class="w"> </span><span class="nv">resource</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nv">victim</span>#<span class="w"> </span><span class="nv">drbdadm</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="o">--</span><span class="nv">discard</span><span class="o">-</span><span class="nv">my</span><span class="o">-</span><span class="nv">data</span><span class="w"> </span><span class="k">connect</span><span class="w"> </span><span class="nv">resource</span>
 </code></pre></div>
 <p>for DRBD 8.4.x:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">victim</span>#<span class="w"> </span><span class="nv">drbdadm</span><span class="w"> </span><span class="k">connect</span><span class="w"> </span><span class="o">--</span><span class="nv">discard</span><span class="o">-</span><span class="nv">my</span><span class="o">-</span><span class="nv">data</span><span class="w"> </span><span class="nv">resource</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nv">victim</span>#<span class="w"> </span><span class="nv">drbdadm</span><span class="w"> </span><span class="k">connect</span><span class="w"> </span><span class="o">--</span><span class="nv">discard</span><span class="o">-</span><span class="nv">my</span><span class="o">-</span><span class="nv">data</span><span class="w"> </span><span class="nv">resource</span>
 </code></pre></div>
 <h3>Step 4</h3>
 <p>Resync will start automatically if the survivor was in
 <code>WFConnection</code> network state. If the split brain survivor is still in
 <code>Standalone</code> connection state, reconnect it:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">survivor</span>#<span class="w"> </span><span class="nv">drbdadm</span><span class="w"> </span><span class="k">connect</span><span class="w"> </span><span class="nv">resource</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nv">survivor</span>#<span class="w"> </span><span class="nv">drbdadm</span><span class="w"> </span><span class="k">connect</span><span class="w"> </span><span class="nv">resource</span>
 </code></pre></div>
 <p>At the latest now the resynchronization from the survivor
 (<code>SyncSource</code>) to the victim (<code>SyncTarget</code>) starts immediately. There
@@ -231,7 +231,7 @@ Identifiers (GIs).</p>
 
 <footer>
 <p>
-  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+  &copy; 2023  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
 </p>
 <p>
 Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme

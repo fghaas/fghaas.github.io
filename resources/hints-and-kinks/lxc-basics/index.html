@@ -205,18 +205,18 @@ some of the most important ones:</p>
 <p>For example, this is the “container specific configuration” section in
 <code>~/.share/lxc/focal/config</code>, the configuration for my current base
 container running Ubuntu Focal:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Container specific configuration</span><span class="w"></span>
-<span class="na">lxc.include</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/etc/lxc/default.conf</span><span class="w"></span>
-<span class="na">lxc.idmap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">u 0 100000 1000</span><span class="w"></span>
-<span class="na">lxc.idmap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">g 0 100000 1000</span><span class="w"></span>
-<span class="na">lxc.idmap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">u 1000 1000 1</span><span class="w"></span>
-<span class="na">lxc.idmap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">g 1000 1000 1</span><span class="w"></span>
-<span class="na">lxc.idmap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">u 1001 101001 64535</span><span class="w"></span>
-<span class="na">lxc.idmap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">g 1001 101001 64535</span><span class="w"></span>
-<span class="na">lxc.mount.auto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">proc sys cgroup</span><span class="w"></span>
-<span class="na">lxc.rootfs.path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">btrfs:/home/florian/.local/share/lxc/focal/rootfs</span><span class="w"></span>
-<span class="na">lxc.uts.name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">focal</span><span class="w"></span>
-<span class="na">lxc.mount.entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/home home none bind,optional 0 0</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Container specific configuration</span>
+<span class="na">lxc.include</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/etc/lxc/default.conf</span>
+<span class="na">lxc.idmap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">u 0 100000 1000</span>
+<span class="na">lxc.idmap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">g 0 100000 1000</span>
+<span class="na">lxc.idmap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">u 1000 1000 1</span>
+<span class="na">lxc.idmap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">g 1000 1000 1</span>
+<span class="na">lxc.idmap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">u 1001 101001 64535</span>
+<span class="na">lxc.idmap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">g 1001 101001 64535</span>
+<span class="na">lxc.mount.auto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">proc sys cgroup</span>
+<span class="na">lxc.rootfs.path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">btrfs:/home/florian/.local/share/lxc/focal/rootfs</span>
+<span class="na">lxc.uts.name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">focal</span>
+<span class="na">lxc.mount.entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/home home none bind,optional 0 0</span>
 </code></pre></div>
 <p>Of this, perhaps the <code>lxc.idmap</code> settings merit a bit of extra
 explanation:</p>
@@ -267,7 +267,7 @@ desktop GUI. More on that in the next installment of the series.</p>
 
 <footer>
 <p>
-  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+  &copy; 2023  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
 </p>
 <p>
 Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme

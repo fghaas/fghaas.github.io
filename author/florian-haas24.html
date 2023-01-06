@@ -128,6 +128,27 @@ rel="me"           href="https://mastodon.social/@xahteiwi"
 
 <article>
   <header>
+    <h2><a href="../resources/hints-and-kinks/solid-state-drives-and-ceph-osd-journals/#solid-state-drives-and-ceph-osd-journals">Solid-state drives and Ceph OSD journals</a></h2>
+    <p>
+      Posted on Sun 13 January 2013 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
+
+          &#8226; Tagged with
+              <a href="../tag/ceph.html">Ceph</a>,              <a href="../tag/performance.html">Performance</a>
+        &#8226; 4 min read
+    </p>
+  </header>
+  <div>
+      <div><p>Considerations for running Ceph OSD journals on SSDs.</p></div>
+        <br>
+        <a class="btn"
+           href="../resources/hints-and-kinks/solid-state-drives-and-ceph-osd-journals/#solid-state-drives-and-ceph-osd-journals">
+          Continue reading
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="../resources/hints-and-kinks/mysqlgalera-pacemaker-adding-mysqlgalera-resources-pacemaker/#mysqlgalera-pacemaker-adding-mysqlgalera-resources-pacemaker">Adding MySQL/Galera resources to Pacemaker</a></h2>
     <p>
       Posted on Tue 04 December 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
@@ -166,10 +187,10 @@ Pacemaker cluster configuration.</p>
       <div><p>In order to bootstrap your Galera cluster, manually bring up the
 cluster IP address on the desired interface. In this example, we’ll
 use 192.168.122.99 and eth1:</p>
-<div class="highlight"><pre><span></span><code>ip address add <span class="m">192</span>.168.122.99/24 dev eth1 label eth1:galera
+<div class="highlight"><pre><span></span><code>ip<span class="w"> </span>address<span class="w"> </span>add<span class="w"> </span><span class="m">192</span>.168.122.99/24<span class="w"> </span>dev<span class="w"> </span>eth1<span class="w"> </span>label<span class="w"> </span>eth1:galera
 </code></pre></div>
 <p>And initialize the Galera cluster:</p>
-<div class="highlight"><pre><span></span><code>mysqld --wsrep_cluster_address …</code></pre></div></div>
+<div class="highlight"><pre><span></span><code>mysqld<span class="w"> </span>--wsrep_cluster_address …</code></pre></div></div>
         <br>
         <a class="btn"
            href="../resources/hints-and-kinks/mysqlgalera-pacemaker-bootstrapping-galera-cluster/#mysqlgalera-pacemaker-bootstrapping-galera-cluster">
@@ -225,31 +246,6 @@ use them without interruption. In the example below, <code>alice</code> has …<
           Continue reading
         </a>
   </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="../resources/hints-and-kinks/mysqlgalera-pacemaker-high-availability-clusters/#mysqlgalera-pacemaker-high-availability-clusters">MySQL/Galera in Pacemaker High Availability Clusters</a></h2>
-    <p>
-      Posted on Tue 04 December 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
-
-          &#8226; Tagged with
-              <a href="../tag/galera.html">Galera</a>,              <a href="../tag/mysql.html">MySQL</a>,              <a href="../tag/pacemaker.html">Pacemaker</a>
-        &#8226; 2 min read
-    </p>
-  </header>
-  <div>
-      <div><p>In this walkthrough, you will create a Pacemaker managed MySQL/Galera
-cluster. It assumes that you are running on a Debian 6.0 (squeeze)
-box, but the concepts should be equally applicable to other platforms
-with minimal modifications.</p>
-<p>It also assumes that your Galera cluster will consist of three nodes …</p></div>
-        <br>
-        <a class="btn"
-           href="../resources/hints-and-kinks/mysqlgalera-pacemaker-high-availability-clusters/#mysqlgalera-pacemaker-high-availability-clusters">
-          Continue reading
-        </a>
-  </div>
 </article>
 
   <div class="pagination">
@@ -265,7 +261,7 @@ with minimal modifications.</p>
 
 <footer>
 <p>
-  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+  &copy; 2023  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
 </p>
 <p>
 Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme

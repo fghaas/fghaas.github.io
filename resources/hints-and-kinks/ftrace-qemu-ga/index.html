@@ -247,30 +247,30 @@ functionality</a>.</p>
 <p>So the first thing you’ll tell ftrace, in your guest VM, is the
 process for which you’ll want to do function tracing. In our case,
 that’s your guest’s <code>qemu-ga</code>. So, you can do:</p>
-<div class="highlight"><pre><span></span><code>pidof qemu-ga &gt; /sys/kernel/debug/tracing/set_ftrace_pid
+<div class="highlight"><pre><span></span><code>pidof<span class="w"> </span>qemu-ga<span class="w"> </span>&gt;<span class="w"> </span>/sys/kernel/debug/tracing/set_ftrace_pid
 </code></pre></div>
 <p>Then, you’ll want to instruct <code>ftrace</code> to trace kernel function calls:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s2">"function"</span> &gt; /sys/kernel/debug/tracing/current_tracer
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">"function"</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/kernel/debug/tracing/current_tracer
 </code></pre></div>
 <p>And, you’ll want to make sure that we don’t trace only function calls
 from <code>qemu-ga</code> itself, but also from its child processes:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s2">"function-fork"</span> &gt; /sys/kernel/debug/tracing/trace_options
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">"function-fork"</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/kernel/debug/tracing/trace_options
 </code></pre></div>
 <h2>Let’s see what’s happening!</h2>
 <p>Now you have a guest that’s properly instrumented for tracing kernel
 function calls that originate with <code>qemu-ga</code>. So now, go ahead and
 take a snapshot. On OpenStack Nova, you’d do that with:</p>
-<div class="highlight"><pre><span></span><code>openstack server image create --name &lt;image-name&gt; &lt;instance-name&gt;
+<div class="highlight"><pre><span></span><code>openstack<span class="w"> </span>server<span class="w"> </span>image<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>&lt;image-name&gt;<span class="w"> </span>&lt;instance-name&gt;
 </code></pre></div>
 <p>Then, shell back into your guest, and interrogate your trace for
 <code>ioctl</code> calls:</p>
-<div class="highlight"><pre><span></span><code>grep -E <span class="s1">'(freeze|thaw)_super.*ioctl'</span> /sys/kernel/debug/tracing/trace
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">'(freeze|thaw)_super.*ioctl'</span><span class="w"> </span>/sys/kernel/debug/tracing/trace
 </code></pre></div>
 <p>And voilà:</p>
-<div class="highlight"><pre><span></span><code>         <span class="n">qemu</span><span class="o">-</span><span class="n">ga</span><span class="m">-14574</span> <span class="p">[</span><span class="m">001</span><span class="p">]</span> <span class="n">....</span>   <span class="m">264.059109</span><span class="o">:</span> <span class="n">freeze_super</span> <span class="o">&lt;-</span><span class="n">do_vfs_ioctl</span>
-         <span class="n">qemu</span><span class="o">-</span><span class="n">ga</span><span class="m">-14574</span> <span class="p">[</span><span class="m">001</span><span class="p">]</span> <span class="n">....</span>   <span class="m">265.837955</span><span class="o">:</span> <span class="n">thaw_super</span> <span class="o">&lt;-</span><span class="n">do_vfs_ioctl</span>
-         <span class="n">qemu</span><span class="o">-</span><span class="n">ga</span><span class="m">-14574</span> <span class="p">[</span><span class="m">001</span><span class="p">]</span> <span class="n">....</span>   <span class="m">265.855048</span><span class="o">:</span> <span class="n">thaw_super</span> <span class="o">&lt;-</span><span class="n">do_vfs_ioctl</span>
-         <span class="n">qemu</span><span class="o">-</span><span class="n">ga</span><span class="m">-14574</span> <span class="p">[</span><span class="m">001</span><span class="p">]</span> <span class="n">....</span>   <span class="m">265.855084</span><span class="o">:</span> <span class="n">thaw_super</span> <span class="o">&lt;-</span><span class="n">do_vfs_ioctl</span>
+<div class="highlight"><pre><span></span><code><span class="w">         </span><span class="n">qemu</span><span class="o">-</span><span class="n">ga</span><span class="m">-14574</span><span class="w"> </span><span class="p">[</span><span class="m">001</span><span class="p">]</span><span class="w"> </span><span class="n">....</span><span class="w">   </span><span class="m">264.059109</span><span class="o">:</span><span class="w"> </span><span class="n">freeze_super</span><span class="w"> </span><span class="o">&lt;-</span><span class="n">do_vfs_ioctl</span>
+<span class="w">         </span><span class="n">qemu</span><span class="o">-</span><span class="n">ga</span><span class="m">-14574</span><span class="w"> </span><span class="p">[</span><span class="m">001</span><span class="p">]</span><span class="w"> </span><span class="n">....</span><span class="w">   </span><span class="m">265.837955</span><span class="o">:</span><span class="w"> </span><span class="n">thaw_super</span><span class="w"> </span><span class="o">&lt;-</span><span class="n">do_vfs_ioctl</span>
+<span class="w">         </span><span class="n">qemu</span><span class="o">-</span><span class="n">ga</span><span class="m">-14574</span><span class="w"> </span><span class="p">[</span><span class="m">001</span><span class="p">]</span><span class="w"> </span><span class="n">....</span><span class="w">   </span><span class="m">265.855048</span><span class="o">:</span><span class="w"> </span><span class="n">thaw_super</span><span class="w"> </span><span class="o">&lt;-</span><span class="n">do_vfs_ioctl</span>
+<span class="w">         </span><span class="n">qemu</span><span class="o">-</span><span class="n">ga</span><span class="m">-14574</span><span class="w"> </span><span class="p">[</span><span class="m">001</span><span class="p">]</span><span class="w"> </span><span class="n">....</span><span class="w">   </span><span class="m">265.855084</span><span class="o">:</span><span class="w"> </span><span class="n">thaw_super</span><span class="w"> </span><span class="o">&lt;-</span><span class="n">do_vfs_ioctl</span>
 </code></pre></div>
 <p>So that’s the <code>FIFREEZE</code> ioctl that maps to <code>freeze_super()</code>, and the
 <code>FITHAW</code> ioctl that maps to <code>thaw_super()</code>. And that’s how you know that
@@ -305,7 +305,7 @@ see him! He is the primary author of the ftrace framework.</p>
 
 <footer>
 <p>
-  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+  &copy; 2023  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
 </p>
 <p>
 Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme

@@ -194,31 +194,31 @@ that the Loreo lens produces.</p>
 <span class="c1"># Set the border/divider width, in pixels</span>
 <span class="nv">BORDER</span><span class="o">=</span><span class="m">40</span>
 
-<span class="k">for</span> f <span class="k">in</span> *.JPG<span class="p">;</span> <span class="k">do</span>
-    <span class="c1"># Grab the file name, sans extension</span>
-    <span class="nv">name</span><span class="o">=</span><span class="si">${</span><span class="nv">f</span><span class="p">/.JPG/</span><span class="si">}</span>
+<span class="k">for</span><span class="w"> </span>f<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.JPG<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="c1"># Grab the file name, sans extension</span>
+<span class="w">    </span><span class="nv">name</span><span class="o">=</span><span class="si">${</span><span class="nv">f</span><span class="p">/.JPG/</span><span class="si">}</span>
 
-    <span class="c1"># If the cross-view stereogram already exists, </span>
-    <span class="c1"># skip to the next original image</span>
-    <span class="k">if</span> <span class="o">[</span> -e stereo/<span class="si">${</span><span class="nv">name</span><span class="si">}</span>-cross.jpg <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-       <span class="k">continue</span>
-    <span class="k">fi</span>
+<span class="w">    </span><span class="c1"># If the cross-view stereogram already exists, </span>
+<span class="w">    </span><span class="c1"># skip to the next original image</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-e<span class="w"> </span>stereo/<span class="si">${</span><span class="nv">name</span><span class="si">}</span>-cross.jpg<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">       </span><span class="k">continue</span>
+<span class="w">    </span><span class="k">fi</span>
 
-    <span class="c1"># Convert the wall-eyed stereogram foo.JPG </span>
-    <span class="c1"># into foo-0.jpg (left) and foo-1.jpg (right)</span>
-    convert <span class="nv">$f</span> -crop <span class="m">50</span>%x100% stereo/<span class="s2">"</span><span class="si">${</span><span class="nv">f</span><span class="p">%.JPG</span><span class="si">}</span><span class="s2">"</span>.jpg
+<span class="w">    </span><span class="c1"># Convert the wall-eyed stereogram foo.JPG </span>
+<span class="w">    </span><span class="c1"># into foo-0.jpg (left) and foo-1.jpg (right)</span>
+<span class="w">    </span>convert<span class="w"> </span><span class="nv">$f</span><span class="w"> </span>-crop<span class="w"> </span><span class="m">50</span>%x100%<span class="w"> </span>stereo/<span class="s2">"</span><span class="si">${</span><span class="nv">f</span><span class="p">%.JPG</span><span class="si">}</span><span class="s2">"</span>.jpg
 
-    <span class="c1"># Create a cross-view image, with auto-alignment, </span>
-    <span class="c1"># that crops 3% off each side of the image, auto-aligns, </span>
-    <span class="c1"># and creates a border and divider</span>
-    StereoscoPy -x -A <span class="se">\</span>
-      --div <span class="nv">$BORDER</span> --border <span class="nv">$BORDER</span> <span class="se">\</span>
-      -C <span class="m">3</span>% <span class="m">0</span> <span class="m">3</span>% <span class="m">0</span> <span class="se">\</span>
-      stereo/<span class="si">${</span><span class="nv">name</span><span class="si">}</span>-0.jpg stereo/<span class="si">${</span><span class="nv">name</span><span class="si">}</span>-1.jpg <span class="se">\</span>
-      stereo/<span class="si">${</span><span class="nv">name</span><span class="si">}</span>-cross.jpg
+<span class="w">    </span><span class="c1"># Create a cross-view image, with auto-alignment, </span>
+<span class="w">    </span><span class="c1"># that crops 3% off each side of the image, auto-aligns, </span>
+<span class="w">    </span><span class="c1"># and creates a border and divider</span>
+<span class="w">    </span>StereoscoPy<span class="w"> </span>-x<span class="w"> </span>-A<span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>--div<span class="w"> </span><span class="nv">$BORDER</span><span class="w"> </span>--border<span class="w"> </span><span class="nv">$BORDER</span><span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>-C<span class="w"> </span><span class="m">3</span>%<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">3</span>%<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>stereo/<span class="si">${</span><span class="nv">name</span><span class="si">}</span>-0.jpg<span class="w"> </span>stereo/<span class="si">${</span><span class="nv">name</span><span class="si">}</span>-1.jpg<span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>stereo/<span class="si">${</span><span class="nv">name</span><span class="si">}</span>-cross.jpg
 
-    <span class="c1"># Remove the intermediate images</span>
-    rm stereo/<span class="si">${</span><span class="nv">name</span><span class="si">}</span>-0.jpg stereo/<span class="si">${</span><span class="nv">name</span><span class="si">}</span>-1.jpg
+<span class="w">    </span><span class="c1"># Remove the intermediate images</span>
+<span class="w">    </span>rm<span class="w"> </span>stereo/<span class="si">${</span><span class="nv">name</span><span class="si">}</span>-0.jpg<span class="w"> </span>stereo/<span class="si">${</span><span class="nv">name</span><span class="si">}</span>-1.jpg
 <span class="k">done</span>
 </code></pre></div>
 <p>Maybe I’ll eventually get round to submitting a patch to StereoscoPy
@@ -240,7 +240,7 @@ for now this works okay for me.</p>
 
 <footer>
 <p>
-  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+  &copy; 2023  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
 </p>
 <p>
 Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme

@@ -128,6 +128,33 @@ rel="me"           href="https://mastodon.social/@xahteiwi"
 
 <article>
   <header>
+    <h2><a href="../resources/hints-and-kinks/removing-buckets-in-radosgw-and-their-contents/#removing-buckets-in-radosgw-and-their-contents">Removing buckets in radosgw (and their contents)</a></h2>
+    <p>
+      Posted on Wed 23 December 2015 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
+
+          &#8226; Tagged with
+              <a href="../tag/ceph.html">Ceph</a>
+        &#8226; 1 min read
+    </p>
+  </header>
+  <div>
+      <div><p>Every once in a while you’ll want to remove a bucket in radosgw,
+including all the objects contained in that bucket.</p>
+<p>Now you might use a utility like <a href="http://s3tools.org/s3cmd"><code>s3cmd</code></a>
+for that purpose:</p>
+<div class="highlight"><pre><span></span><code>s3cmd rb --recursive s3://mybucket
+</code></pre></div>
+<p>The advantage to this approach is that your users can do it …</p></div>
+        <br>
+        <a class="btn"
+           href="../resources/hints-and-kinks/removing-buckets-in-radosgw-and-their-contents/#removing-buckets-in-radosgw-and-their-contents">
+          Continue reading
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="../resources/hints-and-kinks/ubuntu-openstack-juju-4-nodes/#ubuntu-openstack-juju-4-nodes">A minimal Ubuntu OpenStack Juju configuration in just four nodes</a></h2>
     <p>
       Posted on Wed 23 December 2015 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
@@ -220,33 +247,6 @@ pretty painful.</p>
           Continue reading
         </a>
   </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="../resources/hints-and-kinks/unrecoverable-unfound-objects-ceph-067-and-earlier/#unrecoverable-unfound-objects-ceph-067-and-earlier">Unrecoverable unfound objects in Ceph 0.67 and earlier</a></h2>
-    <p>
-      Posted on Tue 28 January 2014 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
-
-          &#8226; Tagged with
-              <a href="../tag/ceph.html">Ceph</a>
-        &#8226; 3 min read
-    </p>
-  </header>
-  <div>
-      <div><p>As <a href="http://ceph.com/">Ceph</a> author <a href="https://twitter.com/Liewegas">Sage
-Weil</a> points out frequently, distributed
-storage solutions for all their goodness <a href="http://youtu.be/JfRqpdgoiRQ?t=36m20s">have a “dirty little
-secret”</a>: No matter just how
-redundant and reliable they are by design, a bug in the storage
-software itself can be a real issue.</p>
-<p>And occasionally, the bug doesn’t have …</p></div>
-        <br>
-        <a class="btn"
-           href="../resources/hints-and-kinks/unrecoverable-unfound-objects-ceph-067-and-earlier/#unrecoverable-unfound-objects-ceph-067-and-earlier">
-          Continue reading
-        </a>
-  </div>
 </article>
 
   <div class="pagination">
@@ -262,7 +262,7 @@ software itself can be a real issue.</p>
 
 <footer>
 <p>
-  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+  &copy; 2023  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
 </p>
 <p>
 Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme

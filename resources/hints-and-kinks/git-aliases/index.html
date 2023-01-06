@@ -1,0 +1,264 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index,follow" />
+
+
+    <link rel="stylesheet" type="text/css" href="../../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../../theme/pygments/github.min.css">
+
+    <link rel="stylesheet" 
+    href="../../../theme/tipuesearch/tipuesearch.min.css" />
+
+
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/solid.css">
+
+  <link rel="stylesheet" type="text/css" href="/css/override.css">
+
+
+
+  <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+  <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+<script defer data-domain="xahteiwi.eu" src="https://plausible.io/js/plausible.js"></script>
+
+ 
+
+<meta name="author" content="Florian Haas" />
+<meta name="description" content="I keep a few aliases in my ~/.gitconfig that you might find useful, too." />
+<meta name="keywords" content="Git">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="Handy Git aliases"/>
+  <meta property="og:description" content="I keep a few aliases in my ~/.gitconfig that you might find useful, too."/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../../resources/hints-and-kinks/git-aliases/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2023-01-06 18:00:00+00:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../../author/florian-haas.html">
+  <meta property="article:section" content="hints-and-kinks"/>
+  <meta property="article:tag" content="Git"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; Handy Git aliases</title>
+
+
+</head>
+<body >
+
+<aside>
+  <div>
+    <a href="../../../">
+      <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+    </a>
+
+    <h1>
+      <a href="../../../"></a>
+    </h1>
+
+
+    <form class="navbar-search" action="../../../search.html" role="search">
+      <input type="text" name="q" id="tipue_search_input" placeholder="Search...">
+    </form>
+
+
+    <ul class="social">
+      <li>
+        <a class="sc-mastodon"
+rel="me"           href="https://mastodon.social/@xahteiwi"
+           target="_blank">
+          <i class="fa-brands fa-mastodon"></i>
+        </a>
+      </li>
+      <li>
+        <a class="sc-linkedin"
+           href="https://www.linkedin.com/in/fghaas"
+           target="_blank">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="sc-github"
+           href="https://github.com/fghaas"
+           target="_blank">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</aside>
+  <main>
+
+<nav>
+  <a href="../../../">Home</a>
+
+  <a href="/category/hints-and-kinks.html">Tech</a>
+  <a href="/category/presentations.html">Talks</a>
+  <a href="/category/blog.html">Thoughts</a>
+  <a href="">​</a>
+  <a href="/about/">About</a>
+  <a href="/comments/">Comments</a>
+  <a href="/legal/">Legal</a>
+  <a href="/privacy/">Privacy</a>
+  <a href="">​</a>
+  <a href="/categories.html">Categories</a>
+  <a href="/tags.html">Tags</a>
+  <a href="">​</a>
+
+  <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+  <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+</nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="git-aliases">Handy Git aliases</h1>
+    <p>
+      Posted on Fri 06 January 2023 in <a href="../../../category/hints-and-kinks.html">hints-and-kinks</a>
+
+        &#8226; 2 min read
+    </p>
+  </header>
+
+
+  <div>
+    <p>I use Git on a practically daily basis, and although it comes with
+just about everything including the proverbial kitchen sink, there are
+a few bits of functionality that I only <em>wish</em> it had. Luckily, Git’s
+functionality is almost indefinitely extensible via the use of
+aliases.</p>
+<p>So, here are some that I define in my <code>~/.gitconfig</code> file, with a
+brief explanation of what they’re good for:</p>
+<h2>List branches by their date of last modification</h2>
+<div class="highlight"><pre><span></span><code><span class="k">[alias]</span>
+<span class="w">  </span><span class="na">recent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\"</span>
+</code></pre></div>
+<p>I frequently have a pretty large number of topic branches that I work
+on, plus ones that I pull in from other people’s remotes for local
+review. So it’s helpful to know which branches in my checkout were
+most recently updated, and I can run <code>git recent</code> to do that.</p>
+<h2>Delete old topic branches that have been merged</h2>
+<div class="highlight"><pre><span></span><code><span class="k">[alias]</span>
+<span class="w">  </span><span class="na">delete-merged-branches</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">!git branch --merged | grep -Ev '(main|master)' | xargs -prn1 git branch -d</span>
+</code></pre></div>
+<p>I create a topic branch for everything that needs to be reviewed and
+merged to <code>main</code> at some point. That means it’s not unheard of that I
+create dozens of them each month, and they quickly accumulate. If I
+did not regularly prune old topic branches, my Git checkouts would
+become unmanageable pretty quickly.</p>
+<p>So, I use my <code>git delete-merged-branches</code> command to remove those
+local branches that are fully merged to <code>main</code>.</p>
+<h2>Find the origin of a branch point</h2>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="s s-Atom">alias</span><span class="p">]</span>
+    <span class="s s-Atom">oldest</span><span class="o">-</span><span class="s s-Atom">ancestor</span> <span class="o">=</span> <span class="p">!</span><span class="s s-Atom">bash</span> <span class="o">-</span><span class="s s-Atom">c</span> <span class="s s-Atom">'diff -u &lt;(git rev-list --first-parent \"${1:-main}\") &lt;(git rev-list --first-parent \"${2:-HEAD}\") | sed -ne \"s/^ //p\" | head -1'</span> <span class="o">-</span>
+</code></pre></div>
+<p>Sometimes I create a topic branch off <code>main</code>, then add oodles of
+commits on it. At the same time, more commits land on <code>main</code>, and
+eventually I forget which commit I based my branch on.</p>
+<p>Then, I can use <code>git oldest-ancestor</code> to retrace my branch point,
+like so:</p>
+<ul>
+<li><code>git oldest-ancestor foo bar</code>: find out at which commit <code>bar</code>
+  branched off <code>foo</code>.</li>
+<li><code>git oldest-ancestor foo</code>: find out at which commit the currently
+  checked-out branch branched off <code>foo</code>.</li>
+<li><code>git oldest-ancestor</code>: find out at which commit the currently
+  checked-out branch branched off <code>main</code>.</li>
+</ul>
+<blockquote>
+<p>I seem to recall I learned this trick from a Stack Overflow
+discussion, which I can’t find anymore. What I <em>have</em> found is a
+similar implementation from <a href="https://www.lee-dohm.com/">Lee Dohm</a>
+that is MIT licensed:
+<a href="https://github.com/lee-dohm/dotfiles/blob/main/bin/git-oldest-ancestor"><code>git-oldest-ancestor</code></a>.</p>
+</blockquote>
+<h2>Fix trailing whitespace</h2>
+<div class="highlight"><pre><span></span><code><span class="k">[alias]</span>
+<span class="w">  </span><span class="na">fixws</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">!git diff-index --check --cached HEAD -- | sed /^[+-]/d | sed -r s/:[0-9]+:.*// | uniq | xargs sed -e s/[[:space:]]*$// -i</span>
+</code></pre></div>
+<p>I usually want to avoid committing changes with extraneous
+whitespace, and if I enable the default <code>pre-commit</code> script that
+lives in a <code>.git/hooks</code> directory by dropping <code>.sample</code> off its
+filename, Git will even enforce this as a pre-commit rule.</p>
+<p>So what I do is this:</p>
+<ul>
+<li>I try <code>git commit</code>.</li>
+<li>Git complains about trailing whitespace.</li>
+<li>I run <code>git fixws</code>, and repeat my <code>git commit</code> command.</li>
+</ul>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../tag/git.html">Git</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+<footer>
+<p>
+  &copy; 2023  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p></footer>  </main>
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+</body>
+</html>

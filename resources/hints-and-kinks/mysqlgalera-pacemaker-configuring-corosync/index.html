@@ -152,81 +152,81 @@ file assumes that your cluster nodes have two network interfaces,
 using the 192.168.122.0/24 and 192.168.133.0/24 networks. You will
 need to adjust this to your own network configuration.</p>
 <p>Set the contents of <code>/etc/corosync/corosync.conf</code> as follows:</p>
-<div class="highlight"><pre><span></span><code><span class="n">compatibility</span><span class="o">:</span><span class="w"> </span><span class="n">whitetank</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">compatibility</span><span class="o">:</span><span class="w"> </span><span class="n">whitetank</span>
 
-<span class="n">totem</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">version</span><span class="o">:</span><span class="w"> </span><span class="mi">2</span><span class="w"></span>
-<span class="w">        </span><span class="n">secauth</span><span class="o">:</span><span class="w"> </span><span class="n">on</span><span class="w"></span>
-<span class="w">        </span><span class="n">threads</span><span class="o">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="w">        </span><span class="n">rrp_mode</span><span class="o">:</span><span class="w"> </span><span class="n">active</span><span class="w"></span>
-<span class="w">        </span><span class="n">token</span><span class="o">:</span><span class="w"> </span><span class="mi">10000</span><span class="w"></span>
-<span class="w">        </span><span class="kd">interface</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
-<span class="w">                </span><span class="n">ringnumber</span><span class="o">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="w">                </span><span class="n">bindnetaddr</span><span class="o">:</span><span class="w"> </span><span class="mf">192.168</span><span class="o">.</span><span class="mf">122.0</span><span class="w"></span>
-<span class="w">                </span><span class="n">mcastaddr</span><span class="o">:</span><span class="w"> </span><span class="mf">239.255</span><span class="o">.</span><span class="mf">42.0</span><span class="w"></span>
-<span class="w">                </span><span class="n">mcastport</span><span class="o">:</span><span class="w"> </span><span class="mi">5405</span><span class="w"></span>
-<span class="w">                </span><span class="n">ttl</span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="w">        </span><span class="o">}</span><span class="w"></span>
-<span class="w">        </span><span class="kd">interface</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
-<span class="w">                </span><span class="n">ringnumber</span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="w">                </span><span class="n">bindnetaddr</span><span class="o">:</span><span class="w"> </span><span class="mf">192.168</span><span class="o">.</span><span class="mf">133.0</span><span class="w"></span>
-<span class="w">                </span><span class="n">mcastaddr</span><span class="o">:</span><span class="w"> </span><span class="mf">239.255</span><span class="o">.</span><span class="mf">42.1</span><span class="w"></span>
-<span class="w">                </span><span class="n">mcastport</span><span class="o">:</span><span class="w"> </span><span class="mi">5405</span><span class="w"></span>
-<span class="w">                </span><span class="n">ttl</span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="w">        </span><span class="o">}</span><span class="w"></span>
-<span class="o">}</span><span class="w"></span>
+<span class="n">totem</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">version</span><span class="o">:</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">        </span><span class="n">secauth</span><span class="o">:</span><span class="w"> </span><span class="n">on</span>
+<span class="w">        </span><span class="n">threads</span><span class="o">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">        </span><span class="n">rrp_mode</span><span class="o">:</span><span class="w"> </span><span class="n">active</span>
+<span class="w">        </span><span class="n">token</span><span class="o">:</span><span class="w"> </span><span class="mi">10000</span>
+<span class="w">        </span><span class="kd">interface</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                </span><span class="n">ringnumber</span><span class="o">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">                </span><span class="n">bindnetaddr</span><span class="o">:</span><span class="w"> </span><span class="mf">192.168</span><span class="o">.</span><span class="mf">122.0</span>
+<span class="w">                </span><span class="n">mcastaddr</span><span class="o">:</span><span class="w"> </span><span class="mf">239.255</span><span class="o">.</span><span class="mf">42.0</span>
+<span class="w">                </span><span class="n">mcastport</span><span class="o">:</span><span class="w"> </span><span class="mi">5405</span>
+<span class="w">                </span><span class="n">ttl</span><span class="o">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">        </span><span class="kd">interface</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                </span><span class="n">ringnumber</span><span class="o">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">                </span><span class="n">bindnetaddr</span><span class="o">:</span><span class="w"> </span><span class="mf">192.168</span><span class="o">.</span><span class="mf">133.0</span>
+<span class="w">                </span><span class="n">mcastaddr</span><span class="o">:</span><span class="w"> </span><span class="mf">239.255</span><span class="o">.</span><span class="mf">42.1</span>
+<span class="w">                </span><span class="n">mcastport</span><span class="o">:</span><span class="w"> </span><span class="mi">5405</span>
+<span class="w">                </span><span class="n">ttl</span><span class="o">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="o">}</span>
 
-<span class="n">logging</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">fileline</span><span class="o">:</span><span class="w"> </span><span class="n">off</span><span class="w"></span>
-<span class="w">        </span><span class="n">to_stderr</span><span class="o">:</span><span class="w"> </span><span class="n">no</span><span class="w"></span>
-<span class="w">        </span><span class="n">to_logfile</span><span class="o">:</span><span class="w"> </span><span class="n">no</span><span class="w"></span>
-<span class="w">        </span><span class="n">to_syslog</span><span class="o">:</span><span class="w"> </span><span class="n">yes</span><span class="w"></span>
-<span class="w">        </span><span class="n">debug</span><span class="o">:</span><span class="w"> </span><span class="n">off</span><span class="w"></span>
-<span class="w">        </span><span class="n">timestamp</span><span class="o">:</span><span class="w"> </span><span class="n">on</span><span class="w"></span>
-<span class="w">        </span><span class="n">logger_subsys</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
-<span class="w">                </span><span class="n">subsys</span><span class="o">:</span><span class="w"> </span><span class="n">AMF</span><span class="w"></span>
-<span class="w">                </span><span class="n">debug</span><span class="o">:</span><span class="w"> </span><span class="n">off</span><span class="w"></span>
-<span class="w">        </span><span class="o">}</span><span class="w"></span>
-<span class="o">}</span><span class="w"></span>
+<span class="n">logging</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">fileline</span><span class="o">:</span><span class="w"> </span><span class="n">off</span>
+<span class="w">        </span><span class="n">to_stderr</span><span class="o">:</span><span class="w"> </span><span class="n">no</span>
+<span class="w">        </span><span class="n">to_logfile</span><span class="o">:</span><span class="w"> </span><span class="n">no</span>
+<span class="w">        </span><span class="n">to_syslog</span><span class="o">:</span><span class="w"> </span><span class="n">yes</span>
+<span class="w">        </span><span class="n">debug</span><span class="o">:</span><span class="w"> </span><span class="n">off</span>
+<span class="w">        </span><span class="n">timestamp</span><span class="o">:</span><span class="w"> </span><span class="n">on</span>
+<span class="w">        </span><span class="n">logger_subsys</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                </span><span class="n">subsys</span><span class="o">:</span><span class="w"> </span><span class="n">AMF</span>
+<span class="w">                </span><span class="n">debug</span><span class="o">:</span><span class="w"> </span><span class="n">off</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="o">}</span>
 </code></pre></div>
 <p>Also, create an authkey file for node authentication:</p>
-<div class="highlight"><pre><span></span><code>dd <span class="k">if</span><span class="o">=</span>/dev/urandom <span class="nv">of</span><span class="o">=</span>/etc/corosync/authkey <span class="nv">bs</span><span class="o">=</span><span class="m">128</span> <span class="nv">count</span><span class="o">=</span><span class="m">1</span>
-chmod <span class="m">0400</span> /etc/corosync/authkey
+<div class="highlight"><pre><span></span><code>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>/dev/urandom<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/etc/corosync/authkey<span class="w"> </span><span class="nv">bs</span><span class="o">=</span><span class="m">128</span><span class="w"> </span><span class="nv">count</span><span class="o">=</span><span class="m">1</span>
+chmod<span class="w"> </span><span class="m">0400</span><span class="w"> </span>/etc/corosync/authkey
 </code></pre></div>
 <p>And create <code>/etc/corosync/service.d/pacemaker</code> with the following content:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">service</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">pacemaker</span><span class="w"></span>
-<span class="w">    </span><span class="n">ver</span><span class="p">;</span><span class="w"> </span><span class="err">1</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nt">service</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">pacemaker</span>
+<span class="w">    </span><span class="n">ver</span><span class="p">;</span><span class="w"> </span><span class="err">1</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>Finally, distribute the configuration across your cluster:</p>
-<div class="highlight"><pre><span></span><code><span class="k">for</span> n <span class="k">in</span> bob charlie<span class="p">;</span> <span class="k">do</span>
-  rsync -av /etc/corosync/* <span class="nv">$n</span>:/etc/corosync
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span>n<span class="w"> </span><span class="k">in</span><span class="w"> </span>bob<span class="w"> </span>charlie<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span>rsync<span class="w"> </span>-av<span class="w"> </span>/etc/corosync/*<span class="w"> </span><span class="nv">$n</span>:/etc/corosync
 <span class="k">done</span>
 </code></pre></div>
 <p>And start Corosync on all cluster nodes:</p>
-<div class="highlight"><pre><span></span><code>service corosync start
+<div class="highlight"><pre><span></span><code>service<span class="w"> </span>corosync<span class="w"> </span>start
 </code></pre></div>
 <p>Once Corosync has started on all nodes, you should be able to check its status with the <code>corosync-cfgtool</code> and <code>corosync-objctl</code> commands:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># corosync-cfgtool -s</span>
-Printing ring status.
-Local node ID <span class="m">1870309568</span>
-RING ID <span class="m">0</span>
-    <span class="nv">id</span>  <span class="o">=</span> <span class="m">192</span>.168.122.111
-    <span class="nv">status</span>  <span class="o">=</span> ring <span class="m">0</span> active with no faults
-RING ID <span class="m">1</span>
-    <span class="nv">id</span>  <span class="o">=</span> <span class="m">192</span>.168.133.111
-    <span class="nv">status</span>  <span class="o">=</span> ring <span class="m">1</span> active with no faults
+Printing<span class="w"> </span>ring<span class="w"> </span>status.
+Local<span class="w"> </span>node<span class="w"> </span>ID<span class="w"> </span><span class="m">1870309568</span>
+RING<span class="w"> </span>ID<span class="w"> </span><span class="m">0</span>
+<span class="w">    </span><span class="nv">id</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="m">192</span>.168.122.111
+<span class="w">    </span><span class="nv">status</span><span class="w">  </span><span class="o">=</span><span class="w"> </span>ring<span class="w"> </span><span class="m">0</span><span class="w"> </span>active<span class="w"> </span>with<span class="w"> </span>no<span class="w"> </span>faults
+RING<span class="w"> </span>ID<span class="w"> </span><span class="m">1</span>
+<span class="w">    </span><span class="nv">id</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="m">192</span>.168.133.111
+<span class="w">    </span><span class="nv">status</span><span class="w">  </span><span class="o">=</span><span class="w"> </span>ring<span class="w"> </span><span class="m">1</span><span class="w"> </span>active<span class="w"> </span>with<span class="w"> </span>no<span class="w"> </span>faults
 </code></pre></div>
 <p>Both rings should be in the <code>active with no faults</code> state.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># corosync-objctl runtime.totem.pg.mrp.srp.members</span>
-runtime.totem.pg.mrp.srp.1870309568.ip<span class="o">=</span>r<span class="o">(</span><span class="m">0</span><span class="o">)</span> ip<span class="o">(</span><span class="m">192</span>.168.122.111<span class="o">)</span> r<span class="o">(</span><span class="m">1</span><span class="o">)</span> ip<span class="o">(</span><span class="m">192</span>.168.133.111<span class="o">)</span> 
+runtime.totem.pg.mrp.srp.1870309568.ip<span class="o">=</span>r<span class="o">(</span><span class="m">0</span><span class="o">)</span><span class="w"> </span>ip<span class="o">(</span><span class="m">192</span>.168.122.111<span class="o">)</span><span class="w"> </span>r<span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w"> </span>ip<span class="o">(</span><span class="m">192</span>.168.133.111<span class="o">)</span><span class="w"> </span>
 runtime.totem.pg.mrp.srp.1870309568.join_count<span class="o">=</span><span class="m">1</span>
 runtime.totem.pg.mrp.srp.1870309568.status<span class="o">=</span>joined
-runtime.totem.pg.mrp.srp.1887086784.ip<span class="o">=</span>r<span class="o">(</span><span class="m">0</span><span class="o">)</span> ip<span class="o">(</span><span class="m">192</span>.168.122.112<span class="o">)</span> r<span class="o">(</span><span class="m">1</span><span class="o">)</span> ip<span class="o">(</span><span class="m">192</span>.168.133.112<span class="o">)</span> 
+runtime.totem.pg.mrp.srp.1887086784.ip<span class="o">=</span>r<span class="o">(</span><span class="m">0</span><span class="o">)</span><span class="w"> </span>ip<span class="o">(</span><span class="m">192</span>.168.122.112<span class="o">)</span><span class="w"> </span>r<span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w"> </span>ip<span class="o">(</span><span class="m">192</span>.168.133.112<span class="o">)</span><span class="w"> </span>
 runtime.totem.pg.mrp.srp.1887086784.join_count<span class="o">=</span><span class="m">1</span>
 runtime.totem.pg.mrp.srp.1887086784.status<span class="o">=</span>joined
-runtime.totem.pg.mrp.srp.1903864000.ip<span class="o">=</span>r<span class="o">(</span><span class="m">0</span><span class="o">)</span> ip<span class="o">(</span><span class="m">192</span>.168.122.113<span class="o">)</span> r<span class="o">(</span><span class="m">1</span><span class="o">)</span> ip<span class="o">(</span><span class="m">192</span>.168.133.113<span class="o">)</span> 
+runtime.totem.pg.mrp.srp.1903864000.ip<span class="o">=</span>r<span class="o">(</span><span class="m">0</span><span class="o">)</span><span class="w"> </span>ip<span class="o">(</span><span class="m">192</span>.168.122.113<span class="o">)</span><span class="w"> </span>r<span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w"> </span>ip<span class="o">(</span><span class="m">192</span>.168.133.113<span class="o">)</span><span class="w"> </span>
 runtime.totem.pg.mrp.srp.1903864000.join_count<span class="o">=</span><span class="m">1</span>
 runtime.totem.pg.mrp.srp.1903864000.status<span class="o">=</span>joined
 </code></pre></div>
@@ -269,7 +269,7 @@ interfaces, and their status should be <code>joined</code>.</p>
 
 <footer>
 <p>
-  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+  &copy; 2023  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
 </p>
 <p>
 Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme

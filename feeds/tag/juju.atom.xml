@@ -73,51 +73,51 @@ nodes as you want.&lt;/p&gt;
 &lt;h2&gt;Juju configuration&lt;/h2&gt;
 &lt;p&gt;Consider the following Juju configuration YAML example, which you
 might put into your home directory as &lt;code&gt;juju-config.yaml&lt;/code&gt;.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;keystone&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;openstack-origin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'cloud:trusty-liberty'&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;admin-password&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'my&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;very&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;secret&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;password'&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="nt"&gt;nova-cloud-controller&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;openstack-origin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'cloud:trusty-liberty'&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;network-manager&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Neutron&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="nt"&gt;neutron-gateway&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;openstack-origin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'cloud:trusty-liberty'&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;ext-port&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;eth2&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;bridge-mappings&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'external:br-ex'&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;os-data-network&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;192.168.133.0/24&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;instance-mtu&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;1400&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="nt"&gt;neutron-api&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;openstack-origin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'cloud:trusty-liberty'&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;network-device-mtu&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;1400&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;# Always make sure you enable security groups&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;neutron-security-groups&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;true&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;overlay-network-type&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;vxlan&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="nt"&gt;rabbitmq-server&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="c1"&gt;# Cinder is deployed in two parts: one for the API and scheduler&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="c1"&gt;# (which can live in a container), one for the volume service (which&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="c1"&gt;# cannot, at least not for the LVM/iSCSI backend)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="nt"&gt;cinder-api&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;openstack-origin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'cloud:trusty-liberty'&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;enabled-services&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;api,scheduler&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="nt"&gt;cinder-volume&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;openstack-origin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'cloud:trusty-liberty'&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;enabled-services&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;volume&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;# Adjust this to match the block device on your volume host&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;block-device&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;vdb&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="nt"&gt;glance&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;openstack-origin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'cloud:trusty-liberty'&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="nt"&gt;heat&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;openstack-origin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'cloud:trusty-liberty'&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="nt"&gt;mysql&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="nt"&gt;openstack-dashboard&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;openstack-origin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'cloud:trusty-liberty'&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;webroot&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;/&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="nt"&gt;nova-compute&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;openstack-origin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'cloud:trusty-liberty'&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;manage-neutron-plugin-legacy-mode&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;false&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;# Change to qemu if in a nested cloud environment&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;virt-type&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;kvm&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="nt"&gt;neutron-openvswitch&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;os-data-network&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;192.168.133.0/24&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;keystone&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;openstack-origin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'cloud:trusty-liberty'&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;admin-password&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'my&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;very&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;secret&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;password'&lt;/span&gt;
+&lt;span class="nt"&gt;nova-cloud-controller&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;openstack-origin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'cloud:trusty-liberty'&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;network-manager&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Neutron&lt;/span&gt;
+&lt;span class="nt"&gt;neutron-gateway&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;openstack-origin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'cloud:trusty-liberty'&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;ext-port&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;eth2&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;bridge-mappings&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'external:br-ex'&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;os-data-network&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;192.168.133.0/24&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;instance-mtu&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;1400&lt;/span&gt;
+&lt;span class="nt"&gt;neutron-api&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;openstack-origin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'cloud:trusty-liberty'&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;network-device-mtu&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;1400&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;# Always make sure you enable security groups&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;neutron-security-groups&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;true&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;overlay-network-type&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;vxlan&lt;/span&gt;
+&lt;span class="nt"&gt;rabbitmq-server&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="c1"&gt;# Cinder is deployed in two parts: one for the API and scheduler&lt;/span&gt;
+&lt;span class="c1"&gt;# (which can live in a container), one for the volume service (which&lt;/span&gt;
+&lt;span class="c1"&gt;# cannot, at least not for the LVM/iSCSI backend)&lt;/span&gt;
+&lt;span class="nt"&gt;cinder-api&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;openstack-origin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'cloud:trusty-liberty'&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;enabled-services&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;api,scheduler&lt;/span&gt;
+&lt;span class="nt"&gt;cinder-volume&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;openstack-origin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'cloud:trusty-liberty'&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;enabled-services&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;volume&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;# Adjust this to match the block device on your volume host&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;block-device&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;vdb&lt;/span&gt;
+&lt;span class="nt"&gt;glance&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;openstack-origin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'cloud:trusty-liberty'&lt;/span&gt;
+&lt;span class="nt"&gt;heat&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;openstack-origin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'cloud:trusty-liberty'&lt;/span&gt;
+&lt;span class="nt"&gt;mysql&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="nt"&gt;openstack-dashboard&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;openstack-origin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'cloud:trusty-liberty'&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;webroot&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;/&lt;/span&gt;
+&lt;span class="nt"&gt;nova-compute&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;openstack-origin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'cloud:trusty-liberty'&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;manage-neutron-plugin-legacy-mode&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;false&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;# Change to qemu if in a nested cloud environment&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;virt-type&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;kvm&lt;/span&gt;
+&lt;span class="nt"&gt;neutron-openvswitch&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;os-data-network&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;192.168.133.0/24&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;Deployment&lt;/h2&gt;
 &lt;p&gt;Then, you can run the following shell script to deploy your control
@@ -128,64 +128,64 @@ subordinate charm, &lt;code&gt;neutron-openvswitch&lt;/code&gt;) to machine 2,
 
 &lt;span class="nv"&gt;CONFIG&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;~/juju-config.yaml
 
-juju deploy --config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt; mysql --to lxc:1
-juju deploy --config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt; rabbitmq-server --to lxc:1
+juju&lt;span class="w"&gt; &lt;/span&gt;deploy&lt;span class="w"&gt; &lt;/span&gt;--config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;mysql&lt;span class="w"&gt; &lt;/span&gt;--to&lt;span class="w"&gt; &lt;/span&gt;lxc:1
+juju&lt;span class="w"&gt; &lt;/span&gt;deploy&lt;span class="w"&gt; &lt;/span&gt;--config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;rabbitmq-server&lt;span class="w"&gt; &lt;/span&gt;--to&lt;span class="w"&gt; &lt;/span&gt;lxc:1
 
-sleep 120s
+sleep&lt;span class="w"&gt; &lt;/span&gt;120s
 
-juju deploy --config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt; keystone --to lxc:1
-juju add-relation keystone:shared-db mysql:shared-db
+juju&lt;span class="w"&gt; &lt;/span&gt;deploy&lt;span class="w"&gt; &lt;/span&gt;--config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;keystone&lt;span class="w"&gt; &lt;/span&gt;--to&lt;span class="w"&gt; &lt;/span&gt;lxc:1
+juju&lt;span class="w"&gt; &lt;/span&gt;add-relation&lt;span class="w"&gt; &lt;/span&gt;keystone:shared-db&lt;span class="w"&gt; &lt;/span&gt;mysql:shared-db
 
-juju deploy --config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt; glance --to lxc:1
-juju add-relation glance:identity-service keystone:identity-service
-juju add-relation glance:shared-db mysql:shared-db
+juju&lt;span class="w"&gt; &lt;/span&gt;deploy&lt;span class="w"&gt; &lt;/span&gt;--config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;glance&lt;span class="w"&gt; &lt;/span&gt;--to&lt;span class="w"&gt; &lt;/span&gt;lxc:1
+juju&lt;span class="w"&gt; &lt;/span&gt;add-relation&lt;span class="w"&gt; &lt;/span&gt;glance:identity-service&lt;span class="w"&gt; &lt;/span&gt;keystone:identity-service
+juju&lt;span class="w"&gt; &lt;/span&gt;add-relation&lt;span class="w"&gt; &lt;/span&gt;glance:shared-db&lt;span class="w"&gt; &lt;/span&gt;mysql:shared-db
 
-juju deploy --config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt; neutron-api --to lxc:1
-juju add-relation neutron-api:amqp rabbitmq-server:amqp
-juju add-relation neutron-api:identity-service keystone:identity-service
-juju add-relation neutron-api:shared-db mysql:shared-db
+juju&lt;span class="w"&gt; &lt;/span&gt;deploy&lt;span class="w"&gt; &lt;/span&gt;--config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;neutron-api&lt;span class="w"&gt; &lt;/span&gt;--to&lt;span class="w"&gt; &lt;/span&gt;lxc:1
+juju&lt;span class="w"&gt; &lt;/span&gt;add-relation&lt;span class="w"&gt; &lt;/span&gt;neutron-api:amqp&lt;span class="w"&gt; &lt;/span&gt;rabbitmq-server:amqp
+juju&lt;span class="w"&gt; &lt;/span&gt;add-relation&lt;span class="w"&gt; &lt;/span&gt;neutron-api:identity-service&lt;span class="w"&gt; &lt;/span&gt;keystone:identity-service
+juju&lt;span class="w"&gt; &lt;/span&gt;add-relation&lt;span class="w"&gt; &lt;/span&gt;neutron-api:shared-db&lt;span class="w"&gt; &lt;/span&gt;mysql:shared-db
 
-juju deploy --config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt; neutron-gateway --to &lt;span class="m"&gt;3&lt;/span&gt;
-juju add-relation neutron-gateway:amqp rabbitmq-server:amqp
-juju add-relation neutron-gateway:neutron-plugin-api neutron-api:neutron-plugin-api
-juju add-relation neutron-gateway:shared-db mysql:shared-db
+juju&lt;span class="w"&gt; &lt;/span&gt;deploy&lt;span class="w"&gt; &lt;/span&gt;--config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;neutron-gateway&lt;span class="w"&gt; &lt;/span&gt;--to&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;
+juju&lt;span class="w"&gt; &lt;/span&gt;add-relation&lt;span class="w"&gt; &lt;/span&gt;neutron-gateway:amqp&lt;span class="w"&gt; &lt;/span&gt;rabbitmq-server:amqp
+juju&lt;span class="w"&gt; &lt;/span&gt;add-relation&lt;span class="w"&gt; &lt;/span&gt;neutron-gateway:neutron-plugin-api&lt;span class="w"&gt; &lt;/span&gt;neutron-api:neutron-plugin-api
+juju&lt;span class="w"&gt; &lt;/span&gt;add-relation&lt;span class="w"&gt; &lt;/span&gt;neutron-gateway:shared-db&lt;span class="w"&gt; &lt;/span&gt;mysql:shared-db
 
-juju deploy --config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt; nova-cloud-controller --to lxc:1
-juju add-relation nova-cloud-controller:amqp rabbitmq-server:amqp
-juju add-relation nova-cloud-controller:identity-service keystone:identity-service
-juju add-relation nova-cloud-controller:image-service glance:image-service
-juju add-relation nova-cloud-controller:neutron-api neutron-api:neutron-api
-juju add-relation nova-cloud-controller:shared-db mysql:shared-db
+juju&lt;span class="w"&gt; &lt;/span&gt;deploy&lt;span class="w"&gt; &lt;/span&gt;--config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;nova-cloud-controller&lt;span class="w"&gt; &lt;/span&gt;--to&lt;span class="w"&gt; &lt;/span&gt;lxc:1
+juju&lt;span class="w"&gt; &lt;/span&gt;add-relation&lt;span class="w"&gt; &lt;/span&gt;nova-cloud-controller:amqp&lt;span class="w"&gt; &lt;/span&gt;rabbitmq-server:amqp
+juju&lt;span class="w"&gt; &lt;/span&gt;add-relation&lt;span class="w"&gt; &lt;/span&gt;nova-cloud-controller:identity-service&lt;span class="w"&gt; &lt;/span&gt;keystone:identity-service
+juju&lt;span class="w"&gt; &lt;/span&gt;add-relation&lt;span class="w"&gt; &lt;/span&gt;nova-cloud-controller:image-service&lt;span class="w"&gt; &lt;/span&gt;glance:image-service
+juju&lt;span class="w"&gt; &lt;/span&gt;add-relation&lt;span class="w"&gt; &lt;/span&gt;nova-cloud-controller:neutron-api&lt;span class="w"&gt; &lt;/span&gt;neutron-api:neutron-api
+juju&lt;span class="w"&gt; &lt;/span&gt;add-relation&lt;span class="w"&gt; &lt;/span&gt;nova-cloud-controller:shared-db&lt;span class="w"&gt; &lt;/span&gt;mysql:shared-db
 
-juju deploy --config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt; nova-compute --to &lt;span class="m"&gt;2&lt;/span&gt;
-juju add-relation nova-compute:amqp rabbitmq-server:amqp
-juju add-relation nova-compute:cloud-compute nova-cloud-controller:cloud-compute
-juju add-relation nova-compute:image-service glance:image-service
-juju add-relation nova-compute:shared-db mysql:shared-db
+juju&lt;span class="w"&gt; &lt;/span&gt;deploy&lt;span class="w"&gt; &lt;/span&gt;--config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;nova-compute&lt;span class="w"&gt; &lt;/span&gt;--to&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;
+juju&lt;span class="w"&gt; &lt;/span&gt;add-relation&lt;span class="w"&gt; &lt;/span&gt;nova-compute:amqp&lt;span class="w"&gt; &lt;/span&gt;rabbitmq-server:amqp
+juju&lt;span class="w"&gt; &lt;/span&gt;add-relation&lt;span class="w"&gt; &lt;/span&gt;nova-compute:cloud-compute&lt;span class="w"&gt; &lt;/span&gt;nova-cloud-controller:cloud-compute
+juju&lt;span class="w"&gt; &lt;/span&gt;add-relation&lt;span class="w"&gt; &lt;/span&gt;nova-compute:image-service&lt;span class="w"&gt; &lt;/span&gt;glance:image-service
+juju&lt;span class="w"&gt; &lt;/span&gt;add-relation&lt;span class="w"&gt; &lt;/span&gt;nova-compute:shared-db&lt;span class="w"&gt; &lt;/span&gt;mysql:shared-db
 
-juju deploy --config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt; neutron-openvswitch
-juju add-relation neutron-openvswitch:amqp rabbitmq-server:amqp
-juju add-relation neutron-openvswitch:neutron-plugin-api neutron-api:neutron-plugin-api
-juju add-relation neutron-openvswitch:neutron-plugin nova-compute:neutron-plugin 
-juju deploy --config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt; cinder cinder-api --to lxc:1
-juju add-relation cinder-api:amqp rabbitmq-server:amqp
-juju add-relation cinder-api:cinder-volume-service nova-cloud-controller:cinder-volume-service
-juju add-relation cinder-api:identity-service keystone:identity-service
-juju add-relation cinder-api:image-service glance:image-service
-juju add-relation cinder-api:shared-db mysql:shared-db
+juju&lt;span class="w"&gt; &lt;/span&gt;deploy&lt;span class="w"&gt; &lt;/span&gt;--config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;neutron-openvswitch
+juju&lt;span class="w"&gt; &lt;/span&gt;add-relation&lt;span class="w"&gt; &lt;/span&gt;neutron-openvswitch:amqp&lt;span class="w"&gt; &lt;/span&gt;rabbitmq-server:amqp
+juju&lt;span class="w"&gt; &lt;/span&gt;add-relation&lt;span class="w"&gt; &lt;/span&gt;neutron-openvswitch:neutron-plugin-api&lt;span class="w"&gt; &lt;/span&gt;neutron-api:neutron-plugin-api
+juju&lt;span class="w"&gt; &lt;/span&gt;add-relation&lt;span class="w"&gt; &lt;/span&gt;neutron-openvswitch:neutron-plugin&lt;span class="w"&gt; &lt;/span&gt;nova-compute:neutron-plugin&lt;span class="w"&gt; &lt;/span&gt;
+juju&lt;span class="w"&gt; &lt;/span&gt;deploy&lt;span class="w"&gt; &lt;/span&gt;--config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;cinder&lt;span class="w"&gt; &lt;/span&gt;cinder-api&lt;span class="w"&gt; &lt;/span&gt;--to&lt;span class="w"&gt; &lt;/span&gt;lxc:1
+juju&lt;span class="w"&gt; &lt;/span&gt;add-relation&lt;span class="w"&gt; &lt;/span&gt;cinder-api:amqp&lt;span class="w"&gt; &lt;/span&gt;rabbitmq-server:amqp
+juju&lt;span class="w"&gt; &lt;/span&gt;add-relation&lt;span class="w"&gt; &lt;/span&gt;cinder-api:cinder-volume-service&lt;span class="w"&gt; &lt;/span&gt;nova-cloud-controller:cinder-volume-service
+juju&lt;span class="w"&gt; &lt;/span&gt;add-relation&lt;span class="w"&gt; &lt;/span&gt;cinder-api:identity-service&lt;span class="w"&gt; &lt;/span&gt;keystone:identity-service
+juju&lt;span class="w"&gt; &lt;/span&gt;add-relation&lt;span class="w"&gt; &lt;/span&gt;cinder-api:image-service&lt;span class="w"&gt; &lt;/span&gt;glance:image-service
+juju&lt;span class="w"&gt; &lt;/span&gt;add-relation&lt;span class="w"&gt; &lt;/span&gt;cinder-api:shared-db&lt;span class="w"&gt; &lt;/span&gt;mysql:shared-db
 
-juju deploy --config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt; cinder cinder-volume --to &lt;span class="m"&gt;4&lt;/span&gt;
-juju add-relation cinder-volume:amqp rabbitmq-server:amqp
-juju add-relation cinder-volume:shared-db mysql:shared-db
-juju add-relation cinder-volume:image-service glance:image-service
+juju&lt;span class="w"&gt; &lt;/span&gt;deploy&lt;span class="w"&gt; &lt;/span&gt;--config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;cinder&lt;span class="w"&gt; &lt;/span&gt;cinder-volume&lt;span class="w"&gt; &lt;/span&gt;--to&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;4&lt;/span&gt;
+juju&lt;span class="w"&gt; &lt;/span&gt;add-relation&lt;span class="w"&gt; &lt;/span&gt;cinder-volume:amqp&lt;span class="w"&gt; &lt;/span&gt;rabbitmq-server:amqp
+juju&lt;span class="w"&gt; &lt;/span&gt;add-relation&lt;span class="w"&gt; &lt;/span&gt;cinder-volume:shared-db&lt;span class="w"&gt; &lt;/span&gt;mysql:shared-db
+juju&lt;span class="w"&gt; &lt;/span&gt;add-relation&lt;span class="w"&gt; &lt;/span&gt;cinder-volume:image-service&lt;span class="w"&gt; &lt;/span&gt;glance:image-service
 
-juju deploy --config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt; openstack-dashboard --to &lt;span class="m"&gt;1&lt;/span&gt;
-juju add-relation openstack-dashboard:identity-service keystone:identity-service
+juju&lt;span class="w"&gt; &lt;/span&gt;deploy&lt;span class="w"&gt; &lt;/span&gt;--config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;openstack-dashboard&lt;span class="w"&gt; &lt;/span&gt;--to&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+juju&lt;span class="w"&gt; &lt;/span&gt;add-relation&lt;span class="w"&gt; &lt;/span&gt;openstack-dashboard:identity-service&lt;span class="w"&gt; &lt;/span&gt;keystone:identity-service
 
-juju deploy --config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt; heat --to lxc:1
-juju add-relation heat:amqp rabbitmq-server:amqp
-juju add-relation heat:identity-service keystone:identity-service
-juju add-relation heat:shared-db mysql:shared-db
+juju&lt;span class="w"&gt; &lt;/span&gt;deploy&lt;span class="w"&gt; &lt;/span&gt;--config&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$CONFIG&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;heat&lt;span class="w"&gt; &lt;/span&gt;--to&lt;span class="w"&gt; &lt;/span&gt;lxc:1
+juju&lt;span class="w"&gt; &lt;/span&gt;add-relation&lt;span class="w"&gt; &lt;/span&gt;heat:amqp&lt;span class="w"&gt; &lt;/span&gt;rabbitmq-server:amqp
+juju&lt;span class="w"&gt; &lt;/span&gt;add-relation&lt;span class="w"&gt; &lt;/span&gt;heat:identity-service&lt;span class="w"&gt; &lt;/span&gt;keystone:identity-service
+juju&lt;span class="w"&gt; &lt;/span&gt;add-relation&lt;span class="w"&gt; &lt;/span&gt;heat:shared-db&lt;span class="w"&gt; &lt;/span&gt;mysql:shared-db
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;And you’re done! The whole process should give you an OpenStack cloud
 in about 20-30 minutes.&lt;/p&gt;

@@ -153,25 +153,25 @@ same node that holds the temporarily-configured cluster IP
 Pacemaker cluster configuration.</p>
 <p>Create a temporary file, such as <code>/tmp/galera.crm</code>, with the following
 contents:</p>
-<div class="highlight"><pre><span></span><code><span class="n">primitive</span><span class="w"> </span><span class="n">p_ip_mysql_galera</span><span class="w"> </span><span class="n">ocf</span><span class="p">:</span><span class="n">heartbeat</span><span class="p">:</span><span class="n">IPaddr2</span><span class="w"> </span>\<span class="w"></span>
-<span class="w">  </span><span class="n">params</span><span class="w"> </span><span class="n">nic</span><span class="o">=</span><span class="s2">"eth1"</span><span class="w"> </span><span class="n">iflabel</span><span class="o">=</span><span class="s2">"galera"</span><span class="w"> </span>\<span class="w"></span>
-<span class="w">    </span><span class="n">ip</span><span class="o">=</span><span class="s2">"192.168.122.99"</span><span class="w"> </span><span class="n">cidr_netmask</span><span class="o">=</span><span class="s2">"24"</span><span class="w"></span>
-<span class="n">primitive</span><span class="w"> </span><span class="n">p_mysql</span><span class="w"> </span><span class="n">ocf</span><span class="p">:</span><span class="n">heartbeat</span><span class="p">:</span><span class="n">mysql</span><span class="w"> </span>\<span class="w"></span>
-<span class="w">  </span><span class="n">params</span><span class="w"> </span><span class="n">config</span><span class="o">=</span><span class="s2">"/etc/mysql/my.cnf"</span><span class="w"> </span>\<span class="w"></span>
-<span class="w">    </span><span class="n">pid</span><span class="o">=</span><span class="s2">"/var/run/mysqld/mysqld.pid"</span><span class="w"> </span>\<span class="w"></span>
-<span class="w">    </span><span class="n">socket</span><span class="o">=</span><span class="s2">"/var/run/mysqld/mysqld.sock"</span><span class="w"> </span>\<span class="w"></span>
-<span class="w">    </span><span class="n">binary</span><span class="o">=</span><span class="s2">"/usr/sbin/mysqld"</span><span class="w"> </span>\<span class="w"></span>
-<span class="w">  </span><span class="n">op</span><span class="w"> </span><span class="n">monitor</span><span class="w"> </span><span class="n">interval</span><span class="o">=</span><span class="s2">"30s"</span><span class="w"> </span>\<span class="w"></span>
-<span class="w">  </span><span class="n">op</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="n">interval</span><span class="o">=</span><span class="s2">"0"</span><span class="w"> </span><span class="n">timeout</span><span class="o">=</span><span class="s2">"60s"</span><span class="w"> </span>\<span class="w"></span>
-<span class="w">  </span><span class="n">op</span><span class="w"> </span><span class="n">stop</span><span class="w"> </span><span class="n">interval</span><span class="o">=</span><span class="s2">"0"</span><span class="w"> </span><span class="n">timeout</span><span class="o">=</span><span class="s2">"60s"</span><span class="w"></span>
-<span class="n">clone</span><span class="w"> </span><span class="n">cl_mysql</span><span class="w"> </span><span class="n">p_mysql</span><span class="w"> </span>\<span class="w"></span>
-<span class="w">  </span><span class="n">meta</span><span class="w"> </span><span class="n">interleave</span><span class="o">=</span><span class="s2">"true"</span><span class="w"></span>
-<span class="n">colocation</span><span class="w"> </span><span class="n">c_ip_galera_on_mysql</span><span class="w"> </span>\<span class="w"></span>
-<span class="w">  </span><span class="n">inf</span><span class="p">:</span><span class="w"> </span><span class="n">p_ip_mysql_galera</span><span class="w"> </span><span class="n">cl_mysql</span><span class="w"></span>
-<span class="n">property</span><span class="w"> </span><span class="n">stonith</span><span class="o">-</span><span class="n">enabled</span><span class="o">=</span><span class="s2">"false"</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">primitive</span><span class="w"> </span><span class="n">p_ip_mysql_galera</span><span class="w"> </span><span class="n">ocf</span><span class="p">:</span><span class="n">heartbeat</span><span class="p">:</span><span class="n">IPaddr2</span><span class="w"> </span>\
+<span class="w">  </span><span class="n">params</span><span class="w"> </span><span class="n">nic</span><span class="o">=</span><span class="s2">"eth1"</span><span class="w"> </span><span class="n">iflabel</span><span class="o">=</span><span class="s2">"galera"</span><span class="w"> </span>\
+<span class="w">    </span><span class="n">ip</span><span class="o">=</span><span class="s2">"192.168.122.99"</span><span class="w"> </span><span class="n">cidr_netmask</span><span class="o">=</span><span class="s2">"24"</span>
+<span class="n">primitive</span><span class="w"> </span><span class="n">p_mysql</span><span class="w"> </span><span class="n">ocf</span><span class="p">:</span><span class="n">heartbeat</span><span class="p">:</span><span class="n">mysql</span><span class="w"> </span>\
+<span class="w">  </span><span class="n">params</span><span class="w"> </span><span class="n">config</span><span class="o">=</span><span class="s2">"/etc/mysql/my.cnf"</span><span class="w"> </span>\
+<span class="w">    </span><span class="n">pid</span><span class="o">=</span><span class="s2">"/var/run/mysqld/mysqld.pid"</span><span class="w"> </span>\
+<span class="w">    </span><span class="n">socket</span><span class="o">=</span><span class="s2">"/var/run/mysqld/mysqld.sock"</span><span class="w"> </span>\
+<span class="w">    </span><span class="n">binary</span><span class="o">=</span><span class="s2">"/usr/sbin/mysqld"</span><span class="w"> </span>\
+<span class="w">  </span><span class="n">op</span><span class="w"> </span><span class="n">monitor</span><span class="w"> </span><span class="n">interval</span><span class="o">=</span><span class="s2">"30s"</span><span class="w"> </span>\
+<span class="w">  </span><span class="n">op</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="n">interval</span><span class="o">=</span><span class="s2">"0"</span><span class="w"> </span><span class="n">timeout</span><span class="o">=</span><span class="s2">"60s"</span><span class="w"> </span>\
+<span class="w">  </span><span class="n">op</span><span class="w"> </span><span class="n">stop</span><span class="w"> </span><span class="n">interval</span><span class="o">=</span><span class="s2">"0"</span><span class="w"> </span><span class="n">timeout</span><span class="o">=</span><span class="s2">"60s"</span>
+<span class="n">clone</span><span class="w"> </span><span class="n">cl_mysql</span><span class="w"> </span><span class="n">p_mysql</span><span class="w"> </span>\
+<span class="w">  </span><span class="n">meta</span><span class="w"> </span><span class="n">interleave</span><span class="o">=</span><span class="s2">"true"</span>
+<span class="n">colocation</span><span class="w"> </span><span class="n">c_ip_galera_on_mysql</span><span class="w"> </span>\
+<span class="w">  </span><span class="n">inf</span><span class="p">:</span><span class="w"> </span><span class="n">p_ip_mysql_galera</span><span class="w"> </span><span class="n">cl_mysql</span>
+<span class="n">property</span><span class="w"> </span><span class="n">stonith</span><span class="o">-</span><span class="n">enabled</span><span class="o">=</span><span class="s2">"false"</span>
 </code></pre></div>
 <p>Then, import this into your Pacemaker configuration:</p>
-<div class="highlight"><pre><span></span><code>crm configure load update /tmp/galera.crm
+<div class="highlight"><pre><span></span><code>crm<span class="w"> </span>configure<span class="w"> </span>load<span class="w"> </span>update<span class="w"> </span>/tmp/galera.crm
 </code></pre></div>
 <p>What this creates are a couple of Pacemaker resources:</p>
 <ul>
@@ -224,7 +224,7 @@ contents:</p>
 
 <footer>
 <p>
-  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+  &copy; 2023  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
 </p>
 <p>
 Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme

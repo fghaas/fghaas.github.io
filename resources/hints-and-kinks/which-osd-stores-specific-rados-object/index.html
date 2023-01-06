@@ -186,16 +186,16 @@ rb.0.0.0000000000ff
 </code></pre></div>
 <p>Now suppose you’re interested in where <code>rb.0.0.0000000000a5</code> is.</p>
 <p>You first grab an OSD map:</p>
-<div class="highlight"><pre><span></span><code><span class="n">ceph04</span><span class="p">:</span><span class="o">~</span><span class="w"> </span><span class="c1"># ceph osd getmap -o /tmp/osdmap</span><span class="w"></span>
-<span class="mi">2012</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">09</span><span class="w"> </span><span class="mi">21</span><span class="p">:</span><span class="mi">31</span><span class="p">:</span><span class="mf">47.055376</span><span class="w"> </span><span class="n">mon</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="p">[</span><span class="n">osd</span><span class="p">,</span><span class="n">getmap</span><span class="p">]</span><span class="w"></span>
-<span class="mi">2012</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">09</span><span class="w"> </span><span class="mi">21</span><span class="p">:</span><span class="mi">31</span><span class="p">:</span><span class="mf">47.056624</span><span class="w"> </span><span class="n">mon</span><span class="o">.</span><span class="mi">1</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s1">'got osdmap epoch 187'</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
-<span class="n">wrote</span><span class="w"> </span><span class="mi">2273</span><span class="w"> </span><span class="n">byte</span><span class="w"> </span><span class="n">payload</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">osdmap</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">ceph04</span><span class="p">:</span><span class="o">~</span><span class="w"> </span><span class="c1"># ceph osd getmap -o /tmp/osdmap</span>
+<span class="mi">2012</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">09</span><span class="w"> </span><span class="mi">21</span><span class="p">:</span><span class="mi">31</span><span class="p">:</span><span class="mf">47.055376</span><span class="w"> </span><span class="n">mon</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="p">[</span><span class="n">osd</span><span class="p">,</span><span class="n">getmap</span><span class="p">]</span>
+<span class="mi">2012</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">09</span><span class="w"> </span><span class="mi">21</span><span class="p">:</span><span class="mi">31</span><span class="p">:</span><span class="mf">47.056624</span><span class="w"> </span><span class="n">mon</span><span class="o">.</span><span class="mi">1</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s1">'got osdmap epoch 187'</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">wrote</span><span class="w"> </span><span class="mi">2273</span><span class="w"> </span><span class="n">byte</span><span class="w"> </span><span class="n">payload</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">osdmap</span>
 </code></pre></div>
 <p>And now you can use <code>osdmaptool</code> to test an object name against the
 mapfile:</p>
-<div class="highlight"><pre><span></span><code><span class="n">ceph04</span><span class="p">:</span><span class="o">~</span><span class="w"> </span><span class="c1"># osdmaptool --test-map-object rb.0.0.0000000000a5 /tmp/osdmap </span><span class="w"></span>
-<span class="n">osdmaptool</span><span class="p">:</span><span class="w"> </span><span class="n">osdmap</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="s1">'/tmp/osdmap'</span><span class="w"></span>
-<span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="s1">'rb.0.0.0000000000a5'</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="mf">0.7</span><span class="n">ea1</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">ceph04</span><span class="p">:</span><span class="o">~</span><span class="w"> </span><span class="c1"># osdmaptool --test-map-object rb.0.0.0000000000a5 /tmp/osdmap </span>
+<span class="n">osdmaptool</span><span class="p">:</span><span class="w"> </span><span class="n">osdmap</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="s1">'/tmp/osdmap'</span>
+<span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="s1">'rb.0.0.0000000000a5'</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="mf">0.7</span><span class="n">ea1</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
 </code></pre></div>
 <p>… meaning the object lives in Placement Group <code>0.7ea1</code>, of which
 replicas currently exist in OSDs 2 and 0.</p>
@@ -222,7 +222,7 @@ put them back in.</p>
 
 <footer>
 <p>
-  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+  &copy; 2023  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
 </p>
 <p>
 Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme

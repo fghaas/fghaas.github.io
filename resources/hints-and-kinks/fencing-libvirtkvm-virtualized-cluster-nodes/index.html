@@ -161,10 +161,10 @@ only – TCP is fine.</p>
 insecure, unencrypted network socket (did we mention that’s unsuitable
 for production?), add the following lines to your libvirtd
 configuration file:</p>
-<div class="highlight"><pre><span></span><code><span class="na">listen_tls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0</span><span class="w"></span>
-<span class="na">listen_tcp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span><span class="w"></span>
-<span class="na">tcp_port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"16509"</span><span class="w"></span>
-<span class="na">auth_tcp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"none"</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="na">listen_tls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0</span>
+<span class="na">listen_tcp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span>
+<span class="na">tcp_port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"16509"</span>
+<span class="na">auth_tcp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"none"</span>
 </code></pre></div>
 <p>You can also set the <code>listen_addr</code> parameter, for example to have
 libvirtd listen only on the network that your virtual machines run
@@ -184,8 +184,8 @@ purpose; for other’s, you’ll simply have to install the full <code>libvirt</
 package.</p>
 <p>Once that is set up, you should be able to run this command from
 inside your virtual machines:</p>
-<div class="highlight"><pre><span></span><code>virsh --connect<span class="o">=</span>qemu+tcp://&lt;IP of your hypervisor&gt;/system <span class="se">\</span>
-  list --all
+<div class="highlight"><pre><span></span><code>virsh<span class="w"> </span>--connect<span class="o">=</span>qemu+tcp://&lt;IP<span class="w"> </span>of<span class="w"> </span>your<span class="w"> </span>hypervisor&gt;/system<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>list<span class="w"> </span>--all
 </code></pre></div>
 <p>… and that command should list all the domains running on that host,
 including the one you’re connecting from.</p>
@@ -226,7 +226,7 @@ property stonith-enabled=true
 
 <footer>
 <p>
-  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+  &copy; 2023  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
 </p>
 <p>
 Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme

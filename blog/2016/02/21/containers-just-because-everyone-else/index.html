@@ -283,21 +283,21 @@ automatically has read access to everything that is available on the
 host, unless specifically hidden, and whatever it writes goes to the
 overlay. When you discard a container, you delete the overlay.</p>
 <p>Here is a minimal example configuration for a container like this:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># For additional config options, please look at lxc.container.conf(5)</span><span class="w"></span>
-<span class="c1"># Common configuration</span><span class="w"></span>
-<span class="na">lxc.include</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/usr/share/lxc/config/ubuntu.common.conf</span><span class="w"></span>
-<span class="c1"># Container specific configuration</span><span class="w"></span>
-<span class="na">lxc.arch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">amd64</span><span class="w"></span>
-<span class="c1"># Network configuration</span><span class="w"></span>
-<span class="na">lxc.network.type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">veth</span><span class="w"></span>
-<span class="na">lxc.network.link</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">lxcbr0</span><span class="w"></span>
-<span class="na">lxc.network.flags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">up</span><span class="w"></span>
-<span class="na">lxc.network.hwaddr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">00:16:3e:76:59:10</span><span class="w"></span>
-<span class="c1"># Automatic mounts</span><span class="w"></span>
-<span class="na">lxc.mount.auto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">proc sys cgroup</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="c1"># For additional config options, please look at lxc.container.conf(5)</span>
+<span class="c1"># Common configuration</span>
+<span class="na">lxc.include</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/usr/share/lxc/config/ubuntu.common.conf</span>
+<span class="c1"># Container specific configuration</span>
+<span class="na">lxc.arch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">amd64</span>
+<span class="c1"># Network configuration</span>
+<span class="na">lxc.network.type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">veth</span>
+<span class="na">lxc.network.link</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">lxcbr0</span>
+<span class="na">lxc.network.flags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">up</span>
+<span class="na">lxc.network.hwaddr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">00:16:3e:76:59:10</span>
+<span class="c1"># Automatic mounts</span>
+<span class="na">lxc.mount.auto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">proc sys cgroup</span>
 
-<span class="na">lxc.rootfs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">overlayfs:/var/lib/lxc/host/rootfs:/var/lib/lxc/mytestcontainer/delta0</span><span class="w"></span>
-<span class="na">lxc.utsname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">mytestcontainer</span><span class="w"></span>
+<span class="na">lxc.rootfs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">overlayfs:/var/lib/lxc/host/rootfs:/var/lib/lxc/mytestcontainer/delta0</span>
+<span class="na">lxc.utsname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">mytestcontainer</span>
 </code></pre></div>
 <p>Note that the LXC userland presently enforces an OverlayFS base
 directory to be in a subtree of <code>/var/lib/lxc</code>. You can satisfy this
@@ -314,32 +314,32 @@ own tools to do it, but Ansible specifically has very good LXC
 container support so it makes this a breeze.</p>
 <p>Here’s a simple Ansible playbook example that creates 100 containers,
 all based off your host root.<sup id="fnref:ansible"><a class="footnote-ref" href="#fn:ansible">4</a></sup></p>
-<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span><span class="w"></span>
-<span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create a local bind mount for the host root filesystem</span><span class="w"></span>
-<span class="w">      </span><span class="nt">mount</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/lib/lxc/host/rootfs</span><span class="w"></span>
-<span class="w">        </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/</span><span class="w"></span>
-<span class="w">        </span><span class="nt">opts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bind</span><span class="w"></span>
-<span class="w">        </span><span class="nt">fstype</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">none</span><span class="w"></span>
-<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mounted</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create a template container using the host root</span><span class="w"></span>
-<span class="w">      </span><span class="nt">lxc_container</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">host</span><span class="w"></span>
-<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stopped</span><span class="w"></span>
-<span class="w">        </span><span class="nt">directory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/lib/lxc/host/rootfs</span><span class="w"></span>
-<span class="w">        </span><span class="nt">config</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/lib/lxc/host/config</span><span class="w"></span>
-<span class="w">        </span><span class="nt">container_config</span><span class="p">:</span><span class="w"></span>
-<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"lxc.mount.auto</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">proc</span><span class="nv"> </span><span class="s">sys</span><span class="nv"> </span><span class="s">cgroup"</span><span class="w"></span>
-<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"lxc.include</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">/usr/share/lxc/config/ubuntu.common.conf"</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create 100 OverlayFS based containers</span><span class="w"></span>
-<span class="w">      </span><span class="nt">lxc_container</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">host</span><span class="w"></span>
-<span class="w">        </span><span class="nt">backing_store</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">overlayfs</span><span class="w"></span>
-<span class="w">        </span><span class="nt">clone_snapshot</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
-<span class="w">        </span><span class="nt">clone_name</span><span class="p">:</span><span class="w"> </span><span class="s">"mytestcontainer{{</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">}}"</span><span class="w"></span>
-<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">started</span><span class="w"></span>
-<span class="w">      </span><span class="nt">with_sequence</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">count=100</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<span class="w">  </span><span class="nt">tasks</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create a local bind mount for the host root filesystem</span>
+<span class="w">      </span><span class="nt">mount</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/lib/lxc/host/rootfs</span>
+<span class="w">        </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/</span>
+<span class="w">        </span><span class="nt">opts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bind</span>
+<span class="w">        </span><span class="nt">fstype</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">none</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mounted</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create a template container using the host root</span>
+<span class="w">      </span><span class="nt">lxc_container</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">host</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stopped</span>
+<span class="w">        </span><span class="nt">directory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/lib/lxc/host/rootfs</span>
+<span class="w">        </span><span class="nt">config</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/lib/lxc/host/config</span>
+<span class="w">        </span><span class="nt">container_config</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"lxc.mount.auto</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">proc</span><span class="nv"> </span><span class="s">sys</span><span class="nv"> </span><span class="s">cgroup"</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"lxc.include</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">/usr/share/lxc/config/ubuntu.common.conf"</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create 100 OverlayFS based containers</span>
+<span class="w">      </span><span class="nt">lxc_container</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">host</span>
+<span class="w">        </span><span class="nt">backing_store</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">overlayfs</span>
+<span class="w">        </span><span class="nt">clone_snapshot</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">        </span><span class="nt">clone_name</span><span class="p">:</span><span class="w"> </span><span class="s">"mytestcontainer{{</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">}}"</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">started</span>
+<span class="w">      </span><span class="nt">with_sequence</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">count=100</span>
 </code></pre></div>
 <p>Now of course, this will also mean that you’ll need to get your
 developers to define their container config in Ansible. However, that
@@ -361,13 +361,13 @@ immediately visible in the container’s overlay filesystem.</p>
 <p>On an Ubuntu platform, you could even go so far as automating this in
 conjunction with unattended upgrades:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># /etc/apt/apt.conf.d/50unattended-upgrades</span>
-<span class="sr">//</span> <span class="n">Automatically</span> <span class="n">upgrade</span> <span class="n">packages</span> <span class="n">from</span> <span class="n">these</span> <span class="p">(</span><span class="n">origin:archive</span><span class="p">)</span> <span class="n">pairs</span>
-<span class="n">Unattended</span><span class="o">-</span><span class="nn">Upgrade::</span><span class="n">Allowed</span><span class="o">-</span><span class="n">Origins</span> <span class="p">{</span>
-    <span class="s">"${distro_id}:${distro_codename}-security"</span><span class="p">;</span>
+<span class="sr">//</span><span class="w"> </span><span class="n">Automatically</span><span class="w"> </span><span class="n">upgrade</span><span class="w"> </span><span class="n">packages</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">these</span><span class="w"> </span><span class="p">(</span><span class="n">origin:archive</span><span class="p">)</span><span class="w"> </span><span class="n">pairs</span>
+<span class="n">Unattended</span><span class="o">-</span><span class="nn">Upgrade::</span><span class="n">Allowed</span><span class="o">-</span><span class="n">Origins</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s">"${distro_id}:${distro_codename}-security"</span><span class="p">;</span>
 <span class="p">};</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># /etc/apt/apt.conf.d/05lxc</span>
-<span class="nn">DPkg::</span><span class="n">Post</span><span class="o">-</span><span class="n">Invoke</span>      <span class="p">{</span> <span class="s">"/sbin/service lxc restart"</span><span class="p">;</span> <span class="p">};</span>
+<span class="nn">DPkg::</span><span class="n">Post</span><span class="o">-</span><span class="n">Invoke</span><span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="s">"/sbin/service lxc restart"</span><span class="p">;</span><span class="w"> </span><span class="p">};</span>
 </code></pre></div>
 <p>So there you have it. Upgrade loads of containers in minutes. No
 rebuild, no redeploy, nothing. Packaging actually does work and has
@@ -426,7 +426,7 @@ example brief to illustrate the concept. <a class="footnote-backref" href="#fnr
 
 <footer>
 <p>
-  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+  &copy; 2023  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
 </p>
 <p>
 Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme

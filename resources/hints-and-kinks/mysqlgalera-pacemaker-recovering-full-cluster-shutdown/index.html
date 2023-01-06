@@ -151,10 +151,10 @@ rel="me"           href="https://mastodon.social/@xahteiwi"
 down, it is necessary to re-initialize the Galera replication
 state. In effect, this is identical to bootstrapping the cluster.</p>
 <p>Start by manually bringing up the cluster IP on one of your nodes:</p>
-<div class="highlight"><pre><span></span><code>ip address add <span class="m">192</span>.168.122.99/24 dev eth1 label eth1:galera
+<div class="highlight"><pre><span></span><code>ip<span class="w"> </span>address<span class="w"> </span>add<span class="w"> </span><span class="m">192</span>.168.122.99/24<span class="w"> </span>dev<span class="w"> </span>eth1<span class="w"> </span>label<span class="w"> </span>eth1:galera
 </code></pre></div>
 <p>Re-initialize the Galera cluster:</p>
-<div class="highlight"><pre><span></span><code>mysqld --wsrep_cluster_address<span class="o">=</span>gcomm:// <span class="p">&amp;</span>
+<div class="highlight"><pre><span></span><code>mysqld<span class="w"> </span>--wsrep_cluster_address<span class="o">=</span>gcomm://<span class="w"> </span><span class="p">&amp;</span>
 </code></pre></div>
 <p>Note the empty <code>gcomm://</code> address.</p>
 <p>Finally, clear your resource state with <code>crm resource cleanup
@@ -194,7 +194,7 @@ instance untouched, and bring up the additional MySQL instances.</p>
 
 <footer>
 <p>
-  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+  &copy; 2023  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
 </p>
 <p>
 Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme

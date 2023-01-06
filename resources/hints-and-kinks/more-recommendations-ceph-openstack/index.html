@@ -177,10 +177,10 @@ support <code>discard</code>: the paravirtualized VirtIO SCSI controller,
 couple of Glance <strong>image properties,</strong> namely <code>hw_scsi_model</code> and
 <code>hw_disk_bus</code>. You do so by running the following <code>openstack</code> commands
 on your image:</p>
-<div class="highlight"><pre><span></span><code>openstack image <span class="nb">set</span> <span class="se">\</span>
-  --property <span class="nv">hw_scsi_model</span><span class="o">=</span>virtio-scsi <span class="se">\</span>
-  --property <span class="nv">hw_disk_bus</span><span class="o">=</span>scsi <span class="se">\</span>
-  &lt;name or ID of your image&gt;
+<div class="highlight"><pre><span></span><code>openstack<span class="w"> </span>image<span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--property<span class="w"> </span><span class="nv">hw_scsi_model</span><span class="o">=</span>virtio-scsi<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--property<span class="w"> </span><span class="nv">hw_disk_bus</span><span class="o">=</span>scsi<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>&lt;name<span class="w"> </span>or<span class="w"> </span>ID<span class="w"> </span>of<span class="w"> </span>your<span class="w"> </span>image&gt;
 </code></pre></div>
 <p>Then, if you boot an instance from this image, you’ll see that its
 block device names switch from <code>/dev/vdX</code> to <code>/dev/sdX</code>, and you also
@@ -212,10 +212,10 @@ absolutely allows you to do that. This concept is known as <strong>instance
 resource quotas</strong>, and you set them via flavor properties. For
 example, an you may want to limit a specific flavor to 1,500 IOPS and
 a maximum throughput of 100 MB/s:</p>
-<div class="highlight"><pre><span></span><code>openstack flavor <span class="nb">set</span> <span class="se">\</span>
-  --property quota:disk_total_bytes_sec<span class="o">=</span><span class="k">$((</span><span class="m">100</span>&lt;&lt;<span class="m">20</span><span class="k">))</span>
-  --property quota:disk_total_iops_sec<span class="o">=</span><span class="m">1500</span>
-  m1.medium
+<div class="highlight"><pre><span></span><code>openstack<span class="w"> </span>flavor<span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--property<span class="w"> </span>quota:disk_total_bytes_sec<span class="o">=</span><span class="k">$((</span><span class="m">100</span>&lt;&lt;<span class="m">20</span><span class="k">))</span>
+<span class="w">  </span>--property<span class="w"> </span>quota:disk_total_iops_sec<span class="o">=</span><span class="m">1500</span>
+<span class="w">  </span>m1.medium
 </code></pre></div>
 <p>In the background, these settings are handed through to libvirt and
 ultimately fed into cgroup limitations for Qemu/KVM, when a VM with
@@ -236,20 +236,20 @@ characteristics like maximum IOPS or maximum throughput via Cinder QoS
 specifications. A QoS specification akin to the Nova flavor decribed
 above — limiting throughput to 100 MB/s and 1,500 IOPS would be
 created like this:</p>
-<div class="highlight"><pre><span></span><code>openstack volume qos create <span class="se">\</span>
-  --consumer front-end
-  --property <span class="nv">total_bytes_sec</span><span class="o">=</span><span class="k">$((</span><span class="m">100</span>&lt;&lt;<span class="m">20</span><span class="k">))</span> <span class="se">\</span>
-  --property <span class="nv">total_iops_sec</span><span class="o">=</span><span class="m">1500</span> <span class="se">\</span>
-  <span class="s2">"100MB/s-1500iops"</span>
+<div class="highlight"><pre><span></span><code>openstack<span class="w"> </span>volume<span class="w"> </span>qos<span class="w"> </span>create<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--consumer<span class="w"> </span>front-end
+<span class="w">  </span>--property<span class="w"> </span><span class="nv">total_bytes_sec</span><span class="o">=</span><span class="k">$((</span><span class="m">100</span>&lt;&lt;<span class="m">20</span><span class="k">))</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--property<span class="w"> </span><span class="nv">total_iops_sec</span><span class="o">=</span><span class="m">1500</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">"100MB/s-1500iops"</span>
 </code></pre></div>
 <p>You would then create a corresponding volume type, and associate the
 QoS spec with it:</p>
-<div class="highlight"><pre><span></span><code>openstack volume <span class="nb">type</span> create <span class="se">\</span>
-  --public <span class="se">\</span>
-  <span class="s2">"100MB/s-1500iops"</span>
-openstack volume qos associate <span class="se">\</span>
-  <span class="s2">"100MB/s-1500iops"</span> <span class="se">\</span>
-  <span class="s2">"100MB/s-1500iops"</span>
+<div class="highlight"><pre><span></span><code>openstack<span class="w"> </span>volume<span class="w"> </span><span class="nb">type</span><span class="w"> </span>create<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--public<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">"100MB/s-1500iops"</span>
+openstack<span class="w"> </span>volume<span class="w"> </span>qos<span class="w"> </span>associate<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">"100MB/s-1500iops"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">"100MB/s-1500iops"</span>
 </code></pre></div>
 <p>Again, as with Nova flavors, you can make volume types public, but you
 can also limit them to specific tenants.</p>
@@ -272,55 +272,55 @@ up your <code>/var</code> (or worse, <code>/</code>) filesystem.</p>
 use here too: just deep-mount a CephFS file system into that
 spot. Here’s an Ansible playbook snippet that you may use as
 inspiration:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">hosts</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">compute-nodes</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">hosts</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">compute-nodes</span>
 
-<span class="w">  </span><span class="nt">vars</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">ceph_mons</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ceph-mon01</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ceph-mon02</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ceph-mon03</span><span class="w"></span>
-<span class="w">    </span><span class="nt">cephfs_client</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cephfs</span><span class="w"></span>
-<span class="w">    </span><span class="nt">cephfs_secret</span><span class="p">:</span><span class="w"> </span><span class="s">"{{</span><span class="nv"> </span><span class="s">vaulted_cephfs_secret</span><span class="nv"> </span><span class="s">}}"</span><span class="w"></span>
+<span class="w">  </span><span class="nt">vars</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">ceph_mons</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ceph-mon01</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ceph-mon02</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ceph-mon03</span>
+<span class="w">    </span><span class="nt">cephfs_client</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cephfs</span>
+<span class="w">    </span><span class="nt">cephfs_secret</span><span class="p">:</span><span class="w"> </span><span class="s">"{{</span><span class="nv"> </span><span class="s">vaulted_cephfs_secret</span><span class="nv"> </span><span class="s">}}"</span>
 
-<span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">tasks</span><span class="p">:</span>
 
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">"install</span><span class="nv"> </span><span class="s">ceph-fs-common</span><span class="nv"> </span><span class="s">package"</span><span class="w"></span>
-<span class="w">    </span><span class="nt">apt</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ceph-fs-common</span><span class="w"></span>
-<span class="w">      </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">installed</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">"install</span><span class="nv"> </span><span class="s">ceph-fs-common</span><span class="nv"> </span><span class="s">package"</span>
+<span class="w">    </span><span class="nt">apt</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ceph-fs-common</span>
+<span class="w">      </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">installed</span>
 
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">"create</span><span class="nv"> </span><span class="s">ceph</span><span class="nv"> </span><span class="s">directory"</span><span class="w"></span>
-<span class="w">    </span><span class="nt">file</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/ceph</span><span class="w"></span>
-<span class="w">      </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
-<span class="w">      </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
-<span class="w">      </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">'0755'</span><span class="w"></span>
-<span class="w">      </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">directory</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">"create</span><span class="nv"> </span><span class="s">ceph</span><span class="nv"> </span><span class="s">directory"</span>
+<span class="w">    </span><span class="nt">file</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/ceph</span>
+<span class="w">      </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span>
+<span class="w">      </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span>
+<span class="w">      </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">'0755'</span>
+<span class="w">      </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">directory</span>
 
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">"create</span><span class="nv"> </span><span class="s">cephfs</span><span class="nv"> </span><span class="s">secretfile"</span><span class="w"></span>
-<span class="w">    </span><span class="nt">copy</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/ceph/cephfs.secret</span><span class="w"></span>
-<span class="w">      </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
-<span class="w">      </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
-<span class="w">      </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">'0600'</span><span class="w"></span>
-<span class="w">      </span><span class="nt">content</span><span class="p">:</span><span class="w"> </span><span class="s">'{{</span><span class="nv"> </span><span class="s">cephfs_secret</span><span class="nv"> </span><span class="s">}}'</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">"create</span><span class="nv"> </span><span class="s">cephfs</span><span class="nv"> </span><span class="s">secretfile"</span>
+<span class="w">    </span><span class="nt">copy</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/ceph/cephfs.secret</span>
+<span class="w">      </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span>
+<span class="w">      </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span>
+<span class="w">      </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">'0600'</span>
+<span class="w">      </span><span class="nt">content</span><span class="p">:</span><span class="w"> </span><span class="s">'{{</span><span class="nv"> </span><span class="s">cephfs_secret</span><span class="nv"> </span><span class="s">}}'</span>
 
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">"mount</span><span class="nv"> </span><span class="s">savefile</span><span class="nv"> </span><span class="s">directory"</span><span class="w"></span>
-<span class="w">    </span><span class="nt">mount</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">fstype</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ceph</span><span class="w"></span>
-<span class="w">      </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/lib/nova/save</span><span class="w"></span>
-<span class="w">      </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="s">"{{</span><span class="nv"> </span><span class="s">ceph_mons</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">join(',')</span><span class="nv"> </span><span class="s">}}:/nova/save/{{</span><span class="nv"> </span><span class="s">ansible_hostname</span><span class="nv"> </span><span class="s">}}"</span><span class="w"></span>
-<span class="w">      </span><span class="nt">opts</span><span class="p">:</span><span class="w"> </span><span class="s">"name={{</span><span class="nv"> </span><span class="s">cephfs_client</span><span class="nv"> </span><span class="s">}},secretfile=/etc/ceph/cephfs.secret"</span><span class="w"></span>
-<span class="w">      </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mounted</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">"mount</span><span class="nv"> </span><span class="s">savefile</span><span class="nv"> </span><span class="s">directory"</span>
+<span class="w">    </span><span class="nt">mount</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">fstype</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ceph</span>
+<span class="w">      </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/lib/nova/save</span>
+<span class="w">      </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="s">"{{</span><span class="nv"> </span><span class="s">ceph_mons</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">join(',')</span><span class="nv"> </span><span class="s">}}:/nova/save/{{</span><span class="nv"> </span><span class="s">ansible_hostname</span><span class="nv"> </span><span class="s">}}"</span>
+<span class="w">      </span><span class="nt">opts</span><span class="p">:</span><span class="w"> </span><span class="s">"name={{</span><span class="nv"> </span><span class="s">cephfs_client</span><span class="nv"> </span><span class="s">}},secretfile=/etc/ceph/cephfs.secret"</span>
+<span class="w">      </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mounted</span>
 
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">"fix</span><span class="nv"> </span><span class="s">savefile</span><span class="nv"> </span><span class="s">directory</span><span class="nv"> </span><span class="s">ownership"</span><span class="w"></span>
-<span class="w">    </span><span class="nt">file</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/lib/nova/save</span><span class="w"></span>
-<span class="w">      </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">libvirt-qemu</span><span class="w"></span>
-<span class="w">      </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kvm</span><span class="w"></span>
-<span class="w">      </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">directory</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">"fix</span><span class="nv"> </span><span class="s">savefile</span><span class="nv"> </span><span class="s">directory</span><span class="nv"> </span><span class="s">ownership"</span>
+<span class="w">    </span><span class="nt">file</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/lib/nova/save</span>
+<span class="w">      </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">libvirt-qemu</span>
+<span class="w">      </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kvm</span>
+<span class="w">      </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">directory</span>
 </code></pre></div>
 <hr/>
 <h2>Got more?</h2>
@@ -353,7 +353,7 @@ comments below and we’ll include them in the next installment.</p>
 
 <footer>
 <p>
-  &copy; 2022  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+  &copy; 2023  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
 </p>
 <p>
 Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
