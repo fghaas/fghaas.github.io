@@ -4,7 +4,7 @@ Slug: brown-mms
 Tags: Work
 Summary: What have brown M&Ms got to do with date/time formats and mutual respect? More than you might think.
 
-The Van Halen "brown M&Ms" story is a classic tale of rock'n'roll lore.
+The [Van Halen](https://en.wikipedia.org/wiki/Van_Halen) "brown M&Ms" story is a classic tale of rock'n'roll lore.
 In 1982, Van Halen had a famous [concert rider](https://www.thesmokinggun.com/documents/crime/van-halens-legendary-mms-rider) that included a requirement that was patently ludicrous at face value:
 backstage, the catering at a Van Halen show had to provide bowls of M&Ms chocolate candies --- *with all the brown ones removed.*
 That's right, there had to be M&Ms, but if there was a single brown one to be found, this would constitute a breach of contract on the promoter's part.
@@ -13,7 +13,7 @@ This example is frequently trotted out as an example of crazy rock stardom.
 Clearly, this was an episode of fame getting to the heads of a group of kids that had suddenly hit the big time.
 Or was it?
 
-David Lee Roth, the then-singer of Van Halen, explained the reason behind the "no brown M&Ms" rule [in an interview](https://youtu.be/_IxqdAgNJck) nearly 30 years later.
+[David Lee Roth](https://en.wikipedia.org/wiki/David_Lee_Roth), the then-singer of Van Halen, explained the reason behind the "no brown M&Ms" rule [in an interview](https://youtu.be/_IxqdAgNJck) nearly 30 years later.
 
 In 1982, the Van Halen show was one of the biggest acts on the North American tour circuit.
 Their stage lighting rigs would look positively tame by modern standards, but at the time very few acts were touring with equipment that was as power-hungry as Van Halen's.
