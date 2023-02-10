@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - blog</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/category/blog.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2023-02-10T19:00:00+00:00</updated><entry><title>Brown M&amp;Ms, UTC, and ISO 8601</title><link href="https://xahteiwi.eu/blog/2023/02/10/brown-mms/" rel="alternate"></link><published>2023-02-10T19:00:00+00:00</published><updated>2023-02-10T19:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-02-10:/blog/2023/02/10/brown-mms/</id><summary type="html">&lt;p&gt;What have brown M&amp;amp;Ms got to do with date/time formats and mutual respect? More than you might think.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The Van Halen “brown M&amp;amp;Ms” story is a classic tale of rock’n’roll lore.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - blog</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/category/blog.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2023-02-10T19:00:00+00:00</updated><entry><title>Brown M&amp;Ms, UTC, and ISO 8601</title><link href="https://xahteiwi.eu/blog/2023/02/10/brown-mms/" rel="alternate"></link><published>2023-02-10T19:00:00+00:00</published><updated>2023-02-10T19:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-02-10:/blog/2023/02/10/brown-mms/</id><summary type="html">&lt;p&gt;What have brown M&amp;amp;Ms got to do with date/time formats and mutual respect? More than you might think.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The &lt;a href="https://en.wikipedia.org/wiki/Van_Halen"&gt;Van Halen&lt;/a&gt; “brown M&amp;amp;Ms” story is a classic tale of rock’n’roll lore.
 In 1982, Van Halen had a famous &lt;a href="https://www.thesmokinggun.com/documents/crime/van-halens-legendary-mms-rider"&gt;concert rider&lt;/a&gt; that included a requirement that was patently ludicrous at face value:
 backstage, the catering at a Van Halen show had to provide bowls of M&amp;amp;Ms chocolate candies — &lt;em&gt;with all the brown ones removed.&lt;/em&gt;
 That’s right, there had to be M&amp;amp;Ms, but if there was a single brown one to be found, this would constitute a breach of contract on the promoter’s part.&lt;/p&gt;
 &lt;p&gt;This example is frequently trotted out as an example of crazy rock stardom.
 Clearly, this was an episode of fame getting to the heads of a group of kids that had suddenly hit the big time.
 Or was it?&lt;/p&gt;
-&lt;p&gt;David Lee Roth, the then-singer of Van Halen, explained the reason behind the “no brown M&amp;amp;Ms” rule &lt;a href="https://youtu.be/_IxqdAgNJck"&gt;in an interview&lt;/a&gt; nearly 30 years later.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/David_Lee_Roth"&gt;David Lee Roth&lt;/a&gt;, the then-singer of Van Halen, explained the reason behind the “no brown M&amp;amp;Ms” rule &lt;a href="https://youtu.be/_IxqdAgNJck"&gt;in an interview&lt;/a&gt; nearly 30 years later.&lt;/p&gt;
 &lt;p&gt;In 1982, the Van Halen show was one of the biggest acts on the North American tour circuit.
 Their stage lighting rigs would look positively tame by modern standards, but at the time very few acts were touring with equipment that was as power-hungry as Van Halen’s.
 (Consider that at the time it wasn’t uncommon for bands to just play under the venue’s house lights, rather than travelling with several truckloads of stage equipment as big acts commonly do today.)&lt;/p&gt;
@@ -1034,7 +1034,7 @@ guessing should work well too.&lt;/p&gt;
 &lt;h2&gt;Nutrition facts&lt;/h2&gt;
 &lt;p&gt;No warranty of any kind on these. Values are per serving.&lt;/p&gt;
 &lt;p&gt;With meat:&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Calories (kcal)&lt;/th&gt;
@@ -1065,7 +1065,7 @@ guessing should work well too.&lt;/p&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;Without meat:&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Calories (kcal)&lt;/th&gt;
@@ -1938,7 +1938,7 @@ planned.&lt;/p&gt;
 &lt;p&gt;So Alex, being a good CEO, opens some spread sheet software and
 creates this handy table that simply plugs in values for &lt;span class="math"&gt;\(x\)&lt;/span&gt; and &lt;span class="math"&gt;\(y\)&lt;/span&gt;,
 with &lt;span class="math"&gt;\(x\)&lt;/span&gt; (width) in columns and &lt;span class="math"&gt;\(y\)&lt;/span&gt; (depth) in rows.&lt;sup id="fnref:table"&gt;&lt;a class="footnote-ref" href="#fn:table"&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -2162,7 +2162,7 @@ interjects that Alex is missing a point, namely all the managers that
 the company will now no longer need, and the cost savings thus
 generated.&lt;/p&gt;
 &lt;p&gt;So Alex looks at the table again (width in columns, depth in rows):&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -2351,7 +2351,7 @@ cell &lt;em&gt;directly above it&lt;/em&gt; will contain the total number of man
 again, but considers the number of managers proportional to the number
 of people in the company, a pattern quickly emerges (again, width
 is in columns, depth is in rows):&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -5157,7 +5157,7 @@ came this.&lt;/p&gt;
 &lt;/ol&gt;
 &lt;h2&gt;Nutrition facts&lt;/h2&gt;
 &lt;p&gt;No warranty of any kind on these. Values are per serving.&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Calories (kcal)&lt;/th&gt;
@@ -5440,7 +5440,7 @@ several to accommodate a larger crowd, or very hungry people.&lt;/p&gt;
 &lt;h2&gt;Nutrition facts&lt;/h2&gt;
 &lt;p&gt;No warranty of any kind on these. Values are per serving, counting one
 serving as one-quarter of the whole pizza.&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Calories (kcal)&lt;/th&gt;
@@ -5920,7 +5920,7 @@ in the conference.&lt;/p&gt;
 &lt;p&gt;Nonexisticon’s attendee-visible run-up cycle is 6 months.&lt;/p&gt;
 &lt;p&gt;Assuming a Nonexisticon is scheduled to run from May 15-17, the
 following schedule applies:&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Date&lt;/th&gt;
@@ -6241,7 +6241,7 @@ let’s say it’s 1%.&lt;/p&gt;
 &lt;p&gt;So then let’s look at 10,000 interactions that completely random
 people make on the internet.&lt;/p&gt;
 &lt;p&gt;Those would then break down like so:&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -6274,7 +6274,7 @@ flags content as infringing when it is not) with a rate of only
 ridiculously low for any automated screening procedure.&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;So that means that out of our 10,000 interactions tracked by our
 “perfect” content filter, the numbers break down like this:&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -6317,7 +6317,7 @@ exceedingly rare, automated filters detect it with poor accuracy.&lt;/strong&gt;
 &lt;p&gt;And if you leave all parameters the same, but consider a probably much
 more realistic infringement rate of 1 in 1000, that is, 0.1%, then
 things look like this: &lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;

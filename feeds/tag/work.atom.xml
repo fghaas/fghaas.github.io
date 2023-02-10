@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Work</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/work.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2023-02-10T19:00:00+00:00</updated><entry><title>Brown M&amp;Ms, UTC, and ISO 8601</title><link href="https://xahteiwi.eu/blog/2023/02/10/brown-mms/" rel="alternate"></link><published>2023-02-10T19:00:00+00:00</published><updated>2023-02-10T19:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-02-10:/blog/2023/02/10/brown-mms/</id><summary type="html">&lt;p&gt;What have brown M&amp;amp;Ms got to do with date/time formats and mutual respect? More than you might think.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The Van Halen “brown M&amp;amp;Ms” story is a classic tale of rock’n’roll lore.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Work</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/work.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2023-02-10T19:00:00+00:00</updated><entry><title>Brown M&amp;Ms, UTC, and ISO 8601</title><link href="https://xahteiwi.eu/blog/2023/02/10/brown-mms/" rel="alternate"></link><published>2023-02-10T19:00:00+00:00</published><updated>2023-02-10T19:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-02-10:/blog/2023/02/10/brown-mms/</id><summary type="html">&lt;p&gt;What have brown M&amp;amp;Ms got to do with date/time formats and mutual respect? More than you might think.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The &lt;a href="https://en.wikipedia.org/wiki/Van_Halen"&gt;Van Halen&lt;/a&gt; “brown M&amp;amp;Ms” story is a classic tale of rock’n’roll lore.
 In 1982, Van Halen had a famous &lt;a href="https://www.thesmokinggun.com/documents/crime/van-halens-legendary-mms-rider"&gt;concert rider&lt;/a&gt; that included a requirement that was patently ludicrous at face value:
 backstage, the catering at a Van Halen show had to provide bowls of M&amp;amp;Ms chocolate candies — &lt;em&gt;with all the brown ones removed.&lt;/em&gt;
 That’s right, there had to be M&amp;amp;Ms, but if there was a single brown one to be found, this would constitute a breach of contract on the promoter’s part.&lt;/p&gt;
 &lt;p&gt;This example is frequently trotted out as an example of crazy rock stardom.
 Clearly, this was an episode of fame getting to the heads of a group of kids that had suddenly hit the big time.
 Or was it?&lt;/p&gt;
-&lt;p&gt;David Lee Roth, the then-singer of Van Halen, explained the reason behind the “no brown M&amp;amp;Ms” rule &lt;a href="https://youtu.be/_IxqdAgNJck"&gt;in an interview&lt;/a&gt; nearly 30 years later.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/David_Lee_Roth"&gt;David Lee Roth&lt;/a&gt;, the then-singer of Van Halen, explained the reason behind the “no brown M&amp;amp;Ms” rule &lt;a href="https://youtu.be/_IxqdAgNJck"&gt;in an interview&lt;/a&gt; nearly 30 years later.&lt;/p&gt;
 &lt;p&gt;In 1982, the Van Halen show was one of the biggest acts on the North American tour circuit.
 Their stage lighting rigs would look positively tame by modern standards, but at the time very few acts were touring with equipment that was as power-hungry as Van Halen’s.
 (Consider that at the time it wasn’t uncommon for bands to just play under the venue’s house lights, rather than travelling with several truckloads of stage equipment as big acts commonly do today.)&lt;/p&gt;
@@ -1274,7 +1274,7 @@ planned.&lt;/p&gt;
 &lt;p&gt;So Alex, being a good CEO, opens some spread sheet software and
 creates this handy table that simply plugs in values for &lt;span class="math"&gt;\(x\)&lt;/span&gt; and &lt;span class="math"&gt;\(y\)&lt;/span&gt;,
 with &lt;span class="math"&gt;\(x\)&lt;/span&gt; (width) in columns and &lt;span class="math"&gt;\(y\)&lt;/span&gt; (depth) in rows.&lt;sup id="fnref:table"&gt;&lt;a class="footnote-ref" href="#fn:table"&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -1498,7 +1498,7 @@ interjects that Alex is missing a point, namely all the managers that
 the company will now no longer need, and the cost savings thus
 generated.&lt;/p&gt;
 &lt;p&gt;So Alex looks at the table again (width in columns, depth in rows):&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -1687,7 +1687,7 @@ cell &lt;em&gt;directly above it&lt;/em&gt; will contain the total number of man
 again, but considers the number of managers proportional to the number
 of people in the company, a pattern quickly emerges (again, width
 is in columns, depth is in rows):&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -4361,7 +4361,7 @@ It’s being lazy.&lt;/p&gt;
 &lt;p&gt;It’s a symptom of the worst kind of laziness &lt;em&gt;(not malice!)&lt;/em&gt;: in an
 attempt to communicate quickly and easily, for yourself, you are really
 making things harder for everyone, including yourself.&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -4389,7 +4389,7 @@ ago”, you’ll agree with me here.&lt;/p&gt;
 is to say in relation to &lt;em&gt;other&lt;/em&gt; discussions on the same topic, days
 or weeks earlier or later.&lt;/p&gt;
 &lt;p&gt;Let’s compare that to other communication modes:&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -4420,7 +4420,7 @@ or weeks earlier or later.&lt;/p&gt;
   as with chat, and it’s marginally better at contextualizing
   information than chat (because you get proper threading).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -4467,7 +4467,7 @@ or weeks earlier or later.&lt;/p&gt;
   Likewise, “issue tracker” can mean RT, OTRS, Jira, Taiga, Bugzilla,
   whatever works for you.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
