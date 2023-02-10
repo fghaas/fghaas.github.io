@@ -1,6 +1,7 @@
 Title: Universal tox tests (from just about any CI)
 Date: 2021-10-17
 Tags: CI, Python, GitLab, GitHub, Zuul
+Slug: universal-tox-tests
 Summary: I like tox. A lot. I use it all the time. This is a quick summary on how to use it in such a way that it becomes a central anchor point that you can use from all your CI systems.
 
 I like `tox`. A lot. I use it all the time. This is a quick summary on
