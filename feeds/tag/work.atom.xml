@@ -1,5 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Work</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/work.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-10-15T15:00:00+00:00</updated><entry><title>Nebulous Percentage Shenanigans</title><link href="https://xahteiwi.eu/blog/2022/10/15/nps/" rel="alternate"></link><published>2022-10-15T15:00:00+00:00</published><updated>2022-10-15T15:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-10-15:/blog/2022/10/15/nps/</id><summary type="html">&lt;p&gt;I recently learned that I am a &amp;ldquo;detractor&amp;rdquo; of things I actually quite like. Here are a few related things I also learned about in the process.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Surely you’ve seen a question similar to the following in a survey or
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Work</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/work.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2023-02-10T19:00:00+00:00</updated><entry><title>Brown M&amp;Ms, UTC, and ISO 8601</title><link href="https://xahteiwi.eu/blog/2023/02/10/brown-mms/" rel="alternate"></link><published>2023-02-10T19:00:00+00:00</published><updated>2023-02-10T19:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-02-10:/blog/2023/02/10/brown-mms/</id><summary type="html">&lt;p&gt;What have brown M&amp;amp;Ms got to do with date/time formats and mutual respect? More than you might think.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The Van Halen “brown M&amp;amp;Ms” story is a classic tale of rock’n’roll lore.
+In 1982, Van Halen had a famous &lt;a href="https://www.thesmokinggun.com/documents/crime/van-halens-legendary-mms-rider"&gt;concert rider&lt;/a&gt; that included a requirement that was patently ludicrous at face value:
+backstage, the catering at a Van Halen show had to provide bowls of M&amp;amp;Ms chocolate candies — &lt;em&gt;with all the brown ones removed.&lt;/em&gt;
+That’s right, there had to be M&amp;amp;Ms, but if there was a single brown one to be found, this would constitute a breach of contract on the promoter’s part.&lt;/p&gt;
+&lt;p&gt;This example is frequently trotted out as an example of crazy rock stardom.
+Clearly, this was an episode of fame getting to the heads of a group of kids that had suddenly hit the big time.
+Or was it?&lt;/p&gt;
+&lt;p&gt;David Lee Roth, the then-singer of Van Halen, explained the reason behind the “no brown M&amp;amp;Ms” rule &lt;a href="https://youtu.be/_IxqdAgNJck"&gt;in an interview&lt;/a&gt; nearly 30 years later.&lt;/p&gt;
+&lt;p&gt;In 1982, the Van Halen show was one of the biggest acts on the North American tour circuit.
+Their stage lighting rigs would look positively tame by modern standards, but at the time very few acts were touring with equipment that was as power-hungry as Van Halen’s.
+(Consider that at the time it wasn’t uncommon for bands to just play under the venue’s house lights, rather than travelling with several truckloads of stage equipment as big acts commonly do today.)&lt;/p&gt;
+&lt;p&gt;So the band put together very stringent electrical wiring and power distribution requirements in their promotion contract.
+Their rider would specify the density and spacing between outlets, amperage requirements, and fuse ratings.
+(Clearly, Van Halen had a vested interest in &lt;em&gt;not&lt;/em&gt; blowing a fuse or tripping a circuit breaker mid-show, and in keeping their crew safe from electrocution by improper grounding.)
+This amounted to quite a compendium of documentation, and right in the middle of that binder they slipped a page specifying the catering requirements — including the now-famous “no brown M&amp;amp;Ms” rule.
+Its purpose was simply to check on whether the promoter had thoroughly read the contract.&lt;/p&gt;
+&lt;p&gt;Thus, if a band member or roadie walked into the backstage area shortly before sound check, and they found brown M&amp;amp;Ms, it stood to reason that the promoter hadn’t been paying close attention to that part of the contract.
+And &lt;em&gt;that&lt;/em&gt; meant that they couldn’t rule out that the promoter had been sloppy with the power specs, too.
+So they would do a full line check to make sure that the equipment held up.&lt;/p&gt;
+&lt;p&gt;Allow me to change the subject.&lt;/p&gt;
+&lt;p&gt;I wrote the communication guidelines for my team.
+Eventually, since the company I work for hadn’t any such thing, they basically adopted large parts of what I wrote and made it company policy.&lt;/p&gt;
+&lt;p&gt;Two of the things that made it into the company policy, and are still standing rules on my team — and will remain so, as long as I run it — are these:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Always use the &lt;a href="https://en.wikipedia.org/wiki/ISO_8601"&gt;ISO 8601&lt;/a&gt; &lt;code&gt;YYYY-MM-DD&lt;/code&gt; format for any dates you specify.&lt;/li&gt;
+&lt;li&gt;Always use &lt;a href="https://en.wikipedia.org/wiki/Coordinated_Universal_Time"&gt;UTC&lt;/a&gt; for any time information you communicate. (Adding conversions to local timezones is OK, but not required — and UTC must always come first.)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;People have called me silly and nitpicky for insisting on these things. But they serve a purpose.&lt;/p&gt;
+&lt;p&gt;You see, I work in an international team.
+I am from Austria and I would &lt;em&gt;not&lt;/em&gt; specify today’s date as 2023-02-10 in regular written communications.
+I would put 10.2.2023.
+Someone who lives in Spain would use 10/2/2023.
+Someone from India would put 10-02-2023.
+And someone from the U.S. would write 2/10/2023 (as you can see this creates some difficulty establishing, unambiguously, whether we are talking about the 10th day of February, or the 2nd day of October).&lt;/p&gt;
+&lt;p&gt;The fact that we agree on an internationally unambiguous format that &lt;em&gt;none&lt;/em&gt; of us would use natively simply means that we all &lt;em&gt;slightly&lt;/em&gt; go out of our way, in order to make things easier for everyone.
+That is a hallmark of respectful behavior: if everyone accepts a &lt;em&gt;slight&lt;/em&gt; inconvenience for themselves, we all act more fairly to each other.&lt;/p&gt;
+&lt;p&gt;The same goes for giving times in UTC: very few people (on a global scale) live “on UTC”: there is just a handful of countries&lt;sup id="fnref:utc-0-countries"&gt;&lt;a class="footnote-ref" href="#fn:utc-0-countries"&gt;1&lt;/a&gt;&lt;/sup&gt; that are in the UTC±0 timezone and never observe daylight saving time.
+Their combined population is about 140 million people, less than 2% of the world’s total.
+Everyone else lives in a timezone other than UTC at least for half of the year.&lt;/p&gt;
+&lt;p&gt;This means if you’re one of &lt;em&gt;most&lt;/em&gt; people, coordinating times in UTC means having to do a little bit of mental calculation for yourself: you know which side of Greenwich you’re on, and how far removed, and whether or not it’s summer and whether or not your area observes daylight saving time.
+Everyone else is in the same boat.
+You go a little out of your way, I go a little out of mine, we respect each other, we get along.&lt;/p&gt;
+&lt;p&gt;It’s been a little while since I wrote those guidelines.
+“Use ISO 8601” and “use UTC” are my “no brown M&amp;amp;Ms” rules.
+And like the removal of brown M&amp;amp;Ms were a proxy variable for diligent contract reading, my date/time rules have turned out to be proxy variables for respect.&lt;/p&gt;
+&lt;p&gt;There are some people who just assume that these simple rules are not for them, and that surely everyone else can adapt so they don’t have to.
+I grow progressively more skeptical of those people.&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr/&gt;
+&lt;ol&gt;
+&lt;li id="fn:utc-0-countries"&gt;
+&lt;p&gt;Burkina Faso, Côte d’Ivoire, Gambia, Ghana, Guinea, Guinea-Bissau, Liberia, Mali, Mauritania, São Tomé and Príncipe, Senegal, Sierra Leone, and Togo. &lt;a class="footnote-backref" href="#fnref:utc-0-countries" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category></entry><entry><title>Nebulous Percentage Shenanigans</title><link href="https://xahteiwi.eu/blog/2022/10/15/nps/" rel="alternate"></link><published>2022-10-15T15:00:00+00:00</published><updated>2022-10-15T15:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-10-15:/blog/2022/10/15/nps/</id><summary type="html">&lt;p&gt;I recently learned that I am a &amp;ldquo;detractor&amp;rdquo; of things I actually quite like. Here are a few related things I also learned about in the process.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Surely you’ve seen a question similar to the following in a survey or
 request for feedback.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;How likely is it that you’ll recommend X to a colleague or friend?&lt;/p&gt;
