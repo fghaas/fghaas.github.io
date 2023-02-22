@@ -43,7 +43,7 @@ the world is that things keep getting more and more disorderly.**
 There are multiple classic examples of this: you can mix two paints in
 a bucket but cannot unmix them, you can open a container of gas in a
 vacuum chamber and the gas will disperse but never go back into the
-container, you can scramble and cook and egg but never return it to
+container, you can scramble and cook an egg but never return it to
 its original protein structure.
 
 Sometimes the growth in entropy isn’t noticeable: you can of course
