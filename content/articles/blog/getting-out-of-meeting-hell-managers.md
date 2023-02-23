@@ -35,7 +35,7 @@ excellent career move.
 If you are a conscientious manager and you feel a sense of
 responsibility and obligation to your team, and this makes you
 hesitate to consider the option to leave, then that reflects nobly on
-your character but know this: that responsibility is contigent on
+your character but know this: that responsibility is contingent on
 everyone’s employment in one organization, and it ends the day your
 employment contract (or theirs) terminates. That may sound harsh, but
 that’s the breaks of the game, and you shouldn’t let that hold you up,
