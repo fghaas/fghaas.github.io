@@ -1,5 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/all.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2023-02-10T19:00:00+00:00</updated><entry><title>Brown M&amp;Ms, UTC, and ISO 8601</title><link href="https://xahteiwi.eu/blog/2023/02/10/brown-mms/" rel="alternate"></link><published>2023-02-10T19:00:00+00:00</published><updated>2023-02-10T19:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-02-10:/blog/2023/02/10/brown-mms/</id><summary type="html">&lt;p&gt;What have brown M&amp;amp;Ms got to do with date/time formats and mutual respect? More than you might think.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The &lt;a href="https://en.wikipedia.org/wiki/Van_Halen"&gt;Van Halen&lt;/a&gt; “brown M&amp;amp;Ms” story is a classic tale of rock’n’roll lore.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/all.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2023-02-23T21:00:00+00:00</updated><entry><title>Making docs with MkDocs</title><link href="https://xahteiwi.eu/blog/2023/02/23/mkdocs/" rel="alternate"></link><published>2023-02-23T21:00:00+00:00</published><updated>2023-02-23T21:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-02-23:/blog/2023/02/23/mkdocs/</id><summary type="html">&lt;p&gt;At work, my team and I built and launched a new documentation website, built on Material for MkDocs.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This week, &lt;a href="https://cleura.com"&gt;work&lt;/a&gt; &lt;a href="https://cleura.com/articles/docs-cleura-cloud-open-source-documentation-for-all-things-cleura/"&gt;launched&lt;/a&gt; a new documentation web site (&lt;a href="https://docs.cleura.cloud"&gt;Cleura Docs&lt;/a&gt;) which my team and I had been building for several months.
+Since this was my first foray into any significant tech writing in about 7 years, it was a fun exercise to see what tools are now available to the community, and how the technical landscape has changed in the interim.&lt;/p&gt;
+&lt;p&gt;This post is a summary of the technical considerations that went into creating that site, and the functional decisions that we made building it.&lt;/p&gt;
+&lt;h1&gt;What we use&lt;/h1&gt;
+&lt;p&gt;We had, early on, made the decision that the site would use Markdown as its primary documentation format.
+This is because Markdown strikes a nice balance between richness of expression, and ease of use.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/ReStructuredText"&gt;reST&lt;/a&gt; and &lt;a href="https://en.wikipedia.org/wiki/DocBook"&gt;DocBook&lt;/a&gt; are probably much more appealing to the die-hard tech writer, but they are also somewhat impenetrable and difficult to grok.
+&lt;a href="https://asciidoc.org/"&gt;AsciiDoc&lt;/a&gt; is just as expressive as DocBook (and indeed is semantically equivalent to it), but it is also somewhat obscure and niche.
+Markdown, in contrast, is ubiquitous and comparatively intuitive, which makes it accessible to contributors who &lt;em&gt;aren’t&lt;/em&gt; full-time professional writers, which is exactly what we were looking for.&lt;sup id="fnref:formats"&gt;&lt;a class="footnote-ref" href="#fn:formats"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;What we also wanted was a static site generator that could be kicked off from a CI run, with the ability to host the results pretty much anywhere.
+We currently run on GitHub Pages, but there is nothing that keeps us from running anywhere else.&lt;/p&gt;
+&lt;p&gt;So the combination of those factors quickly led to the selection of &lt;a href="https://www.mkdocs.org/"&gt;MkDocs&lt;/a&gt;, which I had last used in 2016 or thereabouts, and &lt;em&gt;holy mackerel&lt;/em&gt; has it come a long way since.
+This is in no small part due to &lt;a href="https://squidfunk.github.io/mkdocs-material/"&gt;Material for MkDocs&lt;/a&gt; (also known as mkdocs-material), which is a &lt;em&gt;staggeringly excellent&lt;/em&gt; way to render MkDocs sources, and has become something of a contemporary de-facto standard for technical documentation in the industry.&lt;/p&gt;
+&lt;p&gt;Finally, as a &lt;em&gt;theoretical&lt;/em&gt; documentation framework we adopted &lt;a href="https://diataxis.fr/"&gt;Diátaxis&lt;/a&gt;, which is also becoming something of an industry default.&lt;/p&gt;
+&lt;p&gt;We furthermore decided that &lt;em&gt;within&lt;/em&gt; the Diátaxis framework, we would follow this order of priorities:
+How-to guides would come first, followed by the necessary amount of reference material.
+Once those bits were considered &lt;em&gt;sufficient to be useful&lt;/em&gt; (not “complete” — documentation is never complete), we would be ready to drop the “beta” warnings from the site and announce it publicly.
+Then we would start adding background explanations, and finally, tutorials.&lt;/p&gt;
+&lt;p&gt;As I write this article, &lt;a href="https://github.com/citynetwork/docs/pull/124"&gt;the site is out of beta&lt;/a&gt;, we have &lt;a href="https://docs.cleura.cloud/background/"&gt;just started on the background bits&lt;/a&gt;, and no tutorials do as yet exist — although we do have &lt;a href="https://academy.cleura.cloud"&gt;academy.cleura.cloud&lt;/a&gt; which has full-blown training courses.&lt;/p&gt;
+&lt;h1&gt;How we use it&lt;/h1&gt;
+&lt;p&gt;A &lt;em&gt;non-technical&lt;/em&gt; decision that we also made early on is that the documentation should be available under a Creative Commons license, and that its whole build chain should be publicly available.
+This is nice, because it allows me to go into the nitty-gritty of some technical details.&lt;sup id="fnref:github"&gt;&lt;a class="footnote-ref" href="#fn:github"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;So, I am next going to go into a few elements of our MkDocs configuration that we found particularly useful.&lt;/p&gt;
+&lt;h2&gt;Plugins&lt;/h2&gt;
+&lt;p&gt;There is an inordinate number of plugins available for MkDocs (and some, specifically, for mkdocs-material), of which we use a handful.&lt;/p&gt;
+&lt;h3&gt;macros&lt;/h3&gt;
+&lt;p&gt;This is a plugin that allows you to use Jinja2 expressions in your Markdown sources.
+It’s exceedingly useful because product and service names, and other terms that may be relevant to your technical documentation, change.
+Whenever that happens, you normally hear tech writers groan because they now need to dust off their &lt;code&gt;grep&lt;/code&gt; and &lt;code&gt;sed&lt;/code&gt; skills and embark on a massive search-and-replace effort.&lt;/p&gt;
+&lt;p&gt;With &lt;code&gt;mkdocs-macros&lt;/code&gt;, you just define a variable under the &lt;code&gt;extra&lt;/code&gt; key of your &lt;code&gt;mkdocs.yml&lt;/code&gt; dictionary, and you’re off. Like so:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;extra&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;support&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"Service&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;Desk"&lt;/span&gt;
+&lt;span class="nt"&gt;plugins&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;macros&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="c1"&gt;# These settings are helpful because you want your build to fail if you're using an undefined macro.&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;on_error_fail&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;true&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;on_undefined&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"strict"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And then you can do this, in your Markdown sources:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="gu"&gt;## Getting Help&lt;/span&gt;
+
+For any further questions, contact our {{support}}.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then when your support team decides they want to rename from “Service Desk” to “Service Center”, you change just one line in your configuration.&lt;/p&gt;
+&lt;h3&gt;git-authors&lt;/h3&gt;
+&lt;p&gt;I think it’s always valuable to credit people’s contributions individually.
+The &lt;code&gt;git-authors&lt;/code&gt; plugin lets you do that quite nicely.
+And it even gave me the opportunity to make &lt;a href="https://github.com/timvink/mkdocs-git-authors-plugin/pull/66"&gt;a tiny code contribution&lt;/a&gt; in the process of incorporating it into our build.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;plugins&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;git-authors&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;enabled&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;true&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;show_email_address&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;false&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You can take a look at &lt;a href="https://docs.cleura.cloud/howto/openstack/octavia/lbaas-l7pol/"&gt;any random page&lt;/a&gt; on the site for the inconspicuous “Authors” list at the bottom of the page.&lt;/p&gt;
+&lt;h3&gt;htmlproofer&lt;/h3&gt;
+&lt;p&gt;One of the things that everyone hates when perusing documentation is when it contains dead links.
+I think it is therefore incumbent on us documentation authors to employ a link checker, run it on every build, and not publish documentation that links to HTTP 404s.
+The &lt;code&gt;htmlproofer&lt;/code&gt; plugin lets us do just that:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;plugins&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;htmlproofer&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="c1"&gt;# We want dead links to fail the build, not just produce a warning.&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;raise_error&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;true&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;validate_external_urls&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Note that this can add a &lt;em&gt;significant&lt;/em&gt; amount of time to the build (up to 50 seconds, in our case), so we find it helpful to be able to disable external link checking when we run &lt;code&gt;mkdocs serve&lt;/code&gt; locally.
+We can do that by adding one more line to the configuration:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;plugins&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;htmlproofer&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;enabled&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;!ENV&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p p-Indicator"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;DOCS_ENABLE_HTMLPROOFER&lt;/span&gt;&lt;span class="p p-Indicator"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;True&lt;/span&gt;&lt;span class="p p-Indicator"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;raise_error&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;true&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;validate_external_urls&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now if we don’t do anything specific, links will be checked.
+This is also what we use in CI runs.&lt;/p&gt;
+&lt;p&gt;However, we can also do this, which greatly facilitates work-in-progress:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;DOCS_ENABLE_HTMLPROOFER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;false&lt;/span&gt;
+mkdocs&lt;span class="w"&gt; &lt;/span&gt;serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Content tabs&lt;/h2&gt;
+&lt;p&gt;A feature in mkdocs-material that has proven to be very useful are &lt;a href="https://squidfunk.github.io/mkdocs-material/reference/content-tabs/"&gt;content tabs&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It turns out that more often than not, particularly when dealing with an infrastructure platform, there’s more than one way to do something.
+Then, you often end up interspersing explanatory content (which is the same regardless of the tool you use) with command examples (which are of course tool-specific).
+The use of content tabs makes this kind of content a breeze to write and maintain.&lt;/p&gt;
+&lt;p&gt;For example, we expose an S3-compatible object store API with &lt;a href="https://docs.ceph.com/en/latest/radosgw/"&gt;Ceph radosgw&lt;/a&gt;, and there you can frequently do things just as well with &lt;code&gt;aws s3api&lt;/code&gt; or &lt;code&gt;s3cmd&lt;/code&gt; or &lt;code&gt;mc&lt;/code&gt;.
+With content tabs, we are able to explain complex features in a relatively uncluttered and compact way, without losing the necessary detail.&lt;/p&gt;
+&lt;p&gt;This comes in handy even if we want to be specific about some functionality &lt;em&gt;not&lt;/em&gt; being available in a particular tool.
+Consider this example from the page on &lt;a href="https://docs.cleura.cloud/howto/object-storage/s3/versioning/"&gt;S3 bucket versioning&lt;/a&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="gu"&gt;## Enabling bucket versioning&lt;/span&gt;
+
+To enable versioning in a bucket, use one of the following commands:
+
+=== "aws"
+&lt;span class="sb"&gt;    ```bash&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;aws&lt;span class="w"&gt; &lt;/span&gt;--profile&lt;span class="w"&gt; &lt;/span&gt;&amp;lt;region&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;s3api&lt;span class="w"&gt; &lt;/span&gt;put-bucket-versioning&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;--versioning-configuration&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;Status&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Enabled&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;--bucket&lt;span class="w"&gt; &lt;/span&gt;&amp;lt;bucket-name&amp;gt;
+&lt;span class="sb"&gt;    ```&lt;/span&gt;
+=== "mc"
+&lt;span class="sb"&gt;    ```bash&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;mc&lt;span class="w"&gt; &lt;/span&gt;version&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;enable&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&amp;lt;region&amp;gt;/&amp;lt;bucket-name&amp;gt;
+&lt;span class="sb"&gt;    ```&lt;/span&gt;
+=== "s3cmd"
+    This functionality is not available with the &lt;span class="sb"&gt;`s3cmd`&lt;/span&gt; command.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Git integration&lt;/h2&gt;
+&lt;p&gt;Material for MkDocs has &lt;a href="https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/"&gt;excellent integration&lt;/a&gt; with GitHub, GitLab, and other Git-based revision control and collaboration platforms.&lt;/p&gt;
+&lt;p&gt;We chose to use that to its fullest extent, to the point where every single page has an edit button, and things are made as easy as possible for drive-by contributors.
+We also wrote a &lt;a href="https://docs.cleura.cloud/contrib/modifications/"&gt;guide for submitting changes&lt;/a&gt;, and a general &lt;a href="https://docs.cleura.cloud/contrib/"&gt;contribution guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For people who don’t want to write a patch but do want to report a problem or bug, we implemented &lt;a href="https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-issue-forms"&gt;GitHub issue forms&lt;/a&gt; (currently in beta, we hope they stay) — and wrote a &lt;a href="https://docs.cleura.cloud/contrib/issues/"&gt;separate guide&lt;/a&gt; for using those, too.&lt;/p&gt;
+&lt;h2&gt;CI and deployment automation&lt;/h2&gt;
+&lt;p&gt;Our test/build/deploy pipeline runs from &lt;code&gt;tox&lt;/code&gt;, very similar to &lt;a href="https://xahteiwi.eu/resources/hints-and-kinks/universal-tox-tests/"&gt;what I’ve covered in some detail before&lt;/a&gt;.
+This means that we can ship &lt;a href="https://github.com/citynetwork/docs/tree/main/.githooks"&gt;a &lt;code&gt;.githooks&lt;/code&gt; directory&lt;/a&gt; enabling documentation contributors to run the full test suite on every commit and push, that we can keep our &lt;a href="https://github.com/citynetwork/docs/tree/main/.github/workflows"&gt;GitHub Actions workflows&lt;/a&gt; rather simple and lean, and that we can switch to a different build platform (such as GitLab) quite easily if we choose.&lt;/p&gt;
+&lt;h2&gt;Analytics&lt;/h2&gt;
+&lt;p&gt;At work we are acutely GDPR conscious, so Google Analytics were a non-starter.
+Thankfully, there is a European, privacy-preserving, lightweight site analytics solution in &lt;a href="https://plausible.io"&gt;Plausible&lt;/a&gt; (which I also use for &lt;a href="/privacy"&gt;my site&lt;/a&gt;), which you can incorporate into mkdocs-material with a very tiny theme override.
+Feel free to take a look at &lt;a href="https://github.com/citynetwork/docs/pull/59"&gt;the PR&lt;/a&gt; if you want to do something similar.&lt;/p&gt;
+&lt;h1&gt;How it’s going&lt;/h1&gt;
+&lt;p&gt;Overall, feedback on the new site has been unanimously positive.
+This is nice, but what is even better (and highly important, in the long run) is that people evidently find it very straightforward to make contributions.
+Our colleagues no longer even ask how they can help out — they just do it, some of them making extremely impressive content additions even on their first PR.&lt;/p&gt;
+&lt;p&gt;So that feels very promising.&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr/&gt;
+&lt;ol&gt;
+&lt;li id="fn:formats"&gt;
+&lt;p&gt;Lest you think I am bashing something I am clueless about, I have used all the mentioned formats for technical documentation in a professional capacity:
+reST (with Sphinx) for contributions to the Ceph and OpenStack docs, AsciiDoc in the context of Linux-HA, and DocBook XML for ancient versions of the Pacemaker documentation and, believe it or not, for my thesis.
+And Markdown, obviously, for too many things to count. &lt;a class="footnote-backref" href="#fnref:formats" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:github"&gt;
+&lt;p&gt;You are welcome to take a peek at the &lt;a href="https://github.com/citynetwork/docs/"&gt;GitHub repo&lt;/a&gt; where we maintain the documentation sources and CI infrastructure. &lt;a class="footnote-backref" href="#fnref:github" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content><category term="blog"></category></entry><entry><title>Brown M&amp;Ms, UTC, and ISO 8601</title><link href="https://xahteiwi.eu/blog/2023/02/10/brown-mms/" rel="alternate"></link><published>2023-02-10T19:00:00+00:00</published><updated>2023-02-10T19:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-02-10:/blog/2023/02/10/brown-mms/</id><summary type="html">&lt;p&gt;What have brown M&amp;amp;Ms got to do with date/time formats and mutual respect? More than you might think.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The &lt;a href="https://en.wikipedia.org/wiki/Van_Halen"&gt;Van Halen&lt;/a&gt; “brown M&amp;amp;Ms” story is a classic tale of rock’n’roll lore.
 In 1982, Van Halen had a famous &lt;a href="https://www.thesmokinggun.com/documents/crime/van-halens-legendary-mms-rider"&gt;concert rider&lt;/a&gt; that included a requirement that was patently ludicrous at face value:
 backstage, the catering at a Van Halen show had to provide bowls of M&amp;amp;Ms chocolate candies — &lt;em&gt;with all the brown ones removed.&lt;/em&gt;
 That’s right, there had to be M&amp;amp;Ms, but if there was a single brown one to be found, this would constitute a breach of contract on the promoter’s part.&lt;/p&gt;
@@ -2120,7 +2254,7 @@ guessing should work well too.&lt;/p&gt;
 &lt;h2&gt;Nutrition facts&lt;/h2&gt;
 &lt;p&gt;No warranty of any kind on these. Values are per serving.&lt;/p&gt;
 &lt;p&gt;With meat:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Calories (kcal)&lt;/th&gt;
@@ -2151,7 +2285,7 @@ guessing should work well too.&lt;/p&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;Without meat:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Calories (kcal)&lt;/th&gt;
@@ -3024,7 +3158,7 @@ planned.&lt;/p&gt;
 &lt;p&gt;So Alex, being a good CEO, opens some spread sheet software and
 creates this handy table that simply plugs in values for &lt;span class="math"&gt;\(x\)&lt;/span&gt; and &lt;span class="math"&gt;\(y\)&lt;/span&gt;,
 with &lt;span class="math"&gt;\(x\)&lt;/span&gt; (width) in columns and &lt;span class="math"&gt;\(y\)&lt;/span&gt; (depth) in rows.&lt;sup id="fnref:table"&gt;&lt;a class="footnote-ref" href="#fn:table"&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -3248,7 +3382,7 @@ interjects that Alex is missing a point, namely all the managers that
 the company will now no longer need, and the cost savings thus
 generated.&lt;/p&gt;
 &lt;p&gt;So Alex looks at the table again (width in columns, depth in rows):&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -3437,7 +3571,7 @@ cell &lt;em&gt;directly above it&lt;/em&gt; will contain the total number of man
 again, but considers the number of managers proportional to the number
 of people in the company, a pattern quickly emerges (again, width
 is in columns, depth is in rows):&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -5803,7 +5937,7 @@ excellent career move.&lt;/p&gt;
 &lt;p&gt;If you are a conscientious manager and you feel a sense of
 responsibility and obligation to your team, and this makes you
 hesitate to consider the option to leave, then that reflects nobly on
-your character but know this: that responsibility is contigent on
+your character but know this: that responsibility is contingent on
 everyone’s employment in one organization, and it ends the day your
 employment contract (or theirs) terminates. That may sound harsh, but
 that’s the breaks of the game, and you shouldn’t let that hold you up,
@@ -7242,7 +7376,7 @@ It’s being lazy.&lt;/p&gt;
 &lt;p&gt;It’s a symptom of the worst kind of laziness &lt;em&gt;(not malice!)&lt;/em&gt;: in an
 attempt to communicate quickly and easily, for yourself, you are really
 making things harder for everyone, including yourself.&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -7270,7 +7404,7 @@ ago”, you’ll agree with me here.&lt;/p&gt;
 is to say in relation to &lt;em&gt;other&lt;/em&gt; discussions on the same topic, days
 or weeks earlier or later.&lt;/p&gt;
 &lt;p&gt;Let’s compare that to other communication modes:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -7301,7 +7435,7 @@ or weeks earlier or later.&lt;/p&gt;
   as with chat, and it’s marginally better at contextualizing
   information than chat (because you get proper threading).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -7348,7 +7482,7 @@ or weeks earlier or later.&lt;/p&gt;
   Likewise, “issue tracker” can mean RT, OTRS, Jira, Taiga, Bugzilla,
   whatever works for you.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -8521,7 +8655,7 @@ came this.&lt;/p&gt;
 &lt;/ol&gt;
 &lt;h2&gt;Nutrition facts&lt;/h2&gt;
 &lt;p&gt;No warranty of any kind on these. Values are per serving.&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Calories (kcal)&lt;/th&gt;
@@ -8804,7 +8938,7 @@ several to accommodate a larger crowd, or very hungry people.&lt;/p&gt;
 &lt;h2&gt;Nutrition facts&lt;/h2&gt;
 &lt;p&gt;No warranty of any kind on these. Values are per serving, counting one
 serving as one-quarter of the whole pizza.&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Calories (kcal)&lt;/th&gt;
@@ -10057,7 +10191,7 @@ in the conference.&lt;/p&gt;
 &lt;p&gt;Nonexisticon’s attendee-visible run-up cycle is 6 months.&lt;/p&gt;
 &lt;p&gt;Assuming a Nonexisticon is scheduled to run from May 15-17, the
 following schedule applies:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Date&lt;/th&gt;
@@ -10519,7 +10653,7 @@ let’s say it’s 1%.&lt;/p&gt;
 &lt;p&gt;So then let’s look at 10,000 interactions that completely random
 people make on the internet.&lt;/p&gt;
 &lt;p&gt;Those would then break down like so:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -10552,7 +10686,7 @@ flags content as infringing when it is not) with a rate of only
 ridiculously low for any automated screening procedure.&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;So that means that out of our 10,000 interactions tracked by our
 “perfect” content filter, the numbers break down like this:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -10595,7 +10729,7 @@ exceedingly rare, automated filters detect it with poor accuracy.&lt;/strong&gt;
 &lt;p&gt;And if you leave all parameters the same, but consider a probably much
 more realistic infringement rate of 1 in 1000, that is, 0.1%, then
 things look like this: &lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;

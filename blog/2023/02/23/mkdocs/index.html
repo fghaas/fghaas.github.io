@@ -1,0 +1,333 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index,follow" />
+
+
+    <link rel="stylesheet" type="text/css" href="../../../../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../../../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../../../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../../../../theme/pygments/github.min.css">
+
+    <link rel="stylesheet" 
+    href="../../../../../theme/tipuesearch/tipuesearch.min.css" />
+
+
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/solid.css">
+
+  <link rel="stylesheet" type="text/css" href="/css/override.css">
+
+
+
+  <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+  <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+<script defer data-domain="xahteiwi.eu" src="https://plausible.io/js/plausible.js"></script>
+
+ 
+
+<meta name="author" content="Florian Haas" />
+<meta name="description" content="At work, my team and I built and launched a new documentation website, built on Material for MkDocs." />
+<meta name="keywords" content="">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="Making docs with MkDocs"/>
+  <meta property="og:description" content="At work, my team and I built and launched a new documentation website, built on Material for MkDocs."/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../../../../blog/2023/02/23/mkdocs/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2023-02-23 21:00:00+00:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../../../../author/florian-haas.html">
+  <meta property="article:section" content="blog"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; Making docs with MkDocs</title>
+
+
+</head>
+<body >
+
+<aside>
+  <div>
+    <a href="../../../../../">
+      <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+    </a>
+
+    <h1>
+      <a href="../../../../../"></a>
+    </h1>
+
+
+    <form class="navbar-search" action="../../../../../search.html" role="search">
+      <input type="text" name="q" id="tipue_search_input" placeholder="Search...">
+    </form>
+
+
+    <ul class="social">
+      <li>
+        <a class="sc-mastodon"
+rel="me"           href="https://mastodon.social/@xahteiwi"
+           target="_blank">
+          <i class="fa-brands fa-mastodon"></i>
+        </a>
+      </li>
+      <li>
+        <a class="sc-linkedin"
+           href="https://www.linkedin.com/in/fghaas"
+           target="_blank">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="sc-github"
+           href="https://github.com/fghaas"
+           target="_blank">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</aside>
+  <main>
+
+<nav>
+  <a href="../../../../../">Home</a>
+
+  <a href="/category/hints-and-kinks.html">Tech</a>
+  <a href="/category/presentations.html">Talks</a>
+  <a href="/category/blog.html">Thoughts</a>
+  <a href="">​</a>
+  <a href="/about/">About</a>
+  <a href="/comments/">Comments</a>
+  <a href="/legal/">Legal</a>
+  <a href="/privacy/">Privacy</a>
+  <a href="">​</a>
+  <a href="/categories.html">Categories</a>
+  <a href="/tags.html">Tags</a>
+  <a href="">​</a>
+
+  <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+  <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+</nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="mkdocs">Making docs with MkDocs</h1>
+    <p>
+      Posted on Thu 23 February 2023 in <a href="../../../../../category/blog.html">blog</a>
+
+        &#8226; 7 min read
+    </p>
+  </header>
+
+
+  <div>
+    <p>This week, <a href="https://cleura.com">work</a> <a href="https://cleura.com/articles/docs-cleura-cloud-open-source-documentation-for-all-things-cleura/">launched</a> a new documentation web site (<a href="https://docs.cleura.cloud">Cleura Docs</a>) which my team and I had been building for several months.
+Since this was my first foray into any significant tech writing in about 7 years, it was a fun exercise to see what tools are now available to the community, and how the technical landscape has changed in the interim.</p>
+<p>This post is a summary of the technical considerations that went into creating that site, and the functional decisions that we made building it.</p>
+<h1>What we use</h1>
+<p>We had, early on, made the decision that the site would use Markdown as its primary documentation format.
+This is because Markdown strikes a nice balance between richness of expression, and ease of use.</p>
+<p><a href="https://en.wikipedia.org/wiki/ReStructuredText">reST</a> and <a href="https://en.wikipedia.org/wiki/DocBook">DocBook</a> are probably much more appealing to the die-hard tech writer, but they are also somewhat impenetrable and difficult to grok.
+<a href="https://asciidoc.org/">AsciiDoc</a> is just as expressive as DocBook (and indeed is semantically equivalent to it), but it is also somewhat obscure and niche.
+Markdown, in contrast, is ubiquitous and comparatively intuitive, which makes it accessible to contributors who <em>aren’t</em> full-time professional writers, which is exactly what we were looking for.<sup id="fnref:formats"><a class="footnote-ref" href="#fn:formats">1</a></sup></p>
+<p>What we also wanted was a static site generator that could be kicked off from a CI run, with the ability to host the results pretty much anywhere.
+We currently run on GitHub Pages, but there is nothing that keeps us from running anywhere else.</p>
+<p>So the combination of those factors quickly led to the selection of <a href="https://www.mkdocs.org/">MkDocs</a>, which I had last used in 2016 or thereabouts, and <em>holy mackerel</em> has it come a long way since.
+This is in no small part due to <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a> (also known as mkdocs-material), which is a <em>staggeringly excellent</em> way to render MkDocs sources, and has become something of a contemporary de-facto standard for technical documentation in the industry.</p>
+<p>Finally, as a <em>theoretical</em> documentation framework we adopted <a href="https://diataxis.fr/">Diátaxis</a>, which is also becoming something of an industry default.</p>
+<p>We furthermore decided that <em>within</em> the Diátaxis framework, we would follow this order of priorities:
+How-to guides would come first, followed by the necessary amount of reference material.
+Once those bits were considered <em>sufficient to be useful</em> (not “complete” — documentation is never complete), we would be ready to drop the “beta” warnings from the site and announce it publicly.
+Then we would start adding background explanations, and finally, tutorials.</p>
+<p>As I write this article, <a href="https://github.com/citynetwork/docs/pull/124">the site is out of beta</a>, we have <a href="https://docs.cleura.cloud/background/">just started on the background bits</a>, and no tutorials do as yet exist — although we do have <a href="https://academy.cleura.cloud">academy.cleura.cloud</a> which has full-blown training courses.</p>
+<h1>How we use it</h1>
+<p>A <em>non-technical</em> decision that we also made early on is that the documentation should be available under a Creative Commons license, and that its whole build chain should be publicly available.
+This is nice, because it allows me to go into the nitty-gritty of some technical details.<sup id="fnref:github"><a class="footnote-ref" href="#fn:github">2</a></sup></p>
+<p>So, I am next going to go into a few elements of our MkDocs configuration that we found particularly useful.</p>
+<h2>Plugins</h2>
+<p>There is an inordinate number of plugins available for MkDocs (and some, specifically, for mkdocs-material), of which we use a handful.</p>
+<h3>macros</h3>
+<p>This is a plugin that allows you to use Jinja2 expressions in your Markdown sources.
+It’s exceedingly useful because product and service names, and other terms that may be relevant to your technical documentation, change.
+Whenever that happens, you normally hear tech writers groan because they now need to dust off their <code>grep</code> and <code>sed</code> skills and embark on a massive search-and-replace effort.</p>
+<p>With <code>mkdocs-macros</code>, you just define a variable under the <code>extra</code> key of your <code>mkdocs.yml</code> dictionary, and you’re off. Like so:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">extra</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">support</span><span class="p">:</span><span class="w"> </span><span class="s">"Service</span><span class="nv"> </span><span class="s">Desk"</span>
+<span class="nt">plugins</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">macros</span><span class="p">:</span>
+<span class="w">      </span><span class="c1"># These settings are helpful because you want your build to fail if you're using an undefined macro.</span>
+<span class="w">      </span><span class="nt">on_error_fail</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">on_undefined</span><span class="p">:</span><span class="w"> </span><span class="s">"strict"</span>
+</code></pre></div>
+<p>And then you can do this, in your Markdown sources:</p>
+<div class="highlight"><pre><span></span><code><span class="gu">## Getting Help</span>
+
+For any further questions, contact our {{support}}.
+</code></pre></div>
+<p>Then when your support team decides they want to rename from “Service Desk” to “Service Center”, you change just one line in your configuration.</p>
+<h3>git-authors</h3>
+<p>I think it’s always valuable to credit people’s contributions individually.
+The <code>git-authors</code> plugin lets you do that quite nicely.
+And it even gave me the opportunity to make <a href="https://github.com/timvink/mkdocs-git-authors-plugin/pull/66">a tiny code contribution</a> in the process of incorporating it into our build.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">git-authors</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">show_email_address</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</code></pre></div>
+<p>You can take a look at <a href="https://docs.cleura.cloud/howto/openstack/octavia/lbaas-l7pol/">any random page</a> on the site for the inconspicuous “Authors” list at the bottom of the page.</p>
+<h3>htmlproofer</h3>
+<p>One of the things that everyone hates when perusing documentation is when it contains dead links.
+I think it is therefore incumbent on us documentation authors to employ a link checker, run it on every build, and not publish documentation that links to HTTP 404s.
+The <code>htmlproofer</code> plugin lets us do just that:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">htmlproofer</span><span class="p">:</span>
+<span class="w">      </span><span class="c1"># We want dead links to fail the build, not just produce a warning.</span>
+<span class="w">      </span><span class="nt">raise_error</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">validate_external_urls</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<p>Note that this can add a <em>significant</em> amount of time to the build (up to 50 seconds, in our case), so we find it helpful to be able to disable external link checking when we run <code>mkdocs serve</code> locally.
+We can do that by adding one more line to the configuration:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">htmlproofer</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kt">!ENV</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">DOCS_ENABLE_HTMLPROOFER</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">True</span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="nt">raise_error</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">validate_external_urls</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<p>Now if we don’t do anything specific, links will be checked.
+This is also what we use in CI runs.</p>
+<p>However, we can also do this, which greatly facilitates work-in-progress:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">DOCS_ENABLE_HTMLPROOFER</span><span class="o">=</span><span class="nb">false</span>
+mkdocs<span class="w"> </span>serve
+</code></pre></div>
+<h2>Content tabs</h2>
+<p>A feature in mkdocs-material that has proven to be very useful are <a href="https://squidfunk.github.io/mkdocs-material/reference/content-tabs/">content tabs</a>.</p>
+<p>It turns out that more often than not, particularly when dealing with an infrastructure platform, there’s more than one way to do something.
+Then, you often end up interspersing explanatory content (which is the same regardless of the tool you use) with command examples (which are of course tool-specific).
+The use of content tabs makes this kind of content a breeze to write and maintain.</p>
+<p>For example, we expose an S3-compatible object store API with <a href="https://docs.ceph.com/en/latest/radosgw/">Ceph radosgw</a>, and there you can frequently do things just as well with <code>aws s3api</code> or <code>s3cmd</code> or <code>mc</code>.
+With content tabs, we are able to explain complex features in a relatively uncluttered and compact way, without losing the necessary detail.</p>
+<p>This comes in handy even if we want to be specific about some functionality <em>not</em> being available in a particular tool.
+Consider this example from the page on <a href="https://docs.cleura.cloud/howto/object-storage/s3/versioning/">S3 bucket versioning</a>:</p>
+<div class="highlight"><pre><span></span><code><span class="gu">## Enabling bucket versioning</span>
+
+To enable versioning in a bucket, use one of the following commands:
+
+=== "aws"
+<span class="sb">    ```bash</span>
+<span class="w">    </span>aws<span class="w"> </span>--profile<span class="w"> </span>&lt;region&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>s3api<span class="w"> </span>put-bucket-versioning<span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>--versioning-configuration<span class="w"> </span><span class="nv">Status</span><span class="o">=</span>Enabled<span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>--bucket<span class="w"> </span>&lt;bucket-name&gt;
+<span class="sb">    ```</span>
+=== "mc"
+<span class="sb">    ```bash</span>
+<span class="w">    </span>mc<span class="w"> </span>version<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>&lt;region&gt;/&lt;bucket-name&gt;
+<span class="sb">    ```</span>
+=== "s3cmd"
+    This functionality is not available with the <span class="sb">`s3cmd`</span> command.
+</code></pre></div>
+<h2>Git integration</h2>
+<p>Material for MkDocs has <a href="https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/">excellent integration</a> with GitHub, GitLab, and other Git-based revision control and collaboration platforms.</p>
+<p>We chose to use that to its fullest extent, to the point where every single page has an edit button, and things are made as easy as possible for drive-by contributors.
+We also wrote a <a href="https://docs.cleura.cloud/contrib/modifications/">guide for submitting changes</a>, and a general <a href="https://docs.cleura.cloud/contrib/">contribution guide</a>.</p>
+<p>For people who don’t want to write a patch but do want to report a problem or bug, we implemented <a href="https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-issue-forms">GitHub issue forms</a> (currently in beta, we hope they stay) — and wrote a <a href="https://docs.cleura.cloud/contrib/issues/">separate guide</a> for using those, too.</p>
+<h2>CI and deployment automation</h2>
+<p>Our test/build/deploy pipeline runs from <code>tox</code>, very similar to <a href="../../../../../resources/hints-and-kinks/universal-tox-tests/">what I’ve covered in some detail before</a>.
+This means that we can ship <a href="https://github.com/citynetwork/docs/tree/main/.githooks">a <code>.githooks</code> directory</a> enabling documentation contributors to run the full test suite on every commit and push, that we can keep our <a href="https://github.com/citynetwork/docs/tree/main/.github/workflows">GitHub Actions workflows</a> rather simple and lean, and that we can switch to a different build platform (such as GitLab) quite easily if we choose.</p>
+<h2>Analytics</h2>
+<p>At work we are acutely GDPR conscious, so Google Analytics were a non-starter.
+Thankfully, there is a European, privacy-preserving, lightweight site analytics solution in <a href="https://plausible.io">Plausible</a> (which I also use for <a href="/privacy">my site</a>), which you can incorporate into mkdocs-material with a very tiny theme override.
+Feel free to take a look at <a href="https://github.com/citynetwork/docs/pull/59">the PR</a> if you want to do something similar.</p>
+<h1>How it’s going</h1>
+<p>Overall, feedback on the new site has been unanimously positive.
+This is nice, but what is even better (and highly important, in the long run) is that people evidently find it very straightforward to make contributions.
+Our colleagues no longer even ask how they can help out — they just do it, some of them making extremely impressive content additions even on their first PR.</p>
+<p>So that feels very promising.</p>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:formats">
+<p>Lest you think I am bashing something I am clueless about, I have used all the mentioned formats for technical documentation in a professional capacity:
+reST (with Sphinx) for contributions to the Ceph and OpenStack docs, AsciiDoc in the context of Linux-HA, and DocBook XML for ancient versions of the Pacemaker documentation and, believe it or not, for my thesis.
+And Markdown, obviously, for too many things to count. <a class="footnote-backref" href="#fnref:formats" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:github">
+<p>You are welcome to take a peek at the <a href="https://github.com/citynetwork/docs/">GitHub repo</a> where we maintain the documentation sources and CI infrastructure. <a class="footnote-backref" href="#fnref:github" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+  </div>
+  <div class="tag-cloud">
+    <p>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+<footer>
+<p>
+  &copy; 2023  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../../../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p></footer>  </main>
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../../../../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+</body>
+</html>
