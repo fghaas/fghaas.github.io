@@ -6,7 +6,7 @@ Summary: There’s a specific use of the term “non-technical,” and that’s 
 
 The excellent [Josh Simmons](https://joshsimmons.com/) recently
 [implored people on
-Twitter](https://twitter.com/joshsimmons/status/1111292871594774529)
+Mastodon](https://josh.tel/@josh/109955068395820670)
 to stop using the term “non-technical” when talking about another
 person’s skill set. And as far as that term is often used as a
 put-down of others, I am *completely* with Josh. Belittling someone
