@@ -6,7 +6,7 @@ Summary: There’s a specific use of the term “non-technical,” and that’s 
 
 The excellent [Josh Simmons](https://joshsimmons.com/) recently
 [implored people on
-Twitter](https://twitter.com/joshsimmons/status/1111292871594774529)
+Twitter](https://twitter.com/joshsimmons/status/1111292871594774529)[^deleted]
 to stop using the term “non-technical” when talking about another
 person’s skill set. And as far as that term is often used as a
 put-down of others, I am *completely* with Josh. Belittling someone
@@ -14,6 +14,8 @@ because they work in documentation, corporate leadership, marketing,
 middle management, PR, advocacy, legal (etc. etc.), and because you
 consider yourself somehow superior because you’re in a “technical”
 role — that has got to stop, yesterday.
+
+[^deleted]: The post has since been deleted off Twitter ([as have mine]({filename}bye-birdsite.md), incidentally), and Josh has reposted it [to Mastodon](https://josh.tel/@josh/109955068395820670).
 
 However, I would like to amend his plea to also decry the use of the
 phrase _about oneself,_ as a cop-out. I am talking about people in
