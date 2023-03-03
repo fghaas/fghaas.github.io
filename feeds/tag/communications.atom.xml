@@ -726,7 +726,7 @@ planned.&lt;/p&gt;
 &lt;p&gt;So Alex, being a good CEO, opens some spread sheet software and
 creates this handy table that simply plugs in values for &lt;span class="math"&gt;\(x\)&lt;/span&gt; and &lt;span class="math"&gt;\(y\)&lt;/span&gt;,
 with &lt;span class="math"&gt;\(x\)&lt;/span&gt; (width) in columns and &lt;span class="math"&gt;\(y\)&lt;/span&gt; (depth) in rows.&lt;sup id="fnref:table"&gt;&lt;a class="footnote-ref" href="#fn:table"&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -950,7 +950,7 @@ interjects that Alex is missing a point, namely all the managers that
 the company will now no longer need, and the cost savings thus
 generated.&lt;/p&gt;
 &lt;p&gt;So Alex looks at the table again (width in columns, depth in rows):&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -1139,7 +1139,7 @@ cell &lt;em&gt;directly above it&lt;/em&gt; will contain the total number of man
 again, but considers the number of managers proportional to the number
 of people in the company, a pattern quickly emerges (again, width
 is in columns, depth is in rows):&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -3813,7 +3813,7 @@ It’s being lazy.&lt;/p&gt;
 &lt;p&gt;It’s a symptom of the worst kind of laziness &lt;em&gt;(not malice!)&lt;/em&gt;: in an
 attempt to communicate quickly and easily, for yourself, you are really
 making things harder for everyone, including yourself.&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -3841,7 +3841,7 @@ ago”, you’ll agree with me here.&lt;/p&gt;
 is to say in relation to &lt;em&gt;other&lt;/em&gt; discussions on the same topic, days
 or weeks earlier or later.&lt;/p&gt;
 &lt;p&gt;Let’s compare that to other communication modes:&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -3872,7 +3872,7 @@ or weeks earlier or later.&lt;/p&gt;
   as with chat, and it’s marginally better at contextualizing
   information than chat (because you get proper threading).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -3919,7 +3919,7 @@ or weeks earlier or later.&lt;/p&gt;
   Likewise, “issue tracker” can mean RT, OTRS, Jira, Taiga, Bugzilla,
   whatever works for you.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -4509,7 +4509,7 @@ ultimately became &lt;a href="https://xahteiwi.eu/resources/presentations/no-we-
 &lt;li&gt;Slide sources (CC-BY-SA): &lt;a href="https://github.com/fghaas/froscon2020"&gt;GitHub&lt;/a&gt; &lt;/li&gt;
 &lt;/ul&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="Communications"></category><category term="Work"></category></entry><entry><title>If you’re a leader in tech, “non-technical” is not a free pass</title><link href="https://xahteiwi.eu/blog/2019/04/21/non-technical/" rel="alternate"></link><published>2019-04-21T00:00:00+00:00</published><updated>2019-04-21T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-04-21:/blog/2019/04/21/non-technical/</id><summary type="html">&lt;p&gt;There’s a specific use of the term “non-technical,” and that’s applying it to oneself, as a cop-out. If you’re a leader in tech, you don’t get to do that.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The excellent &lt;a href="https://joshsimmons.com/"&gt;Josh Simmons&lt;/a&gt; recently
 &lt;a href="https://twitter.com/joshsimmons/status/1111292871594774529"&gt;implored people on
-Twitter&lt;/a&gt;
+Twitter&lt;/a&gt;&lt;sup id="fnref:deleted"&gt;&lt;a class="footnote-ref" href="#fn:deleted"&gt;1&lt;/a&gt;&lt;/sup&gt;
 to stop using the term “non-technical” when talking about another
 person’s skill set. And as far as that term is often used as a
 put-down of others, I am &lt;em&gt;completely&lt;/em&gt; with Josh. Belittling someone
@@ -4557,7 +4557,7 @@ proficiency. But then this is frequently flipped to claim that
 technical understanding can be &lt;em&gt;replaced&lt;/em&gt; with communications skills,
 because the former allegedly &lt;em&gt;pales&lt;/em&gt; in importance versus the latter.&lt;/p&gt;
 &lt;p&gt;Let me break something to you: &lt;strong&gt;except in the rare case of a job
-where someone works entirely on their own and also has no customers,&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt;
+where someone works entirely on their own and also has no customers,&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;2&lt;/a&gt;&lt;/sup&gt;
 communication skills are &lt;em&gt;every&lt;/em&gt; person’s most important skills.&lt;/strong&gt; &lt;em&gt;Yes of
 course&lt;/em&gt; your communication skills are more important than your tech
 skills, because they’re literally more important than
@@ -4573,8 +4573,11 @@ to not understand things, stop. It isn’t.&lt;/p&gt;
 &lt;div class="footnote"&gt;
 &lt;hr/&gt;
 &lt;ol&gt;
+&lt;li id="fn:deleted"&gt;
+&lt;p&gt;The post has since been deleted off Twitter (&lt;a href="https://xahteiwi.eu/blog/2022/11/12/bye-birdsite/"&gt;as have mine&lt;/a&gt;, incidentally), and Josh has reposted it &lt;a href="https://josh.tel/@josh/109955068395820670"&gt;to Mastodon&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:deleted" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;li id="fn:1"&gt;
-&lt;p&gt;Yes I am aware that this is exceedingly rare. &lt;a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Yes I am aware that this is exceedingly rare. &lt;a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;</content><category term="blog"></category><category term="Communications"></category></entry></feed>
