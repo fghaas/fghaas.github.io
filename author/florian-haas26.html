@@ -128,6 +128,38 @@ rel="me"           href="https://mastodon.social/@xahteiwi"
 
 <article>
   <header>
+    <h2><a href="../resources/hints-and-kinks/mysqlgalera-pacemaker-setting-galera-specific-mysql-options/#mysqlgalera-pacemaker-setting-galera-specific-mysql-options">Setting Galera-specific MySQL options</a></h2>
+    <p>
+      Posted on Tue 04 December 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
+
+          &#8226; Tagged with
+              <a href="../tag/galera.html">Galera</a>,              <a href="../tag/mysql.html">MySQL</a>,              <a href="../tag/pacemaker.html">Pacemaker</a>
+        &#8226; 1 min read
+    </p>
+  </header>
+  <div>
+      <div><p>Now you can proceed with setting Galera specifics in your MySQL
+configurations.</p>
+<p>Create a configuration file, <strong>identical on all cluster nodes,</strong> named
+<code>/etc/mysql/conf.d/galera.cnf</code> with the following content:</p>
+<div class="highlight"><pre><span></span><code><span class="k">[mysqld]</span>
+<span class="na">bind_address</span><span class="o">=</span><span class="s">0.0.0.0</span>
+<span class="na">binlog_format</span><span class="o">=</span><span class="s">ROW</span>
+<span class="na">default_storage_engine</span><span class="o">=</span><span class="s">InnoDB</span>
+<span class="na">innodb_autoinc_lock_mode</span><span class="o">=</span><span class="s">2</span>
+<span class="na">innodb_locks_unsafe_for_binlog</span><span class="o">=</span><span class="s">1</span>
+</code></pre></div>
+<p>Create another configuration file …</p></div>
+        <br>
+        <a class="btn"
+           href="../resources/hints-and-kinks/mysqlgalera-pacemaker-setting-galera-specific-mysql-options/#mysqlgalera-pacemaker-setting-galera-specific-mysql-options">
+          Continue reading
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="../resources/hints-and-kinks/mysqlgalera-pacemaker-starting-pacemaker/#mysqlgalera-pacemaker-starting-pacemaker">Starting Pacemaker</a></h2>
     <p>
       Posted on Tue 04 December 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
@@ -231,36 +263,6 @@ overview of integrating GlusterFS with the Pacemaker cluster stack.</p>
         <br>
         <a class="btn"
            href="../resources/presentations/glusterfs-high-availability-clusters/#glusterfs-high-availability-clusters">
-          Continue reading
-        </a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="../resources/presentations/hands-ceph/#hands-ceph">Hands-On With Ceph</a></h2>
-    <p>
-      Posted on Thu 08 November 2012 in <a href="../category/presentations.html">presentations</a>
-
-          &#8226; Tagged with
-              <a href="../tag/ceph.html">Ceph</a>,              <a href="../tag/conference.html">Conference</a>
-        &#8226; 1 min read
-    </p>
-  </header>
-  <div>
-      <div><p>My Ceph tutorial from LinuxCon Europe 2012. Presented in
-Barcelona in November of 2012, this is a dense summary of the features
-of the <a href="https://www.hastexo.com/knowledge/storage-io/ceph">Ceph</a>
-distributed storage stack.</p>
-<p>This tutorial gives an overview of</p>
-<ul>
-<li>Native RADOS object storage,</li>
-<li>The RBD block device,</li>
-<li>ReSTful object storage with radosgw,</li>
-<li>the Ceph distributed …</li></ul></div>
-        <br>
-        <a class="btn"
-           href="../resources/presentations/hands-ceph/#hands-ceph">
           Continue reading
         </a>
   </div>
