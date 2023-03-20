@@ -102,7 +102,7 @@ And so, the "clever" thing to do *in the twisted logic of the method* is to set 
 
 And now here comes an interesting twist: when you confront someone with such examples of why a particular method is inherently flawed, they quickly retreat to a position of "well no method is 100% perfect; pointing out an imperfection does not render the method invalid". That is true in principle --- except when the thing that is broken is what *defines* the method.
 
-I'm also pretty certain that someone will come forward pointing out that the hypothetical example I presented here is construed, that I am discussing something no-one in their sane mind would define as an Objective, and that my Key Results are all nonsensical.
+I'm also pretty certain that someone will come forward pointing out that the hypothetical example I presented here is construed, that I am discussing something no-one in their right mind would define as an Objective, and that my Key Results are all nonsensical.
 The problem is, whenever I then challenge them to give me a *good* Objective and 3-5 *good* Key Results, it usually takes about five minutes to identify either a way to game them, or a perverse incentive that they managed to build in.
 
 Again, there's no OKR without the KR. And the fact that Key Results must be measurable, and must be 3 to 5 in number, and meeting all of them is what constitutes meeting the Objective, no exceptions --- that is what defines the method. And if that is broken, then the method is broken.
