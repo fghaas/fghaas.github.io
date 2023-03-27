@@ -6,7 +6,9 @@ Summary: At work, my team and I built and launched a new documentation website, 
 This week, [work](https://cleura.com) [launched](https://cleura.com/articles/docs-cleura-cloud-open-source-documentation-for-all-things-cleura/) a new documentation web site ([Cleura Docs](https://docs.cleura.cloud)) which my team and I had been building for several months.
 Since this was my first foray into any significant tech writing in about 7 years, it was a fun exercise to see what tools are now available to the community, and how the technical landscape has changed in the interim.
 
-This post is a summary of the technical considerations that went into creating that site, and the functional decisions that we made building it.
+This post is a summary of the technical considerations that went into creating that site, and the functional decisions that we made building it.[^companion]
+
+[^companion]: There is also [an article the Cleura blog](https://cleura.com/articles/how-to-build-a-comprehensive-documentation-platform/), published a few weeks after *this* post, that talks about the organizational considerations that went into building the documentation platform.
 
 # What we use
 
