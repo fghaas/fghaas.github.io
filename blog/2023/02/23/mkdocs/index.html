@@ -146,13 +146,13 @@ rel="me"           href="https://mastodon.social/@xahteiwi"
   <div>
     <p>This week, <a href="https://cleura.com">work</a> <a href="https://cleura.com/articles/docs-cleura-cloud-open-source-documentation-for-all-things-cleura/">launched</a> a new documentation web site (<a href="https://docs.cleura.cloud">Cleura Docs</a>) which my team and I had been building for several months.
 Since this was my first foray into any significant tech writing in about 7 years, it was a fun exercise to see what tools are now available to the community, and how the technical landscape has changed in the interim.</p>
-<p>This post is a summary of the technical considerations that went into creating that site, and the functional decisions that we made building it.</p>
+<p>This post is a summary of the technical considerations that went into creating that site, and the functional decisions that we made building it.<sup id="fnref:companion"><a class="footnote-ref" href="#fn:companion">1</a></sup></p>
 <h1>What we use</h1>
 <p>We had, early on, made the decision that the site would use Markdown as its primary documentation format.
 This is because Markdown strikes a nice balance between richness of expression, and ease of use.</p>
 <p><a href="https://en.wikipedia.org/wiki/ReStructuredText">reST</a> and <a href="https://en.wikipedia.org/wiki/DocBook">DocBook</a> are probably much more appealing to the die-hard tech writer, but they are also somewhat impenetrable and difficult to grok.
 <a href="https://asciidoc.org/">AsciiDoc</a> is just as expressive as DocBook (and indeed is semantically equivalent to it), but it is also somewhat obscure and niche.
-Markdown, in contrast, is ubiquitous and comparatively intuitive, which makes it accessible to contributors who <em>aren’t</em> full-time professional writers, which is exactly what we were looking for.<sup id="fnref:formats"><a class="footnote-ref" href="#fn:formats">1</a></sup></p>
+Markdown, in contrast, is ubiquitous and comparatively intuitive, which makes it accessible to contributors who <em>aren’t</em> full-time professional writers, which is exactly what we were looking for.<sup id="fnref:formats"><a class="footnote-ref" href="#fn:formats">2</a></sup></p>
 <p>What we also wanted was a static site generator that could be kicked off from a CI run, with the ability to host the results pretty much anywhere.
 We currently run on GitHub Pages, but there is nothing that keeps us from running anywhere else.</p>
 <p>So the combination of those factors quickly led to the selection of <a href="https://www.mkdocs.org/">MkDocs</a>, which I had last used in 2016 or thereabouts, and <em>holy mackerel</em> has it come a long way since.
@@ -165,7 +165,7 @@ Then we would start adding background explanations, and finally, tutorials.</p>
 <p>As I write this article, <a href="https://github.com/citynetwork/docs/pull/124">the site is out of beta</a>, we have <a href="https://docs.cleura.cloud/background/">just started on the background bits</a>, and no tutorials do as yet exist — although we do have <a href="https://academy.cleura.cloud">academy.cleura.cloud</a> which has full-blown training courses.</p>
 <h1>How we use it</h1>
 <p>A <em>non-technical</em> decision that we also made early on is that the documentation should be available under a Creative Commons license, and that its whole build chain should be publicly available.
-This is nice, because it allows me to go into the nitty-gritty of some technical details.<sup id="fnref:github"><a class="footnote-ref" href="#fn:github">2</a></sup></p>
+This is nice, because it allows me to go into the nitty-gritty of some technical details.<sup id="fnref:github"><a class="footnote-ref" href="#fn:github">3</a></sup></p>
 <p>So, I am next going to go into a few elements of our MkDocs configuration that we found particularly useful.</p>
 <h2>Plugins</h2>
 <p>There is an inordinate number of plugins available for MkDocs (and some, specifically, for mkdocs-material), of which we use a handful.</p>
@@ -269,13 +269,16 @@ Our colleagues no longer even ask how they can help out — they just do it, som
 <div class="footnote">
 <hr/>
 <ol>
+<li id="fn:companion">
+<p>There is also <a href="https://cleura.com/articles/how-to-build-a-comprehensive-documentation-platform/">an article the Cleura blog</a>, published a few weeks after <em>this</em> post, that talks about the organizational considerations that went into building the documentation platform. <a class="footnote-backref" href="#fnref:companion" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
 <li id="fn:formats">
 <p>Lest you think I am bashing something I am clueless about, I have used all the mentioned formats for technical documentation in a professional capacity:
 reST (with Sphinx) for contributions to the Ceph and OpenStack docs, AsciiDoc in the context of Linux-HA, and DocBook XML for ancient versions of the Pacemaker documentation and, believe it or not, for my thesis.
-And Markdown, obviously, for too many things to count. <a class="footnote-backref" href="#fnref:formats" title="Jump back to footnote 1 in the text">↩</a></p>
+And Markdown, obviously, for too many things to count. <a class="footnote-backref" href="#fnref:formats" title="Jump back to footnote 2 in the text">↩</a></p>
 </li>
 <li id="fn:github">
-<p>You are welcome to take a peek at the <a href="https://github.com/citynetwork/docs/">GitHub repo</a> where we maintain the documentation sources and CI infrastructure. <a class="footnote-backref" href="#fnref:github" title="Jump back to footnote 2 in the text">↩</a></p>
+<p>You are welcome to take a peek at the <a href="https://github.com/citynetwork/docs/">GitHub repo</a> where we maintain the documentation sources and CI infrastructure. <a class="footnote-backref" href="#fnref:github" title="Jump back to footnote 3 in the text">↩</a></p>
 </li>
 </ol>
 </div>

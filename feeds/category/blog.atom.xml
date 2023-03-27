@@ -92,13 +92,13 @@ In an organization the reward might be financial, but it might also be as simple
 &lt;/ol&gt;
 &lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Making docs with MkDocs</title><link href="https://xahteiwi.eu/blog/2023/02/23/mkdocs/" rel="alternate"></link><published>2023-02-23T21:00:00+00:00</published><updated>2023-02-23T21:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-02-23:/blog/2023/02/23/mkdocs/</id><summary type="html">&lt;p&gt;At work, my team and I built and launched a new documentation website, built on Material for MkDocs.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This week, &lt;a href="https://cleura.com"&gt;work&lt;/a&gt; &lt;a href="https://cleura.com/articles/docs-cleura-cloud-open-source-documentation-for-all-things-cleura/"&gt;launched&lt;/a&gt; a new documentation web site (&lt;a href="https://docs.cleura.cloud"&gt;Cleura Docs&lt;/a&gt;) which my team and I had been building for several months.
 Since this was my first foray into any significant tech writing in about 7 years, it was a fun exercise to see what tools are now available to the community, and how the technical landscape has changed in the interim.&lt;/p&gt;
-&lt;p&gt;This post is a summary of the technical considerations that went into creating that site, and the functional decisions that we made building it.&lt;/p&gt;
+&lt;p&gt;This post is a summary of the technical considerations that went into creating that site, and the functional decisions that we made building it.&lt;sup id="fnref:companion"&gt;&lt;a class="footnote-ref" href="#fn:companion"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;h1&gt;What we use&lt;/h1&gt;
 &lt;p&gt;We had, early on, made the decision that the site would use Markdown as its primary documentation format.
 This is because Markdown strikes a nice balance between richness of expression, and ease of use.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/ReStructuredText"&gt;reST&lt;/a&gt; and &lt;a href="https://en.wikipedia.org/wiki/DocBook"&gt;DocBook&lt;/a&gt; are probably much more appealing to the die-hard tech writer, but they are also somewhat impenetrable and difficult to grok.
 &lt;a href="https://asciidoc.org/"&gt;AsciiDoc&lt;/a&gt; is just as expressive as DocBook (and indeed is semantically equivalent to it), but it is also somewhat obscure and niche.
-Markdown, in contrast, is ubiquitous and comparatively intuitive, which makes it accessible to contributors who &lt;em&gt;aren’t&lt;/em&gt; full-time professional writers, which is exactly what we were looking for.&lt;sup id="fnref:formats"&gt;&lt;a class="footnote-ref" href="#fn:formats"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+Markdown, in contrast, is ubiquitous and comparatively intuitive, which makes it accessible to contributors who &lt;em&gt;aren’t&lt;/em&gt; full-time professional writers, which is exactly what we were looking for.&lt;sup id="fnref:formats"&gt;&lt;a class="footnote-ref" href="#fn:formats"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;What we also wanted was a static site generator that could be kicked off from a CI run, with the ability to host the results pretty much anywhere.
 We currently run on GitHub Pages, but there is nothing that keeps us from running anywhere else.&lt;/p&gt;
 &lt;p&gt;So the combination of those factors quickly led to the selection of &lt;a href="https://www.mkdocs.org/"&gt;MkDocs&lt;/a&gt;, which I had last used in 2016 or thereabouts, and &lt;em&gt;holy mackerel&lt;/em&gt; has it come a long way since.
@@ -111,7 +111,7 @@ Then we would start adding background explanations, and finally, tutorials.&lt;/
 &lt;p&gt;As I write this article, &lt;a href="https://github.com/citynetwork/docs/pull/124"&gt;the site is out of beta&lt;/a&gt;, we have &lt;a href="https://docs.cleura.cloud/background/"&gt;just started on the background bits&lt;/a&gt;, and no tutorials do as yet exist — although we do have &lt;a href="https://academy.cleura.cloud"&gt;academy.cleura.cloud&lt;/a&gt; which has full-blown training courses.&lt;/p&gt;
 &lt;h1&gt;How we use it&lt;/h1&gt;
 &lt;p&gt;A &lt;em&gt;non-technical&lt;/em&gt; decision that we also made early on is that the documentation should be available under a Creative Commons license, and that its whole build chain should be publicly available.
-This is nice, because it allows me to go into the nitty-gritty of some technical details.&lt;sup id="fnref:github"&gt;&lt;a class="footnote-ref" href="#fn:github"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+This is nice, because it allows me to go into the nitty-gritty of some technical details.&lt;sup id="fnref:github"&gt;&lt;a class="footnote-ref" href="#fn:github"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;So, I am next going to go into a few elements of our MkDocs configuration that we found particularly useful.&lt;/p&gt;
 &lt;h2&gt;Plugins&lt;/h2&gt;
 &lt;p&gt;There is an inordinate number of plugins available for MkDocs (and some, specifically, for mkdocs-material), of which we use a handful.&lt;/p&gt;
@@ -215,13 +215,16 @@ Our colleagues no longer even ask how they can help out — they just do it, som
 &lt;div class="footnote"&gt;
 &lt;hr/&gt;
 &lt;ol&gt;
+&lt;li id="fn:companion"&gt;
+&lt;p&gt;There is also &lt;a href="https://cleura.com/articles/how-to-build-a-comprehensive-documentation-platform/"&gt;an article the Cleura blog&lt;/a&gt;, published a few weeks after &lt;em&gt;this&lt;/em&gt; post, that talks about the organizational considerations that went into building the documentation platform. &lt;a class="footnote-backref" href="#fnref:companion" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;li id="fn:formats"&gt;
 &lt;p&gt;Lest you think I am bashing something I am clueless about, I have used all the mentioned formats for technical documentation in a professional capacity:
 reST (with Sphinx) for contributions to the Ceph and OpenStack docs, AsciiDoc in the context of Linux-HA, and DocBook XML for ancient versions of the Pacemaker documentation and, believe it or not, for my thesis.
-And Markdown, obviously, for too many things to count. &lt;a class="footnote-backref" href="#fnref:formats" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+And Markdown, obviously, for too many things to count. &lt;a class="footnote-backref" href="#fnref:formats" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:github"&gt;
-&lt;p&gt;You are welcome to take a peek at the &lt;a href="https://github.com/citynetwork/docs/"&gt;GitHub repo&lt;/a&gt; where we maintain the documentation sources and CI infrastructure. &lt;a class="footnote-backref" href="#fnref:github" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You are welcome to take a peek at the &lt;a href="https://github.com/citynetwork/docs/"&gt;GitHub repo&lt;/a&gt; where we maintain the documentation sources and CI infrastructure. &lt;a class="footnote-backref" href="#fnref:github" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;</content><category term="blog"></category></entry><entry><title>Brown M&amp;Ms, UTC, and ISO 8601</title><link href="https://xahteiwi.eu/blog/2023/02/10/brown-mms/" rel="alternate"></link><published>2023-02-10T19:00:00+00:00</published><updated>2023-02-10T19:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-02-10:/blog/2023/02/10/brown-mms/</id><summary type="html">&lt;p&gt;What have brown M&amp;amp;Ms got to do with date/time formats and mutual respect? More than you might think.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The &lt;a href="https://en.wikipedia.org/wiki/Van_Halen"&gt;Van Halen&lt;/a&gt; “brown M&amp;amp;Ms” story is a classic tale of rock’n’roll lore.
