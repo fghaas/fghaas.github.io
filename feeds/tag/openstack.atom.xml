@@ -626,7 +626,7 @@ resource quotas&lt;/strong&gt;, and you set them via flavor properties. For
 example, an you may want to limit a specific flavor to 1,500 IOPS and
 a maximum throughput of 100 MB/s:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;openstack&lt;span class="w"&gt; &lt;/span&gt;flavor&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;--property&lt;span class="w"&gt; &lt;/span&gt;quota:disk_total_bytes_sec&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;100&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class="m"&gt;20&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;--property&lt;span class="w"&gt; &lt;/span&gt;quota:disk_total_bytes_sec&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;100&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="m"&gt;20&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;--property&lt;span class="w"&gt; &lt;/span&gt;quota:disk_total_iops_sec&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1500&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;m1.medium
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -651,7 +651,7 @@ above — limiting throughput to 100 MB/s and 1,500 IOPS would be
 created like this:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;openstack&lt;span class="w"&gt; &lt;/span&gt;volume&lt;span class="w"&gt; &lt;/span&gt;qos&lt;span class="w"&gt; &lt;/span&gt;create&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;--consumer&lt;span class="w"&gt; &lt;/span&gt;front-end
-&lt;span class="w"&gt;  &lt;/span&gt;--property&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;total_bytes_sec&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;100&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class="m"&gt;20&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;--property&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;total_bytes_sec&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;100&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="m"&gt;20&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;--property&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;total_iops_sec&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1500&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="s2"&gt;"100MB/s-1500iops"&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -1051,25 +1051,25 @@ create a separate CRUSH &lt;code&gt;root&lt;/code&gt; in addition to the normall
 &lt;p&gt;In the example above, OSDs 0-8 are assigned to the &lt;code&gt;default&lt;/code&gt; root,
 whereas OSDs 9-17 (our SSDs) belong to the root &lt;code&gt;highperf&lt;/code&gt;. We can now
 create two separate CRUSH rulesets:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;rule replicated_ruleset {
-    ruleset 0
-    type replicated
-    min_size 1
-    max_size 10
-    step take default
-    step chooseleaf firstn 0 type host
-    step emit
-}
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nx"&gt;rule&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;replicated_ruleset&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;ruleset&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;replicated&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;min_size&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;max_size&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;step&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;take&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;default&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;step&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;chooseleaf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;firstn&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;host&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;step&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;emit&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
 
-rule highperf_ruleset {
-    ruleset 1
-    type replicated
-    min_size 1
-    max_size 10
-    step take highperf
-    step chooseleaf firstn 0 type host
-    step emit
-}
+&lt;span class="nx"&gt;rule&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;highperf_ruleset&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;ruleset&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;replicated&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;min_size&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;max_size&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;step&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;take&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;highperf&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;step&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;chooseleaf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;firstn&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;host&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;step&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;emit&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The default ruleset, &lt;code&gt;replicated_ruleset&lt;/code&gt;, picks OSDs from the
 &lt;code&gt;default&lt;/code&gt; root, whereas &lt;code&gt;step take highperf&lt;/code&gt; in &lt;code&gt;highperf_ruleset&lt;/code&gt;

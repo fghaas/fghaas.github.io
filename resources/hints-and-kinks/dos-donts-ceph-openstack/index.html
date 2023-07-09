@@ -340,25 +340,25 @@ create a separate CRUSH <code>root</code> in addition to the normally configured
 <p>In the example above, OSDs 0-8 are assigned to the <code>default</code> root,
 whereas OSDs 9-17 (our SSDs) belong to the root <code>highperf</code>. We can now
 create two separate CRUSH rulesets:</p>
-<div class="highlight"><pre><span></span><code>rule replicated_ruleset {
-    ruleset 0
-    type replicated
-    min_size 1
-    max_size 10
-    step take default
-    step chooseleaf firstn 0 type host
-    step emit
-}
+<div class="highlight"><pre><span></span><code><span class="nx">rule</span><span class="w"> </span><span class="nx">replicated_ruleset</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">ruleset</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="k">type</span><span class="w"> </span><span class="nx">replicated</span>
+<span class="w">    </span><span class="nx">min_size</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="nx">max_size</span><span class="w"> </span><span class="mi">10</span>
+<span class="w">    </span><span class="nx">step</span><span class="w"> </span><span class="nx">take</span><span class="w"> </span><span class="k">default</span>
+<span class="w">    </span><span class="nx">step</span><span class="w"> </span><span class="nx">chooseleaf</span><span class="w"> </span><span class="nx">firstn</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">type</span><span class="w"> </span><span class="nx">host</span>
+<span class="w">    </span><span class="nx">step</span><span class="w"> </span><span class="nx">emit</span>
+<span class="p">}</span>
 
-rule highperf_ruleset {
-    ruleset 1
-    type replicated
-    min_size 1
-    max_size 10
-    step take highperf
-    step chooseleaf firstn 0 type host
-    step emit
-}
+<span class="nx">rule</span><span class="w"> </span><span class="nx">highperf_ruleset</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">ruleset</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="k">type</span><span class="w"> </span><span class="nx">replicated</span>
+<span class="w">    </span><span class="nx">min_size</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="nx">max_size</span><span class="w"> </span><span class="mi">10</span>
+<span class="w">    </span><span class="nx">step</span><span class="w"> </span><span class="nx">take</span><span class="w"> </span><span class="nx">highperf</span>
+<span class="w">    </span><span class="nx">step</span><span class="w"> </span><span class="nx">chooseleaf</span><span class="w"> </span><span class="nx">firstn</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">type</span><span class="w"> </span><span class="nx">host</span>
+<span class="w">    </span><span class="nx">step</span><span class="w"> </span><span class="nx">emit</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>The default ruleset, <code>replicated_ruleset</code>, picks OSDs from the
 <code>default</code> root, whereas <code>step take highperf</code> in <code>highperf_ruleset</code>

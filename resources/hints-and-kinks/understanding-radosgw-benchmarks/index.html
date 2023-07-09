@@ -238,7 +238,7 @@ latency.</p>
 for concurrency and object sizes:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">RGW</span><span class="o">=</span>localhost:7480
 <span class="nb">export</span><span class="w"> </span><span class="nv">SECS</span><span class="o">=</span><span class="m">10</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">SIZE</span><span class="o">=</span><span class="k">$((</span><span class="m">1</span>&lt;&lt;<span class="m">22</span><span class="k">))</span><span class="w"> </span><span class="c1"># 4MB object size</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SIZE</span><span class="o">=</span><span class="k">$((</span><span class="m">1</span><span class="o">&lt;&lt;</span><span class="m">22</span><span class="k">))</span><span class="w"> </span><span class="c1"># 4MB object size</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">BUCKET</span><span class="o">=</span>bench
 <span class="nb">export</span><span class="w"> </span><span class="nv">CONCURRENCY</span><span class="o">=</span><span class="m">16</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">KEY</span><span class="o">=</span>your_radosgw_key
@@ -261,7 +261,7 @@ near the max RADOS bandwidth this particular cluster is capable of;
 it’s by no means a high-end system) and we managed 399 writes, or
 approx. 40 PUTs/s.</p>
 <p>Let’s see how going even bigger changes things:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">SIZE</span><span class="o">=</span><span class="k">$((</span><span class="m">1</span>&lt;&lt;<span class="m">26</span><span class="k">))</span><span class="w"> </span><span class="c1"># 64MB object size</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">SIZE</span><span class="o">=</span><span class="k">$((</span><span class="m">1</span><span class="o">&lt;&lt;</span><span class="m">26</span><span class="k">))</span><span class="w"> </span><span class="c1"># 64MB object size</span>
 
 $<span class="w"> </span>rest-bench<span class="w"> </span>-t<span class="w"> </span><span class="nv">$CONCURRENCY</span><span class="w"> </span>-b<span class="w"> </span><span class="nv">$SIZE</span><span class="w"> </span>--seconds<span class="o">=</span><span class="nv">$SECS</span><span class="w"> </span>--api-host<span class="o">=</span><span class="nv">$RGW</span><span class="w"> </span><span class="se">\</span>
 --bucket<span class="o">=</span><span class="nv">$BUCKET</span><span class="w"> </span>--access-key<span class="o">=</span><span class="nv">$KEY</span><span class="w"> </span>--secret<span class="o">=</span><span class="nv">$SECRET</span><span class="w"> </span>--no-cleanup<span class="w"> </span>write
@@ -282,7 +282,7 @@ that a client needs to haul a 64MB object across the network and
 through the radosgw HTTP server.)</p>
 <p>Let’s do the opposite now, and go for smaller objects. Suppose your
 application is using a typical object size of 32K.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">SIZE</span><span class="o">=</span><span class="k">$((</span><span class="m">1</span>&lt;&lt;<span class="m">15</span><span class="k">))</span><span class="w"> </span><span class="c1"># 32KB object size</span>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">SIZE</span><span class="o">=</span><span class="k">$((</span><span class="m">1</span><span class="o">&lt;&lt;</span><span class="m">15</span><span class="k">))</span><span class="w"> </span><span class="c1"># 32KB object size</span>
 rest-bench<span class="w"> </span>-t<span class="w"> </span><span class="nv">$CONCURRENCY</span><span class="w"> </span>-b<span class="w"> </span><span class="nv">$SIZE</span><span class="w"> </span>--seconds<span class="o">=</span><span class="nv">$SECS</span><span class="w"> </span>--api-host<span class="o">=</span><span class="nv">$RGW</span><span class="w"> </span><span class="se">\</span>
 --bucket<span class="o">=</span><span class="nv">$BUCKET</span><span class="w"> </span>--access-key<span class="o">=</span><span class="nv">$KEY</span><span class="w"> </span>--secret<span class="o">=</span><span class="nv">$SECRET</span><span class="w"> </span>--no-cleanup<span class="w"> </span>write
 </code></pre></div>
@@ -301,7 +301,7 @@ and lots of them. And it’s succeeding just fine; we’re now near 300
 PUTs/s.</p>
 <p>Going even smaller, we’d expect PUTs/s to trend further up and nominal
 MB/s to go down. Let’s try with 4K objects:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">SIZE</span><span class="o">=</span><span class="k">$((</span><span class="m">1</span>&lt;&lt;<span class="m">12</span><span class="k">))</span><span class="w"> </span><span class="c1"># 4KB object size</span>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">SIZE</span><span class="o">=</span><span class="k">$((</span><span class="m">1</span><span class="o">&lt;&lt;</span><span class="m">12</span><span class="k">))</span><span class="w"> </span><span class="c1"># 4KB object size</span>
 rest-bench<span class="w"> </span>-t<span class="w"> </span><span class="nv">$CONCURRENCY</span><span class="w"> </span>-b<span class="w"> </span><span class="nv">$SIZE</span><span class="w"> </span>--seconds<span class="o">=</span><span class="nv">$SECS</span><span class="w"> </span>--api-host<span class="o">=</span><span class="nv">$RGW</span><span class="w"> </span><span class="se">\</span>
 --bucket<span class="o">=</span><span class="nv">$BUCKET</span><span class="w"> </span>--access-key<span class="o">=</span><span class="nv">$KEY</span><span class="w"> </span>--secret<span class="o">=</span><span class="nv">$SECRET</span><span class="w"> </span>--no-cleanup<span class="w"> </span>write
 </code></pre></div>
@@ -329,7 +329,7 @@ you can only ever issue one PUT at a time, both throughput and
 writes-per-second will be lower in aggregate.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">RGW</span><span class="o">=</span>localhost:7480
 <span class="nb">export</span><span class="w"> </span><span class="nv">SECS</span><span class="o">=</span><span class="m">10</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">SIZE</span><span class="o">=</span><span class="k">$((</span><span class="m">1</span>&lt;&lt;<span class="m">22</span><span class="k">))</span><span class="w"> </span><span class="c1"># back to 4MB object size</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SIZE</span><span class="o">=</span><span class="k">$((</span><span class="m">1</span><span class="o">&lt;&lt;</span><span class="m">22</span><span class="k">))</span><span class="w"> </span><span class="c1"># back to 4MB object size</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">BUCKET</span><span class="o">=</span>bench
 <span class="nb">export</span><span class="w"> </span><span class="nv">CONCURRENCY</span><span class="o">=</span><span class="m">16</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">KEY</span><span class="o">=</span>&lt;key&gt;
@@ -366,10 +366,10 @@ writes-per-second and our aggregate bandwidth to drop by more than
 half.</p>
 <p>The effect is even slightly less pronounced with smaller
 objects. Compare the two for 4KB objects:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">SIZE</span><span class="o">=</span><span class="k">$((</span><span class="m">1</span><span class="s">&lt;&lt;12)) # 4KB object size</span>
-<span class="s">export CONCURRENCY=1</span><span class="m">6</span>
-rest-bench<span class="w"> </span><span class="o">-</span>t<span class="w"> </span><span class="nv">$CONCURRENCY</span><span class="w"> </span><span class="o">-</span>b<span class="w"> </span><span class="nv">$SIZE</span><span class="w"> </span><span class="o">--</span><span class="nv">seconds</span><span class="o">=</span><span class="nv">$SECS</span><span class="w"> </span><span class="o">--</span>api-host<span class="o">=</span><span class="nv">$RGW</span><span class="w"> </span><span class="se">\</span>
-<span class="o">--</span><span class="nv">bucket</span><span class="o">=</span><span class="nv">$BUCKET</span><span class="w"> </span><span class="o">--</span>access-key<span class="o">=</span><span class="nv">$KEY</span><span class="w"> </span><span class="o">--</span><span class="nv">secret</span><span class="o">=</span><span class="nv">$SECRET</span><span class="w"> </span><span class="o">--</span>no-cleanup<span class="w"> </span>write
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">SIZE</span><span class="o">=</span><span class="k">$((</span><span class="m">1</span><span class="o">&lt;&lt;</span><span class="m">12</span><span class="k">))</span><span class="w"> </span><span class="c1"># 4KB object size</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CONCURRENCY</span><span class="o">=</span><span class="m">16</span>
+rest-bench<span class="w"> </span>-t<span class="w"> </span><span class="nv">$CONCURRENCY</span><span class="w"> </span>-b<span class="w"> </span><span class="nv">$SIZE</span><span class="w"> </span>--seconds<span class="o">=</span><span class="nv">$SECS</span><span class="w"> </span>--api-host<span class="o">=</span><span class="nv">$RGW</span><span class="w"> </span><span class="se">\</span>
+--bucket<span class="o">=</span><span class="nv">$BUCKET</span><span class="w"> </span>--access-key<span class="o">=</span><span class="nv">$KEY</span><span class="w"> </span>--secret<span class="o">=</span><span class="nv">$SECRET</span><span class="w"> </span>--no-cleanup<span class="w"> </span>write
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="nv">host</span><span class="o">=</span><span class="nv">localhost</span>:<span class="mi">7480</span>
 <span class="w"> </span><span class="nv">Maintaining</span><span class="w"> </span><span class="mi">16</span><span class="w"> </span><span class="nv">concurrent</span><span class="w"> </span><span class="nv">writes</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="mi">4096</span><span class="w"> </span><span class="nv">bytes</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">up</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="nv">seconds</span><span class="w"> </span><span class="nv">or</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="nv">objects</span>

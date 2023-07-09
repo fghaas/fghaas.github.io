@@ -128,6 +128,57 @@ rel="me"           href="https://mastodon.social/@xahteiwi"
 
 <article>
   <header>
+    <h2><a href="../resources/hints-and-kinks/mandatory-and-advisory-ordering-pacemaker/#mandatory-and-advisory-ordering-pacemaker">Mandatory and advisory ordering in Pacemaker</a></h2>
+    <p>
+      Posted on Thu 22 March 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
+
+          &#8226; Tagged with
+              <a href="../tag/pacemaker.html">Pacemaker</a>
+        &#8226; 2 min read
+    </p>
+  </header>
+  <div>
+      <div><p>Ever wonder what’s the difference between <code>order &lt;name&gt; inf:
+&lt;first-resource&gt; &lt;second-resource&gt;</code> and a score of something other
+than <code>inf</code>? We’ll explain.</p>
+<p>If you specify an order constraint score of <code>INFINITY</code> (<code>inf</code> or the
+keyword <code>mandatory</code> in crm shell syntax), then the order constraint is
+considered mandatory. If you …</p></div>
+        <br>
+        <a class="btn"
+           href="../resources/hints-and-kinks/mandatory-and-advisory-ordering-pacemaker/#mandatory-and-advisory-ordering-pacemaker">
+          Continue reading
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="../resources/hints-and-kinks/managing-cron-jobs-pacemaker/#managing-cron-jobs-pacemaker">Managing cron jobs with Pacemaker</a></h2>
+    <p>
+      Posted on Mon 19 March 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
+
+          &#8226; Tagged with
+              <a href="../tag/pacemaker.html">Pacemaker</a>
+        &#8226; 1 min read
+    </p>
+  </header>
+  <div>
+      <div><p>It’s not uncommon in Pacemaker clusters to run specific cron jobs only
+on a node that currently runs a particular resource. The
+<code>ocf:heartbeat:symlink</code> resource agent can be exceptionally helpful in
+this situation. Here’s how to use it.</p>
+<p>Suppose you’ve got a cron job for Postfix …</p></div>
+        <br>
+        <a class="btn"
+           href="../resources/hints-and-kinks/managing-cron-jobs-pacemaker/#managing-cron-jobs-pacemaker">
+          Continue reading
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="../resources/presentations/storage-replication-high-performance-high-availability-environments/#storage-replication-high-performance-high-availability-environments">Storage Replication in High-Performance High-Availability Environments</a></h2>
     <p>
       Posted on Mon 19 March 2012 in <a href="../category/presentations.html">presentations</a>
@@ -205,54 +256,6 @@ a maximum number of …</p></div>
         <br>
         <a class="btn"
            href="../resources/hints-and-kinks/whats-totem-retransmit-list-all-about-corosync/#whats-totem-retransmit-list-all-about-corosync">
-          Continue reading
-        </a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="../resources/presentations/zen-pacemaker/#zen-pacemaker">The Zen of Pacemaker</a></h2>
-    <p>
-      Posted on Tue 13 March 2012 in <a href="../category/presentations.html">presentations</a>
-
-          &#8226; Tagged with
-              <a href="../tag/conference.html">Conference</a>,              <a href="../tag/pacemaker.html">Pacemaker</a>
-        &#8226; 1 min read
-    </p>
-  </header>
-  <div>
-      <div><p>I team up with Tim Serong and Andrew Beekhof for a tutorial at
-linux.conf.au 2012.</p>
-</div>
-        <br>
-        <a class="btn"
-           href="../resources/presentations/zen-pacemaker/#zen-pacemaker">
-          Continue reading
-        </a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="../resources/hints-and-kinks/which-osd-stores-specific-rados-object/#which-osd-stores-specific-rados-object">Finding out which OSDs currently store a specific RADOS object</a></h2>
-    <p>
-      Posted on Fri 09 March 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
-
-          &#8226; Tagged with
-              <a href="../tag/ceph.html">Ceph</a>
-        &#8226; 2 min read
-    </p>
-  </header>
-  <div>
-      <div><p>Ever wanted to know just which of your OSDs a RADOS object is
-currently stored in? Here’s how.</p>
-<p>Suppose you’ve got an RBD device, named <code>test</code>. Then you can use the
-<code>rbd info</code> command to display which name prefix is used by the RADOS
-objects that make up …</p></div>
-        <br>
-        <a class="btn"
-           href="../resources/hints-and-kinks/which-osd-stores-specific-rados-object/#which-osd-stores-specific-rados-object">
           Continue reading
         </a>
   </div>

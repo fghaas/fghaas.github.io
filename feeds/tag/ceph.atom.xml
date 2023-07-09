@@ -218,7 +218,7 @@ resource quotas&lt;/strong&gt;, and you set them via flavor properties. For
 example, an you may want to limit a specific flavor to 1,500 IOPS and
 a maximum throughput of 100 MB/s:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;openstack&lt;span class="w"&gt; &lt;/span&gt;flavor&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;--property&lt;span class="w"&gt; &lt;/span&gt;quota:disk_total_bytes_sec&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;100&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class="m"&gt;20&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;--property&lt;span class="w"&gt; &lt;/span&gt;quota:disk_total_bytes_sec&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;100&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="m"&gt;20&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;--property&lt;span class="w"&gt; &lt;/span&gt;quota:disk_total_iops_sec&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1500&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;m1.medium
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -243,7 +243,7 @@ above — limiting throughput to 100 MB/s and 1,500 IOPS would be
 created like this:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;openstack&lt;span class="w"&gt; &lt;/span&gt;volume&lt;span class="w"&gt; &lt;/span&gt;qos&lt;span class="w"&gt; &lt;/span&gt;create&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;--consumer&lt;span class="w"&gt; &lt;/span&gt;front-end
-&lt;span class="w"&gt;  &lt;/span&gt;--property&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;total_bytes_sec&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;100&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class="m"&gt;20&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;--property&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;total_bytes_sec&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;100&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="m"&gt;20&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;--property&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;total_iops_sec&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1500&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="s2"&gt;"100MB/s-1500iops"&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -643,25 +643,25 @@ create a separate CRUSH &lt;code&gt;root&lt;/code&gt; in addition to the normall
 &lt;p&gt;In the example above, OSDs 0-8 are assigned to the &lt;code&gt;default&lt;/code&gt; root,
 whereas OSDs 9-17 (our SSDs) belong to the root &lt;code&gt;highperf&lt;/code&gt;. We can now
 create two separate CRUSH rulesets:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;rule replicated_ruleset {
-    ruleset 0
-    type replicated
-    min_size 1
-    max_size 10
-    step take default
-    step chooseleaf firstn 0 type host
-    step emit
-}
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nx"&gt;rule&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;replicated_ruleset&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;ruleset&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;replicated&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;min_size&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;max_size&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;step&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;take&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;default&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;step&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;chooseleaf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;firstn&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;host&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;step&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;emit&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
 
-rule highperf_ruleset {
-    ruleset 1
-    type replicated
-    min_size 1
-    max_size 10
-    step take highperf
-    step chooseleaf firstn 0 type host
-    step emit
-}
+&lt;span class="nx"&gt;rule&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;highperf_ruleset&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;ruleset&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;replicated&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;min_size&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;max_size&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;step&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;take&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;highperf&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;step&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;chooseleaf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;firstn&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;host&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;step&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;emit&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The default ruleset, &lt;code&gt;replicated_ruleset&lt;/code&gt;, picks OSDs from the
 &lt;code&gt;default&lt;/code&gt; root, whereas &lt;code&gt;step take highperf&lt;/code&gt; in &lt;code&gt;highperf_ruleset&lt;/code&gt;
@@ -1176,7 +1176,7 @@ latency.&lt;/p&gt;
 for concurrency and object sizes:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;RGW&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;localhost:7480
 &lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;SECS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;
-&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;SIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class="m"&gt;22&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# 4MB object size&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;SIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="m"&gt;22&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# 4MB object size&lt;/span&gt;
 &lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;BUCKET&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;bench
 &lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;CONCURRENCY&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;16&lt;/span&gt;
 &lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;KEY&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;your_radosgw_key
@@ -1199,7 +1199,7 @@ near the max RADOS bandwidth this particular cluster is capable of;
 it’s by no means a high-end system) and we managed 399 writes, or
 approx. 40 PUTs/s.&lt;/p&gt;
 &lt;p&gt;Let’s see how going even bigger changes things:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;SIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class="m"&gt;26&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# 64MB object size&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;SIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="m"&gt;26&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# 64MB object size&lt;/span&gt;
 
 $&lt;span class="w"&gt; &lt;/span&gt;rest-bench&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$CONCURRENCY&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-b&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$SIZE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--seconds&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$SECS&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--api-host&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$RGW&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
 --bucket&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$BUCKET&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--access-key&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$KEY&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--secret&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$SECRET&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--no-cleanup&lt;span class="w"&gt; &lt;/span&gt;write
@@ -1220,7 +1220,7 @@ that a client needs to haul a 64MB object across the network and
 through the radosgw HTTP server.)&lt;/p&gt;
 &lt;p&gt;Let’s do the opposite now, and go for smaller objects. Suppose your
 application is using a typical object size of 32K.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;SIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class="m"&gt;15&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# 32KB object size&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;SIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="m"&gt;15&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# 32KB object size&lt;/span&gt;
 rest-bench&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$CONCURRENCY&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-b&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$SIZE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--seconds&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$SECS&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--api-host&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$RGW&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
 --bucket&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$BUCKET&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--access-key&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$KEY&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--secret&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$SECRET&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--no-cleanup&lt;span class="w"&gt; &lt;/span&gt;write
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -1239,7 +1239,7 @@ and lots of them. And it’s succeeding just fine; we’re now near 300
 PUTs/s.&lt;/p&gt;
 &lt;p&gt;Going even smaller, we’d expect PUTs/s to trend further up and nominal
 MB/s to go down. Let’s try with 4K objects:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;SIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class="m"&gt;12&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# 4KB object size&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;SIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="m"&gt;12&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# 4KB object size&lt;/span&gt;
 rest-bench&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$CONCURRENCY&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-b&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$SIZE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--seconds&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$SECS&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--api-host&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$RGW&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
 --bucket&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$BUCKET&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--access-key&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$KEY&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--secret&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$SECRET&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--no-cleanup&lt;span class="w"&gt; &lt;/span&gt;write
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -1267,7 +1267,7 @@ you can only ever issue one PUT at a time, both throughput and
 writes-per-second will be lower in aggregate.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;RGW&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;localhost:7480
 &lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;SECS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;
-&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;SIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class="m"&gt;22&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# back to 4MB object size&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;SIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="m"&gt;22&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# back to 4MB object size&lt;/span&gt;
 &lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;BUCKET&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;bench
 &lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;CONCURRENCY&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;16&lt;/span&gt;
 &lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;KEY&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&amp;lt;key&amp;gt;
@@ -1304,10 +1304,10 @@ writes-per-second and our aggregate bandwidth to drop by more than
 half.&lt;/p&gt;
 &lt;p&gt;The effect is even slightly less pronounced with smaller
 objects. Compare the two for 4KB objects:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;SIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="s"&gt;&amp;lt;&amp;lt;12)) # 4KB object size&lt;/span&gt;
-&lt;span class="s"&gt;export CONCURRENCY=1&lt;/span&gt;&lt;span class="m"&gt;6&lt;/span&gt;
-rest-bench&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;t&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$CONCURRENCY&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;b&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$SIZE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="nv"&gt;seconds&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$SECS&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;api-host&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$RGW&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
-&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="nv"&gt;bucket&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$BUCKET&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;access-key&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$KEY&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="nv"&gt;secret&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$SECRET&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;no-cleanup&lt;span class="w"&gt; &lt;/span&gt;write
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;SIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="m"&gt;12&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# 4KB object size&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;CONCURRENCY&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;16&lt;/span&gt;
+rest-bench&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$CONCURRENCY&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-b&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$SIZE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--seconds&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$SECS&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--api-host&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$RGW&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+--bucket&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$BUCKET&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--access-key&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$KEY&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--secret&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$SECRET&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--no-cleanup&lt;span class="w"&gt; &lt;/span&gt;write
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;host&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;localhost&lt;/span&gt;:&lt;span class="mi"&gt;7480&lt;/span&gt;
 &lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;Maintaining&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;concurrent&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;writes&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;4096&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;bytes&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;up&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;to&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;seconds&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;or&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;objects&lt;/span&gt;

@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/all.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2023-03-19T09:30:00+00:00</updated><entry><title>The trouble with Key Results</title><link href="https://xahteiwi.eu/blog/2023/03/19/key-results/" rel="alternate"></link><published>2023-03-19T09:30:00+00:00</published><updated>2023-03-19T09:30:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-03-19:/blog/2023/03/19/key-results/</id><summary type="html">&lt;p&gt;Some thoughts sparked by a discussion on Mastodon.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I like &lt;a href="https://en.wikipedia.org/wiki/Mastodon_(social_network)"&gt;Mastodon&lt;/a&gt;.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/all.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2023-05-25T00:00:00+00:00</updated><entry><title>Creativity (PyCon Italia 2023)</title><link href="https://xahteiwi.eu/resources/presentations/pyconit-2023/" rel="alternate"></link><published>2023-05-25T00:00:00+00:00</published><updated>2023-05-25T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-05-25:/resources/presentations/pyconit-2023/</id><summary type="html">&lt;p&gt;PyCon Italia 2023 was wonderful. Here&amp;rsquo;s my talk.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This year, I traveled to
+&lt;a href="https://en.wikipedia.org/wiki/Florence"&gt;Florence&lt;/a&gt; for my first
+&lt;a href="https://pycon.it/"&gt;PyCon Italia&lt;/a&gt;. It’s a wonderful conference in a
+lovely city, and I hope to return.&lt;/p&gt;
+&lt;p&gt;PyCon Italia accepted my Creativity talk that I’d already done at
+&lt;a href="https://xahteiwi.eu/resources/presentations/devopsdaystlv-2022/"&gt;DevOpsDays Tel Aviv the prior
+December&lt;/a&gt;, and I was &lt;em&gt;much&lt;/em&gt; happier
+with it the second time around.&lt;/p&gt;
+&lt;p&gt;Also, thankfully I did not have the audio issues that plagued the Tel
+Aviv talk, so the recording came out rather well, too.&lt;/p&gt;
+&lt;p&gt;PyCon Italia hasn’t yet released edited videos for the talks, but you
+can already catch the &lt;a href="https://www.youtube.com/live/nUmolZkWQIg?feature=share&amp;amp;t=22847"&gt;unedited recording of the live
+stream&lt;/a&gt;. My
+slides (with full speaker notes) are available
+&lt;a href="https://fghaas.github.io/pyconit2023/"&gt;here&lt;/a&gt;.&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category></entry><entry><title>The trouble with Key Results</title><link href="https://xahteiwi.eu/blog/2023/03/19/key-results/" rel="alternate"></link><published>2023-03-19T09:30:00+00:00</published><updated>2023-03-19T09:30:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-03-19:/blog/2023/03/19/key-results/</id><summary type="html">&lt;p&gt;Some thoughts sparked by a discussion on Mastodon.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I like &lt;a href="https://en.wikipedia.org/wiki/Mastodon_(social_network)"&gt;Mastodon&lt;/a&gt;.
 I really do.
 Ever since &lt;a href="https://xahteiwi.eu/blog/2022/11/12/bye-birdsite/"&gt;turning my back on the birds(h)ite&lt;/a&gt;, I enjoy the consistent quality of the discussions I’ve been having on the Fediverse. 
 It’s nice that I can disagree with someone, without it turning into a roiling flamefest.&lt;/p&gt;
@@ -401,7 +415,20 @@ hard-boiled eggs (sorry!).&lt;/p&gt;
 &lt;p&gt;An Arab cuisine place in Jaffa just outside the old town, on Clock
 Tower square. The starters are mindblowing and delicious, and the
 meats are absolutely divine. Bonus: you have a lovely walk back to the
-central Tel Aviv hotel district, via the waterfront boardwalk.&lt;/p&gt;</content><category term="blog"></category><category term="Food"></category></entry><entry><title>No, you won't get a PowerPoint from me!</title><link href="https://xahteiwi.eu/blog/2022/12/11/no-you-wont-get-a-powerpoint/" rel="alternate"></link><published>2022-12-11T00:00:00+00:00</published><updated>2022-12-11T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-12-11:/blog/2022/12/11/no-you-wont-get-a-powerpoint/</id><summary type="html">&lt;p&gt;Dear conference organizers, I use my preferred slide deck framework for a reason. Please don&amp;rsquo;t try to second-guess me.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Dear conference organizer,&lt;/p&gt;
+central Tel Aviv hotel district, via the waterfront boardwalk.&lt;/p&gt;</content><category term="blog"></category><category term="Food"></category></entry><entry><title>Creativity (DevOpsDays Tel Aviv 2022)</title><link href="https://xahteiwi.eu/resources/presentations/devopsdaystlv-2022/" rel="alternate"></link><published>2022-12-17T00:00:00+00:00</published><updated>2022-12-17T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-12-17:/resources/presentations/devopsdaystlv-2022/</id><summary type="html">&lt;p&gt;I did a 30-minute Spotlight Talk at DevOpsDays Tel Aviv 2022.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This year, &lt;a href="https://devopsdaystlv.com"&gt;DevOpsDays Tel Aviv&lt;/a&gt; accepted
+my talk on creativity (which I submitted as a 20-minute session), and
+then upgraded it to a 30-minute Spotlight Talk on the main stage to
+close out the first day.&lt;/p&gt;
+&lt;p&gt;This was my first DevOpsDays Tel Aviv &lt;a href="https://xahteiwi.eu/resources/presentations/devopsdays-tel-aviv-2019/"&gt;since
+2019&lt;/a&gt;, and the event has grown
+significantly since then. It is still a 2-day event that is mostly
+single-track save for some workshops, but it now takes up all of
+Pavilion 10 of the Tel Aviv Expo, including an 800-seat main stage
+keynote area.&lt;/p&gt;
+&lt;p&gt;The video for this talk &lt;a href="https://youtu.be/gUurzz49j8c"&gt;on Youtube&lt;/a&gt;,
+but unfortunately it has pretty bad audio issues so it’s a bit painful
+to listen to. My slides (with full speaker notes) are available
+&lt;a href="https://fghaas.github.io/devopsdaystlv-2022/"&gt;here&lt;/a&gt;.&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category></entry><entry><title>No, you won't get a PowerPoint from me!</title><link href="https://xahteiwi.eu/blog/2022/12/11/no-you-wont-get-a-powerpoint/" rel="alternate"></link><published>2022-12-11T00:00:00+00:00</published><updated>2022-12-11T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-12-11:/blog/2022/12/11/no-you-wont-get-a-powerpoint/</id><summary type="html">&lt;p&gt;Dear conference organizers, I use my preferred slide deck framework for a reason. Please don&amp;rsquo;t try to second-guess me.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Dear conference organizer,&lt;/p&gt;
 &lt;p&gt;Please do not attempt to foist a slide deck format on me. Please stop
 asking for a PowerPoint deck, or a Google Slides link, or a PDF. And
 if these are the only formats you are willing to accept, please do
@@ -11612,7 +11639,7 @@ resource quotas&lt;/strong&gt;, and you set them via flavor properties. For
 example, an you may want to limit a specific flavor to 1,500 IOPS and
 a maximum throughput of 100 MB/s:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;openstack&lt;span class="w"&gt; &lt;/span&gt;flavor&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;--property&lt;span class="w"&gt; &lt;/span&gt;quota:disk_total_bytes_sec&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;100&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class="m"&gt;20&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;--property&lt;span class="w"&gt; &lt;/span&gt;quota:disk_total_bytes_sec&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;100&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="m"&gt;20&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;--property&lt;span class="w"&gt; &lt;/span&gt;quota:disk_total_iops_sec&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1500&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;m1.medium
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -11637,7 +11664,7 @@ above — limiting throughput to 100 MB/s and 1,500 IOPS would be
 created like this:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;openstack&lt;span class="w"&gt; &lt;/span&gt;volume&lt;span class="w"&gt; &lt;/span&gt;qos&lt;span class="w"&gt; &lt;/span&gt;create&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;--consumer&lt;span class="w"&gt; &lt;/span&gt;front-end
-&lt;span class="w"&gt;  &lt;/span&gt;--property&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;total_bytes_sec&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;100&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class="m"&gt;20&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;--property&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;total_bytes_sec&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;100&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="m"&gt;20&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;--property&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;total_iops_sec&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1500&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="s2"&gt;"100MB/s-1500iops"&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -12208,25 +12235,25 @@ create a separate CRUSH &lt;code&gt;root&lt;/code&gt; in addition to the normall
 &lt;p&gt;In the example above, OSDs 0-8 are assigned to the &lt;code&gt;default&lt;/code&gt; root,
 whereas OSDs 9-17 (our SSDs) belong to the root &lt;code&gt;highperf&lt;/code&gt;. We can now
 create two separate CRUSH rulesets:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;rule replicated_ruleset {
-    ruleset 0
-    type replicated
-    min_size 1
-    max_size 10
-    step take default
-    step chooseleaf firstn 0 type host
-    step emit
-}
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nx"&gt;rule&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;replicated_ruleset&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;ruleset&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;replicated&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;min_size&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;max_size&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;step&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;take&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;default&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;step&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;chooseleaf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;firstn&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;host&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;step&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;emit&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
 
-rule highperf_ruleset {
-    ruleset 1
-    type replicated
-    min_size 1
-    max_size 10
-    step take highperf
-    step chooseleaf firstn 0 type host
-    step emit
-}
+&lt;span class="nx"&gt;rule&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;highperf_ruleset&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;ruleset&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;replicated&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;min_size&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;max_size&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;step&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;take&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;highperf&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;step&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;chooseleaf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;firstn&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;host&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;step&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;emit&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The default ruleset, &lt;code&gt;replicated_ruleset&lt;/code&gt;, picks OSDs from the
 &lt;code&gt;default&lt;/code&gt; root, whereas &lt;code&gt;step take highperf&lt;/code&gt; in &lt;code&gt;highperf_ruleset&lt;/code&gt;
@@ -13640,7 +13667,7 @@ latency.&lt;/p&gt;
 for concurrency and object sizes:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;RGW&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;localhost:7480
 &lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;SECS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;
-&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;SIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class="m"&gt;22&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# 4MB object size&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;SIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="m"&gt;22&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# 4MB object size&lt;/span&gt;
 &lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;BUCKET&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;bench
 &lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;CONCURRENCY&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;16&lt;/span&gt;
 &lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;KEY&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;your_radosgw_key
@@ -13663,7 +13690,7 @@ near the max RADOS bandwidth this particular cluster is capable of;
 it’s by no means a high-end system) and we managed 399 writes, or
 approx. 40 PUTs/s.&lt;/p&gt;
 &lt;p&gt;Let’s see how going even bigger changes things:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;SIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class="m"&gt;26&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# 64MB object size&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;SIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="m"&gt;26&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# 64MB object size&lt;/span&gt;
 
 $&lt;span class="w"&gt; &lt;/span&gt;rest-bench&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$CONCURRENCY&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-b&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$SIZE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--seconds&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$SECS&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--api-host&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$RGW&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
 --bucket&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$BUCKET&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--access-key&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$KEY&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--secret&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$SECRET&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--no-cleanup&lt;span class="w"&gt; &lt;/span&gt;write
@@ -13684,7 +13711,7 @@ that a client needs to haul a 64MB object across the network and
 through the radosgw HTTP server.)&lt;/p&gt;
 &lt;p&gt;Let’s do the opposite now, and go for smaller objects. Suppose your
 application is using a typical object size of 32K.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;SIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class="m"&gt;15&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# 32KB object size&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;SIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="m"&gt;15&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# 32KB object size&lt;/span&gt;
 rest-bench&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$CONCURRENCY&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-b&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$SIZE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--seconds&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$SECS&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--api-host&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$RGW&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
 --bucket&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$BUCKET&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--access-key&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$KEY&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--secret&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$SECRET&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--no-cleanup&lt;span class="w"&gt; &lt;/span&gt;write
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -13703,7 +13730,7 @@ and lots of them. And it’s succeeding just fine; we’re now near 300
 PUTs/s.&lt;/p&gt;
 &lt;p&gt;Going even smaller, we’d expect PUTs/s to trend further up and nominal
 MB/s to go down. Let’s try with 4K objects:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;SIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class="m"&gt;12&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# 4KB object size&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;SIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="m"&gt;12&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# 4KB object size&lt;/span&gt;
 rest-bench&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$CONCURRENCY&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-b&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$SIZE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--seconds&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$SECS&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--api-host&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$RGW&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
 --bucket&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$BUCKET&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--access-key&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$KEY&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--secret&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$SECRET&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--no-cleanup&lt;span class="w"&gt; &lt;/span&gt;write
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -13731,7 +13758,7 @@ you can only ever issue one PUT at a time, both throughput and
 writes-per-second will be lower in aggregate.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;RGW&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;localhost:7480
 &lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;SECS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;
-&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;SIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class="m"&gt;22&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# back to 4MB object size&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;SIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="m"&gt;22&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# back to 4MB object size&lt;/span&gt;
 &lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;BUCKET&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;bench
 &lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;CONCURRENCY&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;16&lt;/span&gt;
 &lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;KEY&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&amp;lt;key&amp;gt;
@@ -13768,10 +13795,10 @@ writes-per-second and our aggregate bandwidth to drop by more than
 half.&lt;/p&gt;
 &lt;p&gt;The effect is even slightly less pronounced with smaller
 objects. Compare the two for 4KB objects:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;SIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="s"&gt;&amp;lt;&amp;lt;12)) # 4KB object size&lt;/span&gt;
-&lt;span class="s"&gt;export CONCURRENCY=1&lt;/span&gt;&lt;span class="m"&gt;6&lt;/span&gt;
-rest-bench&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;t&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$CONCURRENCY&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;b&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$SIZE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="nv"&gt;seconds&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$SECS&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;api-host&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$RGW&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
-&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="nv"&gt;bucket&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$BUCKET&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;access-key&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$KEY&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="nv"&gt;secret&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$SECRET&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;no-cleanup&lt;span class="w"&gt; &lt;/span&gt;write
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;SIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="m"&gt;12&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# 4KB object size&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;CONCURRENCY&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;16&lt;/span&gt;
+rest-bench&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$CONCURRENCY&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-b&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$SIZE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--seconds&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$SECS&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--api-host&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$RGW&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+--bucket&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$BUCKET&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--access-key&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$KEY&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--secret&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$SECRET&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--no-cleanup&lt;span class="w"&gt; &lt;/span&gt;write
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;host&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;localhost&lt;/span&gt;:&lt;span class="mi"&gt;7480&lt;/span&gt;
 &lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;Maintaining&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;concurrent&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;writes&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;4096&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;bytes&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;up&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;to&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;seconds&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;or&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;objects&lt;/span&gt;
@@ -17264,24 +17291,24 @@ up and test it thoroughly.&lt;/p&gt;
 &lt;p&gt;The Pacemaker configuration, shown here in &lt;code&gt;crm&lt;/code&gt; shell syntax, normally
 puts all the required resources into one cloned group. Have a look at
 this configuration snippet:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;primitive p_dlm_controld ocf:pacemaker:controld \
-  params daemon="dlm_controld.pcmk" \
-  op start interval="0" timeout="90" \
-  op stop interval="0" timeout="100" \
-  op monitor interval="10"
-primitive p_gfs_controld ocf:pacemaker:controld \
-  params daemon="gfs_controld.pcmk"\
-  op start interval="0" timeout="90" \
-  op stop interval="0" timeout="100" \
-  op monitor interval="10"
-primitive p_fs_gfs2 ocf:heartbeat:Filesystem \
-  params device="&amp;lt;your device path&amp;gt;" \
-    directory="&amp;lt;your mount point&amp;gt;" \
-    fstype="gfs2" \
-  op monitor interval="10"
-group g_gfs2 p_dlm_controld p_gfs_controld p_fs_gfs2
-clone cl_gfs2 g_gfs2 \
-  meta interleave="true"
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nx"&gt;primitive&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;p_dlm_controld&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;ocf&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nx"&gt;pacemaker&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nx"&gt;controld&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;\
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nx"&gt;params&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;daemon&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"dlm_controld.pcmk"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;\
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nx"&gt;op&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;start&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;interval&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"0"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;timeout&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"90"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;\
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nx"&gt;op&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;stop&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;interval&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"0"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;timeout&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"100"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;\
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nx"&gt;op&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;monitor&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;interval&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"10"&lt;/span&gt;
+&lt;span class="nx"&gt;primitive&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;p_gfs_controld&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;ocf&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nx"&gt;pacemaker&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nx"&gt;controld&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;\
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nx"&gt;params&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;daemon&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"gfs_controld.pcmk"&lt;/span&gt;\
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nx"&gt;op&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;start&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;interval&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"0"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;timeout&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"90"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;\
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nx"&gt;op&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;stop&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;interval&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"0"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;timeout&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"100"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;\
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nx"&gt;op&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;monitor&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;interval&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"10"&lt;/span&gt;
+&lt;span class="nx"&gt;primitive&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;p_fs_gfs2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;ocf&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nx"&gt;heartbeat&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nx"&gt;Filesystem&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;\
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nx"&gt;params&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;device&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"&amp;lt;your device path&amp;gt;"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;\
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;directory&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"&amp;lt;your mount point&amp;gt;"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;\
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;fstype&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"gfs2"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;\
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nx"&gt;op&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;monitor&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;interval&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"10"&lt;/span&gt;
+&lt;span class="nx"&gt;group&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;g_gfs2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;p_dlm_controld&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;p_gfs_controld&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;p_fs_gfs2&lt;/span&gt;
+&lt;span class="nx"&gt;clone&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;cl_gfs2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;g_gfs2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;\
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nx"&gt;meta&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;interleave&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"true"&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Then when that’s done, your filesystem should happily mount on all nodes.&lt;/p&gt;
 &lt;hr/&gt;
@@ -17364,23 +17391,23 @@ the O2CB lock manager for OCFS2, and an OCFS2 filesystem itself.&lt;/p&gt;
 &lt;p&gt;The Pacemaker configuration, shown here in crm shell syntax, normally
 puts all the required resources into one cloned group. Have a look at
 this configuration snippet:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;primitive p_dlm_controld ocf:pacemaker:controld \
-  op start interval="0" timeout="90" \
-  op stop interval="0" timeout="100" \
-  op monitor interval="10"
-primitive p_o2cb ocf:pacemaker:o2cb \
-  op start interval="0" timeout="90" \
-  op stop interval="0" timeout="100" \
-  op monitor interval="10"
-primitive p_fs_ocfs2 ocf:heartbeat:Filesystem \
-  params device="&amp;lt;your device path&amp;gt;" \
-    directory="&amp;lt;your mount point&amp;gt;" \
-    fstype="ocfs2" \
-  meta target-role=Stopped \
-  op monitor interval="10"
-group g_ocfs2 p_dlm_controld p_o2cb p_fs_ocfs2
-clone cl_ocfs2 g_ocfs2 \
-  meta interleave="true"
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nx"&gt;primitive&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;p_dlm_controld&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;ocf&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nx"&gt;pacemaker&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nx"&gt;controld&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;\
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nx"&gt;op&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;start&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;interval&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"0"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;timeout&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"90"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;\
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nx"&gt;op&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;stop&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;interval&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"0"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;timeout&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"100"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;\
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nx"&gt;op&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;monitor&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;interval&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"10"&lt;/span&gt;
+&lt;span class="nx"&gt;primitive&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;p_o2cb&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;ocf&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nx"&gt;pacemaker&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nx"&gt;o2cb&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;\
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nx"&gt;op&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;start&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;interval&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"0"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;timeout&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"90"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;\
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nx"&gt;op&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;stop&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;interval&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"0"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;timeout&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"100"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;\
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nx"&gt;op&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;monitor&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;interval&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"10"&lt;/span&gt;
+&lt;span class="nx"&gt;primitive&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;p_fs_ocfs2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;ocf&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nx"&gt;heartbeat&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nx"&gt;Filesystem&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;\
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nx"&gt;params&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;device&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"&amp;lt;your device path&amp;gt;"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;\
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;directory&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"&amp;lt;your mount point&amp;gt;"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;\
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;fstype&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"ocfs2"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;\
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nx"&gt;meta&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;target&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;role&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="nx"&gt;Stopped&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;\
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nx"&gt;op&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;monitor&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;interval&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"10"&lt;/span&gt;
+&lt;span class="nx"&gt;group&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;g_ocfs2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;p_dlm_controld&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;p_o2cb&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;p_fs_ocfs2&lt;/span&gt;
+&lt;span class="nx"&gt;clone&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;cl_ocfs2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;g_ocfs2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;\
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nx"&gt;meta&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;interleave&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"true"&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;Why keep the filesystem stopped?&lt;/h2&gt;
 &lt;p&gt;Because you probably either don’t have a configured OCFS2 filesystem

@@ -171,23 +171,23 @@ the O2CB lock manager for OCFS2, and an OCFS2 filesystem itself.</p>
 <p>The Pacemaker configuration, shown here in crm shell syntax, normally
 puts all the required resources into one cloned group. Have a look at
 this configuration snippet:</p>
-<div class="highlight"><pre><span></span><code>primitive p_dlm_controld ocf:pacemaker:controld \
-  op start interval="0" timeout="90" \
-  op stop interval="0" timeout="100" \
-  op monitor interval="10"
-primitive p_o2cb ocf:pacemaker:o2cb \
-  op start interval="0" timeout="90" \
-  op stop interval="0" timeout="100" \
-  op monitor interval="10"
-primitive p_fs_ocfs2 ocf:heartbeat:Filesystem \
-  params device="&lt;your device path&gt;" \
-    directory="&lt;your mount point&gt;" \
-    fstype="ocfs2" \
-  meta target-role=Stopped \
-  op monitor interval="10"
-group g_ocfs2 p_dlm_controld p_o2cb p_fs_ocfs2
-clone cl_ocfs2 g_ocfs2 \
-  meta interleave="true"
+<div class="highlight"><pre><span></span><code><span class="nx">primitive</span><span class="w"> </span><span class="nx">p_dlm_controld</span><span class="w"> </span><span class="nx">ocf</span><span class="p">:</span><span class="nx">pacemaker</span><span class="p">:</span><span class="nx">controld</span><span class="w"> </span>\
+<span class="w">  </span><span class="nx">op</span><span class="w"> </span><span class="nx">start</span><span class="w"> </span><span class="nx">interval</span><span class="p">=</span><span class="s">"0"</span><span class="w"> </span><span class="nx">timeout</span><span class="p">=</span><span class="s">"90"</span><span class="w"> </span>\
+<span class="w">  </span><span class="nx">op</span><span class="w"> </span><span class="nx">stop</span><span class="w"> </span><span class="nx">interval</span><span class="p">=</span><span class="s">"0"</span><span class="w"> </span><span class="nx">timeout</span><span class="p">=</span><span class="s">"100"</span><span class="w"> </span>\
+<span class="w">  </span><span class="nx">op</span><span class="w"> </span><span class="nx">monitor</span><span class="w"> </span><span class="nx">interval</span><span class="p">=</span><span class="s">"10"</span>
+<span class="nx">primitive</span><span class="w"> </span><span class="nx">p_o2cb</span><span class="w"> </span><span class="nx">ocf</span><span class="p">:</span><span class="nx">pacemaker</span><span class="p">:</span><span class="nx">o2cb</span><span class="w"> </span>\
+<span class="w">  </span><span class="nx">op</span><span class="w"> </span><span class="nx">start</span><span class="w"> </span><span class="nx">interval</span><span class="p">=</span><span class="s">"0"</span><span class="w"> </span><span class="nx">timeout</span><span class="p">=</span><span class="s">"90"</span><span class="w"> </span>\
+<span class="w">  </span><span class="nx">op</span><span class="w"> </span><span class="nx">stop</span><span class="w"> </span><span class="nx">interval</span><span class="p">=</span><span class="s">"0"</span><span class="w"> </span><span class="nx">timeout</span><span class="p">=</span><span class="s">"100"</span><span class="w"> </span>\
+<span class="w">  </span><span class="nx">op</span><span class="w"> </span><span class="nx">monitor</span><span class="w"> </span><span class="nx">interval</span><span class="p">=</span><span class="s">"10"</span>
+<span class="nx">primitive</span><span class="w"> </span><span class="nx">p_fs_ocfs2</span><span class="w"> </span><span class="nx">ocf</span><span class="p">:</span><span class="nx">heartbeat</span><span class="p">:</span><span class="nx">Filesystem</span><span class="w"> </span>\
+<span class="w">  </span><span class="nx">params</span><span class="w"> </span><span class="nx">device</span><span class="p">=</span><span class="s">"&lt;your device path&gt;"</span><span class="w"> </span>\
+<span class="w">    </span><span class="nx">directory</span><span class="p">=</span><span class="s">"&lt;your mount point&gt;"</span><span class="w"> </span>\
+<span class="w">    </span><span class="nx">fstype</span><span class="p">=</span><span class="s">"ocfs2"</span><span class="w"> </span>\
+<span class="w">  </span><span class="nx">meta</span><span class="w"> </span><span class="nx">target</span><span class="o">-</span><span class="nx">role</span><span class="p">=</span><span class="nx">Stopped</span><span class="w"> </span>\
+<span class="w">  </span><span class="nx">op</span><span class="w"> </span><span class="nx">monitor</span><span class="w"> </span><span class="nx">interval</span><span class="p">=</span><span class="s">"10"</span>
+<span class="nx">group</span><span class="w"> </span><span class="nx">g_ocfs2</span><span class="w"> </span><span class="nx">p_dlm_controld</span><span class="w"> </span><span class="nx">p_o2cb</span><span class="w"> </span><span class="nx">p_fs_ocfs2</span>
+<span class="nx">clone</span><span class="w"> </span><span class="nx">cl_ocfs2</span><span class="w"> </span><span class="nx">g_ocfs2</span><span class="w"> </span>\
+<span class="w">  </span><span class="nx">meta</span><span class="w"> </span><span class="nx">interleave</span><span class="p">=</span><span class="s">"true"</span>
 </code></pre></div>
 <h2>Why keep the filesystem stopped?</h2>
 <p>Because you probably either don’t have a configured OCFS2 filesystem

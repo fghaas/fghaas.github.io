@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - presentations</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/category/presentations.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2022-09-18T00:00:00+00:00</updated><entry><title>Writing Professionally (DevOpsDays Berlin 2022)</title><link href="https://xahteiwi.eu/resources/presentations/devopsdays-berlin-2022/" rel="alternate"></link><published>2022-09-18T00:00:00+00:00</published><updated>2022-09-18T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-09-18:/resources/presentations/devopsdays-berlin-2022/</id><summary type="html">&lt;p&gt;I couldn&amp;rsquo;t make it to DevOpsDays Berlin, because my Covid status kept me from travelling. Thus, here&amp;rsquo;s a write-up.&lt;/p&gt;</summary><content type="html">&lt;p&gt;At &lt;a href="https://devopsdays.org/events/2022-berlin/program"&gt;DevOpsDays Berlin
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - presentations</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/category/presentations.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2023-05-25T00:00:00+00:00</updated><entry><title>Creativity (PyCon Italia 2023)</title><link href="https://xahteiwi.eu/resources/presentations/pyconit-2023/" rel="alternate"></link><published>2023-05-25T00:00:00+00:00</published><updated>2023-05-25T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-05-25:/resources/presentations/pyconit-2023/</id><summary type="html">&lt;p&gt;PyCon Italia 2023 was wonderful. Here&amp;rsquo;s my talk.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This year, I traveled to
+&lt;a href="https://en.wikipedia.org/wiki/Florence"&gt;Florence&lt;/a&gt; for my first
+&lt;a href="https://pycon.it/"&gt;PyCon Italia&lt;/a&gt;. It’s a wonderful conference in a
+lovely city, and I hope to return.&lt;/p&gt;
+&lt;p&gt;PyCon Italia accepted my Creativity talk that I’d already done at
+&lt;a href="https://xahteiwi.eu/resources/presentations/devopsdaystlv-2022/"&gt;DevOpsDays Tel Aviv the prior
+December&lt;/a&gt;, and I was &lt;em&gt;much&lt;/em&gt; happier
+with it the second time around.&lt;/p&gt;
+&lt;p&gt;Also, thankfully I did not have the audio issues that plagued the Tel
+Aviv talk, so the recording came out rather well, too.&lt;/p&gt;
+&lt;p&gt;PyCon Italia hasn’t yet released edited videos for the talks, but you
+can already catch the &lt;a href="https://www.youtube.com/live/nUmolZkWQIg?feature=share&amp;amp;t=22847"&gt;unedited recording of the live
+stream&lt;/a&gt;. My
+slides (with full speaker notes) are available
+&lt;a href="https://fghaas.github.io/pyconit2023/"&gt;here&lt;/a&gt;.&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category></entry><entry><title>Creativity (DevOpsDays Tel Aviv 2022)</title><link href="https://xahteiwi.eu/resources/presentations/devopsdaystlv-2022/" rel="alternate"></link><published>2022-12-17T00:00:00+00:00</published><updated>2022-12-17T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-12-17:/resources/presentations/devopsdaystlv-2022/</id><summary type="html">&lt;p&gt;I did a 30-minute Spotlight Talk at DevOpsDays Tel Aviv 2022.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This year, &lt;a href="https://devopsdaystlv.com"&gt;DevOpsDays Tel Aviv&lt;/a&gt; accepted
+my talk on creativity (which I submitted as a 20-minute session), and
+then upgraded it to a 30-minute Spotlight Talk on the main stage to
+close out the first day.&lt;/p&gt;
+&lt;p&gt;This was my first DevOpsDays Tel Aviv &lt;a href="https://xahteiwi.eu/resources/presentations/devopsdays-tel-aviv-2019/"&gt;since
+2019&lt;/a&gt;, and the event has grown
+significantly since then. It is still a 2-day event that is mostly
+single-track save for some workshops, but it now takes up all of
+Pavilion 10 of the Tel Aviv Expo, including an 800-seat main stage
+keynote area.&lt;/p&gt;
+&lt;p&gt;The video for this talk &lt;a href="https://youtu.be/gUurzz49j8c"&gt;on Youtube&lt;/a&gt;,
+but unfortunately it has pretty bad audio issues so it’s a bit painful
+to listen to. My slides (with full speaker notes) are available
+&lt;a href="https://fghaas.github.io/devopsdaystlv-2022/"&gt;here&lt;/a&gt;.&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category></entry><entry><title>Writing Professionally (DevOpsDays Berlin 2022)</title><link href="https://xahteiwi.eu/resources/presentations/devopsdays-berlin-2022/" rel="alternate"></link><published>2022-09-18T00:00:00+00:00</published><updated>2022-09-18T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-09-18:/resources/presentations/devopsdays-berlin-2022/</id><summary type="html">&lt;p&gt;I couldn&amp;rsquo;t make it to DevOpsDays Berlin, because my Covid status kept me from travelling. Thus, here&amp;rsquo;s a write-up.&lt;/p&gt;</summary><content type="html">&lt;p&gt;At &lt;a href="https://devopsdays.org/events/2022-berlin/program"&gt;DevOpsDays Berlin
 2022&lt;/a&gt;, I was slated
 to give a 30-minute talk titled &lt;em&gt;Writing Professionally.&lt;/em&gt;
 Unfortunately a positive Covid test just three days prior to my
