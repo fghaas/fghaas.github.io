@@ -8,10 +8,8 @@ lovely city, and I hope to return.&lt;/p&gt;
 December&lt;/a&gt;, and I was &lt;em&gt;much&lt;/em&gt; happier
 with it the second time around.&lt;/p&gt;
 &lt;p&gt;Also, thankfully I did not have the audio issues that plagued the Tel
-Aviv talk, so the recording came out rather well, too.&lt;/p&gt;
-&lt;p&gt;PyCon Italia hasn’t yet released edited videos for the talks, but you
-can already catch the &lt;a href="https://www.youtube.com/live/nUmolZkWQIg?feature=share&amp;amp;t=22847"&gt;unedited recording of the live
-stream&lt;/a&gt;. My
+Aviv talk, so the recording came out rather well, too.
+It is available &lt;a href="https://youtu.be/dKuGRV0hlA0"&gt;on YouTube&lt;/a&gt;. My
 slides (with full speaker notes) are available
 &lt;a href="https://fghaas.github.io/pyconit2023/"&gt;here&lt;/a&gt;.&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category></entry><entry><title>The trouble with Key Results</title><link href="https://xahteiwi.eu/blog/2023/03/19/key-results/" rel="alternate"></link><published>2023-03-19T09:30:00+00:00</published><updated>2023-03-19T09:30:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-03-19:/blog/2023/03/19/key-results/</id><summary type="html">&lt;p&gt;Some thoughts sparked by a discussion on Mastodon.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I like &lt;a href="https://en.wikipedia.org/wiki/Mastodon_(social_network)"&gt;Mastodon&lt;/a&gt;.
 I really do.
@@ -960,7 +958,7 @@ unstructured wall of text.&lt;/p&gt;
 &lt;h1&gt;Orwell’s Six Rules&lt;/h1&gt;
 &lt;p&gt;One of the simplest, most concise, and most useful rulesets for
 writing clearly in the English language comes from &lt;a href="https://en.wikipedia.org/wiki/George_Orwell"&gt;George
-Orwell&lt;/a&gt;‘s 1946 essay,
+Orwell&lt;/a&gt;’s 1946 essay,
 &lt;em&gt;&lt;a href="https://en.wikipedia.org/wiki/Politics_and_the_English_Language"&gt;Politics and the English
 Language&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;In it, Orwell suggested six rules for writers to follow:&lt;/p&gt;
@@ -2375,7 +2373,7 @@ guessing should work well too.&lt;/p&gt;
 &lt;h2&gt;Nutrition facts&lt;/h2&gt;
 &lt;p&gt;No warranty of any kind on these. Values are per serving.&lt;/p&gt;
 &lt;p&gt;With meat:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Calories (kcal)&lt;/th&gt;
@@ -2406,7 +2404,7 @@ guessing should work well too.&lt;/p&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;Without meat:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Calories (kcal)&lt;/th&gt;
@@ -3279,7 +3277,7 @@ planned.&lt;/p&gt;
 &lt;p&gt;So Alex, being a good CEO, opens some spread sheet software and
 creates this handy table that simply plugs in values for &lt;span class="math"&gt;\(x\)&lt;/span&gt; and &lt;span class="math"&gt;\(y\)&lt;/span&gt;,
 with &lt;span class="math"&gt;\(x\)&lt;/span&gt; (width) in columns and &lt;span class="math"&gt;\(y\)&lt;/span&gt; (depth) in rows.&lt;sup id="fnref:table"&gt;&lt;a class="footnote-ref" href="#fn:table"&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -3503,7 +3501,7 @@ interjects that Alex is missing a point, namely all the managers that
 the company will now no longer need, and the cost savings thus
 generated.&lt;/p&gt;
 &lt;p&gt;So Alex looks at the table again (width in columns, depth in rows):&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -3692,7 +3690,7 @@ cell &lt;em&gt;directly above it&lt;/em&gt; will contain the total number of man
 again, but considers the number of managers proportional to the number
 of people in the company, a pattern quickly emerges (again, width
 is in columns, depth is in rows):&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -7497,7 +7495,7 @@ It’s being lazy.&lt;/p&gt;
 &lt;p&gt;It’s a symptom of the worst kind of laziness &lt;em&gt;(not malice!)&lt;/em&gt;: in an
 attempt to communicate quickly and easily, for yourself, you are really
 making things harder for everyone, including yourself.&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -7525,7 +7523,7 @@ ago”, you’ll agree with me here.&lt;/p&gt;
 is to say in relation to &lt;em&gt;other&lt;/em&gt; discussions on the same topic, days
 or weeks earlier or later.&lt;/p&gt;
 &lt;p&gt;Let’s compare that to other communication modes:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -7556,7 +7554,7 @@ or weeks earlier or later.&lt;/p&gt;
   as with chat, and it’s marginally better at contextualizing
   information than chat (because you get proper threading).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -7603,7 +7601,7 @@ or weeks earlier or later.&lt;/p&gt;
   Likewise, “issue tracker” can mean RT, OTRS, Jira, Taiga, Bugzilla,
   whatever works for you.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -8776,7 +8774,7 @@ came this.&lt;/p&gt;
 &lt;/ol&gt;
 &lt;h2&gt;Nutrition facts&lt;/h2&gt;
 &lt;p&gt;No warranty of any kind on these. Values are per serving.&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Calories (kcal)&lt;/th&gt;
@@ -9059,7 +9057,7 @@ several to accommodate a larger crowd, or very hungry people.&lt;/p&gt;
 &lt;h2&gt;Nutrition facts&lt;/h2&gt;
 &lt;p&gt;No warranty of any kind on these. Values are per serving, counting one
 serving as one-quarter of the whole pizza.&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Calories (kcal)&lt;/th&gt;
@@ -10312,7 +10310,7 @@ in the conference.&lt;/p&gt;
 &lt;p&gt;Nonexisticon’s attendee-visible run-up cycle is 6 months.&lt;/p&gt;
 &lt;p&gt;Assuming a Nonexisticon is scheduled to run from May 15-17, the
 following schedule applies:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Date&lt;/th&gt;
@@ -10777,7 +10775,7 @@ let’s say it’s 1%.&lt;/p&gt;
 &lt;p&gt;So then let’s look at 10,000 interactions that completely random
 people make on the internet.&lt;/p&gt;
 &lt;p&gt;Those would then break down like so:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -10810,7 +10808,7 @@ flags content as infringing when it is not) with a rate of only
 ridiculously low for any automated screening procedure.&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;So that means that out of our 10,000 interactions tracked by our
 “perfect” content filter, the numbers break down like this:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -10853,7 +10851,7 @@ exceedingly rare, automated filters detect it with poor accuracy.&lt;/strong&gt;
 &lt;p&gt;And if you leave all parameters the same, but consider a probably much
 more realistic infringement rate of 1 in 1000, that is, 0.1%, then
 things look like this: &lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -12421,7 +12419,7 @@ that &lt;a href="//fghaas.github.io/openstackisrael2016-ignite"&gt;here&lt;/a&gt
 &lt;hr/&gt;
 &lt;h2&gt;Zero flexibility&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;_____&lt;/code&gt;‘s roles, artifacts, events, and rules are &lt;em&gt;immutable&lt;/em&gt; and
+&lt;p&gt;&lt;code&gt;_____&lt;/code&gt;’s roles, artifacts, events, and rules are &lt;em&gt;immutable&lt;/em&gt; and
 although implementing only parts of &lt;code&gt;_____&lt;/code&gt; is possible, &lt;em&gt;the result
 is not&lt;/em&gt; &lt;code&gt;_____&lt;/code&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -12430,7 +12428,7 @@ for the blanks, it’s rather quite likely that you would guess either a
 radical political ideology, a very strict religious sect or cult, or
 something to that effect. You couldn’t be further from the truth.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;Scrum&lt;/code&gt;‘s roles, artifacts, events, and rules are &lt;em&gt;immutable&lt;/em&gt; and
+&lt;p&gt;&lt;code&gt;Scrum&lt;/code&gt;’s roles, artifacts, events, and rules are &lt;em&gt;immutable&lt;/em&gt; and
 although implementing only parts of &lt;code&gt;Scrum&lt;/code&gt; is possible, &lt;em&gt;the result
 is not&lt;/em&gt; &lt;code&gt;Scrum&lt;/code&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -12977,7 +12975,7 @@ everything you or someone else might need to look at, in a simple,
 compact format. Unfortunately few people, including even long-time
 Pacemaker users, know that it exists: it’s called &lt;code&gt;crm_report&lt;/code&gt;.&lt;/p&gt;
 &lt;h2&gt;Running &lt;code&gt;crm_report&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;crm_report&lt;/code&gt;‘s command syntax is rather quite simple. You just tell it
+&lt;p&gt;&lt;code&gt;crm_report&lt;/code&gt;’s command syntax is rather quite simple. You just tell it
 how far in the past you want the report to start, and which directory
 you want to collect data in:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;crm_report&lt;span class="w"&gt; &lt;/span&gt;-f&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"2016-01-25 00:00:00"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;/tmp/crm_report
@@ -14124,7 +14122,7 @@ itchy. &lt;strong&gt;Do not run this against a production system.&lt;/strong&gt;
 &lt;p&gt;So what are we doing here? We’re creating a single RADOS object named
 &lt;code&gt;onebyte&lt;/code&gt; in a pool called &lt;code&gt;test&lt;/code&gt;. It is, as the name implies, only
 one byte long (it contains just the letter a), but it has a very long
-attribute named &lt;code&gt;val&lt;/code&gt;, which is 8 Megabytes’ worth of &lt;code&gt;a&lt;/code&gt;‘s.&lt;/p&gt;
+attribute named &lt;code&gt;val&lt;/code&gt;, which is 8 Megabytes’ worth of &lt;code&gt;a&lt;/code&gt;’s.&lt;/p&gt;
 &lt;p&gt;(In case you’re wondering: yes, there are applications that set very
 large attributes on RADOS objects. radosgw is one of them.)&lt;/p&gt;
 &lt;p&gt;Since you’ve been able to set the attribute, you can also retrieve it,
@@ -14398,7 +14396,7 @@ on OpenStack governance and organizational issues in its first half. In
 the afternoon, talks got more technical, which was a clear improvement.&lt;/p&gt;
 &lt;p&gt;Wednesday talks included a highly entertaining &lt;a href="https://www.youtube.com/watch?v=_mQKyIAx6Mc"&gt;look at MySQL’s
 history&lt;/a&gt; from &lt;strong&gt;Stewart
-Smith&lt;/strong&gt;, &lt;strong&gt;Dave Chinner&lt;/strong&gt;‘s musings on where &lt;a href="https://www.youtube.com/watch?v=DxZzSifuV4Q"&gt;Linux
+Smith&lt;/strong&gt;, &lt;strong&gt;Dave Chinner&lt;/strong&gt;’s musings on where &lt;a href="https://www.youtube.com/watch?v=DxZzSifuV4Q"&gt;Linux
 filesystems&lt;/a&gt; came from, and
 an insightful &lt;a href="https://www.youtube.com/watch?v=XyDcYV9doL8"&gt;RADOS deep
 dive&lt;/a&gt; from &lt;strong&gt;Sage Weil.&lt;/strong&gt;
@@ -14411,9 +14409,9 @@ there.&lt;/p&gt;
 Alike&lt;/a&gt; tutorial was on Thursday, had a nice
 turnout, and my hands-on stuff all worked! What more could I possibly
 ask for?&lt;/p&gt;
-&lt;p&gt;Besides my own talk, you should also totally watch &lt;strong&gt;Matthew Garrett&lt;/strong&gt;‘s
+&lt;p&gt;Besides my own talk, you should also totally watch &lt;strong&gt;Matthew Garrett&lt;/strong&gt;’s
 &lt;a href="https://www.youtube.com/watch?v=ixMStnFzgRM"&gt;Thursday keynote&lt;/a&gt; and
-&lt;strong&gt;Lana Brindley&lt;/strong&gt;‘s &lt;a href="https://www.youtube.com/watch?v=HKmaCpOv0Ww"&gt;agile documentation tutorial with Lego
+&lt;strong&gt;Lana Brindley&lt;/strong&gt;’s &lt;a href="https://www.youtube.com/watch?v=HKmaCpOv0Ww"&gt;agile documentation tutorial with Lego
 goodness&lt;/a&gt;. And of course,
 my clear favorite among all LCA talks this year, Bdale Garbee’s
 &lt;a href="https://www.youtube.com/watch?v=j7Et_eWJExU"&gt;reflections on losing his
@@ -15994,7 +15992,7 @@ availability and
 first &lt;a href="http://events.linuxfoundation.org/events/cloudopen-north-america"&gt;CloudOpen&lt;/a&gt;
 conference, colocated with &lt;a href="http://events.linuxfoundation.org/events/linuxcon-north-america"&gt;LinuxCon North
 America&lt;/a&gt;.
-CloudOpen is the &lt;a href="http://www.linuxfoundation.org/"&gt;Linux Foundation&lt;/a&gt;‘s
+CloudOpen is the &lt;a href="http://www.linuxfoundation.org/"&gt;Linux Foundation&lt;/a&gt;’s
 brand new, stack-agnostic cloud …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Next week, I will be speaking at the inaugural CloudOpen conference in
 San Diego. This is your chance to learn about
 &lt;a href="https://www.hastexo.com/knowledge/openstack"&gt;OpenStack&lt;/a&gt; high
@@ -16004,7 +16002,7 @@ availability and
 first &lt;a href="http://events.linuxfoundation.org/events/cloudopen-north-america"&gt;CloudOpen&lt;/a&gt;
 conference, colocated with &lt;a href="http://events.linuxfoundation.org/events/linuxcon-north-america"&gt;LinuxCon North
 America&lt;/a&gt;.
-CloudOpen is the &lt;a href="http://www.linuxfoundation.org/"&gt;Linux Foundation&lt;/a&gt;‘s
+CloudOpen is the &lt;a href="http://www.linuxfoundation.org/"&gt;Linux Foundation&lt;/a&gt;’s
 brand new, stack-agnostic cloud conference where OpenStackers can mingle
 with CloudStackers and Eucalyptus folks to discuss open-source cloud
 solutions.&lt;/p&gt;
@@ -16107,7 +16105,7 @@ zone. The zone file (for BIND9, in this case) could look like this:&lt;/p&gt;
 ;
 @   IN  NS  alice.example.com.
 @   IN  A   192.168.122.113
-*   IN  CNAME   @
+&lt;span class="k"&gt;*&lt;/span&gt;   IN  CNAME   @
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;In this zone, the A record s3.amazonaws.com resolves
 to 192.168.122.113, and any sub-domain (like
@@ -16148,7 +16146,7 @@ different host, and then add a second record to your DNS zone:&lt;/p&gt;
 @   IN  NS  alice.example.com.
 @   IN  A   192.168.122.112
 @   IN  A   192.168.122.113
-*   IN  CNAME   @
+&lt;span class="k"&gt;*&lt;/span&gt;   IN  CNAME   @
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Then, as you access more buckets, you’ll hit the A records in a
 round-robin fashion, meaning your requests will be balanced across the
@@ -16424,7 +16422,7 @@ mandatory or advisory. So for the two constraints shown here:&lt;/p&gt;
 order o_foo_before_bar 0: foo bar
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;… if &lt;code&gt;foo&lt;/code&gt; and &lt;code&gt;bar&lt;/code&gt; are just starting, &lt;code&gt;foo&lt;/code&gt; starts first, and
-&lt;code&gt;bar&lt;/code&gt; starts only when &lt;code&gt;foo&lt;/code&gt;‘s start operation is completed. So what’s
+&lt;code&gt;bar&lt;/code&gt; starts only when &lt;code&gt;foo&lt;/code&gt;’s start operation is completed. So what’s
 the difference, really?&lt;/p&gt;
 &lt;h2&gt;Mandatory ordering&lt;/h2&gt;
 &lt;p&gt;In a &lt;strong&gt;mandatory&lt;/strong&gt; order constraint, the order is enforced under all
@@ -17077,7 +17075,7 @@ still wouldn’t be communicating. So, you can’t rely on
 list.&lt;/p&gt;
 &lt;h2&gt;Querying the member list with &lt;code&gt;corosync-cmapctl&lt;/code&gt;&lt;/h2&gt;
 &lt;p&gt;We can examine Corosync’s cluster member list with the &lt;code&gt;corosync-cmapctl&lt;/code&gt; command:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;# corosync-cmapctl | grep member
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="gh"&gt;#&lt;/span&gt; corosync-cmapctl | grep member
 runtime.totem.pg.mrp.srp.members.303938909.ip=r(0) ip(10.0.1.1) r(1) ip(192.168.42.1) 
 runtime.totem.pg.mrp.srp.members.303938909.join_count=1
 runtime.totem.pg.mrp.srp.members.303938909.status=joined

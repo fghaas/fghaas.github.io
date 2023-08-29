@@ -190,7 +190,7 @@ zone. The zone file (for BIND9, in this case) could look like this:</p>
 ;
 @   IN  NS  alice.example.com.
 @   IN  A   192.168.122.113
-*   IN  CNAME   @
+<span class="k">*</span>   IN  CNAME   @
 </code></pre></div>
 <p>In this zone, the A record s3.amazonaws.com resolves
 to 192.168.122.113, and any sub-domain (like
@@ -231,7 +231,7 @@ different host, and then add a second record to your DNS zone:</p>
 @   IN  NS  alice.example.com.
 @   IN  A   192.168.122.112
 @   IN  A   192.168.122.113
-*   IN  CNAME   @
+<span class="k">*</span>   IN  CNAME   @
 </code></pre></div>
 <p>Then, as you access more buckets, you’ll hit the A records in a
 round-robin fashion, meaning your requests will be balanced across the

@@ -79,7 +79,7 @@ still wouldn’t be communicating. So, you can’t rely on
 list.&lt;/p&gt;
 &lt;h2&gt;Querying the member list with &lt;code&gt;corosync-cmapctl&lt;/code&gt;&lt;/h2&gt;
 &lt;p&gt;We can examine Corosync’s cluster member list with the &lt;code&gt;corosync-cmapctl&lt;/code&gt; command:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;# corosync-cmapctl | grep member
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="gh"&gt;#&lt;/span&gt; corosync-cmapctl | grep member
 runtime.totem.pg.mrp.srp.members.303938909.ip=r(0) ip(10.0.1.1) r(1) ip(192.168.42.1) 
 runtime.totem.pg.mrp.srp.members.303938909.join_count=1
 runtime.totem.pg.mrp.srp.members.303938909.status=joined

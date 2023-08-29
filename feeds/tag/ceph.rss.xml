@@ -135,7 +135,7 @@ availability and
 first &lt;a href="http://events.linuxfoundation.org/events/cloudopen-north-america"&gt;CloudOpen&lt;/a&gt;
 conference, colocated with &lt;a href="http://events.linuxfoundation.org/events/linuxcon-north-america"&gt;LinuxCon North
 America&lt;/a&gt;.
-CloudOpen is the &lt;a href="http://www.linuxfoundation.org/"&gt;Linux Foundation&lt;/a&gt;‘s
+CloudOpen is the &lt;a href="http://www.linuxfoundation.org/"&gt;Linux Foundation&lt;/a&gt;’s
 brand new, stack-agnostic cloud …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">florian</dc:creator><pubDate>Mon, 20 Aug 2012 07:26:00 +0000</pubDate><guid isPermaLink="false">tag:xahteiwi.eu,2012-08-20:/blog/2012/08/20/speaking-and-bofing-at-cloudopen-in-san-diego/</guid><category>blog</category><category>Ceph</category><category>Conference</category><category>high availability</category><category>OpenStack</category></item><item><title>Configuring radosgw to behave like Amazon S3</title><link>https://xahteiwi.eu/resources/hints-and-kinks/configuring-radosgw-behave-amazon-s3/</link><description>&lt;p&gt;If you’ve heard of Ceph, you’ve surely heard of radosgw, a RESTful
 gateway interface to the RADOS object store. You’ve probably also
 heard that it provides a front-end interface that is compatible with

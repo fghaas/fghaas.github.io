@@ -15,7 +15,7 @@ everything you or someone else might need to look at, in a simple,
 compact format. Unfortunately few people, including even long-time
 Pacemaker users, know that it exists: it’s called &lt;code&gt;crm_report&lt;/code&gt;.&lt;/p&gt;
 &lt;h2&gt;Running &lt;code&gt;crm_report&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;crm_report&lt;/code&gt;‘s command syntax is rather quite simple. You just tell it
+&lt;p&gt;&lt;code&gt;crm_report&lt;/code&gt;’s command syntax is rather quite simple. You just tell it
 how far in the past you want the report to start, and which directory
 you want to collect data in:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;crm_report&lt;span class="w"&gt; &lt;/span&gt;-f&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"2016-01-25 00:00:00"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;/tmp/crm_report
@@ -979,7 +979,7 @@ mandatory or advisory. So for the two constraints shown here:&lt;/p&gt;
 order o_foo_before_bar 0: foo bar
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;… if &lt;code&gt;foo&lt;/code&gt; and &lt;code&gt;bar&lt;/code&gt; are just starting, &lt;code&gt;foo&lt;/code&gt; starts first, and
-&lt;code&gt;bar&lt;/code&gt; starts only when &lt;code&gt;foo&lt;/code&gt;‘s start operation is completed. So what’s
+&lt;code&gt;bar&lt;/code&gt; starts only when &lt;code&gt;foo&lt;/code&gt;’s start operation is completed. So what’s
 the difference, really?&lt;/p&gt;
 &lt;h2&gt;Mandatory ordering&lt;/h2&gt;
 &lt;p&gt;In a &lt;strong&gt;mandatory&lt;/strong&gt; order constraint, the order is enforced under all

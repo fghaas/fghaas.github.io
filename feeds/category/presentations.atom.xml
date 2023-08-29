@@ -8,10 +8,8 @@ lovely city, and I hope to return.&lt;/p&gt;
 December&lt;/a&gt;, and I was &lt;em&gt;much&lt;/em&gt; happier
 with it the second time around.&lt;/p&gt;
 &lt;p&gt;Also, thankfully I did not have the audio issues that plagued the Tel
-Aviv talk, so the recording came out rather well, too.&lt;/p&gt;
-&lt;p&gt;PyCon Italia hasn’t yet released edited videos for the talks, but you
-can already catch the &lt;a href="https://www.youtube.com/live/nUmolZkWQIg?feature=share&amp;amp;t=22847"&gt;unedited recording of the live
-stream&lt;/a&gt;. My
+Aviv talk, so the recording came out rather well, too.
+It is available &lt;a href="https://youtu.be/dKuGRV0hlA0"&gt;on YouTube&lt;/a&gt;. My
 slides (with full speaker notes) are available
 &lt;a href="https://fghaas.github.io/pyconit2023/"&gt;here&lt;/a&gt;.&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category></entry><entry><title>Creativity (DevOpsDays Tel Aviv 2022)</title><link href="https://xahteiwi.eu/resources/presentations/devopsdaystlv-2022/" rel="alternate"></link><published>2022-12-17T00:00:00+00:00</published><updated>2022-12-17T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-12-17:/resources/presentations/devopsdaystlv-2022/</id><summary type="html">&lt;p&gt;I did a 30-minute Spotlight Talk at DevOpsDays Tel Aviv 2022.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This year, &lt;a href="https://devopsdaystlv.com"&gt;DevOpsDays Tel Aviv&lt;/a&gt; accepted
 my talk on creativity (which I submitted as a 20-minute session), and
@@ -103,7 +101,7 @@ unstructured wall of text.&lt;/p&gt;
 &lt;h1&gt;Orwell’s Six Rules&lt;/h1&gt;
 &lt;p&gt;One of the simplest, most concise, and most useful rulesets for
 writing clearly in the English language comes from &lt;a href="https://en.wikipedia.org/wiki/George_Orwell"&gt;George
-Orwell&lt;/a&gt;‘s 1946 essay,
+Orwell&lt;/a&gt;’s 1946 essay,
 &lt;em&gt;&lt;a href="https://en.wikipedia.org/wiki/Politics_and_the_English_Language"&gt;Politics and the English
 Language&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;In it, Orwell suggested six rules for writers to follow:&lt;/p&gt;
@@ -1025,7 +1023,7 @@ It’s being lazy.&lt;/p&gt;
 &lt;p&gt;It’s a symptom of the worst kind of laziness &lt;em&gt;(not malice!)&lt;/em&gt;: in an
 attempt to communicate quickly and easily, for yourself, you are really
 making things harder for everyone, including yourself.&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -1053,7 +1051,7 @@ ago”, you’ll agree with me here.&lt;/p&gt;
 is to say in relation to &lt;em&gt;other&lt;/em&gt; discussions on the same topic, days
 or weeks earlier or later.&lt;/p&gt;
 &lt;p&gt;Let’s compare that to other communication modes:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -1084,7 +1082,7 @@ or weeks earlier or later.&lt;/p&gt;
   as with chat, and it’s marginally better at contextualizing
   information than chat (because you get proper threading).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -1131,7 +1129,7 @@ or weeks earlier or later.&lt;/p&gt;
   Likewise, “issue tracker” can mean RT, OTRS, Jira, Taiga, Bugzilla,
   whatever works for you.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;

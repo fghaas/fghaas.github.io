@@ -1467,7 +1467,7 @@ itchy. &lt;strong&gt;Do not run this against a production system.&lt;/strong&gt;
 &lt;p&gt;So what are we doing here? We’re creating a single RADOS object named
 &lt;code&gt;onebyte&lt;/code&gt; in a pool called &lt;code&gt;test&lt;/code&gt;. It is, as the name implies, only
 one byte long (it contains just the letter a), but it has a very long
-attribute named &lt;code&gt;val&lt;/code&gt;, which is 8 Megabytes’ worth of &lt;code&gt;a&lt;/code&gt;‘s.&lt;/p&gt;
+attribute named &lt;code&gt;val&lt;/code&gt;, which is 8 Megabytes’ worth of &lt;code&gt;a&lt;/code&gt;’s.&lt;/p&gt;
 &lt;p&gt;(In case you’re wondering: yes, there are applications that set very
 large attributes on RADOS objects. radosgw is one of them.)&lt;/p&gt;
 &lt;p&gt;Since you’ve been able to set the attribute, you can also retrieve it,
@@ -2195,7 +2195,7 @@ availability and
 first &lt;a href="http://events.linuxfoundation.org/events/cloudopen-north-america"&gt;CloudOpen&lt;/a&gt;
 conference, colocated with &lt;a href="http://events.linuxfoundation.org/events/linuxcon-north-america"&gt;LinuxCon North
 America&lt;/a&gt;.
-CloudOpen is the &lt;a href="http://www.linuxfoundation.org/"&gt;Linux Foundation&lt;/a&gt;‘s
+CloudOpen is the &lt;a href="http://www.linuxfoundation.org/"&gt;Linux Foundation&lt;/a&gt;’s
 brand new, stack-agnostic cloud …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Next week, I will be speaking at the inaugural CloudOpen conference in
 San Diego. This is your chance to learn about
 &lt;a href="https://www.hastexo.com/knowledge/openstack"&gt;OpenStack&lt;/a&gt; high
@@ -2205,7 +2205,7 @@ availability and
 first &lt;a href="http://events.linuxfoundation.org/events/cloudopen-north-america"&gt;CloudOpen&lt;/a&gt;
 conference, colocated with &lt;a href="http://events.linuxfoundation.org/events/linuxcon-north-america"&gt;LinuxCon North
 America&lt;/a&gt;.
-CloudOpen is the &lt;a href="http://www.linuxfoundation.org/"&gt;Linux Foundation&lt;/a&gt;‘s
+CloudOpen is the &lt;a href="http://www.linuxfoundation.org/"&gt;Linux Foundation&lt;/a&gt;’s
 brand new, stack-agnostic cloud conference where OpenStackers can mingle
 with CloudStackers and Eucalyptus folks to discuss open-source cloud
 solutions.&lt;/p&gt;
@@ -2287,7 +2287,7 @@ zone. The zone file (for BIND9, in this case) could look like this:&lt;/p&gt;
 ;
 @   IN  NS  alice.example.com.
 @   IN  A   192.168.122.113
-*   IN  CNAME   @
+&lt;span class="k"&gt;*&lt;/span&gt;   IN  CNAME   @
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;In this zone, the A record s3.amazonaws.com resolves
 to 192.168.122.113, and any sub-domain (like
@@ -2328,7 +2328,7 @@ different host, and then add a second record to your DNS zone:&lt;/p&gt;
 @   IN  NS  alice.example.com.
 @   IN  A   192.168.122.112
 @   IN  A   192.168.122.113
-*   IN  CNAME   @
+&lt;span class="k"&gt;*&lt;/span&gt;   IN  CNAME   @
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Then, as you access more buckets, you’ll hit the A records in a
 round-robin fashion, meaning your requests will be balanced across the
