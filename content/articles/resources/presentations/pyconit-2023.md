@@ -16,9 +16,6 @@ with it the second time around.
 
 Also, thankfully I did not have the audio issues that plagued the Tel
 Aviv talk, so the recording came out rather well, too.
-
-PyCon Italia hasn't yet released edited videos for the talks, but you
-can already catch the [unedited recording of the live
-stream](https://www.youtube.com/live/nUmolZkWQIg?feature=share&t=22847). My
+It is available [on YouTube](https://youtu.be/dKuGRV0hlA0). My
 slides (with full speaker notes) are available
 [here](https://fghaas.github.io/pyconit2023/).
