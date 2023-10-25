@@ -1,5 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Work</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/work.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2023-10-07T20:00:00+00:00</updated><entry><title>Follow-up and follow-through</title><link href="https://xahteiwi.eu/blog/2023/10/07/follow-up-follow-through/" rel="alternate"></link><published>2023-10-07T20:00:00+00:00</published><updated>2023-10-07T20:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-10-07:/blog/2023/10/07/follow-up-follow-through/</id><summary type="html">&lt;p&gt;It comes with the territory.&lt;/p&gt;</summary><content type="html">&lt;p&gt;It recently occurred to me that something I thought was a basic elementary aspect of management at all levels is apparently, in fact, unusual in many organisations.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Work</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/work.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2023-10-25T21:00:00+00:00</updated><entry><title>On Responsibility</title><link href="https://xahteiwi.eu/blog/2023/10/25/responsibility/" rel="alternate"></link><published>2023-10-25T21:00:00+00:00</published><updated>2023-10-25T21:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-10-25:/blog/2023/10/25/responsibility/</id><summary type="html">&lt;p&gt;What does it mean to be responsible for something?&lt;/p&gt;</summary><content type="html">&lt;p&gt;You may know that I am fairly active on &lt;a href="https://joinmastodon.org/"&gt;Mastodon&lt;/a&gt; (my profile is &lt;a href="https://mastodon.social/@xahteiwi"&gt;here&lt;/a&gt;), and one of the things I like a lot are &lt;a href="https://docs.joinmastodon.org/user/posting/#polls"&gt;polls&lt;/a&gt;.
+I use them largely to get an outside view on my own thoughts.&lt;/p&gt;
+&lt;p&gt;Recently, I posted &lt;a href="https://mastodon.social/@xahteiwi/111290843165601510"&gt;one such poll&lt;/a&gt;.
+It talked about a hypothetical scenario, and the question read:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A screw-up happened. 
+The screw-up is ultimately due to a crucial piece of information not being relayed to the right person. 
+Multiple levels of seniority were in the loop, all of whom could have caught the omission, but nobody did.
+Who bears responsibility for the screw-up?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The options were:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A — Everyone, jointly.&lt;/p&gt;
+&lt;p&gt;B — The most senior person&lt;sup id="fnref:senior"&gt;&lt;a class="footnote-ref" href="#fn:senior"&gt;1&lt;/a&gt;&lt;/sup&gt; involved.&lt;/p&gt;
+&lt;p&gt;C — The person who would have normally been “most likely” to catch the omission.&lt;/p&gt;
+&lt;p&gt;D — Someone else. (You pledge to add a comment who that would be)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The poll ran for 24 hours, 276 people replied, and these were the results:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A solid majority of 63% chose the “everyone, jointly” option (A).&lt;/li&gt;
+&lt;li&gt;28% selected the most senior person involved (B).&lt;/li&gt;
+&lt;li&gt;3% and 5%, respectively, selected options C and D.&lt;/li&gt;
+&lt;li&gt;Some of the “D” options were sarcastic to outright cynical, amounting to, more or less, “the most convenient scapegoat” (note that the cynicism in that answer doesn’t make it wrong, though).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now, I have a question for the 63% supermajority: have you any idea what “responsibility” means?&lt;/p&gt;
+&lt;p&gt;Have you been brainwashed by your corporate overlords that “bearing responsibility” is the same as “sharing the blame”?
+Or, worse, have you been tricked into the insanity that “responsibility” and “accountability” are two different things, rather than two terms for one inseparable concept? 
+Because those are the only two ways I can think of in which dispersing it to everyone makes any sense.&lt;/p&gt;
+&lt;p&gt;Bearing responsibility is not something that &lt;em&gt;starts&lt;/em&gt; when shit hits the proverbial fan.&lt;/p&gt;
+&lt;p&gt;Saying “I am responsible for something” in a professional context means: I’m taking it upon me that it works, and if it stops working I’m taking it upon me that it works again.
+Whatever that is: it can be a tiny piece of machinery, or a big, complex process involving the coordination of dozens or even hundreds of people.&lt;/p&gt;
+&lt;p&gt;And that rolls up with seniority.
+The higher up you are in the decision chain of a project, a department, or even a whole organization, the more responsibility you have.
+And making sure that the right people have the right information at the right time is a core responsibility of leadership.
+So if you’re in any leadership position, that is something you need to make sure works, and if it stops working, you need to fix it.&lt;/p&gt;
+&lt;p&gt;So in my not-so-humble opinion there is only one sensible answer to that question, and it’s B, and if we’re expecting otherwise, that means we are letting managers who &lt;em&gt;don’t&lt;/em&gt; fullfill their responsibilities off the hook.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://bjoernmichaelsen.github.io/about/"&gt;Bjoern Michaelsen&lt;/a&gt; had &lt;a href="https://mastodon.social/@Sweetshark@chaos.social/111293991871996081"&gt;this to say&lt;/a&gt; in a reply:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I was tempted by A, but took B because the “jointly” suggests the responsibility is shared and reduced by the sharing. 
+But responsibility is not a zero sum game: even if someone below you in the hierarchy is responsible, it does not reduce your own.&lt;/p&gt;
+&lt;p&gt;Higher ups need to hire the people to ensure fuckups don’t happen and design the workflows and processes that work for the people they hired.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/TL;DR"&gt;TL;DR&lt;/a&gt;: responsibility can be shared, but never divided.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;And that sums it up pretty nicely.&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr/&gt;
+&lt;ol&gt;
+&lt;li id="fn:senior"&gt;
+&lt;p&gt;The phrasing “most senior person” caused some confusion. What I meant was “the most high-ranking person in the organization as applied to the subject at hand”, which could be an appointed project manager, or someone who by virtue of their line management position is the highest person in the food chain — but that’s a bit too long for a Mastodon post. Another respondent suggested “the person highest in the chain of command”, which I had considered but deliberately rejected, fearing that some readers might balk at the military nature of that term. &lt;a class="footnote-backref" href="#fnref:senior" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Follow-up and follow-through</title><link href="https://xahteiwi.eu/blog/2023/10/07/follow-up-follow-through/" rel="alternate"></link><published>2023-10-07T20:00:00+00:00</published><updated>2023-10-07T20:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-10-07:/blog/2023/10/07/follow-up-follow-through/</id><summary type="html">&lt;p&gt;It comes with the territory.&lt;/p&gt;</summary><content type="html">&lt;p&gt;It recently occurred to me that something I thought was a basic elementary aspect of management at all levels is apparently, in fact, unusual in many organisations.
 It’s the idea that you can’t simply handwave and tell people to do something and if they don’t do it then it’s their fault, but that as a manager you retain ultimate responsibility and accountability&lt;sup id="fnref:raci"&gt;&lt;a class="footnote-ref" href="#fn:raci"&gt;1&lt;/a&gt;&lt;/sup&gt; for whatever you assign or delegate.&lt;/p&gt;
 &lt;p&gt;This means that it’s a core part of your job description that &lt;em&gt;you&lt;/em&gt; ensure that the people you work with actually work on, and have a chance to accomplish, the objectives you entrust them with.
 This basic concept in management is known as &lt;strong&gt;follow-up and follow-through.&lt;/strong&gt;
