@@ -1,0 +1,321 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index,follow" />
+
+
+    <link rel="stylesheet" type="text/css" href="../../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../../theme/pygments/github.min.css">
+
+    <link rel="stylesheet" 
+    href="../../../theme/tipuesearch/tipuesearch.min.css" />
+
+
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/solid.css">
+
+  <link rel="stylesheet" type="text/css" href="/css/override.css">
+
+
+
+  <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+  <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+<script defer data-domain="xahteiwi.eu" src="https://plausible.io/js/plausible.js"></script>
+
+ 
+
+<meta name="author" content="Florian Haas" />
+<meta name="description" content="How I run containers for my Home Assistant deployment" />
+<meta name="keywords" content="Containers, Docker, Podman, systemd">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="Rootless Podman, systemd, and Docker Compose files"/>
+  <meta property="og:description" content="How I run containers for my Home Assistant deployment"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../../resources/hints-and-kinks/rootless-podman-docker-compose/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2023-10-26 21:00:00+00:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../../author/florian-haas.html">
+  <meta property="article:section" content="hints-and-kinks"/>
+  <meta property="article:tag" content="Containers"/>
+  <meta property="article:tag" content="Docker"/>
+  <meta property="article:tag" content="Podman"/>
+  <meta property="article:tag" content="systemd"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; Rootless Podman, systemd, and Docker Compose files</title>
+
+
+</head>
+<body >
+
+<aside>
+  <div>
+    <a href="../../../">
+      <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+    </a>
+
+    <h1>
+      <a href="../../../"></a>
+    </h1>
+
+
+    <form class="navbar-search" action="../../../search.html" role="search">
+      <input type="text" name="q" id="tipue_search_input" placeholder="Search...">
+    </form>
+
+
+    <ul class="social">
+      <li>
+        <a class="sc-mastodon"
+rel="me"           href="https://mastodon.social/@xahteiwi"
+           target="_blank">
+          <i class="fa-brands fa-mastodon"></i>
+        </a>
+      </li>
+      <li>
+        <a class="sc-linkedin"
+           href="https://www.linkedin.com/in/fghaas"
+           target="_blank">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="sc-github"
+           href="https://github.com/fghaas"
+           target="_blank">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</aside>
+  <main>
+
+<nav>
+  <a href="../../../">Home</a>
+
+  <a href="/category/hints-and-kinks.html">Tech</a>
+  <a href="/category/presentations.html">Talks</a>
+  <a href="/category/blog.html">Thoughts</a>
+  <a href="">​</a>
+  <a href="/about/">About</a>
+  <a href="/comments/">Comments</a>
+  <a href="/legal/">Legal</a>
+  <a href="/privacy/">Privacy</a>
+  <a href="">​</a>
+  <a href="/categories.html">Categories</a>
+  <a href="/tags.html">Tags</a>
+  <a href="">​</a>
+
+  <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+  <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+</nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="rootless-podman-docker-compose">Rootless Podman, systemd, and Docker Compose files</h1>
+    <p>
+      Posted on Thu 26 October 2023 in <a href="../../../category/hints-and-kinks.html">hints-and-kinks</a>
+
+        &#8226; 4 min read
+    </p>
+  </header>
+
+
+  <div>
+    <p>This is a summary of how I run a set of Docker (actually, <a href="https://podman.io/">Podman</a>) containers for my <a href="https://www.home-assistant.io/">Home Assistant</a> setup on a <a href="https://en.wikipedia.org/wiki/Raspberry_Pi">Raspberry Pi</a>. It works reasonably well for me, so I am sharing it here in the hope that it is useful to others.</p>
+<h2>The stage</h2>
+<p>I run my Home Assistant environment on a <a href="https://www.raspberrypi.com/products/raspberry-pi-4-model-b/">Raspberry Pi 4B</a> running, currently, <a href="https://releases.ubuntu.com/lunar/">Ubuntu 23.04 Lunar Lobster</a>.
+In total, that little machine runs five containers, out of which 3 are related to Home Assistant:</p>
+<ul>
+<li>One is for Home Assistant itself,</li>
+<li>one is for running the <a href="https://mosquitto.org/">Mosquitto</a> MQTT broker,</li>
+<li>and one is for running <a href="https://github.com/johanmeijer/grott">Grott</a>.</li>
+</ul>
+<p>For all these services, the respective developer communities do not only maintain official Docker images, but also supported or at least recommended <a href="https://docs.docker.com/compose/">Docker Compose</a> configurations.</p>
+<p>I wanted a way to make the most of those available configurations, so as not to reinvent too many wheels.</p>
+<h2>How I manage containers</h2>
+<p>I prefer my containers to run <a href="https://www.redhat.com/sysadmin/rootless-podman-makes-sense">in the context of users other than <code>root</code></a>.</p>
+<h3>Per-container system users</h3>
+<p>This means that I create a dedicated user for each container.
+What’s important is that in order to be able to use systemd user services later, I enable <a href="https://www.freedesktop.org/software/systemd/man/latest/loginctl.html#enable-linger%20USER%E2%80%A6">lingering</a> for each user account.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>sudo<span class="w"> </span>-i
+<span class="gp"># </span>useradd<span class="w"> </span>homeassistant
+<span class="gp"># </span>adduser<span class="w"> </span>homeassistant<span class="w"> </span>bluetooth
+<span class="gp"># </span>loginctl<span class="w"> </span>enable-linger<span class="w"> </span>homeassistant
+</code></pre></div>
+<p>In order to <em>actually</em> enable lingering for the affected users, one must apparently reboot the machine after this change.</p>
+<p>(I’ll get back to why I add the <code>homeassistant</code> user to the <code>bluetooth</code> group in a moment.)</p>
+<h3>Podman</h3>
+<p>I also don’t very much like the daemon-driven approach from Docker proper, so I tend to prefer <code>podman</code> as my container manager on a small system like the Raspberry Pi.</p>
+<p>Podman tends to not be <em>particularly</em> well covered in the documentation of the projects I work with, but that is not much of an issue:
+I can combine Podman with a compatibility layer, <code>podman-compose</code>, so that although I am actually <em>using</em> Podman, I can configure my containers with an unchanged YAML configuration originally written for Docker Compose.</p>
+<p>Here’s how I can install the necessary packages on my Raspberry Pi:</p>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>apt<span class="w"> </span>install<span class="w"> </span>podman<span class="w"> </span>podman-compose
+</code></pre></div>
+<p>Next, I create the necessary Docker Compose configurations in the home directory of a user created to run that container.</p>
+<p>For example, the <code>/home/homeassistant</code> directory, owned by the user <code>homeassistant</code>, contains this <code>docker-compose.yaml</code> file:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># /home/homeassistant/docker-compose.yaml</span>
+<span class="nn">---</span>
+<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">'3'</span>
+<span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">homeassistant</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">homeassistant</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="s">"ghcr.io/home-assistant/home-assistant:stable"</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/localtime:/etc/localtime:ro</span>
+<span class="w">      </span><span class="c1"># Replace this volume mapping with wherever</span>
+<span class="w">      </span><span class="c1"># you want to put your Home Assistant configuration</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/home/homeassistant/.config/homeassistant:/config</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/run/dbus:/run/dbus:ro</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8123:8123</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+<span class="w">    </span><span class="nt">environment </span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+</code></pre></div>
+<p>You can of course create a more elaborate configuration as you please.</p>
+<p>Once this is set, I can manually fire up my container as a non-<code>root</code> user, using Podman, like so:</p>
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>id
+<span class="go">uid=1003(homeassistant) gid=1003(homeassistant) groups=1003(homeassistant),124(bluetooth)</span>
+
+<span class="gp">$ </span>podman-compose<span class="w"> </span>up
+<span class="go">['podman', '--version', '']</span>
+<span class="go">using podman version: 4.3.1</span>
+<span class="go">** excluding:  set()</span>
+<span class="go">['podman', 'network', 'exists', 'homeassistant_default']</span>
+<span class="go">podman create --name=homeassistant --label io.podman.compose.config-hash=123 --label io.podman.compose.project=homeassistant --label io.podman.compose.version=0.0.1 --label com.docker.compose.project=homeassistant --label com.docker.compo</span>
+<span class="go">se.project.working_dir=/home/homeassistant --label com.docker.compose.project.config_files=docker-compose.yaml --label com.docker.compose.container-number=1 --label com.docker.compose.service=homeassistant -v /home/homeassistant/.config/h</span>
+<span class="go">omeassistant:/config -v /usr/share/zoneinfo/Etc/UTC:/etc/localtime:ro -v /run/dbus:/run/dbus:ro --net homeassistant_default --network-alias homeassistant -p 8123:8123 --restart always ghcr.io/home-assistant/home-assistant:stable</span>
+<span class="go">[...]</span>
+</code></pre></div>
+<h3>Systemd</h3>
+<p>Once I am satisfied that my container comes up just fine, the next step is managing it with <code>systemd</code> in <a href="https://wiki.archlinux.org/title/systemd/User">user mode</a>.</p>
+<p>To do that, I need to create a config directory for <code>systemd</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>mkdir<span class="w"> </span>-p<span class="w"> </span>~/.config/systemd/user
+</code></pre></div>
+<p>… and create a single file in there, which I name <code>podman-compose.service</code>:<sup id="fnref:oneshot"><a class="footnote-ref" href="#fn:oneshot">1</a></sup></p>
+<div class="highlight"><pre><span></span><code><span class="k">[Unit]</span>
+<span class="na">Description</span><span class="o">=</span><span class="s">Podman via podman-compose</span>
+<span class="na">Wants</span><span class="o">=</span><span class="s">network-online.target</span>
+<span class="na">After</span><span class="o">=</span><span class="s">network-online.target</span>
+<span class="na">RequiresMountsFor</span><span class="o">=</span><span class="s">%t/containers</span>
+
+<span class="k">[Service]</span>
+<span class="na">Environment</span><span class="o">=</span><span class="s">PODMAN_SYSTEMD_UNIT=%n</span>
+<span class="na">Environment</span><span class="o">=</span><span class="s">PODMAN_USERNS=keep-id</span>
+<span class="na">Restart</span><span class="o">=</span><span class="s">always</span>
+<span class="na">TimeoutStartSec</span><span class="o">=</span><span class="s">60</span>
+<span class="na">TimeoutStopSec</span><span class="o">=</span><span class="s">60</span>
+<span class="na">ExecStart</span><span class="o">=</span><span class="s">/usr/bin/podman-compose up --remove-orphans</span>
+<span class="na">ExecStop</span><span class="o">=</span><span class="s">/usr/bin/podman-compose stop</span>
+<span class="na">Type</span><span class="o">=</span><span class="s">simple</span>
+<span class="na">WorkingDirectory</span><span class="o">=</span><span class="s">%h</span>
+
+<span class="k">[Install]</span>
+<span class="na">WantedBy</span><span class="o">=</span><span class="s">default.target</span>
+</code></pre></div>
+<p>For more details on what the various <code>%</code>-prefixed <em>specifiers</em> mean, see <a href="https://www.freedesktop.org/software/systemd/man/latest/systemd.unit.html#Specifiers">the relevant section in the systemd documentation</a>.</p>
+<p>The <code>Environment=PODMAN_USERNS=keep-id</code> entry is somewhat crucial in a Home Assistant configuration.
+This, in combination with adding the <code>homeassistant</code> user to the <code>bluetooth</code> group and bind-mounting the <code>/run/dbus</code> directory, enables me to use the Raspberry Pi’s Bluetooth controller from the rootless container.<sup id="fnref:fattire"><a class="footnote-ref" href="#fn:fattire">2</a></sup>
+That comes in handy for Home Assistant integrations for sensor devices using <a href="https://en.wikipedia.org/wiki/Bluetooth_Low_Energy">BLE</a>.</p>
+<p>Then, running</p>
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>systemctl<span class="w"> </span>--user<span class="w"> </span>daemon-reload
+<span class="gp">$ </span>systemctl<span class="w"> </span>--user<span class="w"> </span>start<span class="w"> </span>podman-compose
+<span class="gp">$ </span>systemctl<span class="w"> </span>--user<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>podman-compose
+</code></pre></div>
+<p>starts my container, and also brings it up (under the non-<code>root</code> user account) every time the system boots.</p>
+<h2>In summary</h2>
+<p>What’s nice about this whole approach is that for all of my container-based services <strong>the configuration is exactly identical,</strong> except for one thing that differs from service to service: the <code>docker-compose.yaml</code> file.</p>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:oneshot">
+<p>Many other tutorials about running <code>docker-compose</code> or <code>podman-compose</code> from systemd recommend you set <code>Type=oneshot</code> instead, and add the <code>-d</code> option to the <code>ExecStart</code> command. I think using the <code>simple</code> type and omitting the <code>-d</code> option is the better idea, because that gives you the latest log lines from Podman in <code>systemctl --user status</code>. It also makes the status reported by <code>systemctl --user status podman-compose</code> more reliable. <a class="footnote-backref" href="#fnref:oneshot" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:fattire">
+<p>Thanks to GitHub user <a href="https://github.com/fat-tire">“Fattire”</a> for <a href="https://github.com/onedr0p/containers/issues/68#issuecomment-1250035050">an immensely useful GitHub comment</a> on this subject! <a class="footnote-backref" href="#fnref:fattire" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../tag/containers.html">Containers</a>
+      <a href="../../../tag/docker.html">Docker</a>
+      <a href="../../../tag/podman.html">Podman</a>
+      <a href="../../../tag/systemd.html">systemd</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+<footer>
+<p>
+  &copy; 2023  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p></footer>  </main>
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+</body>
+</html>

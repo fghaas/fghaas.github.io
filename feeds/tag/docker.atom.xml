@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Docker</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/docker.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2023-10-26T21:00:00+00:00</updated><entry><title>Rootless Podman, systemd, and Docker Compose files</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/rootless-podman-docker-compose/" rel="alternate"></link><published>2023-10-26T21:00:00+00:00</published><updated>2023-10-26T21:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-10-26:/resources/hints-and-kinks/rootless-podman-docker-compose/</id><summary type="html">&lt;p&gt;How I run containers for my Home Assistant deployment&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a summary of how I run a set of Docker (actually, &lt;a href="https://podman.io/"&gt;Podman&lt;/a&gt;) containers for my &lt;a href="https://www.home-assistant.io/"&gt;Home Assistant&lt;/a&gt; setup on a &lt;a href="https://en.wikipedia.org/wiki/Raspberry_Pi"&gt;Raspberry Pi&lt;/a&gt;. It works reasonably well for me, so I am sharing it here in the hope that it is useful to others.&lt;/p&gt;
+&lt;h2&gt;The stage&lt;/h2&gt;
+&lt;p&gt;I run my Home Assistant environment on a &lt;a href="https://www.raspberrypi.com/products/raspberry-pi-4-model-b/"&gt;Raspberry Pi 4B&lt;/a&gt; running, currently, &lt;a href="https://releases.ubuntu.com/lunar/"&gt;Ubuntu 23.04 Lunar Lobster&lt;/a&gt;.
+In total, that little machine runs five containers, out of which 3 are related to Home Assistant:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;One is for Home Assistant itself,&lt;/li&gt;
+&lt;li&gt;one is for running the &lt;a href="https://mosquitto.org/"&gt;Mosquitto&lt;/a&gt; MQTT broker,&lt;/li&gt;
+&lt;li&gt;and one is for running &lt;a href="https://github.com/johanmeijer/grott"&gt;Grott&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For all these services, the respective developer communities do not only maintain official Docker images, but also supported or at least recommended &lt;a href="https://docs.docker.com/compose/"&gt;Docker Compose&lt;/a&gt; configurations.&lt;/p&gt;
+&lt;p&gt;I wanted a way to make the most of those available configurations, so as not to reinvent too many wheels.&lt;/p&gt;
+&lt;h2&gt;How I manage containers&lt;/h2&gt;
+&lt;p&gt;I prefer my containers to run &lt;a href="https://www.redhat.com/sysadmin/rootless-podman-makes-sense"&gt;in the context of users other than &lt;code&gt;root&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Per-container system users&lt;/h3&gt;
+&lt;p&gt;This means that I create a dedicated user for each container.
+What’s important is that in order to be able to use systemd user services later, I enable &lt;a href="https://www.freedesktop.org/software/systemd/man/latest/loginctl.html#enable-linger%20USER%E2%80%A6"&gt;lingering&lt;/a&gt; for each user account.&lt;/p&gt;
+&lt;p&gt;For example:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;-i
+&lt;span class="gp"&gt;# &lt;/span&gt;useradd&lt;span class="w"&gt; &lt;/span&gt;homeassistant
+&lt;span class="gp"&gt;# &lt;/span&gt;adduser&lt;span class="w"&gt; &lt;/span&gt;homeassistant&lt;span class="w"&gt; &lt;/span&gt;bluetooth
+&lt;span class="gp"&gt;# &lt;/span&gt;loginctl&lt;span class="w"&gt; &lt;/span&gt;enable-linger&lt;span class="w"&gt; &lt;/span&gt;homeassistant
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In order to &lt;em&gt;actually&lt;/em&gt; enable lingering for the affected users, one must apparently reboot the machine after this change.&lt;/p&gt;
+&lt;p&gt;(I’ll get back to why I add the &lt;code&gt;homeassistant&lt;/code&gt; user to the &lt;code&gt;bluetooth&lt;/code&gt; group in a moment.)&lt;/p&gt;
+&lt;h3&gt;Podman&lt;/h3&gt;
+&lt;p&gt;I also don’t very much like the daemon-driven approach from Docker proper, so I tend to prefer &lt;code&gt;podman&lt;/code&gt; as my container manager on a small system like the Raspberry Pi.&lt;/p&gt;
+&lt;p&gt;Podman tends to not be &lt;em&gt;particularly&lt;/em&gt; well covered in the documentation of the projects I work with, but that is not much of an issue:
+I can combine Podman with a compatibility layer, &lt;code&gt;podman-compose&lt;/code&gt;, so that although I am actually &lt;em&gt;using&lt;/em&gt; Podman, I can configure my containers with an unchanged YAML configuration originally written for Docker Compose.&lt;/p&gt;
+&lt;p&gt;Here’s how I can install the necessary packages on my Raspberry Pi:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="gp"&gt;# &lt;/span&gt;apt&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;podman&lt;span class="w"&gt; &lt;/span&gt;podman-compose
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Next, I create the necessary Docker Compose configurations in the home directory of a user created to run that container.&lt;/p&gt;
+&lt;p&gt;For example, the &lt;code&gt;/home/homeassistant&lt;/code&gt; directory, owned by the user &lt;code&gt;homeassistant&lt;/code&gt;, contains this &lt;code&gt;docker-compose.yaml&lt;/code&gt; file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# /home/homeassistant/docker-compose.yaml&lt;/span&gt;
+&lt;span class="nn"&gt;---&lt;/span&gt;
+&lt;span class="nt"&gt;version&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'3'&lt;/span&gt;
+&lt;span class="nt"&gt;services&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;homeassistant&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;container_name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;homeassistant&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"ghcr.io/home-assistant/home-assistant:stable"&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;volumes&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;/etc/localtime:/etc/localtime:ro&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="c1"&gt;# Replace this volume mapping with wherever&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="c1"&gt;# you want to put your Home Assistant configuration&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;/home/homeassistant/.config/homeassistant:/config&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;/run/dbus:/run/dbus:ro&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;ports&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;8123:8123&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;restart&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;always&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;environment &lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p p-Indicator"&gt;{}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You can of course create a more elaborate configuration as you please.&lt;/p&gt;
+&lt;p&gt;Once this is set, I can manually fire up my container as a non-&lt;code&gt;root&lt;/code&gt; user, using Podman, like so:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;id
+&lt;span class="go"&gt;uid=1003(homeassistant) gid=1003(homeassistant) groups=1003(homeassistant),124(bluetooth)&lt;/span&gt;
+
+&lt;span class="gp"&gt;$ &lt;/span&gt;podman-compose&lt;span class="w"&gt; &lt;/span&gt;up
+&lt;span class="go"&gt;['podman', '--version', '']&lt;/span&gt;
+&lt;span class="go"&gt;using podman version: 4.3.1&lt;/span&gt;
+&lt;span class="go"&gt;** excluding:  set()&lt;/span&gt;
+&lt;span class="go"&gt;['podman', 'network', 'exists', 'homeassistant_default']&lt;/span&gt;
+&lt;span class="go"&gt;podman create --name=homeassistant --label io.podman.compose.config-hash=123 --label io.podman.compose.project=homeassistant --label io.podman.compose.version=0.0.1 --label com.docker.compose.project=homeassistant --label com.docker.compo&lt;/span&gt;
+&lt;span class="go"&gt;se.project.working_dir=/home/homeassistant --label com.docker.compose.project.config_files=docker-compose.yaml --label com.docker.compose.container-number=1 --label com.docker.compose.service=homeassistant -v /home/homeassistant/.config/h&lt;/span&gt;
+&lt;span class="go"&gt;omeassistant:/config -v /usr/share/zoneinfo/Etc/UTC:/etc/localtime:ro -v /run/dbus:/run/dbus:ro --net homeassistant_default --network-alias homeassistant -p 8123:8123 --restart always ghcr.io/home-assistant/home-assistant:stable&lt;/span&gt;
+&lt;span class="go"&gt;[...]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Systemd&lt;/h3&gt;
+&lt;p&gt;Once I am satisfied that my container comes up just fine, the next step is managing it with &lt;code&gt;systemd&lt;/code&gt; in &lt;a href="https://wiki.archlinux.org/title/systemd/User"&gt;user mode&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To do that, I need to create a config directory for &lt;code&gt;systemd&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;mkdir&lt;span class="w"&gt; &lt;/span&gt;-p&lt;span class="w"&gt; &lt;/span&gt;~/.config/systemd/user
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;… and create a single file in there, which I name &lt;code&gt;podman-compose.service&lt;/code&gt;:&lt;sup id="fnref:oneshot"&gt;&lt;a class="footnote-ref" href="#fn:oneshot"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[Unit]&lt;/span&gt;
+&lt;span class="na"&gt;Description&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;Podman via podman-compose&lt;/span&gt;
+&lt;span class="na"&gt;Wants&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;network-online.target&lt;/span&gt;
+&lt;span class="na"&gt;After&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;network-online.target&lt;/span&gt;
+&lt;span class="na"&gt;RequiresMountsFor&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;%t/containers&lt;/span&gt;
+
+&lt;span class="k"&gt;[Service]&lt;/span&gt;
+&lt;span class="na"&gt;Environment&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;PODMAN_SYSTEMD_UNIT=%n&lt;/span&gt;
+&lt;span class="na"&gt;Environment&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;PODMAN_USERNS=keep-id&lt;/span&gt;
+&lt;span class="na"&gt;Restart&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;always&lt;/span&gt;
+&lt;span class="na"&gt;TimeoutStartSec&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;60&lt;/span&gt;
+&lt;span class="na"&gt;TimeoutStopSec&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;60&lt;/span&gt;
+&lt;span class="na"&gt;ExecStart&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;/usr/bin/podman-compose up --remove-orphans&lt;/span&gt;
+&lt;span class="na"&gt;ExecStop&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;/usr/bin/podman-compose stop&lt;/span&gt;
+&lt;span class="na"&gt;Type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;simple&lt;/span&gt;
+&lt;span class="na"&gt;WorkingDirectory&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;%h&lt;/span&gt;
+
+&lt;span class="k"&gt;[Install]&lt;/span&gt;
+&lt;span class="na"&gt;WantedBy&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;default.target&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;For more details on what the various &lt;code&gt;%&lt;/code&gt;-prefixed &lt;em&gt;specifiers&lt;/em&gt; mean, see &lt;a href="https://www.freedesktop.org/software/systemd/man/latest/systemd.unit.html#Specifiers"&gt;the relevant section in the systemd documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;Environment=PODMAN_USERNS=keep-id&lt;/code&gt; entry is somewhat crucial in a Home Assistant configuration.
+This, in combination with adding the &lt;code&gt;homeassistant&lt;/code&gt; user to the &lt;code&gt;bluetooth&lt;/code&gt; group and bind-mounting the &lt;code&gt;/run/dbus&lt;/code&gt; directory, enables me to use the Raspberry Pi’s Bluetooth controller from the rootless container.&lt;sup id="fnref:fattire"&gt;&lt;a class="footnote-ref" href="#fn:fattire"&gt;2&lt;/a&gt;&lt;/sup&gt;
+That comes in handy for Home Assistant integrations for sensor devices using &lt;a href="https://en.wikipedia.org/wiki/Bluetooth_Low_Energy"&gt;BLE&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Then, running&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;--user&lt;span class="w"&gt; &lt;/span&gt;daemon-reload
+&lt;span class="gp"&gt;$ &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;--user&lt;span class="w"&gt; &lt;/span&gt;start&lt;span class="w"&gt; &lt;/span&gt;podman-compose
+&lt;span class="gp"&gt;$ &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;--user&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;enable&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;podman-compose
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;starts my container, and also brings it up (under the non-&lt;code&gt;root&lt;/code&gt; user account) every time the system boots.&lt;/p&gt;
+&lt;h2&gt;In summary&lt;/h2&gt;
+&lt;p&gt;What’s nice about this whole approach is that for all of my container-based services &lt;strong&gt;the configuration is exactly identical,&lt;/strong&gt; except for one thing that differs from service to service: the &lt;code&gt;docker-compose.yaml&lt;/code&gt; file.&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr/&gt;
+&lt;ol&gt;
+&lt;li id="fn:oneshot"&gt;
+&lt;p&gt;Many other tutorials about running &lt;code&gt;docker-compose&lt;/code&gt; or &lt;code&gt;podman-compose&lt;/code&gt; from systemd recommend you set &lt;code&gt;Type=oneshot&lt;/code&gt; instead, and add the &lt;code&gt;-d&lt;/code&gt; option to the &lt;code&gt;ExecStart&lt;/code&gt; command. I think using the &lt;code&gt;simple&lt;/code&gt; type and omitting the &lt;code&gt;-d&lt;/code&gt; option is the better idea, because that gives you the latest log lines from Podman in &lt;code&gt;systemctl --user status&lt;/code&gt;. It also makes the status reported by &lt;code&gt;systemctl --user status podman-compose&lt;/code&gt; more reliable. &lt;a class="footnote-backref" href="#fnref:oneshot" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:fattire"&gt;
+&lt;p&gt;Thanks to GitHub user &lt;a href="https://github.com/fat-tire"&gt;“Fattire”&lt;/a&gt; for &lt;a href="https://github.com/onedr0p/containers/issues/68#issuecomment-1250035050"&gt;an immensely useful GitHub comment&lt;/a&gt; on this subject! &lt;a class="footnote-backref" href="#fnref:fattire" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content><category term="hints-and-kinks"></category><category term="Containers"></category><category term="Docker"></category><category term="Podman"></category><category term="systemd"></category></entry></feed>
