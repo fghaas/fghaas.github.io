@@ -109,9 +109,7 @@ To do that, I need to create a config directory for `systemd`:
 $ mkdir -p ~/.config/systemd/user
 ```
 
-... and create a single file in there, which I name `podman-compose.service`:[^oneshot]
-
-[^oneshot]: Many other tutorials about running `docker-compose` or `podman-compose` from systemd recommend you set `Type=oneshot` instead, and add the `-d` option to the `ExecStart` command. I think using the `simple` type and omitting the `-d` option is the better idea, because that gives you the latest log lines from Podman in `systemctl --user status`. It also makes the status reported by `systemctl --user status podman-compose` more reliable.
+... and create a single file in there, which I name `podman-compose.service`:
 
 ```ini
 [Unit]
@@ -134,6 +132,14 @@ WorkingDirectory=%h
 [Install]
 WantedBy=default.target
 ```
+
+Note that many other tutorials about running `docker-compose` or `podman-compose` from systemd recommend you set `Type=oneshot` instead, and add the `-d` option to the `ExecStart` command.
+
+I think using the `simple` type and *omitting* the `-d` option is the better idea, because in doing so,
+
+* I see the latest log lines from the container in `systemctl --user status podman-compose`,
+* I can access the full log with `journalctl --user -u podman-compose`,
+* I get more reliable output overall from `systemctl --user status podman-compose`, because rather than only reflecting whether *starting* the container was successful, it tells me whether it is still *running* at the time I check.
 
 For more details on what the various `%`-prefixed *specifiers* mean, see [the relevant section in the systemd documentation](https://www.freedesktop.org/software/systemd/man/latest/systemd.unit.html#Specifiers).
 
