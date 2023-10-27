@@ -219,7 +219,7 @@ I can combine Podman with a compatibility layer, <code>podman-compose</code>, so
 <p>To do that, I need to create a config directory for <code>systemd</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>mkdir<span class="w"> </span>-p<span class="w"> </span>~/.config/systemd/user
 </code></pre></div>
-<p>… and create a single file in there, which I name <code>podman-compose.service</code>:<sup id="fnref:oneshot"><a class="footnote-ref" href="#fn:oneshot">1</a></sup></p>
+<p>… and create a single file in there, which I name <code>podman-compose.service</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="k">[Unit]</span>
 <span class="na">Description</span><span class="o">=</span><span class="s">Podman via podman-compose</span>
 <span class="na">Wants</span><span class="o">=</span><span class="s">network-online.target</span>
@@ -240,9 +240,16 @@ I can combine Podman with a compatibility layer, <code>podman-compose</code>, so
 <span class="k">[Install]</span>
 <span class="na">WantedBy</span><span class="o">=</span><span class="s">default.target</span>
 </code></pre></div>
+<p>Note that many other tutorials about running <code>docker-compose</code> or <code>podman-compose</code> from systemd recommend you set <code>Type=oneshot</code> instead, and add the <code>-d</code> option to the <code>ExecStart</code> command.</p>
+<p>I think using the <code>simple</code> type and <em>omitting</em> the <code>-d</code> option is the better idea, because in doing so,</p>
+<ul>
+<li>I see the latest log lines from the container in <code>systemctl --user status podman-compose</code>,</li>
+<li>I can access the full log with <code>journalctl --user -u podman-compose</code>,</li>
+<li>I get more reliable output overall from <code>systemctl --user status podman-compose</code>, because rather than only reflecting whether <em>starting</em> the container was successful, it tells me whether it is still <em>running</em> at the time I check.</li>
+</ul>
 <p>For more details on what the various <code>%</code>-prefixed <em>specifiers</em> mean, see <a href="https://www.freedesktop.org/software/systemd/man/latest/systemd.unit.html#Specifiers">the relevant section in the systemd documentation</a>.</p>
 <p>The <code>Environment=PODMAN_USERNS=keep-id</code> entry is somewhat crucial in a Home Assistant configuration.
-This, in combination with adding the <code>homeassistant</code> user to the <code>bluetooth</code> group and bind-mounting the <code>/run/dbus</code> directory, enables me to use the Raspberry Pi’s Bluetooth controller from the rootless container.<sup id="fnref:fattire"><a class="footnote-ref" href="#fn:fattire">2</a></sup>
+This, in combination with adding the <code>homeassistant</code> user to the <code>bluetooth</code> group and bind-mounting the <code>/run/dbus</code> directory, enables me to use the Raspberry Pi’s Bluetooth controller from the rootless container.<sup id="fnref:fattire"><a class="footnote-ref" href="#fn:fattire">1</a></sup>
 That comes in handy for Home Assistant integrations for sensor devices using <a href="https://en.wikipedia.org/wiki/Bluetooth_Low_Energy">BLE</a>.</p>
 <p>Then, running</p>
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>systemctl<span class="w"> </span>--user<span class="w"> </span>daemon-reload
@@ -255,11 +262,8 @@ That comes in handy for Home Assistant integrations for sensor devices using <a 
 <div class="footnote">
 <hr/>
 <ol>
-<li id="fn:oneshot">
-<p>Many other tutorials about running <code>docker-compose</code> or <code>podman-compose</code> from systemd recommend you set <code>Type=oneshot</code> instead, and add the <code>-d</code> option to the <code>ExecStart</code> command. I think using the <code>simple</code> type and omitting the <code>-d</code> option is the better idea, because that gives you the latest log lines from Podman in <code>systemctl --user status</code>. It also makes the status reported by <code>systemctl --user status podman-compose</code> more reliable. <a class="footnote-backref" href="#fnref:oneshot" title="Jump back to footnote 1 in the text">↩</a></p>
-</li>
 <li id="fn:fattire">
-<p>Thanks to GitHub user <a href="https://github.com/fat-tire">“Fattire”</a> for <a href="https://github.com/onedr0p/containers/issues/68#issuecomment-1250035050">an immensely useful GitHub comment</a> on this subject! <a class="footnote-backref" href="#fnref:fattire" title="Jump back to footnote 2 in the text">↩</a></p>
+<p>Thanks to GitHub user <a href="https://github.com/fat-tire">“Fattire”</a> for <a href="https://github.com/onedr0p/containers/issues/68#issuecomment-1250035050">an immensely useful GitHub comment</a> on this subject! <a class="footnote-backref" href="#fnref:fattire" title="Jump back to footnote 1 in the text">↩</a></p>
 </li>
 </ol>
 </div>

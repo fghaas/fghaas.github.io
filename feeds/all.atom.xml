@@ -70,7 +70,7 @@ I can combine Podman with a compatibility layer, &lt;code&gt;podman-compose&lt;/
 &lt;p&gt;To do that, I need to create a config directory for &lt;code&gt;systemd&lt;/code&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;mkdir&lt;span class="w"&gt; &lt;/span&gt;-p&lt;span class="w"&gt; &lt;/span&gt;~/.config/systemd/user
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;… and create a single file in there, which I name &lt;code&gt;podman-compose.service&lt;/code&gt;:&lt;sup id="fnref:oneshot"&gt;&lt;a class="footnote-ref" href="#fn:oneshot"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;… and create a single file in there, which I name &lt;code&gt;podman-compose.service&lt;/code&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[Unit]&lt;/span&gt;
 &lt;span class="na"&gt;Description&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;Podman via podman-compose&lt;/span&gt;
 &lt;span class="na"&gt;Wants&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;network-online.target&lt;/span&gt;
@@ -91,9 +91,16 @@ I can combine Podman with a compatibility layer, &lt;code&gt;podman-compose&lt;/
 &lt;span class="k"&gt;[Install]&lt;/span&gt;
 &lt;span class="na"&gt;WantedBy&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;default.target&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Note that many other tutorials about running &lt;code&gt;docker-compose&lt;/code&gt; or &lt;code&gt;podman-compose&lt;/code&gt; from systemd recommend you set &lt;code&gt;Type=oneshot&lt;/code&gt; instead, and add the &lt;code&gt;-d&lt;/code&gt; option to the &lt;code&gt;ExecStart&lt;/code&gt; command.&lt;/p&gt;
+&lt;p&gt;I think using the &lt;code&gt;simple&lt;/code&gt; type and &lt;em&gt;omitting&lt;/em&gt; the &lt;code&gt;-d&lt;/code&gt; option is the better idea, because in doing so,&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I see the latest log lines from the container in &lt;code&gt;systemctl --user status podman-compose&lt;/code&gt;,&lt;/li&gt;
+&lt;li&gt;I can access the full log with &lt;code&gt;journalctl --user -u podman-compose&lt;/code&gt;,&lt;/li&gt;
+&lt;li&gt;I get more reliable output overall from &lt;code&gt;systemctl --user status podman-compose&lt;/code&gt;, because rather than only reflecting whether &lt;em&gt;starting&lt;/em&gt; the container was successful, it tells me whether it is still &lt;em&gt;running&lt;/em&gt; at the time I check.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;For more details on what the various &lt;code&gt;%&lt;/code&gt;-prefixed &lt;em&gt;specifiers&lt;/em&gt; mean, see &lt;a href="https://www.freedesktop.org/software/systemd/man/latest/systemd.unit.html#Specifiers"&gt;the relevant section in the systemd documentation&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The &lt;code&gt;Environment=PODMAN_USERNS=keep-id&lt;/code&gt; entry is somewhat crucial in a Home Assistant configuration.
-This, in combination with adding the &lt;code&gt;homeassistant&lt;/code&gt; user to the &lt;code&gt;bluetooth&lt;/code&gt; group and bind-mounting the &lt;code&gt;/run/dbus&lt;/code&gt; directory, enables me to use the Raspberry Pi’s Bluetooth controller from the rootless container.&lt;sup id="fnref:fattire"&gt;&lt;a class="footnote-ref" href="#fn:fattire"&gt;2&lt;/a&gt;&lt;/sup&gt;
+This, in combination with adding the &lt;code&gt;homeassistant&lt;/code&gt; user to the &lt;code&gt;bluetooth&lt;/code&gt; group and bind-mounting the &lt;code&gt;/run/dbus&lt;/code&gt; directory, enables me to use the Raspberry Pi’s Bluetooth controller from the rootless container.&lt;sup id="fnref:fattire"&gt;&lt;a class="footnote-ref" href="#fn:fattire"&gt;1&lt;/a&gt;&lt;/sup&gt;
 That comes in handy for Home Assistant integrations for sensor devices using &lt;a href="https://en.wikipedia.org/wiki/Bluetooth_Low_Energy"&gt;BLE&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Then, running&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;--user&lt;span class="w"&gt; &lt;/span&gt;daemon-reload
@@ -106,11 +113,8 @@ That comes in handy for Home Assistant integrations for sensor devices using &lt
 &lt;div class="footnote"&gt;
 &lt;hr/&gt;
 &lt;ol&gt;
-&lt;li id="fn:oneshot"&gt;
-&lt;p&gt;Many other tutorials about running &lt;code&gt;docker-compose&lt;/code&gt; or &lt;code&gt;podman-compose&lt;/code&gt; from systemd recommend you set &lt;code&gt;Type=oneshot&lt;/code&gt; instead, and add the &lt;code&gt;-d&lt;/code&gt; option to the &lt;code&gt;ExecStart&lt;/code&gt; command. I think using the &lt;code&gt;simple&lt;/code&gt; type and omitting the &lt;code&gt;-d&lt;/code&gt; option is the better idea, because that gives you the latest log lines from Podman in &lt;code&gt;systemctl --user status&lt;/code&gt;. It also makes the status reported by &lt;code&gt;systemctl --user status podman-compose&lt;/code&gt; more reliable. &lt;a class="footnote-backref" href="#fnref:oneshot" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
 &lt;li id="fn:fattire"&gt;
-&lt;p&gt;Thanks to GitHub user &lt;a href="https://github.com/fat-tire"&gt;“Fattire”&lt;/a&gt; for &lt;a href="https://github.com/onedr0p/containers/issues/68#issuecomment-1250035050"&gt;an immensely useful GitHub comment&lt;/a&gt; on this subject! &lt;a class="footnote-backref" href="#fnref:fattire" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Thanks to GitHub user &lt;a href="https://github.com/fat-tire"&gt;“Fattire”&lt;/a&gt; for &lt;a href="https://github.com/onedr0p/containers/issues/68#issuecomment-1250035050"&gt;an immensely useful GitHub comment&lt;/a&gt; on this subject! &lt;a class="footnote-backref" href="#fnref:fattire" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;</content><category term="hints-and-kinks"></category><category term="Containers"></category><category term="Docker"></category><category term="Podman"></category><category term="systemd"></category></entry><entry><title>On Responsibility</title><link href="https://xahteiwi.eu/blog/2023/10/25/responsibility/" rel="alternate"></link><published>2023-10-25T21:00:00+00:00</published><updated>2023-10-25T21:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-10-25:/blog/2023/10/25/responsibility/</id><summary type="html">&lt;p&gt;What does it mean to be responsible for something?&lt;/p&gt;</summary><content type="html">&lt;p&gt;You may know that I am fairly active on &lt;a href="https://joinmastodon.org/"&gt;Mastodon&lt;/a&gt; (my profile is &lt;a href="https://mastodon.social/@xahteiwi"&gt;here&lt;/a&gt;), and one of the things I like a lot are &lt;a href="https://docs.joinmastodon.org/user/posting/#polls"&gt;polls&lt;/a&gt;.
@@ -2664,7 +2668,7 @@ guessing should work well too.&lt;/p&gt;
 &lt;h2&gt;Nutrition facts&lt;/h2&gt;
 &lt;p&gt;No warranty of any kind on these. Values are per serving.&lt;/p&gt;
 &lt;p&gt;With meat:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Calories (kcal)&lt;/th&gt;
@@ -2695,7 +2699,7 @@ guessing should work well too.&lt;/p&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;Without meat:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Calories (kcal)&lt;/th&gt;
@@ -3568,7 +3572,7 @@ planned.&lt;/p&gt;
 &lt;p&gt;So Alex, being a good CEO, opens some spread sheet software and
 creates this handy table that simply plugs in values for &lt;span class="math"&gt;\(x\)&lt;/span&gt; and &lt;span class="math"&gt;\(y\)&lt;/span&gt;,
 with &lt;span class="math"&gt;\(x\)&lt;/span&gt; (width) in columns and &lt;span class="math"&gt;\(y\)&lt;/span&gt; (depth) in rows.&lt;sup id="fnref:table"&gt;&lt;a class="footnote-ref" href="#fn:table"&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -3792,7 +3796,7 @@ interjects that Alex is missing a point, namely all the managers that
 the company will now no longer need, and the cost savings thus
 generated.&lt;/p&gt;
 &lt;p&gt;So Alex looks at the table again (width in columns, depth in rows):&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -3981,7 +3985,7 @@ cell &lt;em&gt;directly above it&lt;/em&gt; will contain the total number of man
 again, but considers the number of managers proportional to the number
 of people in the company, a pattern quickly emerges (again, width
 is in columns, depth is in rows):&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -7786,7 +7790,7 @@ It’s being lazy.&lt;/p&gt;
 &lt;p&gt;It’s a symptom of the worst kind of laziness &lt;em&gt;(not malice!)&lt;/em&gt;: in an
 attempt to communicate quickly and easily, for yourself, you are really
 making things harder for everyone, including yourself.&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -7814,7 +7818,7 @@ ago”, you’ll agree with me here.&lt;/p&gt;
 is to say in relation to &lt;em&gt;other&lt;/em&gt; discussions on the same topic, days
 or weeks earlier or later.&lt;/p&gt;
 &lt;p&gt;Let’s compare that to other communication modes:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -7845,7 +7849,7 @@ or weeks earlier or later.&lt;/p&gt;
   as with chat, and it’s marginally better at contextualizing
   information than chat (because you get proper threading).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -7892,7 +7896,7 @@ or weeks earlier or later.&lt;/p&gt;
   Likewise, “issue tracker” can mean RT, OTRS, Jira, Taiga, Bugzilla,
   whatever works for you.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -9065,7 +9069,7 @@ came this.&lt;/p&gt;
 &lt;/ol&gt;
 &lt;h2&gt;Nutrition facts&lt;/h2&gt;
 &lt;p&gt;No warranty of any kind on these. Values are per serving.&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Calories (kcal)&lt;/th&gt;
@@ -9348,7 +9352,7 @@ several to accommodate a larger crowd, or very hungry people.&lt;/p&gt;
 &lt;h2&gt;Nutrition facts&lt;/h2&gt;
 &lt;p&gt;No warranty of any kind on these. Values are per serving, counting one
 serving as one-quarter of the whole pizza.&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Calories (kcal)&lt;/th&gt;
@@ -10601,7 +10605,7 @@ in the conference.&lt;/p&gt;
 &lt;p&gt;Nonexisticon’s attendee-visible run-up cycle is 6 months.&lt;/p&gt;
 &lt;p&gt;Assuming a Nonexisticon is scheduled to run from May 15-17, the
 following schedule applies:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Date&lt;/th&gt;
@@ -11066,7 +11070,7 @@ let’s say it’s 1%.&lt;/p&gt;
 &lt;p&gt;So then let’s look at 10,000 interactions that completely random
 people make on the internet.&lt;/p&gt;
 &lt;p&gt;Those would then break down like so:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -11099,7 +11103,7 @@ flags content as infringing when it is not) with a rate of only
 ridiculously low for any automated screening procedure.&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;So that means that out of our 10,000 interactions tracked by our
 “perfect” content filter, the numbers break down like this:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -11142,7 +11146,7 @@ exceedingly rare, automated filters detect it with poor accuracy.&lt;/strong&gt;
 &lt;p&gt;And if you leave all parameters the same, but consider a probably much
 more realistic infringement rate of 1 in 1000, that is, 0.1%, then
 things look like this: &lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
