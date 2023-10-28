@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Work</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/work.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2023-10-28T20:15:00+00:00</updated><entry><title>Are you working in a remote office?</title><link href="https://xahteiwi.eu/blog/2023/10/28/remote-office/" rel="alternate"></link><published>2023-10-28T20:15:00+00:00</published><updated>2023-10-28T20:15:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-10-28:/blog/2023/10/28/remote-office/</id><summary type="html">&lt;p&gt;Does your company try to do everything companies have always done in an office, just with remotees? Not a grand idea.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I a recent &lt;a href="https://joinmastodon.org/"&gt;Mastodon&lt;/a&gt; discussion, &lt;a href="https://blog.literarily-starved.com/2013/10/contact/author/"&gt;Martin Seeger&lt;/a&gt; &lt;a href="https://mastodon.social/@masek@infosec.exchange/111313672170823374"&gt;accidentally&lt;/a&gt; coined the phrase “remote office”. 
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Work</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/work.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2023-10-28T20:15:00+00:00</updated><entry><title>Are you working in a remote office?</title><link href="https://xahteiwi.eu/blog/2023/10/28/remote-office/" rel="alternate"></link><published>2023-10-28T20:15:00+00:00</published><updated>2023-10-28T20:15:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-10-28:/blog/2023/10/28/remote-office/</id><summary type="html">&lt;p&gt;Does your company try to do everything companies have always done in an office, just with remotees? Not a grand idea.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In a recent &lt;a href="https://joinmastodon.org/"&gt;Mastodon&lt;/a&gt; discussion, &lt;a href="https://blog.literarily-starved.com/2013/10/contact/author/"&gt;Martin Seeger&lt;/a&gt; &lt;a href="https://mastodon.social/@masek@infosec.exchange/111313672170823374"&gt;accidentally&lt;/a&gt; coined the phrase “remote office”.
 About which &lt;a href="https://mastodon.social/@xahteiwi/111313536756727452"&gt;I then mused&lt;/a&gt; that it describes perfectly what’s wrong in far too many organizations:
 that they think they can get away with all the anti-productive nonsense they’ve been doing in offices for decades, but now with a bunch of remotees.&lt;/p&gt;
 &lt;p&gt;So, dear reader who (at least frequently, if not permanently) works from home, do you surmise you might be working in a remote office?
@@ -9,7 +9,7 @@ I have a few questions you might want to think about.&lt;/p&gt;
 &lt;p&gt;If you get pulled into video meetings with no advance notice and no chance to prepare, yanking you out of whatever you’re doing, like someone shouting down the hallway from a conference room something like “Alex, could you just come in here for a moment?”, you might be working in a remote office.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;If managers direct-message you in company chat demanding your attention &lt;strong&gt;now,&lt;/strong&gt; like a shoulder-tapping “management by walking around” amateur, you might be working in a remote office.&lt;/p&gt;
+&lt;p&gt;If managers direct-message you in the company text chat demanding your attention &lt;strong&gt;now,&lt;/strong&gt; like a shoulder-tapping “management by walking around” amateur, you might be working in a remote office.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;If, in the event of some important news breaking, your head honcho calls everyone into an ad-hoc all-hands video meeting rather than sitting down to write a &lt;a href="https://xahteiwi.eu/resources/presentations/devopsdays-berlin-2022/"&gt;5-paragraph email&lt;/a&gt; reflecting functional literacy, you might be working in a remote office.&lt;/p&gt;
@@ -1596,7 +1596,7 @@ planned.&lt;/p&gt;
 &lt;p&gt;So Alex, being a good CEO, opens some spread sheet software and
 creates this handy table that simply plugs in values for &lt;span class="math"&gt;\(x\)&lt;/span&gt; and &lt;span class="math"&gt;\(y\)&lt;/span&gt;,
 with &lt;span class="math"&gt;\(x\)&lt;/span&gt; (width) in columns and &lt;span class="math"&gt;\(y\)&lt;/span&gt; (depth) in rows.&lt;sup id="fnref:table"&gt;&lt;a class="footnote-ref" href="#fn:table"&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -1820,7 +1820,7 @@ interjects that Alex is missing a point, namely all the managers that
 the company will now no longer need, and the cost savings thus
 generated.&lt;/p&gt;
 &lt;p&gt;So Alex looks at the table again (width in columns, depth in rows):&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -2009,7 +2009,7 @@ cell &lt;em&gt;directly above it&lt;/em&gt; will contain the total number of man
 again, but considers the number of managers proportional to the number
 of people in the company, a pattern quickly emerges (again, width
 is in columns, depth is in rows):&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -4683,7 +4683,7 @@ It’s being lazy.&lt;/p&gt;
 &lt;p&gt;It’s a symptom of the worst kind of laziness &lt;em&gt;(not malice!)&lt;/em&gt;: in an
 attempt to communicate quickly and easily, for yourself, you are really
 making things harder for everyone, including yourself.&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -4711,7 +4711,7 @@ ago”, you’ll agree with me here.&lt;/p&gt;
 is to say in relation to &lt;em&gt;other&lt;/em&gt; discussions on the same topic, days
 or weeks earlier or later.&lt;/p&gt;
 &lt;p&gt;Let’s compare that to other communication modes:&lt;/p&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -4742,7 +4742,7 @@ or weeks earlier or later.&lt;/p&gt;
   as with chat, and it’s marginally better at contextualizing
   information than chat (because you get proper threading).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -4789,7 +4789,7 @@ or weeks earlier or later.&lt;/p&gt;
   Likewise, “issue tracker” can mean RT, OTRS, Jira, Taiga, Bugzilla,
   whatever works for you.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;table class="table-striped table"&gt;
+&lt;table class="table table-striped"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
