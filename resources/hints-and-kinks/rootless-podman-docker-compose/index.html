@@ -252,7 +252,8 @@ I can combine Podman with a compatibility layer, <code>podman-compose</code>, so
 This, in combination with adding the <code>homeassistant</code> user to the <code>bluetooth</code> group and bind-mounting the <code>/run/dbus</code> directory, enables me to use the Raspberry Pi’s Bluetooth controller from the rootless container.<sup id="fnref:fattire"><a class="footnote-ref" href="#fn:fattire">1</a></sup>
 That comes in handy for Home Assistant integrations for sensor devices using <a href="https://en.wikipedia.org/wiki/Bluetooth_Low_Energy">BLE</a>.</p>
 <p>Then, running</p>
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>systemctl<span class="w"> </span>--user<span class="w"> </span>daemon-reload
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span><span class="nb">export</span><span class="w"> </span><span class="nv">XDG_RUNTIME_DIR</span><span class="o">=</span>/run/user/<span class="nv">$UID</span>
+<span class="gp">$ </span>systemctl<span class="w"> </span>--user<span class="w"> </span>daemon-reload
 <span class="gp">$ </span>systemctl<span class="w"> </span>--user<span class="w"> </span>start<span class="w"> </span>podman-compose
 <span class="gp">$ </span>systemctl<span class="w"> </span>--user<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>podman-compose
 </code></pre></div>

@@ -103,7 +103,8 @@ I can combine Podman with a compatibility layer, &lt;code&gt;podman-compose&lt;/
 This, in combination with adding the &lt;code&gt;homeassistant&lt;/code&gt; user to the &lt;code&gt;bluetooth&lt;/code&gt; group and bind-mounting the &lt;code&gt;/run/dbus&lt;/code&gt; directory, enables me to use the Raspberry Pi’s Bluetooth controller from the rootless container.&lt;sup id="fnref:fattire"&gt;&lt;a class="footnote-ref" href="#fn:fattire"&gt;1&lt;/a&gt;&lt;/sup&gt;
 That comes in handy for Home Assistant integrations for sensor devices using &lt;a href="https://en.wikipedia.org/wiki/Bluetooth_Low_Energy"&gt;BLE&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Then, running&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;--user&lt;span class="w"&gt; &lt;/span&gt;daemon-reload
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;XDG_RUNTIME_DIR&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/run/user/&lt;span class="nv"&gt;$UID&lt;/span&gt;
+&lt;span class="gp"&gt;$ &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;--user&lt;span class="w"&gt; &lt;/span&gt;daemon-reload
 &lt;span class="gp"&gt;$ &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;--user&lt;span class="w"&gt; &lt;/span&gt;start&lt;span class="w"&gt; &lt;/span&gt;podman-compose
 &lt;span class="gp"&gt;$ &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;--user&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;enable&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;podman-compose
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
