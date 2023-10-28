@@ -1,5 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Communications</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/communications.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2023-10-25T21:00:00+00:00</updated><entry><title>On Responsibility</title><link href="https://xahteiwi.eu/blog/2023/10/25/responsibility/" rel="alternate"></link><published>2023-10-25T21:00:00+00:00</published><updated>2023-10-25T21:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-10-25:/blog/2023/10/25/responsibility/</id><summary type="html">&lt;p&gt;What does it mean to be responsible for something?&lt;/p&gt;</summary><content type="html">&lt;p&gt;You may know that I am fairly active on &lt;a href="https://joinmastodon.org/"&gt;Mastodon&lt;/a&gt; (my profile is &lt;a href="https://mastodon.social/@xahteiwi"&gt;here&lt;/a&gt;), and one of the things I like a lot are &lt;a href="https://docs.joinmastodon.org/user/posting/#polls"&gt;polls&lt;/a&gt;.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Communications</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/communications.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2023-10-28T20:15:00+00:00</updated><entry><title>Are you working in a remote office?</title><link href="https://xahteiwi.eu/blog/2023/10/28/remote-office/" rel="alternate"></link><published>2023-10-28T20:15:00+00:00</published><updated>2023-10-28T20:15:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-10-28:/blog/2023/10/28/remote-office/</id><summary type="html">&lt;p&gt;Does your company try to do everything companies have always done in an office, just with remotees? Not a grand idea.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I a recent &lt;a href="https://joinmastodon.org/"&gt;Mastodon&lt;/a&gt; discussion, &lt;a href="https://blog.literarily-starved.com/2013/10/contact/author/"&gt;Martin Seeger&lt;/a&gt; &lt;a href="https://mastodon.social/@masek@infosec.exchange/111313672170823374"&gt;accidentally&lt;/a&gt; coined the phrase “remote office”. 
+About which &lt;a href="https://mastodon.social/@xahteiwi/111313536756727452"&gt;I then mused&lt;/a&gt; that it describes perfectly what’s wrong in far too many organizations:
+that they think they can get away with all the anti-productive nonsense they’ve been doing in offices for decades, but now with a bunch of remotees.&lt;/p&gt;
+&lt;p&gt;So, dear reader who (at least frequently, if not permanently) works from home, do you surmise you might be working in a remote office?
+I have a few questions you might want to think about.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;If you get pulled into video meetings with no advance notice and no chance to prepare, yanking you out of whatever you’re doing, like someone shouting down the hallway from a conference room something like “Alex, could you just come in here for a moment?”, you might be working in a remote office.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If managers direct-message you in company chat demanding your attention &lt;strong&gt;now,&lt;/strong&gt; like a shoulder-tapping “management by walking around” amateur, you might be working in a remote office.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If, in the event of some important news breaking, your head honcho calls everyone into an ad-hoc all-hands video meeting rather than sitting down to write a &lt;a href="https://xahteiwi.eu/resources/presentations/devopsdays-berlin-2022/"&gt;5-paragraph email&lt;/a&gt; reflecting functional literacy, you might be working in a remote office.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If it’s tolerated for people to ignore information circulated ahead of a discussion, and to come into it blissfully unprepared expecting to be brought up to speed by other participants who did prepare, you might be working in a remote office.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If everyone is &lt;a href="https://xahteiwi.eu/blog/2021/09/30/getting-out-of-meeting-hell/"&gt;stuck in meeting hell&lt;/a&gt; and hates it, and people at the top aren’t doing anything &lt;a href="https://xahteiwi.eu/blog/2021/10/03/getting-out-of-meeting-hell-executives/"&gt;to fix it&lt;/a&gt;, you might be working in a remote office.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If it’s somehow considered acceptable for people to drop comments in a long issue tracker thread that start with “I didn’t read the whole thing but here’s my take”, you might be working in a remote office.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If you have some middle manager insisting that he&lt;sup id="fnref:he"&gt;&lt;a class="footnote-ref" href="#fn:he"&gt;1&lt;/a&gt;&lt;/sup&gt; is expected to “lead, not read”, you might be working in a remote office.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If managers insist on a &lt;a href="https://xahteiwi.eu/blog/2016/07/05/fragile-development/"&gt;daily scrum&lt;/a&gt; or standup or similar abomination, you might be working in a remote office.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If managers get all uneasy at the idea of not being able to monitor everyone’s being “at work” for whatever definition thereof they apply, you might be working in a remote office.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If not nearly enough people have any grasp of the importance of &lt;a href="https://xahteiwi.eu/blog/2021/10/30/warnock-dilemma/"&gt;acknowledgment&lt;/a&gt; in communication, you might be working in a remote office.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If somebody extolls the necessity of socializing with your work mates, you might be working in a remote office.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If all coordination at your multinational company explodes in a massive fireball twice a year around daylight saving time changes, &lt;a href="https://xahteiwi.eu/blog/2023/02/10/brown-mms/"&gt;instead of everyone just using UTC year-round&lt;/a&gt;, you might be working in a remote office.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If your organization’s idea of documentation is “ask Joe” or whoever the most ancient technically capable member of staff is, you might be working in a remote office.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And in that case, &lt;a href="https://xahteiwi.eu/blog/2021/10/23/make-my-company-distributed/"&gt;here’s something else you might want to read&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr/&gt;
+&lt;ol&gt;
+&lt;li id="fn:he"&gt;
+&lt;p&gt;I use “he” here because in 20 years I have never heard anything like this from someone who wasn’t a man. &lt;a class="footnote-backref" href="#fnref:he" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>On Responsibility</title><link href="https://xahteiwi.eu/blog/2023/10/25/responsibility/" rel="alternate"></link><published>2023-10-25T21:00:00+00:00</published><updated>2023-10-25T21:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-10-25:/blog/2023/10/25/responsibility/</id><summary type="html">&lt;p&gt;What does it mean to be responsible for something?&lt;/p&gt;</summary><content type="html">&lt;p&gt;You may know that I am fairly active on &lt;a href="https://joinmastodon.org/"&gt;Mastodon&lt;/a&gt; (my profile is &lt;a href="https://mastodon.social/@xahteiwi"&gt;here&lt;/a&gt;), and one of the things I like a lot are &lt;a href="https://docs.joinmastodon.org/user/posting/#polls"&gt;polls&lt;/a&gt;.
 I use them largely to get an outside view on my own thoughts.&lt;/p&gt;
 &lt;p&gt;Recently, I posted &lt;a href="https://mastodon.social/@xahteiwi/111290843165601510"&gt;one such poll&lt;/a&gt;.
 It talked about a hypothetical scenario, and the question read:&lt;/p&gt;
@@ -3015,7 +3069,7 @@ distributed and async transition.&lt;/p&gt;
 distributed and async change “from within” — against the resistance or
 inertia of established management — is ludicrous, unethical, and
 unworkable.)&lt;/p&gt;
-&lt;h3&gt;Hiring distie managers&lt;/h3&gt;
+&lt;h3&gt;Hire distie managers?&lt;/h3&gt;
 &lt;p&gt;If you make it a priority to hire managers geared toward distributed and
 asynchronous work, then if they’re worth their salt I can guarantee you
 that one of the first things that they’ll ask in their first interview
@@ -3038,7 +3092,7 @@ least one-third of its current managers at all levels, to have any
 chance of attracting fresh blood in management.&lt;/p&gt;
 &lt;p&gt;You’ll notice that this isn’t exactly easy to do, plus it’ll probably
 take longer than you have the patience to put up with it.&lt;/p&gt;
-&lt;h3&gt;Hiring management consultants&lt;/h3&gt;
+&lt;h3&gt;Hire management consultants?&lt;/h3&gt;
 &lt;p&gt;So that leaves the option of hiring people that are &lt;em&gt;not&lt;/em&gt; part of the
 organization but are brought in to advise, ideally on all management
 levels. These people are called management consultants. And you should
