@@ -106,7 +106,7 @@ distributed and async change “from within” — against the resistance or
 inertia of established management — is ludicrous, unethical, and
 unworkable.)
 
-### Hiring distie managers
+### Hire distie managers?
 
 If you make it a priority to hire managers geared toward distributed and
 asynchronous work, then if they’re worth their salt I can guarantee you
@@ -135,7 +135,7 @@ chance of attracting fresh blood in management.
 You’ll notice that this isn’t exactly easy to do, plus it’ll probably
 take longer than you have the patience to put up with it.
 
-### Hiring management consultants
+### Hire management consultants?
 
 So that leaves the option of hiring people that are *not* part of the
 organization but are brought in to advise, ideally on all management
