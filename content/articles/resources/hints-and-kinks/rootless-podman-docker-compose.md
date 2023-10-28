@@ -153,6 +153,7 @@ That comes in handy for Home Assistant integrations for sensor devices using [BL
 Then, running
 
 ```console
+$ export XDG_RUNTIME_DIR=/run/user/$UID
 $ systemctl --user daemon-reload
 $ systemctl --user start podman-compose
 $ systemctl --user enable podman-compose
