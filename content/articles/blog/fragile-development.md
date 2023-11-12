@@ -14,6 +14,10 @@ talk slides; the paragraphs themselves are an approximation of what I
 said. If you're interested in the exact slide content, you can find
 that [here](//fghaas.github.io/openstackisrael2016-ignite).
 
+I subsequently reprised this talk, in 2023, at [PyCon
+Sweden](https://pycon.se). The updated slide deck is
+[here](https://fghaas.github.io/pyconse2023).
+
 * * *
 
 ## Zero flexibility
