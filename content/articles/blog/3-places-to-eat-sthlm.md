@@ -24,7 +24,7 @@ Apparently, if you happen to arrive during the week that Swedes call "summer", y
 [Östgötagatan 12B](https://maps.app.goo.gl/B12qDxhphb5LMxPZA)
 
 Totally random find that turned out to be a seriously terrific taquería.
-This is one of three locations across the city.
+This is one of [three locations](https://laneta.se/) across the city, and they [also do takeout](https://laneta.qopla.com/).
 
 Excellent tacos and quesadillas, with a small selection of Mexican beers.
 
@@ -33,4 +33,6 @@ Excellent tacos and quesadillas, with a small selection of Mexican beers.
 [Tavastgatan 22](https://maps.app.goo.gl/dvx5vodsy87e4DM79)
 
 Absolutely sublime Lebanese place, more upscale than the other two spots I've listed here.
+Also in [three more locations](https://tabbouli.eu/) around Stockholm.
+
 Their entire menu is exquisite, though I am a particular fan of their [kibbeh nayyeh](https://en.wikipedia.org/wiki/Kibbeh_nayyeh) and hummus kawarma. That said, they have plenty of excellent non-meat options too. 
