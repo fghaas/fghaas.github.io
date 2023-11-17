@@ -19,7 +19,8 @@ except FileNotFoundError:
     pass
 
 SITEURL = "https://%s" % cname
-SITELOGO = SITEURL + '/' + AVATAR
+FAVICON = f'{SITEURL}/favicon.svg'
+SITELOGO = f'{SITEURL}/{AVATAR}'
 
 PLAUSIBLE_DOMAIN = cname
 
