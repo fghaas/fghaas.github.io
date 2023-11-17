@@ -8,8 +8,9 @@ SITENAME = 'xahteiwi.eu'
 
 # If your site is available via HTTPS, make sure SITEURL begins with https://
 SITEURL = 'http://localhost:8000'
+FAVICON = f'{SITEURL}/favicon.svg'
 AVATAR = 'images/avatar.jpg'
-SITELOGO = SITEURL + '/' + AVATAR
+SITELOGO = f'{SITEURL}/{AVATAR}'
 COPYRIGHT_YEAR = datetime.now().year
 
 THEME = 'themes/Flex'
@@ -45,7 +46,7 @@ JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
 STATIC_PATHS = [
     'CNAME',
     'css',
-    'favicon.ico',
+    'favicon.svg',
     'fonts',
     'images',
     '_config.yml',
