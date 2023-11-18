@@ -174,8 +174,8 @@ become unmanageable pretty quickly.</p>
 <p>So, I use my <code>git delete-merged-branches</code> command to remove those
 local branches that are fully merged to <code>main</code>.</p>
 <h2>Find the origin of a branch point</h2>
-<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="s s-Atom">alias</span><span class="p">]</span>
-    <span class="s s-Atom">oldest</span><span class="o">-</span><span class="s s-Atom">ancestor</span> <span class="o">=</span> <span class="p">!</span><span class="s s-Atom">bash</span> <span class="o">-</span><span class="s s-Atom">c</span> <span class="s s-Atom">'diff -u &lt;(git rev-list --first-parent \"${1:-main}\") &lt;(git rev-list --first-parent \"${2:-HEAD}\") | sed -ne \"s/^ //p\" | head -1'</span> <span class="o">-</span>
+<div class="highlight"><pre><span></span><code><span class="k">[alias]</span>
+<span class="w">    </span><span class="na">oldest-ancestor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">!bash -c 'diff -u &lt;(git rev-list --first-parent \"${1:-main}\") &lt;(git rev-list --first-parent \"${2:-HEAD}\") | sed -ne \"s/^ //p\" | head -1' -</span>
 </code></pre></div>
 <p>Sometimes I create a topic branch off <code>main</code>, then add oodles of
 commits on it. At the same time, more commits land on <code>main</code>, and

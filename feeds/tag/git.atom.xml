@@ -26,8 +26,8 @@ become unmanageable pretty quickly.&lt;/p&gt;
 &lt;p&gt;So, I use my &lt;code&gt;git delete-merged-branches&lt;/code&gt; command to remove those
 local branches that are fully merged to &lt;code&gt;main&lt;/code&gt;.&lt;/p&gt;
 &lt;h2&gt;Find the origin of a branch point&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s s-Atom"&gt;alias&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-    &lt;span class="s s-Atom"&gt;oldest&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="s s-Atom"&gt;ancestor&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;!&lt;/span&gt;&lt;span class="s s-Atom"&gt;bash&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="s s-Atom"&gt;c&lt;/span&gt; &lt;span class="s s-Atom"&gt;'diff -u &amp;lt;(git rev-list --first-parent \"${1:-main}\") &amp;lt;(git rev-list --first-parent \"${2:-HEAD}\") | sed -ne \"s/^ //p\" | head -1'&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[alias]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="na"&gt;oldest-ancestor&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;!bash -c 'diff -u &amp;lt;(git rev-list --first-parent \"${1:-main}\") &amp;lt;(git rev-list --first-parent \"${2:-HEAD}\") | sed -ne \"s/^ //p\" | head -1' -&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Sometimes I create a topic branch off &lt;code&gt;main&lt;/code&gt;, then add oodles of
 commits on it. At the same time, more commits land on &lt;code&gt;main&lt;/code&gt;, and

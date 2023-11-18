@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Food</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/food.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2023-11-15T21:00:00+00:00</updated><entry><title>3 places to eat: Stockholm</title><link href="https://xahteiwi.eu/blog/2023/11/15/3-places-to-eat-sthlm/" rel="alternate"></link><published>2023-11-15T21:00:00+00:00</published><updated>2023-11-15T21:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-11-15:/blog/2023/11/15/3-places-to-eat-sthlm/</id><summary type="html">&lt;p&gt;Getting hungry in Stockholm?&lt;/p&gt;</summary><content type="html">&lt;p&gt;Continuing the series of selecting 3 places to eat at random in a major city, here is the entry for Stockholm.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Food</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/food.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2023-11-18T20:00:00+00:00</updated><entry><title>3 places to eat: Vienna</title><link href="https://xahteiwi.eu/blog/2023/11/18/3-places-to-eat-vie/" rel="alternate"></link><published>2023-11-18T20:00:00+00:00</published><updated>2023-11-18T20:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-11-18:/blog/2023/11/18/3-places-to-eat-vie/</id><summary type="html">&lt;p&gt;I&amp;rsquo;ve done this for several other cities. It figures I should do one for mine.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I’ve been asked to finally add an entry in this series for my hometown.
+Of course, these are not necessarily touristy places, nor are they stereotypically Viennese or Austrian, nor particularly upscale. They’re just good.&lt;/p&gt;
+&lt;h2&gt;Gorilla Kitchen&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://maps.app.goo.gl/fo7LhJrcnrRjgmMP7"&gt;Gußhausstraße 19&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;It’s not easy to find a good burrito in this city, but this place definitely has them.
+This is just a stone’s throw from Karlskirche and a short walk from the Karlsplatz U-Bahn station.&lt;/p&gt;
+&lt;p&gt;All burritos are made to order.
+They have meaty and vegan options, and 3 degrees of spice in the sauce.&lt;/p&gt;
+&lt;h2&gt;On&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://maps.app.goo.gl/uN35dabvT7M93pca9"&gt;Wehrgasse 8&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;My favourite Chinese place in Vienna, equal distance (about 7 minutes’ walk) from the Kettenbrückengasse and Pilgramgrasse U-Bahn stops.&lt;/p&gt;
+&lt;p&gt;Not your typical buffet-style Chinese restaurant, but rather a lovely a la carte place.
+Their menu includes ingredients not typically served in more mainstream Chinese restaurants in Europe, such as lamb liver, tripes, or frog legs.&lt;/p&gt;
+&lt;h2&gt;Kent&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://maps.app.goo.gl/QEmQL4qS56GCmViS7"&gt;Märzstraße 39&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Vienna has many, many Turkish restaurants, but this is my favourite by a large margin.
+You can swing by for takeaway from their charcoal grill, but it’s also a nice place for a sit-down dinner with friends.&lt;/p&gt;
+&lt;p&gt;Kent has &lt;a href="https://www.kentrestaurant.at/"&gt;multiple locations around the city&lt;/a&gt;, but for some reason the one on Märzstraße (right next to the Schweglerstraße U-Bahn station) has always been my preferred one.&lt;/p&gt;</content><category term="blog"></category><category term="Food"></category></entry><entry><title>3 places to eat: Stockholm</title><link href="https://xahteiwi.eu/blog/2023/11/15/3-places-to-eat-sthlm/" rel="alternate"></link><published>2023-11-15T21:00:00+00:00</published><updated>2023-11-15T21:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-11-15:/blog/2023/11/15/3-places-to-eat-sthlm/</id><summary type="html">&lt;p&gt;Getting hungry in Stockholm?&lt;/p&gt;</summary><content type="html">&lt;p&gt;Continuing the series of selecting 3 places to eat at random in a major city, here is the entry for Stockholm.&lt;/p&gt;
 &lt;p&gt;These were collected on a recent trip to &lt;a href="https://pycon.se"&gt;PyCon Sweden&lt;/a&gt;, and as a result are all around &lt;a href="https://en.wikipedia.org/wiki/Slussenomr%C3%A5det"&gt;Slussen&lt;/a&gt; on &lt;a href="https://en.wikipedia.org/wiki/S%C3%B6dermalm"&gt;Södermalm&lt;/a&gt; (the island just south of the &lt;a href="https://en.wikipedia.org/wiki/Gamla_stan"&gt;Old Town&lt;/a&gt;).&lt;/p&gt;
 &lt;h2&gt;Omnipollos Hatt&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://maps.app.goo.gl/rRffAfpXfzCKC7CLA"&gt;Hökens gata 1A&lt;/a&gt;&lt;/p&gt;
@@ -169,7 +186,7 @@ guessing should work well too.&lt;/p&gt;
 &lt;h2&gt;Nutrition facts&lt;/h2&gt;
 &lt;p&gt;No warranty of any kind on these. Values are per serving.&lt;/p&gt;
 &lt;p&gt;With meat:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Calories (kcal)&lt;/th&gt;
@@ -200,7 +217,7 @@ guessing should work well too.&lt;/p&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;Without meat:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Calories (kcal)&lt;/th&gt;
@@ -342,7 +359,7 @@ came this.&lt;/p&gt;
 &lt;/ol&gt;
 &lt;h2&gt;Nutrition facts&lt;/h2&gt;
 &lt;p&gt;No warranty of any kind on these. Values are per serving.&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Calories (kcal)&lt;/th&gt;
@@ -492,7 +509,7 @@ several to accommodate a larger crowd, or very hungry people.&lt;/p&gt;
 &lt;h2&gt;Nutrition facts&lt;/h2&gt;
 &lt;p&gt;No warranty of any kind on these. Values are per serving, counting one
 serving as one-quarter of the whole pizza.&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Calories (kcal)&lt;/th&gt;

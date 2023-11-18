@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/all.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2023-11-15T21:00:00+00:00</updated><entry><title>3 places to eat: Stockholm</title><link href="https://xahteiwi.eu/blog/2023/11/15/3-places-to-eat-sthlm/" rel="alternate"></link><published>2023-11-15T21:00:00+00:00</published><updated>2023-11-15T21:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-11-15:/blog/2023/11/15/3-places-to-eat-sthlm/</id><summary type="html">&lt;p&gt;Getting hungry in Stockholm?&lt;/p&gt;</summary><content type="html">&lt;p&gt;Continuing the series of selecting 3 places to eat at random in a major city, here is the entry for Stockholm.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/all.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2023-11-18T20:00:00+00:00</updated><entry><title>3 places to eat: Vienna</title><link href="https://xahteiwi.eu/blog/2023/11/18/3-places-to-eat-vie/" rel="alternate"></link><published>2023-11-18T20:00:00+00:00</published><updated>2023-11-18T20:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-11-18:/blog/2023/11/18/3-places-to-eat-vie/</id><summary type="html">&lt;p&gt;I&amp;rsquo;ve done this for several other cities. It figures I should do one for mine.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I’ve been asked to finally add an entry in this series for my hometown.
+Of course, these are not necessarily touristy places, nor are they stereotypically Viennese or Austrian, nor particularly upscale. They’re just good.&lt;/p&gt;
+&lt;h2&gt;Gorilla Kitchen&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://maps.app.goo.gl/fo7LhJrcnrRjgmMP7"&gt;Gußhausstraße 19&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;It’s not easy to find a good burrito in this city, but this place definitely has them.
+This is just a stone’s throw from Karlskirche and a short walk from the Karlsplatz U-Bahn station.&lt;/p&gt;
+&lt;p&gt;All burritos are made to order.
+They have meaty and vegan options, and 3 degrees of spice in the sauce.&lt;/p&gt;
+&lt;h2&gt;On&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://maps.app.goo.gl/uN35dabvT7M93pca9"&gt;Wehrgasse 8&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;My favourite Chinese place in Vienna, equal distance (about 7 minutes’ walk) from the Kettenbrückengasse and Pilgramgrasse U-Bahn stops.&lt;/p&gt;
+&lt;p&gt;Not your typical buffet-style Chinese restaurant, but rather a lovely a la carte place.
+Their menu includes ingredients not typically served in more mainstream Chinese restaurants in Europe, such as lamb liver, tripes, or frog legs.&lt;/p&gt;
+&lt;h2&gt;Kent&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://maps.app.goo.gl/QEmQL4qS56GCmViS7"&gt;Märzstraße 39&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Vienna has many, many Turkish restaurants, but this is my favourite by a large margin.
+You can swing by for takeaway from their charcoal grill, but it’s also a nice place for a sit-down dinner with friends.&lt;/p&gt;
+&lt;p&gt;Kent has &lt;a href="https://www.kentrestaurant.at/"&gt;multiple locations around the city&lt;/a&gt;, but for some reason the one on Märzstraße (right next to the Schweglerstraße U-Bahn station) has always been my preferred one.&lt;/p&gt;</content><category term="blog"></category><category term="Food"></category></entry><entry><title>3 places to eat: Stockholm</title><link href="https://xahteiwi.eu/blog/2023/11/15/3-places-to-eat-sthlm/" rel="alternate"></link><published>2023-11-15T21:00:00+00:00</published><updated>2023-11-15T21:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-11-15:/blog/2023/11/15/3-places-to-eat-sthlm/</id><summary type="html">&lt;p&gt;Getting hungry in Stockholm?&lt;/p&gt;</summary><content type="html">&lt;p&gt;Continuing the series of selecting 3 places to eat at random in a major city, here is the entry for Stockholm.&lt;/p&gt;
 &lt;p&gt;These were collected on a recent trip to &lt;a href="https://pycon.se"&gt;PyCon Sweden&lt;/a&gt;, and as a result are all around &lt;a href="https://en.wikipedia.org/wiki/Slussenomr%C3%A5det"&gt;Slussen&lt;/a&gt; on &lt;a href="https://en.wikipedia.org/wiki/S%C3%B6dermalm"&gt;Södermalm&lt;/a&gt; (the island just south of the &lt;a href="https://en.wikipedia.org/wiki/Gamla_stan"&gt;Old Town&lt;/a&gt;).&lt;/p&gt;
 &lt;h2&gt;Omnipollos Hatt&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://maps.app.goo.gl/rRffAfpXfzCKC7CLA"&gt;Hökens gata 1A&lt;/a&gt;&lt;/p&gt;
@@ -686,8 +703,8 @@ become unmanageable pretty quickly.&lt;/p&gt;
 &lt;p&gt;So, I use my &lt;code&gt;git delete-merged-branches&lt;/code&gt; command to remove those
 local branches that are fully merged to &lt;code&gt;main&lt;/code&gt;.&lt;/p&gt;
 &lt;h2&gt;Find the origin of a branch point&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s s-Atom"&gt;alias&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-    &lt;span class="s s-Atom"&gt;oldest&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="s s-Atom"&gt;ancestor&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;!&lt;/span&gt;&lt;span class="s s-Atom"&gt;bash&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="s s-Atom"&gt;c&lt;/span&gt; &lt;span class="s s-Atom"&gt;'diff -u &amp;lt;(git rev-list --first-parent \"${1:-main}\") &amp;lt;(git rev-list --first-parent \"${2:-HEAD}\") | sed -ne \"s/^ //p\" | head -1'&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[alias]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="na"&gt;oldest-ancestor&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;!bash -c 'diff -u &amp;lt;(git rev-list --first-parent \"${1:-main}\") &amp;lt;(git rev-list --first-parent \"${2:-HEAD}\") | sed -ne \"s/^ //p\" | head -1' -&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Sometimes I create a topic branch off &lt;code&gt;main&lt;/code&gt;, then add oodles of
 commits on it. At the same time, more commits land on &lt;code&gt;main&lt;/code&gt;, and
@@ -2739,7 +2756,7 @@ guessing should work well too.&lt;/p&gt;
 &lt;h2&gt;Nutrition facts&lt;/h2&gt;
 &lt;p&gt;No warranty of any kind on these. Values are per serving.&lt;/p&gt;
 &lt;p&gt;With meat:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Calories (kcal)&lt;/th&gt;
@@ -2770,7 +2787,7 @@ guessing should work well too.&lt;/p&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;Without meat:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Calories (kcal)&lt;/th&gt;
@@ -3643,7 +3660,7 @@ planned.&lt;/p&gt;
 &lt;p&gt;So Alex, being a good CEO, opens some spread sheet software and
 creates this handy table that simply plugs in values for &lt;span class="math"&gt;\(x\)&lt;/span&gt; and &lt;span class="math"&gt;\(y\)&lt;/span&gt;,
 with &lt;span class="math"&gt;\(x\)&lt;/span&gt; (width) in columns and &lt;span class="math"&gt;\(y\)&lt;/span&gt; (depth) in rows.&lt;sup id="fnref:table"&gt;&lt;a class="footnote-ref" href="#fn:table"&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -3867,7 +3884,7 @@ interjects that Alex is missing a point, namely all the managers that
 the company will now no longer need, and the cost savings thus
 generated.&lt;/p&gt;
 &lt;p&gt;So Alex looks at the table again (width in columns, depth in rows):&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -4056,7 +4073,7 @@ cell &lt;em&gt;directly above it&lt;/em&gt; will contain the total number of man
 again, but considers the number of managers proportional to the number
 of people in the company, a pattern quickly emerges (again, width
 is in columns, depth is in rows):&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -7861,7 +7878,7 @@ It’s being lazy.&lt;/p&gt;
 &lt;p&gt;It’s a symptom of the worst kind of laziness &lt;em&gt;(not malice!)&lt;/em&gt;: in an
 attempt to communicate quickly and easily, for yourself, you are really
 making things harder for everyone, including yourself.&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -7889,7 +7906,7 @@ ago”, you’ll agree with me here.&lt;/p&gt;
 is to say in relation to &lt;em&gt;other&lt;/em&gt; discussions on the same topic, days
 or weeks earlier or later.&lt;/p&gt;
 &lt;p&gt;Let’s compare that to other communication modes:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -7920,7 +7937,7 @@ or weeks earlier or later.&lt;/p&gt;
   as with chat, and it’s marginally better at contextualizing
   information than chat (because you get proper threading).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -7967,7 +7984,7 @@ or weeks earlier or later.&lt;/p&gt;
   Likewise, “issue tracker” can mean RT, OTRS, Jira, Taiga, Bugzilla,
   whatever works for you.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -9140,7 +9157,7 @@ came this.&lt;/p&gt;
 &lt;/ol&gt;
 &lt;h2&gt;Nutrition facts&lt;/h2&gt;
 &lt;p&gt;No warranty of any kind on these. Values are per serving.&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Calories (kcal)&lt;/th&gt;
@@ -9423,7 +9440,7 @@ several to accommodate a larger crowd, or very hungry people.&lt;/p&gt;
 &lt;h2&gt;Nutrition facts&lt;/h2&gt;
 &lt;p&gt;No warranty of any kind on these. Values are per serving, counting one
 serving as one-quarter of the whole pizza.&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Calories (kcal)&lt;/th&gt;
@@ -10676,7 +10693,7 @@ in the conference.&lt;/p&gt;
 &lt;p&gt;Nonexisticon’s attendee-visible run-up cycle is 6 months.&lt;/p&gt;
 &lt;p&gt;Assuming a Nonexisticon is scheduled to run from May 15-17, the
 following schedule applies:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Date&lt;/th&gt;
@@ -11141,7 +11158,7 @@ let’s say it’s 1%.&lt;/p&gt;
 &lt;p&gt;So then let’s look at 10,000 interactions that completely random
 people make on the internet.&lt;/p&gt;
 &lt;p&gt;Those would then break down like so:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -11174,7 +11191,7 @@ flags content as infringing when it is not) with a rate of only
 ridiculously low for any automated screening procedure.&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;So that means that out of our 10,000 interactions tracked by our
 “perfect” content filter, the numbers break down like this:&lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -11217,7 +11234,7 @@ exceedingly rare, automated filters detect it with poor accuracy.&lt;/strong&gt;
 &lt;p&gt;And if you leave all parameters the same, but consider a probably much
 more realistic infringement rate of 1 in 1000, that is, 0.1%, then
 things look like this: &lt;/p&gt;
-&lt;table class="table table-striped"&gt;
+&lt;table class="table-striped table"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -12755,24 +12772,4 @@ zoom out for an overview, or just advance by hitting the spacebar.&lt;/p&gt;
 &lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
 zoom out for an overview, or just advance by hitting the spacebar.&lt;/p&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="Ceph"></category><category term="LXC"></category></entry><entry><title>Fragile development: Why Scrum sucks, and what you should be doing instead (full talk)</title><link href="https://xahteiwi.eu/resources/presentations/fragile-development-why-scrum-sucks-and-what-you-should-be-doing-instead-full-talk/" rel="alternate"></link><published>2016-08-20T00:00:00+00:00</published><updated>2016-08-20T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2016-08-20:/resources/presentations/fragile-development-why-scrum-sucks-and-what-you-should-be-doing-instead-full-talk/</id><summary type="html">&lt;p&gt;My presentation from FrOSCon 2016. The lengthier version of the
-&lt;a href="https://xahteiwi.eu/resources/presentations/why-scrum-sucks-and-what-you-ought-to-be-doing-instead/"&gt;Ignite talk&lt;/a&gt; I did a few
-months before, at OpenStack Israel.&lt;/p&gt;
-&lt;!--break--&gt;
-&lt;ul&gt;
-&lt;li&gt;Video: &lt;a href="https://youtu.be/f-ULT_Ic4qk"&gt;YouTube&lt;/a&gt;,
-  &lt;a href="https://media.ccc.de/v/froscon2016-1722-fragile_development"&gt;CCC&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/froscon2016/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
-zoom out for an overview, or just advance by hitting the spacebar …&lt;/p&gt;</summary><content type="html">&lt;p&gt;My presentation from FrOSCon 2016. The lengthier version of the
-&lt;a href="https://xahteiwi.eu/resources/presentations/why-scrum-sucks-and-what-you-ought-to-be-doing-instead/"&gt;Ignite talk&lt;/a&gt; I did a few
-months before, at OpenStack Israel.&lt;/p&gt;
-&lt;!--break--&gt;
-&lt;ul&gt;
-&lt;li&gt;Video: &lt;a href="https://youtu.be/f-ULT_Ic4qk"&gt;YouTube&lt;/a&gt;,
-  &lt;a href="https://media.ccc.de/v/froscon2016-1722-fragile_development"&gt;CCC&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/froscon2016/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
-zoom out for an overview, or just advance by hitting the spacebar.&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category></entry></feed>
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="Ceph"></category><category term="LXC"></category></entry></feed>
