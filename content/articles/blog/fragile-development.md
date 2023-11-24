@@ -1,5 +1,6 @@
 Title: Fragile Development: Scrum is terrible, and you should ditch it
 Date: 2016-07-05
+Modified: 2023-11-24
 Slug: fragile-development
 Author: florian
 Summary: Scrum is irrational, impractical, and outright dangerous for software development. It is time to stop considering it a viable method for building software.
@@ -8,15 +9,13 @@ Series: Scrum thoughts
 
 This is a writeup of an
 [Ignite](https://en.wikipedia.org/wiki/Ignite_(event)) talk I gave at
-[OpenStack Israel 2016](http://www.openstack-israel.org). The
+[OpenStack Israel 2016](http://www.openstack-israel.org).[^2023] The
 paragraph headings below approximately correspond to the content of my
 talk slides; the paragraphs themselves are an approximation of what I
 said. If you're interested in the exact slide content, you can find
 that [here](//fghaas.github.io/openstackisrael2016-ignite).
 
-I subsequently reprised this talk, in 2023, at [PyCon
-Sweden](https://pycon.se). The updated slide deck is
-[here](https://fghaas.github.io/pyconse2023).
+[^2023]: I subsequently reprised this talk, in 2023, at [PyCon Sweden](https://pycon.se). The updated slide deck is [here](https://fghaas.github.io/pyconse2023).
 
 * * *
 
@@ -36,7 +35,7 @@ something to that effect. You couldn't be further from the truth.
 > is not_ `Scrum`.
 
 Yes, that's a
-[direct quote from the Scrum guide.](http://www.scrumguides.org/scrum-guide.html#end-note)
+[direct quote from the Scrum guide.](https://web.archive.org/web/20160630123010/http://www.scrumguides.org/scrum-guide.html#endnote)[^2020]
 Scrum, by its own definition, can either be implemented completely —
 that is, with all its roles, artifacts, events, and rules _unchanged_
 — or not at all. This sounds ludicrous enough as it is, and any sane,
@@ -44,6 +43,7 @@ thinking person should reject or at least resent _any_ such statement
 outright. But let's give Scrum the benefit of doubt, and let's
 actually start examining some of its postulates.
 
+[^2020]: The end note in the post-2020 version of the Scrum guide reads [slightly differently](https://scrumguides.org/scrum-guide.html#end-note). It now simply says, "The Scrum framework, as outlined herein, is immutable. While implementing only parts of Scrum is possible, the result is not Scrum." In other words, it still makes the same immutability assertion, just in fewer words.
 
 ## Teams are self-organizing
 
