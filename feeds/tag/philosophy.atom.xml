@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Philosophy</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/philosophy.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2019-06-06T00:00:00+00:00</updated><entry><title>Team meetings</title><link href="https://xahteiwi.eu/blog/2019/06/06/team-meetings/" rel="alternate"></link><published>2019-06-06T00:00:00+00:00</published><updated>2019-06-06T00:00:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2019-06-06:/blog/2019/06/06/team-meetings/</id><summary type="html">&lt;p&gt;Distributed teams need to meet in person every once in a while. Here are some thoughts and suggestions on team meetings.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I’ve run a distributed team — nominally the same team, though through
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Philosophy</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/philosophy.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2023-11-24T00:00:00+00:00</updated><entry><title>Team meetings</title><link href="https://xahteiwi.eu/blog/2019/06/06/team-meetings/" rel="alternate"></link><published>2019-06-06T00:00:00+00:00</published><updated>2019-06-06T00:00:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2019-06-06:/blog/2019/06/06/team-meetings/</id><summary type="html">&lt;p&gt;Distributed teams need to meet in person every once in a while. Here are some thoughts and suggestions on team meetings.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I’ve run a distributed team — nominally the same team, though through
 people joining and leaving I am the sole original band member at this
 point — for almost 8 years. And about 3 years in was the first time we
 were sufficiently spread &lt;em&gt;and&lt;/em&gt; had enough money to spare to warrant
@@ -330,16 +330,13 @@ ones arrived, I was traveling way less overall, so those travel
 schedule adjustments were easy at the time.) &lt;a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Philosophy"></category></entry><entry><title>Fragile Development: Scrum is terrible, and you should ditch it</title><link href="https://xahteiwi.eu/blog/2016/07/05/fragile-development/" rel="alternate"></link><published>2016-07-05T00:00:00+00:00</published><updated>2016-07-05T00:00:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2016-07-05:/blog/2016/07/05/fragile-development/</id><summary type="html">&lt;p&gt;Scrum is irrational, impractical, and outright dangerous for software development. It is time to stop considering it a viable method for building software.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a writeup of an
+&lt;/div&gt;</content><category term="blog"></category><category term="Philosophy"></category></entry><entry><title>Fragile Development: Scrum is terrible, and you should ditch it</title><link href="https://xahteiwi.eu/blog/2016/07/05/fragile-development/" rel="alternate"></link><published>2016-07-05T00:00:00+00:00</published><updated>2023-11-24T00:00:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2016-07-05:/blog/2016/07/05/fragile-development/</id><summary type="html">&lt;p&gt;Scrum is irrational, impractical, and outright dangerous for software development. It is time to stop considering it a viable method for building software.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a writeup of an
 &lt;a href="https://en.wikipedia.org/wiki/Ignite_(event)"&gt;Ignite&lt;/a&gt; talk I gave at
-&lt;a href="http://www.openstack-israel.org"&gt;OpenStack Israel 2016&lt;/a&gt;. The
+&lt;a href="http://www.openstack-israel.org"&gt;OpenStack Israel 2016&lt;/a&gt;.&lt;sup id="fnref:2023"&gt;&lt;a class="footnote-ref" href="#fn:2023"&gt;1&lt;/a&gt;&lt;/sup&gt; The
 paragraph headings below approximately correspond to the content of my
 talk slides; the paragraphs themselves are an approximation of what I
 said. If you’re interested in the exact slide content, you can find
 that &lt;a href="//fghaas.github.io/openstackisrael2016-ignite"&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;I subsequently reprised this talk, in 2023, at &lt;a href="https://pycon.se"&gt;PyCon
-Sweden&lt;/a&gt;. The updated slide deck is
-&lt;a href="https://fghaas.github.io/pyconse2023"&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;hr/&gt;
 &lt;h2&gt;Zero flexibility&lt;/h2&gt;
 &lt;blockquote&gt;
@@ -357,7 +354,7 @@ although implementing only parts of &lt;code&gt;Scrum&lt;/code&gt; is possible, 
 is not&lt;/em&gt; &lt;code&gt;Scrum&lt;/code&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Yes, that’s a
-&lt;a href="http://www.scrumguides.org/scrum-guide.html#end-note"&gt;direct quote from the Scrum guide.&lt;/a&gt;
+&lt;a href="https://web.archive.org/web/20160630123010/http://www.scrumguides.org/scrum-guide.html#endnote"&gt;direct quote from the Scrum guide.&lt;/a&gt;&lt;sup id="fnref:2020"&gt;&lt;a class="footnote-ref" href="#fn:2020"&gt;2&lt;/a&gt;&lt;/sup&gt;
 Scrum, by its own definition, can either be implemented completely —
 that is, with all its roles, artifacts, events, and rules &lt;em&gt;unchanged&lt;/em&gt;
 — or not at all. This sounds ludicrous enough as it is, and any sane,
@@ -460,7 +457,18 @@ in its pure, immutable, One True Way), it would surely lead to
 disaster. But, it’s impossible to do so anyway, so go ahead and ditch
 it — stop being a scrumbag.&lt;/p&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="blog"></category><category term="Philosophy"></category><category term="Development"></category></entry><entry><title>Thoughts on "ecosystems"</title><link href="https://xahteiwi.eu/blog/2012/12/16/thoughts-on-ecosystems/" rel="alternate"></link><published>2012-12-16T14:47:00+00:00</published><updated>2012-12-16T14:47:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2012-12-16:/blog/2012/12/16/thoughts-on-ecosystems/</id><summary type="html">&lt;p&gt;Over the past couple of years, it seems that the term &lt;em&gt;ecosystem&lt;/em&gt; is
+&lt;p&gt;This article originally appeared on my blog on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr/&gt;
+&lt;ol&gt;
+&lt;li id="fn:2023"&gt;
+&lt;p&gt;I subsequently reprised this talk, in 2023, at &lt;a href="https://pycon.se"&gt;PyCon Sweden&lt;/a&gt;. The updated slide deck is &lt;a href="https://fghaas.github.io/pyconse2023"&gt;here&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:2023" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:2020"&gt;
+&lt;p&gt;The end note in the post-2020 version of the Scrum guide reads &lt;a href="https://scrumguides.org/scrum-guide.html#end-note"&gt;slightly differently&lt;/a&gt;. It now simply says, “The Scrum framework, as outlined herein, is immutable. While implementing only parts of Scrum is possible, the result is not Scrum.” In other words, it still makes the same immutability assertion, just in fewer words. &lt;a class="footnote-backref" href="#fnref:2020" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content><category term="blog"></category><category term="Philosophy"></category><category term="Development"></category></entry><entry><title>Thoughts on "ecosystems"</title><link href="https://xahteiwi.eu/blog/2012/12/16/thoughts-on-ecosystems/" rel="alternate"></link><published>2012-12-16T14:47:00+00:00</published><updated>2012-12-16T14:47:00+00:00</updated><author><name>florian</name></author><id>tag:xahteiwi.eu,2012-12-16:/blog/2012/12/16/thoughts-on-ecosystems/</id><summary type="html">&lt;p&gt;Over the past couple of years, it seems that the term &lt;em&gt;ecosystem&lt;/em&gt; is
 being broadly applied to what we previously called a &lt;em&gt;community.&lt;/em&gt; I
 don’t like that, and here’s why.&lt;/p&gt;
 &lt;p&gt;The origin of the term &lt;em&gt;ecosystem,&lt;/em&gt; when applied to the environment in
