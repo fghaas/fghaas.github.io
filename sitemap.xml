@@ -5,49 +5,49 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://xahteiwi.eu/categories.html</loc>
-<lastmod>2023-11-24T17:06:17-00:00</lastmod>
+<lastmod>2024-02-10T17:39:45-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://xahteiwi.eu/tags.html</loc>
-<lastmod>2023-11-24T17:06:17-00:00</lastmod>
+<lastmod>2024-02-10T17:39:45-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://xahteiwi.eu/authors.html</loc>
-<lastmod>2023-11-24T17:06:17-00:00</lastmod>
+<lastmod>2024-02-10T17:39:45-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://xahteiwi.eu/archives.html</loc>
-<lastmod>2023-11-24T17:06:17-00:00</lastmod>
+<lastmod>2024-02-10T17:39:45-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://xahteiwi.eu/search.html</loc>
-<lastmod>2023-11-24T17:06:17-00:00</lastmod>
+<lastmod>2024-02-10T17:39:45-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://xahteiwi.eu/about/</loc>
-<lastmod>2023-11-24T17:06:17-00:00</lastmod>
+<lastmod>2024-02-10T17:39:45-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://xahteiwi.eu/comments/</loc>
-<lastmod>2023-11-24T17:06:17-00:00</lastmod>
+<lastmod>2024-02-10T17:39:45-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -61,14 +61,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://xahteiwi.eu/legal/</loc>
-<lastmod>2023-11-24T17:06:17-00:00</lastmod>
+<lastmod>2024-02-10T17:39:45-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://xahteiwi.eu/privacy/</loc>
-<lastmod>2023-11-24T17:06:17-00:00</lastmod>
+<lastmod>2024-02-10T17:39:45-00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://xahteiwi.eu/blog/2024/02/10/my-talks-are-good/</loc>
+<lastmod>2024-02-10T00:00:00+00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -1370,7 +1377,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://xahteiwi.eu/category/blog.html</loc>
-<lastmod>2023-11-24T00:00:00+00:00</lastmod>
+<lastmod>2024-02-10T00:00:00+00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -1392,6 +1399,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://xahteiwi.eu/category/talk-submissions.html</loc>
 <lastmod>2021-10-07T00:00:00+00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://xahteiwi.eu/tag/conference.html</loc>
+<lastmod>2024-02-10T00:00:00+00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -1441,13 +1455,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://xahteiwi.eu/tag/systemd.html</loc>
 <lastmod>2023-10-26T21:00:00+00:00</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://xahteiwi.eu/tag/conference.html</loc>
-<lastmod>2023-05-25T00:00:00+00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -1804,7 +1811,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://xahteiwi.eu/author/florian-haas.html</loc>
-<lastmod>2023-11-18T20:00:00+00:00</lastmod>
+<lastmod>2024-02-10T00:00:00+00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
