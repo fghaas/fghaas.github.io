@@ -93,7 +93,13 @@ accessibility that I used to before.
   in unison with those one people’s phones, tablets, or laptops. This
   way, people with less-than-perfect vision (or simply seated in an
   unfortunate spot, at the back of the room) can follow along easily
-  and and their own preferred zoom level.
+  and at their own preferred zoom level.
+
+* The published slides include a menu with a theme switcher. This is
+  to accommodate another group of attendees, namely photosensitive
+  people who cannot stare at bright screens for a long time (this can
+  trigger intensely painful migraines). A person who is photosensitive
+  can follow along on their own device, using the dark theme.
 
 * Since my speaker notes are fully written out, this means that I can
   also [include
