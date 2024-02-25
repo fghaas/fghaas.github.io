@@ -130,6 +130,33 @@ rel="me"           href="https://mastodon.social/@xahteiwi"
 
 <article>
   <header>
+    <h2><a href="../resources/hints-and-kinks/removing-buckets-in-radosgw-and-their-contents/#removing-buckets-in-radosgw-and-their-contents">Removing buckets in radosgw (and their contents)</a></h2>
+    <p>
+      Posted on Wed 23 December 2015 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
+
+          &#8226; Tagged with
+              <a href="../tag/ceph.html">Ceph</a>
+        &#8226; 1 min read
+    </p>
+  </header>
+  <div>
+      <div><p>Every once in a while you’ll want to remove a bucket in radosgw,
+including all the objects contained in that bucket.</p>
+<p>Now you might use a utility like <a href="http://s3tools.org/s3cmd"><code>s3cmd</code></a>
+for that purpose:</p>
+<div class="highlight"><pre><span></span><code>s3cmd rb --recursive s3://mybucket
+</code></pre></div>
+<p>The advantage to this approach is that your users can do it …</p></div>
+        <br>
+        <a class="btn"
+           href="../resources/hints-and-kinks/removing-buckets-in-radosgw-and-their-contents/#removing-buckets-in-radosgw-and-their-contents">
+          Continue reading
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="../resources/hints-and-kinks/ubuntu-openstack-juju-4-nodes/#ubuntu-openstack-juju-4-nodes">A minimal Ubuntu OpenStack Juju configuration in just four nodes</a></h2>
     <p>
       Posted on Wed 23 December 2015 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
@@ -216,34 +243,6 @@ you can use any client that speaks the Amazon S3 or OpenStack …</p></div>
         <br>
         <a class="btn"
            href="../resources/presentations/ictfocus2015/#ictfocus2015">
-          Continue reading
-        </a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="../resources/presentations/openstacksummit2015-tokyo-neutron-ha/#openstacksummit2015-tokyo-neutron-ha">Clusters, Routers, Agents and Networks: High Availability in Neutron</a></h2>
-    <p>
-      Posted on Wed 28 October 2015 in <a href="../category/presentations.html">presentations</a>
-
-          &#8226; Tagged with
-              <a href="../tag/openstack.html">OpenStack</a>,              <a href="../tag/conference.html">Conference</a>
-        &#8226; 1 min read
-    </p>
-  </header>
-  <div>
-      <div><blockquote>
-<p>Of everything that we can build and deploy in a highly-available
-fashion in OpenStack, deploying highly available networking has been
-one of the trickiest, most complex aspects to get right.</p>
-</blockquote>
-<p>I team up with Adam Spiers (SUSE) and Assaf Muller (Red Hat) to
-discuss high availability in OpenStack Neutron.</p>
-</div>
-        <br>
-        <a class="btn"
-           href="../resources/presentations/openstacksummit2015-tokyo-neutron-ha/#openstacksummit2015-tokyo-neutron-ha">
           Continue reading
         </a>
   </div>
