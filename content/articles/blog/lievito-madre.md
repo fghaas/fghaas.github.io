@@ -19,7 +19,7 @@ Here's how I go about it.
 
 ## Bootstrapping
 
-To bootstrap a starter, you mix 60g of wholemeal flour with 60g of water and 5g of honey.[^honey]
+To bootstrap a starter, you mix 60g of wholemeal flour with 30g of water and 5g of honey.[^honey]
 Mixed, it turns into a squishy ball.
 Dab some olive oil on your palms and roll the ball between them, so that a thin film of oil covers the ball.
 Put that ball into a glass jar and close the lid.
