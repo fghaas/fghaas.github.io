@@ -130,6 +130,31 @@ rel="me"           href="https://mastodon.social/@xahteiwi"
 
 <article>
   <header>
+    <h2><a href="../resources/hints-and-kinks/which-osd-stores-specific-rados-object/#which-osd-stores-specific-rados-object">Finding out which OSDs currently store a specific RADOS object</a></h2>
+    <p>
+      Posted on Fri 09 March 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
+
+          &#8226; Tagged with
+              <a href="../tag/ceph.html">Ceph</a>
+        &#8226; 2 min read
+    </p>
+  </header>
+  <div>
+      <div><p>Ever wanted to know just which of your OSDs a RADOS object is
+currently stored in? Here’s how.</p>
+<p>Suppose you’ve got an RBD device, named <code>test</code>. Then you can use the
+<code>rbd info</code> command to display which name prefix is used by the RADOS
+objects that make up …</p></div>
+        <br>
+        <a class="btn"
+           href="../resources/hints-and-kinks/which-osd-stores-specific-rados-object/#which-osd-stores-specific-rados-object">
+          Continue reading
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="../resources/hints-and-kinks/solve-drbd-split-brain-4-steps/#solve-drbd-split-brain-4-steps">Solve a DRBD split-brain in 4 steps</a></h2>
     <p>
       Posted on Tue 06 March 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
@@ -227,33 +252,6 @@ involved:</p>
         <br>
         <a class="btn"
            href="../resources/hints-and-kinks/network-connectivity-check-pacemaker/#network-connectivity-check-pacemaker">
-          Continue reading
-        </a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="../resources/hints-and-kinks/gfs2-pacemaker-debianubuntu/#gfs2-pacemaker-debianubuntu">GFS2 in Pacemaker (Debian/Ubuntu)</a></h2>
-    <p>
-      Posted on Sun 26 February 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
-
-          &#8226; Tagged with
-              <a href="../tag/pacemaker.html">Pacemaker</a>
-        &#8226; 1 min read
-    </p>
-  </header>
-  <div>
-      <div><p>Setting up GFS2 in Pacemaker requires configuring the Pacemaker DLM,
-the Pacemaker GFS control daemon, and a GFS2 filesystem itself.</p>
-<h2>Prerequisites</h2>
-<p>GFS2 with Pacemaker integration is supported on Debian
-(<code>squeeze-backports</code> and up) and Ubuntu (10.04 LTS and up). You’ll need
-the <code>dlm-pcmk</code>, <code>gfs2-tools</code>, and <code>gfs-pcmk</code> packages.</p>
-<p>Fencing is …</p></div>
-        <br>
-        <a class="btn"
-           href="../resources/hints-and-kinks/gfs2-pacemaker-debianubuntu/#gfs2-pacemaker-debianubuntu">
           Continue reading
         </a>
   </div>
