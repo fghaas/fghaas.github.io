@@ -234,20 +234,20 @@ here’s a really easy way for you to trigger an adverse effect of this
 default configuration. All you have to do is create an object from a
 model, so that it fetches data from the database, then wait a bit,
 then try to re-fetch. Like so:</p>
-<div class="highlight"><pre><span></span><code><span class="o">./</span><span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">shell</span>
+<div class="highlight"><pre><span></span><code><span class="o">./</span><span class="n">manage</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="n">shell</span>
 <span class="p">[</span><span class="o">...</span><span class="p">]</span>
 <span class="p">(</span><span class="n">InteractiveConsole</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">django.contrib.auth</span> <span class="kn">import</span> <span class="n">get_user_model</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">User</span> <span class="o">=</span> <span class="n">get_user_model</span><span class="p">()</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">me</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s1">'florian'</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">sleep</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">me</span><span class="o">.</span><span class="n">refresh_from_db</span><span class="p">()</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">sleep</span><span class="p">(</span><span class="mi">55</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">me</span><span class="o">.</span><span class="n">refresh_from_db</span><span class="p">()</span>
-<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="kn">from</span><span class="w"> </span><span class="nn">time</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="n">sleep</span>
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="kn">from</span><span class="w"> </span><span class="nn">django.contrib.auth</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="n">get_user_model</span>
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">User</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_user_model</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">me</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s1">'florian'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">sleep</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">me</span><span class="o">.</span><span class="n">refresh_from_db</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">sleep</span><span class="p">(</span><span class="mi">55</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">me</span><span class="o">.</span><span class="n">refresh_from_db</span><span class="p">()</span>
+<span class="n">Traceback</span><span class="w"> </span><span class="p">(</span><span class="n">most</span><span class="w"> </span><span class="n">recent</span><span class="w"> </span><span class="n">call</span><span class="w"> </span><span class="n">last</span><span class="p">):</span>
 <span class="p">[</span><span class="o">...</span><span class="p">]</span>
-<span class="n">OperationalError</span><span class="p">:</span> <span class="p">(</span><span class="mi">2013</span><span class="p">,</span> <span class="s1">'Lost connection to MySQL server during query'</span><span class="p">)</span>
+<span class="n">OperationalError</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="mi">2013</span><span class="p">,</span><span class="w"> </span><span class="s1">'Lost connection to MySQL server during query'</span><span class="p">)</span>
 </code></pre></div>
 <p>So what happens here?</p>
 <ul>
@@ -273,8 +273,8 @@ Traceback (most recent call last):
 OperationalError: (2006, 'MySQL server has gone away')
 </code></pre></div>
 <p>What I have to do instead is <em>close</em> my <code>connection</code> first:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">connection</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="kn">from</span><span class="w"> </span><span class="nn">django.db</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="n">connection</span>
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
 <p>… and then, when I run anything else that requires a database query,
 Django will happily reconnect for me.</p>

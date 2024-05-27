@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/all.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2024-04-14T00:00:00+00:00</updated><entry><title>Torrtija de las señoritas Tatin</title><link href="https://xahteiwi.eu/blog/2024/04/14/torrtija-de-las-senoritas-tatin/" rel="alternate"></link><published>2024-04-14T00:00:00+00:00</published><updated>2024-04-14T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2024-04-14:/blog/2024/04/14/torrtija-de-las-senoritas-tatin/</id><summary type="html">&lt;p&gt;A dessert I made up.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a dessert that’s an excellent use for some stale bread and an apple that’s lost its crunch.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/all.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2024-05-27T21:00:00+00:00</updated><entry><title>3 places to eat: Florence</title><link href="https://xahteiwi.eu/blog/2024/05/27/3-places-to-eat-flr/" rel="alternate"></link><published>2024-05-27T21:00:00+00:00</published><updated>2024-05-27T21:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2024-05-27:/blog/2024/05/27/3-places-to-eat-flr/</id><summary type="html">&lt;p&gt;Find yourself peckish in Firenze? I can help.&lt;/p&gt;</summary><content type="html">&lt;p&gt;A recent trip to PyCon Italia prompts me to add the Tuscan capital to this series.&lt;/p&gt;
+&lt;h2&gt;Da’ Vinattieri&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://osm.org/go/xdQQAmTx5--?m="&gt;Via Santa Margherita, 6R, Firenze&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Over-the-counter street food. Lorenzo the local tour guide recommended
+this as his go-to place for
+&lt;a href="https://en.wikipedia.org/wiki/Lampredotto"&gt;lampredotto&lt;/a&gt;, and who am I
+to second-guess him?&lt;/p&gt;
+&lt;h2&gt;Pompi&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://osm.org/go/xdQQBC3Eh?m=&amp;amp;node=2361839042"&gt;Via Faenza, 37R, Firenze&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Tiny corner café. Has an incredible selection of tiramisù, of which
+the salted caramel variety is my favourite (though of course, the
+classic recipe is exquisite too).&lt;/p&gt;
+&lt;h2&gt;l’Pizzachiere&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://osm.org/go/xdQFXADtc?m=&amp;amp;node=2361718006"&gt;Via San Miniato, 2, San Niccolò&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Casual sit-down or takeaway with delicious pizza. Public seating is available just uphill, making this an excellent source for your pizza picnic.&lt;/p&gt;
+&lt;h2&gt;Special mention: Mercato centrale&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://osm.org/go/xdQQBMMlJ?m=&amp;amp;node=5188361676"&gt;Piazza del Mercato Centrale, 4&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Gigantic market building on two floors, where the ground floor is the market proper (which does have prepared-food outlets as well).
+Technically open until 5, but many shops close earlier.&lt;/p&gt;
+&lt;p&gt;The upper floor, in contrast, is a food mecca that is open from morning until midight with an endless variety of options.&lt;/p&gt;</content><category term="blog"></category><category term="Food"></category></entry><entry><title>Torrtija de las señoritas Tatin</title><link href="https://xahteiwi.eu/blog/2024/04/14/torrtija-de-las-senoritas-tatin/" rel="alternate"></link><published>2024-04-14T00:00:00+00:00</published><updated>2024-04-14T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2024-04-14:/blog/2024/04/14/torrtija-de-las-senoritas-tatin/</id><summary type="html">&lt;p&gt;A dessert I made up.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a dessert that’s an excellent use for some stale bread and an apple that’s lost its crunch.&lt;/p&gt;
 &lt;p&gt;I don’t think I’m the first person to come up with this, but I did make it up by myself so if there’s someone else to credit, I wouldn’t know whom.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="The dessert decribed in this recipe, shown on a white plate" class="img-fluid" src="/images/torrtija.jpg"/&gt;&lt;/p&gt;
 &lt;p&gt;I call this a torrtija because it looks like a cross of a &lt;a href="https://es.wikipedia.org/wiki/Torrija"&gt;torrija&lt;/a&gt; (usually called “French toast” in English, though the French call it pain perdu or “lost bread”; go figure) with a &lt;a href="https://es.wikipedia.org/wiki/Tortilla_de_patatas"&gt;tortilla española&lt;/a&gt;.
@@ -8827,20 +8846,20 @@ here’s a really easy way for you to trigger an adverse effect of this
 default configuration. All you have to do is create an object from a
 model, so that it fetches data from the database, then wait a bit,
 then try to re-fetch. Like so:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;./&lt;/span&gt;&lt;span class="n"&gt;manage&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt; &lt;span class="n"&gt;shell&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;./&lt;/span&gt;&lt;span class="n"&gt;manage&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;shell&lt;/span&gt;
 &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;InteractiveConsole&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;sleep&lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.contrib.auth&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;get_user_model&lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;User&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;get_user_model&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;me&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;User&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'florian'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;me&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;refresh_from_db&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;55&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;me&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;refresh_from_db&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="n"&gt;Traceback&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;most&lt;/span&gt; &lt;span class="n"&gt;recent&lt;/span&gt; &lt;span class="n"&gt;call&lt;/span&gt; &lt;span class="n"&gt;last&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;time&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sleep&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;django.contrib.auth&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;get_user_model&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;User&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;get_user_model&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;me&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;User&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'florian'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;me&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;refresh_from_db&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;55&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;me&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;refresh_from_db&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;Traceback&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;most&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;recent&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;call&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;last&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
 &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;span class="n"&gt;OperationalError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2013&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'Lost connection to MySQL server during query'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;OperationalError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2013&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'Lost connection to MySQL server during query'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;So what happens here?&lt;/p&gt;
 &lt;ul&gt;
@@ -8866,8 +8885,8 @@ Traceback (most recent call last):
 OperationalError: (2006, 'MySQL server has gone away')
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;What I have to do instead is &lt;em&gt;close&lt;/em&gt; my &lt;code&gt;connection&lt;/code&gt; first:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.db&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;connection&lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;connection&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;django.db&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;connection&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;connection&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;… and then, when I run anything else that requires a database query,
 Django will happily reconnect for me.&lt;/p&gt;
@@ -12594,291 +12613,4 @@ or run
 &lt;a href="https://openedx.atlassian.net/wiki/display/OpenOPS/Managing+OpenEdX+Tips+and+Tricks#ManagingOpenEdXTipsandTricks-manage.pycommands"&gt;&lt;code&gt;manage.py import&lt;/code&gt;,&lt;/a&gt;
 and you’re done!&lt;/p&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Open edX"></category></entry><entry><title>The Dos and Don'ts for Ceph for OpenStack</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/dos-donts-ceph-openstack/" rel="alternate"></link><published>2016-11-28T00:00:00+00:00</published><updated>2016-11-28T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2016-11-28:/resources/hints-and-kinks/dos-donts-ceph-openstack/</id><summary type="html">&lt;p&gt;Ceph and OpenStack are an extremely useful and
-&lt;a href="https://www.openstack.org/assets/survey/April-2016-User-Survey-Report.pdf"&gt;highly popular&lt;/a&gt;
-combination. Still, new Ceph/OpenStack deployments frequently come
-with easily avoided shortcomings — we’ll help you fix them!&lt;/p&gt;
-&lt;!--break--&gt;
-&lt;h2&gt;Do use &lt;code&gt;show_image_direct_url&lt;/code&gt; and the Glance v2 API&lt;/h2&gt;
-&lt;p&gt;With Ceph RBD (RADOS Block Device), you have the ability to create
-&lt;strong&gt;clones.&lt;/strong&gt; You …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ceph and OpenStack are an extremely useful and
-&lt;a href="https://www.openstack.org/assets/survey/April-2016-User-Survey-Report.pdf"&gt;highly popular&lt;/a&gt;
-combination. Still, new Ceph/OpenStack deployments frequently come
-with easily avoided shortcomings — we’ll help you fix them!&lt;/p&gt;
-&lt;!--break--&gt;
-&lt;h2&gt;Do use &lt;code&gt;show_image_direct_url&lt;/code&gt; and the Glance v2 API&lt;/h2&gt;
-&lt;p&gt;With Ceph RBD (RADOS Block Device), you have the ability to create
-&lt;strong&gt;clones.&lt;/strong&gt; You can think of clones as the writable siblings of
-&lt;em&gt;snapshots&lt;/em&gt; (which are read-only). A clone creates RADOS objects only
-for those parts of your block device which have been modified relative
-to its parent snapshot, and this means two things:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;You save space. That’s a no-brainer, but in and of itself it’s not
-   a very compelling argument as storage space is one of the cheapest
-   things in a distributed system.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;What’s &lt;em&gt;not&lt;/em&gt; been modified in the clone can be served from the
-   original volume. This is important because, of course, it means you
-   are effectively hitting the same RADOS objects — and thus, the
-   same OSDs — no matter which clone you’re talking to. And that, in
-   turn, means, those objects are likely to be served from the
-   respective OSD’s page caches, in other words, from RAM. RAM is way
-   faster to access than any persistent storage device, so being able
-   to serve lots of reads from the page cache is good. That, in turn,
-   means, that serving data from a clone will be faster than serving
-   the same data from a full copy of a volume.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Both Cinder (when creating a volume from an image) and Nova (when
-serving ephemeral disks from Ceph) will make use of cloning RBD images
-in the Ceph backend, and will do so automatically. But they will do so
-only if &lt;code&gt;show_image_direct_url=true&lt;/code&gt; is set in &lt;code&gt;glance‑api.conf&lt;/code&gt;, and
-they are configured to connect to Glance using the Glance v2
-API. &lt;a href="http://docs.ceph.com/docs/jewel/rbd/rbd-openstack/#any-openstack-version"&gt;So do both.&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;Do set &lt;code&gt;libvirt/images_type = rbd&lt;/code&gt; on Nova compute nodes&lt;/h2&gt;
-&lt;p&gt;In Nova (using the libvirt compute driver with KVM), you have several
-options of storing ephemeral disk images, that is, storage for any VM
-that is &lt;em&gt;not&lt;/em&gt; booted from a Cinder volume. You do so by setting the
-&lt;code&gt;images_type&lt;/code&gt; option in the &lt;code&gt;[libvirt]&lt;/code&gt; section in
-&lt;code&gt;nova‑compute.conf&lt;/code&gt;:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[libvirt]&lt;/span&gt;
-&lt;span class="na"&gt;images_type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;lt;type&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;The default type is &lt;code&gt;disk&lt;/code&gt;, which means that when you fire up a new
-VM, the following events occur:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;nova‑compute&lt;/code&gt; on your hypervisor node connects to the Glance API,
-  looks up the desired image, and downloads the image to your compute
-  node (into the &lt;code&gt;/var/lib/nova/instances/_base&lt;/code&gt; directory by
-  default).&lt;/li&gt;
-&lt;li&gt;It then creates a new qcow2 file which uses the downloaded image as
-  its backing file.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;This process uses up a fair amount of space on your compute nodes,
-and can quite seriously delay spawning a new VM if it has been
-scheduled to a host that hasn’t downloaded the desired image
-before. It also makes it impossible for such a VM to be live-migrated
-to another host without downtime.&lt;/p&gt;
-&lt;p&gt;Flipping &lt;code&gt;images_type&lt;/code&gt; to &lt;code&gt;rbd&lt;/code&gt; means the disk lives in the RBD
-backend, as an RBD clone of the original image, and can be created
-instantaneously. No delay on boot, no wasting space, all the benefits
-of
-clones. &lt;a href="http://docs.ceph.com/docs/jewel/rbd/rbd-openstack/#id2"&gt;Use it.&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;Do enable RBD caching on Nova compute nodes&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;librbd&lt;/code&gt;, the library that underpins the Qemu/KVM RBD storage driver,
-can enable a disk cache that uses the hypervisor host’s RAM for
-caching purposes. You should use this.&lt;/p&gt;
-&lt;p&gt;Yes, it’s a cache that is safe to use. On the one hand, the
-combination of &lt;code&gt;virtio-blk&lt;/code&gt; with the Qemu RBD storage driver &lt;strong&gt;will&lt;/strong&gt;
-properly honor disk flushes. That is to say, when an application
-inside your VM says “I want this data on disk now,” then &lt;code&gt;virtio‑blk&lt;/code&gt;,
-Qemu, and Ceph will all work together to only report the write as
-complete when it has been&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;written to the primary OSD,&lt;/li&gt;
-&lt;li&gt;replicated to the available replica OSDs,&lt;/li&gt;
-&lt;li&gt;acknowledged to have hit at least the persistent journal on all OSDs.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;In addition, Ceph RBD has an intelligent safeguard in place: even if
-it is configured to cache in write-back mode, &lt;em&gt;it will refuse to do
-so&lt;/em&gt; (meaning, it will operate in write-through mode) until it has
-received the first flush request from its user. Thus, if you run a VM
-that just never does that — because it has been misconfigured or its
-guest OS is just ages old — then RBD will stubbornly refuse to cache
-any writes. The corresponding RBD option is called
-&lt;a href="http://docs.ceph.com/docs/jewel/rbd/rbd-config-ref/#cache-settings"&gt;&lt;code&gt;rbd cache writethrough until flush&lt;/code&gt;&lt;/a&gt;,
-it defaults to &lt;code&gt;true&lt;/code&gt; and you should never disable it.&lt;/p&gt;
-&lt;p&gt;You can enable writeback caching for Ceph by setting the following
-&lt;code&gt;nova-compute&lt;/code&gt; configuration option:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[libvirt]&lt;/span&gt;
-&lt;span class="na"&gt;images_type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;rbd&lt;/span&gt;
-&lt;span class="na"&gt;...&lt;/span&gt;
-&lt;span class="na"&gt;disk_cachemodes&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"network=writeback"&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;And you just should.&lt;/p&gt;
-&lt;h2&gt;Do use separate pools for images, volumes, and ephemeral disks&lt;/h2&gt;
-&lt;p&gt;Now that you have enabled &lt;code&gt;show_image_direct_url=true&lt;/code&gt; in Glance,
-configured Cinder and &lt;code&gt;nova-compute&lt;/code&gt; to talk to Glance using the v2
-API, and configured &lt;code&gt;nova-compute&lt;/code&gt; with &lt;code&gt;libvirt/images_type=rbd&lt;/code&gt;, all
-your VMs and volumes will be using RBD clones. Clones can span
-multiple RADOS pools, meaning you can have an RBD image (and its
-snapshots) in one pool, and its clones in another.&lt;/p&gt;
-&lt;p&gt;You should do exactly that, for several reasons:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Separate pools means you can lock down access to those pools
-   separately. This is just a standard threat mitigation approach: if
-   your &lt;code&gt;nova-compute&lt;/code&gt; node gets compromised and the attacker can
-   corrupt or delete ephemeral disks, then that’s bad — but it would
-   be &lt;em&gt;worse&lt;/em&gt; if they could also corrupt your Glance images.&lt;/li&gt;
-&lt;li&gt;Separate pools also means that you can have different pool
-   settings, such as the settings for &lt;code&gt;size&lt;/code&gt; or &lt;code&gt;pg_num&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Most importantly, separate pools can use separate &lt;code&gt;crush_ruleset&lt;/code&gt;
-   settings. We’ll get back to this in a second, it’ll come in handy
-   shortly.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;It’s common to have three different pools: one for your Glance images
-(usually named &lt;code&gt;glance&lt;/code&gt; or &lt;code&gt;images&lt;/code&gt;), one for your Cinder volumes
-(&lt;code&gt;cinder&lt;/code&gt; or &lt;code&gt;volumes&lt;/code&gt;), and one for your VMs (&lt;code&gt;nova-compute&lt;/code&gt; or
-&lt;code&gt;vms&lt;/code&gt;).&lt;/p&gt;
-&lt;h2&gt;Don’t necessarily use SSDs for your Ceph OSD journals&lt;/h2&gt;
-&lt;p&gt;Of the recommendations in this article, this one will probably be the
-one that surprises the most people. Of course, conventional wisdom
-holds that you should &lt;em&gt;always&lt;/em&gt; put your OSD journals on fast OSDs, and
-that you should deploy SSDs and spinners in a 1:4 to 1:6 ratio, right?&lt;/p&gt;
-&lt;p&gt;Let’s take a look. Suppose you’re following the 1:6 approach, and your
-SATA spinners are capable of writing at 100 MB/s. 6 spinners make 6
-OSDs, and each OSD uses a journal device that’s on a partition on an
-enterprise SSD. Suppose further that the SSD is capable of writing at
-500 MB/s.&lt;/p&gt;
-&lt;p&gt;Congratulations, in that scenario you’ve just made your SSD your
-bottleneck. While you would be able to hit your OSDs at 600 MB/s on
-aggregate, your SSD limits you to about 83% of that.&lt;/p&gt;
-&lt;p&gt;In that scenario you &lt;em&gt;would&lt;/em&gt; actually be fine with a 1:4 ratio, but
-make your spindles just a little faster and the SSD advantage goes out
-the window again.&lt;/p&gt;
-&lt;p&gt;Now, of course, do consider the alternative: if you’re putting your
-journals on the same drive as your OSD filestores, then you
-effectively get only half the nominal bandwidth of your drive, on
-average, because you write everything twice, to the same device. So
-that means that &lt;em&gt;without&lt;/em&gt; SSDs, your effective spinner bandwidth is
-only about 50 MB/s, so the &lt;em&gt;total&lt;/em&gt; bandwidth you get out of 6 drives
-that way is more like 300 MB/s, against which 500 MB/s is still a
-substantial improvement.&lt;/p&gt;
-&lt;p&gt;So you will need to plug your own numbers into this, and make your own
-evaluation for price &lt;em&gt;and&lt;/em&gt; performance. Just don’t assume that journal
-SSD will be a panacea, or that it’s always a good idea to use them.&lt;/p&gt;
-&lt;h2&gt;Do create all-flash OSDs&lt;/h2&gt;
-&lt;p&gt;One thing your journal SSDs don’t help with are reads. So, what can you
-do to take advantage of SSDs on reads, too?&lt;/p&gt;
-&lt;p&gt;Make them OSDs. That is, not OSD &lt;em&gt;journals,&lt;/em&gt; but actual OSDs with a
-filestore &lt;em&gt;and&lt;/em&gt; journal. What this will create are OSDs that don’t
-just write fast, but read fast, too.&lt;/p&gt;
-&lt;h2&gt;Do put your all-flash OSDs into a separate CRUSH root&lt;/h2&gt;
-&lt;p&gt;Assuming you don’t run on all-flash hardware, but operate a
-cost-effective mixed cluster where some OSDs are spinners and others
-are SSDs (or NVMe devices or whatever), you obviously want to treat
-those OSDs separately. The simplest and easiest way to do that is to
-create a separate CRUSH &lt;code&gt;root&lt;/code&gt; in addition to the normally configured
-&lt;code&gt;default&lt;/code&gt; root.&lt;/p&gt;
-&lt;p&gt;For example, you could set up your CRUSH hierarchy as follows:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ID WEIGHT  TYPE NAME         UP/DOWN REWEIGHT PRIMARY-AFFINITY
-- 
--1 4.85994 root default
--2 1.61998     host elk
- 0 0.53999         osd.0          up  1.00000          1.00000 
- 1 0.53999         osd.1          up  1.00000          1.00000 
- 2 0.53999         osd.2          up  1.00000          1.00000 
--3 1.61998     host moose
- 3 0.53999         osd.3          up  1.00000          1.00000 
- 4 0.53999         osd.4          up  1.00000          1.00000 
- 5 0.53999         osd.5          up  1.00000          1.00000 
--4 1.61998     host reindeer
- 6 0.53999         osd.6          up  1.00000          1.00000 
- 7 0.53999         osd.7          up  1.00000          1.00000 
- 8 0.53999         osd.8          up  1.00000          1.00000
--5 4.85994 root highperf
--6 1.61998     host elk-ssd
- 9 0.53999         osd.9          up  1.00000          1.00000 
-10 0.53999         osd.10         up  1.00000          1.00000 
-11 0.53999         osd.11         up  1.00000          1.00000 
--7 1.61998     host moose-ssd
-12 0.53999         osd.12         up  1.00000          1.00000 
-13 0.53999         osd.13         up  1.00000          1.00000 
-14 0.53999         osd.14         up  1.00000          1.00000 
--8 1.61998     host reindeer-ssd
-15 0.53999         osd.15         up  1.00000          1.00000 
-16 0.53999         osd.16         up  1.00000          1.00000 
-17 0.53999         osd.17         up  1.00000          1.00000
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;In the example above, OSDs 0-8 are assigned to the &lt;code&gt;default&lt;/code&gt; root,
-whereas OSDs 9-17 (our SSDs) belong to the root &lt;code&gt;highperf&lt;/code&gt;. We can now
-create two separate CRUSH rulesets:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nx"&gt;rule&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;replicated_ruleset&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;ruleset&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;replicated&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;min_size&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;max_size&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;step&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;take&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;default&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;step&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;chooseleaf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;firstn&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;host&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;step&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;emit&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-
-&lt;span class="nx"&gt;rule&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;highperf_ruleset&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;ruleset&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;replicated&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;min_size&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;max_size&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;step&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;take&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;highperf&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;step&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;chooseleaf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;firstn&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;host&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;step&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;emit&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;The default ruleset, &lt;code&gt;replicated_ruleset&lt;/code&gt;, picks OSDs from the
-&lt;code&gt;default&lt;/code&gt; root, whereas &lt;code&gt;step take highperf&lt;/code&gt; in &lt;code&gt;highperf_ruleset&lt;/code&gt;
-means it covers only OSDs in the &lt;code&gt;highperf&lt;/code&gt; root.&lt;/p&gt;
-&lt;h2&gt;Do assign individual pools to your all-flash ruleset&lt;/h2&gt;
-&lt;p&gt;Assigning individual pools to a new CRUSH ruleset (and hence, to a
-whole different set of OSDs) is a matter of issuing a single command:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ceph osd pool set &amp;lt;name&amp;gt; crush_ruleset &amp;lt;number&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;… where &lt;code&gt;&amp;lt;name&amp;gt;&lt;/code&gt; name of your pool and &lt;code&gt;&amp;lt;number&amp;gt;&lt;/code&gt; is the numerical
-ID of your ruleset as per your CRUSH map. You can do this while the
-pool is online, and while clients are accessing its data — although
-of course, there will be a lot of remapping and backfilling so your
-overall performance may be affected somewhat.&lt;/p&gt;
-&lt;p&gt;Now, the assumption is that you will have more spinner storage than
-SSD storage. Thus, you will want to select individual pools for your
-all-flash OSDs. Here are a handful of pools that might come in handy
-as first candidates to migrate to all-flash. You can interpret the
-list below as a priority list: as you add more SSD capacity to your
-cluster, you can move pools over to all-flash storage one by one.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Nova ephemeral RBD pools (&lt;code&gt;vms&lt;/code&gt;, &lt;code&gt;nova-compute&lt;/code&gt;)&lt;/li&gt;
-&lt;li&gt;radosgw bucket indexes (&lt;code&gt;.rgw.buckets.index&lt;/code&gt; and friends)
-   — if you’re using radosgw as your drop-in OpenStack Swift
-   replacement&lt;/li&gt;
-&lt;li&gt;Cinder volume pools (&lt;code&gt;cinder&lt;/code&gt;, &lt;code&gt;volumes&lt;/code&gt;)&lt;/li&gt;
-&lt;li&gt;radosgw data pools (&lt;code&gt;.rgw.buckets&lt;/code&gt; and friends) — if you need
-   low-latency reads and writes on Swift storage&lt;/li&gt;
-&lt;li&gt;Glance image pools (&lt;code&gt;glance&lt;/code&gt;, &lt;code&gt;images&lt;/code&gt;)&lt;/li&gt;
-&lt;li&gt;Cinder backup pools (&lt;code&gt;cinder-backup&lt;/code&gt;) — usually the last pool to
-   convert to all-flash OSDs.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2&gt;Do designate some non-Ceph compute hosts with low-latency local storage&lt;/h2&gt;
-&lt;p&gt;Now, there will undoubtedly be some applications where Ceph does not
-produce the latency you desire. Or, for that matter, &lt;em&gt;any&lt;/em&gt;
-network-based storage. That’s just a direct consequence of recent
-developments in storage and network technology.&lt;/p&gt;
-&lt;p&gt;Just a few years ago, the average latency of a single-sector uncached
-write to a block device was on the order of a millisecond, or 1,000
-microseconds (µs). In contrast, the latency incurred on a TCP packet
-carrying a 512-byte (1-sector) payload was about 50 µs, which makes
-for a 100-µs round trip. All in all, the &lt;em&gt;additional&lt;/em&gt; latency incurred
-from writing to a device over the network, as opposed to locally, was
-approximately 10%.&lt;/p&gt;
-&lt;p&gt;In the interim, a single-sector write for a device of the same price
-is itself about 100 µs, tops, with some reasonably-priced devices down
-to about 40 µs. Network latency, in contrast, hasn’t changed all that
-much — going down about 20% from Gigabit Ethernet to 10 GbE.&lt;/p&gt;
-&lt;p&gt;So even going to a single, un-replicated SSD device over the network
-will now be 40 + 80 = 120 µs latency, vs. just 40 µs locally. That’s
-not a 10% overhead anymore, that’s a whopping &lt;em&gt;factor&lt;/em&gt; of 3.&lt;/p&gt;
-&lt;p&gt;With Ceph, that gets worse. Ceph writes data multiple times, first to
-the primary OSD, then (in parallel) to all replicas. So in contrast to
-a single-sector write at 40 µs, we now incur a latency of at least two
-writes, &lt;em&gt;plus&lt;/em&gt; two network round-trips, to that’s 40 x 2 + 80 x 2 =
-240 µs, &lt;em&gt;six times&lt;/em&gt; the local write latency.&lt;/p&gt;
-&lt;p&gt;The good news is, &lt;em&gt;most&lt;/em&gt; applications don’t care about this sort of
-latency overhead, because they’re not latency-critical at all. The bad
-news is, &lt;em&gt;some&lt;/em&gt; will.&lt;/p&gt;
-&lt;p&gt;So, should you ditch Ceph because of that? Nope. But do consider
-adding a handful of compute nodes that are &lt;em&gt;not&lt;/em&gt; configured with
-&lt;code&gt;libvirt/images_type=rbd&lt;/code&gt;, but that use local disk images instead. Roll
-those hosts into a
-&lt;a href="http://docs.openstack.org/admin-guide/dashboard-manage-host-aggregates.html"&gt;host aggregate,&lt;/a&gt;
-and map them to a specific flavor. Recommend to your users that they
-use that flavor for low-latency applications.&lt;/p&gt;
-&lt;hr/&gt;
-&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="OpenStack"></category><category term="Ceph"></category></entry></feed>
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Open edX"></category></entry></feed>
