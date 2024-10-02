@@ -142,6 +142,7 @@ LINKS = []
 
 # Social links, also displayed on the sidebar.
 SOCIAL = (('mastodon', 'https://mastodon.social/@xahteiwi'),
+          ('mastodon', 'https://fedifreu.de/@xahteiwi'),
           ('linkedin', 'https://www.linkedin.com/in/fghaas'),
           ('github', 'https://github.com/fghaas'))
 
