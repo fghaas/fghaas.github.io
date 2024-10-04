@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/all.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2024-05-27T21:00:00+00:00</updated><entry><title>3 places to eat: Florence</title><link href="https://xahteiwi.eu/blog/2024/05/27/3-places-to-eat-flr/" rel="alternate"></link><published>2024-05-27T21:00:00+00:00</published><updated>2024-05-27T21:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2024-05-27:/blog/2024/05/27/3-places-to-eat-flr/</id><summary type="html">&lt;p&gt;Find yourself peckish in Firenze? I can help.&lt;/p&gt;</summary><content type="html">&lt;p&gt;A recent trip to PyCon Italia prompts me to add the Tuscan capital to this series.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/all.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2024-10-04T20:00:00+00:00</updated><entry><title>Keynote-worthy talks (I think?)</title><link href="https://xahteiwi.eu/blog/2024/10/04/keynote-worthy-talks/" rel="alternate"></link><published>2024-10-04T20:00:00+00:00</published><updated>2024-10-04T20:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2024-10-04:/blog/2024/10/04/keynote-worthy-talks/</id><summary type="html">&lt;p&gt;Maybe one of these is a good fit for your conference?&lt;/p&gt;</summary><content type="html">&lt;p&gt;As of late, I’ve been doing a number of talks that weren’t so much focused on specific technologies like I’ve done in the past.&lt;/p&gt;
+&lt;p&gt;Rather, they talk about broader issues (still mostly related to what I do for a living, though), and some conference organisers have approached me after the talk expressing regret that they didn’t put it &lt;a href="https://xahteiwi.eu/blog/2024/02/10/my-talks-are-good/"&gt;in front of a bigger audience&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;So, just in case: maybe your next conference is looking for a keynote?
+Here are a few talks I think might be worthy of such a thing. All are approximately 45 minutes long.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Quit Simplifying&lt;/strong&gt; (&lt;a href="https://xahteiwi.eu/quit-simplifying/"&gt;slides&lt;/a&gt;, &lt;a href="https://youtu.be/lchJi2B_DlE"&gt;video from Config Management Camp 2024&lt;/a&gt;) is a talk in which I talk about the ever-increasing complexity of systems, the futility of simplification, and thus the necessity to keep things as simple as possible from the get-go.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Creativity: How we lost it, why that’s bad, and how we get it back&lt;/strong&gt; (&lt;a href="https://xahteiwi.eu/pyconit2023/"&gt;slides&lt;/a&gt;, &lt;a href="https://youtu.be/dKuGRV0hlA0"&gt;video from PyCon Italia 2023&lt;/a&gt;) talks about the value of creativity, its necessity in business, the myriad ways in which contemporary ways of working are detrimental to creativity, and simple and effective measures to foster creativity.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;It’s Your Own Damn Fault: Why great people don’t want to work with you&lt;/strong&gt; addresses hiring challenges in many modern organisations and the way that many of those organisations fail to attract good people by repeatedly shooting themselves in the foot.
+This talk I’ve thus far only given in German, and I am currently working on an English version.
+The slides for the German edition are in &lt;a href="https://github.com/fghaas/linuxdayat2024/tree/main/markdown"&gt;this GitHub repository&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;No, We Won’t Have a Video Call For That&lt;/strong&gt; (&lt;a href="https://xahteiwi.eu/froscon2020/"&gt;slides&lt;/a&gt;, &lt;a href="https://media.ccc.de/v/froscon2020-2605-no_we_won_t_have_a_video_call_for_that"&gt;video from FrOSCon 2020&lt;/a&gt;) was a talk I gave at the height of Covid lockdowns in 2020, thinking it was the last time I’ll ever have to do a distributed work talk because &lt;em&gt;surely&lt;/em&gt; everyone would have figured it out by now.
+Little did I know.
+Not only did the writeup of that talk get &lt;a href="https://news.ycombinator.com/item?id=28636536"&gt;slashdotted by Hacker News&lt;/a&gt; more than a year later, but it seems that just a few years on, most companies have completely forgotten what they learned during lockdowns.
+So, if you think your conference benefits from a talk about distributed work &lt;em&gt;that works,&lt;/em&gt; maybe an updated reprise of that talk might be helpful.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;em&gt;Want one of these for your conference?&lt;/em&gt; 
+Please feel free to contact me via one of the channels you’ll see just below my mug on the left, or at the top of your screen if you’re reading this in portrait mode.&lt;/p&gt;</content><category term="blog"></category><category term="Work"></category><category term="Conference"></category></entry><entry><title>3 places to eat: Florence</title><link href="https://xahteiwi.eu/blog/2024/05/27/3-places-to-eat-flr/" rel="alternate"></link><published>2024-05-27T21:00:00+00:00</published><updated>2024-05-27T21:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2024-05-27:/blog/2024/05/27/3-places-to-eat-flr/</id><summary type="html">&lt;p&gt;Find yourself peckish in Firenze? I can help.&lt;/p&gt;</summary><content type="html">&lt;p&gt;A recent trip to PyCon Italia prompts me to add the Tuscan capital to this series.&lt;/p&gt;
 &lt;h2&gt;Da’ Vinattieri&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://osm.org/go/xdQQAmTx5--?m="&gt;Via Santa Margherita, 6R, Firenze&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Over-the-counter street food. Lorenzo the local tour guide recommended
@@ -12442,175 +12457,4 @@ glance&lt;span class="w"&gt; &lt;/span&gt;--os-image-api-version&lt;span class="
 &lt;p&gt;Now you can happily fire up VMs, or clone your image into a volume and
 fire a VM up from that.&lt;/p&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Ceph"></category><category term="OpenStack"></category></entry><entry><title>Replacing the built-in Open edX forum with a suitable alternative</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/replace-edx-forum/" rel="alternate"></link><published>2017-02-02T00:00:00+00:00</published><updated>2017-02-02T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2017-02-02:/resources/hints-and-kinks/replace-edx-forum/</id><summary type="html">&lt;p&gt;Open edX comes with a built-in
-&lt;a href="http://edx.readthedocs.io/projects/open-edx-building-and-running-a-course/en/latest/manage_live_course/discussions.html"&gt;discussion forum&lt;/a&gt;
-service. Many Open edX users find this service less than optimal: it
-is the only edX service to require Ruby, it depends on a Ruby version
-that is outdated and
-&lt;a href="https://github.com/edx/configuration/issues/3589"&gt;no longer receives security updates (although a fix for that is on …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;Open edX comes with a built-in
-&lt;a href="http://edx.readthedocs.io/projects/open-edx-building-and-running-a-course/en/latest/manage_live_course/discussions.html"&gt;discussion forum&lt;/a&gt;
-service. Many Open edX users find this service less than optimal: it
-is the only edX service to require Ruby, it depends on a Ruby version
-that is outdated and
-&lt;a href="https://github.com/edx/configuration/issues/3589"&gt;no longer receives security updates (although a fix for that is on the way),&lt;/a&gt;
-it and generally feels like overkill to many users.&lt;/p&gt;
-&lt;p&gt;Thankfully, since the Open edX Eucalyptus release it’s been quite easy
-to replace the course forum with an alternative. Here at hastexo,
-we’re fans of &lt;a href="//www.disqus.com"&gt;Disqus&lt;/a&gt; (you may have noticed we also
-use it around out web site), so let’s see what we can do to drop the
-Open edX Forum and replace it with Disqus.&lt;/p&gt;
-&lt;h2&gt;Step 1: Locate your course’s &lt;code&gt;policy.json&lt;/code&gt; file&lt;/h2&gt;
-&lt;p&gt;If you keep your course materials in Git or some other
-version-controlled repository, you’ll already be familiar with the
-&lt;a href="http://edx.readthedocs.io/projects/edx-open-learning-xml/en/latest/directory-structure.html#olx-and-directory-file-structures"&gt;directory structure of an OLX course tree.&lt;/a&gt;
-If you’re not,
-&lt;a href="http://help.appsembler.com/article/157-how-to-export-and-import-a-course"&gt;just use edX Studio&lt;/a&gt;
-to export your course into a compressed archive, download it, and
-extract it on your local machine.&lt;/p&gt;
-&lt;p&gt;Locate the &lt;code&gt;policies/_base&lt;/code&gt; directory. Find the &lt;code&gt;policy.json&lt;/code&gt; file
-located therein. It might look like this:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="s2"&gt;"course/201702"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;"language"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"en"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;"invitation_only"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;"start"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"2017-02-01T00:00:00Z"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;"advertised_start"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"2017-02-01T00:00:00Z"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;"end"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"2017-02-28T23:59:59Z"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;"is_new"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;"catalog_visibility"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"both"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;"max_student_enrollments_allowed"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;null&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;"due"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;null&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;"giturl"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;null&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;"course_image"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"images_course_image.jpg"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;"advanced_modules"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"hastexo"&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;"hide_from_toc"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;false&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;"ispublic"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;false&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;"rerandomize"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"never"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;"show_calculator"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;false&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;"showanswer"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"attempted"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;"days_early_for_beta"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;null&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;"discussion_topics"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="s2"&gt;"General"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"id"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"i4x-hastexo-hx212-course-201702"&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;"tabs"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"name"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Courseware"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"type"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"courseware"&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"name"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Course Info"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"type"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"course_info"&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"name"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Textbooks"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"type"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"textbooks"&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"name"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Discussion"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"type"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"discussion"&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"name"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Wiki"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"type"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"wiki"&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"name"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Progress"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"type"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"progress"&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Note the &lt;code&gt;tabs&lt;/code&gt; list. It contains the list of course tabs
-(&lt;a href="http://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/course_assets/pages.html"&gt;which edX Studio, confusingly, calls “pages”&lt;/a&gt;).&lt;/p&gt;
-&lt;h2&gt;Step 2: Remove the default Discussion tab&lt;/h2&gt;
-&lt;p&gt;You can now edit &lt;code&gt;policy.json&lt;/code&gt;, and drop the &lt;code&gt;Discussion&lt;/code&gt; entry from
-the &lt;code&gt;tabs&lt;/code&gt; list, to make it look like so:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;"tabs"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"name"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Courseware"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"type"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"courseware"&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"name"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Course Info"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"type"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"course_info"&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"name"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Textbooks"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"type"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"textbooks"&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"name"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Wiki"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"type"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"wiki"&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"name"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Progress"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"type"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"progress"&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Maybe you also want to remove the course wiki. Just keep whichever
-tabs you’d like to keep.&lt;/p&gt;
-&lt;h2&gt;Step 3: Add a “static” tab&lt;/h2&gt;
-&lt;p&gt;In place of the old &lt;code&gt;Discussion&lt;/code&gt; tab (which, you may have noticed, was
-of a special type conspicuously named &lt;code&gt;discussion&lt;/code&gt;), you can now put a
-tab of different, simpler type: &lt;code&gt;static_tab&lt;/code&gt;. Like so:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;"tabs"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"name"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Courseware"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"type"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"courseware"&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"name"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Course Info"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"type"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"course_info"&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"name"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Textbooks"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"type"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"textbooks"&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"name"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Discussion"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"type"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"static_tab"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"url_slug"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"discussion"&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"name"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Wiki"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"type"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"wiki"&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"name"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Progress"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"type"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"progress"&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Note that a &lt;code&gt;static_tab&lt;/code&gt; type tab also requires a value
-&lt;code&gt;url_slug&lt;/code&gt;. What’s that one about, you ask?&lt;/p&gt;
-&lt;h2&gt;Step 4: add static content&lt;/h2&gt;
-&lt;p&gt;Whatever you put into &lt;code&gt;url_slug&lt;/code&gt; tells Open edX to go look into the
-&lt;code&gt;tabs&lt;/code&gt; subdirectory of your course root, and find a properly named
-file there. In our case, that file needs to be named
-&lt;code&gt;discussion.html&lt;/code&gt;, because we defined &lt;code&gt;"url_slug": "discussion"&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;So, head over to Disqus and grab the generated code from there, and
-then stick it into &lt;code&gt;tabs/discussion.html&lt;/code&gt;. Something like this:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"disqus_thread"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;&lt;span class="c1"&gt;// &amp;lt;![CDATA[&lt;/span&gt;
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// DON'T EDIT BELOW THIS LINE&lt;/span&gt;
-&lt;span class="kd"&gt;var&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;d&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;s&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;d&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;createElement&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'script'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="nx"&gt;s&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;src&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'//&amp;lt;your Disqus site domain name&amp;gt;/embed.js'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="nx"&gt;s&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;setAttribute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'data-timestamp'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="ow"&gt;new&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;Date&lt;/span&gt;&lt;span class="p"&gt;());&lt;/span&gt;
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;d&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;head&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;||&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;d&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;body&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="nx"&gt;appendChild&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;s&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="p"&gt;})();&lt;/span&gt;
-&lt;span class="c1"&gt;// ]]&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;noscript&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Please enable JavaScript to view the &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://disqus.com/?ref_noscript"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;comments powered by Disqus.&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;noscript&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;Step 5: deploy&lt;/h2&gt;
-&lt;p&gt;Re-compress your tarball,
-&lt;a href="http://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/course_assets/pages.html"&gt;upload to Studio&lt;/a&gt;
-or run
-&lt;a href="https://openedx.atlassian.net/wiki/display/OpenOPS/Managing+OpenEdX+Tips+and+Tricks#ManagingOpenEdXTipsandTricks-manage.pycommands"&gt;&lt;code&gt;manage.py import&lt;/code&gt;,&lt;/a&gt;
-and you’re done!&lt;/p&gt;
-&lt;hr/&gt;
-&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Open edX"></category></entry></feed>
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="Ceph"></category><category term="OpenStack"></category></entry></feed>
