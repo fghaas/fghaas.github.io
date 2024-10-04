@@ -148,6 +148,7 @@ SOCIAL = (
     ('xing', 'https://www.xing.com/profile/Florian_Haas2/'),
     ('github', 'https://github.com/fghaas'),
     ('rss', '/feeds/all.rss.xml'),
+    ('envelope', 'mailto:xahteiwi+ifyoudontremovethisyoullgostraighttodevnull@mailbox.org'),
 )
 
 DEFAULT_PAGINATION = 5
