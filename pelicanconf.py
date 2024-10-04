@@ -141,10 +141,14 @@ MENUITEMS = [
 LINKS = []
 
 # Social links, also displayed on the sidebar.
-SOCIAL = (('mastodon', 'https://mastodon.social/@xahteiwi'),
-          ('mastodon', 'https://fedifreu.de/@xahteiwi'),
-          ('linkedin', 'https://www.linkedin.com/in/fghaas'),
-          ('github', 'https://github.com/fghaas'))
+SOCIAL = (
+    ('mastodon', 'https://mastodon.social/@xahteiwi'),
+    ('mastodon', 'https://fedifreu.de/@xahteiwi'),
+    ('linkedin', 'https://www.linkedin.com/in/fghaas'),
+    ('xing', 'https://www.xing.com/profile/Florian_Haas2/'),
+    ('github', 'https://github.com/fghaas'),
+    ('rss', '/feeds/all.rss.xml'),
+)
 
 DEFAULT_PAGINATION = 5
 
