@@ -22,7 +22,9 @@ body {
 	    &.sc-twitter,
 	    &.sc-mastodon,
 	    &.sc-github,
-	    &.sc-linkedin {
+	    &.sc-linkedin,
+	    &.sc-rss,
+	    &.sc-xing {
 		background-color: transparent;
 	    }
 	    &:hover {

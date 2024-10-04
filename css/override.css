@@ -18,7 +18,7 @@ body .footnote {
   font-size: 90% !important;
 }
 
-body ul.social a.sc-twitter, body ul.social a.sc-mastodon, body ul.social a.sc-github, body ul.social a.sc-linkedin {
+body ul.social a.sc-twitter, body ul.social a.sc-mastodon, body ul.social a.sc-github, body ul.social a.sc-linkedin, body ul.social a.sc-rss, body ul.social a.sc-xing {
   background-color: transparent;
 }
 
