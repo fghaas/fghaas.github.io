@@ -1,6 +1,7 @@
 Title: Exploding memory usage in Django/uwsgi containers
 Date: 2024-12-07 09:00
 Slug: max-fd
+Tags: Kubernetes, Django, Containers, systemd
 Summary: We recently came across an interesting problem at work while migrating from one flavor of Kubernetes to another. It's sufficiently obscure to merit a brief write-up for reference.
 
 When running [Open edX](https://openedx.org/) on [Kubernetes](https://kubernetes.io) clusters, one of its [Pods](https://kubernetes.io/docs/concepts/workloads/pods/) is the `lms` Pod, which runs the core of the Open edX Learning Management System ([LMS](https://github.com/openedx/edx-platform/tree/master/lms)).
