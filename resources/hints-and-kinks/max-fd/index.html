@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index,follow" />
+
+
+    <link rel="stylesheet" type="text/css" href="../../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../../theme/pygments/github.min.css">
+
+    <link rel="stylesheet" 
+    href="../../../theme/tipuesearch/tipuesearch.min.css" />
+
+
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/solid.css">
+
+  <link rel="stylesheet" type="text/css" href="/css/override.css">
+
+  <link rel="shortcut icon" href="https://xahteiwi.eu/favicon.svg" type="image/x-icon">
+  <link rel="icon" href="https://xahteiwi.eu/favicon.svg" type="image/x-icon">
+
+
+  <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+  <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+
+<script defer data-domain="xahteiwi.eu" src="https://plausible.io/js/plausible.js"></script>
+
+
+
+
+ 
+
+<meta name="author" content="Florian Haas" />
+<meta name="description" content="We recently came across an interesting problem at work while migrating from one flavor of Kubernetes to another. It’s sufficiently obscure to merit a brief write-up for reference." />
+<meta name="keywords" content="">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="Exploding memory usage in Django/uwsgi containers"/>
+  <meta property="og:description" content="We recently came across an interesting problem at work while migrating from one flavor of Kubernetes to another. It’s sufficiently obscure to merit a brief write-up for reference."/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../../resources/hints-and-kinks/max-fd/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2024-12-07 09:00:00+00:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../../author/florian-haas.html">
+  <meta property="article:section" content="hints-and-kinks"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; Exploding memory usage in Django/uwsgi containers</title>
+
+
+</head>
+<body >
+
+<aside>
+  <div>
+    <a href="../../../">
+      <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+    </a>
+
+    <h1>
+      <a href="../../../"></a>
+    </h1>
+
+
+    <form class="navbar-search" action="../../../search.html" role="search">
+      <input type="text" name="q" id="tipue_search_input" placeholder="Search...">
+    </form>
+
+
+    <ul class="social">
+      <li>
+        <a class="sc-mastodon"
+rel="me"           href="https://mastodon.social/@xahteiwi"
+           target="_blank">
+          <i class="fa-brands fa-mastodon"></i>
+        </a>
+      </li>
+      <li>
+        <a class="sc-mastodon"
+rel="me"           href="https://fedifreu.de/@xahteiwi"
+           target="_blank">
+          <i class="fa-brands fa-mastodon"></i>
+        </a>
+      </li>
+      <li>
+        <a class="sc-linkedin"
+           href="https://www.linkedin.com/in/fghaas"
+           target="_blank">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="sc-xing"
+           href="https://www.xing.com/profile/Florian_Haas2/"
+           target="_blank">
+          <i class="fa-brands fa-xing"></i>
+        </a>
+      </li>
+      <li>
+        <a class="sc-github"
+           href="https://github.com/fghaas"
+           target="_blank">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </li>
+      <li>
+        <a class="sc-rss"
+           href="/feeds/all.rss.xml"
+           target="_blank">
+          <i class="fa-solid fa-rss"></i>
+        </a>
+      </li>
+      <li>
+        <a class="sc-envelope"
+rel="me"           href="mailto:xahteiwi+ifyoudontremovethisyoullgostraighttodevnull@mailbox.org"
+           target="_blank">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</aside>
+  <main>
+
+<nav>
+  <a href="../../../">Home</a>
+
+  <a href="/category/hints-and-kinks.html">Tech</a>
+  <a href="/category/presentations.html">Talks</a>
+  <a href="/category/blog.html">Thoughts</a>
+  <a href="">​</a>
+  <a href="/about/">About</a>
+  <a href="/comments/">Comments</a>
+  <a href="/legal/">Legal</a>
+  <a href="/privacy/">Privacy</a>
+  <a href="">​</a>
+  <a href="/categories.html">Categories</a>
+  <a href="/tags.html">Tags</a>
+  <a href="">​</a>
+
+  <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+  <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+</nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="max-fd">Exploding memory usage in Django/uwsgi containers</h1>
+    <p>
+      Posted on Sat 07 December 2024 in <a href="../../../category/hints-and-kinks.html">hints-and-kinks</a>
+
+        &#8226; 3 min read
+    </p>
+  </header>
+
+
+  <div>
+    <p>When running <a href="https://openedx.org/">Open edX</a> on <a href="https://kubernetes.io">Kubernetes</a> clusters, one of its <a href="https://kubernetes.io/docs/concepts/workloads/pods/">Pods</a> is the <code>lms</code> Pod, which runs the core of the Open edX Learning Management System (<a href="https://github.com/openedx/edx-platform/tree/master/lms">LMS</a>).</p>
+<p>This is a relatively complex <a href="https://www.djangoproject.com/">Django</a> application, which runs in the Pod’s sole container.
+Said Django application is being launched with <a href="https://uwsgi-docs.readthedocs.io/">uWSGI</a>.</p>
+<p>At work, we had previously run this platform on Kubernetes clusters managed with <a href="https://docs.openstack.org/magnum/">OpenStack Magnum</a>, and were in the process of migrating to <a href="https://gardener.cloud/">Gardener</a>.
+Apart from the fact that we were upgrading to a newer Kubernetes release, this also meant that the base operating system of our Kubernetes worker nodes changed from <a href="https://fedoraproject.org/coreos/">Fedora CoreOS</a> to <a href="https://github.com/gardenlinux/gardenlinux">Garden Linux</a> (which is effectively a Kubernetes-optimised Debian).
+The virtualisation platform underpinning the Kubernetes cluster remained the same (<a href="https://docs.openstack.org/">OpenStack</a>).</p>
+<p>Mid-migration, we suddenly noticed that our cluster was <a href="https://en.wikipedia.org/wiki/Out_of_memory#Recovery">oom-killing</a> our <code>lms</code> pods.
+Now this shouldn’t happen, for the following reasons:</p>
+<ul>
+<li>Normally, Kubernetes only kills a Pod for excessive memory usage when a <a href="https://kubernetes.io/docs/tasks/configure-pod-container/assign-memory-resource/">memory limit</a> is set on that Pod, which wasn’t the case.</li>
+<li>Otherwise (that is, with no memory limit set), Pods get killed only by the “regular” kernel oom-killer, and that should only happen when the Pod is grossly misconfigured — that is, its actual memory usage far exceeds its configured <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits">memory request</a>.</li>
+</ul>
+<p>We quickly found out (via <code>kubectl top pod</code>) that we were dealing with the latter of these two: our <code>lms</code> Pod was consuming a whopping 8 GiB of memory when running on the Gardener-managed cluster — nearly 4 times the memory request of 2 GiB.</p>
+<p>This had us scratching our heads, for on the Magnum-managed cluster it was previously running on, that same pod had typically consumed only 80-120 MiB of memory (with occasional spikes).
+Thus, we were dealing with baseline memory usage that had suddenly increased by two orders of magnitude.</p>
+<p>Now to explain this memory usage jump, you’ll need this background information:</p>
+<ol>
+<li>The <code>corerouter</code> plugin in <code>uwsgi</code> maintains an array of file descriptor references.</li>
+<li>The size of this array, and with it its memory usage, is a multiple of the value set for <code>uwsgi</code>’s <code>max-fd</code> configuration option.<sup id="fnref:corerouter"><a class="footnote-ref" href="#fn:corerouter">1</a></sup></li>
+<li>If <code>max-fd</code> has not been set in the <code>uwsgi</code> configuration, its default is the maximum number of open file handles allowed for the process per the system-wide configuration.</li>
+<li>Said default can be defined by the <code>nofiles</code> <a href="https://www.man7.org/linux/man-pages/man5/limits.conf.5.html">ulimit</a>, or a <a href="https://wiki.archlinux.org/title/Cgroups">cgroups</a> restriction.
+   A cgroups restriction is also what systemd uses to implement <a href="https://www.freedesktop.org/software/systemd/man/latest/systemd.exec.html#Process%20Properties">the <code>LimitNOFILE</code> option</a>, which can be set on any systemd unit.<sup id="fnref:man-outdated"><a class="footnote-ref" href="#fn:man-outdated">2</a></sup></li>
+<li>If neither the ulimit nor a cgroups restriction is in place, <a href="https://www.kernel.org/doc/Documentation/sysctl/fs.txt">the <code>fs.nr_open</code> sysctl</a>, if set, acts as a backstop. </li>
+</ol>
+<p>Prior to release 256, systemd effectively <a href="https://github.com/systemd/systemd/pull/29322">bumped the default</a> for <code>LimitNOFILE</code> from 1048576 (2²⁰) to <code>infinity</code>, which meant that rather than setting its own cgroups limit, it would rely on <code>fs.nr_open</code>.
+And <em>that</em> value was recently upped in some distributions to 1073741824 (2³⁰) — an increase by a factor of 2¹⁰ or 1024 over the previously applicable value.</p>
+<p>This change was also applied on Debian (which Garden Linux is based on), and it was even <a href="https://lists.debian.org/debian-devel/2024/06/msg00041.html">discussed on the Debian mailing list</a> — where ironically, concerns about raising this limit were pre-emptively quashed with the assertion that file descriptors are such an “extremely cheap resource” that it does not hurt to allow absurdly high numbers of them.</p>
+<p>In the <code>uwsgi</code> case, however, this had the somewhat devastating effect of increasing memory usage to insane levels.</p>
+<p>To their credit, the Garden Linux developers identified this flaw (which, to my knowledge was baked into their version 1592.2), and <a href="https://github.com/gardenlinux/gardenlinux/pull/2442">fixed it</a> in version 1592.3.
+Still, to insulate ourselves from further such issues, we have opted to reconfigure our systems to run <code>uwsgi</code> with an explicitly defined <code>max-fd</code> option, set to the prior system-wide default of 1048576 (although setting it to something as low as 1024 would <em>probably</em> work too). </p>
+<h3>Acknowledgements</h3>
+<p>Lothar Gesslein, Brennan Kinney, Piotr Kucułyma, Namrata Sitlani, and Maari Tamm all contributed to the findings discussed in this article.</p>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:corerouter">
+<p>See <a href="https://github.com/unbit/uwsgi/blob/master/plugins/corerouter/corerouter.c#L705">the source</a>, which at the time of writing reads:
+  <code>ucr-&gt;cr_table = uwsgi_malloc(sizeof(struct corerouter_session *) * uwsgi.max_fd);</code> <a class="footnote-backref" href="#fnref:corerouter" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:man-outdated">
+<p>As far as I can tell, at the time of writing the table captioned “Resource limit directives” in the <code>systemd.exec</code> man page is outdated and incorrect as far as <code>LimitNOFILE</code>’s default is concerned, and also the “Don’t use” admonition seems misguided at this point. <a class="footnote-backref" href="#fnref:man-outdated" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+  </div>
+  <div class="tag-cloud">
+    <p>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+<footer>
+<p>
+  &copy; 2024  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p></footer>  </main>
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+</body>
+</html>
