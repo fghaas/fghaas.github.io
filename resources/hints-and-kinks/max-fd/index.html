@@ -49,7 +49,7 @@
 
 
   <meta property="og:site_name" content="xahteiwi.eu"/>
-  <meta property="og:title" content="Exploding memory usage in Django/uwsgi containers"/>
+  <meta property="og:title" content="Exploding memory usage in Django/uWSGI containers"/>
   <meta property="og:description" content="We recently came across an interesting problem at work while migrating from one flavor of Kubernetes to another. It’s sufficiently obscure to merit a brief write-up for reference."/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:url" content="../../../resources/hints-and-kinks/max-fd/"/>
@@ -64,7 +64,7 @@
   <meta property="article:tag" content="systemd"/>
   <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
 
-  <title>xahteiwi.eu &ndash; Exploding memory usage in Django/uwsgi containers</title>
+  <title>xahteiwi.eu &ndash; Exploding memory usage in Django/uWSGI containers</title>
 
 
 </head>
@@ -166,7 +166,7 @@ rel="me"           href="mailto:xahteiwi+ifyoudontremovethisyoullgostraighttodev
 <article class="single">
   <header>
       
-    <h1 id="max-fd">Exploding memory usage in Django/uwsgi containers</h1>
+    <h1 id="max-fd">Exploding memory usage in Django/uWSGI containers</h1>
     <p>
       Posted on Sat 07 December 2024 in <a href="../../../category/hints-and-kinks.html">hints-and-kinks</a>
 
@@ -193,9 +193,9 @@ Now this shouldn’t happen, for the following reasons:</p>
 Thus, we were dealing with baseline memory usage that had suddenly increased by two orders of magnitude.</p>
 <p>Now to explain this memory usage jump, you’ll need this background information:</p>
 <ol>
-<li>The <code>corerouter</code> plugin in <code>uwsgi</code> maintains an array of file descriptor references.</li>
-<li>The size of this array, and with it its memory usage, is a multiple of the value set for <code>uwsgi</code>’s <code>max-fd</code> configuration option.<sup id="fnref:corerouter"><a class="footnote-ref" href="#fn:corerouter">1</a></sup></li>
-<li>If <code>max-fd</code> has not been set in the <code>uwsgi</code> configuration, its default is the maximum number of open file handles allowed for the process per the system-wide configuration.</li>
+<li>The <code>corerouter</code> plugin in uWSGI maintains an array of file descriptor references.</li>
+<li>The size of this array, and with it its memory usage, is a multiple of the value set for uWSGI’s <code>max-fd</code> configuration option.<sup id="fnref:corerouter"><a class="footnote-ref" href="#fn:corerouter">1</a></sup></li>
+<li>If <code>max-fd</code> has not been set in the uWSGI configuration, its default is the maximum number of open file handles allowed for the process per the system-wide configuration.</li>
 <li>Said default can be defined by the <code>nofiles</code> <a href="https://www.man7.org/linux/man-pages/man5/limits.conf.5.html">ulimit</a>, or a <a href="https://wiki.archlinux.org/title/Cgroups">cgroups</a> restriction.
    A cgroups restriction is also what systemd uses to implement <a href="https://www.freedesktop.org/software/systemd/man/latest/systemd.exec.html#Process%20Properties">the <code>LimitNOFILE</code> option</a>, which can be set on any systemd unit.<sup id="fnref:man-outdated"><a class="footnote-ref" href="#fn:man-outdated">2</a></sup></li>
 <li>If neither the ulimit nor a cgroups restriction is in place, <a href="https://www.kernel.org/doc/Documentation/sysctl/fs.txt">the <code>fs.nr_open</code> sysctl</a>, if set, acts as a backstop. </li>
@@ -203,11 +203,11 @@ Thus, we were dealing with baseline memory usage that had suddenly increased by 
 <p>Prior to release 256, systemd effectively <a href="https://github.com/systemd/systemd/pull/29322">bumped the default</a> for <code>LimitNOFILE</code> from 1048576 (2²⁰) to <code>infinity</code>, which meant that rather than setting its own cgroups limit, it would rely on <code>fs.nr_open</code>.
 And <em>that</em> value was recently upped in some distributions to 1073741824 (2³⁰) — an increase by a factor of 2¹⁰ or 1024 over the previously applicable value.</p>
 <p>This change was also applied on Debian (which Garden Linux is based on), and it was even <a href="https://lists.debian.org/debian-devel/2024/06/msg00041.html">discussed on the Debian mailing list</a> — where ironically, concerns about raising this limit were pre-emptively quashed with the assertion that file descriptors are such an “extremely cheap resource” that it does not hurt to allow absurdly high numbers of them.</p>
-<p>In the <code>uwsgi</code> case, however, this had the somewhat devastating effect of increasing memory usage to insane levels.</p>
+<p>In the uWSGI case, however, this had the somewhat devastating effect of increasing memory usage to insane levels.</p>
 <p>To their credit, the Garden Linux developers identified this flaw (which, to my knowledge was baked into their version 1592.2), and <a href="https://github.com/gardenlinux/gardenlinux/pull/2442">fixed it</a> in version 1592.3.
-Still, to insulate ourselves from further such issues, we have opted to reconfigure our systems to run <code>uwsgi</code> with an explicitly defined <code>max-fd</code> option, set to the prior system-wide default of 1048576 (although setting it to something as low as 1024 would <em>probably</em> work too). </p>
+Still, to insulate ourselves from further such issues, we have opted to <a href="https://uwsgi-docs.readthedocs.io/en/latest/Configuration.html">reconfigure our systems</a> to run uWSGI with an explicitly defined <code>max-fd</code> option, set to the prior system-wide default of 1048576 (although setting it to something as low as 1024 would <em>probably</em> work too). </p>
 <h3>Acknowledgements</h3>
-<p>Lothar Gesslein, Brennan Kinney, Piotr Kucułyma, Namrata Sitlani, and Maari Tamm all contributed to the findings discussed in this article.</p>
+<p><a href="https://github.com/lotharbach">Lothar Bach</a>, <a href="https://github.com/polarathene">Brennan Kinney</a>, <a href="https://github.com/pkdevpl">Piotr Kucułyma</a>, <a href="https://github.com/NamrataSitlani">Namrata Sitlani</a>, and <a href="https://github.com/mrtmm">Maari Tamm</a> all contributed to the findings discussed in this article.<sup id="fnref:order"><a class="footnote-ref" href="#fn:order">3</a></sup></p>
 <div class="footnote">
 <hr/>
 <ol>
@@ -217,6 +217,9 @@ Still, to insulate ourselves from further such issues, we have opted to reconfig
 </li>
 <li id="fn:man-outdated">
 <p>As far as I can tell, at the time of writing the table captioned “Resource limit directives” in the <code>systemd.exec</code> man page is outdated and incorrect as far as <code>LimitNOFILE</code>’s default is concerned, and also the “Don’t use” admonition seems misguided at this point. <a class="footnote-backref" href="#fnref:man-outdated" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+<li id="fn:order">
+<p>I’ve listed these individuals in alphabetical order by surname. <a class="footnote-backref" href="#fnref:order" title="Jump back to footnote 3 in the text">↩</a></p>
 </li>
 </ol>
 </div>
