@@ -1,4 +1,4 @@
-Title: Exploding memory usage in Django/uwsgi containers
+Title: Exploding memory usage in Django/uWSGI containers
 Date: 2024-12-07 09:00
 Slug: max-fd
 Tags: Kubernetes, Django, Containers, systemd
@@ -26,9 +26,9 @@ Thus, we were dealing with baseline memory usage that had suddenly increased by 
 
 Now to explain this memory usage jump, you'll need this background information:
 
-1. The `corerouter` plugin in `uwsgi` maintains an array of file descriptor references.
-2. The size of this array, and with it its memory usage, is a multiple of the value set for `uwsgi`'s `max-fd` configuration option.[^corerouter]
-3. If `max-fd` has not been set in the `uwsgi` configuration, its default is the maximum number of open file handles allowed for the process per the system-wide configuration.
+1. The `corerouter` plugin in uWSGI maintains an array of file descriptor references.
+2. The size of this array, and with it its memory usage, is a multiple of the value set for uWSGI's `max-fd` configuration option.[^corerouter]
+3. If `max-fd` has not been set in the uWSGI configuration, its default is the maximum number of open file handles allowed for the process per the system-wide configuration.
 4. Said default can be defined by the `nofiles` [ulimit](https://www.man7.org/linux/man-pages/man5/limits.conf.5.html), or a [cgroups](https://wiki.archlinux.org/title/Cgroups) restriction.
    A cgroups restriction is also what systemd uses to implement [the `LimitNOFILE` option](https://www.freedesktop.org/software/systemd/man/latest/systemd.exec.html#Process%20Properties), which can be set on any systemd unit.[^man-outdated]
 5. If neither the ulimit nor a cgroups restriction is in place, [the `fs.nr_open` sysctl](https://www.kernel.org/doc/Documentation/sysctl/fs.txt), if set, acts as a backstop. 
@@ -45,11 +45,13 @@ And *that* value was recently upped in some distributions to 1073741824 (2³⁰
 
 This change was also applied on Debian (which Garden Linux is based on), and it was even [discussed on the Debian mailing list](https://lists.debian.org/debian-devel/2024/06/msg00041.html) — where ironically, concerns about raising this limit were pre-emptively quashed with the assertion that file descriptors are such an "extremely cheap resource" that it does not hurt to allow absurdly high numbers of them.
 
-In the `uwsgi` case, however, this had the somewhat devastating effect of increasing memory usage to insane levels.
+In the uWSGI case, however, this had the somewhat devastating effect of increasing memory usage to insane levels.
 
 To their credit, the Garden Linux developers identified this flaw (which, to my knowledge was baked into their version 1592.2), and [fixed it](https://github.com/gardenlinux/gardenlinux/pull/2442) in version 1592.3.
-Still, to insulate ourselves from further such issues, we have opted to reconfigure our systems to run `uwsgi` with an explicitly defined `max-fd` option, set to the prior system-wide default of 1048576 (although setting it to something as low as 1024 would *probably* work too). 
+Still, to insulate ourselves from further such issues, we have opted to [reconfigure our systems](https://uwsgi-docs.readthedocs.io/en/latest/Configuration.html) to run uWSGI with an explicitly defined `max-fd` option, set to the prior system-wide default of 1048576 (although setting it to something as low as 1024 would *probably* work too). 
 
 ### Acknowledgements
 
-Lothar Gesslein, Brennan Kinney, Piotr Kucułyma, Namrata Sitlani, and Maari Tamm all contributed to the findings discussed in this article.
+[Lothar Bach](https://github.com/lotharbach), [Brennan Kinney](https://github.com/polarathene), [Piotr Kucułyma](https://github.com/pkdevpl), [Namrata Sitlani](https://github.com/NamrataSitlani), and [Maari Tamm](https://github.com/mrtmm) all contributed to the findings discussed in this article.[^order]
+
+[^order]: I've listed these individuals in alphabetical order by surname.
