@@ -232,7 +232,7 @@ status, progress, and error messages to stderr.</p>
 <p>First, you can translate <code>verbosity</code> into a logging level understood
 by the <code>logging</code> module. Here’s a little convenience method that
 achieves that:</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">setup_logging</span><span class="p">(</span><span class="n">verbosity</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">setup_logging</span><span class="p">(</span><span class="n">verbosity</span><span class="p">):</span>
     <span class="n">base_loglevel</span> <span class="o">=</span> <span class="mi">30</span>
     <span class="n">verbosity</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">verbosity</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
     <span class="n">loglevel</span> <span class="o">=</span> <span class="n">base_loglevel</span> <span class="o">-</span> <span class="p">(</span><span class="n">verbosity</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span>
@@ -266,7 +266,7 @@ invoking your CLI with <code>-vv</code> all the time might not be practical. (CI
 systems are an example — you generally want your build logs as verbose
 as possible.) You can make your users’ lives easier by optionally
 fixing up your logging subsystem with an environment variable, like so:</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">setup_logging</span><span class="p">(</span><span class="n">verbosity</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">setup_logging</span><span class="p">(</span><span class="n">verbosity</span><span class="p">):</span>
     <span class="n">base_loglevel</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">'LOGLEVEL'</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span> 
     <span class="n">verbosity</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">verbosity</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
     <span class="n">loglevel</span> <span class="o">=</span> <span class="n">base_loglevel</span> <span class="o">-</span> <span class="p">(</span><span class="n">verbosity</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span>
@@ -278,7 +278,7 @@ environment, it will always use debug output. </p>
 <p>Perhaps you’d like to make this even easier, allowing your users to
 also set <code>LOGLEVEL</code> to <code>debug</code>, <code>INFO</code>, <code>erRoR</code> and whatever
 else. That you could do like this:<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">setup_logging</span><span class="p">(</span><span class="n">verbosity</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">setup_logging</span><span class="p">(</span><span class="n">verbosity</span><span class="p">):</span>
     <span class="n">base_loglevel</span> <span class="o">=</span> <span class="n">gettattr</span><span class="p">(</span><span class="n">logging</span><span class="p">,</span> 
                              <span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">'LOGLEVEL'</span><span class="p">,</span> <span class="s1">'WARNING'</span><span class="p">))</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span> 
     <span class="n">verbosity</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">verbosity</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
@@ -344,7 +344,7 @@ construct with the <code>min()</code> built-in function. <a class="footnote-bac
 
 <footer>
 <p>
-  &copy; 2024  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+  &copy; 2025  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
 </p>
 <p>
 Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme

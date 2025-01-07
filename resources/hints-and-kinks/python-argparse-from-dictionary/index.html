@@ -185,12 +185,12 @@ the standard way is quite repetitive, and you end up invoking
 and subparsers with options.</p>
 <p>Here’s a more concise way:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># If you must run this on Python 2. You really shouldn't!</span>
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">print_function</span>
 
-<span class="kn">from</span> <span class="nn">argparse</span> <span class="kn">import</span> <span class="n">ArgumentParser</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">argparse</span><span class="w"> </span><span class="kn">import</span> <span class="n">ArgumentParser</span>
 
-<span class="kn">import</span> <span class="nn">yaml</span>
-<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">yaml</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
 
 <span class="c1"># Using YAML here only for illustrative purposes, as it's a bit</span>
 <span class="c1"># easier to read. You probably just want to use a dictionary outright.</span>
@@ -227,11 +227,11 @@ and subparsers with options.</p>
 <span class="s2">              dest: input</span>
 <span class="s2">"""</span>
 
-<span class="k">class</span> <span class="nc">CLI</span><span class="p">():</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">CLI</span><span class="p">():</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 
-        <span class="k">def</span> <span class="nf">walk_config</span><span class="p">(</span><span class="n">dictionary</span><span class="p">,</span> <span class="n">parser</span><span class="p">):</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">walk_config</span><span class="p">(</span><span class="n">dictionary</span><span class="p">,</span> <span class="n">parser</span><span class="p">):</span>
 <span class="w">            </span><span class="sd">"""Walk a dictionary and populate an ArgumentParser."""</span>
 
             <span class="k">if</span> <span class="s1">'options'</span> <span class="ow">in</span> <span class="n">dictionary</span><span class="p">:</span>
@@ -254,22 +254,22 @@ and subparsers with options.</p>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">parser</span> <span class="o">=</span> <span class="n">parser</span>
 
-    <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">"This is the foo subcommand, "</span>
               <span class="s2">"invoked with '-c </span><span class="si">%s</span><span class="s2">'."</span> <span class="o">%</span> <span class="n">config</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">bar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">bar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">"This is the bar subcommand, "</span>
               <span class="s2">"invoked with '-o </span><span class="si">%s</span><span class="s2">'."</span> <span class="o">%</span> <span class="n">output</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">baz</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">baz</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">"This is the baz subcommand"</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">spam_eggs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">spam_eggs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">"This is the baz spam-eggs subcommand, "</span>
               <span class="s2">"invoked with '-i </span><span class="si">%s</span><span class="s2">'."</span> <span class="o">%</span> <span class="nb">input</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">argv</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">argv</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">):</span>
         <span class="n">opts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
         <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">opts</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">'action'</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'-'</span><span class="p">,</span> <span class="s1">'_'</span><span class="p">))(</span><span class="o">**</span><span class="n">opts</span><span class="p">)</span>
 
@@ -317,7 +317,7 @@ more on that perhaps in a later post.</p>
 
 <footer>
 <p>
-  &copy; 2024  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+  &copy; 2025  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
 </p>
 <p>
 Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
