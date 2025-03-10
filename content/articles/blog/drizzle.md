@@ -10,9 +10,9 @@ intents and purposes, died in 2016. Its project web site is now
 defunct, and the most recent snapshot from the Wayback Machine is
 [that of September 2,
 2016](https://web.archive.org/web/20160902091713/http://www.drizzle.org/).
-In July of that year, Stewart Smith (one of the project’s core team)
+In July of that year, Stewart Smith (one of the project’s core team members)
 [announced on the project mailing
-list]((https://www.mail-archive.com/drizzle-discuss@lists.launchpad.net/msg09228.html).)
+list](https://www.mail-archive.com/drizzle-discuss@lists.launchpad.net/msg09228.html)
 that neither he nor any other core team members had time to dedicate
 to Drizzle anymore.
 
