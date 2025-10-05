@@ -33,7 +33,7 @@ At the time of writing, that was version 2023.07-007, downloaded from its &lt;a 
 &lt;p&gt;Here is the corresponding sequence of commands.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;rkdeveloptool&lt;span class="w"&gt; &lt;/span&gt;ld
 &lt;span class="go"&gt;DevNo=1 Vid=0x2207,Pid=0x330c,LocationID=106    Maskrom&lt;/span&gt;
-&lt;span class="gp"&gt;$ &lt;/span&gt;db&lt;span class="w"&gt; &lt;/span&gt;rk3399_loader_spinor_v1.15.114.bin
+&lt;span class="gp"&gt;$ &lt;/span&gt;rkdeveloptool&lt;span class="w"&gt; &lt;/span&gt;db&lt;span class="w"&gt; &lt;/span&gt;rk3399_loader_spinor_v1.15.114.bin
 &lt;span class="go"&gt;Downloading bootloader succeeded.&lt;/span&gt;
 &lt;span class="gp"&gt;$ &lt;/span&gt;rkdeveloptool&lt;span class="w"&gt; &lt;/span&gt;wl&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;towboot/pine64-pinebookPro-2023.07-007/binaries/Tow-Boot.spi.bin
 &lt;span class="go"&gt;Write LBA from file (100%)&lt;/span&gt;
