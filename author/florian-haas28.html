@@ -156,6 +156,31 @@ rel="me"           href="mailto:xahteiwi+ifyoudontremovethisyoullgostraighttodev
 
 <article>
   <header>
+    <h2><a href="../resources/hints-and-kinks/mysqlgalera-pacemaker-adding-mysqlgalera-resources-pacemaker/#mysqlgalera-pacemaker-adding-mysqlgalera-resources-pacemaker">Adding MySQL/Galera resources to Pacemaker</a></h2>
+    <p>
+      Posted on Tue 04 December 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
+
+          &#8226; Tagged with
+              <a href="../tag/galera.html">Galera</a>,              <a href="../tag/mysql.html">MySQL</a>,              <a href="../tag/pacemaker.html">Pacemaker</a>
+        &#8226; 1 min read
+    </p>
+  </header>
+  <div>
+      <div><p>Once you have one instance of Galera running, and it is running on the
+same node that holds the temporarily-configured cluster IP
+(192.168.122.99 in our example), you can add your resources to the
+Pacemaker cluster configuration.</p>
+<p>Create a temporary file, such as <code>/tmp/galera.crm</code>, with the …</p></div>
+        <br>
+        <a class="btn"
+           href="../resources/hints-and-kinks/mysqlgalera-pacemaker-adding-mysqlgalera-resources-pacemaker/#mysqlgalera-pacemaker-adding-mysqlgalera-resources-pacemaker">
+          Continue reading
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="../resources/hints-and-kinks/mysqlgalera-pacemaker-bootstrapping-galera-cluster/#mysqlgalera-pacemaker-bootstrapping-galera-cluster">Bootstrapping the Galera cluster</a></h2>
     <p>
       Posted on Tue 04 December 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
@@ -250,31 +275,6 @@ with minimal modifications.</p>
         <br>
         <a class="btn"
            href="../resources/hints-and-kinks/mysqlgalera-pacemaker-high-availability-clusters/#mysqlgalera-pacemaker-high-availability-clusters">
-          Continue reading
-        </a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="../resources/hints-and-kinks/mysqlgalera-pacemaker-recovering-full-cluster-shutdown/#mysqlgalera-pacemaker-recovering-full-cluster-shutdown">Recovering from full cluster shutdown</a></h2>
-    <p>
-      Posted on Tue 04 December 2012 in <a href="../category/hints-and-kinks.html">hints-and-kinks</a>
-
-          &#8226; Tagged with
-              <a href="../tag/galera.html">Galera</a>,              <a href="../tag/mysql.html">MySQL</a>,              <a href="../tag/pacemaker.html">Pacemaker</a>
-        &#8226; 1 min read
-    </p>
-  </header>
-  <div>
-      <div><p>If at any time <em>all</em> of the nodes in your cluster have been taken
-down, it is necessary to re-initialize the Galera replication
-state. In effect, this is identical to bootstrapping the cluster.</p>
-<p>Start by manually bringing up the cluster IP on one of your nodes:</p>
-<div class="highlight"><pre><span></span><code>ip<span class="w"> </span>address<span class="w"> </span>add<span class="w"> </span><span class="m">192 …</span></code></pre></div></div>
-        <br>
-        <a class="btn"
-           href="../resources/hints-and-kinks/mysqlgalera-pacemaker-recovering-full-cluster-shutdown/#mysqlgalera-pacemaker-recovering-full-cluster-shutdown">
           Continue reading
         </a>
   </div>

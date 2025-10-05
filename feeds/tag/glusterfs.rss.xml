@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>xahteiwi.eu - GlusterFS</title><link>https://xahteiwi.eu/</link><description></description><lastBuildDate>Thu, 08 Nov 2012 08:15:00 +0000</lastBuildDate><item><title>GlusterFS in High Availability Clusters</title><link>https://xahteiwi.eu/resources/presentations/glusterfs-high-availability-clusters/</link><description>&lt;p&gt;My Pacemaker presentation from the GlusterFS Workshop at LinuxCon
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>xahteiwi.eu - GlusterFS</title><link>https://xahteiwi.eu/</link><description/><atom:link href="https://xahteiwi.eu/feeds/tag/glusterfs.rss.xml" rel="self"/><lastBuildDate>Thu, 08 Nov 2012 08:15:00 +0000</lastBuildDate><item><title>GlusterFS in High Availability Clusters</title><link>https://xahteiwi.eu/resources/presentations/glusterfs-high-availability-clusters/</link><description>&lt;p&gt;My Pacemaker presentation from the GlusterFS Workshop at LinuxCon
 Europe 2012. Presented in Barcelona in November of 2012, this is a
 overview of integrating GlusterFS with the Pacemaker cluster stack.&lt;/p&gt;
 &lt;p&gt;This tutorial gives an overview of&lt;/p&gt;
@@ -8,10 +8,10 @@ overview of integrating GlusterFS with the Pacemaker cluster stack.&lt;/p&gt;
 &lt;li&gt;Using GlusterFS for Pacemaker storage,&lt;/li&gt;
 &lt;li&gt;Managing GlusterFS volumes from Pacemaker.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;My …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Florian Haas</dc:creator><pubDate>Thu, 08 Nov 2012 08:15:00 +0000</pubDate><guid isPermaLink="false">tag:xahteiwi.eu,2012-11-08:/resources/presentations/glusterfs-high-availability-clusters/</guid><category>presentations</category><category>Conference</category><category>GlusterFS</category></item><item><title>Talking Ceph and GlusterFS at LinuxCon Europe</title><link>https://xahteiwi.eu/blog/2012/10/24/talking-ceph-and-glusterfs-at-linuxcon-europe/</link><description>&lt;p&gt;Early next month, I’ll be off to Barcelona for speaking at LinuxCon
+&lt;p&gt;My …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Florian Haas</dc:creator><pubDate>Thu, 08 Nov 2012 08:15:00 +0000</pubDate><guid>tag:xahteiwi.eu,2012-11-08:/resources/presentations/glusterfs-high-availability-clusters/</guid><category>presentations</category><category>Conference</category><category>GlusterFS</category></item><item><title>Talking Ceph and GlusterFS at LinuxCon Europe</title><link>https://xahteiwi.eu/blog/2012/10/24/talking-ceph-and-glusterfs-at-linuxcon-europe/</link><description>&lt;p&gt;Early next month, I’ll be off to Barcelona for speaking at LinuxCon
 Europe. Here’s an overview of my talks.&lt;/p&gt;
 &lt;p&gt;November 5-7, the &lt;a href="http://www.linuxfoundation.org/"&gt;Linux Foundation&lt;/a&gt; is
 holding the annual &lt;a href="http://events.linuxfoundation.org/events/linuxcon-europe"&gt;LinuxCon
 Europe&lt;/a&gt; in one
 of Europe’s most beautiful cities — some say &lt;em&gt;the&lt;/em&gt; most beautiful —
-Barcelona. I will be attending …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">florian</dc:creator><pubDate>Wed, 24 Oct 2012 12:55:00 +0000</pubDate><guid isPermaLink="false">tag:xahteiwi.eu,2012-10-24:/blog/2012/10/24/talking-ceph-and-glusterfs-at-linuxcon-europe/</guid><category>blog</category><category>Ceph</category><category>Conference</category><category>GlusterFS</category></item></channel></rss>
+Barcelona. I will be attending …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">florian</dc:creator><pubDate>Wed, 24 Oct 2012 12:55:00 +0000</pubDate><guid>tag:xahteiwi.eu,2012-10-24:/blog/2012/10/24/talking-ceph-and-glusterfs-at-linuxcon-europe/</guid><category>blog</category><category>Ceph</category><category>Conference</category><category>GlusterFS</category></item></channel></rss>

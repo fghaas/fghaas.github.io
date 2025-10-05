@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Pinebook Pro</title><link href="https://xahteiwi.eu/" rel="alternate"/><link href="https://xahteiwi.eu/feeds/tag/pinebook-pro.atom.xml" rel="self"/><id>https://xahteiwi.eu/</id><updated>2025-10-05T00:00:00+00:00</updated><entry><title>Reviving a near-bricked Pinebook Pro</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/unbrick-pgp/" rel="alternate"/><published>2025-10-05T00:00:00+00:00</published><updated>2025-10-05T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2025-10-05:/resources/hints-and-kinks/unbrick-pgp/</id><summary type="html">&lt;p&gt;I&amp;rsquo;ve recently had to bring back my Pinebook Pro from a zombie state.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recently, I put &lt;a href="https://xahteiwi.eu/resources/hints-and-kinks/solar-powered-laptop/"&gt;my Pinebook Pro&lt;/a&gt; in something of a zombie state.
+This was by no means the hardware’s fault, nor that of the &lt;a href="https://www.armbian.com/pinebook-pro/"&gt;Armbian&lt;/a&gt; system I run on it.
+Rather, I put a bad bootloader image into the SPI flash (&lt;code&gt;/dev/mtd0&lt;/code&gt;), which upon reboot put the laptop in permanent Maskrom mode.&lt;/p&gt;
+&lt;p&gt;It took me a little while to figure this out, because from the outside Maskrom mode looks remarkably like the machine is dead:
+when you hit the power button, nothing appears to happen.
+The power LED doesn’t come on (not even in red), the display stays dark.
+And the PBP being a fanless device, there’s obviously no fan spin-up either.&lt;/p&gt;
+&lt;p&gt;What I needed to do instead was find another machine, and connect it (via a USB A-to-C cable) to the PBP’s USB-C port.
+Then I powered on the PBP.
+If the PBP is in fact &lt;em&gt;not&lt;/em&gt; dead, but in Maskrom mode, the kernel log (on the good machine) will show a message like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;journalctl&lt;span class="w"&gt; &lt;/span&gt;-b&lt;span class="w"&gt; &lt;/span&gt;--grep&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2207&lt;/span&gt;
+&lt;span class="go"&gt;Oct 05 09:30:43 foobar kernel: usb 1-6: New USB device found, idVendor=2207, idProduct=330c, bcdDevice= 1.00&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;I was also able to use &lt;code&gt;rkdeveloptool&lt;/code&gt; (on the good machine) to talk to the device:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;rkdeveloptool&lt;span class="w"&gt; &lt;/span&gt;ld
+&lt;span class="go"&gt;DevNo=1 Vid=0x2207,Pid=0x330c,LocationID=106    Maskrom&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Once able to access the PBP in Maskrom mode, I was nearly back in business.
+I now needed to follow the instructions for &lt;a href="https://wiki.pine64.org/wiki/Pinebook_Pro_SPI#After_entering_maskrom_mode"&gt;writing to the SPI from another machine&lt;/a&gt; in the Pinebook Pro wiki.&lt;/p&gt;
+&lt;p&gt;Now, I’ve found that zeroing the SPI (which &lt;em&gt;should&lt;/em&gt; mean that the PBP boot process just ignores the SPI, and attempts to find a boot loader on the eMMC, and then on the MicroSD card) didn’t change anything for me — the PBP just kept coming back into Maskrom mode after resetting or power-cycling.&lt;/p&gt;
+&lt;p&gt;Thus, I chucked &lt;a href="https://tow-boot.org/devices/pine64-pinebookPro.html"&gt;Tow-Boot&lt;/a&gt; into the SPI.
+At the time of writing, that was version 2023.07-007, downloaded from its &lt;a href="https://github.com/Tow-Boot/Tow-Boot/releases/tag/release-2023.07-007"&gt;GitHub release page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I also had to obtain the &lt;code&gt;rk3399_loader_spinor&lt;/code&gt; binary from the recommended source (at the time of writing, that’s &lt;a href="https://dl.radxa.com/rockpi4/images/loader/spi/rk3399_loader_spinor_v1.15.114.bin"&gt;https://dl.radxa.com/rockpi4/images/loader/spi/rk3399_loader_spinor_v1.15.114.bin&lt;/a&gt; per the wiki).&lt;/p&gt;
+&lt;p&gt;Thus, the whole process amounted to:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Enumerating the device with &lt;code&gt;rkdeveloptool ld&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Applying the bootloader&lt;/li&gt;
+&lt;li&gt;Writing the &lt;code&gt;Tow-Boot.spi.bin&lt;/code&gt; file&lt;/li&gt;
+&lt;li&gt;Checking&lt;/li&gt;
+&lt;li&gt;Rebooting the device&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Here is the corresponding sequence of commands.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;rkdeveloptool&lt;span class="w"&gt; &lt;/span&gt;ld
+&lt;span class="go"&gt;DevNo=1 Vid=0x2207,Pid=0x330c,LocationID=106    Maskrom&lt;/span&gt;
+&lt;span class="gp"&gt;$ &lt;/span&gt;db&lt;span class="w"&gt; &lt;/span&gt;rk3399_loader_spinor_v1.15.114.bin
+&lt;span class="go"&gt;Downloading bootloader succeeded.&lt;/span&gt;
+&lt;span class="gp"&gt;$ &lt;/span&gt;rkdeveloptool&lt;span class="w"&gt; &lt;/span&gt;wl&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;towboot/pine64-pinebookPro-2023.07-007/binaries/Tow-Boot.spi.bin
+&lt;span class="go"&gt;Write LBA from file (100%)&lt;/span&gt;
+&lt;span class="gp"&gt;$ &lt;/span&gt;rkdeveloptool&lt;span class="w"&gt; &lt;/span&gt;td
+&lt;span class="go"&gt;Test Device OK.&lt;/span&gt;
+&lt;span class="gp"&gt;$ &lt;/span&gt;./rkdeveloptool&lt;span class="w"&gt; &lt;/span&gt;rd
+&lt;span class="go"&gt;Reset Device OK&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;After this, the power LED immediately came on and the PBP happily booted Tow-Boot, which then enabled me to select the boot device and boot from either the eMMC or MicroSD card.&lt;/p&gt;</content><category term="hints-and-kinks"/><category term="Pinebook Pro"/></entry><entry><title>Running a solar-powered laptop</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/solar-powered-laptop/" rel="alternate"/><published>2022-05-14T00:00:00+00:00</published><updated>2022-05-15T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-05-14:/resources/hints-and-kinks/solar-powered-laptop/</id><summary type="html">&lt;p&gt;I’m a happy Pinebook Pro user, and I frequently use it on solar power.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Pinebook Pro laptop sitting on a table, outside, connected to a solar charging panel" class="img-fluid" src="/images/pinebookpro.jpg"/&gt;&lt;/p&gt;
+&lt;p&gt;This piece of kit has been a conversation starter everywhere I take it
+out, so I figured it could use a short writeup.&lt;/p&gt;
+&lt;p&gt;In 2020 I purchased a &lt;a href="https://www.pine64.org/pinebook-pro/"&gt;Pinebook
+Pro&lt;/a&gt; laptop. I had wanted a
+low-power ARM laptop for a while, the PBP came in a tolerable size
+(this is a 14” screen; about the top end of acceptable screen sizes
+for me), and it was an absolute steal. Including shipping and import
+duty — my device shipped from Hong Kong — I got mine for €277 all
+told.&lt;sup id="fnref:pine64eu"&gt;&lt;a class="footnote-ref" href="#fn:pine64eu"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;Now if you haven’t heard of the Pinebook Pro, or for that matter of
+the PINE64 community, you should &lt;a href="https://www.pine64.org/"&gt;check out their web
+site&lt;/a&gt;. They make a bunch of really neat
+devices, though I can only speak to the Pinebook Pro as that’s the
+only one of their devices I’ve ever owned.&lt;/p&gt;
+&lt;p&gt;Obviously, the device’s claim to fame is its low power profile. Thus
+it should come at no surprise that its charging input voltage is a
+USB-typical 5V, like you know from your phone.&lt;/p&gt;
+&lt;p&gt;Now the PBP comes with a separate barrel-plug charging port, but most
+of the time I just charge it via it USB-C. This I do primarily for
+convenience; it’s simply one fewer piece of kit to carry around. I can
+thus charge the PBP with a standard wall-socket USB charger, a
+USB power bank, or any other USB power source.&lt;sup id="fnref:charge"&gt;&lt;a class="footnote-ref" href="#fn:charge"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;Which is where the solar panel comes into play. Mine is a &lt;a href="http://www.ibigblue.com/product/detail/?id=17"&gt;28W charger
+from BigBlue&lt;/a&gt;. Now,
+please don’t mistake me for an authority on solar panels; there may be
+better or more efficient ones on the market — I just found this one
+useful and compact enough for my liking. Nominally, this panel’s
+maximum amperage is 4.8A, but I’ve never seen it actually generate
+that. Under optimal conditions where I live (at 48°N latitude), that
+is direct sunlight around solar noon on a cloudless day, I can get
+just under 3A out of the panel in total. Out of this, the maximum
+output of a single port is 2.4A, so that’s my maximum solar charge
+current for the PBP.&lt;/p&gt;
+&lt;p&gt;Overall, for the PBP’s power consumption this is generally perfectly
+fine. I can work under a sunny or partly cloudy sky for the whole day
+if I want to.&lt;/p&gt;
+&lt;p&gt;I’ve also found the display contrast to be sufficient even in full
+sunlight. I do use a light GNOME theme for my desktop settings, but I
+don’t need to enable the high-contrast accessibility features. It’s
+not advisable to work with the whole laptop exposed to full sunlight,
+though, as the black device body does absorb a fair bit of heat. If
+you’re sitting outside with a light breeze going, that mitigates this
+problem.&lt;/p&gt;
+&lt;p&gt;Of course, sitting in the shade with just the panel exposed to the sun
+is the most preferable setup overall.&lt;/p&gt;
+&lt;p&gt;In terms of software running on the device, I never particularly
+warmed to the idea of running &lt;a href="https://manjaro.org/"&gt;Manjaro&lt;/a&gt; (which
+the PBP ships with by default), so I run
+&lt;a href="https://www.armbian.com/pinebook-pro/"&gt;armbian&lt;/a&gt; with Ubuntu. I’m not
+a big fan of Cinnamon or XFCE either, but that’s no big issue: I just
+started with the Ubuntu Focal XFCE image, and then installed the
+&lt;code&gt;vanilla-gnome-desktop&lt;/code&gt; metapackage and subsequently removed &lt;code&gt;xfce4*&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Overall the Ubuntu &lt;code&gt;aarch64&lt;/code&gt; port works very well on this device with
+the armbian Linux kernel (currently, that’s 5.9.14), with a couple of
+small caveats:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Suspend support is essentially limited to suspend-to-idle. I’d
+  really love to have suspend-to-disk support on this device (ideally
+  in combination with encrypted swap, which by itself works fine), but
+  neither that nor suspend-to-ram are currently reliable. Even
+  suspend-to-idle is sometimes unreliable and requires that I restart
+  &lt;code&gt;gdm&lt;/code&gt; after resuming.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Some packages just behave oddly, or don’t function at all. For
+  example, &lt;code&gt;ykcs11&lt;/code&gt; just won’t want to accept my PIN when I try to
+  hook my Yubikey up with &lt;code&gt;ssh-agent&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Most &lt;a href="https://launchpad.net/ubuntu/+ppas"&gt;PPAs&lt;/a&gt; don’t build with
+  &lt;code&gt;aarch64&lt;/code&gt; support. Thus, if you like to run Ubuntu with a bunch of
+  packages that are not in Ubuntu proper, you might have a hard time
+  with the PBP.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The PBP’s SoC maxes out at 4GiB RAM, which means you shouldn’t be
+  using the PBP for video editing or gaming or any other RAM-intensive
+  activities. Even the GIMP runs out of steam pretty quickly at about
+  3 or 4 concurrently opened images.&lt;sup id="fnref:ram"&gt;&lt;a class="footnote-ref" href="#fn:ram"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So can I use this as my daily driver? Yes, with some minor drawbacks.
+But those I can work around fairly well.&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr/&gt;
+&lt;ol&gt;
+&lt;li id="fn:pine64eu"&gt;
+&lt;p&gt;If the PBP becomes available for order in Europe via
+&lt;a href="https://www.pine64.eu/shop/"&gt;pine64.eu&lt;/a&gt;, then — if you are an EU
+resident — shipping should be faster and you wouldn’t need to pay
+import duty. At the time of writing, however, the PBP can only be
+purchased from the main
+&lt;a href="https://pine64.com/product-category/pinebook-pro/"&gt;pine64.com&lt;/a&gt;
+store. &lt;a class="footnote-backref" href="#fnref:pine64eu" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:charge"&gt;
+&lt;p&gt;The device cannot charge over the barrel port and USB-C
+simultaneously. &lt;a class="footnote-backref" href="#fnref:charge" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:ram"&gt;
+&lt;p&gt;Note that I can get cloud computing capacity for cheap at work, so
+if I need more RAM for something I can get it in a pinch — I am
+aware that that option is not available to everyone. &lt;a class="footnote-backref" href="#fnref:ram" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content><category term="hints-and-kinks"/><category term="Pinebook Pro"/></entry></feed>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Work</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/work.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2024-10-04T20:00:00+00:00</updated><entry><title>Keynote-worthy talks (I think?)</title><link href="https://xahteiwi.eu/blog/2024/10/04/keynote-worthy-talks/" rel="alternate"></link><published>2024-10-04T20:00:00+00:00</published><updated>2024-10-04T20:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2024-10-04:/blog/2024/10/04/keynote-worthy-talks/</id><summary type="html">&lt;p&gt;Maybe one of these is a good fit for your conference?&lt;/p&gt;</summary><content type="html">&lt;p&gt;As of late, I’ve been doing a number of talks that weren’t so much focused on specific technologies like I’ve done in the past.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - Work</title><link href="https://xahteiwi.eu/" rel="alternate"/><link href="https://xahteiwi.eu/feeds/tag/work.atom.xml" rel="self"/><id>https://xahteiwi.eu/</id><updated>2024-10-04T20:00:00+00:00</updated><entry><title>Keynote-worthy talks (I think?)</title><link href="https://xahteiwi.eu/blog/2024/10/04/keynote-worthy-talks/" rel="alternate"/><published>2024-10-04T20:00:00+00:00</published><updated>2024-10-04T20:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2024-10-04:/blog/2024/10/04/keynote-worthy-talks/</id><summary type="html">&lt;p&gt;Maybe one of these is a good fit for your conference?&lt;/p&gt;</summary><content type="html">&lt;p&gt;As of late, I’ve been doing a number of talks that weren’t so much focused on specific technologies like I’ve done in the past.&lt;/p&gt;
 &lt;p&gt;Rather, they talk about broader issues (still mostly related to what I do for a living, though), and some conference organisers have approached me after the talk expressing regret that they didn’t put it &lt;a href="https://xahteiwi.eu/blog/2024/02/10/my-talks-are-good/"&gt;in front of a bigger audience&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;So, just in case: maybe your next conference is looking for a keynote?
 Here are a few talks I think might be worthy of such a thing. All are approximately 45 minutes long.&lt;/p&gt;
@@ -14,7 +14,7 @@ Not only did the writeup of that talk get &lt;a href="https://news.ycombinator.c
 So, if you think your conference benefits from a talk about distributed work &lt;em&gt;that works,&lt;/em&gt; maybe an updated reprise of that talk might be helpful.&lt;/p&gt;
 &lt;hr/&gt;
 &lt;p&gt;&lt;em&gt;Want one of these for your conference?&lt;/em&gt; 
-Please feel free to contact me via one of the channels you’ll see just below my mug on the left, or at the top of your screen if you’re reading this in portrait mode.&lt;/p&gt;</content><category term="blog"></category><category term="Work"></category><category term="Conference"></category></entry><entry><title>Are you working in a remote office?</title><link href="https://xahteiwi.eu/blog/2023/10/28/remote-office/" rel="alternate"></link><published>2023-10-28T20:15:00+00:00</published><updated>2023-10-28T20:15:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-10-28:/blog/2023/10/28/remote-office/</id><summary type="html">&lt;p&gt;Does your company try to do everything companies have always done in an office, just with remotees? Not a grand idea.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In a recent &lt;a href="https://joinmastodon.org/"&gt;Mastodon&lt;/a&gt; discussion, &lt;a href="https://blog.literarily-starved.com/2013/10/contact/author/"&gt;Martin Seeger&lt;/a&gt; &lt;a href="https://mastodon.social/@masek@infosec.exchange/111313672170823374"&gt;accidentally&lt;/a&gt; coined the phrase “remote office”.
+Please feel free to contact me via one of the channels you’ll see just below my mug on the left, or at the top of your screen if you’re reading this in portrait mode.&lt;/p&gt;</content><category term="blog"/><category term="Work"/><category term="Conference"/></entry><entry><title>Are you working in a remote office?</title><link href="https://xahteiwi.eu/blog/2023/10/28/remote-office/" rel="alternate"/><published>2023-10-28T20:15:00+00:00</published><updated>2023-10-28T20:15:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-10-28:/blog/2023/10/28/remote-office/</id><summary type="html">&lt;p&gt;Does your company try to do everything companies have always done in an office, just with remotees? Not a grand idea.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In a recent &lt;a href="https://joinmastodon.org/"&gt;Mastodon&lt;/a&gt; discussion, &lt;a href="https://blog.literarily-starved.com/2013/10/contact/author/"&gt;Martin Seeger&lt;/a&gt; &lt;a href="https://mastodon.social/@masek@infosec.exchange/111313672170823374"&gt;accidentally&lt;/a&gt; coined the phrase “remote office”.
 About which &lt;a href="https://mastodon.social/@xahteiwi/111313536756727452"&gt;I then mused&lt;/a&gt; that it describes perfectly what’s wrong in far too many organizations:
 that they think they can get away with all the anti-productive nonsense they’ve been doing in offices for decades, but now with a bunch of remotees.&lt;/p&gt;
 &lt;p&gt;So, dear reader who (at least frequently, if not permanently) works from home, do you surmise you might be working in a remote office?
@@ -68,7 +68,7 @@ I have a few questions you might want to think about.&lt;/p&gt;
 &lt;p&gt;I use “he” here because in 20 years I have never heard anything like this from someone who wasn’t a man. &lt;a class="footnote-backref" href="#fnref:he" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>On Responsibility</title><link href="https://xahteiwi.eu/blog/2023/10/25/responsibility/" rel="alternate"></link><published>2023-10-25T21:00:00+00:00</published><updated>2023-10-25T21:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-10-25:/blog/2023/10/25/responsibility/</id><summary type="html">&lt;p&gt;What does it mean to be responsible for something?&lt;/p&gt;</summary><content type="html">&lt;p&gt;You may know that I am fairly active on &lt;a href="https://joinmastodon.org/"&gt;Mastodon&lt;/a&gt; (my profile is &lt;a href="https://mastodon.social/@xahteiwi"&gt;here&lt;/a&gt;), and one of the things I like a lot are &lt;a href="https://docs.joinmastodon.org/user/posting/#polls"&gt;polls&lt;/a&gt;.
+&lt;/div&gt;</content><category term="blog"/><category term="Work"/><category term="Communications"/></entry><entry><title>On Responsibility</title><link href="https://xahteiwi.eu/blog/2023/10/25/responsibility/" rel="alternate"/><published>2023-10-25T21:00:00+00:00</published><updated>2023-10-25T21:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-10-25:/blog/2023/10/25/responsibility/</id><summary type="html">&lt;p&gt;What does it mean to be responsible for something?&lt;/p&gt;</summary><content type="html">&lt;p&gt;You may know that I am fairly active on &lt;a href="https://joinmastodon.org/"&gt;Mastodon&lt;/a&gt; (my profile is &lt;a href="https://mastodon.social/@xahteiwi"&gt;here&lt;/a&gt;), and one of the things I like a lot are &lt;a href="https://docs.joinmastodon.org/user/posting/#polls"&gt;polls&lt;/a&gt;.
 I use them largely to get an outside view on my own thoughts.&lt;/p&gt;
 &lt;p&gt;Recently, I posted &lt;a href="https://mastodon.social/@xahteiwi/111290843165601510"&gt;one such poll&lt;/a&gt;.
 It talked about a hypothetical scenario, and the question read:&lt;/p&gt;
@@ -119,7 +119,7 @@ But responsibility is not a zero sum game: even if someone below you in the hier
 &lt;p&gt;The phrasing “most senior person” caused some confusion. What I meant was “the most high-ranking person in the organization as applied to the subject at hand”, which could be an appointed project manager, or someone who by virtue of their line management position is the highest person in the food chain — but that’s a bit too long for a Mastodon post. Another respondent suggested “the person highest in the chain of command”, which I had considered but deliberately rejected, fearing that some readers might balk at the military nature of that term. &lt;a class="footnote-backref" href="#fnref:senior" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Follow-up and follow-through</title><link href="https://xahteiwi.eu/blog/2023/10/07/follow-up-follow-through/" rel="alternate"></link><published>2023-10-07T20:00:00+00:00</published><updated>2023-10-07T20:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-10-07:/blog/2023/10/07/follow-up-follow-through/</id><summary type="html">&lt;p&gt;It comes with the territory.&lt;/p&gt;</summary><content type="html">&lt;p&gt;It recently occurred to me that something I thought was a basic elementary aspect of management at all levels is apparently, in fact, unusual in many organisations.
+&lt;/div&gt;</content><category term="blog"/><category term="Work"/><category term="Communications"/></entry><entry><title>Follow-up and follow-through</title><link href="https://xahteiwi.eu/blog/2023/10/07/follow-up-follow-through/" rel="alternate"/><published>2023-10-07T20:00:00+00:00</published><updated>2023-10-07T20:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-10-07:/blog/2023/10/07/follow-up-follow-through/</id><summary type="html">&lt;p&gt;It comes with the territory.&lt;/p&gt;</summary><content type="html">&lt;p&gt;It recently occurred to me that something I thought was a basic elementary aspect of management at all levels is apparently, in fact, unusual in many organisations.
 It’s the idea that you can’t simply handwave and tell people to do something and if they don’t do it then it’s their fault, but that as a manager you retain ultimate responsibility and accountability&lt;sup id="fnref:raci"&gt;&lt;a class="footnote-ref" href="#fn:raci"&gt;1&lt;/a&gt;&lt;/sup&gt; for whatever you assign or delegate.&lt;/p&gt;
 &lt;p&gt;This means that it’s a core part of your job description that &lt;em&gt;you&lt;/em&gt; ensure that the people you work with actually work on, and have a chance to accomplish, the objectives you entrust them with.
 This basic concept in management is known as &lt;strong&gt;follow-up and follow-through.&lt;/strong&gt;
@@ -245,7 +245,7 @@ So let’s just do it.&lt;/p&gt;
 &lt;p&gt;This assumes the weekend in your culture is Saturday/Sunday. &lt;a class="footnote-backref" href="#fnref:friday" title="Jump back to footnote 5 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>The trouble with Key Results</title><link href="https://xahteiwi.eu/blog/2023/03/19/key-results/" rel="alternate"></link><published>2023-03-19T09:30:00+00:00</published><updated>2023-03-19T09:30:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-03-19:/blog/2023/03/19/key-results/</id><summary type="html">&lt;p&gt;Some thoughts sparked by a discussion on Mastodon.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I like &lt;a href="https://en.wikipedia.org/wiki/Mastodon_(social_network)"&gt;Mastodon&lt;/a&gt;.
+&lt;/div&gt;</content><category term="blog"/><category term="Work"/><category term="Communications"/></entry><entry><title>The trouble with Key Results</title><link href="https://xahteiwi.eu/blog/2023/03/19/key-results/" rel="alternate"/><published>2023-03-19T09:30:00+00:00</published><updated>2023-03-19T09:30:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-03-19:/blog/2023/03/19/key-results/</id><summary type="html">&lt;p&gt;Some thoughts sparked by a discussion on Mastodon.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I like &lt;a href="https://en.wikipedia.org/wiki/Mastodon_(social_network)"&gt;Mastodon&lt;/a&gt;.
 I really do.
 Ever since &lt;a href="https://xahteiwi.eu/blog/2022/11/12/bye-birdsite/"&gt;turning my back on the birds(h)ite&lt;/a&gt;, I enjoy the consistent quality of the discussions I’ve been having on the Fediverse. 
 It’s nice that I can disagree with someone, without it turning into a roiling flamefest.&lt;/p&gt;
@@ -336,7 +336,7 @@ Just own up to the fact that without Y, there’s no X.&lt;/p&gt;
 In an organization the reward might be financial, but it might also be as simple as being recognized or commended by a manager, or even just having less fear of being hit by the next round of layoffs. &lt;a class="footnote-backref" href="#fnref:reward" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Brown M&amp;Ms, UTC, and ISO 8601</title><link href="https://xahteiwi.eu/blog/2023/02/10/brown-mms/" rel="alternate"></link><published>2023-02-10T19:00:00+00:00</published><updated>2023-02-10T19:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-02-10:/blog/2023/02/10/brown-mms/</id><summary type="html">&lt;p&gt;What have brown M&amp;amp;Ms got to do with date/time formats and mutual respect? More than you might think.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The &lt;a href="https://en.wikipedia.org/wiki/Van_Halen"&gt;Van Halen&lt;/a&gt; “brown M&amp;amp;Ms” story is a classic tale of rock’n’roll lore.
+&lt;/div&gt;</content><category term="blog"/><category term="Work"/><category term="Communications"/></entry><entry><title>Brown M&amp;Ms, UTC, and ISO 8601</title><link href="https://xahteiwi.eu/blog/2023/02/10/brown-mms/" rel="alternate"/><published>2023-02-10T19:00:00+00:00</published><updated>2023-02-10T19:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2023-02-10:/blog/2023/02/10/brown-mms/</id><summary type="html">&lt;p&gt;What have brown M&amp;amp;Ms got to do with date/time formats and mutual respect? More than you might think.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The &lt;a href="https://en.wikipedia.org/wiki/Van_Halen"&gt;Van Halen&lt;/a&gt; “brown M&amp;amp;Ms” story is a classic tale of rock’n’roll lore.
 In 1982, Van Halen had a famous &lt;a href="https://www.thesmokinggun.com/documents/crime/van-halens-legendary-mms-rider"&gt;concert rider&lt;/a&gt; that included a requirement that was patently ludicrous at face value:
 backstage, the catering at a Van Halen show had to provide bowls of M&amp;amp;Ms chocolate candies — &lt;em&gt;with all the brown ones removed.&lt;/em&gt;
 That’s right, there had to be M&amp;amp;Ms, but if there was a single brown one to be found, this would constitute a breach of contract on the promoter’s part.&lt;/p&gt;
@@ -390,7 +390,7 @@ I grow progressively more skeptical of those people.&lt;/p&gt;
 &lt;p&gt;Burkina Faso, Côte d’Ivoire, Gambia, Ghana, Guinea, Guinea-Bissau, Liberia, Mali, Mauritania, São Tomé and Príncipe, Senegal, Sierra Leone, and Togo. &lt;a class="footnote-backref" href="#fnref:utc-0-countries" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category></entry><entry><title>Nebulous Percentage Shenanigans</title><link href="https://xahteiwi.eu/blog/2022/10/15/nps/" rel="alternate"></link><published>2022-10-15T15:00:00+00:00</published><updated>2022-10-15T15:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-10-15:/blog/2022/10/15/nps/</id><summary type="html">&lt;p&gt;I recently learned that I am a &amp;ldquo;detractor&amp;rdquo; of things I actually quite like. Here are a few related things I also learned about in the process.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Surely you’ve seen a question similar to the following in a survey or
+&lt;/div&gt;</content><category term="blog"/><category term="Work"/></entry><entry><title>Nebulous Percentage Shenanigans</title><link href="https://xahteiwi.eu/blog/2022/10/15/nps/" rel="alternate"/><published>2022-10-15T15:00:00+00:00</published><updated>2022-10-15T15:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-10-15:/blog/2022/10/15/nps/</id><summary type="html">&lt;p&gt;I recently learned that I am a &amp;ldquo;detractor&amp;rdquo; of things I actually quite like. Here are a few related things I also learned about in the process.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Surely you’ve seen a question similar to the following in a survey or
 request for feedback.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;How likely is it that you’ll recommend X to a colleague or friend?&lt;/p&gt;
@@ -607,7 +607,7 @@ agree with all their findings and suggestions.&lt;/p&gt;
 &lt;p&gt;I should mention that I particularly disagree with the notion of
 “replacing” the NPS with something else. See &lt;a href="https://xahteiwi.eu/blog/2021/11/14/meaningless-metrics-treacherous-targets/"&gt;my thoughts on
 metrics&lt;/a&gt; for
-background.&lt;/p&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Uncertainty, industrious compliance, and the illusion of control</title><link href="https://xahteiwi.eu/blog/2022/09/29/industrious-compliance/" rel="alternate"></link><published>2022-09-29T20:00:00+00:00</published><updated>2022-09-29T20:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-09-29:/blog/2022/09/29/industrious-compliance/</id><summary type="html">&lt;p&gt;Why are so many managers obsessed with faux certainty in situations when objectively, there can&amp;rsquo;t be any?&lt;/p&gt;</summary><content type="html">&lt;p&gt;If I had visited you from the future six months ago, and given you
+background.&lt;/p&gt;</content><category term="blog"/><category term="Work"/><category term="Communications"/></entry><entry><title>Uncertainty, industrious compliance, and the illusion of control</title><link href="https://xahteiwi.eu/blog/2022/09/29/industrious-compliance/" rel="alternate"/><published>2022-09-29T20:00:00+00:00</published><updated>2022-09-29T20:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-09-29:/blog/2022/09/29/industrious-compliance/</id><summary type="html">&lt;p&gt;Why are so many managers obsessed with faux certainty in situations when objectively, there can&amp;rsquo;t be any?&lt;/p&gt;</summary><content type="html">&lt;p&gt;If I had visited you from the future six months ago, and given you
 today’s headlines to read, you would probably have dismissed me as a
 lunatic. And you’d probably say the same to someone who dropped in on
 you today and read you the headlines from six months out. And if
@@ -741,7 +741,7 @@ contribute exactly that kind of creativity.&lt;/p&gt;
 &lt;p&gt;Eventually, this problem will rectify itself by those managers
 retiring. But in the interim, maybe a few of us could ditch our school
 approach to work and collaboration, and engage our brains to produce
-the original ideas that we &lt;em&gt;really&lt;/em&gt; need?&lt;/p&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Something interesting happened at work the other week...</title><link href="https://xahteiwi.eu/blog/2022/07/16/something-interesting/" rel="alternate"></link><published>2022-07-16T00:00:00+00:00</published><updated>2022-07-16T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-07-16:/blog/2022/07/16/something-interesting/</id><summary type="html">&lt;p&gt;My company&amp;rsquo;s CEO recently put out a well-written email update instead of calling an all-hands meeting. It was excellent.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I am sure that many of you have been summoned to your fair share of
+the original ideas that we &lt;em&gt;really&lt;/em&gt; need?&lt;/p&gt;</content><category term="blog"/><category term="Work"/><category term="Communications"/></entry><entry><title>Something interesting happened at work the other week...</title><link href="https://xahteiwi.eu/blog/2022/07/16/something-interesting/" rel="alternate"/><published>2022-07-16T00:00:00+00:00</published><updated>2022-07-16T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-07-16:/blog/2022/07/16/something-interesting/</id><summary type="html">&lt;p&gt;My company&amp;rsquo;s CEO recently put out a well-written email update instead of calling an all-hands meeting. It was excellent.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I am sure that many of you have been summoned to your fair share of
 quarterly, end-of-half-year, or end-of-year updates which were held by
 way of a company meeting. You probably didn’t like them too much,
 maybe even dreaded the thought of 45 minutes (or longer! 😱) of Death
@@ -776,7 +776,7 @@ email, but here’s what stood out:&lt;/p&gt;
 &lt;p&gt;It clearly delineated that some of the items discussed were going to
   be somewhat negative (as in, worthy of improvement); many others
   were positive. It also clearly established that the negatives were
-  coming first, and the positives thereafter.&lt;sup id="fnref:negatives-first"&gt;&lt;a class="footnote-ref" href="#fn:negatives-first"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+  coming first, and the positives thereafter.&lt;sup id="fnref:negatives-first"&gt;&lt;a class="footnote-ref" href="#fn:negatives-first"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;It used paragraphs, which were clearly separated by topic. As you
@@ -794,13 +794,13 @@ email, but here’s what stood out:&lt;/p&gt;
   went into it. I have no idea if he did this by himself or asked
   someone else to go over it with him, but &lt;em&gt;that does not matter:&lt;/em&gt;
   what matters is that he edited, not whether he was his own
-  editor.&lt;sup id="fnref:editor"&gt;&lt;a class="footnote-ref" href="#fn:editor"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+  editor.&lt;sup id="fnref:editor"&gt;&lt;a class="footnote-ref" href="#fn:editor"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;What else is good about this?&lt;/h2&gt;
 &lt;p&gt;Best of all, the whole thing was a remarkable exercise in
 efficiency. Jim put his thoughts into &lt;em&gt;precisely&lt;/em&gt; 1,500
-words.&lt;sup id="fnref:precision"&gt;&lt;a class="footnote-ref" href="#fn:precision"&gt;3&lt;/a&gt;&lt;/sup&gt; As I’ve &lt;a href="https://xahteiwi.eu/blog/2021/10/27/this-meeting-should-have-been-an-email/"&gt;pointed out
+words.&lt;sup id="fnref:precision"&gt;&lt;a class="footnote-ref" href="#fn:precision"&gt;1&lt;/a&gt;&lt;/sup&gt; As I’ve &lt;a href="https://xahteiwi.eu/blog/2021/10/27/this-meeting-should-have-been-an-email/"&gt;pointed out
 elsewhere&lt;/a&gt;,
 information you can express in 1,500 concisely written words is at the
 top end of what you can convey in a 60-minute verbal meeting — but
@@ -831,13 +831,17 @@ like Jim.&lt;/p&gt;
 &lt;div class="footnote"&gt;
 &lt;hr/&gt;
 &lt;ol&gt;
+&lt;li id="fn:precision"&gt;
+&lt;p&gt;I am told this exact round-number precision was
+coincidence. &lt;a class="footnote-backref" href="#fnref:precision" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;li id="fn:negatives-first"&gt;
 &lt;p&gt;This is an excellent move on two counts: first,
 readers naturally perceive what comes last as being emphasised. By
 getting the negatives out of the way first, the positives stick in
 people’s minds more strongly. Second, it establishes that once you
 get to the positives, there is no further downer coming to
-sucker-punch you. &lt;a class="footnote-backref" href="#fnref:negatives-first" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+sucker-punch you. &lt;a class="footnote-backref" href="#fnref:negatives-first" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:editor"&gt;
 &lt;p&gt;A trusted editor is a gift from god (if you believe in such
@@ -845,14 +849,10 @@ things). I can highly recommend asking someone you enjoy working
 with to lend you an extra pair of eyes to go over what you
 write. I was mutual editors with
 &lt;a href="https://twitter.com/elenalindq"&gt;Elena Lindqvist&lt;/a&gt; for two years;
-it was glorious. &lt;a class="footnote-backref" href="#fnref:editor" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id="fn:precision"&gt;
-&lt;p&gt;I am told this exact round-number precision was
-coincidence. &lt;a class="footnote-backref" href="#fnref:precision" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+it was glorious. &lt;a class="footnote-backref" href="#fnref:editor" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category></entry><entry><title>Entropy, management, and xkcd 927</title><link href="https://xahteiwi.eu/blog/2022/05/07/entropy/" rel="alternate"></link><published>2022-05-07T00:00:00+00:00</published><updated>2022-05-07T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-05-07:/blog/2022/05/07/entropy/</id><summary type="html">&lt;p&gt;As a manager, don’t try to negotiate with the laws of physics.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://xkcd.com/927/"&gt;xkcd 927&lt;/a&gt; is a modern internet classic that is
+&lt;/div&gt;</content><category term="blog"/><category term="Work"/></entry><entry><title>Entropy, management, and xkcd 927</title><link href="https://xahteiwi.eu/blog/2022/05/07/entropy/" rel="alternate"/><published>2022-05-07T00:00:00+00:00</published><updated>2022-05-07T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-05-07:/blog/2022/05/07/entropy/</id><summary type="html">&lt;p&gt;As a manager, don’t try to negotiate with the laws of physics.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://xkcd.com/927/"&gt;xkcd 927&lt;/a&gt; is a modern internet classic that is
 frequently brought up in conversations to remind people that a proposal
 that they’re making will, while being intended to simplify things,
 actually make them more complicated.&lt;/p&gt;
@@ -1063,7 +1063,7 @@ to this idea. &lt;a class="footnote-backref" href="#fnref:hadfield" title="Jump
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>The Review Review</title><link href="https://xahteiwi.eu/blog/2022/01/29/review-review/" rel="alternate"></link><published>2022-01-29T00:00:00+00:00</published><updated>2022-01-29T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-01-29:/blog/2022/01/29/review-review/</id><summary type="html">&lt;p&gt;Musings on source code management, code review, testing, deployment, and collaboration culture.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I wanted to share a few thoughts on something I consider a rather
+&lt;/script&gt;</content><category term="blog"/><category term="Work"/><category term="Communications"/></entry><entry><title>The Review Review</title><link href="https://xahteiwi.eu/blog/2022/01/29/review-review/" rel="alternate"/><published>2022-01-29T00:00:00+00:00</published><updated>2022-01-29T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-01-29:/blog/2022/01/29/review-review/</id><summary type="html">&lt;p&gt;Musings on source code management, code review, testing, deployment, and collaboration culture.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I wanted to share a few thoughts on something I consider a rather
 important topic in our industry: code review and CI/CD tools, and how
 they relate.&lt;/p&gt;
 &lt;p&gt;This means that I’m talking about&lt;/p&gt;
@@ -1446,7 +1446,7 @@ depends on your priorities. And I’ll give you this from four angles.&lt;/p&gt;
   — meaning using tools that they’re most likely already familiar with
   — GitHub is your platform of choice.&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content><category term="blog"></category><category term="Work"></category><category term="CI"></category><category term="Gerrit"></category><category term="GitLab"></category><category term="GitHub"></category><category term="Zuul"></category></entry><entry><title>Scaling the flat organization</title><link href="https://xahteiwi.eu/blog/2022/01/16/flat-org-scaling/" rel="alternate"></link><published>2022-01-16T00:00:00+00:00</published><updated>2022-01-16T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-01-16:/blog/2022/01/16/flat-org-scaling/</id><summary type="html">&lt;p&gt;“We need a flat organizational structure in order to scale.” Or do we, really?&lt;/p&gt;</summary><content type="html">&lt;p&gt;There’s a common trope in management that goes something like “in
+&lt;/ul&gt;</content><category term="blog"/><category term="Work"/><category term="CI"/><category term="Gerrit"/><category term="GitLab"/><category term="GitHub"/><category term="Zuul"/></entry><entry><title>Scaling the flat organization</title><link href="https://xahteiwi.eu/blog/2022/01/16/flat-org-scaling/" rel="alternate"/><published>2022-01-16T00:00:00+00:00</published><updated>2022-01-16T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-01-16:/blog/2022/01/16/flat-org-scaling/</id><summary type="html">&lt;p&gt;“We need a flat organizational structure in order to scale.” Or do we, really?&lt;/p&gt;</summary><content type="html">&lt;p&gt;There’s a common trope in management that goes something like “in
 order to better scale the organization as we grow, we need to keep it
 flat.” The thrust of the argument is that as the organization grows to
 meet customer and demand growth (and with it, growth in head count),
@@ -2310,7 +2310,7 @@ expression as &lt;span class="math"&gt;\(y\)&lt;/span&gt; goes to infinity:
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Voice messages</title><link href="https://xahteiwi.eu/blog/2021/12/05/voice-messages/" rel="alternate"></link><published>2021-12-05T00:00:00+00:00</published><updated>2021-12-05T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-12-05:/blog/2021/12/05/voice-messages/</id><summary type="html">&lt;p&gt;Apparently, some people think you should replace professional textual communications with voice messaging. Here’s why I think that that’s a bad idea.&lt;/p&gt;</summary><content type="html">&lt;p&gt;As of late, I’ve noticed that when people share one of my articles on
+&lt;/script&gt;</content><category term="blog"/><category term="Work"/><category term="Communications"/></entry><entry><title>Voice messages</title><link href="https://xahteiwi.eu/blog/2021/12/05/voice-messages/" rel="alternate"/><published>2021-12-05T00:00:00+00:00</published><updated>2021-12-05T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-12-05:/blog/2021/12/05/voice-messages/</id><summary type="html">&lt;p&gt;Apparently, some people think you should replace professional textual communications with voice messaging. Here’s why I think that that’s a bad idea.&lt;/p&gt;</summary><content type="html">&lt;p&gt;As of late, I’ve noticed that when people share one of my articles on
 asynchronous communications on Twitter (particularly any from the
 &lt;a href="https://xahteiwi.eu/blog/2021/09/30/getting-out-of-meeting-hell/"&gt;Getting out of Meeting
 Hell&lt;/a&gt; series, or the one on
@@ -2406,7 +2406,7 @@ depends largely on the average number of syllables per word in
 that language. &lt;a class="footnote-backref" href="#fnref:speech-tempo" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category><category term="Accessibility"></category></entry><entry><title>Creativity: How we lost it, why that’s bad, and how we get it back</title><link href="https://xahteiwi.eu/blog/2021/11/21/creativity/" rel="alternate"></link><published>2021-11-21T00:00:00+00:00</published><updated>2021-11-21T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-11-21:/blog/2021/11/21/creativity/</id><summary type="html">&lt;p&gt;A summary of how I think we ended up where we are right now, and what we can do to get moving again.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Right now, it’s easy to open a news site and come to the conclusion
+&lt;/div&gt;</content><category term="blog"/><category term="Work"/><category term="Communications"/><category term="Accessibility"/></entry><entry><title>Creativity: How we lost it, why that’s bad, and how we get it back</title><link href="https://xahteiwi.eu/blog/2021/11/21/creativity/" rel="alternate"/><published>2021-11-21T00:00:00+00:00</published><updated>2021-11-21T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-11-21:/blog/2021/11/21/creativity/</id><summary type="html">&lt;p&gt;A summary of how I think we ended up where we are right now, and what we can do to get moving again.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Right now, it’s easy to open a news site and come to the conclusion
 that the world as we know it is well and truly fucked. It doesn’t
 matter if you’re looking at Covid response, or inaction on climate
 change, or corruption, or communications surveillance: it increasingly
@@ -2742,7 +2742,7 @@ your head and come up with an idea, and when instead of spending an
 hour in a meeting &lt;a href="https://xahteiwi.eu/blog/2021/10/27/this-meeting-should-have-been-an-email/"&gt;you can spend 5 minutes reading a memo and use the
 other 55 minutes for
 thinking&lt;/a&gt;.  And
-that’s where things get interesting.&lt;/p&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Meaningless Metrics, Treacherous Targets</title><link href="https://xahteiwi.eu/blog/2021/11/14/meaningless-metrics-treacherous-targets/" rel="alternate"></link><published>2021-11-14T00:00:00+00:00</published><updated>2021-11-14T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-11-14:/blog/2021/11/14/meaningless-metrics-treacherous-targets/</id><summary type="html">&lt;p&gt;A quick introduction to Goodhart, Strathern, Campbell, Yankelovich, and McNamara.&lt;/p&gt;</summary><content type="html">&lt;p&gt;A common feature of organizations in the software technology industry
+that’s where things get interesting.&lt;/p&gt;</content><category term="blog"/><category term="Work"/><category term="Communications"/></entry><entry><title>Meaningless Metrics, Treacherous Targets</title><link href="https://xahteiwi.eu/blog/2021/11/14/meaningless-metrics-treacherous-targets/" rel="alternate"/><published>2021-11-14T00:00:00+00:00</published><updated>2021-11-14T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-11-14:/blog/2021/11/14/meaningless-metrics-treacherous-targets/</id><summary type="html">&lt;p&gt;A quick introduction to Goodhart, Strathern, Campbell, Yankelovich, and McNamara.&lt;/p&gt;</summary><content type="html">&lt;p&gt;A common feature of organizations in the software technology industry
 (but certainly not &lt;em&gt;only&lt;/em&gt; in that industry) is their fixation on
 metrics, measurements, and quantifiers. I understand that this is
 frequently done and advocated for in the spirit of making management
@@ -2937,7 +2937,7 @@ will perform a required function without failure under stated
 conditions for a stated period of time”.&lt;/p&gt;
 &lt;p&gt;— Betsy Beyer, Chris Jones, Jennifer Petoff, Niall Murphy, “Site
 Reliability Engineering: How Google Runs Production Systems”
-(2017)&lt;sup id="fnref:oconnor"&gt;&lt;a class="footnote-ref" href="#fn:oconnor"&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+(2017)&lt;sup id="fnref:oconnor"&gt;&lt;a class="footnote-ref" href="#fn:oconnor"&gt;7&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;But, at least there &lt;em&gt;is&lt;/em&gt; a definition, which is good. Now I think it’s
 reasonable to say that the following two statements &lt;em&gt;about&lt;/em&gt; site
@@ -2948,7 +2948,7 @@ reliability are probably true:&lt;/p&gt;
    trying to unify a multitude of considerations, site reliability is
    not something we can judge by a single, numerical, universal, and
    useful metric. You can’t measure a single “site reliability score”,
-   and then compare hundreds of platforms based on that.&lt;sup id="fnref:score"&gt;&lt;a class="footnote-ref" href="#fn:score"&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+   and then compare hundreds of platforms based on that.&lt;sup id="fnref:score"&gt;&lt;a class="footnote-ref" href="#fn:score"&gt;8&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Whatever site reliability &lt;em&gt;is&lt;/em&gt; as a whole, it certainly &lt;em&gt;includes&lt;/em&gt;
@@ -2977,9 +2977,9 @@ measurability.&lt;/p&gt;
    in time. Effectively, to properly take a data point for durability
    at the same time as getting one for availability, you’d have to
    read back some data you wrote, say, a year ago, and check its
-   content against something like a known hash.&lt;sup id="fnref:hash"&gt;&lt;a class="footnote-ref" href="#fn:hash"&gt;7&lt;/a&gt;&lt;/sup&gt; &lt;em&gt;And also&lt;/em&gt; write some
+   content against something like a known hash.&lt;sup id="fnref:hash"&gt;&lt;a class="footnote-ref" href="#fn:hash"&gt;9&lt;/a&gt;&lt;/sup&gt; &lt;em&gt;And also&lt;/em&gt; write some
    data now, travel a year into the future, read it back at that
-   point, travel back into the present,&lt;sup id="fnref:timetravel"&gt;&lt;a class="footnote-ref" href="#fn:timetravel"&gt;8&lt;/a&gt;&lt;/sup&gt; and record your
+   point, travel back into the present,&lt;sup id="fnref:timetravel"&gt;&lt;a class="footnote-ref" href="#fn:timetravel"&gt;10&lt;/a&gt;&lt;/sup&gt; and record your
    data point.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -3010,7 +3010,7 @@ has started to corrupt a significant fraction of customer data, data
 which customers are pouring into it at an alarming rate, what do you
 do?  You’re not sure whether there’s actual corruption yet. The proper
 thing to do, if it’s impossible to rule out or fix the data corruption
-problem immediately,&lt;sup id="fnref:immediately"&gt;&lt;a class="footnote-ref" href="#fn:immediately"&gt;9&lt;/a&gt;&lt;/sup&gt; is probably to stop intake, and
+problem immediately,&lt;sup id="fnref:immediately"&gt;&lt;a class="footnote-ref" href="#fn:immediately"&gt;5&lt;/a&gt;&lt;/sup&gt; is probably to stop intake, and
 also ensure that no requests are served that may touch potentially
 corrupted data — that is, shut the service down even before you’ve
 ascertained corruption. But if you suspect that your next bonus payout
@@ -3097,7 +3097,7 @@ you suggestions for “good” metrics: for example, make them hard to
 game, make sure they are defined by competent experts, ensure that
 they are in line with inherent ideas of respectability and
 professionalism. Honestly, I’ve yet to come across a metric that ticks
-all these boxes.&lt;sup id="fnref:game"&gt;&lt;a class="footnote-ref" href="#fn:game"&gt;10&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+all these boxes.&lt;sup id="fnref:game"&gt;&lt;a class="footnote-ref" href="#fn:game"&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;So, I am aware that if you are running a platform under an existing
 SLA, you &lt;em&gt;will&lt;/em&gt; be running under some metrics of questionable utility
 that you cannot get rid of — just because they happen to be industry
@@ -3108,7 +3108,7 @@ want to propose a different approach:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Whatever you measure, make the &lt;em&gt;marginal&lt;/em&gt; cost of a measurement
-   negligeable.&lt;sup id="fnref:marginal"&gt;&lt;a class="footnote-ref" href="#fn:marginal"&gt;12&lt;/a&gt;&lt;/sup&gt; The cost of adding a new metric should be
+   negligeable.&lt;sup id="fnref:marginal"&gt;&lt;a class="footnote-ref" href="#fn:marginal"&gt;11&lt;/a&gt;&lt;/sup&gt; The cost of adding a new metric should be
    practically zero. The moment someone has to repeatedly spend time
    on collecting and compiling the data, they can’t spend that time on
    doing productive work (and Campbell says hi), so you want to avoid
@@ -3117,7 +3117,7 @@ want to propose a different approach:&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;This effectively means that all the systems you care about
    (machines, services, applications) should generate collectable data
-   points, everywhere, all the time.&lt;sup id="fnref:privacy"&gt;&lt;a class="footnote-ref" href="#fn:privacy"&gt;11&lt;/a&gt;&lt;/sup&gt; And you probably won’t be
+   points, everywhere, all the time.&lt;sup id="fnref:privacy"&gt;&lt;a class="footnote-ref" href="#fn:privacy"&gt;12&lt;/a&gt;&lt;/sup&gt; And you probably won’t be
    collecting metrics from anything else. In other words, you are
    &lt;em&gt;just&lt;/em&gt; measuring that which is easily measurable, and you keep
    aware that there a lot of things you don’t measure that are just as
@@ -3190,10 +3190,24 @@ turn cites Rufus Phillips and Richard Holbrooke, “Why Vietnam
 Matters: An Eyewitness Account of Lessons Not Learned” (2008) as
 its source. &lt;a class="footnote-backref" href="#fnref:lansdale" title="Jump back to footnote 4 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
+&lt;li id="fn:immediately"&gt;
+&lt;p&gt;I’ve run into a few issues of suspected silent data
+corruption in my career and I’ve &lt;em&gt;never&lt;/em&gt; been in the situation
+where a reliable fix was available immediately. &lt;a class="footnote-backref" href="#fnref:immediately" title="Jump back to footnote 5 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:game"&gt;
+&lt;p&gt;In particular, pretty much any real-world metric fails the
+“hard to game” test. Said &lt;a href="https://twitter.com/lukasgrossar/status/1267830321057107969"&gt;Lukas Grossar on
+Twitter&lt;/a&gt;:
+“It always amazes me that people don’t believe that slapping a KPI
+onto something won’t lead to people gaming that KPI. We’re
+engineers for God sake, making broken stuff work in our favor is
+basically our job description.” &lt;a class="footnote-backref" href="#fnref:game" title="Jump back to footnote 6 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;li id="fn:oconnor"&gt;
 &lt;p&gt;It should be noted that the SRE book is itself quoting a
 definition of reliability found in Patrick P. O’Connor &amp;amp; Andre
-Kleyner, “Practical Reliability Engineering” (2012). &lt;a class="footnote-backref" href="#fnref:oconnor" title="Jump back to footnote 5 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+Kleyner, “Practical Reliability Engineering” (2012). &lt;a class="footnote-backref" href="#fnref:oconnor" title="Jump back to footnote 7 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:score"&gt;
 &lt;p&gt;The irony is not lost on me that by the definition quoted in
@@ -3203,48 +3217,34 @@ probability. Probabilities go from 0 to 1. That would make site
 reliability a dimensionless quantity between 0 and 1, end of
 story. But it goes without saying that such a score would be “an
 arbitrary quantitative value”, which would put it on step 2 of the
-Yankelovich ladder. &lt;a class="footnote-backref" href="#fnref:score" title="Jump back to footnote 6 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+Yankelovich ladder. &lt;a class="footnote-backref" href="#fnref:score" title="Jump back to footnote 8 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:hash"&gt;
 &lt;p&gt;That hash would have to be separately stored &lt;em&gt;outside&lt;/em&gt; the
 system. If the hash is stored &lt;em&gt;alongside&lt;/em&gt; the data whose
 integrity it’s meant to protect, then it only guards against
 unintentional data corruption, but not against deliberate
-manipulation. &lt;a class="footnote-backref" href="#fnref:hash" title="Jump back to footnote 7 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+manipulation. &lt;a class="footnote-backref" href="#fnref:hash" title="Jump back to footnote 9 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:timetravel"&gt;
 &lt;p&gt;I wish to point out that the only bit that’s impossible
 here is the backwards time travel. The forwards time travel is
 fine, we all travel forwards in time all the time, just at a
-constant rate of one second per second. &lt;a class="footnote-backref" href="#fnref:timetravel" title="Jump back to footnote 8 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id="fn:immediately"&gt;
-&lt;p&gt;I’ve run into a few issues of suspected silent data
-corruption in my career and I’ve &lt;em&gt;never&lt;/em&gt; been in the situation
-where a reliable fix was available immediately. &lt;a class="footnote-backref" href="#fnref:immediately" title="Jump back to footnote 9 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id="fn:game"&gt;
-&lt;p&gt;In particular, pretty much any real-world metric fails the
-“hard to game” test. Said &lt;a href="https://twitter.com/lukasgrossar/status/1267830321057107969"&gt;Lukas Grossar on
-Twitter&lt;/a&gt;:
-“It always amazes me that people don’t believe that slapping a KPI
-onto something won’t lead to people gaming that KPI. We’re
-engineers for God sake, making broken stuff work in our favor is
-basically our job description.” &lt;a class="footnote-backref" href="#fnref:game" title="Jump back to footnote 10 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id="fn:privacy"&gt;
-&lt;p&gt;I’d argue that this requires strong privacy guarantees for
-your users/customers. Effectively, just don’t collect data that’s
-none of your business. &lt;a class="footnote-backref" href="#fnref:privacy" title="Jump back to footnote 11 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+constant rate of one second per second. &lt;a class="footnote-backref" href="#fnref:timetravel" title="Jump back to footnote 10 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:marginal"&gt;
 &lt;p&gt;Emphasis on marginal. It’s obvious that the &lt;em&gt;fixed&lt;/em&gt;
 cost of building and maintaining an instrumentation platform and
 metric system is nonzero. But once you’ve got it set up, the cost
-of &lt;em&gt;adding a new metric&lt;/em&gt; should be substantially zero. &lt;a class="footnote-backref" href="#fnref:marginal" title="Jump back to footnote 12 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+of &lt;em&gt;adding a new metric&lt;/em&gt; should be substantially zero. &lt;a class="footnote-backref" href="#fnref:marginal" title="Jump back to footnote 11 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:privacy"&gt;
+&lt;p&gt;I’d argue that this requires strong privacy guarantees for
+your users/customers. Effectively, just don’t collect data that’s
+none of your business. &lt;a class="footnote-backref" href="#fnref:privacy" title="Jump back to footnote 12 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Warnock’s Dilemma, Objections, and Acknowledgements</title><link href="https://xahteiwi.eu/blog/2021/10/30/warnock-dilemma/" rel="alternate"></link><published>2021-10-30T00:00:00+00:00</published><updated>2021-10-30T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-30:/blog/2021/10/30/warnock-dilemma/</id><summary type="html">&lt;p&gt;“Warnock’s Dilemma” is a classic feature of distributed, asynchronous, online communications. You can’t avoid it, you can’t work around it, but you can deal with it with two simple changes to your communicative behavior.&lt;/p&gt;</summary><content type="html">&lt;p&gt;People skeptical of distributed, asynchronous, written communications
+&lt;/div&gt;</content><category term="blog"/><category term="Work"/><category term="Communications"/></entry><entry><title>Warnock’s Dilemma, Objections, and Acknowledgements</title><link href="https://xahteiwi.eu/blog/2021/10/30/warnock-dilemma/" rel="alternate"/><published>2021-10-30T00:00:00+00:00</published><updated>2021-10-30T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-30:/blog/2021/10/30/warnock-dilemma/</id><summary type="html">&lt;p&gt;“Warnock’s Dilemma” is a classic feature of distributed, asynchronous, online communications. You can’t avoid it, you can’t work around it, but you can deal with it with two simple changes to your communicative behavior.&lt;/p&gt;</summary><content type="html">&lt;p&gt;People skeptical of distributed, asynchronous, written communications
 sometimes make the understandable objection that it is often
 difficult to interpret the reactions, specifically the &lt;em&gt;absence of&lt;/em&gt;
 reactions, to written online communications. &lt;/p&gt;
@@ -3337,7 +3337,7 @@ tracker.&lt;/p&gt;
    people’s ideas on the table.&lt;/li&gt;
 &lt;li&gt;It establishes the notion that nobody’s opinions or suggestions on
    technical matters are sacrosanct, and we want to do &lt;em&gt;the right
-   thing&lt;/em&gt; in any situation, not follow the hippo.&lt;sup id="fnref:hippo"&gt;&lt;a class="footnote-ref" href="#fn:hippo"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+   thing&lt;/em&gt; in any situation, not follow the hippo.&lt;sup id="fnref:hippo"&gt;&lt;a class="footnote-ref" href="#fn:hippo"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
 &lt;li&gt;It encourages others to ask for feedback in the same manner,
    whenever they float ideas or suggestions of their own.&lt;/li&gt;
 &lt;li&gt;It establishes that there’s nothing wrong with being wrong from
@@ -3355,7 +3355,7 @@ the same kind of reply back. There’s something I need to pass on from
 higher up? Or just something I want everyone to know? Out goes an
 email, in come a few “ack” replies over the next few hours. I don’t
 even have to specifically ask anyone for acknowledgement anymore, it
-just happens.&lt;sup id="fnref:guidelines"&gt;&lt;a class="footnote-ref" href="#fn:guidelines"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+just happens.&lt;sup id="fnref:guidelines"&gt;&lt;a class="footnote-ref" href="#fn:guidelines"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;In this context, we deliberately use &lt;em&gt;written&lt;/em&gt; acknowledgements — as
 in, somebody actually &lt;em&gt;types&lt;/em&gt; something, even if it’s just the two
 letters “OK”. I find Like buttons or thumbs-up or email “read
@@ -3373,17 +3373,17 @@ message that “dilemma” is technically inappropriate as the problem
 described includes five choices, not two. It’s properly a
 &lt;a href="https://en.wiktionary.org/wiki/pentalemma"&gt;pentalemma&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:pentalemma" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
+&lt;li id="fn:guidelines"&gt;
+&lt;p&gt;We’ve also codified this in my team’s communications
+guidelines. You don’t have something like that? Write them. &lt;a class="footnote-backref" href="#fnref:guidelines" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;li id="fn:hippo"&gt;
 &lt;p&gt;HiPPO: the Highest-Paid Person’s Opinion. Following the
 hippo is when you value ideas and opinions by seniority of their
-originator, not by correctness or factual merit. &lt;a class="footnote-backref" href="#fnref:hippo" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id="fn:guidelines"&gt;
-&lt;p&gt;We’ve also codified this in my team’s communications
-guidelines. You don’t have something like that? Write them. &lt;a class="footnote-backref" href="#fnref:guidelines" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+originator, not by correctness or factual merit. &lt;a class="footnote-backref" href="#fnref:hippo" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>This Meeting Should Have Been an Email</title><link href="https://xahteiwi.eu/blog/2021/10/27/this-meeting-should-have-been-an-email/" rel="alternate"></link><published>2021-10-27T00:00:00+00:00</published><updated>2021-10-27T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-27:/blog/2021/10/27/this-meeting-should-have-been-an-email/</id><summary type="html">&lt;p&gt;If you believe that it’s just a silly joke or an overused trope, please read this.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Fellow managers, there is an ongoing trope in just about any software
+&lt;/div&gt;</content><category term="blog"/><category term="Work"/><category term="Communications"/></entry><entry><title>This Meeting Should Have Been an Email</title><link href="https://xahteiwi.eu/blog/2021/10/27/this-meeting-should-have-been-an-email/" rel="alternate"/><published>2021-10-27T00:00:00+00:00</published><updated>2021-10-27T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-27:/blog/2021/10/27/this-meeting-should-have-been-an-email/</id><summary type="html">&lt;p&gt;If you believe that it’s just a silly joke or an overused trope, please read this.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Fellow managers, there is an ongoing trope in just about any software
 technology or knowledge based organization (and probably others, too)
 that goes like this:&lt;/p&gt;
 &lt;blockquote&gt;
@@ -3558,7 +3558,7 @@ list. It fails the “formulate complex thoughts and reasoning”
 test. &lt;a class="footnote-backref" href="#fnref:chat" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Please, Make My Company Distributed!</title><link href="https://xahteiwi.eu/blog/2021/10/23/make-my-company-distributed/" rel="alternate"></link><published>2021-10-23T00:00:00+00:00</published><updated>2021-10-23T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-23:/blog/2021/10/23/make-my-company-distributed/</id><summary type="html">&lt;p&gt;Turning an organization into one that works in a distributed and asynchronous fashion is far from trivial.&lt;/p&gt;</summary><content type="html">&lt;p&gt;After &lt;a href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;No, We Won’t Have a Video Call for
+&lt;/div&gt;</content><category term="blog"/><category term="Work"/><category term="Communications"/></entry><entry><title>Please, Make My Company Distributed!</title><link href="https://xahteiwi.eu/blog/2021/10/23/make-my-company-distributed/" rel="alternate"/><published>2021-10-23T00:00:00+00:00</published><updated>2021-10-23T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-23:/blog/2021/10/23/make-my-company-distributed/</id><summary type="html">&lt;p&gt;Turning an organization into one that works in a distributed and asynchronous fashion is far from trivial.&lt;/p&gt;</summary><content type="html">&lt;p&gt;After &lt;a href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;No, We Won’t Have a Video Call for
 That&lt;/a&gt;, which
 covered how productive distributed teams operate, and the &lt;a href="https://xahteiwi.eu/blog/2021/09/30/getting-out-of-meeting-hell/"&gt;Getting out
 of Meeting Hell&lt;/a&gt; series,
@@ -3734,7 +3734,7 @@ no-brainer, you should consider that top management &lt;em&gt;are people,&lt;/em
 and people don’t always act rationally. &lt;a class="footnote-backref" href="#fnref:rational" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>No, We Won’t Have a Video Call for That: The Companion Pieces</title><link href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that-the-companion-pieces/" rel="alternate"></link><published>2021-10-23T00:00:00+00:00</published><updated>2021-10-23T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-23:/resources/presentations/no-we-wont-have-a-video-call-for-that-the-companion-pieces/</id><summary type="html">&lt;p&gt;&lt;a href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;The original article&lt;/a&gt; continues to prompt a
+&lt;/div&gt;</content><category term="blog"/><category term="Work"/><category term="Communications"/></entry><entry><title>No, We Won’t Have a Video Call for That: The Companion Pieces</title><link href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that-the-companion-pieces/" rel="alternate"/><published>2021-10-23T00:00:00+00:00</published><updated>2021-10-23T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-23:/resources/presentations/no-we-wont-have-a-video-call-for-that-the-companion-pieces/</id><summary type="html">&lt;p&gt;&lt;a href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;The original article&lt;/a&gt; continues to prompt a
 lot of thoughts and discussions, so I’ve written a a couple of
 follow-up pieces:&lt;/p&gt;
 &lt;ol&gt;
@@ -3764,7 +3764,7 @@ follow-up pieces:&lt;/p&gt;
    better suited for a distributed and asynchronous style of work, and
    why that’s a lot harder than most people think.&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ol&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="Communications"></category><category term="Work"></category></entry><entry><title>Getting out of Meeting Hell: As a top-level executive</title><link href="https://xahteiwi.eu/blog/2021/10/03/getting-out-of-meeting-hell-executives/" rel="alternate"></link><published>2021-10-03T00:00:00+00:00</published><updated>2021-10-03T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-03:/blog/2021/10/03/getting-out-of-meeting-hell-executives/</id><summary type="html">&lt;p&gt;A short series on transitioning to distributed work and asynchronous collaboration. This article is on what you can do if you are stuck in meeting hell as a top-level executive, such as a CEO, Managing Director, or Executive Director.&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;/ol&gt;</content><category term="presentations"/><category term="Conference"/><category term="Communications"/><category term="Work"/></entry><entry><title>Getting out of Meeting Hell: As a top-level executive</title><link href="https://xahteiwi.eu/blog/2021/10/03/getting-out-of-meeting-hell-executives/" rel="alternate"/><published>2021-10-03T00:00:00+00:00</published><updated>2021-10-03T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-03:/blog/2021/10/03/getting-out-of-meeting-hell-executives/</id><summary type="html">&lt;p&gt;A short series on transitioning to distributed work and asynchronous collaboration. This article is on what you can do if you are stuck in meeting hell as a top-level executive, such as a CEO, Managing Director, or Executive Director.&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
 &lt;p&gt;Please have a look at the
 &lt;a href="https://xahteiwi.eu/blog/2021/09/30/getting-out-of-meeting-hell/"&gt;introduction&lt;/a&gt; for
 background, for applicable disclaimers, and for information about
@@ -3943,7 +3943,7 @@ people reading this will have opinions, air their grievances, and
 share feedback. Those usually give me good thinking material to
 dwell on, so I’ll probably have an additional installment based on
 reader feedback at some point.&lt;/p&gt;
-&lt;/blockquote&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Getting out of Meeting Hell: As a mid-level manager</title><link href="https://xahteiwi.eu/blog/2021/10/02/getting-out-of-meeting-hell-managers/" rel="alternate"></link><published>2021-10-02T00:00:00+00:00</published><updated>2021-10-02T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-02:/blog/2021/10/02/getting-out-of-meeting-hell-managers/</id><summary type="html">&lt;p&gt;A short series on transitioning to distributed work and asynchronous collaboration. This article is on what you can do if you are stuck in meeting hell as a mid-level manager.&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;/blockquote&gt;</content><category term="blog"/><category term="Work"/><category term="Communications"/></entry><entry><title>Getting out of Meeting Hell: As a mid-level manager</title><link href="https://xahteiwi.eu/blog/2021/10/02/getting-out-of-meeting-hell-managers/" rel="alternate"/><published>2021-10-02T00:00:00+00:00</published><updated>2021-10-02T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-02:/blog/2021/10/02/getting-out-of-meeting-hell-managers/</id><summary type="html">&lt;p&gt;A short series on transitioning to distributed work and asynchronous collaboration. This article is on what you can do if you are stuck in meeting hell as a mid-level manager.&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
 &lt;p&gt;Please have a look at the
 &lt;a href="https://xahteiwi.eu/blog/2021/09/30/getting-out-of-meeting-hell/"&gt;introduction&lt;/a&gt; for
 background, for applicable disclaimers, and for information about
@@ -4152,7 +4152,7 @@ urgent by default. &lt;a class="footnote-backref" href="#fnref:not-urgent-by-de
   jerks&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:asshole-filter" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Getting out of Meeting Hell: As a regular employee</title><link href="https://xahteiwi.eu/blog/2021/10/01/getting-out-of-meeting-hell-employees/" rel="alternate"></link><published>2021-10-01T00:00:00+00:00</published><updated>2021-10-01T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-01:/blog/2021/10/01/getting-out-of-meeting-hell-employees/</id><summary type="html">&lt;p&gt;A short series on transitioning to distributed work and asynchronous collaboration. This article is on what you can do if you are stuck in meeting hell as a regular employee who isn&amp;rsquo;t in a management role.&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;/div&gt;</content><category term="blog"/><category term="Work"/><category term="Communications"/></entry><entry><title>Getting out of Meeting Hell: As a regular employee</title><link href="https://xahteiwi.eu/blog/2021/10/01/getting-out-of-meeting-hell-employees/" rel="alternate"/><published>2021-10-01T00:00:00+00:00</published><updated>2021-10-01T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-01:/blog/2021/10/01/getting-out-of-meeting-hell-employees/</id><summary type="html">&lt;p&gt;A short series on transitioning to distributed work and asynchronous collaboration. This article is on what you can do if you are stuck in meeting hell as a regular employee who isn&amp;rsquo;t in a management role.&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
 &lt;p&gt;Please have a look at the
 &lt;a href="https://xahteiwi.eu/blog/2021/09/30/getting-out-of-meeting-hell/"&gt;introduction&lt;/a&gt; for
 background, for applicable disclaimers, and for information about
@@ -4254,7 +4254,7 @@ work. You don’t want to trade being stuck in meeting hell for
 being in stuck in meeting hell &lt;em&gt;and corporate politics.&lt;/em&gt; &lt;a class="footnote-backref" href="#fnref:direct-manager" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>Getting out of Meeting Hell: What this is about</title><link href="https://xahteiwi.eu/blog/2021/09/30/getting-out-of-meeting-hell/" rel="alternate"></link><published>2021-09-30T00:00:00+00:00</published><updated>2021-09-30T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-09-30:/blog/2021/09/30/getting-out-of-meeting-hell/</id><summary type="html">&lt;p&gt;A short series on transitioning to distributed work and asynchronous collaboration. This article is the introduction.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In 2020, I presented a talk at &lt;a href="https://www.froscon.de"&gt;FrOSCon&lt;/a&gt;
+&lt;/div&gt;</content><category term="blog"/><category term="Work"/><category term="Communications"/></entry><entry><title>Getting out of Meeting Hell: What this is about</title><link href="https://xahteiwi.eu/blog/2021/09/30/getting-out-of-meeting-hell/" rel="alternate"/><published>2021-09-30T00:00:00+00:00</published><updated>2021-09-30T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-09-30:/blog/2021/09/30/getting-out-of-meeting-hell/</id><summary type="html">&lt;p&gt;A short series on transitioning to distributed work and asynchronous collaboration. This article is the introduction.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In 2020, I presented a talk at &lt;a href="https://www.froscon.de"&gt;FrOSCon&lt;/a&gt;
 titled &lt;a href="https://media.ccc.de/v/froscon2020-2605-no_we_won_t_have_a_video_call_for_that"&gt;No, we won’t have a video call for that: Communications for
 distributed
 teams.&lt;/a&gt;
@@ -4359,7 +4359,7 @@ telephone, that was a &lt;em&gt;telephone call&lt;/em&gt;. Now a &lt;em&gt;call&
 phone call, except when explicitly specified as a &lt;em&gt;house call.&lt;/em&gt; &lt;a class="footnote-backref" href="#fnref:in-person-meeting" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category><category term="Communications"></category></entry><entry><title>No, We Won’t Have a Video Call for That: Reader Feedback</title><link href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that-reader-feedback/" rel="alternate"></link><published>2021-09-26T00:00:00+00:00</published><updated>2021-09-26T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-09-26:/resources/presentations/no-we-wont-have-a-video-call-for-that-reader-feedback/</id><summary type="html">&lt;p&gt;Communications in distributed teams: a write-up of my talk from FrOSCon 2020, Cloud Edition.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a short summary of selected reactions to &lt;a href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;the original
+&lt;/div&gt;</content><category term="blog"/><category term="Work"/><category term="Communications"/></entry><entry><title>No, We Won’t Have a Video Call for That: Reader Feedback</title><link href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that-reader-feedback/" rel="alternate"/><published>2021-09-26T00:00:00+00:00</published><updated>2021-09-26T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-09-26:/resources/presentations/no-we-wont-have-a-video-call-for-that-reader-feedback/</id><summary type="html">&lt;p&gt;Communications in distributed teams: a write-up of my talk from FrOSCon 2020, Cloud Edition.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a short summary of selected reactions to &lt;a href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;the original
 article&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;Twitter, 2021-04-10&lt;/h3&gt;
 &lt;p&gt;On Twitter, &lt;a href="https://musings.danlj.org/about/"&gt;Michael K Johnson&lt;/a&gt; made
@@ -4412,7 +4412,7 @@ that rare!) cases where asynchronous communication would be
 worthless.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;— &lt;a href="https://news.ycombinator.com/item?id=28652633"&gt;comment&lt;/a&gt; from &lt;code&gt;PeterisP&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;My blanket disregard is for &lt;em&gt;naked&lt;/em&gt; pings, not for pings in general.&lt;/p&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="Communications"></category><category term="Work"></category></entry><entry><title>Rules are rules</title><link href="https://xahteiwi.eu/blog/2021/09/16/rules-are-rules/" rel="alternate"></link><published>2021-09-16T00:00:00+00:00</published><updated>2021-09-16T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-09-16:/blog/2021/09/16/rules-are-rules/</id><summary type="html">&lt;p&gt;I have a reputation for being rigid when it comes to communication rules. Here&amp;rsquo;s why I am.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I have a reputation among my colleagues that I am very strict and
+&lt;p&gt;My blanket disregard is for &lt;em&gt;naked&lt;/em&gt; pings, not for pings in general.&lt;/p&gt;</content><category term="presentations"/><category term="Conference"/><category term="Communications"/><category term="Work"/></entry><entry><title>Rules are rules</title><link href="https://xahteiwi.eu/blog/2021/09/16/rules-are-rules/" rel="alternate"/><published>2021-09-16T00:00:00+00:00</published><updated>2021-09-16T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-09-16:/blog/2021/09/16/rules-are-rules/</id><summary type="html">&lt;p&gt;I have a reputation for being rigid when it comes to communication rules. Here&amp;rsquo;s why I am.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I have a reputation among my colleagues that I am very strict and
 rigid about the communications rules I follow for myself, and for my
 team. That reputation is entirely deserved, and I am indeed not
 particularly flexible in my strong preference for asynchronous,
@@ -4497,7 +4497,7 @@ taking your sense of “urgent” with a big pinch of salt.&lt;/p&gt;
 has suggested that I refer to another, much more elaborate article on
 a similar subject: Siderea’s &lt;em&gt;&lt;a href="https://siderea.dreamwidth.org/1209794.html"&gt;The Asshole
 Filter&lt;/a&gt;&lt;/em&gt;. I recommend you
-give it a read if you’re inclined.&lt;/p&gt;</content><category term="blog"></category><category term="Communications"></category><category term="Work"></category></entry><entry><title>No, We Won’t Have a Video Call for That!</title><link href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/" rel="alternate"></link><published>2020-08-22T00:00:00+00:00</published><updated>2020-08-22T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2020-08-22:/resources/presentations/no-we-wont-have-a-video-call-for-that/</id><summary type="html">&lt;p&gt;Communications in distributed teams: a write-up of my talk from FrOSCon 2020, Cloud Edition.&lt;/p&gt;</summary><content type="html">&lt;p&gt;FrOSCon 2020 was an online event due to the COVID-19 pandemic, and
+give it a read if you’re inclined.&lt;/p&gt;</content><category term="blog"/><category term="Communications"/><category term="Work"/></entry><entry><title>No, We Won’t Have a Video Call for That!</title><link href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/" rel="alternate"/><published>2020-08-22T00:00:00+00:00</published><updated>2020-08-22T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2020-08-22:/resources/presentations/no-we-wont-have-a-video-call-for-that/</id><summary type="html">&lt;p&gt;Communications in distributed teams: a write-up of my talk from FrOSCon 2020, Cloud Edition.&lt;/p&gt;</summary><content type="html">&lt;p&gt;FrOSCon 2020 was an online event due to the COVID-19 pandemic, and
 gave me the opportunity to present an extended and heavily updated
 version of my &lt;a href="https://xahteiwi.eu/resources/presentations/devopsdays-tel-aviv-2019/"&gt;DevOpsDays 2019&lt;/a&gt; talk.&lt;/p&gt;
 &lt;hr/&gt;
@@ -5369,7 +5369,7 @@ don’t lead an ops team.&lt;/p&gt;
 &lt;li&gt;Use less chat.&lt;/li&gt;
 &lt;li&gt;Have fewer meetings.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Write. Things. Down.&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="Communications"></category><category term="Work"></category></entry><entry><title>No, We Won’t Have a Video Call for That: Slides and Recordings</title><link href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that-slides-and-recordings/" rel="alternate"></link><published>2020-08-22T00:00:00+00:00</published><updated>2020-08-22T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2020-08-22:/resources/presentations/no-we-wont-have-a-video-call-for-that-slides-and-recordings/</id><summary type="html">&lt;p&gt;These are the slides and recordings of the original talk that
+&lt;/ul&gt;</content><category term="presentations"/><category term="Conference"/><category term="Communications"/><category term="Work"/></entry><entry><title>No, We Won’t Have a Video Call for That: Slides and Recordings</title><link href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that-slides-and-recordings/" rel="alternate"/><published>2020-08-22T00:00:00+00:00</published><updated>2020-08-22T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2020-08-22:/resources/presentations/no-we-wont-have-a-video-call-for-that-slides-and-recordings/</id><summary type="html">&lt;p&gt;These are the slides and recordings of the original talk that
 ultimately became &lt;a href="https://xahteiwi.eu/resources/presentations/no-we-wont-have-a-video-call-for-that/"&gt;this article&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The talk recording is available from two different sources:&lt;/p&gt;
 &lt;ul&gt;
@@ -5392,7 +5392,7 @@ ultimately became &lt;a href="https://xahteiwi.eu/resources/presentations/no-we-
 &lt;li&gt;Rendered slides: &lt;a href="https://fghaas.github.io/froscon2020/"&gt;GitHub
   Pages&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Slide sources (CC-BY-SA): &lt;a href="https://github.com/fghaas/froscon2020"&gt;GitHub&lt;/a&gt; &lt;/li&gt;
-&lt;/ul&gt;</content><category term="presentations"></category><category term="Conference"></category><category term="Communications"></category><category term="Work"></category></entry><entry><title>Paying People</title><link href="https://xahteiwi.eu/blog/2020/02/04/paying-people/" rel="alternate"></link><published>2020-02-04T00:00:00+00:00</published><updated>2020-02-04T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2020-02-04:/blog/2020/02/04/paying-people/</id><summary type="html">&lt;p&gt;Paying people equally is straightforward, right? We all agree on that, and then once we’re talking about people living in different countries, we all disagree on what “equal” really means.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In my now almost 10ish years of first running my own company, and then
+&lt;/ul&gt;</content><category term="presentations"/><category term="Conference"/><category term="Communications"/><category term="Work"/></entry><entry><title>Paying People</title><link href="https://xahteiwi.eu/blog/2020/02/04/paying-people/" rel="alternate"/><published>2020-02-04T00:00:00+00:00</published><updated>2020-02-04T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2020-02-04:/blog/2020/02/04/paying-people/</id><summary type="html">&lt;p&gt;Paying people equally is straightforward, right? We all agree on that, and then once we’re talking about people living in different countries, we all disagree on what “equal” really means.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In my now almost 10ish years of first running my own company, and then
 managing a team in the company I sold my company to, I have very
 frequently struggled with what’s a “fair” way of paying people. &lt;/p&gt;
 &lt;p&gt;I’ve come to the conclusion that when it comes to hiring distributed,
@@ -5483,4 +5483,4 @@ assumption, then € 3,000 next year is still the same € 3,000 it
 was this year, regardless of whether inflation was maybe 5%. &lt;a class="footnote-backref" href="#fnref:inflation" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="blog"></category><category term="Work"></category></entry></feed>
+&lt;/div&gt;</content><category term="blog"/><category term="Work"/></entry></feed>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - KVM</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/kvm.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2012-03-19T08:27:00+00:00</updated><entry><title>Roll Your Own Cloud</title><link href="https://xahteiwi.eu/resources/presentations/roll-your-own-cloud/" rel="alternate"></link><published>2012-03-19T08:27:00+00:00</published><updated>2012-03-19T08:27:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-03-19:/resources/presentations/roll-your-own-cloud/</id><summary type="html">&lt;p&gt;Tim Serong and I explore the capabilities of KVM, iSCSI, DRBD and Pacemaker to
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - KVM</title><link href="https://xahteiwi.eu/" rel="alternate"/><link href="https://xahteiwi.eu/feeds/tag/kvm.atom.xml" rel="self"/><id>https://xahteiwi.eu/</id><updated>2012-03-19T08:27:00+00:00</updated><entry><title>Roll Your Own Cloud</title><link href="https://xahteiwi.eu/resources/presentations/roll-your-own-cloud/" rel="alternate"/><published>2012-03-19T08:27:00+00:00</published><updated>2012-03-19T08:27:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2012-03-19:/resources/presentations/roll-your-own-cloud/</id><summary type="html">&lt;p&gt;Tim Serong and I explore the capabilities of KVM, iSCSI, DRBD and Pacemaker to
 create a fully open-source enterprise cloud.&lt;/p&gt;
 &lt;p&gt;Shot at linux.conf.au 2011 in Brisbane, this is me babbling, and Tim
 live-cartooning to the delight of the audience.&lt;/p&gt;
@@ -15,4 +15,4 @@ live-cartooning to the delight of the audience.&lt;/p&gt;
 &lt;li&gt;Video: &lt;a href="https://youtu.be/NyHJ8Uf03qg"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr/&gt;
-&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"></category><category term="DRBD"></category><category term="KVM"></category><category term="libvirt"></category><category term="Pacemaker"></category></entry></feed>
+&lt;p&gt;This article originally appeared on the &lt;code&gt;hastexo.com&lt;/code&gt; website (now defunct).&lt;/p&gt;</content><category term="presentations"/><category term="DRBD"/><category term="KVM"/><category term="libvirt"/><category term="Pacemaker"/></entry></feed>

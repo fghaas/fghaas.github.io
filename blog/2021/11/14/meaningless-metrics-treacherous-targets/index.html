@@ -369,7 +369,7 @@ will perform a required function without failure under stated
 conditions for a stated period of time”.</p>
 <p>— Betsy Beyer, Chris Jones, Jennifer Petoff, Niall Murphy, “Site
 Reliability Engineering: How Google Runs Production Systems”
-(2017)<sup id="fnref:oconnor"><a class="footnote-ref" href="#fn:oconnor">5</a></sup></p>
+(2017)<sup id="fnref:oconnor"><a class="footnote-ref" href="#fn:oconnor">7</a></sup></p>
 </blockquote>
 <p>But, at least there <em>is</em> a definition, which is good. Now I think it’s
 reasonable to say that the following two statements <em>about</em> site
@@ -380,7 +380,7 @@ reliability are probably true:</p>
    trying to unify a multitude of considerations, site reliability is
    not something we can judge by a single, numerical, universal, and
    useful metric. You can’t measure a single “site reliability score”,
-   and then compare hundreds of platforms based on that.<sup id="fnref:score"><a class="footnote-ref" href="#fn:score">6</a></sup></p>
+   and then compare hundreds of platforms based on that.<sup id="fnref:score"><a class="footnote-ref" href="#fn:score">8</a></sup></p>
 </li>
 <li>
 <p>Whatever site reliability <em>is</em> as a whole, it certainly <em>includes</em>
@@ -409,9 +409,9 @@ measurability.</p>
    in time. Effectively, to properly take a data point for durability
    at the same time as getting one for availability, you’d have to
    read back some data you wrote, say, a year ago, and check its
-   content against something like a known hash.<sup id="fnref:hash"><a class="footnote-ref" href="#fn:hash">7</a></sup> <em>And also</em> write some
+   content against something like a known hash.<sup id="fnref:hash"><a class="footnote-ref" href="#fn:hash">9</a></sup> <em>And also</em> write some
    data now, travel a year into the future, read it back at that
-   point, travel back into the present,<sup id="fnref:timetravel"><a class="footnote-ref" href="#fn:timetravel">8</a></sup> and record your
+   point, travel back into the present,<sup id="fnref:timetravel"><a class="footnote-ref" href="#fn:timetravel">10</a></sup> and record your
    data point.</p>
 </li>
 </ol>
@@ -442,7 +442,7 @@ has started to corrupt a significant fraction of customer data, data
 which customers are pouring into it at an alarming rate, what do you
 do?  You’re not sure whether there’s actual corruption yet. The proper
 thing to do, if it’s impossible to rule out or fix the data corruption
-problem immediately,<sup id="fnref:immediately"><a class="footnote-ref" href="#fn:immediately">9</a></sup> is probably to stop intake, and
+problem immediately,<sup id="fnref:immediately"><a class="footnote-ref" href="#fn:immediately">5</a></sup> is probably to stop intake, and
 also ensure that no requests are served that may touch potentially
 corrupted data — that is, shut the service down even before you’ve
 ascertained corruption. But if you suspect that your next bonus payout
@@ -529,7 +529,7 @@ you suggestions for “good” metrics: for example, make them hard to
 game, make sure they are defined by competent experts, ensure that
 they are in line with inherent ideas of respectability and
 professionalism. Honestly, I’ve yet to come across a metric that ticks
-all these boxes.<sup id="fnref:game"><a class="footnote-ref" href="#fn:game">10</a></sup></p>
+all these boxes.<sup id="fnref:game"><a class="footnote-ref" href="#fn:game">6</a></sup></p>
 <p>So, I am aware that if you are running a platform under an existing
 SLA, you <em>will</em> be running under some metrics of questionable utility
 that you cannot get rid of — just because they happen to be industry
@@ -540,7 +540,7 @@ want to propose a different approach:</p>
 <ol>
 <li>
 <p>Whatever you measure, make the <em>marginal</em> cost of a measurement
-   negligeable.<sup id="fnref:marginal"><a class="footnote-ref" href="#fn:marginal">12</a></sup> The cost of adding a new metric should be
+   negligeable.<sup id="fnref:marginal"><a class="footnote-ref" href="#fn:marginal">11</a></sup> The cost of adding a new metric should be
    practically zero. The moment someone has to repeatedly spend time
    on collecting and compiling the data, they can’t spend that time on
    doing productive work (and Campbell says hi), so you want to avoid
@@ -549,7 +549,7 @@ want to propose a different approach:</p>
 <li>
 <p>This effectively means that all the systems you care about
    (machines, services, applications) should generate collectable data
-   points, everywhere, all the time.<sup id="fnref:privacy"><a class="footnote-ref" href="#fn:privacy">11</a></sup> And you probably won’t be
+   points, everywhere, all the time.<sup id="fnref:privacy"><a class="footnote-ref" href="#fn:privacy">12</a></sup> And you probably won’t be
    collecting metrics from anything else. In other words, you are
    <em>just</em> measuring that which is easily measurable, and you keep
    aware that there a lot of things you don’t measure that are just as
@@ -622,10 +622,24 @@ turn cites Rufus Phillips and Richard Holbrooke, “Why Vietnam
 Matters: An Eyewitness Account of Lessons Not Learned” (2008) as
 its source. <a class="footnote-backref" href="#fnref:lansdale" title="Jump back to footnote 4 in the text">↩</a></p>
 </li>
+<li id="fn:immediately">
+<p>I’ve run into a few issues of suspected silent data
+corruption in my career and I’ve <em>never</em> been in the situation
+where a reliable fix was available immediately. <a class="footnote-backref" href="#fnref:immediately" title="Jump back to footnote 5 in the text">↩</a></p>
+</li>
+<li id="fn:game">
+<p>In particular, pretty much any real-world metric fails the
+“hard to game” test. Said <a href="https://twitter.com/lukasgrossar/status/1267830321057107969">Lukas Grossar on
+Twitter</a>:
+“It always amazes me that people don’t believe that slapping a KPI
+onto something won’t lead to people gaming that KPI. We’re
+engineers for God sake, making broken stuff work in our favor is
+basically our job description.” <a class="footnote-backref" href="#fnref:game" title="Jump back to footnote 6 in the text">↩</a></p>
+</li>
 <li id="fn:oconnor">
 <p>It should be noted that the SRE book is itself quoting a
 definition of reliability found in Patrick P. O’Connor &amp; Andre
-Kleyner, “Practical Reliability Engineering” (2012). <a class="footnote-backref" href="#fnref:oconnor" title="Jump back to footnote 5 in the text">↩</a></p>
+Kleyner, “Practical Reliability Engineering” (2012). <a class="footnote-backref" href="#fnref:oconnor" title="Jump back to footnote 7 in the text">↩</a></p>
 </li>
 <li id="fn:score">
 <p>The irony is not lost on me that by the definition quoted in
@@ -635,45 +649,31 @@ probability. Probabilities go from 0 to 1. That would make site
 reliability a dimensionless quantity between 0 and 1, end of
 story. But it goes without saying that such a score would be “an
 arbitrary quantitative value”, which would put it on step 2 of the
-Yankelovich ladder. <a class="footnote-backref" href="#fnref:score" title="Jump back to footnote 6 in the text">↩</a></p>
+Yankelovich ladder. <a class="footnote-backref" href="#fnref:score" title="Jump back to footnote 8 in the text">↩</a></p>
 </li>
 <li id="fn:hash">
 <p>That hash would have to be separately stored <em>outside</em> the
 system. If the hash is stored <em>alongside</em> the data whose
 integrity it’s meant to protect, then it only guards against
 unintentional data corruption, but not against deliberate
-manipulation. <a class="footnote-backref" href="#fnref:hash" title="Jump back to footnote 7 in the text">↩</a></p>
+manipulation. <a class="footnote-backref" href="#fnref:hash" title="Jump back to footnote 9 in the text">↩</a></p>
 </li>
 <li id="fn:timetravel">
 <p>I wish to point out that the only bit that’s impossible
 here is the backwards time travel. The forwards time travel is
 fine, we all travel forwards in time all the time, just at a
-constant rate of one second per second. <a class="footnote-backref" href="#fnref:timetravel" title="Jump back to footnote 8 in the text">↩</a></p>
-</li>
-<li id="fn:immediately">
-<p>I’ve run into a few issues of suspected silent data
-corruption in my career and I’ve <em>never</em> been in the situation
-where a reliable fix was available immediately. <a class="footnote-backref" href="#fnref:immediately" title="Jump back to footnote 9 in the text">↩</a></p>
-</li>
-<li id="fn:game">
-<p>In particular, pretty much any real-world metric fails the
-“hard to game” test. Said <a href="https://twitter.com/lukasgrossar/status/1267830321057107969">Lukas Grossar on
-Twitter</a>:
-“It always amazes me that people don’t believe that slapping a KPI
-onto something won’t lead to people gaming that KPI. We’re
-engineers for God sake, making broken stuff work in our favor is
-basically our job description.” <a class="footnote-backref" href="#fnref:game" title="Jump back to footnote 10 in the text">↩</a></p>
-</li>
-<li id="fn:privacy">
-<p>I’d argue that this requires strong privacy guarantees for
-your users/customers. Effectively, just don’t collect data that’s
-none of your business. <a class="footnote-backref" href="#fnref:privacy" title="Jump back to footnote 11 in the text">↩</a></p>
+constant rate of one second per second. <a class="footnote-backref" href="#fnref:timetravel" title="Jump back to footnote 10 in the text">↩</a></p>
 </li>
 <li id="fn:marginal">
 <p>Emphasis on marginal. It’s obvious that the <em>fixed</em>
 cost of building and maintaining an instrumentation platform and
 metric system is nonzero. But once you’ve got it set up, the cost
-of <em>adding a new metric</em> should be substantially zero. <a class="footnote-backref" href="#fnref:marginal" title="Jump back to footnote 12 in the text">↩</a></p>
+of <em>adding a new metric</em> should be substantially zero. <a class="footnote-backref" href="#fnref:marginal" title="Jump back to footnote 11 in the text">↩</a></p>
+</li>
+<li id="fn:privacy">
+<p>I’d argue that this requires strong privacy guarantees for
+your users/customers. Effectively, just don’t collect data that’s
+none of your business. <a class="footnote-backref" href="#fnref:privacy" title="Jump back to footnote 12 in the text">↩</a></p>
 </li>
 </ol>
 </div>

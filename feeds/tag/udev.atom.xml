@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - udev</title><link href="https://xahteiwi.eu/" rel="alternate"></link><link href="https://xahteiwi.eu/feeds/tag/udev.atom.xml" rel="self"></link><id>https://xahteiwi.eu/</id><updated>2021-01-17T00:00:00+00:00</updated><entry><title>Fixing powerline flicker on your webcam feed with a udev rule</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/webcam-rolling-shutter-udev/" rel="alternate"></link><published>2021-01-17T00:00:00+00:00</published><updated>2021-01-17T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-01-17:/resources/hints-and-kinks/webcam-rolling-shutter-udev/</id><summary type="html">&lt;p&gt;If you are&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - udev</title><link href="https://xahteiwi.eu/" rel="alternate"/><link href="https://xahteiwi.eu/feeds/tag/udev.atom.xml" rel="self"/><id>https://xahteiwi.eu/</id><updated>2021-01-17T00:00:00+00:00</updated><entry><title>Fixing powerline flicker on your webcam feed with a udev rule</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/webcam-rolling-shutter-udev/" rel="alternate"/><published>2021-01-17T00:00:00+00:00</published><updated>2021-01-17T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-01-17:/resources/hints-and-kinks/webcam-rolling-shutter-udev/</id><summary type="html">&lt;p&gt;If you are&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;spending a non-trivial amount of time in video calls every week
@@ -81,4 +81,4 @@ trigger&lt;/code&gt;, and you should be good to go.&lt;/p&gt;
 on &lt;a href="https://unix.stackexchange.com/questions/581867/how-can-i-change-my-webcams-power-line-frequency-setting"&gt;this StackExchange
 post&lt;/a&gt;. The
 discussion thread on that post has a few additional suggestions,
-including some not using udev.&lt;/p&gt;</content><category term="hints-and-kinks"></category><category term="udev"></category></entry></feed>
+including some not using udev.&lt;/p&gt;</content><category term="hints-and-kinks"/><category term="udev"/></entry></feed>

@@ -44,25 +44,24 @@
  
 
 <meta name="author" content="Florian Haas" />
-<meta name="description" content="In case you need a quick overview of how many radosgw objects live in your Ceph cluster, here‘s how you do that in one (slightly involved) line of Python." />
-<meta name="keywords" content="Ceph, Python">
+<meta name="description" content="I’ve recently had to bring back my Pinebook Pro from a zombie state." />
+<meta name="keywords" content="Pinebook Pro">
 
 
   <meta property="og:site_name" content="xahteiwi.eu"/>
-  <meta property="og:title" content="A Python one-liner for pretty-printing radosgw utilization"/>
-  <meta property="og:description" content="In case you need a quick overview of how many radosgw objects live in your Ceph cluster, here‘s how you do that in one (slightly involved) line of Python."/>
+  <meta property="og:title" content="Reviving a near-bricked Pinebook Pro"/>
+  <meta property="og:description" content="I’ve recently had to bring back my Pinebook Pro from a zombie state."/>
   <meta property="og:locale" content="en_US"/>
-  <meta property="og:url" content="../../../resources/hints-and-kinks/radosgw-utilization-one-liner/"/>
+  <meta property="og:url" content="../../../resources/hints-and-kinks/unbrick-pgp/"/>
   <meta property="og:type" content="article"/>
-  <meta property="article:published_time" content="2015-12-17 00:00:00+00:00"/>
-  <meta property="article:modified_time" content=""/>
+  <meta property="article:published_time" content="2025-10-05 00:00:00+00:00"/>
+  <meta property="article:modified_time" content="2025-10-05 00:00:00+00:00"/>
   <meta property="article:author" content="../../../author/florian-haas.html">
   <meta property="article:section" content="hints-and-kinks"/>
-  <meta property="article:tag" content="Ceph"/>
-  <meta property="article:tag" content="Python"/>
+  <meta property="article:tag" content="Pinebook Pro"/>
   <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
 
-  <title>xahteiwi.eu &ndash; A Python one-liner for pretty-printing radosgw utilization</title>
+  <title>xahteiwi.eu &ndash; Reviving a near-bricked Pinebook Pro</title>
 
 
 </head>
@@ -164,51 +163,64 @@ rel="me"           href="mailto:xahteiwi+ifyoudontremovethisyoullgostraighttodev
 <article class="single">
   <header>
       
-    <h1 id="radosgw-utilization-one-liner">A Python one-liner for pretty-printing radosgw utilization</h1>
+    <h1 id="unbrick-pgp">Reviving a near-bricked Pinebook Pro</h1>
     <p>
-      Posted on Thu 17 December 2015 in <a href="../../../category/hints-and-kinks.html">hints-and-kinks</a>
+      Posted on Sun 05 October 2025 in <a href="../../../category/hints-and-kinks.html">hints-and-kinks</a>
 
-        &#8226; 1 min read
+        &#8226; 2 min read
     </p>
   </header>
 
 
   <div>
-    <p>In case you need a quick overview of how many radosgw objects live in
-your Ceph cluster, your first step is normally this command:</p>
-<div class="highlight"><pre><span></span><code>radosgw-admin bucket stats
+    <p>Recently, I put <a href="../../../resources/hints-and-kinks/solar-powered-laptop/">my Pinebook Pro</a> in something of a zombie state.
+This was by no means the hardware’s fault, nor that of the <a href="https://www.armbian.com/pinebook-pro/">Armbian</a> system I run on it.
+Rather, I put a bad bootloader image into the SPI flash (<code>/dev/mtd0</code>), which upon reboot put the laptop in permanent Maskrom mode.</p>
+<p>It took me a little while to figure this out, because from the outside Maskrom mode looks remarkably like the machine is dead:
+when you hit the power button, nothing appears to happen.
+The power LED doesn’t come on (not even in red), the display stays dark.
+And the PBP being a fanless device, there’s obviously no fan spin-up either.</p>
+<p>What I needed to do instead was find another machine, and connect it (via a USB A-to-C cable) to the PBP’s USB-C port.
+Then I powered on the PBP.
+If the PBP is in fact <em>not</em> dead, but in Maskrom mode, the kernel log (on the good machine) will show a message like this:</p>
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>journalctl<span class="w"> </span>-b<span class="w"> </span>--grep<span class="w"> </span><span class="m">2207</span>
+<span class="go">Oct 05 09:30:43 foobar kernel: usb 1-6: New USB device found, idVendor=2207, idProduct=330c, bcdDevice= 1.00</span>
 </code></pre></div>
-<p>When used <em>without</em> the <code>--bucket=&lt;name&gt;</code> argument, this command lists
-a bunch of statistics for <em>all</em> your radosgw buckets, in a somewhat
-convoluted JSON format. If you only want a simple list of all your
-buckets and the number of objects they contain, you can use the
-following bit of Python list comprehension magic:</p>
-<div class="highlight"><pre><span></span><code>radosgw-admin<span class="w"> </span>bucket<span class="w"> </span>stats<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>python<span class="w"> </span>-c<span class="w"> </span><span class="s1">'import json; import sys; print "\n".join(["%s: %s" % (str(x["bucket"]), ", ".join(["%s: %s" % (k, v["num_objects"]) for k,v in x["usage"].iteritems()])) for x in json.load(sys.stdin) if isinstance(x,dict)])'</span>
+<p>I was also able to use <code>rkdeveloptool</code> (on the good machine) to talk to the device:</p>
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>rkdeveloptool<span class="w"> </span>ld
+<span class="go">DevNo=1 Vid=0x2207,Pid=0x330c,LocationID=106    Maskrom</span>
 </code></pre></div>
-<p>And while the above is all on one line so you can easily copy and
-paste, here are the Python bits in a slightly more legible format:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-
-<span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="p">)</span>
-
-<span class="nb">print</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">"</span><span class="si">%s</span><span class="s2">: </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s2">"bucket"</span><span class="p">]),</span>
-                             <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">"</span><span class="si">%s</span><span class="s2">: </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span>
-                                                    <span class="n">v</span><span class="p">[</span><span class="s2">"num_objects"</span><span class="p">])</span>
-                                        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">x</span><span class="p">[</span><span class="s2">"usage"</span><span class="p">]</span><span class="o">.</span><span class="n">iteritems</span><span class="p">()]))</span>
-                 <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span>
-                 <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)])</span>
+<p>Once able to access the PBP in Maskrom mode, I was nearly back in business.
+I now needed to follow the instructions for <a href="https://wiki.pine64.org/wiki/Pinebook_Pro_SPI#After_entering_maskrom_mode">writing to the SPI from another machine</a> in the Pinebook Pro wiki.</p>
+<p>Now, I’ve found that zeroing the SPI (which <em>should</em> mean that the PBP boot process just ignores the SPI, and attempts to find a boot loader on the eMMC, and then on the MicroSD card) didn’t change anything for me — the PBP just kept coming back into Maskrom mode after resetting or power-cycling.</p>
+<p>Thus, I chucked <a href="https://tow-boot.org/devices/pine64-pinebookPro.html">Tow-Boot</a> into the SPI.
+At the time of writing, that was version 2023.07-007, downloaded from its <a href="https://github.com/Tow-Boot/Tow-Boot/releases/tag/release-2023.07-007">GitHub release page</a>.</p>
+<p>I also had to obtain the <code>rk3399_loader_spinor</code> binary from the recommended source (at the time of writing, that’s <a href="https://dl.radxa.com/rockpi4/images/loader/spi/rk3399_loader_spinor_v1.15.114.bin">https://dl.radxa.com/rockpi4/images/loader/spi/rk3399_loader_spinor_v1.15.114.bin</a> per the wiki).</p>
+<p>Thus, the whole process amounted to:</p>
+<ol>
+<li>Enumerating the device with <code>rkdeveloptool ld</code></li>
+<li>Applying the bootloader</li>
+<li>Writing the <code>Tow-Boot.spi.bin</code> file</li>
+<li>Checking</li>
+<li>Rebooting the device</li>
+</ol>
+<p>Here is the corresponding sequence of commands.</p>
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>rkdeveloptool<span class="w"> </span>ld
+<span class="go">DevNo=1 Vid=0x2207,Pid=0x330c,LocationID=106    Maskrom</span>
+<span class="gp">$ </span>db<span class="w"> </span>rk3399_loader_spinor_v1.15.114.bin
+<span class="go">Downloading bootloader succeeded.</span>
+<span class="gp">$ </span>rkdeveloptool<span class="w"> </span>wl<span class="w"> </span><span class="m">0</span><span class="w"> </span>towboot/pine64-pinebookPro-2023.07-007/binaries/Tow-Boot.spi.bin
+<span class="go">Write LBA from file (100%)</span>
+<span class="gp">$ </span>rkdeveloptool<span class="w"> </span>td
+<span class="go">Test Device OK.</span>
+<span class="gp">$ </span>./rkdeveloptool<span class="w"> </span>rd
+<span class="go">Reset Device OK</span>
 </code></pre></div>
-<p>Of course, you’ll need to substitute <code>print()</code> for <code>print</code> if your
-system runs only Python 3.</p>
-<hr/>
-<p>This article originally appeared on the <code>hastexo.com</code> website (now defunct).</p>
+<p>After this, the power LED immediately came on and the PBP happily booted Tow-Boot, which then enabled me to select the boot device and boot from either the eMMC or MicroSD card.</p>
   </div>
   <div class="tag-cloud">
     <p>
-      <a href="../../../tag/ceph.html">Ceph</a>
-      <a href="../../../tag/python.html">Python</a>
+      <a href="../../../tag/pinebook-pro.html">Pinebook Pro</a>
     </p>
   </div>
 
