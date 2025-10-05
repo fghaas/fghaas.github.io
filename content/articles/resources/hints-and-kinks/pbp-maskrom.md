@@ -59,7 +59,7 @@ $ rkdeveloptool wl 0 towboot/pine64-pinebookPro-2023.07-007/binaries/Tow-Boot.sp
 Write LBA from file (100%)
 $ rkdeveloptool td
 Test Device OK.
-$ ./rkdeveloptool rd
+$ rkdeveloptool rd
 Reset Device OK
 ```
 
