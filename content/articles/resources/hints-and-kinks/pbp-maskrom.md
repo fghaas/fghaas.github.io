@@ -53,7 +53,7 @@ Here is the corresponding sequence of commands.
 ```console
 $ rkdeveloptool ld
 DevNo=1	Vid=0x2207,Pid=0x330c,LocationID=106	Maskrom
-$ db rk3399_loader_spinor_v1.15.114.bin
+$ rkdeveloptool db rk3399_loader_spinor_v1.15.114.bin
 Downloading bootloader succeeded.
 $ rkdeveloptool wl 0 towboot/pine64-pinebookPro-2023.07-007/binaries/Tow-Boot.spi.bin
 Write LBA from file (100%)
