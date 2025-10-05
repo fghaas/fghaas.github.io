@@ -3,6 +3,7 @@ Date: 2022-05-14
 Modified: 2022-05-15
 Slug: solar-powered-laptop
 Summary: I’m a happy Pinebook Pro user, and I frequently use it on solar power.
+Tags: Pinebook Pro
 
 ![Pinebook Pro laptop sitting on a table, outside, connected to a solar charging panel](/images/pinebookpro.jpg)
 
