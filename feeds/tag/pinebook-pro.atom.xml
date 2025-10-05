@@ -39,7 +39,7 @@ At the time of writing, that was version 2023.07-007, downloaded from its &lt;a 
 &lt;span class="go"&gt;Write LBA from file (100%)&lt;/span&gt;
 &lt;span class="gp"&gt;$ &lt;/span&gt;rkdeveloptool&lt;span class="w"&gt; &lt;/span&gt;td
 &lt;span class="go"&gt;Test Device OK.&lt;/span&gt;
-&lt;span class="gp"&gt;$ &lt;/span&gt;./rkdeveloptool&lt;span class="w"&gt; &lt;/span&gt;rd
+&lt;span class="gp"&gt;$ &lt;/span&gt;rkdeveloptool&lt;span class="w"&gt; &lt;/span&gt;rd
 &lt;span class="go"&gt;Reset Device OK&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;After this, the power LED immediately came on and the PBP happily booted Tow-Boot, which then enabled me to select the boot device and boot from either the eMMC or MicroSD card.&lt;/p&gt;</content><category term="hints-and-kinks"/><category term="Pinebook Pro"/></entry><entry><title>Running a solar-powered laptop</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/solar-powered-laptop/" rel="alternate"/><published>2022-05-14T00:00:00+00:00</published><updated>2022-05-15T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-05-14:/resources/hints-and-kinks/solar-powered-laptop/</id><summary type="html">&lt;p&gt;I’m a happy Pinebook Pro user, and I frequently use it on solar power.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Pinebook Pro laptop sitting on a table, outside, connected to a solar charging panel" class="img-fluid" src="/images/pinebookpro.jpg"/&gt;&lt;/p&gt;
