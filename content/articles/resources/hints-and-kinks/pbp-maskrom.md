@@ -1,7 +1,7 @@
 Title: Reviving a near-bricked Pinebook Pro
 Date: 2025-10-05
 Modified: 2025-10-05
-Slug: unbrick-pgp
+Slug: pbp-maskrom
 Summary: I've recently had to bring back my Pinebook Pro from a zombie state.
 Tags: Pinebook Pro
 
