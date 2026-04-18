@@ -238,17 +238,17 @@ Like so:</p>
 <span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/anomalyco/opencode:1.4.7</span>
 <span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">opencode</span>
 <span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.local/share/opencode:/home/coder/.local/share/opencode</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.local/state/opencode:/home/coder/.local/state/opencode</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.config/opencode/opencode.json:/home/coder/.config/opencode/opencode.json</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.cache/opencode:/home/coder/.cache/opencode</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/coding/git:/home/coder/git</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"~/.local/share/opencode:/home/coder/.local/share/opencode"</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"~/.local/state/opencode:/home/coder/.local/state/opencode"</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"~/.config/opencode/opencode.json:/home/coder/.config/opencode/opencode.json"</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"~/.cache/opencode:/home/coder/.cache/opencode"</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"~/coding/git:/home/coder/git"</span>
 <span class="w">    </span><span class="nt">working_dir</span><span class="p">:</span><span class="w"> </span><span class="s">"/home/coder"</span>
 <span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">serve</span>
 <span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"127.0.0.1:4096:4096"</span>
 <span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'SHELLCHECK_EXTERNAL_SOURCES=false'</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"SHELLCHECK_EXTERNAL_SOURCES=false"</span>
 <span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
 </code></pre></div>
 <p>I can then invoke this like so:</p>
@@ -257,7 +257,7 @@ Like so:</p>
 <p>With this,</p>
 <ul>
 <li>My host UID is mapped to the same UID in the container, meaning all file access on the host and in the container use the same credentials.</li>
-<li>My home directory inside becomes <code>/home/coder</code> inside the container.</li>
+<li>My home directory becomes <code>/home/coder</code> inside the container.</li>
 <li>My OpenCode configuration files and state directory are accessible to OpenCode in the container.</li>
 <li>My home directory’s <code>coding/git</code> subdirectory (assuming that’s where all my Git checkouts live) becomes <code>/home/coder/git</code> in the container.
 If I wanted to be even more restrictive, I could mount just a single Git checkout directory into that container path.</li>
