@@ -1298,7 +1298,7 @@ email, but here’s what stood out:&lt;/p&gt;
 &lt;p&gt;It clearly delineated that some of the items discussed were going to
   be somewhat negative (as in, worthy of improvement); many others
   were positive. It also clearly established that the negatives were
-  coming first, and the positives thereafter.&lt;sup id="fnref:negatives-first"&gt;&lt;a class="footnote-ref" href="#fn:negatives-first"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+  coming first, and the positives thereafter.&lt;sup id="fnref:negatives-first"&gt;&lt;a class="footnote-ref" href="#fn:negatives-first"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;It used paragraphs, which were clearly separated by topic. As you
@@ -1316,13 +1316,13 @@ email, but here’s what stood out:&lt;/p&gt;
   went into it. I have no idea if he did this by himself or asked
   someone else to go over it with him, but &lt;em&gt;that does not matter:&lt;/em&gt;
   what matters is that he edited, not whether he was his own
-  editor.&lt;sup id="fnref:editor"&gt;&lt;a class="footnote-ref" href="#fn:editor"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+  editor.&lt;sup id="fnref:editor"&gt;&lt;a class="footnote-ref" href="#fn:editor"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;What else is good about this?&lt;/h2&gt;
 &lt;p&gt;Best of all, the whole thing was a remarkable exercise in
 efficiency. Jim put his thoughts into &lt;em&gt;precisely&lt;/em&gt; 1,500
-words.&lt;sup id="fnref:precision"&gt;&lt;a class="footnote-ref" href="#fn:precision"&gt;1&lt;/a&gt;&lt;/sup&gt; As I’ve &lt;a href="https://xahteiwi.eu/blog/2021/10/27/this-meeting-should-have-been-an-email/"&gt;pointed out
+words.&lt;sup id="fnref:precision"&gt;&lt;a class="footnote-ref" href="#fn:precision"&gt;3&lt;/a&gt;&lt;/sup&gt; As I’ve &lt;a href="https://xahteiwi.eu/blog/2021/10/27/this-meeting-should-have-been-an-email/"&gt;pointed out
 elsewhere&lt;/a&gt;,
 information you can express in 1,500 concisely written words is at the
 top end of what you can convey in a 60-minute verbal meeting — but
@@ -1353,17 +1353,13 @@ like Jim.&lt;/p&gt;
 &lt;div class="footnote"&gt;
 &lt;hr/&gt;
 &lt;ol&gt;
-&lt;li id="fn:precision"&gt;
-&lt;p&gt;I am told this exact round-number precision was
-coincidence. &lt;a class="footnote-backref" href="#fnref:precision" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
 &lt;li id="fn:negatives-first"&gt;
 &lt;p&gt;This is an excellent move on two counts: first,
 readers naturally perceive what comes last as being emphasised. By
 getting the negatives out of the way first, the positives stick in
 people’s minds more strongly. Second, it establishes that once you
 get to the positives, there is no further downer coming to
-sucker-punch you. &lt;a class="footnote-backref" href="#fnref:negatives-first" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+sucker-punch you. &lt;a class="footnote-backref" href="#fnref:negatives-first" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:editor"&gt;
 &lt;p&gt;A trusted editor is a gift from god (if you believe in such
@@ -1371,7 +1367,11 @@ things). I can highly recommend asking someone you enjoy working
 with to lend you an extra pair of eyes to go over what you
 write. I was mutual editors with
 &lt;a href="https://twitter.com/elenalindq"&gt;Elena Lindqvist&lt;/a&gt; for two years;
-it was glorious. &lt;a class="footnote-backref" href="#fnref:editor" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+it was glorious. &lt;a class="footnote-backref" href="#fnref:editor" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:precision"&gt;
+&lt;p&gt;I am told this exact round-number precision was
+coincidence. &lt;a class="footnote-backref" href="#fnref:precision" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;</content><category term="blog"/><category term="Work"/></entry><entry><title>My experiment: an interim update</title><link href="https://xahteiwi.eu/blog/2022/05/14/experiment-update/" rel="alternate"/><published>2022-05-14T06:30:00+00:00</published><updated>2022-05-14T06:30:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-05-14:/blog/2022/05/14/experiment-update/</id><summary type="html">&lt;p&gt;An update on my small RSS/Mastodon/Twitter social media experiment&lt;/p&gt;</summary><content type="html">&lt;p&gt;My &lt;a href="https://xahteiwi.eu/blog/2022/05/06/experiment/"&gt;social media experiment&lt;/a&gt; is still
@@ -3962,7 +3962,7 @@ will perform a required function without failure under stated
 conditions for a stated period of time”.&lt;/p&gt;
 &lt;p&gt;— Betsy Beyer, Chris Jones, Jennifer Petoff, Niall Murphy, “Site
 Reliability Engineering: How Google Runs Production Systems”
-(2017)&lt;sup id="fnref:oconnor"&gt;&lt;a class="footnote-ref" href="#fn:oconnor"&gt;7&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+(2017)&lt;sup id="fnref:oconnor"&gt;&lt;a class="footnote-ref" href="#fn:oconnor"&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;But, at least there &lt;em&gt;is&lt;/em&gt; a definition, which is good. Now I think it’s
 reasonable to say that the following two statements &lt;em&gt;about&lt;/em&gt; site
@@ -3973,7 +3973,7 @@ reliability are probably true:&lt;/p&gt;
    trying to unify a multitude of considerations, site reliability is
    not something we can judge by a single, numerical, universal, and
    useful metric. You can’t measure a single “site reliability score”,
-   and then compare hundreds of platforms based on that.&lt;sup id="fnref:score"&gt;&lt;a class="footnote-ref" href="#fn:score"&gt;8&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+   and then compare hundreds of platforms based on that.&lt;sup id="fnref:score"&gt;&lt;a class="footnote-ref" href="#fn:score"&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Whatever site reliability &lt;em&gt;is&lt;/em&gt; as a whole, it certainly &lt;em&gt;includes&lt;/em&gt;
@@ -4002,9 +4002,9 @@ measurability.&lt;/p&gt;
    in time. Effectively, to properly take a data point for durability
    at the same time as getting one for availability, you’d have to
    read back some data you wrote, say, a year ago, and check its
-   content against something like a known hash.&lt;sup id="fnref:hash"&gt;&lt;a class="footnote-ref" href="#fn:hash"&gt;9&lt;/a&gt;&lt;/sup&gt; &lt;em&gt;And also&lt;/em&gt; write some
+   content against something like a known hash.&lt;sup id="fnref:hash"&gt;&lt;a class="footnote-ref" href="#fn:hash"&gt;7&lt;/a&gt;&lt;/sup&gt; &lt;em&gt;And also&lt;/em&gt; write some
    data now, travel a year into the future, read it back at that
-   point, travel back into the present,&lt;sup id="fnref:timetravel"&gt;&lt;a class="footnote-ref" href="#fn:timetravel"&gt;10&lt;/a&gt;&lt;/sup&gt; and record your
+   point, travel back into the present,&lt;sup id="fnref:timetravel"&gt;&lt;a class="footnote-ref" href="#fn:timetravel"&gt;8&lt;/a&gt;&lt;/sup&gt; and record your
    data point.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -4035,7 +4035,7 @@ has started to corrupt a significant fraction of customer data, data
 which customers are pouring into it at an alarming rate, what do you
 do?  You’re not sure whether there’s actual corruption yet. The proper
 thing to do, if it’s impossible to rule out or fix the data corruption
-problem immediately,&lt;sup id="fnref:immediately"&gt;&lt;a class="footnote-ref" href="#fn:immediately"&gt;5&lt;/a&gt;&lt;/sup&gt; is probably to stop intake, and
+problem immediately,&lt;sup id="fnref:immediately"&gt;&lt;a class="footnote-ref" href="#fn:immediately"&gt;9&lt;/a&gt;&lt;/sup&gt; is probably to stop intake, and
 also ensure that no requests are served that may touch potentially
 corrupted data — that is, shut the service down even before you’ve
 ascertained corruption. But if you suspect that your next bonus payout
@@ -4122,7 +4122,7 @@ you suggestions for “good” metrics: for example, make them hard to
 game, make sure they are defined by competent experts, ensure that
 they are in line with inherent ideas of respectability and
 professionalism. Honestly, I’ve yet to come across a metric that ticks
-all these boxes.&lt;sup id="fnref:game"&gt;&lt;a class="footnote-ref" href="#fn:game"&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+all these boxes.&lt;sup id="fnref:game"&gt;&lt;a class="footnote-ref" href="#fn:game"&gt;10&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;So, I am aware that if you are running a platform under an existing
 SLA, you &lt;em&gt;will&lt;/em&gt; be running under some metrics of questionable utility
 that you cannot get rid of — just because they happen to be industry
@@ -4133,7 +4133,7 @@ want to propose a different approach:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Whatever you measure, make the &lt;em&gt;marginal&lt;/em&gt; cost of a measurement
-   negligeable.&lt;sup id="fnref:marginal"&gt;&lt;a class="footnote-ref" href="#fn:marginal"&gt;11&lt;/a&gt;&lt;/sup&gt; The cost of adding a new metric should be
+   negligeable.&lt;sup id="fnref:marginal"&gt;&lt;a class="footnote-ref" href="#fn:marginal"&gt;12&lt;/a&gt;&lt;/sup&gt; The cost of adding a new metric should be
    practically zero. The moment someone has to repeatedly spend time
    on collecting and compiling the data, they can’t spend that time on
    doing productive work (and Campbell says hi), so you want to avoid
@@ -4142,7 +4142,7 @@ want to propose a different approach:&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;This effectively means that all the systems you care about
    (machines, services, applications) should generate collectable data
-   points, everywhere, all the time.&lt;sup id="fnref:privacy"&gt;&lt;a class="footnote-ref" href="#fn:privacy"&gt;12&lt;/a&gt;&lt;/sup&gt; And you probably won’t be
+   points, everywhere, all the time.&lt;sup id="fnref:privacy"&gt;&lt;a class="footnote-ref" href="#fn:privacy"&gt;11&lt;/a&gt;&lt;/sup&gt; And you probably won’t be
    collecting metrics from anything else. In other words, you are
    &lt;em&gt;just&lt;/em&gt; measuring that which is easily measurable, and you keep
    aware that there a lot of things you don’t measure that are just as
@@ -4215,24 +4215,10 @@ turn cites Rufus Phillips and Richard Holbrooke, “Why Vietnam
 Matters: An Eyewitness Account of Lessons Not Learned” (2008) as
 its source. &lt;a class="footnote-backref" href="#fnref:lansdale" title="Jump back to footnote 4 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id="fn:immediately"&gt;
-&lt;p&gt;I’ve run into a few issues of suspected silent data
-corruption in my career and I’ve &lt;em&gt;never&lt;/em&gt; been in the situation
-where a reliable fix was available immediately. &lt;a class="footnote-backref" href="#fnref:immediately" title="Jump back to footnote 5 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id="fn:game"&gt;
-&lt;p&gt;In particular, pretty much any real-world metric fails the
-“hard to game” test. Said &lt;a href="https://twitter.com/lukasgrossar/status/1267830321057107969"&gt;Lukas Grossar on
-Twitter&lt;/a&gt;:
-“It always amazes me that people don’t believe that slapping a KPI
-onto something won’t lead to people gaming that KPI. We’re
-engineers for God sake, making broken stuff work in our favor is
-basically our job description.” &lt;a class="footnote-backref" href="#fnref:game" title="Jump back to footnote 6 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
 &lt;li id="fn:oconnor"&gt;
 &lt;p&gt;It should be noted that the SRE book is itself quoting a
 definition of reliability found in Patrick P. O’Connor &amp;amp; Andre
-Kleyner, “Practical Reliability Engineering” (2012). &lt;a class="footnote-backref" href="#fnref:oconnor" title="Jump back to footnote 7 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+Kleyner, “Practical Reliability Engineering” (2012). &lt;a class="footnote-backref" href="#fnref:oconnor" title="Jump back to footnote 5 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:score"&gt;
 &lt;p&gt;The irony is not lost on me that by the definition quoted in
@@ -4242,31 +4228,45 @@ probability. Probabilities go from 0 to 1. That would make site
 reliability a dimensionless quantity between 0 and 1, end of
 story. But it goes without saying that such a score would be “an
 arbitrary quantitative value”, which would put it on step 2 of the
-Yankelovich ladder. &lt;a class="footnote-backref" href="#fnref:score" title="Jump back to footnote 8 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+Yankelovich ladder. &lt;a class="footnote-backref" href="#fnref:score" title="Jump back to footnote 6 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:hash"&gt;
 &lt;p&gt;That hash would have to be separately stored &lt;em&gt;outside&lt;/em&gt; the
 system. If the hash is stored &lt;em&gt;alongside&lt;/em&gt; the data whose
 integrity it’s meant to protect, then it only guards against
 unintentional data corruption, but not against deliberate
-manipulation. &lt;a class="footnote-backref" href="#fnref:hash" title="Jump back to footnote 9 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+manipulation. &lt;a class="footnote-backref" href="#fnref:hash" title="Jump back to footnote 7 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:timetravel"&gt;
 &lt;p&gt;I wish to point out that the only bit that’s impossible
 here is the backwards time travel. The forwards time travel is
 fine, we all travel forwards in time all the time, just at a
-constant rate of one second per second. &lt;a class="footnote-backref" href="#fnref:timetravel" title="Jump back to footnote 10 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+constant rate of one second per second. &lt;a class="footnote-backref" href="#fnref:timetravel" title="Jump back to footnote 8 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:immediately"&gt;
+&lt;p&gt;I’ve run into a few issues of suspected silent data
+corruption in my career and I’ve &lt;em&gt;never&lt;/em&gt; been in the situation
+where a reliable fix was available immediately. &lt;a class="footnote-backref" href="#fnref:immediately" title="Jump back to footnote 9 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:game"&gt;
+&lt;p&gt;In particular, pretty much any real-world metric fails the
+“hard to game” test. Said &lt;a href="https://twitter.com/lukasgrossar/status/1267830321057107969"&gt;Lukas Grossar on
+Twitter&lt;/a&gt;:
+“It always amazes me that people don’t believe that slapping a KPI
+onto something won’t lead to people gaming that KPI. We’re
+engineers for God sake, making broken stuff work in our favor is
+basically our job description.” &lt;a class="footnote-backref" href="#fnref:game" title="Jump back to footnote 10 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:privacy"&gt;
+&lt;p&gt;I’d argue that this requires strong privacy guarantees for
+your users/customers. Effectively, just don’t collect data that’s
+none of your business. &lt;a class="footnote-backref" href="#fnref:privacy" title="Jump back to footnote 11 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:marginal"&gt;
 &lt;p&gt;Emphasis on marginal. It’s obvious that the &lt;em&gt;fixed&lt;/em&gt;
 cost of building and maintaining an instrumentation platform and
 metric system is nonzero. But once you’ve got it set up, the cost
-of &lt;em&gt;adding a new metric&lt;/em&gt; should be substantially zero. &lt;a class="footnote-backref" href="#fnref:marginal" title="Jump back to footnote 11 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id="fn:privacy"&gt;
-&lt;p&gt;I’d argue that this requires strong privacy guarantees for
-your users/customers. Effectively, just don’t collect data that’s
-none of your business. &lt;a class="footnote-backref" href="#fnref:privacy" title="Jump back to footnote 12 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+of &lt;em&gt;adding a new metric&lt;/em&gt; should be substantially zero. &lt;a class="footnote-backref" href="#fnref:marginal" title="Jump back to footnote 12 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;</content><category term="blog"/><category term="Work"/><category term="Communications"/></entry><entry><title>Warnock’s Dilemma, Objections, and Acknowledgements</title><link href="https://xahteiwi.eu/blog/2021/10/30/warnock-dilemma/" rel="alternate"/><published>2021-10-30T00:00:00+00:00</published><updated>2021-10-30T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-30:/blog/2021/10/30/warnock-dilemma/</id><summary type="html">&lt;p&gt;“Warnock’s Dilemma” is a classic feature of distributed, asynchronous, online communications. You can’t avoid it, you can’t work around it, but you can deal with it with two simple changes to your communicative behavior.&lt;/p&gt;</summary><content type="html">&lt;p&gt;People skeptical of distributed, asynchronous, written communications
@@ -4362,7 +4362,7 @@ tracker.&lt;/p&gt;
    people’s ideas on the table.&lt;/li&gt;
 &lt;li&gt;It establishes the notion that nobody’s opinions or suggestions on
    technical matters are sacrosanct, and we want to do &lt;em&gt;the right
-   thing&lt;/em&gt; in any situation, not follow the hippo.&lt;sup id="fnref:hippo"&gt;&lt;a class="footnote-ref" href="#fn:hippo"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+   thing&lt;/em&gt; in any situation, not follow the hippo.&lt;sup id="fnref:hippo"&gt;&lt;a class="footnote-ref" href="#fn:hippo"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
 &lt;li&gt;It encourages others to ask for feedback in the same manner,
    whenever they float ideas or suggestions of their own.&lt;/li&gt;
 &lt;li&gt;It establishes that there’s nothing wrong with being wrong from
@@ -4380,7 +4380,7 @@ the same kind of reply back. There’s something I need to pass on from
 higher up? Or just something I want everyone to know? Out goes an
 email, in come a few “ack” replies over the next few hours. I don’t
 even have to specifically ask anyone for acknowledgement anymore, it
-just happens.&lt;sup id="fnref:guidelines"&gt;&lt;a class="footnote-ref" href="#fn:guidelines"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+just happens.&lt;sup id="fnref:guidelines"&gt;&lt;a class="footnote-ref" href="#fn:guidelines"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;In this context, we deliberately use &lt;em&gt;written&lt;/em&gt; acknowledgements — as
 in, somebody actually &lt;em&gt;types&lt;/em&gt; something, even if it’s just the two
 letters “OK”. I find Like buttons or thumbs-up or email “read
@@ -4398,14 +4398,14 @@ message that “dilemma” is technically inappropriate as the problem
 described includes five choices, not two. It’s properly a
 &lt;a href="https://en.wiktionary.org/wiki/pentalemma"&gt;pentalemma&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:pentalemma" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id="fn:guidelines"&gt;
-&lt;p&gt;We’ve also codified this in my team’s communications
-guidelines. You don’t have something like that? Write them. &lt;a class="footnote-backref" href="#fnref:guidelines" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
 &lt;li id="fn:hippo"&gt;
 &lt;p&gt;HiPPO: the Highest-Paid Person’s Opinion. Following the
 hippo is when you value ideas and opinions by seniority of their
-originator, not by correctness or factual merit. &lt;a class="footnote-backref" href="#fnref:hippo" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+originator, not by correctness or factual merit. &lt;a class="footnote-backref" href="#fnref:hippo" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:guidelines"&gt;
+&lt;p&gt;We’ve also codified this in my team’s communications
+guidelines. You don’t have something like that? Write them. &lt;a class="footnote-backref" href="#fnref:guidelines" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;</content><category term="blog"/><category term="Work"/><category term="Communications"/></entry><entry><title>This Meeting Should Have Been an Email</title><link href="https://xahteiwi.eu/blog/2021/10/27/this-meeting-should-have-been-an-email/" rel="alternate"/><published>2021-10-27T00:00:00+00:00</published><updated>2021-10-27T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-27:/blog/2021/10/27/this-meeting-should-have-been-an-email/</id><summary type="html">&lt;p&gt;If you believe that it’s just a silly joke or an overused trope, please read this.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Fellow managers, there is an ongoing trope in just about any software

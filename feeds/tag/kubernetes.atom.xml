@@ -17,10 +17,10 @@ Thus, we were dealing with baseline memory usage that had suddenly increased by 
 &lt;p&gt;Now to explain this memory usage jump, you’ll need this background information:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;The &lt;code&gt;corerouter&lt;/code&gt; plugin in uWSGI maintains an array of file descriptor references.&lt;/li&gt;
-&lt;li&gt;The size of this array, and with it its memory usage, is a multiple of the value set for uWSGI’s &lt;code&gt;max-fd&lt;/code&gt; configuration option.&lt;sup id="fnref:corerouter"&gt;&lt;a class="footnote-ref" href="#fn:corerouter"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;The size of this array, and with it its memory usage, is a multiple of the value set for uWSGI’s &lt;code&gt;max-fd&lt;/code&gt; configuration option.&lt;sup id="fnref:corerouter"&gt;&lt;a class="footnote-ref" href="#fn:corerouter"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
 &lt;li&gt;If &lt;code&gt;max-fd&lt;/code&gt; has not been set in the uWSGI configuration, its default is the maximum number of open file handles allowed for the process per the system-wide configuration.&lt;/li&gt;
 &lt;li&gt;Said default can be defined by the &lt;code&gt;nofiles&lt;/code&gt; &lt;a href="https://www.man7.org/linux/man-pages/man5/limits.conf.5.html"&gt;ulimit&lt;/a&gt;, or a &lt;a href="https://wiki.archlinux.org/title/Cgroups"&gt;cgroups&lt;/a&gt; restriction.
-   A cgroups restriction is also what systemd uses to implement &lt;a href="https://www.freedesktop.org/software/systemd/man/latest/systemd.exec.html#Process%20Properties"&gt;the &lt;code&gt;LimitNOFILE&lt;/code&gt; option&lt;/a&gt;, which can be set on any systemd unit.&lt;sup id="fnref:man-outdated"&gt;&lt;a class="footnote-ref" href="#fn:man-outdated"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+   A cgroups restriction is also what systemd uses to implement &lt;a href="https://www.freedesktop.org/software/systemd/man/latest/systemd.exec.html#Process%20Properties"&gt;the &lt;code&gt;LimitNOFILE&lt;/code&gt; option&lt;/a&gt;, which can be set on any systemd unit.&lt;sup id="fnref:man-outdated"&gt;&lt;a class="footnote-ref" href="#fn:man-outdated"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
 &lt;li&gt;If neither the ulimit nor a cgroups restriction is in place, &lt;a href="https://www.kernel.org/doc/Documentation/sysctl/fs.txt"&gt;the &lt;code&gt;fs.nr_open&lt;/code&gt; sysctl&lt;/a&gt;, if set, acts as a backstop. &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Prior to release 256, systemd effectively &lt;a href="https://github.com/systemd/systemd/pull/29322"&gt;bumped the default&lt;/a&gt; for &lt;code&gt;LimitNOFILE&lt;/code&gt; from 1048576 (2²⁰) to &lt;code&gt;infinity&lt;/code&gt;, which meant that rather than setting its own cgroups limit, it would rely on &lt;code&gt;fs.nr_open&lt;/code&gt;.
@@ -30,19 +30,19 @@ And &lt;em&gt;that&lt;/em&gt; value was recently upped in some distributions to 
 &lt;p&gt;To their credit, the Garden Linux developers identified this flaw (which, to my knowledge was baked into their version 1592.2), and &lt;a href="https://github.com/gardenlinux/gardenlinux/pull/2442"&gt;fixed it&lt;/a&gt; in version 1592.3.
 Still, to insulate ourselves from further such issues, we have opted to &lt;a href="https://uwsgi-docs.readthedocs.io/en/latest/Configuration.html"&gt;reconfigure our systems&lt;/a&gt; to run uWSGI with an explicitly defined &lt;code&gt;max-fd&lt;/code&gt; option, set to the prior system-wide default of 1048576 (although setting it to something as low as 1024 would &lt;em&gt;probably&lt;/em&gt; work too). &lt;/p&gt;
 &lt;h3&gt;Acknowledgements&lt;/h3&gt;
-&lt;p&gt;&lt;a href="https://github.com/lotharbach"&gt;Lothar Bach&lt;/a&gt;, &lt;a href="https://github.com/polarathene"&gt;Brennan Kinney&lt;/a&gt;, &lt;a href="https://github.com/pkdevpl"&gt;Piotr Kucułyma&lt;/a&gt;, &lt;a href="https://github.com/NamrataSitlani"&gt;Namrata Sitlani&lt;/a&gt;, and &lt;a href="https://github.com/mrtmm"&gt;Maari Tamm&lt;/a&gt; all contributed to the findings discussed in this article.&lt;sup id="fnref:order"&gt;&lt;a class="footnote-ref" href="#fn:order"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/lotharbach"&gt;Lothar Bach&lt;/a&gt;, &lt;a href="https://github.com/polarathene"&gt;Brennan Kinney&lt;/a&gt;, &lt;a href="https://github.com/pkdevpl"&gt;Piotr Kucułyma&lt;/a&gt;, &lt;a href="https://github.com/NamrataSitlani"&gt;Namrata Sitlani&lt;/a&gt;, and &lt;a href="https://github.com/mrtmm"&gt;Maari Tamm&lt;/a&gt; all contributed to the findings discussed in this article.&lt;sup id="fnref:order"&gt;&lt;a class="footnote-ref" href="#fn:order"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;div class="footnote"&gt;
 &lt;hr/&gt;
 &lt;ol&gt;
-&lt;li id="fn:order"&gt;
-&lt;p&gt;I’ve listed these individuals in alphabetical order by surname. &lt;a class="footnote-backref" href="#fnref:order" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
 &lt;li id="fn:corerouter"&gt;
 &lt;p&gt;See &lt;a href="https://github.com/unbit/uwsgi/blob/master/plugins/corerouter/corerouter.c#L705"&gt;the source&lt;/a&gt;, which at the time of writing reads:
-  &lt;code&gt;ucr-&amp;gt;cr_table = uwsgi_malloc(sizeof(struct corerouter_session *) * uwsgi.max_fd);&lt;/code&gt; &lt;a class="footnote-backref" href="#fnref:corerouter" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+  &lt;code&gt;ucr-&amp;gt;cr_table = uwsgi_malloc(sizeof(struct corerouter_session *) * uwsgi.max_fd);&lt;/code&gt; &lt;a class="footnote-backref" href="#fnref:corerouter" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:man-outdated"&gt;
-&lt;p&gt;As far as I can tell, at the time of writing the table captioned “Resource limit directives” in the &lt;code&gt;systemd.exec&lt;/code&gt; man page is outdated and incorrect as far as &lt;code&gt;LimitNOFILE&lt;/code&gt;’s default is concerned, and also the “Don’t use” admonition seems misguided at this point. &lt;a class="footnote-backref" href="#fnref:man-outdated" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As far as I can tell, at the time of writing the table captioned “Resource limit directives” in the &lt;code&gt;systemd.exec&lt;/code&gt; man page is outdated and incorrect as far as &lt;code&gt;LimitNOFILE&lt;/code&gt;’s default is concerned, and also the “Don’t use” admonition seems misguided at this point. &lt;a class="footnote-backref" href="#fnref:man-outdated" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:order"&gt;
+&lt;p&gt;I’ve listed these individuals in alphabetical order by surname. &lt;a class="footnote-backref" href="#fnref:order" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;</content><category term="hints-and-kinks"/><category term="Kubernetes"/><category term="Django"/><category term="Containers"/><category term="systemd"/></entry><entry><title>One For All: Using Terraform to manage OpenStack and Kubernetes resources</title><link href="https://xahteiwi.eu/talk-submissions/oidn-2019-terraform/" rel="alternate"/><published>2019-05-07T00:00:00+00:00</published><updated>2019-05-07T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2019-05-07:/talk-submissions/oidn-2019-terraform/</id><summary type="html">&lt;p&gt;A workshop I submitted to Open Infra Days Nordics 2019.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a workshop I proposed&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt; for &lt;a href="https://openinfranordics.com/"&gt;OpenInfra Days

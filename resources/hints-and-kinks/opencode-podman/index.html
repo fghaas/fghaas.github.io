@@ -1,0 +1,328 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index,follow" />
+
+
+    <link rel="stylesheet" type="text/css" href="../../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../../theme/pygments/github.min.css">
+
+    <link rel="stylesheet" 
+    href="../../../theme/tipuesearch/tipuesearch.min.css" />
+
+
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/solid.css">
+
+  <link rel="stylesheet" type="text/css" href="/css/override.css">
+
+  <link rel="shortcut icon" href="https://xahteiwi.eu/favicon.svg" type="image/x-icon">
+  <link rel="icon" href="https://xahteiwi.eu/favicon.svg" type="image/x-icon">
+
+
+  <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+  <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+ 
+
+<meta name="author" content="Florian Haas" />
+<meta name="description" content="It’s not completely trivial to run OpenCode in rootless Podman. But it’s not impossible, either." />
+<meta name="keywords" content="Podman, OpenCode">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="Containing OpenCode with Podman"/>
+  <meta property="og:description" content="It’s not completely trivial to run OpenCode in rootless Podman. But it’s not impossible, either."/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../../resources/hints-and-kinks/opencode-podman/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2026-04-18 00:00:00+00:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../../author/florian-haas.html">
+  <meta property="article:section" content="hints-and-kinks"/>
+  <meta property="article:tag" content="Podman"/>
+  <meta property="article:tag" content="OpenCode"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; Containing OpenCode with Podman</title>
+
+
+</head>
+<body >
+
+<aside>
+  <div>
+    <a href="../../../">
+      <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+    </a>
+
+    <h1>
+      <a href="../../../"></a>
+    </h1>
+
+
+    <form class="navbar-search" action="../../../search.html" role="search">
+      <input type="text" name="q" id="tipue_search_input" placeholder="Search...">
+    </form>
+
+
+    <ul class="social">
+      <li>
+        <a class="sc-mastodon"
+rel="me"           href="https://mastodon.social/@xahteiwi"
+           target="_blank">
+          <i class="fa-brands fa-mastodon"></i>
+        </a>
+      </li>
+      <li>
+        <a class="sc-mastodon"
+rel="me"           href="https://fedifreu.de/@xahteiwi"
+           target="_blank">
+          <i class="fa-brands fa-mastodon"></i>
+        </a>
+      </li>
+      <li>
+        <a class="sc-linkedin"
+           href="https://www.linkedin.com/in/fghaas"
+           target="_blank">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="sc-xing"
+           href="https://www.xing.com/profile/Florian_Haas2/"
+           target="_blank">
+          <i class="fa-brands fa-xing"></i>
+        </a>
+      </li>
+      <li>
+        <a class="sc-github"
+           href="https://github.com/fghaas"
+           target="_blank">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </li>
+      <li>
+        <a class="sc-rss"
+           href="/feeds/all.rss.xml"
+           target="_blank">
+          <i class="fa-solid fa-rss"></i>
+        </a>
+      </li>
+      <li>
+        <a class="sc-envelope"
+rel="me"           href="mailto:xahteiwi+ifyoudontremovethisyoullgostraighttodevnull@mailbox.org"
+           target="_blank">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</aside>
+  <main>
+
+<nav>
+  <a href="../../../">Home</a>
+
+  <a href="/category/hints-and-kinks.html">Tech</a>
+  <a href="/category/presentations.html">Talks</a>
+  <a href="/category/blog.html">Thoughts</a>
+  <a href="">​</a>
+  <a href="/about/">About</a>
+  <a href="/comments/">Comments</a>
+  <a href="/legal/">Legal</a>
+  <a href="/privacy/">Privacy</a>
+  <a href="">​</a>
+  <a href="/categories.html">Categories</a>
+  <a href="/tags.html">Tags</a>
+  <a href="">​</a>
+
+  <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+  <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+</nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="opencode-podman">Containing OpenCode with Podman</h1>
+    <p>
+      Posted on Sat 18 April 2026 in <a href="../../../category/hints-and-kinks.html">hints-and-kinks</a>
+
+        &#8226; 3 min read
+    </p>
+  </header>
+
+
+  <div>
+    <p><a href="https://opencode.ai/">OpenCode</a> is an MIT-licensed agentic coding assistant.
+It’s not completely trivial to run it in <a href="https://github.com/containers/podman/blob/main/docs/tutorials/rootless_tutorial.md">rootless Podman</a>, but it can be done.
+Here’s how.</p>
+<h2>The OpenCode container image</h2>
+<p>Although the OpenCode documentation makes it a bit hard to find, an official Docker image for OpenCode does exist, and is available from the <a href="https://ghcr.io/anomalyco/opencode">GitHub Container Registry</a> (GHCR).</p>
+<p>It runs in TUI mode, out of the box, with <code>podman run</code>, like so:</p>
+<div class="highlight"><pre><span></span><code>podman<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>ghcr.io/anomalyco/opencode
+</code></pre></div>
+<p>Images are released along with new OpenCode versions, so if you don’t want the latest, you might instead want to run:</p>
+<div class="highlight"><pre><span></span><code>podman<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>ghcr.io/anomalyco/opencode:1.4.5
+</code></pre></div>
+<h2>Rootless Podman</h2>
+<p>I’ve written about how I manage services with <code>systemd</code> and <code>podman</code> in rootless mode before; see <a href="../../../resources/hints-and-kinks/rootless-podman-docker-compose/">this article</a> for details.</p>
+<p>The remainder of this article assumes the same setup.</p>
+<h2>The objective</h2>
+<p>What I want to do is this:</p>
+<ol>
+<li>Run OpenCode in a rootless Podman container that I can manage as a <a href="https://wiki.archlinux.org/title/Systemd/User">user-mode systemd service</a>.</li>
+<li><em>Selectively</em> give OpenCode access to a directory containing Git repos.</li>
+<li>Ensure that OpenCode has access to those files using my user identity, the way the OpenCode TUI would if I ran the <code>opencode</code> binary directly (without a container).</li>
+<li>Define everything in a Docker Compose configuration.<sup id="fnref:compose"><a class="footnote-ref" href="#fn:compose">1</a></sup></li>
+</ol>
+<p>Obviously, the TUI itself won’t be very helpful for that purpose.</p>
+<p>However, OpenCode also comes with a very helpful <a href="https://opencode.ai/docs/server/">server mode</a>, including a web-based GUI, and this we can containerize rather well.</p>
+<h2>Considerations</h2>
+<p>There’s a few things one needs to know to make this work.</p>
+<h3>Default config file paths</h3>
+<p>In a default configuration, OpenCode needs access to the following files and directories, in addition to the working directory with the code I want it to modify:</p>
+<ul>
+<li><code>~/.config/opencode/opencode.json</code> or <code>~/.config/opencode/opencode.jsonc</code>: OpenCode’s main configuration file.</li>
+<li><code>~/.local/share/opencode</code>: Directory for logs, and OpenCode’s SQLite database.</li>
+<li><code>~/.local/state/opencode</code>: Directory for lock files and other state information.</li>
+<li><code>~/.cache/opencode</code>: Cache directory.</li>
+</ul>
+<p>Thus, containerized OpenCode requires that I mount these paths into my container.</p>
+<h3>OpenCode in server mode</h3>
+<p>When running in server mode, OpenCode by default listens on <code>localhost</code> only.
+Thus, if I want to run it in a container and port-forward its server, it’s necessary to pre-create the <code>~/.config/opencode/opencode.json</code> file and populate it.
+Like so:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"$schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://opencode.ai/config.json"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"server"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"port"</span><span class="p">:</span><span class="w"> </span><span class="mi">4096</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"hostname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0.0.0"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"cors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">"http://localhost:4096"</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3>Podman with <code>PODMAN_USERNS=keep-id</code></h3>
+<p>When you run Podman with <code>PODMAN_USERNS=keep-id</code>, as I normally do, Podman</p>
+<ul>
+<li>makes sure that the user ID and name in the container match the  UID and name of the host user that invokes the container,</li>
+<li>sets that user’s home directory in the container to whatever <code>--workdir</code> option it was invoked with (or <code>/</code> if no such option was given),</li>
+<li>injects a line to the above effect into <code>/etc/passwd</code> in the container.</li>
+</ul>
+<h2>Putting it all together</h2>
+<p>With all the above in mind, I can use this Compose configuration:</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nt">opencode</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/anomalyco/opencode:1.4.7</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">opencode</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.local/share/opencode:/home/coder/.local/share/opencode</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.local/state/opencode:/home/coder/.local/state/opencode</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.config/opencode/opencode.json:/home/coder/.config/opencode/opencode.json</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.cache/opencode:/home/coder/.cache/opencode</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/coding/git:/home/coder/git</span>
+<span class="w">    </span><span class="nt">working_dir</span><span class="p">:</span><span class="w"> </span><span class="s">"/home/coder"</span>
+<span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">serve</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"127.0.0.1:4096:4096"</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'SHELLCHECK_EXTERNAL_SOURCES=false'</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+</code></pre></div>
+<p>I can then invoke this like so:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">PODMAN_USERNS</span><span class="o">=</span>keep-id<span class="w"> </span>podman<span class="w"> </span>compose<span class="w"> </span>up
+</code></pre></div>
+<p>With this,</p>
+<ul>
+<li>My host UID is mapped to the same UID in the container, meaning all file access on the host and in the container use the same credentials.</li>
+<li>My home directory inside becomes <code>/home/coder</code> inside the container.</li>
+<li>My OpenCode configuration files and state directory are accessible to OpenCode in the container.</li>
+<li>My home directory’s <code>coding/git</code> subdirectory (assuming that’s where all my Git checkouts live) becomes <code>/home/coder/git</code> in the container.
+If I wanted to be even more restrictive, I could mount just a single Git checkout directory into that container path.</li>
+<li>The OpenCode web server is available on my host as <a href="http://localhost:4096">http://localhost:4096</a>.</li>
+</ul>
+<p>Setting the environment variable <code>SHELLCHECK_EXTERNAL_SOURCES=false</code> is a workaround for the <a href="https://github.com/anomalyco/opencode/issues/5363">OpenCode issue 5363</a>.</p>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:compose">
+<p>The reason I want to use the Docker Compose format is simplicity and personal preference.
+Skipping this layer, and using <a href="https://docs.podman.io/en/latest/markdown/podman-quadlet.1.html">Podman Quadlets</a> instead, would also be an option. <a class="footnote-backref" href="#fnref:compose" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../tag/podman.html">Podman</a>
+      <a href="../../../tag/opencode.html">OpenCode</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+<footer>
+<p>
+  &copy; 2026  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p></footer>  </main>
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+</body>
+</html>

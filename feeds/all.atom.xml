@@ -1,5 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu</title><link href="https://xahteiwi.eu/" rel="alternate"/><link href="https://xahteiwi.eu/feeds/all.atom.xml" rel="self"/><id>https://xahteiwi.eu/</id><updated>2025-10-05T00:00:00+00:00</updated><entry><title>Reviving a near-bricked Pinebook Pro</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/pbp-maskrom/" rel="alternate"/><published>2025-10-05T00:00:00+00:00</published><updated>2025-10-05T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2025-10-05:/resources/hints-and-kinks/pbp-maskrom/</id><summary type="html">&lt;p&gt;I&amp;rsquo;ve recently had to bring back my Pinebook Pro from a zombie state.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recently, I put &lt;a href="https://xahteiwi.eu/resources/hints-and-kinks/solar-powered-laptop/"&gt;my Pinebook Pro&lt;/a&gt; in something of a zombie state.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu</title><link href="https://xahteiwi.eu/" rel="alternate"/><link href="https://xahteiwi.eu/feeds/all.atom.xml" rel="self"/><id>https://xahteiwi.eu/</id><updated>2026-04-18T00:00:00+00:00</updated><entry><title>Containing OpenCode with Podman</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/opencode-podman/" rel="alternate"/><published>2026-04-18T00:00:00+00:00</published><updated>2026-04-18T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2026-04-18:/resources/hints-and-kinks/opencode-podman/</id><summary type="html">&lt;p&gt;It&amp;rsquo;s not completely trivial to run OpenCode in rootless Podman. But it&amp;rsquo;s not impossible, either.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://opencode.ai/"&gt;OpenCode&lt;/a&gt; is an MIT-licensed agentic coding assistant.
+It’s not completely trivial to run it in &lt;a href="https://github.com/containers/podman/blob/main/docs/tutorials/rootless_tutorial.md"&gt;rootless Podman&lt;/a&gt;, but it can be done.
+Here’s how.&lt;/p&gt;
+&lt;h2&gt;The OpenCode container image&lt;/h2&gt;
+&lt;p&gt;Although the OpenCode documentation makes it a bit hard to find, an official Docker image for OpenCode does exist, and is available from the &lt;a href="https://ghcr.io/anomalyco/opencode"&gt;GitHub Container Registry&lt;/a&gt; (GHCR).&lt;/p&gt;
+&lt;p&gt;It runs in TUI mode, out of the box, with &lt;code&gt;podman run&lt;/code&gt;, like so:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;podman&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;-it&lt;span class="w"&gt; &lt;/span&gt;ghcr.io/anomalyco/opencode
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Images are released along with new OpenCode versions, so if you don’t want the latest, you might instead want to run:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;podman&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;-it&lt;span class="w"&gt; &lt;/span&gt;ghcr.io/anomalyco/opencode:1.4.5
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Rootless Podman&lt;/h2&gt;
+&lt;p&gt;I’ve written about how I manage services with &lt;code&gt;systemd&lt;/code&gt; and &lt;code&gt;podman&lt;/code&gt; in rootless mode before; see &lt;a href="https://xahteiwi.eu/resources/hints-and-kinks/rootless-podman-docker-compose/"&gt;this article&lt;/a&gt; for details.&lt;/p&gt;
+&lt;p&gt;The remainder of this article assumes the same setup.&lt;/p&gt;
+&lt;h2&gt;The objective&lt;/h2&gt;
+&lt;p&gt;What I want to do is this:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Run OpenCode in a rootless Podman container that I can manage as a &lt;a href="https://wiki.archlinux.org/title/Systemd/User"&gt;user-mode systemd service&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Selectively&lt;/em&gt; give OpenCode access to a directory containing Git repos.&lt;/li&gt;
+&lt;li&gt;Ensure that OpenCode has access to those files using my user identity, the way the OpenCode TUI would if I ran the &lt;code&gt;opencode&lt;/code&gt; binary directly (without a container).&lt;/li&gt;
+&lt;li&gt;Define everything in a Docker Compose configuration.&lt;sup id="fnref:compose"&gt;&lt;a class="footnote-ref" href="#fn:compose"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Obviously, the TUI itself won’t be very helpful for that purpose.&lt;/p&gt;
+&lt;p&gt;However, OpenCode also comes with a very helpful &lt;a href="https://opencode.ai/docs/server/"&gt;server mode&lt;/a&gt;, including a web-based GUI, and this we can containerize rather well.&lt;/p&gt;
+&lt;h2&gt;Considerations&lt;/h2&gt;
+&lt;p&gt;There’s a few things one needs to know to make this work.&lt;/p&gt;
+&lt;h3&gt;Default config file paths&lt;/h3&gt;
+&lt;p&gt;In a default configuration, OpenCode needs access to the following files and directories, in addition to the working directory with the code I want it to modify:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;~/.config/opencode/opencode.json&lt;/code&gt; or &lt;code&gt;~/.config/opencode/opencode.jsonc&lt;/code&gt;: OpenCode’s main configuration file.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;~/.local/share/opencode&lt;/code&gt;: Directory for logs, and OpenCode’s SQLite database.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;~/.local/state/opencode&lt;/code&gt;: Directory for lock files and other state information.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;~/.cache/opencode&lt;/code&gt;: Cache directory.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Thus, containerized OpenCode requires that I mount these paths into my container.&lt;/p&gt;
+&lt;h3&gt;OpenCode in server mode&lt;/h3&gt;
+&lt;p&gt;When running in server mode, OpenCode by default listens on &lt;code&gt;localhost&lt;/code&gt; only.
+Thus, if I want to run it in a container and port-forward its server, it’s necessary to pre-create the &lt;code&gt;~/.config/opencode/opencode.json&lt;/code&gt; file and populate it.
+Like so:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;"$schema"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"https://opencode.ai/config.json"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;"server"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;"port"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;4096&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;"hostname"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"0.0.0.0"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;"cors"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="s2"&gt;"http://localhost:4096"&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Podman with &lt;code&gt;PODMAN_USERNS=keep-id&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;When you run Podman with &lt;code&gt;PODMAN_USERNS=keep-id&lt;/code&gt;, as I normally do, Podman&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;makes sure that the user ID and name in the container match the  UID and name of the host user that invokes the container,&lt;/li&gt;
+&lt;li&gt;sets that user’s home directory in the container to whatever &lt;code&gt;--workdir&lt;/code&gt; option it was invoked with (or &lt;code&gt;/&lt;/code&gt; if no such option was given),&lt;/li&gt;
+&lt;li&gt;injects a line to the above effect into &lt;code&gt;/etc/passwd&lt;/code&gt; in the container.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Putting it all together&lt;/h2&gt;
+&lt;p&gt;With all the above in mind, I can use this Compose configuration:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;opencode&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;ghcr.io/anomalyco/opencode:1.4.7&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;container_name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;opencode&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;volumes&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;~/.local/share/opencode:/home/coder/.local/share/opencode&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;~/.local/state/opencode:/home/coder/.local/state/opencode&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;~/.config/opencode/opencode.json:/home/coder/.config/opencode/opencode.json&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;~/.cache/opencode:/home/coder/.cache/opencode&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;~/coding/git:/home/coder/git&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;working_dir&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"/home/coder"&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;command&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;serve&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;ports&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"127.0.0.1:4096:4096"&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;environment&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'SHELLCHECK_EXTERNAL_SOURCES=false'&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;restart&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;unless-stopped&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;I can then invoke this like so:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;PODMAN_USERNS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;keep-id&lt;span class="w"&gt; &lt;/span&gt;podman&lt;span class="w"&gt; &lt;/span&gt;compose&lt;span class="w"&gt; &lt;/span&gt;up
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;With this,&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;My host UID is mapped to the same UID in the container, meaning all file access on the host and in the container use the same credentials.&lt;/li&gt;
+&lt;li&gt;My home directory inside becomes &lt;code&gt;/home/coder&lt;/code&gt; inside the container.&lt;/li&gt;
+&lt;li&gt;My OpenCode configuration files and state directory are accessible to OpenCode in the container.&lt;/li&gt;
+&lt;li&gt;My home directory’s &lt;code&gt;coding/git&lt;/code&gt; subdirectory (assuming that’s where all my Git checkouts live) becomes &lt;code&gt;/home/coder/git&lt;/code&gt; in the container.
+If I wanted to be even more restrictive, I could mount just a single Git checkout directory into that container path.&lt;/li&gt;
+&lt;li&gt;The OpenCode web server is available on my host as &lt;a href="http://localhost:4096"&gt;http://localhost:4096&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Setting the environment variable &lt;code&gt;SHELLCHECK_EXTERNAL_SOURCES=false&lt;/code&gt; is a workaround for the &lt;a href="https://github.com/anomalyco/opencode/issues/5363"&gt;OpenCode issue 5363&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr/&gt;
+&lt;ol&gt;
+&lt;li id="fn:compose"&gt;
+&lt;p&gt;The reason I want to use the Docker Compose format is simplicity and personal preference.
+Skipping this layer, and using &lt;a href="https://docs.podman.io/en/latest/markdown/podman-quadlet.1.html"&gt;Podman Quadlets&lt;/a&gt; instead, would also be an option. &lt;a class="footnote-backref" href="#fnref:compose" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content><category term="hints-and-kinks"/><category term="Podman"/><category term="OpenCode"/></entry><entry><title>Reviving a near-bricked Pinebook Pro</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/pbp-maskrom/" rel="alternate"/><published>2025-10-05T00:00:00+00:00</published><updated>2025-10-05T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2025-10-05:/resources/hints-and-kinks/pbp-maskrom/</id><summary type="html">&lt;p&gt;I&amp;rsquo;ve recently had to bring back my Pinebook Pro from a zombie state.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recently, I put &lt;a href="https://xahteiwi.eu/resources/hints-and-kinks/solar-powered-laptop/"&gt;my Pinebook Pro&lt;/a&gt; in something of a zombie state.
 This was by no means the hardware’s fault, nor that of the &lt;a href="https://www.armbian.com/pinebook-pro/"&gt;Armbian&lt;/a&gt; system I run on it.
 Rather, I put a bad bootloader image into the SPI flash (&lt;code&gt;/dev/mtd0&lt;/code&gt;), which upon reboot put the laptop in permanent Maskrom mode.&lt;/p&gt;
 &lt;p&gt;It took me a little while to figure this out, because from the outside Maskrom mode looks remarkably like the machine is dead:
@@ -60,10 +157,10 @@ Thus, we were dealing with baseline memory usage that had suddenly increased by 
 &lt;p&gt;Now to explain this memory usage jump, you’ll need this background information:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;The &lt;code&gt;corerouter&lt;/code&gt; plugin in uWSGI maintains an array of file descriptor references.&lt;/li&gt;
-&lt;li&gt;The size of this array, and with it its memory usage, is a multiple of the value set for uWSGI’s &lt;code&gt;max-fd&lt;/code&gt; configuration option.&lt;sup id="fnref:corerouter"&gt;&lt;a class="footnote-ref" href="#fn:corerouter"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;The size of this array, and with it its memory usage, is a multiple of the value set for uWSGI’s &lt;code&gt;max-fd&lt;/code&gt; configuration option.&lt;sup id="fnref:corerouter"&gt;&lt;a class="footnote-ref" href="#fn:corerouter"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
 &lt;li&gt;If &lt;code&gt;max-fd&lt;/code&gt; has not been set in the uWSGI configuration, its default is the maximum number of open file handles allowed for the process per the system-wide configuration.&lt;/li&gt;
 &lt;li&gt;Said default can be defined by the &lt;code&gt;nofiles&lt;/code&gt; &lt;a href="https://www.man7.org/linux/man-pages/man5/limits.conf.5.html"&gt;ulimit&lt;/a&gt;, or a &lt;a href="https://wiki.archlinux.org/title/Cgroups"&gt;cgroups&lt;/a&gt; restriction.
-   A cgroups restriction is also what systemd uses to implement &lt;a href="https://www.freedesktop.org/software/systemd/man/latest/systemd.exec.html#Process%20Properties"&gt;the &lt;code&gt;LimitNOFILE&lt;/code&gt; option&lt;/a&gt;, which can be set on any systemd unit.&lt;sup id="fnref:man-outdated"&gt;&lt;a class="footnote-ref" href="#fn:man-outdated"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+   A cgroups restriction is also what systemd uses to implement &lt;a href="https://www.freedesktop.org/software/systemd/man/latest/systemd.exec.html#Process%20Properties"&gt;the &lt;code&gt;LimitNOFILE&lt;/code&gt; option&lt;/a&gt;, which can be set on any systemd unit.&lt;sup id="fnref:man-outdated"&gt;&lt;a class="footnote-ref" href="#fn:man-outdated"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
 &lt;li&gt;If neither the ulimit nor a cgroups restriction is in place, &lt;a href="https://www.kernel.org/doc/Documentation/sysctl/fs.txt"&gt;the &lt;code&gt;fs.nr_open&lt;/code&gt; sysctl&lt;/a&gt;, if set, acts as a backstop. &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Prior to release 256, systemd effectively &lt;a href="https://github.com/systemd/systemd/pull/29322"&gt;bumped the default&lt;/a&gt; for &lt;code&gt;LimitNOFILE&lt;/code&gt; from 1048576 (2²⁰) to &lt;code&gt;infinity&lt;/code&gt;, which meant that rather than setting its own cgroups limit, it would rely on &lt;code&gt;fs.nr_open&lt;/code&gt;.
@@ -73,19 +170,19 @@ And &lt;em&gt;that&lt;/em&gt; value was recently upped in some distributions to 
 &lt;p&gt;To their credit, the Garden Linux developers identified this flaw (which, to my knowledge was baked into their version 1592.2), and &lt;a href="https://github.com/gardenlinux/gardenlinux/pull/2442"&gt;fixed it&lt;/a&gt; in version 1592.3.
 Still, to insulate ourselves from further such issues, we have opted to &lt;a href="https://uwsgi-docs.readthedocs.io/en/latest/Configuration.html"&gt;reconfigure our systems&lt;/a&gt; to run uWSGI with an explicitly defined &lt;code&gt;max-fd&lt;/code&gt; option, set to the prior system-wide default of 1048576 (although setting it to something as low as 1024 would &lt;em&gt;probably&lt;/em&gt; work too). &lt;/p&gt;
 &lt;h3&gt;Acknowledgements&lt;/h3&gt;
-&lt;p&gt;&lt;a href="https://github.com/lotharbach"&gt;Lothar Bach&lt;/a&gt;, &lt;a href="https://github.com/polarathene"&gt;Brennan Kinney&lt;/a&gt;, &lt;a href="https://github.com/pkdevpl"&gt;Piotr Kucułyma&lt;/a&gt;, &lt;a href="https://github.com/NamrataSitlani"&gt;Namrata Sitlani&lt;/a&gt;, and &lt;a href="https://github.com/mrtmm"&gt;Maari Tamm&lt;/a&gt; all contributed to the findings discussed in this article.&lt;sup id="fnref:order"&gt;&lt;a class="footnote-ref" href="#fn:order"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/lotharbach"&gt;Lothar Bach&lt;/a&gt;, &lt;a href="https://github.com/polarathene"&gt;Brennan Kinney&lt;/a&gt;, &lt;a href="https://github.com/pkdevpl"&gt;Piotr Kucułyma&lt;/a&gt;, &lt;a href="https://github.com/NamrataSitlani"&gt;Namrata Sitlani&lt;/a&gt;, and &lt;a href="https://github.com/mrtmm"&gt;Maari Tamm&lt;/a&gt; all contributed to the findings discussed in this article.&lt;sup id="fnref:order"&gt;&lt;a class="footnote-ref" href="#fn:order"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;div class="footnote"&gt;
 &lt;hr/&gt;
 &lt;ol&gt;
-&lt;li id="fn:order"&gt;
-&lt;p&gt;I’ve listed these individuals in alphabetical order by surname. &lt;a class="footnote-backref" href="#fnref:order" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
 &lt;li id="fn:corerouter"&gt;
 &lt;p&gt;See &lt;a href="https://github.com/unbit/uwsgi/blob/master/plugins/corerouter/corerouter.c#L705"&gt;the source&lt;/a&gt;, which at the time of writing reads:
-  &lt;code&gt;ucr-&amp;gt;cr_table = uwsgi_malloc(sizeof(struct corerouter_session *) * uwsgi.max_fd);&lt;/code&gt; &lt;a class="footnote-backref" href="#fnref:corerouter" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+  &lt;code&gt;ucr-&amp;gt;cr_table = uwsgi_malloc(sizeof(struct corerouter_session *) * uwsgi.max_fd);&lt;/code&gt; &lt;a class="footnote-backref" href="#fnref:corerouter" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:man-outdated"&gt;
-&lt;p&gt;As far as I can tell, at the time of writing the table captioned “Resource limit directives” in the &lt;code&gt;systemd.exec&lt;/code&gt; man page is outdated and incorrect as far as &lt;code&gt;LimitNOFILE&lt;/code&gt;’s default is concerned, and also the “Don’t use” admonition seems misguided at this point. &lt;a class="footnote-backref" href="#fnref:man-outdated" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As far as I can tell, at the time of writing the table captioned “Resource limit directives” in the &lt;code&gt;systemd.exec&lt;/code&gt; man page is outdated and incorrect as far as &lt;code&gt;LimitNOFILE&lt;/code&gt;’s default is concerned, and also the “Don’t use” admonition seems misguided at this point. &lt;a class="footnote-backref" href="#fnref:man-outdated" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:order"&gt;
+&lt;p&gt;I’ve listed these individuals in alphabetical order by surname. &lt;a class="footnote-backref" href="#fnref:order" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;</content><category term="hints-and-kinks"/><category term="Kubernetes"/><category term="Django"/><category term="Containers"/><category term="systemd"/></entry><entry><title>Keynote-worthy talks (I think?)</title><link href="https://xahteiwi.eu/blog/2024/10/04/keynote-worthy-talks/" rel="alternate"/><published>2024-10-04T20:00:00+00:00</published><updated>2024-10-04T20:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2024-10-04:/blog/2024/10/04/keynote-worthy-talks/</id><summary type="html">&lt;p&gt;Maybe one of these is a good fit for your conference?&lt;/p&gt;</summary><content type="html">&lt;p&gt;As of late, I’ve been doing a number of talks that weren’t so much focused on specific technologies like I’ve done in the past.&lt;/p&gt;
@@ -2310,7 +2407,7 @@ email, but here’s what stood out:&lt;/p&gt;
 &lt;p&gt;It clearly delineated that some of the items discussed were going to
   be somewhat negative (as in, worthy of improvement); many others
   were positive. It also clearly established that the negatives were
-  coming first, and the positives thereafter.&lt;sup id="fnref:negatives-first"&gt;&lt;a class="footnote-ref" href="#fn:negatives-first"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+  coming first, and the positives thereafter.&lt;sup id="fnref:negatives-first"&gt;&lt;a class="footnote-ref" href="#fn:negatives-first"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;It used paragraphs, which were clearly separated by topic. As you
@@ -2328,13 +2425,13 @@ email, but here’s what stood out:&lt;/p&gt;
   went into it. I have no idea if he did this by himself or asked
   someone else to go over it with him, but &lt;em&gt;that does not matter:&lt;/em&gt;
   what matters is that he edited, not whether he was his own
-  editor.&lt;sup id="fnref:editor"&gt;&lt;a class="footnote-ref" href="#fn:editor"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+  editor.&lt;sup id="fnref:editor"&gt;&lt;a class="footnote-ref" href="#fn:editor"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;What else is good about this?&lt;/h2&gt;
 &lt;p&gt;Best of all, the whole thing was a remarkable exercise in
 efficiency. Jim put his thoughts into &lt;em&gt;precisely&lt;/em&gt; 1,500
-words.&lt;sup id="fnref:precision"&gt;&lt;a class="footnote-ref" href="#fn:precision"&gt;1&lt;/a&gt;&lt;/sup&gt; As I’ve &lt;a href="https://xahteiwi.eu/blog/2021/10/27/this-meeting-should-have-been-an-email/"&gt;pointed out
+words.&lt;sup id="fnref:precision"&gt;&lt;a class="footnote-ref" href="#fn:precision"&gt;3&lt;/a&gt;&lt;/sup&gt; As I’ve &lt;a href="https://xahteiwi.eu/blog/2021/10/27/this-meeting-should-have-been-an-email/"&gt;pointed out
 elsewhere&lt;/a&gt;,
 information you can express in 1,500 concisely written words is at the
 top end of what you can convey in a 60-minute verbal meeting — but
@@ -2365,17 +2462,13 @@ like Jim.&lt;/p&gt;
 &lt;div class="footnote"&gt;
 &lt;hr/&gt;
 &lt;ol&gt;
-&lt;li id="fn:precision"&gt;
-&lt;p&gt;I am told this exact round-number precision was
-coincidence. &lt;a class="footnote-backref" href="#fnref:precision" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
 &lt;li id="fn:negatives-first"&gt;
 &lt;p&gt;This is an excellent move on two counts: first,
 readers naturally perceive what comes last as being emphasised. By
 getting the negatives out of the way first, the positives stick in
 people’s minds more strongly. Second, it establishes that once you
 get to the positives, there is no further downer coming to
-sucker-punch you. &lt;a class="footnote-backref" href="#fnref:negatives-first" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+sucker-punch you. &lt;a class="footnote-backref" href="#fnref:negatives-first" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:editor"&gt;
 &lt;p&gt;A trusted editor is a gift from god (if you believe in such
@@ -2383,7 +2476,11 @@ things). I can highly recommend asking someone you enjoy working
 with to lend you an extra pair of eyes to go over what you
 write. I was mutual editors with
 &lt;a href="https://twitter.com/elenalindq"&gt;Elena Lindqvist&lt;/a&gt; for two years;
-it was glorious. &lt;a class="footnote-backref" href="#fnref:editor" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+it was glorious. &lt;a class="footnote-backref" href="#fnref:editor" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:precision"&gt;
+&lt;p&gt;I am told this exact round-number precision was
+coincidence. &lt;a class="footnote-backref" href="#fnref:precision" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;</content><category term="blog"/><category term="Work"/></entry><entry><title>Python package dependency checking in a CI pipeline with pipdeptree</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/pipdeptree-ci/" rel="alternate"/><published>2022-06-26T20:00:00+00:00</published><updated>2022-06-26T20:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2022-06-26:/resources/hints-and-kinks/pipdeptree-ci/</id><summary type="html">&lt;p&gt;Sometimes pip behaves rather oddly when it comes to package dependency resolution. Here’s one way to catch such issues in your CI pipeline.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recently at work we ran into rather strange-looking errors that broke
@@ -5286,7 +5383,7 @@ will perform a required function without failure under stated
 conditions for a stated period of time”.&lt;/p&gt;
 &lt;p&gt;— Betsy Beyer, Chris Jones, Jennifer Petoff, Niall Murphy, “Site
 Reliability Engineering: How Google Runs Production Systems”
-(2017)&lt;sup id="fnref:oconnor"&gt;&lt;a class="footnote-ref" href="#fn:oconnor"&gt;7&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+(2017)&lt;sup id="fnref:oconnor"&gt;&lt;a class="footnote-ref" href="#fn:oconnor"&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;But, at least there &lt;em&gt;is&lt;/em&gt; a definition, which is good. Now I think it’s
 reasonable to say that the following two statements &lt;em&gt;about&lt;/em&gt; site
@@ -5297,7 +5394,7 @@ reliability are probably true:&lt;/p&gt;
    trying to unify a multitude of considerations, site reliability is
    not something we can judge by a single, numerical, universal, and
    useful metric. You can’t measure a single “site reliability score”,
-   and then compare hundreds of platforms based on that.&lt;sup id="fnref:score"&gt;&lt;a class="footnote-ref" href="#fn:score"&gt;8&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+   and then compare hundreds of platforms based on that.&lt;sup id="fnref:score"&gt;&lt;a class="footnote-ref" href="#fn:score"&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Whatever site reliability &lt;em&gt;is&lt;/em&gt; as a whole, it certainly &lt;em&gt;includes&lt;/em&gt;
@@ -5326,9 +5423,9 @@ measurability.&lt;/p&gt;
    in time. Effectively, to properly take a data point for durability
    at the same time as getting one for availability, you’d have to
    read back some data you wrote, say, a year ago, and check its
-   content against something like a known hash.&lt;sup id="fnref:hash"&gt;&lt;a class="footnote-ref" href="#fn:hash"&gt;9&lt;/a&gt;&lt;/sup&gt; &lt;em&gt;And also&lt;/em&gt; write some
+   content against something like a known hash.&lt;sup id="fnref:hash"&gt;&lt;a class="footnote-ref" href="#fn:hash"&gt;7&lt;/a&gt;&lt;/sup&gt; &lt;em&gt;And also&lt;/em&gt; write some
    data now, travel a year into the future, read it back at that
-   point, travel back into the present,&lt;sup id="fnref:timetravel"&gt;&lt;a class="footnote-ref" href="#fn:timetravel"&gt;10&lt;/a&gt;&lt;/sup&gt; and record your
+   point, travel back into the present,&lt;sup id="fnref:timetravel"&gt;&lt;a class="footnote-ref" href="#fn:timetravel"&gt;8&lt;/a&gt;&lt;/sup&gt; and record your
    data point.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -5359,7 +5456,7 @@ has started to corrupt a significant fraction of customer data, data
 which customers are pouring into it at an alarming rate, what do you
 do?  You’re not sure whether there’s actual corruption yet. The proper
 thing to do, if it’s impossible to rule out or fix the data corruption
-problem immediately,&lt;sup id="fnref:immediately"&gt;&lt;a class="footnote-ref" href="#fn:immediately"&gt;5&lt;/a&gt;&lt;/sup&gt; is probably to stop intake, and
+problem immediately,&lt;sup id="fnref:immediately"&gt;&lt;a class="footnote-ref" href="#fn:immediately"&gt;9&lt;/a&gt;&lt;/sup&gt; is probably to stop intake, and
 also ensure that no requests are served that may touch potentially
 corrupted data — that is, shut the service down even before you’ve
 ascertained corruption. But if you suspect that your next bonus payout
@@ -5446,7 +5543,7 @@ you suggestions for “good” metrics: for example, make them hard to
 game, make sure they are defined by competent experts, ensure that
 they are in line with inherent ideas of respectability and
 professionalism. Honestly, I’ve yet to come across a metric that ticks
-all these boxes.&lt;sup id="fnref:game"&gt;&lt;a class="footnote-ref" href="#fn:game"&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+all these boxes.&lt;sup id="fnref:game"&gt;&lt;a class="footnote-ref" href="#fn:game"&gt;10&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;So, I am aware that if you are running a platform under an existing
 SLA, you &lt;em&gt;will&lt;/em&gt; be running under some metrics of questionable utility
 that you cannot get rid of — just because they happen to be industry
@@ -5457,7 +5554,7 @@ want to propose a different approach:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Whatever you measure, make the &lt;em&gt;marginal&lt;/em&gt; cost of a measurement
-   negligeable.&lt;sup id="fnref:marginal"&gt;&lt;a class="footnote-ref" href="#fn:marginal"&gt;11&lt;/a&gt;&lt;/sup&gt; The cost of adding a new metric should be
+   negligeable.&lt;sup id="fnref:marginal"&gt;&lt;a class="footnote-ref" href="#fn:marginal"&gt;12&lt;/a&gt;&lt;/sup&gt; The cost of adding a new metric should be
    practically zero. The moment someone has to repeatedly spend time
    on collecting and compiling the data, they can’t spend that time on
    doing productive work (and Campbell says hi), so you want to avoid
@@ -5466,7 +5563,7 @@ want to propose a different approach:&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;This effectively means that all the systems you care about
    (machines, services, applications) should generate collectable data
-   points, everywhere, all the time.&lt;sup id="fnref:privacy"&gt;&lt;a class="footnote-ref" href="#fn:privacy"&gt;12&lt;/a&gt;&lt;/sup&gt; And you probably won’t be
+   points, everywhere, all the time.&lt;sup id="fnref:privacy"&gt;&lt;a class="footnote-ref" href="#fn:privacy"&gt;11&lt;/a&gt;&lt;/sup&gt; And you probably won’t be
    collecting metrics from anything else. In other words, you are
    &lt;em&gt;just&lt;/em&gt; measuring that which is easily measurable, and you keep
    aware that there a lot of things you don’t measure that are just as
@@ -5539,24 +5636,10 @@ turn cites Rufus Phillips and Richard Holbrooke, “Why Vietnam
 Matters: An Eyewitness Account of Lessons Not Learned” (2008) as
 its source. &lt;a class="footnote-backref" href="#fnref:lansdale" title="Jump back to footnote 4 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id="fn:immediately"&gt;
-&lt;p&gt;I’ve run into a few issues of suspected silent data
-corruption in my career and I’ve &lt;em&gt;never&lt;/em&gt; been in the situation
-where a reliable fix was available immediately. &lt;a class="footnote-backref" href="#fnref:immediately" title="Jump back to footnote 5 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id="fn:game"&gt;
-&lt;p&gt;In particular, pretty much any real-world metric fails the
-“hard to game” test. Said &lt;a href="https://twitter.com/lukasgrossar/status/1267830321057107969"&gt;Lukas Grossar on
-Twitter&lt;/a&gt;:
-“It always amazes me that people don’t believe that slapping a KPI
-onto something won’t lead to people gaming that KPI. We’re
-engineers for God sake, making broken stuff work in our favor is
-basically our job description.” &lt;a class="footnote-backref" href="#fnref:game" title="Jump back to footnote 6 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
 &lt;li id="fn:oconnor"&gt;
 &lt;p&gt;It should be noted that the SRE book is itself quoting a
 definition of reliability found in Patrick P. O’Connor &amp;amp; Andre
-Kleyner, “Practical Reliability Engineering” (2012). &lt;a class="footnote-backref" href="#fnref:oconnor" title="Jump back to footnote 7 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+Kleyner, “Practical Reliability Engineering” (2012). &lt;a class="footnote-backref" href="#fnref:oconnor" title="Jump back to footnote 5 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:score"&gt;
 &lt;p&gt;The irony is not lost on me that by the definition quoted in
@@ -5566,31 +5649,45 @@ probability. Probabilities go from 0 to 1. That would make site
 reliability a dimensionless quantity between 0 and 1, end of
 story. But it goes without saying that such a score would be “an
 arbitrary quantitative value”, which would put it on step 2 of the
-Yankelovich ladder. &lt;a class="footnote-backref" href="#fnref:score" title="Jump back to footnote 8 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+Yankelovich ladder. &lt;a class="footnote-backref" href="#fnref:score" title="Jump back to footnote 6 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:hash"&gt;
 &lt;p&gt;That hash would have to be separately stored &lt;em&gt;outside&lt;/em&gt; the
 system. If the hash is stored &lt;em&gt;alongside&lt;/em&gt; the data whose
 integrity it’s meant to protect, then it only guards against
 unintentional data corruption, but not against deliberate
-manipulation. &lt;a class="footnote-backref" href="#fnref:hash" title="Jump back to footnote 9 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+manipulation. &lt;a class="footnote-backref" href="#fnref:hash" title="Jump back to footnote 7 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:timetravel"&gt;
 &lt;p&gt;I wish to point out that the only bit that’s impossible
 here is the backwards time travel. The forwards time travel is
 fine, we all travel forwards in time all the time, just at a
-constant rate of one second per second. &lt;a class="footnote-backref" href="#fnref:timetravel" title="Jump back to footnote 10 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+constant rate of one second per second. &lt;a class="footnote-backref" href="#fnref:timetravel" title="Jump back to footnote 8 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:immediately"&gt;
+&lt;p&gt;I’ve run into a few issues of suspected silent data
+corruption in my career and I’ve &lt;em&gt;never&lt;/em&gt; been in the situation
+where a reliable fix was available immediately. &lt;a class="footnote-backref" href="#fnref:immediately" title="Jump back to footnote 9 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:game"&gt;
+&lt;p&gt;In particular, pretty much any real-world metric fails the
+“hard to game” test. Said &lt;a href="https://twitter.com/lukasgrossar/status/1267830321057107969"&gt;Lukas Grossar on
+Twitter&lt;/a&gt;:
+“It always amazes me that people don’t believe that slapping a KPI
+onto something won’t lead to people gaming that KPI. We’re
+engineers for God sake, making broken stuff work in our favor is
+basically our job description.” &lt;a class="footnote-backref" href="#fnref:game" title="Jump back to footnote 10 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:privacy"&gt;
+&lt;p&gt;I’d argue that this requires strong privacy guarantees for
+your users/customers. Effectively, just don’t collect data that’s
+none of your business. &lt;a class="footnote-backref" href="#fnref:privacy" title="Jump back to footnote 11 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:marginal"&gt;
 &lt;p&gt;Emphasis on marginal. It’s obvious that the &lt;em&gt;fixed&lt;/em&gt;
 cost of building and maintaining an instrumentation platform and
 metric system is nonzero. But once you’ve got it set up, the cost
-of &lt;em&gt;adding a new metric&lt;/em&gt; should be substantially zero. &lt;a class="footnote-backref" href="#fnref:marginal" title="Jump back to footnote 11 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id="fn:privacy"&gt;
-&lt;p&gt;I’d argue that this requires strong privacy guarantees for
-your users/customers. Effectively, just don’t collect data that’s
-none of your business. &lt;a class="footnote-backref" href="#fnref:privacy" title="Jump back to footnote 12 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+of &lt;em&gt;adding a new metric&lt;/em&gt; should be substantially zero. &lt;a class="footnote-backref" href="#fnref:marginal" title="Jump back to footnote 12 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;</content><category term="blog"/><category term="Work"/><category term="Communications"/></entry><entry><title>Warnock’s Dilemma, Objections, and Acknowledgements</title><link href="https://xahteiwi.eu/blog/2021/10/30/warnock-dilemma/" rel="alternate"/><published>2021-10-30T00:00:00+00:00</published><updated>2021-10-30T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-30:/blog/2021/10/30/warnock-dilemma/</id><summary type="html">&lt;p&gt;“Warnock’s Dilemma” is a classic feature of distributed, asynchronous, online communications. You can’t avoid it, you can’t work around it, but you can deal with it with two simple changes to your communicative behavior.&lt;/p&gt;</summary><content type="html">&lt;p&gt;People skeptical of distributed, asynchronous, written communications
@@ -5686,7 +5783,7 @@ tracker.&lt;/p&gt;
    people’s ideas on the table.&lt;/li&gt;
 &lt;li&gt;It establishes the notion that nobody’s opinions or suggestions on
    technical matters are sacrosanct, and we want to do &lt;em&gt;the right
-   thing&lt;/em&gt; in any situation, not follow the hippo.&lt;sup id="fnref:hippo"&gt;&lt;a class="footnote-ref" href="#fn:hippo"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+   thing&lt;/em&gt; in any situation, not follow the hippo.&lt;sup id="fnref:hippo"&gt;&lt;a class="footnote-ref" href="#fn:hippo"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
 &lt;li&gt;It encourages others to ask for feedback in the same manner,
    whenever they float ideas or suggestions of their own.&lt;/li&gt;
 &lt;li&gt;It establishes that there’s nothing wrong with being wrong from
@@ -5704,7 +5801,7 @@ the same kind of reply back. There’s something I need to pass on from
 higher up? Or just something I want everyone to know? Out goes an
 email, in come a few “ack” replies over the next few hours. I don’t
 even have to specifically ask anyone for acknowledgement anymore, it
-just happens.&lt;sup id="fnref:guidelines"&gt;&lt;a class="footnote-ref" href="#fn:guidelines"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+just happens.&lt;sup id="fnref:guidelines"&gt;&lt;a class="footnote-ref" href="#fn:guidelines"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;In this context, we deliberately use &lt;em&gt;written&lt;/em&gt; acknowledgements — as
 in, somebody actually &lt;em&gt;types&lt;/em&gt; something, even if it’s just the two
 letters “OK”. I find Like buttons or thumbs-up or email “read
@@ -5722,14 +5819,14 @@ message that “dilemma” is technically inappropriate as the problem
 described includes five choices, not two. It’s properly a
 &lt;a href="https://en.wiktionary.org/wiki/pentalemma"&gt;pentalemma&lt;/a&gt;. &lt;a class="footnote-backref" href="#fnref:pentalemma" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id="fn:guidelines"&gt;
-&lt;p&gt;We’ve also codified this in my team’s communications
-guidelines. You don’t have something like that? Write them. &lt;a class="footnote-backref" href="#fnref:guidelines" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
 &lt;li id="fn:hippo"&gt;
 &lt;p&gt;HiPPO: the Highest-Paid Person’s Opinion. Following the
 hippo is when you value ideas and opinions by seniority of their
-originator, not by correctness or factual merit. &lt;a class="footnote-backref" href="#fnref:hippo" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+originator, not by correctness or factual merit. &lt;a class="footnote-backref" href="#fnref:hippo" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:guidelines"&gt;
+&lt;p&gt;We’ve also codified this in my team’s communications
+guidelines. You don’t have something like that? Write them. &lt;a class="footnote-backref" href="#fnref:guidelines" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;</content><category term="blog"/><category term="Work"/><category term="Communications"/></entry><entry><title>This Meeting Should Have Been an Email</title><link href="https://xahteiwi.eu/blog/2021/10/27/this-meeting-should-have-been-an-email/" rel="alternate"/><published>2021-10-27T00:00:00+00:00</published><updated>2021-10-27T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2021-10-27:/blog/2021/10/27/this-meeting-should-have-been-an-email/</id><summary type="html">&lt;p&gt;If you believe that it’s just a silly joke or an overused trope, please read this.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Fellow managers, there is an ongoing trope in just about any software
@@ -12047,22 +12144,4 @@ term for the concept being discussed here is multitenancy, not
 multiprojectcy. &lt;a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="hints-and-kinks"/><category term="OpenStack"/></entry><entry><title>The Little Bag O’Tricks: 10 Things You Might Not Know You Can Do With OpenStack</title><link href="https://xahteiwi.eu/resources/presentations/the-little-bag-otricks-10-things-you-might-not-know-you-can-do-with-openstack/" rel="alternate"/><published>2018-10-10T00:00:00+00:00</published><updated>2018-10-10T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2018-10-10:/resources/presentations/the-little-bag-otricks-10-things-you-might-not-know-you-can-do-with-openstack/</id><summary type="html">&lt;p&gt;My presentation from OpenStack Days Nordic 2018 in Stockholm. Actually
-talks about 11, not 10 OpenStack capabilities you might not know
-about.&lt;/p&gt;
-&lt;!--break--&gt;
-&lt;ul&gt;
-&lt;li&gt;Video: &lt;a href="https://youtu.be/3hUoVi_AWCU"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/osdn2018/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
-zoom out for an overview, or just advance by hitting the spacebar …&lt;/p&gt;</summary><content type="html">&lt;p&gt;My presentation from OpenStack Days Nordic 2018 in Stockholm. Actually
-talks about 11, not 10 OpenStack capabilities you might not know
-about.&lt;/p&gt;
-&lt;!--break--&gt;
-&lt;ul&gt;
-&lt;li&gt;Video: &lt;a href="https://youtu.be/3hUoVi_AWCU"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Slides: &lt;a href="https://fghaas.github.io/osdn2018/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Use the arrow keys to navigate through the presentation, hit &lt;code&gt;Esc&lt;/code&gt; to
-zoom out for an overview, or just advance by hitting the spacebar.&lt;/p&gt;</content><category term="presentations"/><category term="Conference"/><category term="OSDN"/><category term="OpenStack"/></entry></feed>
+&lt;/div&gt;</content><category term="hints-and-kinks"/><category term="OpenStack"/></entry></feed>
