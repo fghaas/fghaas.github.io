@@ -92,17 +92,17 @@ services:
     image: ghcr.io/anomalyco/opencode:1.4.7
     container_name: opencode
     volumes:
-      - ~/.local/share/opencode:/home/coder/.local/share/opencode
-      - ~/.local/state/opencode:/home/coder/.local/state/opencode
-      - ~/.config/opencode/opencode.json:/home/coder/.config/opencode/opencode.json
-      - ~/.cache/opencode:/home/coder/.cache/opencode
-      - ~/coding/git:/home/coder/git
+      - "~/.local/share/opencode:/home/coder/.local/share/opencode"
+      - "~/.local/state/opencode:/home/coder/.local/state/opencode"
+      - "~/.config/opencode/opencode.json:/home/coder/.config/opencode/opencode.json"
+      - "~/.cache/opencode:/home/coder/.cache/opencode"
+      - "~/coding/git:/home/coder/git"
     working_dir: "/home/coder"
     command: serve
     ports:
       - "127.0.0.1:4096:4096"
     environment:
-      - 'SHELLCHECK_EXTERNAL_SOURCES=false'
+      - "SHELLCHECK_EXTERNAL_SOURCES=false"
     restart: unless-stopped
 ```
 
@@ -115,7 +115,7 @@ PODMAN_USERNS=keep-id podman compose up
 With this,
 
 * My host UID is mapped to the same UID in the container, meaning all file access on the host and in the container use the same credentials.
-* My home directory inside becomes `/home/coder` inside the container.
+* My home directory becomes `/home/coder` inside the container.
 * My OpenCode configuration files and state directory are accessible to OpenCode in the container.
 * My home directory's `coding/git` subdirectory (assuming that's where all my Git checkouts live) becomes `/home/coder/git` in the container.
 If I wanted to be even more restrictive, I could mount just a single Git checkout directory into that container path.
