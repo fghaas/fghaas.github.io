@@ -87,6 +87,7 @@ When you run Podman with `PODMAN_USERNS=keep-id`, as I normally do, Podman
 With all the above in mind, I can use this Compose configuration:
 
 ```yaml
+services:
   opencode:
     image: ghcr.io/anomalyco/opencode:1.4.7
     container_name: opencode
