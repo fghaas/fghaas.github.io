@@ -179,10 +179,10 @@ It’s not completely trivial to run it in <a href="https://github.com/container
 Here’s how.</p>
 <h2>The OpenCode container image</h2>
 <p>Although the OpenCode documentation makes it a bit hard to find, an official Docker image for OpenCode does exist, and is available from the <a href="https://ghcr.io/anomalyco/opencode">GitHub Container Registry</a> (GHCR).</p>
-<p>It runs in TUI mode, out of the box, with <code>podman run</code>, like so:</p>
+<p>It runs in <a href="https://opencode.ai/docs/tui/">TUI mode</a>, out of the box, with <code>podman run</code>, like so:</p>
 <div class="highlight"><pre><span></span><code>podman<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>ghcr.io/anomalyco/opencode
 </code></pre></div>
-<p>Images are released along with new OpenCode versions, so if you don’t want the latest, you might instead want to run:</p>
+<p>Images are released along with new OpenCode versions, so if you don’t want the latest, you might instead want to run something like:</p>
 <div class="highlight"><pre><span></span><code>podman<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>ghcr.io/anomalyco/opencode:1.4.5
 </code></pre></div>
 <h2>Rootless Podman</h2>
@@ -196,7 +196,7 @@ Here’s how.</p>
 <li>Ensure that OpenCode has access to those files using my user identity, the way the OpenCode TUI would if I ran the <code>opencode</code> binary directly (without a container).</li>
 <li>Define everything in a Docker Compose configuration.<sup id="fnref:compose"><a class="footnote-ref" href="#fn:compose">1</a></sup></li>
 </ol>
-<p>Obviously, the TUI itself won’t be very helpful for that purpose.</p>
+<p>Obviously, the <a href="https://opencode.ai/docs/tui/">TUI</a> itself won’t be very helpful for that purpose.</p>
 <p>However, OpenCode also comes with a very helpful <a href="https://opencode.ai/docs/server/">server mode</a>, including a web-based GUI, and this we can containerize rather well.</p>
 <h2>Considerations</h2>
 <p>There’s a few things one needs to know to make this work.</p>
@@ -235,7 +235,7 @@ Like so:</p>
 <p>With all the above in mind, I can use this Compose configuration:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">opencode</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/anomalyco/opencode:1.4.7</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/anomalyco/opencode</span><span class="w">  </span><span class="c1"># optionally add version suffix, like ":1.4.7"</span>
 <span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">opencode</span>
 <span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"~/.local/share/opencode:/home/coder/.local/share/opencode"</span>
@@ -244,7 +244,7 @@ Like so:</p>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"~/.cache/opencode:/home/coder/.cache/opencode"</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"~/coding/git:/home/coder/git"</span>
 <span class="w">    </span><span class="nt">working_dir</span><span class="p">:</span><span class="w"> </span><span class="s">"/home/coder"</span>
-<span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">serve</span>
+<span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">serve</span><span class="w">                     </span><span class="c1"># enables web server mode (instead of TUI)</span>
 <span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"127.0.0.1:4096:4096"</span>
 <span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
