@@ -12,13 +12,13 @@ Here's how.
 
 Although the OpenCode documentation makes it a bit hard to find, an official Docker image for OpenCode does exist, and is available from the [GitHub Container Registry](https://ghcr.io/anomalyco/opencode) (GHCR).
 
-It runs in TUI mode, out of the box, with `podman run`, like so:
+It runs in [TUI mode](https://opencode.ai/docs/tui/), out of the box, with `podman run`, like so:
 
 ```shell
 podman run -it ghcr.io/anomalyco/opencode
 ```
 
-Images are released along with new OpenCode versions, so if you don't want the latest, you might instead want to run:
+Images are released along with new OpenCode versions, so if you don't want the latest, you might instead want to run something like:
 ```shell
 podman run -it ghcr.io/anomalyco/opencode:1.4.5
 ```
@@ -39,7 +39,7 @@ What I want to do is this:
 [^compose]: The reason I want to use the Docker Compose format is simplicity and personal preference.
 Skipping this layer, and using [Podman Quadlets](https://docs.podman.io/en/latest/markdown/podman-quadlet.1.html) instead, would also be an option.
 
-Obviously, the TUI itself won't be very helpful for that purpose.
+Obviously, the [TUI](https://opencode.ai/docs/tui/) itself won't be very helpful for that purpose.
 
 However, OpenCode also comes with a very helpful [server mode](https://opencode.ai/docs/server/), including a web-based GUI, and this we can containerize rather well.
 
@@ -89,7 +89,7 @@ With all the above in mind, I can use this Compose configuration:
 ```yaml
 services:
   opencode:
-    image: ghcr.io/anomalyco/opencode:1.4.7
+    image: ghcr.io/anomalyco/opencode  # optionally add version suffix, like ":1.4.7"
     container_name: opencode
     volumes:
       - "~/.local/share/opencode:/home/coder/.local/share/opencode"
@@ -98,7 +98,7 @@ services:
       - "~/.cache/opencode:/home/coder/.cache/opencode"
       - "~/coding/git:/home/coder/git"
     working_dir: "/home/coder"
-    command: serve
+    command: serve                     # enables web server mode (instead of TUI)
     ports:
       - "127.0.0.1:4096:4096"
     environment:
