@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - hints-and-kinks</title><link href="https://xahteiwi.eu/" rel="alternate"/><link href="https://xahteiwi.eu/feeds/category/hints-and-kinks.atom.xml" rel="self"/><id>https://xahteiwi.eu/</id><updated>2026-04-18T00:00:00+00:00</updated><entry><title>Containing OpenCode with Podman</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/opencode-podman/" rel="alternate"/><published>2026-04-18T00:00:00+00:00</published><updated>2026-04-18T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2026-04-18:/resources/hints-and-kinks/opencode-podman/</id><summary type="html">&lt;p&gt;It&amp;rsquo;s not completely trivial to run OpenCode in rootless Podman. But it&amp;rsquo;s not impossible, either.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://opencode.ai/"&gt;OpenCode&lt;/a&gt; is an MIT-licensed agentic coding assistant.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xahteiwi.eu - hints-and-kinks</title><link href="https://xahteiwi.eu/" rel="alternate"/><link href="https://xahteiwi.eu/feeds/category/hints-and-kinks.atom.xml" rel="self"/><id>https://xahteiwi.eu/</id><updated>2026-10-05T23:00:00+00:00</updated><entry><title>Podman Compose and Rootless Mode, an Update</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/podman-compose-rootless-userns-mode/" rel="alternate"/><published>2026-10-05T23:00:00+00:00</published><updated>2026-10-05T23:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2026-10-05:/resources/hints-and-kinks/podman-compose-rootless-userns-mode/</id><summary type="html">&lt;p&gt;An update to my standard approach to running rootless Podman containers&lt;/p&gt;</summary><content type="html">&lt;p&gt;I have &lt;a href="https://xahteiwi.eu/resources/hints-and-kinks/opencode-podman/"&gt;previously&lt;/a&gt; discussed my approach to running OpenCode in rootless Podman containers, based on an &lt;a href="https://xahteiwi.eu/resources/hints-and-kinks/rootless-podman-docker-compose/"&gt;earlier article&lt;/a&gt; on the general subject.&lt;/p&gt;
+&lt;p&gt;Having recently upgraded my system to Ubuntu Resolute (which ships with Podman 5.7), I came across this curveball:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;In release 5.6, Podman started disallowing the use of &lt;code&gt;--pod&lt;/code&gt; and &lt;code&gt;--userns&lt;/code&gt; in the same container, which &lt;a href="https://discussion.fedoraproject.org/t/error-userns-and-pod-cannot-be-set-together/164595/4"&gt;tripped up&lt;/a&gt; plenty of users.&lt;/li&gt;
+&lt;li&gt;At some point (I don’t know when, exactly), &lt;code&gt;podman-compose&lt;/code&gt; apparently started chucking all services defined in one compose file, into one Pod.&lt;/li&gt;
+&lt;li&gt;At that point, then, it became impossible to use the &lt;code&gt;userns_mode: keep-id&lt;/code&gt; option in a compose definition.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;What you must now do, if you want to keep passing through your user id into a rootless container, is add this snippet to your &lt;code&gt;podman-compose.yaml&lt;/code&gt; file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;x-podman&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;in_pod&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;false&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;So, far, so good, but this only saves you if you previously put &lt;code&gt;userns_mode: keep-id&lt;/code&gt; &lt;em&gt;in your compose file.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;But as you’ll recall from my &lt;a href="https://xahteiwi.eu/resources/hints-and-kinks/rootless-podman-docker-compose/"&gt;previous article&lt;/a&gt;, there used to be another way of achieving userid passthrough, which was to set the &lt;code&gt;PODMAN_USERNS&lt;/code&gt; environment variable.
+I used to do this from a systemd user service definition, like so:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[Unit]&lt;/span&gt;
+&lt;span class="na"&gt;Description&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;Podman via podman-compose&lt;/span&gt;
+&lt;span class="na"&gt;Wants&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;network-online.target&lt;/span&gt;
+&lt;span class="na"&gt;After&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;network-online.target&lt;/span&gt;
+&lt;span class="na"&gt;RequiresMountsFor&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;%t/containers&lt;/span&gt;
+
+&lt;span class="k"&gt;[Service]&lt;/span&gt;
+&lt;span class="na"&gt;Environment&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;PODMAN_SYSTEMD_UNIT=%n&lt;/span&gt;
+&lt;span class="na"&gt;Environment&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;PODMAN_USERNS=keep-id&lt;/span&gt;
+&lt;span class="c1"&gt;# [etc...]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And it looks like podman-compose’s behaviour has changed to effectively &lt;em&gt;ignore&lt;/em&gt; that environment variable (even though &lt;a href="https://docs.podman.io/en/latest/markdown/podman-pod.unit.5.html#userns-mode"&gt;the documentation&lt;/a&gt; says it’s still being honoured).&lt;/p&gt;
+&lt;p&gt;So, it looks like overall I need to follow this checklist:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;In my Compose files, add &lt;code&gt;userns_mode: keep-id&lt;/code&gt; to services where needed.&lt;/li&gt;
+&lt;li&gt;Add the &lt;code&gt;x-podman&lt;/code&gt; section with &lt;code&gt;in_pod: false&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Drop the &lt;code&gt;Environment=PODMAN_USERNS&lt;/code&gt; line from my systemd definitions, having become a no-op.&lt;/li&gt;
+&lt;/ol&gt;</content><category term="hints-and-kinks"/><category term="Containers"/><category term="Podman"/><category term="Docker"/><category term="systemd"/></entry><entry><title>Containing OpenCode with Podman</title><link href="https://xahteiwi.eu/resources/hints-and-kinks/opencode-podman/" rel="alternate"/><published>2026-04-18T00:00:00+00:00</published><updated>2026-04-18T00:00:00+00:00</updated><author><name>Florian Haas</name></author><id>tag:xahteiwi.eu,2026-04-18:/resources/hints-and-kinks/opencode-podman/</id><summary type="html">&lt;p&gt;It&amp;rsquo;s not completely trivial to run OpenCode in rootless Podman. But it&amp;rsquo;s not impossible, either.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://opencode.ai/"&gt;OpenCode&lt;/a&gt; is an MIT-licensed agentic coding assistant.
 It’s not completely trivial to run it in &lt;a href="https://github.com/containers/podman/blob/main/docs/tutorials/rootless_tutorial.md"&gt;rootless Podman&lt;/a&gt;, but it can be done.
 Here’s how.&lt;/p&gt;
 &lt;h2&gt;The OpenCode container image&lt;/h2&gt;

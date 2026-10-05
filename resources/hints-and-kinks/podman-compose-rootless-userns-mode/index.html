@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index,follow" />
+
+
+    <link rel="stylesheet" type="text/css" href="../../../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../../../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../../../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../../../theme/pygments/github.min.css">
+
+    <link rel="stylesheet" 
+    href="../../../theme/tipuesearch/tipuesearch.min.css" />
+
+
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../../../theme/font-awesome/css/solid.css">
+
+  <link rel="stylesheet" type="text/css" href="/css/override.css">
+
+  <link rel="shortcut icon" href="https://xahteiwi.eu/favicon.svg" type="image/x-icon">
+  <link rel="icon" href="https://xahteiwi.eu/favicon.svg" type="image/x-icon">
+
+
+  <link href="https://xahteiwi.eu/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="xahteiwi.eu Atom">
+
+  <link href="https://xahteiwi.eu/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="xahteiwi.eu RSS">
+
+
+ 
+
+<meta name="author" content="Florian Haas" />
+<meta name="description" content="An update to my standard approach to running rootless Podman containers" />
+<meta name="keywords" content="Containers, Podman, Docker, systemd">
+
+
+  <meta property="og:site_name" content="xahteiwi.eu"/>
+  <meta property="og:title" content="Podman Compose and Rootless Mode, an Update"/>
+  <meta property="og:description" content="An update to my standard approach to running rootless Podman containers"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="../../../resources/hints-and-kinks/podman-compose-rootless-userns-mode/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2026-10-05 23:00:00+00:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="../../../author/florian-haas.html">
+  <meta property="article:section" content="hints-and-kinks"/>
+  <meta property="article:tag" content="Containers"/>
+  <meta property="article:tag" content="Podman"/>
+  <meta property="article:tag" content="Docker"/>
+  <meta property="article:tag" content="systemd"/>
+  <meta property="og:image" content="https://xahteiwi.eu/images/avatar.jpg">
+
+  <title>xahteiwi.eu &ndash; Podman Compose and Rootless Mode, an Update</title>
+
+
+</head>
+<body >
+
+<aside>
+  <div>
+    <a href="../../../">
+      <img src="https://xahteiwi.eu/images/avatar.jpg" alt="" title="">
+    </a>
+
+    <h1>
+      <a href="../../../"></a>
+    </h1>
+
+
+    <form class="navbar-search" action="../../../search.html" role="search">
+      <input type="text" name="q" id="tipue_search_input" placeholder="Search...">
+    </form>
+
+
+    <ul class="social">
+      <li>
+        <a class="sc-mastodon"
+rel="me"           href="https://mastodon.social/@xahteiwi"
+           target="_blank">
+          <i class="fa-brands fa-mastodon"></i>
+        </a>
+      </li>
+      <li>
+        <a class="sc-mastodon"
+rel="me"           href="https://fedifreu.de/@xahteiwi"
+           target="_blank">
+          <i class="fa-brands fa-mastodon"></i>
+        </a>
+      </li>
+      <li>
+        <a class="sc-linkedin"
+           href="https://www.linkedin.com/in/fghaas"
+           target="_blank">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="sc-xing"
+           href="https://www.xing.com/profile/Florian_Haas2/"
+           target="_blank">
+          <i class="fa-brands fa-xing"></i>
+        </a>
+      </li>
+      <li>
+        <a class="sc-github"
+           href="https://github.com/fghaas"
+           target="_blank">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </li>
+      <li>
+        <a class="sc-rss"
+           href="/feeds/all.rss.xml"
+           target="_blank">
+          <i class="fa-solid fa-rss"></i>
+        </a>
+      </li>
+      <li>
+        <a class="sc-envelope"
+rel="me"           href="mailto:xahteiwi+ifyoudontremovethisyoullgostraighttodevnull@mailbox.org"
+           target="_blank">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</aside>
+  <main>
+
+<nav>
+  <a href="../../../">Home</a>
+
+  <a href="/category/hints-and-kinks.html">Tech</a>
+  <a href="/category/presentations.html">Talks</a>
+  <a href="/category/blog.html">Thoughts</a>
+  <a href="">​</a>
+  <a href="/about/">About</a>
+  <a href="/comments/">Comments</a>
+  <a href="/legal/">Legal</a>
+  <a href="/privacy/">Privacy</a>
+  <a href="">​</a>
+  <a href="/categories.html">Categories</a>
+  <a href="/tags.html">Tags</a>
+  <a href="">​</a>
+
+  <a href="https://xahteiwi.eu/feeds/all.atom.xml">Atom</a>
+
+  <a href="https://xahteiwi.eu/feeds/all.rss.xml">RSS</a>
+</nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="podman-compose-rootless-userns-mode">Podman Compose and Rootless Mode, an Update</h1>
+    <p>
+      Posted on Mon 05 October 2026 in <a href="../../../category/hints-and-kinks.html">hints-and-kinks</a>
+
+        &#8226; 2 min read
+    </p>
+  </header>
+
+
+  <div>
+    <p>I have <a href="../../../resources/hints-and-kinks/opencode-podman/">previously</a> discussed my approach to running OpenCode in rootless Podman containers, based on an <a href="../../../resources/hints-and-kinks/rootless-podman-docker-compose/">earlier article</a> on the general subject.</p>
+<p>Having recently upgraded my system to Ubuntu Resolute (which ships with Podman 5.7), I came across this curveball:</p>
+<ol>
+<li>In release 5.6, Podman started disallowing the use of <code>--pod</code> and <code>--userns</code> in the same container, which <a href="https://discussion.fedoraproject.org/t/error-userns-and-pod-cannot-be-set-together/164595/4">tripped up</a> plenty of users.</li>
+<li>At some point (I don’t know when, exactly), <code>podman-compose</code> apparently started chucking all services defined in one compose file, into one Pod.</li>
+<li>At that point, then, it became impossible to use the <code>userns_mode: keep-id</code> option in a compose definition.</li>
+</ol>
+<p>What you must now do, if you want to keep passing through your user id into a rootless container, is add this snippet to your <code>podman-compose.yaml</code> file:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">x-podman</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">in_pod</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</code></pre></div>
+<p>So, far, so good, but this only saves you if you previously put <code>userns_mode: keep-id</code> <em>in your compose file.</em></p>
+<p>But as you’ll recall from my <a href="../../../resources/hints-and-kinks/rootless-podman-docker-compose/">previous article</a>, there used to be another way of achieving userid passthrough, which was to set the <code>PODMAN_USERNS</code> environment variable.
+I used to do this from a systemd user service definition, like so:</p>
+<div class="highlight"><pre><span></span><code><span class="k">[Unit]</span>
+<span class="na">Description</span><span class="o">=</span><span class="s">Podman via podman-compose</span>
+<span class="na">Wants</span><span class="o">=</span><span class="s">network-online.target</span>
+<span class="na">After</span><span class="o">=</span><span class="s">network-online.target</span>
+<span class="na">RequiresMountsFor</span><span class="o">=</span><span class="s">%t/containers</span>
+
+<span class="k">[Service]</span>
+<span class="na">Environment</span><span class="o">=</span><span class="s">PODMAN_SYSTEMD_UNIT=%n</span>
+<span class="na">Environment</span><span class="o">=</span><span class="s">PODMAN_USERNS=keep-id</span>
+<span class="c1"># [etc...]</span>
+</code></pre></div>
+<p>And it looks like podman-compose’s behaviour has changed to effectively <em>ignore</em> that environment variable (even though <a href="https://docs.podman.io/en/latest/markdown/podman-pod.unit.5.html#userns-mode">the documentation</a> says it’s still being honoured).</p>
+<p>So, it looks like overall I need to follow this checklist:</p>
+<ol>
+<li>In my Compose files, add <code>userns_mode: keep-id</code> to services where needed.</li>
+<li>Add the <code>x-podman</code> section with <code>in_pod: false</code>.</li>
+<li>Drop the <code>Environment=PODMAN_USERNS</code> line from my systemd definitions, having become a no-op.</li>
+</ol>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../tag/containers.html">Containers</a>
+      <a href="../../../tag/podman.html">Podman</a>
+      <a href="../../../tag/docker.html">Docker</a>
+      <a href="../../../tag/systemd.html">systemd</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+<footer>
+<p>
+  &copy; 2026  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../../../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p></footer>  </main>
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " xahteiwi.eu ",
+  "url" : "../../..",
+  "image": "https://xahteiwi.eu/images/avatar.jpg",
+  "description": ""
+}
+</script>
+</body>
+</html>
