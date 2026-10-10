@@ -1,4 +1,4 @@
-Title: Nobody wants to hear "I understand your frustation" 
+Title: Nobody wants to hear "I understand your frustration" 
 Date: 2026-10-10
 Slug: frustration
 Summary: "I understand your frustration" is at best a useless, and at worst an utterly terrible thing to say to someone who reports to you.
@@ -31,7 +31,7 @@ And if their anger is justified, and their complaint is legitimate, then you are
 
 And secondly, your *understanding* helps them bugger-all.
 They want a solution, and from their point of view you are either part of that solution, or part of the problem.
-Not doing something makes you part of them problem.
+Not doing something makes you part of the problem.
 You voicing your mere "understanding" — *which may well be a misunderstanding!* — makes it more likely, in your report's mind, that you won't be doing a thing.
 
 So say something else that's actually helpful.
