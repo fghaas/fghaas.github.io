@@ -1,7 +1,7 @@
 Title: Nobody wants to hear "I understand your frustation" 
 Date: 2026-10-10
 Slug: frustration
-Summary: "I understand your frustration" is at best a useless, and at worst utterly terrible thing to say to someone who reports to you.
+Summary: "I understand your frustration" is at best a useless, and at worst an utterly terrible thing to say to someone who reports to you.
 
 Suppose one of your reports approaches you with a perfectly legitimate gripe or complaint:
 they're not getting the help or money or support they need to get a project off the ground.
